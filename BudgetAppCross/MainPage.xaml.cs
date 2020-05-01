@@ -1,4 +1,6 @@
 ﻿using BudgetAppCross.Models;
+using MvvmCross.Forms.Views;
+using MvvmCross.Forms.Presenters.Attributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,22 +11,30 @@ using Xamarin.Forms.Xaml;
 
 namespace BudgetAppCross
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
-    [DesignTimeVisible(false)]
+    [MvxMasterDetailPagePresentation(Position = MasterDetailPosition.Root, WrapInNavigationPage = false, Title = "MainPAge")]
     public partial class MainPage
     {
         public MainPage()
         {
             InitializeComponent();
         }
-
-        private void ContactSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            ViewModel.ShowContactDetails(e.SelectedItem as Contact);
-            //ViewModel.ShowContactDetails(e.SelectedItem as Contact);
-        }
     }
+    //// Learn more about making custom code visible in the Xamarin.Forms previewer
+    //// by visiting https://aka.ms/xamarinforms-previewer
+    //[DesignTimeVisible(false)]
+    //public partial class MainPage
+    //{
+    //    public MainPage()
+    //    {
+    //        InitializeComponent();
+    //    }
+
+    //    private void ContactSelected(object sender, SelectedItemChangedEventArgs e)
+    //    {
+    //        ViewModel.ShowContactDetails(e.SelectedItem as Contact);
+    //        //ViewModel.ShowContactDetails(e.SelectedItem as Contact);
+    //    }
+    //}
 }
 
 

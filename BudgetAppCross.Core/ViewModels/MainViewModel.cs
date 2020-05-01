@@ -10,34 +10,55 @@ namespace BudgetAppCross.Core.ViewModels
 {
     public class MainViewModel : MvxViewModel
     {
-        public string WelcomeText => " Hello mutha fucka";
-
-        private IContactService ContactService { get; }
-        private IMvxNavigationService NavigationService { get; }
-
-        public ObservableCollection<Contact> Contacts { get; } = new ObservableCollection<Contact>();
-        public MainViewModel(IMvxNavigationService navigation, IContactService contactService)
+        readonly IMvxNavigationService navigationService;
+        public MainViewModel(IMvxNavigationService navService)
         {
-            NavigationService = navigation;
-            ContactService = contactService;
+            navigationService = navService;
         }
 
-
-        public override void ViewAppeared()
+        public override async void ViewAppearing()
         {
-            base.ViewAppeared();
-
-            var contacts = ContactService.FetchContacts();
-            foreach (var contact in contacts)
-            {
-                Contacts.Add(contact);
-            }
+            base.ViewAppearing();
+            
+            await navigationService.Navigate<MenuViewModel>();
+            await navigationService.Navigate<AboutViewModel>();
         }
 
-
-        public Task ShowContactDetails(Contact contact)
-        {
-            return NavigationService.Navigate<ContactDetailsViewModel, Contact>(contact);
-        }
     }
 }
+
+
+
+
+//public class MainViewModel : MvxViewModel
+//{
+//    public string WelcomeText => " Hello mutha fucka";
+
+//    private IContactService ContactService { get; }
+//    private IMvxNavigationService NavigationService { get; }
+
+//    public ObservableCollection<Contact> Contacts { get; } = new ObservableCollection<Contact>();
+//    public MainViewModel(IMvxNavigationService navigation, IContactService contactService)
+//    {
+//        NavigationService = navigation;
+//        ContactService = contactService;
+//    }
+
+
+//    public override void ViewAppeared()
+//    {
+//        base.ViewAppeared();
+
+//        var contacts = ContactService.FetchContacts();
+//        foreach (var contact in contacts)
+//        {
+//            Contacts.Add(contact);
+//        }
+//    }
+
+
+//    public Task ShowContactDetails(Contact contact)
+//    {
+//        return NavigationService.Navigate<ContactDetailsViewModel, Contact>(contact);
+//    }
+//}

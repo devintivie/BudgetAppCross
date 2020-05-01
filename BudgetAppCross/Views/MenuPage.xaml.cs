@@ -5,8 +5,22 @@
 //using Xamarin.Forms;
 //using Xamarin.Forms.Xaml;
 
-//namespace BudgetAppCross.Views
-//{
+using BudgetAppCross.Core.ViewModels;
+using MvvmCross.Forms.Presenters.Attributes;
+using MvvmCross.Forms.Views;
+
+namespace BudgetAppCross.Views
+{
+    [MvxMasterDetailPagePresentation(Position = MasterDetailPosition.Master, WrapInNavigationPage = false, Title = "HamburgerMenu Demo")]
+    public partial class MenuPage : MvxContentPage<MenuViewModel>
+    {
+        
+        public MenuPage()
+        {
+            InitializeComponent();
+        }
+    }
+}
 //    // Learn more about making custom code visible in the Xamarin.Forms previewer
 //    // by visiting https://aka.ms/xamarinforms-previewer
 //    [DesignTimeVisible(false)]
