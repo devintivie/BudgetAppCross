@@ -8,7 +8,6 @@
              x:TypeArguments="vms:AboutViewModel"
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.AboutPage"
-             xmlns:vm="clr-namespace:BudgetAppCross.ViewModels"
              Title="{Binding Title}">
     
     <!--<ContentPage.BindingContext>

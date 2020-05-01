@@ -5,18 +5,29 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
+             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
              x:TypeArguments="vms:MenuViewModel"
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.MenuPage"
+             x:Name="MainContent"
              Title="Menu">
 
+    <!--<ContentPage.Behaviors>
+        <behaviors:EventToCommandBehavior EventName="ItemSelected" Command="{Binding ShowDetailPageAsyncCommand}"/>
+    </ContentPage.Behaviors>-->
     <StackLayout>
-        <ListView ItemsSource="{Binding MenuItemList}">
-            <ListView.ItemTemplate>
+        <ListView ItemsSource="{Binding MenuItemList}"
+                  SelectedItem="{Binding SelectedMenuItem }">
+            <!--<ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding}"/>
                 </DataTemplate>
-            </ListView.ItemTemplate>
+            </ListView.ItemTemplate>-->
+            <ListView.Behaviors>
+                <behaviors:EventHandlerBehavior EventName="ItemSelected">
+                    <behaviors:InvokeCommandAction Command="{Binding ShowDetailPageAsyncCommand}"/>
+                </behaviors:EventHandlerBehavior>
+            </ListView.Behaviors>
         </ListView>
     </StackLayout>
              

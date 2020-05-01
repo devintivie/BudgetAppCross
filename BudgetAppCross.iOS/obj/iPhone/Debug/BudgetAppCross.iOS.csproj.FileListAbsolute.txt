@@ -65,3 +65,5 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.Models.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.Core.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.Core.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Behaviors.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Behaviors.pdb

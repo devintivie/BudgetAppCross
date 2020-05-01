@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "Behaviors.XamarinForms/4.0.4": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "4.0.0.709238"
+        },
+        "compile": {
+          "lib/netstandard1.3/Behaviors.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Behaviors.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
@@ -113,6 +125,20 @@
     }
   },
   "libraries": {
+    "Behaviors.XamarinForms/4.0.4": {
+      "sha512": "Z8nDZ3iCKDeuVmfR9zxn4Zzjh6qsL/zWb82ohNHZhw/lio0dMvFAL8rp7awR/vcDuOSY432B3uAmn8zTOcaBiA==",
+      "type": "package",
+      "path": "behaviors.xamarinforms/4.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "behaviors.xamarinforms.4.0.4.nupkg.sha512",
+        "behaviors.xamarinforms.nuspec",
+        "lib/netstandard1.3/Behaviors.deps.json",
+        "lib/netstandard1.3/Behaviors.dll",
+        "lib/netstandard1.3/Behaviors.pdb"
+      ]
+    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
@@ -715,6 +741,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Behaviors.XamarinForms >= 4.0.4",
       "BudgetAppCross.Core >= 1.0.0",
       "BudgetAppCross.Models >= 1.0.0",
       "MvvmCross.Forms >= 6.4.2",
@@ -774,6 +801,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "Behaviors.XamarinForms": {
+            "target": "Package",
+            "version": "[4.0.4, )"
+          },
           "MvvmCross.Forms": {
             "target": "Package",
             "version": "[6.4.2, )"

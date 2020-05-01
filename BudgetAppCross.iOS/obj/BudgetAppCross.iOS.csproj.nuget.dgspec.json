@@ -239,6 +239,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Behaviors.XamarinForms": {
+              "target": "Package",
+              "version": "[4.0.4, )"
+            },
             "MvvmCross.Forms": {
               "target": "Package",
               "version": "[6.4.2, )"
