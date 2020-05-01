@@ -1,0 +1,12 @@
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\bin\Debug\netstandard2.0\BudgetAppCross.Services.deps.json
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\bin\Debug\netstandard2.0\BudgetAppCross.Services.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\bin\Debug\netstandard2.0\BudgetAppCross.Services.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\bin\Debug\netstandard2.0\BudgetAppCross.Models.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\bin\Debug\netstandard2.0\BudgetAppCross.Models.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.csprojAssemblyReference.cache
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.csproj.CoreCompileInputs.cache
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.AssemblyInfoInputs.cache
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.AssemblyInfo.cs
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.csproj.CopyComplete
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.pdb

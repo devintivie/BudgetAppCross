@@ -1,0 +1,17 @@
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\BudgetAppCross.ViewModels.deps.json
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\BudgetAppCross.ViewModels.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.AssemblyInfoInputs.cache
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.AssemblyInfo.cs
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\BudgetAppCross.ViewModels.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\BudgetAppCross.Models.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\BudgetAppCross.Services.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\Xamarin.Essentials.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\BudgetAppCross.Models.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\BudgetAppCross.Services.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\Xamarin.Essentials.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\Xamarin.Essentials.xml
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.csprojAssemblyReference.cache
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.csproj.CoreCompileInputs.cache
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.csproj.CopyComplete
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.pdb

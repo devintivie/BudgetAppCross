@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "Wuv6mXNCO8VKQIeCK9kzmmg6+LG02idskcRAlscUvs648tXSSA8OLnLLsDi+vdDOKzHkz5K4b+ZK+WEIBU7INg==",
+  "success": true,
+  "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.ViewModels\\BudgetAppCross.ViewModels.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\mvvmcross\\6.4.2\\mvvmcross.6.4.2.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.forms\\6.4.2\\mvvmcross.forms.6.4.2.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.2.0.815419\\xamarin.forms.4.2.0.815419.nupkg.sha512"
+  ],
+  "logs": []
+}

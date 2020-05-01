@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "pjY+JK1BnHofm+QHgL8ySA022fzQ7iIcJAw/ucbMOac0f6brixfHGmTlFoRquxj6N/SjercFTFpJlgq6Ey/WGQ==",
+  "success": true,
+  "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.iOS\\BudgetAppCross.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\devin\\.nuget\\packages\\mvvmcross\\6.4.2\\mvvmcross.6.4.2.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.forms\\6.4.2\\mvvmcross.forms.6.4.2.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.4.0.991265\\xamarin.forms.4.4.0.991265.nupkg.sha512"
+  ],
+  "logs": []
+}
