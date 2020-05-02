@@ -1,4 +1,5 @@
-﻿using BudgetAppCross.Models;
+﻿using BudgetAppCross.Core.Services;
+using BudgetAppCross.Models;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -16,10 +17,22 @@ namespace BudgetAppCross.Core.ViewModels
     {
         #region Fields
         private IMvxNavigationService navigationService;
+        private BillManager BillManager => BillManager.Instance;
         #endregion
 
         #region Properties
-        public ObservableCollection<BillTracker> Trackers { get; set; } = new ObservableCollection<BillTracker>();
+        //public ObservableCollection<BillTracker> Trackers { get; set; } = new ObservableCollection<BillTracker>();
+
+        private ObservableCollection<BillTracker> trackers = new ObservableCollection<BillTracker>();
+        public ObservableCollection<BillTracker> Trackers
+        {
+            get { return trackers; }
+            set
+            {
+                SetProperty(ref trackers, value);
+            }
+        }
+
         private BillTracker selectedTracker;
         public BillTracker SelectedTracker
         {
@@ -41,11 +54,8 @@ namespace BudgetAppCross.Core.ViewModels
         public BudgetListViewModel(IMvxNavigationService navigation)
         {
             navigationService = navigation;
-            var firstBill = new Bill(100, new DateTime(2020, 5, 10));
-            var firstBt = new BillTracker("AT&T", firstBill);
-            Trackers.Add(firstBt);
 
-            //AddBTCommand = new Command(async () => await navigationService.Navigate<NewBillTrackerViewModel>());
+            AddBTCommand = new Command(async () => await navigationService.Navigate<NewBillTrackerViewModel>());
         }
         #endregion
 
@@ -55,6 +65,7 @@ namespace BudgetAppCross.Core.ViewModels
         {
             base.ViewAppeared();
             SelectedTracker = null;
+            Trackers = new ObservableCollection<BillTracker>(BillManager.AllTrackers);
 
             
         }

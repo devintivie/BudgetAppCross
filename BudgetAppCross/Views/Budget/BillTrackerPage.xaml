@@ -19,10 +19,10 @@
             <StackLayout Orientation="Vertical">
                 <Label Text="{Binding BillTracker.CompanyName}"/>
                 <ListView x:Name="BillListView" ItemsSource="{Binding BillTracker.Bills}">
-                    <ListView.ItemTemplate>
+                    <!--<ListView.ItemTemplate>
                         <DataTemplate>
-                            <!--<views:BillView/>-->
-                            <!--BackgroundColor="{Binding BillStatus, Converter={local:NextBillColorConverter}-->
+                            --><!--<views:BillView/>-->
+                            <!--BackgroundColor="{Binding BillStatus, Converter={local:NextBillColorConverter}--><!--
                             <StackLayout Orientation="Horizontal">
                                 <CheckBox VerticalOptions="Center"
                                           HorizontalOptions="Center"
@@ -31,7 +31,7 @@
                                 <DatePicker Date="{Binding DueDate}"/>
                             </StackLayout>
                         </DataTemplate>
-                    </ListView.ItemTemplate>
+                    </ListView.ItemTemplate>-->
                 </ListView>
             </StackLayout>
             <!--<StackLayout Orientation="Horizontal" VerticalOptions="End">

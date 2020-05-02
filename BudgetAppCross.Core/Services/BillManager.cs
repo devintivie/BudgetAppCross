@@ -14,7 +14,12 @@ namespace BudgetAppCross.Core.Services
             get { return instance ?? (instance = new BillManager()); }
         }
 
-        private BillManager() { }
+        private BillManager()
+        {
+            var firstBill = new Bill(100, new DateTime(2020, 5, 10));
+            var firstBt = new BillTracker("AT&T", firstBill);
+            AddTracker(firstBt);
+        }
         #endregion Singleton
 
         #region Fields

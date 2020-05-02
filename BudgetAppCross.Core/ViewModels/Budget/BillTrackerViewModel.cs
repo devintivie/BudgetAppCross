@@ -27,7 +27,7 @@ namespace BudgetAppCross.Core.ViewModels
         public BillTrackerViewModel(IMvxNavigationService navigation)
         {
             navigationService = navigation;
-            //AddBillCommand = new Command(async () => await navigationService.Navigate<NewBillViewModel>(BillTracker.CompanyName));
+            AddBillCommand = new Command(async () => await navigationService.Navigate<NewBillViewModel>());
         }
         #endregion
 

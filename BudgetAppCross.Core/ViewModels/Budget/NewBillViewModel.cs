@@ -5,56 +5,70 @@ using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    //public class NewBillViewModel : MvxViewModel
-    //{
-    //    #region Fields
-        
+    public class NewBillViewModel : MvxViewModel
+    {
+        #region Fields
+        private IMvxNavigationService navigationService;
+        #endregion
 
-    //    #endregion
+        #region Properties
+        private BillManager BillManager => BillManager.Instance;
 
-    //    #region Properties
-    //    private BillManager BillManager => BillManager.Instance;
+        private string companyName;
+        public string CompanyName
+        {
+            get { return companyName; }
+            set
+            {
+                SetProperty(ref companyName, value);
+            }
+        }
+        private Bill bill;
+        public Bill Bill
+        {
+            get { return bill; }
+            set
+            {
+                SetProperty(ref bill, value);
+            }
+        }
 
-    //    private string companyName;
-    //    public string CompanyName
-    //    {
-    //        get { return companyName; }
-    //        set
-    //        {
-    //            SetProperty(ref companyName, value);
-    //        }
-    //    }
-    //    private Bill bill;
-    //    public Bill Bill
-    //    {
-    //        get { return bill; }
-    //        set
-    //        {
-    //            SetProperty(ref bill, value);
-    //        }
-    //    }
+        #endregion
 
-    //    #endregion
+        #region Commands
+        public ICommand SaveCommand { get; }
+        //public ICommand CancelCommand { get; }
+        #endregion
 
-    //    #region Constructors
-    //    public NewBillViewModel(MvxNavigationService nav, string company)
-    //    {
-    //        Bill = new Bill();
-    //        CompanyName = company;
-    //    }
+        #region Constructors
+        public NewBillViewModel(MvxNavigationService nav)
+        {
+            navigationService = nav;
+            Bill = new Bill();
 
-    //    //public override void Prepare(string parameter)
-    //    //{
-    //    //    CompanyName = parameter;
-    //    //}
-    //    #endregion
+            SaveCommand = new Command(async () => await OnSave());
+        }
 
-    //    #region Methods
 
-    //    #endregion
 
-    //}
+        //public override void Prepare(string parameter)
+        //{
+        //    CompanyName = parameter;
+        //}
+        #endregion
+
+        #region Methods
+        private async Task OnSave()
+        {
+            navigationService.Close(this);
+        }
+        #endregion
+
+    }
 }
