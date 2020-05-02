@@ -21,7 +21,7 @@ namespace BudgetAppCross.Core.ViewModels
             base.ViewAppearing();
             
             await navigationService.Navigate<MenuViewModel>();
-            await navigationService.Navigate<AboutViewModel>();
+            await navigationService.Navigate<BudgetListViewModel>();
         }
 
     }

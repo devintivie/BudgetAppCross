@@ -1,5 +1,11 @@
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.iOS.exe
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.iOS.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Behaviors.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Behaviors.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\MvvmCross.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\MvvmCross.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\MvvmCross.Forms.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\MvvmCross.Forms.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Xamarin.Essentials.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Xamarin.Essentials.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Xamarin.Forms.Core.dll
@@ -44,7 +50,11 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\zh-Hans\Xamarin.Forms.Platform.iOS.resources.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.Core.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.Models.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.Core.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.Models.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
@@ -57,13 +67,3 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.csproj.CopyComplete
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.exe
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.pdb
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\MvvmCross.dll
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\MvvmCross.pdb
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\MvvmCross.Forms.dll
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\MvvmCross.Forms.pdb
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.Models.dll
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.Models.pdb
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.Core.dll
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.Core.pdb
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Behaviors.dll
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Behaviors.pdb

@@ -27,6 +27,12 @@ namespace BudgetAppCross.Models
             Bills = new List<Bill>(list);
             Autopay = autopay;
         }
+        public BillTracker(string name, Bill firstBill, bool autopay = false)
+        {
+            CompanyName = name;
+            Bills = new List<Bill> { firstBill };
+            Autopay = autopay;
+        }
 
 
         #endregion

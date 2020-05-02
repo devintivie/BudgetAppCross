@@ -4,6 +4,7 @@ using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -18,13 +19,24 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Properties
-        private ObservableCollection<string> menuItemList;
+        //private ObservableCollection<string> menuItemList;
 
-        public ObservableCollection<string> MenuItemList
+        //public ObservableCollection<string> MenuItemList
+        //{
+        //    get { return menuItemList; }
+        //    set { SetProperty(ref menuItemList, value); }
+        //}
+
+        private ObservableCollection<NavigablePage> pageList;
+        public ObservableCollection<NavigablePage> PageList
         {
-            get { return menuItemList; }
-            set { SetProperty(ref menuItemList, value); }
+            get { return pageList; }
+            set
+            {
+                SetProperty(ref pageList, value);
+            }
         }
+
 
         private string selectedMenuItem;
         public string SelectedMenuItem
@@ -35,6 +47,17 @@ namespace BudgetAppCross.Core.ViewModels
                 SetProperty(ref selectedMenuItem, value);
             }
         }
+
+        private NavigablePage selectedPage;
+        public NavigablePage SelectedPage
+        {
+            get { return selectedPage; }
+            set
+            {
+                SetProperty(ref selectedPage, value);
+            }
+        }
+
 
         #endregion
 
@@ -57,10 +80,16 @@ namespace BudgetAppCross.Core.ViewModels
         {
             navigationService = navService;
 
-            MenuItemList = new MvxObservableCollection<string>()
+            //MenuItemList = new MvxObservableCollection<string>()
+            //{
+            //    "Bill List",
+            //    "About"
+            //};
+
+            PageList = new MvxObservableCollection<NavigablePage>()
             {
-                "Bill List",
-                "About"
+                NavigablePage.BillList,
+                NavigablePage.About
             };
         }
         #endregion
@@ -69,12 +98,23 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task ShowDetailPageAsync()
         {
             // Implement your logic here.
-            switch (SelectedMenuItem)
+            //switch (SelectedMenuItem)
+            //{
+            //    case "Bill List":
+            //        await navigationService.Navigate<BudgetListViewModel>();
+            //        break;
+            //    case "About":
+            //        await navigationService.Navigate<AboutViewModel>();
+            //        break;
+            //    default:
+            //        break;
+            //}
+            switch (SelectedPage)
             {
-                case "Bill List":
+                case NavigablePage.BillList:
                     await navigationService.Navigate<BudgetListViewModel>();
                     break;
-                case "About":
+                case NavigablePage.About:
                     await navigationService.Navigate<AboutViewModel>();
                     break;
                 default:
@@ -98,4 +138,6 @@ namespace BudgetAppCross.Core.ViewModels
 
 
     }
+
+    
 }

@@ -12,13 +12,26 @@
              Title="{Binding Title}"
              >
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add"/>
+        <ToolbarItem Text="Add" Command="{Binding AddBTCommand}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}"
                      BackgroundColor="Green">
             <ListView x:Name="BudgetCompanyList"
-                      ItemTapped="BTSelected">
+                      ItemsSource="{Binding Trackers}"
+                      ItemSelected="BTItemSelected"
+                      SelectedItem="{Binding SelectedTracker}"
+                      ItemTapped="BTItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<controls:BillTrackerGlanceView/>-->
+                        <ViewCell>
+                            <StackLayout BackgroundColor="Green">
+                                <Label Text="{Binding CompanyName}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
             </ListView>
         </RefreshView>
         

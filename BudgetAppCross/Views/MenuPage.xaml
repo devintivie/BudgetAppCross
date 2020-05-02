@@ -6,6 +6,7 @@
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
              xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
+             xmlns:core="clr-namespace:BudgetAppCross.Core;assembly=BudgetAppCross.Core"
              x:TypeArguments="vms:MenuViewModel"
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.MenuPage"
@@ -15,9 +16,12 @@
     <!--<ContentPage.Behaviors>
         <behaviors:EventToCommandBehavior EventName="ItemSelected" Command="{Binding ShowDetailPageAsyncCommand}"/>
     </ContentPage.Behaviors>-->
+    
     <StackLayout>
-        <ListView ItemsSource="{Binding MenuItemList}"
-                  SelectedItem="{Binding SelectedMenuItem }">
+        <!--<ListView ItemsSource="{Binding MenuItemList}"
+                  SelectedItem="{Binding SelectedMenuItem }">-->
+        <ListView ItemsSource="{Binding PageList}"
+                  SelectedItem="{Binding SelectedPage }">
             <!--<ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding}"/>

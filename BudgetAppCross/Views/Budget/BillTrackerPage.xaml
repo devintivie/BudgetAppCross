@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             mc:Ignorable="d"
+             BackgroundColor="Aqua"
+             x:Class="BudgetAppCross.Views.BillTrackerPage">
+
+    <!--xmlns:controls="clr-namespace:BudgetAppCross.Views"-->
+             <!--xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"-->
+             <!--x:TypeArguments="vms:BudgetListViewModel"-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddBillCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout >
+            <StackLayout Orientation="Vertical">
+                <Label Text="{Binding BillTracker.CompanyName}"/>
+                <ListView x:Name="BillListView" ItemsSource="{Binding BillTracker.Bills}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <!--<views:BillView/>-->
+                            <!--BackgroundColor="{Binding BillStatus, Converter={local:NextBillColorConverter}-->
+                            <StackLayout Orientation="Horizontal">
+                                <CheckBox VerticalOptions="Center"
+                                          HorizontalOptions="Center"
+                                          IsChecked="{Binding IsPaid}"/>
+                                <Entry Text="{Binding AmountDue}"/>
+                                <DatePicker Date="{Binding DueDate}"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <!--<StackLayout Orientation="Horizontal" VerticalOptions="End">
+                <Button Text="Add Bill" Command="{Binding AddCommand}"/>
+                <Button Text="RemoveBill" Command="{Binding RemoveCommand}"/>
+            </StackLayout>-->
+        </StackLayout>
+
+    </ContentPage.Content>
+</views:MvxContentPage>

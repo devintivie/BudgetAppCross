@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace BudgetAppCross.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BillTrackerGlanceView : ContentView
+    public partial class BillTrackerGlanceView
     {
         public BillTrackerGlanceView()
         {
