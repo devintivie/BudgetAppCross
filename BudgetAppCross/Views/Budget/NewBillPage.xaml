@@ -7,16 +7,20 @@
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.NewBillPage">
     <ContentPage.Content>
-        <Grid>
-            <Button/>
-        </Grid>
-        <!--<StackLayout Orientation="Horizontal">
-            <CheckBox VerticalOptions="Center"
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox VerticalOptions="Center"
                   HorizontalOptions="Center"
-                  IsChecked="{Binding IsPaid}"/>
-            <Entry Text="{Binding AmountDue}" Keyboard="Numeric"/>
-            <DatePicker Date="{Binding DueDate}"/>
-            --><!--<Button Text="{Binding DueDate, Converter={cvt:DateOnlyConverter}}"/>--><!--
-        </StackLayout>-->
+                  IsChecked="{Binding Bill.IsPaid}"/>
+                <Entry Text="{Binding Bill.AmountDue}" Keyboard="Numeric"/>
+                <DatePicker Date="{Binding Bill.DueDate}"/>
+                <!--<Button Text="{Binding DueDate, Converter={cvt:DateOnlyConverter}}"/>-->
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Cancel" Command="{Binding CancelCommand}"/>
+                <Button Text="Save" Command="{Binding SaveCommand}"/>
+            </StackLayout>
+        </StackLayout>
+        
     </ContentPage.Content>
 </views:MvxContentPage>

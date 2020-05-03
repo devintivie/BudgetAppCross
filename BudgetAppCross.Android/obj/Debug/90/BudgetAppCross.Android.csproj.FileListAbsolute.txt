@@ -1,9 +1,9 @@
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\com.companyname.budgetappcross-Signed.apk
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BudgetAppCross.Android.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BudgetAppCross.Android.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\com.companyname.budgetappcross.apk
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\com.companyname.budgetappcross.aab
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\com.companyname.budgetappcross-Signed.aab
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\com.companyname.budgetappcross-Signed.apk
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BudgetAppCross.Core.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BudgetAppCross.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BudgetAppCross.Models.dll

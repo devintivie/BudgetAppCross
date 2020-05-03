@@ -18,7 +18,7 @@
         <StackLayout >
             <StackLayout Orientation="Vertical">
                 <Label Text="{Binding BillTracker.CompanyName}"/>
-                <ListView x:Name="BillListView" ItemsSource="{Binding BillTracker.Bills}">
+                <ListView x:Name="BillListView" ItemsSource="{Binding Bills}">
                     <!--<ListView.ItemTemplate>
                         <DataTemplate>
                             --><!--<views:BillView/>-->

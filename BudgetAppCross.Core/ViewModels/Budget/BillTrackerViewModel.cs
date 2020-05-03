@@ -3,20 +3,68 @@ using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BillTrackerViewModel : MvxViewModel<BillTracker>
+    public class BillTrackerViewModel : BaseViewModel<BillTracker>//MvxViewModel<BillTracker>
     {
         #region Fields
         private IMvxNavigationService navigationService;
+        //private BillTracker billTracker;
         #endregion
 
         #region Properties
         public BillTracker BillTracker { get; private set; }
+
+        //private BillTracker billTracker;
+        //public BillTracker BillTracker
+        //{
+        //    get { return billTracker; }
+        //    private set
+        //    {
+        //        SetProperty(ref billTracker, value);
+        //    }
+        //}
+
+
+        private ObservableCollection<Bill> bills;
+        public ObservableCollection<Bill> Bills
+        {
+            get { return bills; }
+            private set
+            {
+                SetProperty(ref bills, value);
+            }
+        }
+
+        //private string companyName;
+        //public string CompanyName
+        //{
+        //    get { return companyName; }
+        //    set
+        //    {
+        //        SetProperty(ref companyName, value);
+        //    }
+        //}
+
+        //private bool autopay;
+        //public bool Autopay
+        //{
+        //    get { return autopay; }
+        //    set
+        //    {
+        //        SetProperty(ref autopay, value);
+        //    }
+        //}
+
+
+
+
         #endregion
 
         #region Commands
@@ -27,14 +75,42 @@ namespace BudgetAppCross.Core.ViewModels
         public BillTrackerViewModel(IMvxNavigationService navigation)
         {
             navigationService = navigation;
-            AddBillCommand = new Command(async () => await navigationService.Navigate<NewBillViewModel>());
+            //AddBillCommand = new Command(async result => await navigationService.Navigate<NewBillViewModel, string, BillTracker>(BillTracker.CompanyName));
+            AddBillCommand = new Command(async () => await OnAddBill());
         }
+
+        public override void ViewAppeared()
+        {
+            base.ViewAppeared();
+
+        }
+
+        private async Task OnAddBill()
+        {
+            var result = await navigationService.Navigate<NewBillViewModel, string, Bill>(BillTracker.CompanyName);
+
+            if(result != null)
+            {
+                BillManager.AddBill(BillTracker.CompanyName, result);
+            }
+
+            UpdateBills();
+
+        }
+
         #endregion
 
         #region Methods
         public override void Prepare(BillTracker parameter)
         {
             BillTracker = parameter;
+            //billTracker = parameter;
+            UpdateBills();
+        }
+
+        private void UpdateBills()
+        {
+            Bills = new ObservableCollection<Bill>(BillTracker.Bills);
         }
         #endregion
 

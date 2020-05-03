@@ -17,6 +17,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         #region Properties
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        public BillManager BillManager => BillManager.Instance;
 
         private bool isBusy;
         public bool IsBusy
@@ -60,5 +61,10 @@ namespace BudgetAppCross.Core.ViewModels
 
 
 
+    }
+
+    public abstract class BaseViewModel<TParameter> : BaseViewModel, IMvxViewModel<TParameter>, IMvxViewModel
+    {
+        public abstract void Prepare(TParameter parameter);
     }
 }

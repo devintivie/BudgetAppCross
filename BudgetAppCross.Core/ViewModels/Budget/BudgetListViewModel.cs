@@ -67,7 +67,7 @@ namespace BudgetAppCross.Core.ViewModels
             SelectedTracker = null;
             Trackers = new ObservableCollection<BillTracker>(BillManager.AllTrackers);
 
-            
+
         }
         public Task ShowBillTracker(BillTracker bt)
         {

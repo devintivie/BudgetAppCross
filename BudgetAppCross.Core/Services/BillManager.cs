@@ -36,6 +36,7 @@ namespace BudgetAppCross.Core.Services
         {
             TrackersByCompany.Add(bt.CompanyName, bt);
             AllTrackers.Add(bt);
+            AllTrackers.Sort();
         }
 
         public void AddBill(string company, Bill iBill)
@@ -43,10 +44,11 @@ namespace BudgetAppCross.Core.Services
             if (TrackersByCompany.ContainsKey(company))
             {
                 TrackersByCompany[company].Bills.Add(iBill);
+                TrackersByCompany[company].Bills.Sort();
             }
             else
             {
-                var bt = new BillTracker(company);
+                var bt = new BillTracker(company, iBill);
                 bt.Bills.Add(iBill);
 
                 AddTracker(bt);

@@ -13,6 +13,7 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netst
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\BillTrackerGlanceView.xaml.g.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\BillTrackerPage.xaml.g.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\BudgetListPage.xaml.g.cs
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\NewBillTrackerPage.xaml.g.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\ContactDetailsPage.xaml.g.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
@@ -27,4 +28,3 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netst
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\ref\BudgetAppCross.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\NewBillPage.xaml.g.cs
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\NewBillTrackerPage.xaml.g.cs

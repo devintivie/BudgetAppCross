@@ -11,24 +11,24 @@ using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class NewBillViewModel : MvxViewModel
+    public class NewBillViewModel : MvxViewModel<string, Bill>
     {
         #region Fields
         private IMvxNavigationService navigationService;
+        //private BillTracker billTracker;
         #endregion
 
         #region Properties
-        private BillManager BillManager => BillManager.Instance;
 
         private string companyName;
-        public string CompanyName
-        {
-            get { return companyName; }
-            set
-            {
-                SetProperty(ref companyName, value);
-            }
-        }
+        public string CompanyName => companyName;
+        //{
+        //    get { return companyName; }
+        //    set
+        //    {
+        //        SetProperty(ref companyName, value);
+        //    }
+        //}
         private Bill bill;
         public Bill Bill
         {
@@ -43,30 +43,34 @@ namespace BudgetAppCross.Core.ViewModels
 
         #region Commands
         public ICommand SaveCommand { get; }
-        //public ICommand CancelCommand { get; }
+        public ICommand CancelCommand { get; }
         #endregion
 
         #region Constructors
-        public NewBillViewModel(MvxNavigationService nav)
+        public NewBillViewModel(IMvxNavigationService nav)
         {
             navigationService = nav;
             Bill = new Bill();
 
             SaveCommand = new Command(async () => await OnSave());
+            CancelCommand = new Command(async () => await OnCancel());
         }
 
-
-
-        //public override void Prepare(string parameter)
-        //{
-        //    CompanyName = parameter;
-        //}
+        public override void Prepare(string parameter)
+        {
+            companyName = parameter;
+        }
         #endregion
 
         #region Methods
         private async Task OnSave()
         {
-            navigationService.Close(this);
+            await navigationService.Close(this, Bill);
+        }
+
+        private async Task OnCancel()
+        {
+            await navigationService.Close(this);
         }
         #endregion
 
