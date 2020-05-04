@@ -67,3 +67,4 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.csproj.CopyComplete
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.exe
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Newtonsoft.Json.dll

@@ -619,3 +619,4 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Deb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\Newtonsoft.Json.dll

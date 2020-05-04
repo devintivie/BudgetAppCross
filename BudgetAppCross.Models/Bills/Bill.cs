@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
@@ -60,7 +61,7 @@ namespace BudgetAppCross.Models
 
 
         public string AccountID { get; set; }
-
+        [JsonIgnore]
         public BillStatus BillStatus { get; set; }
 
 

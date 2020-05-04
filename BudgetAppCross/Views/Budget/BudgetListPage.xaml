@@ -13,6 +13,8 @@
              >
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddBTCommand}"/>
+        <ToolbarItem Text="Save" Command="{Binding SaveBudgetCommand}"/>
+        <ToolbarItem Text="Load" Command="{Binding LoadBudgetCommand}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}"

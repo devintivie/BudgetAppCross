@@ -1,7 +1,9 @@
 ﻿using BudgetAppCross.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BudgetAppCross.Core.Services
 {
@@ -16,9 +18,7 @@ namespace BudgetAppCross.Core.Services
 
         private BillManager()
         {
-            var firstBill = new Bill(100, new DateTime(2020, 5, 10));
-            var firstBt = new BillTracker("AT&T", firstBill);
-            AddTracker(firstBt);
+
         }
         #endregion Singleton
 
@@ -32,6 +32,12 @@ namespace BudgetAppCross.Core.Services
         #endregion
 
         #region Methods
+
+        public void Clear()
+        {
+            TrackersByCompany.Clear();
+            AllTrackers.Clear();
+        }
         public void AddTracker(BillTracker bt)
         {
             TrackersByCompany.Add(bt.CompanyName, bt);
@@ -54,6 +60,7 @@ namespace BudgetAppCross.Core.Services
                 AddTracker(bt);
             }
         }
+
         #endregion
 
     }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EH583wC59ibhJTR5gSkWk8S8MnMSFADQyI/slBAapwVYjQzP/FE2nOwNQOKLvMDxHz036dxqNxa/Tzzimd44dQ==",
+  "dgSpecHash": "t9nlNa5zZ0GMhcCaR3JaCOcNK3OWYe0R2VPRMWKGCj8iH5VAXF80FK+BbypKZMs2tfTvgKIh2qFQng9DQAJ3dA==",
   "success": true,
   "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Android\\BudgetAppCross.Android.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.droid.support.fragment\\6.4.2\\mvvmcross.droid.support.fragment.6.4.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.droid.support.v7.appcompat\\6.4.2\\mvvmcross.droid.support.v7.appcompat.6.4.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.forms\\6.4.2\\mvvmcross.forms.6.4.2.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.runtime\\1.1.1.3\\xamarin.android.arch.core.runtime.1.1.1.3.nupkg.sha512",
