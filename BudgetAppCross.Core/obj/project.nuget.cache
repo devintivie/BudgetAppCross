@@ -1,14 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "KjHTSgta8+WSKdReDfPwQYbooJVGWhLzh/E6nlI6pGbvpd7Jf/aclIP58n6vSmMkYahgbJnTCxprvBI/sHSeEA==",
+  "dgSpecHash": "DuOzMEuIV0Euh41e+8TUZeeSZUN5ysFcU9b/HwKclnOZxOgZpuHm4f0TJQDktgcGjV0uclFVuO9Hv4V0IAqwYg==",
   "success": true,
   "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.442\\acr.userdialogs.7.1.0.442.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross\\6.4.2\\mvvmcross.6.4.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.forms\\6.4.2\\mvvmcross.forms.6.4.2.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\refractored.mvvmhelpers\\1.3.0\\refractored.mvvmhelpers.1.3.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.2.0.815419\\xamarin.forms.4.2.0.815419.nupkg.sha512"
   ],
   "logs": []

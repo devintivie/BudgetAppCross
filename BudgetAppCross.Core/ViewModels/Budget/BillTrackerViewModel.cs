@@ -42,6 +42,18 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+        private Bill selectedBill;
+        public Bill SelectedBill
+        {
+            get { return selectedBill; }
+            set
+            {
+                SetProperty(ref selectedBill, value);
+                RefreshCanExecutes();
+            }
+        }
+
+
         //private string companyName;
         //public string CompanyName
         //{
@@ -69,6 +81,8 @@ namespace BudgetAppCross.Core.ViewModels
 
         #region Commands
         public ICommand AddBillCommand { get; }
+        public ICommand ShowOptionsCommand { get; }
+        public ICommand DeleteBillCommand { get; }
         #endregion
 
         #region Constructors
@@ -77,12 +91,21 @@ namespace BudgetAppCross.Core.ViewModels
             navigationService = navigation;
             //AddBillCommand = new Command(async result => await navigationService.Navigate<NewBillViewModel, string, BillTracker>(BillTracker.CompanyName));
             AddBillCommand = new Command(async () => await OnAddBill());
+            ShowOptionsCommand = new Command(() => Console.WriteLine("Swipe Left"));
+            DeleteBillCommand = new Command(() =>  OnDeleteBill(), () => CanDeleteBill());
         }
+
+        
 
         public override void ViewAppeared()
         {
             base.ViewAppeared();
 
+        }
+
+        private void RefreshCanExecutes()
+        {
+            (DeleteBillCommand as Command).ChangeCanExecute();
         }
 
         private async Task OnAddBill()
@@ -96,6 +119,19 @@ namespace BudgetAppCross.Core.ViewModels
 
             UpdateBills();
 
+        }
+
+        
+
+        private void OnDeleteBill()
+        {
+            BillManager.DeleteBill(BillTracker.CompanyName, SelectedBill);
+            UpdateBills();
+        }
+
+        private bool CanDeleteBill()
+        {
+            return SelectedBill != null;
         }
 
         #endregion

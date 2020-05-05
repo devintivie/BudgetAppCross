@@ -3,6 +3,8 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "BudgetAppCross.Android.dll" comes first in this list. */
 		"BudgetAppCross.Android.dll",
+		"Acr.UserDialogs.dll",
+		"AndHUD.dll",
 		"Behaviors.dll",
 		"BudgetAppCross.Core.dll",
 		"BudgetAppCross.dll",
@@ -13,6 +15,7 @@ public class MonoPackageManager_Resources {
 		"MvvmCross.Droid.Support.Fragment.dll",
 		"MvvmCross.Droid.Support.V7.AppCompat.dll",
 		"MvvmCross.Forms.dll",
+		"MvvmHelpers.dll",
 		"Newtonsoft.Json.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",

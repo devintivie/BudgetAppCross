@@ -13,27 +13,36 @@
              <!--x:TypeArguments="vms:BudgetListViewModel"-->
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddBillCommand}"/>
+        <ToolbarItem Text="Delete" Command="{Binding DeleteBillCommand}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout >
-            <StackLayout Orientation="Vertical">
-                <Label Text="{Binding BillTracker.CompanyName}"/>
-                <ListView x:Name="BillListView" ItemsSource="{Binding Bills}">
-                    <!--<ListView.ItemTemplate>
+        <StackLayout>
+            <Label Text="{Binding BillTracker.CompanyName}"/>
+            <RefreshView >
+                <ListView x:Name="BillListView" ItemsSource="{Binding Bills}"
+                          SelectedItem="{Binding SelectedBill}">
+                    <ListView.ItemTemplate>
                         <DataTemplate>
-                            --><!--<views:BillView/>-->
-                            <!--BackgroundColor="{Binding BillStatus, Converter={local:NextBillColorConverter}--><!--
-                            <StackLayout Orientation="Horizontal">
-                                <CheckBox VerticalOptions="Center"
+                            <!--<views:BillView/>-->
+                            <!--BackgroundColor="{Binding BillStatus, Converter={local:NextBillColorConverter}-->
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <CheckBox VerticalOptions="Center"
                                           HorizontalOptions="Center"
                                           IsChecked="{Binding IsPaid}"/>
-                                <Entry Text="{Binding AmountDue}"/>
-                                <DatePicker Date="{Binding DueDate}"/>
-                            </StackLayout>
+                                    <Entry Text="{Binding AmountDue}"
+                                           WidthRequest="70"/>
+                                    <DatePicker Date="{Binding DueDate}"
+                                                WidthRequest="100"/>
+                                </StackLayout>
+                            </ViewCell>
+                            
+                            
+                            
                         </DataTemplate>
-                    </ListView.ItemTemplate>-->
+                    </ListView.ItemTemplate>
                 </ListView>
-            </StackLayout>
+            </RefreshView>
             <!--<StackLayout Orientation="Horizontal" VerticalOptions="End">
                 <Button Text="Add Bill" Command="{Binding AddCommand}"/>
                 <Button Text="RemoveBill" Command="{Binding RemoveCommand}"/>

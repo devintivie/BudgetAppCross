@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "r30+J86eGtxKt21STI5/2W9NXBL1j0411I5QttoQAmJA3yYKDQ3rxUw+u+Bfu/2bQLVrk/UGuvEUt3cmHXJs7Q==",
+  "dgSpecHash": "AgIpel8YYJldm6hkP2PpeKOrq6Iq2TlkDO80CpkRHSnHPEoUlQ+0+xIJ3WSnmluZ/6OfifoaxbSsT6r0U3+wOQ==",
   "success": true,
   "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "C:\\Users\\devin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\refractored.mvvmhelpers\\1.3.0\\refractored.mvvmhelpers.1.3.0.nupkg.sha512"
   ],
   "logs": []
 }

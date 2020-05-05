@@ -89,6 +89,7 @@ namespace BudgetAppCross.Core.ViewModels
             PageList = new MvxObservableCollection<NavigablePage>()
             {
                 NavigablePage.BillList,
+                NavigablePage.Agenda,
                 NavigablePage.About
             };
         }
@@ -113,6 +114,9 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 case NavigablePage.BillList:
                     await navigationService.Navigate<BudgetListViewModel>();
+                    break;
+                case NavigablePage.Agenda:
+                    await navigationService.Navigate<MonkeysViewModel>();
                     break;
                 case NavigablePage.About:
                     await navigationService.Navigate<AboutViewModel>();

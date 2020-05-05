@@ -1,5 +1,7 @@
-﻿using BudgetAppCross.Core.Services;
+﻿using Acr.UserDialogs;
+using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
+using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -13,7 +15,7 @@ using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BudgetListViewModel : MvxViewModel
+    public class BudgetListViewModel : BaseViewModel// MvxViewModel
     {
         #region Fields
         private IMvxNavigationService navigationService;
@@ -49,19 +51,25 @@ namespace BudgetAppCross.Core.ViewModels
 
         #region Commands
         public ICommand AddBTCommand { get; }
+        public ICommand EditCommand { get; }
+        public ICommand DeleteCommand { get; }
         public ICommand SaveBudgetCommand { get; }
         public ICommand LoadBudgetCommand { get; }
+        public ICommand RefreshItemsCommand { get; }
         #endregion
 
         #region Constructors
         public BudgetListViewModel(IMvxNavigationService navigation)
         {
             navigationService = navigation;
-
+            Title = "Bill List";
             AddBTCommand = new Command(async () => await navigationService.Navigate<NewBillTrackerViewModel>());
+            EditCommand = new Command(async () => await OnEdit());
+            DeleteCommand = new Command(async () => await OnDelete());
             SaveBudgetCommand = new Command(async() => await StateManager.Instance.SaveToFile());
             //LoadBudgetCommand = new Command(async() => await StateManager.Instance.LoadFromFile());
             LoadBudgetCommand = new Command(async () => await OnLoadBudget());
+            RefreshItemsCommand = new Command(async () => await OnRefresh());
         }
 
         
@@ -85,8 +93,37 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task OnLoadBudget()
         {
             await StateManager.Instance.LoadFromFile();
-            Trackers = new ObservableCollection<BillTracker>(BillManager.Instance.AllTrackers);
+            UpdateTrackers();
 
+        }
+
+        private async Task OnEdit()
+        {
+            //var config = new ActionSheetConfig().SetTitle("Test Title").SetMessage("hi nerd").
+            //config.Options.Add(new ActionSheetOption("test1", () => Test()));
+            //Mvx.IoCProvider.Resolve<IUserDialogs>().ActionSheet(config);
+            ////Mvx.Resolve<IUserDialogs>().Alert("it is not valid");
+        }
+        private async Task OnDelete()
+        {
+            UpdateTrackers();
+        }
+
+        private async Task OnRefresh()
+        {
+            await Task.Delay(2500);
+            UpdateTrackers();
+            IsBusy = false;
+        }
+
+        private void UpdateTrackers()
+        {
+            Trackers = new ObservableCollection<BillTracker>(BillManager.Instance.AllTrackers);
+        }
+
+        private void Test()
+        {
+            Console.WriteLine("Test");
         }
         #endregion
 

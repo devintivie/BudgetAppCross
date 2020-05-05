@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     "Xamarin.iOS,Version=v1.0": {
+      "Acr.UserDialogs/7.1.0.442": {
+        "type": "package",
+        "dependencies": {
+          "BTProgressHUD": "1.3.1"
+        },
+        "compile": {
+          "lib/xamarinios10/Acr.UserDialogs.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Acr.UserDialogs.dll": {}
+        }
+      },
       "Behaviors.XamarinForms/4.0.4": {
         "type": "package",
         "dependencies": {
@@ -12,6 +24,18 @@
         },
         "runtime": {
           "lib/netstandard1.3/Behaviors.dll": {}
+        }
+      },
+      "BTProgressHUD/1.3.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/BTProgressHUD.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/BTProgressHUD.dll": {}
         }
       },
       "MvvmCross/6.4.2": {
@@ -47,6 +71,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Refractored.MvvmHelpers/1.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/MvvmHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/MvvmHelpers.dll": {}
         }
       },
       "System.Numerics.Vectors/4.5.0": {
@@ -203,6 +236,7 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "MvvmCross": "6.4.2",
           "MvvmCross.Forms": "6.4.2",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.4.0.991265"
@@ -218,6 +252,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Acr.UserDialogs": "7.1.0.442",
           "BudgetAppCross.Models": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
           "Newtonsoft.Json": "12.0.3"
@@ -233,7 +268,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Newtonsoft.Json": "12.0.3"
+          "Newtonsoft.Json": "12.0.3",
+          "Refractored.MvvmHelpers": "1.3.0"
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
@@ -244,6 +280,18 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win": {
+      "Acr.UserDialogs/7.1.0.442": {
+        "type": "package",
+        "dependencies": {
+          "BTProgressHUD": "1.3.1"
+        },
+        "compile": {
+          "lib/xamarinios10/Acr.UserDialogs.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Acr.UserDialogs.dll": {}
+        }
+      },
       "Behaviors.XamarinForms/4.0.4": {
         "type": "package",
         "dependencies": {
@@ -254,6 +302,18 @@
         },
         "runtime": {
           "lib/netstandard1.3/Behaviors.dll": {}
+        }
+      },
+      "BTProgressHUD/1.3.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/BTProgressHUD.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/BTProgressHUD.dll": {}
         }
       },
       "MvvmCross/6.4.2": {
@@ -289,6 +349,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Refractored.MvvmHelpers/1.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/MvvmHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/MvvmHelpers.dll": {}
         }
       },
       "System.Numerics.Vectors/4.5.0": {
@@ -445,6 +514,7 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "MvvmCross": "6.4.2",
           "MvvmCross.Forms": "6.4.2",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.4.0.991265"
@@ -460,6 +530,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Acr.UserDialogs": "7.1.0.442",
           "BudgetAppCross.Models": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
           "Newtonsoft.Json": "12.0.3"
@@ -475,7 +546,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Newtonsoft.Json": "12.0.3"
+          "Newtonsoft.Json": "12.0.3",
+          "Refractored.MvvmHelpers": "1.3.0"
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
@@ -486,6 +558,18 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x64": {
+      "Acr.UserDialogs/7.1.0.442": {
+        "type": "package",
+        "dependencies": {
+          "BTProgressHUD": "1.3.1"
+        },
+        "compile": {
+          "lib/xamarinios10/Acr.UserDialogs.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Acr.UserDialogs.dll": {}
+        }
+      },
       "Behaviors.XamarinForms/4.0.4": {
         "type": "package",
         "dependencies": {
@@ -496,6 +580,18 @@
         },
         "runtime": {
           "lib/netstandard1.3/Behaviors.dll": {}
+        }
+      },
+      "BTProgressHUD/1.3.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/BTProgressHUD.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/BTProgressHUD.dll": {}
         }
       },
       "MvvmCross/6.4.2": {
@@ -531,6 +627,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Refractored.MvvmHelpers/1.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/MvvmHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/MvvmHelpers.dll": {}
         }
       },
       "System.Numerics.Vectors/4.5.0": {
@@ -687,6 +792,7 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "MvvmCross": "6.4.2",
           "MvvmCross.Forms": "6.4.2",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.4.0.991265"
@@ -702,6 +808,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Acr.UserDialogs": "7.1.0.442",
           "BudgetAppCross.Models": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
           "Newtonsoft.Json": "12.0.3"
@@ -717,7 +824,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Newtonsoft.Json": "12.0.3"
+          "Newtonsoft.Json": "12.0.3",
+          "Refractored.MvvmHelpers": "1.3.0"
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
@@ -728,6 +836,18 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x86": {
+      "Acr.UserDialogs/7.1.0.442": {
+        "type": "package",
+        "dependencies": {
+          "BTProgressHUD": "1.3.1"
+        },
+        "compile": {
+          "lib/xamarinios10/Acr.UserDialogs.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/Acr.UserDialogs.dll": {}
+        }
+      },
       "Behaviors.XamarinForms/4.0.4": {
         "type": "package",
         "dependencies": {
@@ -738,6 +858,18 @@
         },
         "runtime": {
           "lib/netstandard1.3/Behaviors.dll": {}
+        }
+      },
+      "BTProgressHUD/1.3.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Drawing.Common.dll"
+        ],
+        "compile": {
+          "lib/xamarinios10/BTProgressHUD.dll": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/BTProgressHUD.dll": {}
         }
       },
       "MvvmCross/6.4.2": {
@@ -773,6 +905,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Refractored.MvvmHelpers/1.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/MvvmHelpers.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/MvvmHelpers.dll": {}
         }
       },
       "System.Numerics.Vectors/4.5.0": {
@@ -929,6 +1070,7 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "MvvmCross": "6.4.2",
           "MvvmCross.Forms": "6.4.2",
           "Xamarin.Essentials": "1.3.1",
           "Xamarin.Forms": "4.4.0.991265"
@@ -944,6 +1086,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Acr.UserDialogs": "7.1.0.442",
           "BudgetAppCross.Models": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
           "Newtonsoft.Json": "12.0.3"
@@ -959,7 +1102,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Newtonsoft.Json": "12.0.3"
+          "Newtonsoft.Json": "12.0.3",
+          "Refractored.MvvmHelpers": "1.3.0"
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
@@ -971,6 +1115,46 @@
     }
   },
   "libraries": {
+    "Acr.UserDialogs/7.1.0.442": {
+      "sha512": "4z+sp3nTkFZuY75gd4zo2+86S8eaWlHl7KhLs/EAG9TH7Ng9+a4jfOap8v3fq1RXrF3gVae2ycLPcndZptxHZQ==",
+      "type": "package",
+      "path": "acr.userdialogs/7.1.0.442",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "acr.userdialogs.7.1.0.442.nupkg.sha512",
+        "acr.userdialogs.nuspec",
+        "lib/monoandroid10.0/Acr.UserDialogs.dll",
+        "lib/monoandroid10.0/Acr.UserDialogs.pdb",
+        "lib/monoandroid10.0/Acr.UserDialogs.xml",
+        "lib/monoandroid90/Acr.UserDialogs.dll",
+        "lib/monoandroid90/Acr.UserDialogs.pdb",
+        "lib/monoandroid90/Acr.UserDialogs.xml",
+        "lib/netstandard2.0/Acr.UserDialogs.dll",
+        "lib/netstandard2.0/Acr.UserDialogs.pdb",
+        "lib/netstandard2.0/Acr.UserDialogs.xml",
+        "lib/uap10.0.16299/Acr.UserDialogs.dll",
+        "lib/uap10.0.16299/Acr.UserDialogs.pdb",
+        "lib/uap10.0.16299/Acr.UserDialogs.pri",
+        "lib/uap10.0.16299/Acr.UserDialogs.xml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Acr.UserDialogs.xr.xml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/ActionSheetContentDialog.xaml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/DatePickerControl.xaml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/LoginContentDialog.xaml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/ProgressContentDialog.xaml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/TimePickerControl.xaml",
+        "lib/xamarinios10/Acr.UserDialogs.dll",
+        "lib/xamarinios10/Acr.UserDialogs.pdb",
+        "lib/xamarinios10/Acr.UserDialogs.xml",
+        "lib/xamarinmac20/Acr.UserDialogs.dll",
+        "lib/xamarinmac20/Acr.UserDialogs.pdb",
+        "lib/xamarinmac20/Acr.UserDialogs.xml",
+        "lib/xamarintvos10/Acr.UserDialogs.dll",
+        "lib/xamarintvos10/Acr.UserDialogs.pdb",
+        "lib/xamarintvos10/Acr.UserDialogs.xml",
+        "readme.txt"
+      ]
+    },
     "Behaviors.XamarinForms/4.0.4": {
       "sha512": "Z8nDZ3iCKDeuVmfR9zxn4Zzjh6qsL/zWb82ohNHZhw/lio0dMvFAL8rp7awR/vcDuOSY432B3uAmn8zTOcaBiA==",
       "type": "package",
@@ -983,6 +1167,22 @@
         "lib/netstandard1.3/Behaviors.deps.json",
         "lib/netstandard1.3/Behaviors.dll",
         "lib/netstandard1.3/Behaviors.pdb"
+      ]
+    },
+    "BTProgressHUD/1.3.1": {
+      "sha512": "3NLBJFd039vRplgww5tiGdlTU5ztLD5LvB6Fjr62y1Ov/cKRkpe7jEDWX/TwyYTKyLwk5BQ+Kzs4HVm72QyAvQ==",
+      "type": "package",
+      "path": "btprogresshud/1.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "NOTICE",
+        "btprogresshud.1.3.1.nupkg.sha512",
+        "btprogresshud.nuspec",
+        "lib/xamarinios10/BTProgressHUD.dll",
+        "lib/xamarinios10/BTProgressHUD.pdb",
+        "lib/xamarinios10/BTProgressHUD.xml"
       ]
     },
     "MvvmCross/6.4.2": {
@@ -1111,6 +1311,21 @@
         "newtonsoft.json.12.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
+      ]
+    },
+    "Refractored.MvvmHelpers/1.3.0": {
+      "sha512": "IBBHbITCvULc5f5/QH4qB7WBgiGg7BdeKtA5nsBeAXDlhOBWwNt50TBjQOK/s5cm3O+0puDB8n68Yyd9m3JHWQ==",
+      "type": "package",
+      "path": "refractored.mvvmhelpers/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.0/MvvmHelpers.deps.json",
+        "lib/netstandard1.0/MvvmHelpers.dll",
+        "lib/netstandard1.0/MvvmHelpers.pdb",
+        "lib/netstandard1.0/MvvmHelpers.xml",
+        "refractored.mvvmhelpers.1.3.0.nupkg.sha512",
+        "refractored.mvvmhelpers.nuspec"
       ]
     },
     "System.Numerics.Vectors/4.5.0": {

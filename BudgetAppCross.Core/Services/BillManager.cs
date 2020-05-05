@@ -45,6 +45,11 @@ namespace BudgetAppCross.Core.Services
             AllTrackers.Sort();
         }
 
+        public void DeleteTracker(BillTracker bt)
+        {
+            throw new NotImplementedException();
+        }
+
         public void AddBill(string company, Bill iBill)
         {
             if (TrackersByCompany.ContainsKey(company))
@@ -58,6 +63,14 @@ namespace BudgetAppCross.Core.Services
                 bt.Bills.Add(iBill);
 
                 AddTracker(bt);
+            }
+        }
+
+        public void DeleteBill(string company, Bill iBill)
+        {
+            if (TrackersByCompany.ContainsKey(company))
+            {
+                TrackersByCompany[company].Bills.Remove(iBill);
             }
         }
 

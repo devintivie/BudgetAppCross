@@ -1,4 +1,6 @@
-﻿using BudgetAppCross.Core.ViewModels;
+﻿using Acr.UserDialogs;
+using BudgetAppCross.Core.ViewModels;
+using MvvmCross;
 using MvvmCross.IoC;
 using MvvmCross.ViewModels;
 using System;
@@ -12,6 +14,8 @@ namespace BudgetAppCross.Core
             base.Initialize();
 
             CreatableTypes().EndingWith("Service").AsInterfaces().RegisterAsLazySingleton();
+            Mvx.IoCProvider.RegisterSingleton(() => UserDialogs.Instance);
+            //Mvx.RegisterSingleton<IUserDialogs>(() => UserDialogs.Instance);
 
             RegisterAppStart<MainViewModel>();
         }

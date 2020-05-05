@@ -7,6 +7,7 @@ namespace BudgetAppCross.Core
     public enum NavigablePage
     {
         BillList,
+        Agenda,
         About
     }
     //[TypeConverter(typeof(EnumDescriptionTypeConverter))]

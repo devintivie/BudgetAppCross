@@ -1,10 +1,11 @@
-﻿using System;
+﻿using MvvmHelpers;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace BudgetAppCross.Models
 {
-    public class BillTracker : IComparable<BillTracker>
+    public class BillTracker : ObservableRangeCollection<Bill>, IComparable<BillTracker>
     {
         #region Properties
         public List<Bill> Bills { get; set; } = new List<Bill>();
