@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("BudgetAppCross.Views.Budget.BillView.xaml", "Views/Budget/BillView.xaml", typeof(global::BudgetAppCross.Views.Budget.BillView))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("BudgetAppCross.Views.Budget.BillView.xaml", "Views/Budget/BillView.xaml", typeof(global::BudgetAppCross.Views.BillView))]
 
-namespace BudgetAppCross.Views.Budget {
+namespace BudgetAppCross.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Budget\\BillView.xaml")]

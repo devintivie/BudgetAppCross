@@ -29,6 +29,7 @@ namespace BudgetAppCross.Core.Services
         #region Properties
         public Dictionary<string, BillTracker> TrackersByCompany { get; set; } = new Dictionary<string, BillTracker>(StringComparer.OrdinalIgnoreCase);
         public List<BillTracker> AllTrackers { get; set; } = new List<BillTracker>();
+        public List<AgendaBill> AgendaEntries { get; set; } = new List<AgendaBill>();
         #endregion
 
         #region Methods

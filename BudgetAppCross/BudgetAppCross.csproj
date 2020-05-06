@@ -57,8 +57,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Agenda\AgendaEntryView.xaml.cs">
+      <DependentUpon>AgendaEntryView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Agenda\AgendaPage.xaml.cs">
       <DependentUpon>AgendaPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Agenda\AgendaBillView.xaml.cs">
+      <DependentUpon>AgendaBillView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

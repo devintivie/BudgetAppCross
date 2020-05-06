@@ -6,34 +6,111 @@
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.AgendaPage"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-             xmlns:controls="clr-namespace:BudgetAppCross"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
              xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
-             x:TypeArguments="vms:MonkeysViewModel"
+             x:TypeArguments="vms:AgendaViewModel"
              x:Name="currentPage"
              Title="{Binding Title}"
              >
 
     <ContentPage.Content>
-        <StackLayout>
-            <ListView IsGroupingEnabled="True"
+        <StackLayout BindableLayout.ItemsSource="{Binding BillsGrouped}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <controls:AgendaEntryView/>
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+            <!--<ListView ItemsSource="{Binding BillsGrouped}"
+                      MinimumHeightRequest="70"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <controls:AgendaEntryView/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+        </StackLayout>
+    </ContentPage.Content>
+</views:MvxContentPage>
+
+
+
+
+<!--<ContentPage.Content>
+    <StackLayout>
+        <ListView IsGroupingEnabled="True"
                       GroupDisplayBinding="{Binding Key}"
                       GroupShortNameBinding="{Binding Key}"
                       ItemsSource="{Binding MonkeysGrouped}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid>
-                                <StackLayout Grid.Column="1" VerticalOptions="Center">
-                                    <Label Text="{Binding Name}" />
-                                    <Label Text="{Binding Location}" />
-                                </StackLayout>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-                
-            </ListView>
-        </StackLayout>
-        
-    </ContentPage.Content>
-</views:MvxContentPage>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="{Binding Name}" />
+                                <Label Text="{Binding Location}" />
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage.Content>-->
+
+
+
+
+<!--<ContentPage.Content>
+    <StackLayout>
+        <ListView IsGroupingEnabled="True"
+                      GroupDisplayBinding="{Binding Key}"
+                      GroupShortNameBinding="{Binding Key}"
+                      ItemsSource="{Binding BillsGrouped}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            --><!--<StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="{Binding Company}" />
+                                    <Label Text="{Binding AmountDue}" />
+                                </StackLayout>--><!--
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Company}"
+                                           WidthRequest="150"/>
+                                <CheckBox VerticalOptions="Center"
+                                          HorizontalOptions="Center"
+                                          IsChecked="{Binding IsPaid}"
+                                          />
+                                <Entry Text="{Binding AmountDue}"
+                                           WidthRequest="70"/>
+                                <Entry Text="{Binding Confirmation}"
+                                           WidthRequest="120"/>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage.Content>-->
+
+
+
+<!--Working code for just datatemplate to viewmodel as wrapped model
+    simple listview-->
+<!--<StackLayout>
+    <ListView ItemsSource="{Binding Entries}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <controls:AgendaBillView/>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</StackLayout>-->

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BudgetAppCross.Views.Budget
+namespace BudgetAppCross.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BillView

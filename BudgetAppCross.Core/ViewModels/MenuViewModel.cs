@@ -116,7 +116,7 @@ namespace BudgetAppCross.Core.ViewModels
                     await navigationService.Navigate<BudgetListViewModel>();
                     break;
                 case NavigablePage.Agenda:
-                    await navigationService.Navigate<MonkeysViewModel>();
+                    await navigationService.Navigate<AgendaViewModel>();
                     break;
                 case NavigablePage.About:
                     await navigationService.Navigate<AboutViewModel>();

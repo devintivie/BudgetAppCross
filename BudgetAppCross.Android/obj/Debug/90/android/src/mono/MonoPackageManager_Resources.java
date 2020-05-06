@@ -15,7 +15,6 @@ public class MonoPackageManager_Resources {
 		"MvvmCross.Droid.Support.Fragment.dll",
 		"MvvmCross.Droid.Support.V7.AppCompat.dll",
 		"MvvmCross.Forms.dll",
-		"MvvmHelpers.dll",
 		"Newtonsoft.Json.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",

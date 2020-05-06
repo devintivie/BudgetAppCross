@@ -27,7 +27,7 @@ namespace BudgetAppCross.Views
 
         private void BTItemTapped(object sender, ItemTappedEventArgs e)
         {
-            //ViewModel.ShowBillTracker(e.Item as BillTracker);
+            ViewModel.ShowBillTracker(e.Item as BillTracker);
         }
     }
 }

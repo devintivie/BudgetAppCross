@@ -4,11 +4,11 @@ using System.Text;
 
 namespace BudgetAppCross.Models
 {
-    public class AgendaBill
+    public class AgendaBill : Bill
     {
         public string Company { get; set; }
-        public bool IsPaid { get; set; }
-        public double Amount { get; set; }
+
+        public AgendaBill() { }
     }
 
     public class AgendaEntry

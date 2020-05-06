@@ -638,5 +638,3 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Deb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64b76f6e8b2d8c8db1\LoginAppCompatDialogFragment.java
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64b76f6e8b2d8c8db1\PromptAppCompatDialogFragment.java
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64b76f6e8b2d8c8db1\TimeAppCompatDialogFragment.java
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\MvvmHelpers.dll
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\MvvmHelpers.pdb
