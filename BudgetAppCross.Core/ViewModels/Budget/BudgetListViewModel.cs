@@ -19,8 +19,6 @@ namespace BudgetAppCross.Core.ViewModels
     {
         #region Fields
         private IMvxNavigationService navigationService;
-        private BillManager BillManager => BillManager.Instance;
-        private JsonDataManager JsonDataManager => JsonDataManager.Instance;
         #endregion
 
         #region Properties
@@ -66,8 +64,7 @@ namespace BudgetAppCross.Core.ViewModels
             AddBTCommand = new Command(async () => await navigationService.Navigate<NewBillTrackerViewModel>());
             EditCommand = new Command(async () => await OnEdit());
             DeleteCommand = new Command(async () => await OnDelete());
-            SaveBudgetCommand = new Command(async() => await StateManager.Instance.SaveToFile());
-            //LoadBudgetCommand = new Command(async() => await StateManager.Instance.LoadFromFile());
+            SaveBudgetCommand = new Command(async() => await OnSaveBudget());
             LoadBudgetCommand = new Command(async () => await OnLoadBudget());
             RefreshItemsCommand = new Command(async () => await OnRefresh());
         }
@@ -82,12 +79,20 @@ namespace BudgetAppCross.Core.ViewModels
             base.ViewAppeared();
             SelectedTracker = null;
             Trackers = new ObservableCollection<BillTracker>(BillManager.AllTrackers);
+        }
 
-
+        public override void ViewDestroy(bool viewFinishing = true)
+        {
+            base.ViewDestroy(viewFinishing);
         }
         public Task ShowBillTracker(BillTracker bt)
         {
             return navigationService.Navigate<BillTrackerViewModel, BillTracker>(bt);
+        }
+
+        private async Task OnSaveBudget()
+        {
+            await StateManager.Instance.SaveToFile();
         }
 
         private async Task OnLoadBudget()

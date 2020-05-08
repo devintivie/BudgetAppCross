@@ -14,6 +14,8 @@ namespace BudgetAppCross.Core.ViewModels
         public MainViewModel(IMvxNavigationService navService)
         {
             navigationService = navService;
+
+            StateManager.Instance.LoadFromFile();
         }
 
         public override async void ViewAppearing()
@@ -22,6 +24,13 @@ namespace BudgetAppCross.Core.ViewModels
             
             await navigationService.Navigate<MenuViewModel>();
             await navigationService.Navigate<BudgetListViewModel>();
+        }
+
+        public override async void ViewDestroy(bool viewFinishing = true)
+        {
+            base.ViewDestroy(viewFinishing);
+
+            await StateManager.Instance.SaveToFile();
         }
 
     }

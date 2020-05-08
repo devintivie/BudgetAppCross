@@ -9,7 +9,21 @@
              x:Class="BudgetAppCross.Views.AgendaEntryView">
     <ContentView.Content>
         <StackLayout>
-            <Label Text="{Binding Date}" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="{Binding Date}"
+                       FontSize="Title"
+                       HorizontalTextAlignment="Start"/>
+                <Label Text="{Binding DateTotal}"
+                       FontSize="Title"
+                       HorizontalTextAlignment="End"
+                       Grid.Column="1"
+                       />
+            </Grid>
+            
             <StackLayout BindableLayout.ItemsSource="{Binding Bills}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
@@ -19,6 +33,7 @@
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
+            
             <!--<ListView ItemsSource="{Binding Bills}"
                       >
                 <ListView.ItemTemplate>

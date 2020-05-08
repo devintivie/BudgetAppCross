@@ -7,8 +7,40 @@
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.BillView">
   <ContentView.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentView.Content>
+        <StackLayout Orientation="Horizontal">
+            <CheckBox VerticalOptions="Center"
+                      HorizontalOptions="Center"
+                      IsChecked="{Binding IsPaid}"/>
+            <Entry Text="{Binding AmountDue}"
+                   WidthRequest="70"/>
+            <DatePicker Date="{Binding DueDate}"
+                        WidthRequest="100"/>
+        </StackLayout>
+
+        <!--<RefreshView >
+            <ListView x:Name="BillListView" ItemsSource="{Binding Bills}"
+                          SelectedItem="{Binding SelectedBill}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        --><!--<views:BillView/>-->
+                        <!--BackgroundColor="{Binding BillStatus, Converter={local:NextBillColorConverter}--><!--
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <CheckBox VerticalOptions="Center"
+                                          HorizontalOptions="Center"
+                                          IsChecked="{Binding IsPaid}"/>
+                                <Entry Text="{Binding AmountDue}"
+                                           WidthRequest="70"/>
+                                <DatePicker Date="{Binding DueDate}"
+                                                WidthRequest="100"/>
+                            </StackLayout>
+                        </ViewCell>
+
+
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </RefreshView>-->
+    </ContentView.Content>
 </views:MvxContentView>

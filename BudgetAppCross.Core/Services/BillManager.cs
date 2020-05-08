@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,7 +30,6 @@ namespace BudgetAppCross.Core.Services
         #region Properties
         public Dictionary<string, BillTracker> TrackersByCompany { get; set; } = new Dictionary<string, BillTracker>(StringComparer.OrdinalIgnoreCase);
         public List<BillTracker> AllTrackers { get; set; } = new List<BillTracker>();
-        public List<AgendaBill> AgendaEntries { get; set; } = new List<AgendaBill>();
         #endregion
 
         #region Methods
@@ -61,7 +61,6 @@ namespace BudgetAppCross.Core.Services
             else
             {
                 var bt = new BillTracker(company, iBill);
-                bt.Bills.Add(iBill);
 
                 AddTracker(bt);
             }
@@ -73,6 +72,39 @@ namespace BudgetAppCross.Core.Services
             {
                 TrackersByCompany[company].Bills.Remove(iBill);
             }
+        }
+
+        public void PrintBillManager()
+        {
+            foreach (var bt in AllTrackers)
+            {
+                Console.WriteLine($"!!!!!{bt.CompanyName}!!!!");
+                foreach (var bill in bt.Bills)
+                {
+                    Console.WriteLine(bill);
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public void Update(IEnumerable<Grouping<DateTime, AgendaBill>> agendaBills)
+        {
+            Clear();
+            var data = (from agenda in agendaBills
+                        from b in agenda.Grouped
+                        select b).ToList();
+            //group b by b.Company into bGroup
+            //select new Grouping<string, AgendaBill>(bGroup.Key, bGroup)).ToList();
+
+            foreach (var item in data)
+            {
+                AddBill(item.Company, item);
+            }
+
+            Console.WriteLine(BillManager.Instance.AllTrackers.Count);
+
+
+
         }
 
         #endregion

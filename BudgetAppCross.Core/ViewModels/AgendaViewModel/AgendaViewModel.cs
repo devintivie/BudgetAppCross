@@ -46,6 +46,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+        public List<Grouping<DateTime, AgendaBill>> BillGroups { get; set; } = new List<Grouping<DateTime, AgendaBill>>();
+
 
 
 
@@ -77,12 +79,12 @@ namespace BudgetAppCross.Core.ViewModels
             //    Entries.Add(new AgendaBillViewModel(bill));
             //}
 
-            var grouped = (from entry in data
+            BillGroups = (from entry in data
                           orderby entry.DueDate
                           group entry by entry.DueDate into agendaGroup
                           select new Grouping<DateTime, AgendaBill>(agendaGroup.Key, agendaGroup)).ToList();
 
-            foreach (var group in grouped)
+            foreach (var group in BillGroups)
             {
                 BillsGrouped.Add(new AgendaEntryViewModel(group));
             }
@@ -122,6 +124,15 @@ namespace BudgetAppCross.Core.ViewModels
             base.ViewAppeared();
 
 
+        }
+
+        public override async void ViewDestroy(bool viewFinishing = true)
+        {
+            base.ViewDestroy(viewFinishing);
+
+            BillManager.Update(BillGroups);
+
+            await StateManager.Instance.SaveToFile();
         }
 
 

@@ -8,14 +8,35 @@
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.AgendaBillView">
     <ContentView.Content>
-        <StackLayout>
+        <FlexLayout Wrap="Wrap">
+            <CheckBox IsChecked="{Binding IsPaid}"
+                      WidthRequest="60"/>
+            <Label Text="{Binding Company}"
+                   FontSize="Body"
+                       VerticalOptions="Center"
+                       WidthRequest="120"/>
+            <Entry Text="{Binding AmountDue}"
+                       WidthRequest="85"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand"/>
+            <Entry Text="{Binding Confirmation}"
+                       WidthRequest="200"/>
+        </FlexLayout>
+        <!--<StackLayout>
             <StackLayout Orientation="Horizontal">
-                <CheckBox IsChecked="{Binding IsPaid}"/>
-                <Label Text="{Binding Company}"/>
-                <Entry Text="{Binding AmountDue}"/>
-                <Entry Text="{Binding Confirmation}"/>
+                <CheckBox IsChecked="{Binding IsPaid}"
+                          WidthRequest="60"/>
+                <Label Text="{Binding Company}"
+                       VerticalOptions="CenterAndExpand"
+                       WidthRequest="120"/>
+                <Entry Text="{Binding AmountDue}"
+                       WidthRequest="75"
+                       HorizontalOptions="Center"
+                       VerticalOptions="CenterAndExpand"/>
+                <Entry Text="{Binding Confirmation}"
+                       WidthRequest="200"/>
             </StackLayout>
-        </StackLayout>
+        </StackLayout>-->
         
     </ContentView.Content>
 </views:MvxContentView>

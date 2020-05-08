@@ -137,6 +137,14 @@ namespace BudgetAppCross.Models
             string amountString = AmountDue.ToString("C", CultureInfo.CurrentCulture);
             string tempString = String.Format("{0} is due on {1:D}", AmountDue.ToString("C", CultureInfo.CurrentCulture), DueDate);
 
+            if (isPaid)
+            {
+                tempString += ": Paid";
+            }
+            else
+            {
+                tempString += ": Need to paid";
+            }
             return tempString;
         }
         #endregion

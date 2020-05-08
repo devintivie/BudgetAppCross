@@ -9,6 +9,14 @@ namespace BudgetAppCross.Models
         public string Company { get; set; }
 
         public AgendaBill() { }
+
+        public override string ToString()
+        {
+
+            var baseString = base.ToString();
+
+            return $"{Company} : {baseString}";
+        }
     }
 
     public class AgendaEntry

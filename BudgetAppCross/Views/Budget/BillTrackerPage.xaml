@@ -4,8 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
              mc:Ignorable="d"
-             BackgroundColor="Aqua"
              x:Class="BudgetAppCross.Views.BillTrackerPage">
 
     <!--xmlns:controls="clr-namespace:BudgetAppCross.Views"-->
@@ -17,14 +17,28 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding BillTracker.CompanyName}"/>
-            <RefreshView >
+            <Label Text="{Binding BillTracker.CompanyName}"
+                   FontSize="Title"/>
+            <ScrollView>
+                <StackLayout BindableLayout.ItemsSource="{Binding Bills}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <controls:BillView/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+            
+            <Label Text="{Binding DateTotal}"/>
+            <!--<RefreshView >
                 <ListView x:Name="BillListView" ItemsSource="{Binding Bills}"
                           SelectedItem="{Binding SelectedBill}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <!--<views:BillView/>-->
-                            <!--BackgroundColor="{Binding BillStatus, Converter={local:NextBillColorConverter}-->
+                            --><!--<views:BillView/>-->
+                            <!--BackgroundColor="{Binding BillStatus, Converter={local:NextBillColorConverter}--><!--
                             <ViewCell>
                                 <StackLayout Orientation="Horizontal">
                                     <CheckBox VerticalOptions="Center"
@@ -42,7 +56,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-            </RefreshView>
+            </RefreshView>-->
             <!--<StackLayout Orientation="Horizontal" VerticalOptions="End">
                 <Button Text="Add Bill" Command="{Binding AddCommand}"/>
                 <Button Text="RemoveBill" Command="{Binding RemoveCommand}"/>

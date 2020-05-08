@@ -34,7 +34,8 @@
                         <!--<controls:BillTrackerGlanceView/>-->
                         <ViewCell>
                             <StackLayout>
-                                <Label Text="{Binding CompanyName}"/>
+                                <Label Text="{Binding CompanyName}"
+                                       FontSize="Title"/>
                             </StackLayout>
                             <ViewCell.ContextActions>
                                 <MenuItem Text="Edit" IsDestructive="True" Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference Name=BudgetContentPage}}" CommandParameter="{Binding .}"/>

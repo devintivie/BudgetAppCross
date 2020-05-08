@@ -3,17 +3,18 @@ using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class AgendaBillViewModel : MvxViewModel
+    public class AgendaBillViewModel : BaseViewModel
     {
         #region Fields
 
         #endregion
 
         #region Properties
-        private AgendaBill AgendaBill { get; set; }
+        public AgendaBill AgendaBill { get; set; }
 
         public string Company
         {
@@ -34,6 +35,7 @@ namespace BudgetAppCross.Core.ViewModels
                 var dueDate = AgendaBill.DueDate;
                 AgendaBill.DueDate = value;
                 SetProperty(ref dueDate, value);
+                MessagingCenter.Send(this, "UpdateTotal");
             }
         }
 
@@ -45,6 +47,7 @@ namespace BudgetAppCross.Core.ViewModels
                 var amountDue = AgendaBill.AmountDue;
                 AgendaBill.AmountDue = value;
                 SetProperty(ref amountDue, value);
+                MessagingCenter.Send(this, "UpdateTotal");
             }
         }
 
@@ -92,6 +95,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         #region Methods
 
+        
         #endregion
 
     }
