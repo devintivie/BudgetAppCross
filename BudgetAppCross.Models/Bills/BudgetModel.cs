@@ -12,6 +12,7 @@ namespace BudgetAppCross.Models.Bills
 
         #region Properties
         public List<BillTracker> BillData { get; set; } = new List<BillTracker>();
+        public List<BankAccount> BankAccounts { get; set; } = new List<BankAccount>();
         #endregion
 
         #region Constructors

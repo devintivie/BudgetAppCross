@@ -7,9 +7,9 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Core\bin\Debug\
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Core\bin\Debug\netstandard2.0\Xamarin.Essentials.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Core\bin\Debug\netstandard2.0\Xamarin.Essentials.xml
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csprojAssemblyReference.cache
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csproj.CoreCompileInputs.cache
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.AssemblyInfoInputs.cache
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.AssemblyInfo.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csproj.CopyComplete
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.pdb
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csproj.CoreCompileInputs.cache

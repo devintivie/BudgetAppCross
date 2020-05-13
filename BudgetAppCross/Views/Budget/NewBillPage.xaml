@@ -8,14 +8,42 @@
              x:Class="BudgetAppCross.Views.NewBillPage">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <CheckBox VerticalOptions="Center"
-                  HorizontalOptions="Center"
-                  IsChecked="{Binding Bill.IsPaid}"/>
-                <Entry Text="{Binding Bill.AmountDue}" Keyboard="Numeric"/>
-                <DatePicker Date="{Binding Bill.DueDate}"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Paid?"
+                       Grid.Row="0" Grid.Column="0"
+                       VerticalOptions="Center"
+                       FontSize="Large"
+                       />
+                <CheckBox IsChecked="{Binding Bill.IsPaid}"
+                          Grid.Row="1" Grid.Column="0"
+                          VerticalOptions="Center"
+                          HorizontalOptions="Center"
+                          />
+                <Label Text="Amount Due"
+                       Grid.Row="0" Grid.Column="1"
+                       VerticalOptions="Center"
+                       FontSize="Large"/>
+                <Entry Text="{Binding Bill.AmountDue}" Keyboard="Numeric"
+                       Grid.Row="1" Grid.Column="1"
+                       WidthRequest="130"/>
+                <Label Text="Due Date"
+                       Grid.Row="0" Grid.Column="2"
+                       VerticalOptions="Center"
+                       FontSize="Large"/>
+                <DatePicker Date="{Binding Bill.DueDate}"
+                            Grid.Row="1" Grid.Column="2"
+                            WidthRequest="100"/>
                 <!--<Button Text="{Binding DueDate, Converter={cvt:DateOnlyConverter}}"/>-->
-            </StackLayout>
+            </Grid>
             <StackLayout Orientation="Horizontal">
                 <Button Text="Cancel" Command="{Binding CancelCommand}"/>
                 <Button Text="Save" Command="{Binding SaveCommand}"/>

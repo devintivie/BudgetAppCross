@@ -1,5 +1,4 @@
 ﻿using Acr.UserDialogs;
-using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
 using MvvmCross;
 using MvvmCross.Commands;
@@ -81,9 +80,10 @@ namespace BudgetAppCross.Core.ViewModels
             Trackers = new ObservableCollection<BillTracker>(BillManager.AllTrackers);
         }
 
-        public override void ViewDestroy(bool viewFinishing = true)
+        public override async void ViewDestroy(bool viewFinishing = true)
         {
             base.ViewDestroy(viewFinishing);
+            await StateManager.SaveToFile();
         }
         public Task ShowBillTracker(BillTracker bt)
         {
@@ -92,12 +92,12 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnSaveBudget()
         {
-            await StateManager.Instance.SaveToFile();
+            await StateManager.SaveToFile();
         }
 
         private async Task OnLoadBudget()
         {
-            await StateManager.Instance.LoadFromFile();
+            await StateManager.LoadFromFile();
             UpdateTrackers();
 
         }
@@ -123,7 +123,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private void UpdateTrackers()
         {
-            Trackers = new ObservableCollection<BillTracker>(BillManager.Instance.AllTrackers);
+            Trackers = new ObservableCollection<BillTracker>(BillManager.AllTrackers);
         }
 
         private void Test()

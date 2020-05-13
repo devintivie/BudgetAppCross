@@ -90,6 +90,7 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 NavigablePage.BillList,
                 NavigablePage.Agenda,
+                NavigablePage.BankOverview,
                 NavigablePage.About
             };
         }
@@ -117,6 +118,9 @@ namespace BudgetAppCross.Core.ViewModels
                     break;
                 case NavigablePage.Agenda:
                     await navigationService.Navigate<AgendaViewModel>();
+                    break;
+                case NavigablePage.BankOverview:
+                    await navigationService.Navigate<BankOverviewViewModel>();
                     break;
                 case NavigablePage.About:
                     await navigationService.Navigate<AboutViewModel>();

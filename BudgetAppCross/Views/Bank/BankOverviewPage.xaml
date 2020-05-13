@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BudgetAppCross.Views.BankOverviewPage"
+             xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
+             xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
+             x:TypeArguments="vms:BankOverviewViewModel"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddAccountCommand}"/>
+        <ToolbarItem Text="Delete" Command="{Binding DeleteAccountCommand}"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Accounts}"
+                  SelectedItem="{Binding SelectedAccount}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <controls:BankAccountView/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!--<StackLayout BindableLayout.ItemsSource="{Binding Accounts}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <controls:BankAccountView/>
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </StackLayout>-->
+        <!--<RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding RefreshItemsCommand}"
+                     BackgroundColor="Green">
+            <ListView ItemsSource="{Binding Accounts}"
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        --><!--<controls:BillTrackerGlanceView/>--><!--
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Nickname}"
+                                       FontSize="Title"/>
+                                <Label Text="{Binding Balance}"
+                                       FontSize="Title"/>
+                                <Label Text="{Binding UniqueID}"
+                                       FontSize="Title"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </RefreshView>-->
+
+    </ContentPage.Content>
+</views:MvxContentPage>

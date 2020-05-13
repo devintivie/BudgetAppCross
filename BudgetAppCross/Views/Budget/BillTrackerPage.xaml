@@ -19,6 +19,12 @@
         <StackLayout>
             <Label Text="{Binding BillTracker.CompanyName}"
                    FontSize="Title"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Paid" WidthRequest="60"/>
+                <Label Text="Amount Due" WidthRequest="130"
+                       HorizontalOptions="Center"/>
+                <Label Text="Due Date" WidthRequest="100"/>
+            </StackLayout>
             <ScrollView>
                 <StackLayout BindableLayout.ItemsSource="{Binding Bills}">
                     <BindableLayout.ItemTemplate>

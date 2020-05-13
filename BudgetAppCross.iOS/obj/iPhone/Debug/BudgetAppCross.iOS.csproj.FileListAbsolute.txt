@@ -1,11 +1,16 @@
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.iOS.exe
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.iOS.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Acr.UserDialogs.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Acr.UserDialogs.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Behaviors.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Behaviors.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BTProgressHUD.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BTProgressHUD.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\MvvmCross.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\MvvmCross.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\MvvmCross.Forms.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\MvvmCross.Forms.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Newtonsoft.Json.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Xamarin.Essentials.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Xamarin.Essentials.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Xamarin.Forms.Core.dll
@@ -67,8 +72,3 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.csproj.CopyComplete
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.exe
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.pdb
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Newtonsoft.Json.dll
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Acr.UserDialogs.dll
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Acr.UserDialogs.pdb
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BTProgressHUD.dll
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BTProgressHUD.pdb

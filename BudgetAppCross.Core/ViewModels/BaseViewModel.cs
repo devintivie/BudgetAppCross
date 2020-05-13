@@ -18,6 +18,8 @@ namespace BudgetAppCross.Core.ViewModels
         #region Properties
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
         public BillManager BillManager => BillManager.Instance;
+        public StateManager StateManager => StateManager.Instance;
+        public BankAccountManager BankAccountManager => BankAccountManager.Instance;
 
         private bool isBusy;
         public bool IsBusy

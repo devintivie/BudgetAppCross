@@ -19,6 +19,7 @@ namespace BudgetAppCross.Core.Services
 
         #region Properties
         public BillManager BillManager => BillManager.Instance;
+        public BankAccountManager BankAccountManager => BankAccountManager.Instance;
         #endregion
 
         #region Singleton
@@ -41,7 +42,9 @@ namespace BudgetAppCross.Core.Services
             {
                 var budgetSave = new BudgetModel
                 {
-                    BillData = BillManager.AllTrackers
+                    BillData = BillManager.AllTrackers,
+                    BankAccounts = BankAccountManager.AllAccounts
+                   
                 };
 
                 using (StreamWriter file = File.CreateText(path))
@@ -60,9 +63,14 @@ namespace BudgetAppCross.Core.Services
             var model = JsonConvert.DeserializeObject<BudgetModel>(text);
 
             BillManager.Clear();
-            foreach(var item in model.BillData)
+            foreach(var bd in model.BillData)
             {
-                BillManager.AddTracker(item);
+                BillManager.AddTracker(bd);
+            }
+
+            foreach(var ba in model.BankAccounts)
+            {
+                BankAccountManager.AddAccount(ba);
             }
 
             Console.WriteLine(model.ToString());

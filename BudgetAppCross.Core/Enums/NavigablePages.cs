@@ -8,6 +8,7 @@ namespace BudgetAppCross.Core
     {
         BillList,
         Agenda,
+        BankOverview,
         About
     }
     //[TypeConverter(typeof(EnumDescriptionTypeConverter))]

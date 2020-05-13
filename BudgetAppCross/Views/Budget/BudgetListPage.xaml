@@ -13,11 +13,11 @@
              x:Name="BudgetContentPage"
              >
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Save" Command="{Binding SaveBudgetCommand}"/>
-        <ToolbarItem Text="Load" Command="{Binding LoadBudgetCommand}"/>
+        <!--<ToolbarItem Text="Save" Command="{Binding SaveBudgetCommand}"/>
+        <ToolbarItem Text="Load" Command="{Binding LoadBudgetCommand}"/>-->
         <ToolbarItem Text="Add" Command="{Binding AddBTCommand}"/>
-        <ToolbarItem Text="Edit" Command="{Binding EditCommand}"/>
-        <ToolbarItem Text="Delete" Command="{Binding EditCommand}"/>
+        <!--<ToolbarItem Text="Edit" Command="{Binding EditCommand}"/>-->
+        <ToolbarItem Text="Delete" Command="{Binding DeleteCommand}"/>
         
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
