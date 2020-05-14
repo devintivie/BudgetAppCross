@@ -17,8 +17,8 @@ namespace BudgetAppCross.Core.Services
         #endregion
 
         #region Properties
-        public Dictionary<int, Debit> IncomeByID { get; set; } = new Dictionary<int, Debit>();
-        public List<Debit> AllIncomes { get; set; } = new List<Debit>();
+        public Dictionary<int, Income> IncomeByID { get; set; } = new Dictionary<int, Income>();
+        public List<Income> AllIncomes { get; set; } = new List<Income>();
         #endregion
 
         #region Methods 
@@ -28,18 +28,18 @@ namespace BudgetAppCross.Core.Services
             AllIncomes.Clear();
         }
 
-        public void AddIncome(Debit debit)
+        public void AddIncome(Income income)
         {
             if(AllIncomes.Count != 0)
             {
-                IncomeByID.Add(1, debit);
-                AllIncomes.Add(debit);
+                IncomeByID.Add(1, income);
+                AllIncomes.Add(income);
             }
             else
             {
                 var nextId = IncomeByID.Keys.Last() + 1;
-                IncomeByID.Add(nextId, debit);
-                AllIncomes.Add(debit);
+                IncomeByID.Add(nextId, income);
+                AllIncomes.Add(income);
             }
         }
 
@@ -50,11 +50,11 @@ namespace BudgetAppCross.Core.Services
             AllIncomes.Remove(debit);
 
         }
-        public void DeleteIncome(Debit debit)
+        public void DeleteIncome(Income income)
         {
-            var key = IncomeByID.First(x => x.Value.Equals(debit)).Key;
+            var key = IncomeByID.First(x => x.Value.Equals(income)).Key;
             IncomeByID.Remove(key);
-            AllIncomes.Remove(debit);
+            AllIncomes.Remove(income);
         }
 
         #endregion

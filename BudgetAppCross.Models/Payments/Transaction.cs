@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BudgetAppCross.Models
 {
-    public class Transaction
+    public class Transaction : ITransaction
     {
         public DateTime Date { get; set; }
         public double Amount { get; set; }
@@ -18,13 +18,4 @@ namespace BudgetAppCross.Models
         }
     }
 
-    public class Debit : Transaction
-    {
-
-    }
-
-    public class Credit : Transaction
-    {
-
-    }
 }

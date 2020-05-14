@@ -45,7 +45,7 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        public List<Grouping<DateTime, AgendaBill>> BillGroups { get; set; } = new List<Grouping<DateTime, AgendaBill>>();
+        private List<Grouping<DateTime, AgendaBill>> billGroups = new List<Grouping<DateTime, AgendaBill>>();
 
         #endregion
 
@@ -64,8 +64,8 @@ namespace BudgetAppCross.Core.ViewModels
                         select new AgendaBill
                         {
                             Company = bts.CompanyName,
-                            AmountDue = bill.AmountDue,
-                            DueDate = bill.DueDate,
+                            Amount = bill.Amount,
+                            Date = bill.Date,
                             IsPaid = bill.IsPaid
                         }).ToList();
 
@@ -74,12 +74,12 @@ namespace BudgetAppCross.Core.ViewModels
             //    Entries.Add(new AgendaBillViewModel(bill));
             //}
 
-            BillGroups = (from entry in data
-                          orderby entry.DueDate
-                          group entry by entry.DueDate into agendaGroup
+            billGroups = (from entry in data
+                          orderby entry.Date
+                          group entry by entry.Date into agendaGroup
                           select new Grouping<DateTime, AgendaBill>(agendaGroup.Key, agendaGroup)).ToList();
 
-            foreach (var group in BillGroups)
+            foreach (var group in billGroups)
             {
                 var dt = DateTime.Today.AddDays(-4);
                 var dt2 = DateTime.Today.AddMonths(2);
@@ -100,14 +100,14 @@ namespace BudgetAppCross.Core.ViewModels
                        select new AgendaBill
                        {
                            Company = bts.CompanyName,
-                           AmountDue = bill.AmountDue,
-                           DueDate = bill.DueDate,
+                           Amount = bill.Amount,
+                           Date = bill.Date,
                            IsPaid = bill.IsPaid
                        }).ToList();
 
             var grouped = from entry in data
-                          orderby entry.DueDate
-                          group entry by entry.DueDate into agendaGroup
+                          orderby entry.Date
+                          group entry by entry.Date into agendaGroup
                           select new Grouping<DateTime, AgendaBill>(agendaGroup.Key, agendaGroup);
 
             BillsGrouped = new ObservableCollection<Grouping<DateTime, AgendaBill>>(grouped);*/
@@ -131,7 +131,7 @@ namespace BudgetAppCross.Core.ViewModels
         {
             base.ViewDestroy(viewFinishing);
 
-            BillManager.Update(BillGroups);
+            BillManager.Update(billGroups);
 
             await StateManager.SaveToFile();
         }
@@ -160,8 +160,8 @@ namespace BudgetAppCross.Core.ViewModels
 //                select new AgendaBill
 //                {
 //                    Company = bts.CompanyName,
-//                    AmountDue = bill.AmountDue,
-//                    DueDate = bill.DueDate,
+//                    Amount = bill.Amount,
+//                    Date = bill.Date,
 //                    IsPaid = bill.IsPaid
 //                }).ToList();
 
@@ -171,8 +171,8 @@ namespace BudgetAppCross.Core.ViewModels
 //    //}
 
 //    var grouped = from entry in data
-//                  orderby entry.DueDate
-//                  group entry by entry.DueDate into agendaGroup
+//                  orderby entry.Date
+//                  group entry by entry.Date into agendaGroup
 //                  select new Grouping<DateTime, AgendaBill>(agendaGroup.Key, agendaGroup);
 
 

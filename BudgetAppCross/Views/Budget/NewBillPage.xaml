@@ -32,17 +32,19 @@
                        Grid.Row="0" Grid.Column="1"
                        VerticalOptions="Center"
                        FontSize="Large"/>
-                <Entry Text="{Binding Bill.AmountDue}" Keyboard="Numeric"
+                <Entry Text="{Binding Bill.Amount}" Keyboard="Numeric"
                        Grid.Row="1" Grid.Column="1"
+                       Focused="Entry_Focused"
+                       Unfocused="Entry_Unfocused"
                        WidthRequest="130"/>
                 <Label Text="Due Date"
                        Grid.Row="0" Grid.Column="2"
                        VerticalOptions="Center"
                        FontSize="Large"/>
-                <DatePicker Date="{Binding Bill.DueDate}"
+                <DatePicker Date="{Binding Bill.Date}"
                             Grid.Row="1" Grid.Column="2"
                             WidthRequest="100"/>
-                <!--<Button Text="{Binding DueDate, Converter={cvt:DateOnlyConverter}}"/>-->
+                <!--<Button Text="{Binding Date, Converter={cvt:DateOnlyConverter}}"/>-->
             </Grid>
             <StackLayout Orientation="Horizontal">
                 <Button Text="Cancel" Command="{Binding CancelCommand}"/>

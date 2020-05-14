@@ -88,7 +88,7 @@ namespace BudgetAppCross.Core.ViewModels
             var total = 0.0;
             foreach (var item in Bills)
             {
-                total += item.AmountDue;
+                total += item.Amount;
             }
 
             DateTotal = total;

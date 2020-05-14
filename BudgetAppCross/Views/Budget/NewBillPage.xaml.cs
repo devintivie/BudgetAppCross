@@ -16,5 +16,23 @@ namespace BudgetAppCross.Views
         {
             InitializeComponent();
         }
+
+        private void Entry_Focused(object sender, FocusEventArgs e)
+        {
+            var entry = sender as Entry;
+            if (entry.Text.Equals("0"))
+            {
+                entry.Text = "";
+            }
+        }
+
+        private void Entry_Unfocused(object sender, FocusEventArgs e)
+        {
+            var entry = sender as Entry;
+            if (string.IsNullOrWhiteSpace(entry.Text))
+            {
+                entry.Text = "0";
+            }
+        }
     }
 }

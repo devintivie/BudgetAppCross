@@ -5,23 +5,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              mc:Ignorable="d"
-             x:Class="BudgetAppCross.Views.BillView">
+             x:Class="BudgetAppCross.Views.TransactionView">
   <ContentView.Content>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="130"/>
                 <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <CheckBox IsChecked="{Binding IsPaid}"
-                      Grid.Column="0"
-                      VerticalOptions="Center"
-                      HorizontalOptions="Center"
-                      />
             <Entry Text="{Binding Amount}"
-                   Grid.Column="1"/>
+                   Grid.Column="0"/>
             <DatePicker Date="{Binding Date}"
+                        Grid.Column="1"/>
+            <Entry Text="{Binding Confirmation}"
                         Grid.Column="2"/>
+
         </Grid>
 
         <!--<RefreshView >

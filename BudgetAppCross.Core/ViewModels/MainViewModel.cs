@@ -23,7 +23,7 @@ namespace BudgetAppCross.Core.ViewModels
             base.ViewAppearing();
             
             await navigationService.Navigate<MenuViewModel>();
-            await navigationService.Navigate<BankOverviewViewModel>();
+            await navigationService.Navigate<DateRangeViewModel>();
         }
 
         public override async void ViewDestroy(bool viewFinishing = true)

@@ -50,9 +50,9 @@
                                     <CheckBox VerticalOptions="Center"
                                           HorizontalOptions="Center"
                                           IsChecked="{Binding IsPaid}"/>
-                                    <Entry Text="{Binding AmountDue}"
+                                    <Entry Text="{Binding Amount}"
                                            WidthRequest="70"/>
-                                    <DatePicker Date="{Binding DueDate}"
+                                    <DatePicker Date="{Binding Date}"
                                                 WidthRequest="100"/>
                                 </StackLayout>
                             </ViewCell>

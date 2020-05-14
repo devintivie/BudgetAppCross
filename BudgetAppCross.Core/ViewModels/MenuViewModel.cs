@@ -88,6 +88,7 @@ namespace BudgetAppCross.Core.ViewModels
 
             PageList = new MvxObservableCollection<NavigablePage>()
             {
+                NavigablePage.Paycheck,
                 NavigablePage.BillList,
                 NavigablePage.Agenda,
                 NavigablePage.BankOverview,
@@ -113,6 +114,9 @@ namespace BudgetAppCross.Core.ViewModels
             //}
             switch (SelectedPage)
             {
+                case NavigablePage.Paycheck:
+                    await navigationService.Navigate<DateRangeViewModel>();
+                    break;
                 case NavigablePage.BillList:
                     await navigationService.Navigate<BudgetListViewModel>();
                     break;

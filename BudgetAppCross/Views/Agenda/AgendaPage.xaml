@@ -77,7 +77,7 @@
                         <Grid>
                             --><!--<StackLayout Grid.Column="1" VerticalOptions="Center">
                                     <Label Text="{Binding Company}" />
-                                    <Label Text="{Binding AmountDue}" />
+                                    <Label Text="{Binding Amount}" />
                                 </StackLayout>--><!--
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="{Binding Company}"
@@ -86,7 +86,7 @@
                                           HorizontalOptions="Center"
                                           IsChecked="{Binding IsPaid}"
                                           />
-                                <Entry Text="{Binding AmountDue}"
+                                <Entry Text="{Binding Amount}"
                                            WidthRequest="70"/>
                                 <Entry Text="{Binding Confirmation}"
                                            WidthRequest="120"/>

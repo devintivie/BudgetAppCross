@@ -38,7 +38,7 @@ namespace BudgetAppCross.Core.ViewModels
         public NewBillTrackerViewModel(IMvxNavigationService nav)
         {
             navigationService = nav;
-            BillTracker = new BillTracker("New Company");
+            BillTracker = new BillTracker("");
 
             SaveCommand = new Command(async () => await OnSave());
         }

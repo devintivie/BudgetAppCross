@@ -1,13 +1,15 @@
 ﻿using BudgetAppCross.Models;
-using MvvmCross.ViewModels;
+using MvvmCross.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class AgendaBillViewModel : BaseViewModel
+    public class PaycheckBillViewModel : BaseViewModel
     {
         #region Fields
 
@@ -87,7 +89,7 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        public AgendaBillViewModel(AgendaBill bill)
+        public PaycheckBillViewModel(AgendaBill bill)
         {
             AgendaBill = bill;
         }
@@ -95,7 +97,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         #region Methods
 
-        
+
         #endregion
 
     }

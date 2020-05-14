@@ -7,28 +7,28 @@ using System.Text;
 namespace BudgetAppCross.Models
 {
     [Serializable]
-    public class Bill : IComparable
+    public class Bill : IComparable//, ITransaction
     {
         #region Fields
         const string DEFAULT_CONFIRMATION = "None";
         #endregion
 
         #region Properties
-        private DateTime dueDate;
-        public DateTime DueDate
+        private DateTime date;
+        public DateTime Date
         {
-            get { return dueDate; }
+            get { return date; }
             set
             {
-                if (dueDate != value)
+                if (date != value)
                 {
-                    dueDate = value;
+                    date = value;
                     GetBillStatus();
                 }
             }
         }
 
-        public double AmountDue { get; set; }
+        public double Amount { get; set; }
         public string Confirmation { get; set; }
 
         private bool isPaid;
@@ -78,8 +78,8 @@ namespace BudgetAppCross.Models
 
         public Bill(double iAmount, DateTime iDueDate, string acctID = "0000")
         {
-            DueDate = iDueDate;
-            AmountDue = iAmount;
+            Date = iDueDate;
+            Amount = iAmount;
             Confirmation = DEFAULT_CONFIRMATION;
             IsPaid = false;
             AccountID = acctID;
@@ -90,7 +90,7 @@ namespace BudgetAppCross.Models
         #region Methods
         private void GetBillStatus()
         {
-            BillStatus = BillStatusHelper.GetBillStatus(DateTime.Today, DueDate, IsPaid, IsAuto);
+            BillStatus = BillStatusHelper.GetBillStatus(DateTime.Today, Date, IsPaid, IsAuto);
         }
 
         public int CompareTo(object obj)
@@ -105,7 +105,7 @@ namespace BudgetAppCross.Models
             if (obj == null) return 1;
 
             if (obj is Bill otherBill)
-                return DueDate.CompareTo(otherBill.DueDate);
+                return Date.CompareTo(otherBill.Date);
             else
                 throw new ArgumentException("Object is not a Bill Object");
 
@@ -117,25 +117,25 @@ namespace BudgetAppCross.Models
         /// </summary>
         public static int CompareBillDate(Bill bill1, Bill bill2)
         {
-            var dateCompare = (bill1.DueDate - bill2.DueDate).TotalDays;
+            var dateCompare = (bill1.Date - bill2.Date).TotalDays;
             return (int)dateCompare;
 
         }
 
         /// <summary>
-        /// Positive if date occurs after bill.DueDate, Negative if bill is before bill.DueDate
-        /// 0 if bill.DueDate is on same day as date
+        /// Positive if date occurs after bill.Date, Negative if bill is before bill.Date
+        /// 0 if bill.Date is on same day as date
         /// </summary>
         public static int CompareDate(Bill bill, DateTime date)
         {
-            var dateCompare = (bill.DueDate - date).TotalDays;
+            var dateCompare = (bill.Date - date).TotalDays;
             return (int)dateCompare;
         }
 
         override public string ToString()
         {
-            string amountString = AmountDue.ToString("C", CultureInfo.CurrentCulture);
-            string tempString = String.Format("{0} is due on {1:D}", AmountDue.ToString("C", CultureInfo.CurrentCulture), DueDate);
+            string amountString = Amount.ToString("C", CultureInfo.CurrentCulture);
+            string tempString = String.Format("{0} is due on {1:D}", Amount.ToString("C", CultureInfo.CurrentCulture), Date);
 
             if (isPaid)
             {
