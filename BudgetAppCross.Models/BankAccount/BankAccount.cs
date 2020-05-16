@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BudgetAppCross.Models
 {
-    public class BankAccount
+    public class BankAccount// : IAccountInfo
     {
         #region Fields
 
@@ -15,7 +15,7 @@ namespace BudgetAppCross.Models
         public double Balance { get; set; }
         
         //Used in app only, no external reference
-        public string UniqueID { get; set; }
+        public string AccountID { get; set; }
 
         //Useful name i.e. Main Account, Savings, College etc.
         //Unique
@@ -26,8 +26,8 @@ namespace BudgetAppCross.Models
         //Bank name who holds account i.e. Chase, Wells Fargo etc.
         //Does not need to be unique
         public string BankName { get; set; }
-        
-        
+
+
         #endregion
 
         #region Constructors
@@ -40,7 +40,7 @@ namespace BudgetAppCross.Models
             AccountNumber = account;
             BankName = bank;
             Nickname = nickname;
-            UniqueID = uid;
+            AccountID = uid;
         }
         #endregion
 

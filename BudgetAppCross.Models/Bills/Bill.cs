@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -7,13 +8,15 @@ using System.Text;
 namespace BudgetAppCross.Models
 {
     [Serializable]
-    public class Bill : IComparable//, ITransaction
+    public class Bill : IComparable
     {
         #region Fields
         const string DEFAULT_CONFIRMATION = "None";
         #endregion
 
         #region Properties
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
         private DateTime date;
         public DateTime Date
         {
@@ -29,7 +32,7 @@ namespace BudgetAppCross.Models
         }
 
         public double Amount { get; set; }
-        public string Confirmation { get; set; }
+        public string Payee { get; set; }
 
         private bool isPaid;
         public bool IsPaid
@@ -60,9 +63,10 @@ namespace BudgetAppCross.Models
         }
 
 
-        public string AccountID { get; set; }
-        [JsonIgnore]
+        //public string AccountID { get; set; }
+        [JsonIgnore][Ignore]
         public BillStatus BillStatus { get; set; }
+        public string Confirmation { get; set; }
 
 
         #endregion
@@ -70,19 +74,18 @@ namespace BudgetAppCross.Models
         #region Constructors
         public Bill() : this(0.0, DateTime.Now.Date.AddDays(7)) { }
 
-        public Bill(int month, int day, string acctID = "0000") : this(0, month, day, acctID) { }
+        public Bill(int month, int day) : this(0, month, day) { }
 
-        public Bill(double iAmount, int month, int day, string acctID = "0000") : this(iAmount, new DateTime(DateTime.Now.Year, month, day), acctID) { }
+        public Bill(double iAmount, int month, int day) : this(iAmount, new DateTime(DateTime.Now.Year, month, day)) { }
 
         //public Bill(double iAmount, int month, int day) : this(iAmount, new DateTime(DateTime.Now.Year, month, day), acctID) { }
 
-        public Bill(double iAmount, DateTime iDueDate, string acctID = "0000")
+        public Bill(double iAmount, DateTime iDueDate)
         {
             Date = iDueDate;
             Amount = iAmount;
             Confirmation = DEFAULT_CONFIRMATION;
             IsPaid = false;
-            AccountID = acctID;
             GetBillStatus();
         }
         #endregion

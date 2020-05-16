@@ -5,17 +5,18 @@ using MvvmCross.ViewModels;
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using SQLite;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class MainViewModel : MvxViewModel
+    public class MainViewModel : BaseViewModel//MvxViewModel
     {
         readonly IMvxNavigationService navigationService;
         public MainViewModel(IMvxNavigationService navService)
         {
             navigationService = navService;
 
-            StateManager.Instance.LoadFromFile();
+            
         }
 
         public override async void ViewAppearing()
@@ -23,14 +24,14 @@ namespace BudgetAppCross.Core.ViewModels
             base.ViewAppearing();
             
             await navigationService.Navigate<MenuViewModel>();
-            await navigationService.Navigate<DateRangeViewModel>();
+            await navigationService.Navigate<BudgetListViewModel>();
         }
 
         public override async void ViewDestroy(bool viewFinishing = true)
         {
             base.ViewDestroy(viewFinishing);
 
-            await StateManager.Instance.SaveToFile();
+            //await StateManager.Instance.SaveToFile();
         }
 
     }

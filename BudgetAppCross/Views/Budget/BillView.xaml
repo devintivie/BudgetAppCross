@@ -10,18 +10,21 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="130"/>
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
+            <Entry Text="{Binding Payee}"
+                   Grid.Column="0"/>
             <CheckBox IsChecked="{Binding IsPaid}"
-                      Grid.Column="0"
+                      Grid.Column="1"
                       VerticalOptions="Center"
                       HorizontalOptions="Center"
                       />
             <Entry Text="{Binding Amount}"
-                   Grid.Column="1"/>
+                   Grid.Column="2"/>
             <DatePicker Date="{Binding Date}"
-                        Grid.Column="2"/>
+                        Grid.Column="3"/>
         </Grid>
 
         <!--<RefreshView >

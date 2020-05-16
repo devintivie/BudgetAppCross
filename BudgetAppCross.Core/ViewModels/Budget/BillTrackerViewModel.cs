@@ -21,19 +21,8 @@ namespace BudgetAppCross.Core.ViewModels
         #region Properties
         public BillTracker BillTracker { get; private set; }
 
-        //private BillTracker billTracker;
-        //public BillTracker BillTracker
-        //{
-        //    get { return billTracker; }
-        //    private set
-        //    {
-        //        SetProperty(ref billTracker, value);
-        //    }
-        //}
-
-
-        private ObservableCollection<Bill> bills;
-        public ObservableCollection<Bill> Bills
+        private ObservableCollection<BillViewModel> bills = new ObservableCollection<BillViewModel>();
+        public ObservableCollection<BillViewModel> Bills
         {
             get { return bills; }
             private set
@@ -42,8 +31,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private Bill selectedBill;
-        public Bill SelectedBill
+        private BillViewModel selectedBill;
+        public BillViewModel SelectedBill
         {
             get { return selectedBill; }
             set
@@ -110,14 +99,14 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnAddBill()
         {
-            var result = await navigationService.Navigate<NewBillViewModel, string, Bill>(BillTracker.CompanyName);
+            //var result = await navigationService.Navigate<NewBillViewModel, string, Bill>(BillTracker.CompanyName);
 
-            if(result != null)
-            {
-                BillManager.AddBill(BillTracker.CompanyName, result);
-            }
+            //if(result != null)
+            //{
+            //    BillManager.AddBill(BillTracker.CompanyName, result);
+            //}
 
-            UpdateBills();
+            //UpdateBills();
 
         }
 
@@ -125,7 +114,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private void OnDeleteBill()
         {
-            BillManager.DeleteBill(BillTracker.CompanyName, SelectedBill);
+            //BillManager.DeleteBill(BillTracker.CompanyName, SelectedBill);
             UpdateBills();
         }
 
@@ -146,7 +135,12 @@ namespace BudgetAppCross.Core.ViewModels
 
         private void UpdateBills()
         {
-            Bills = new ObservableCollection<Bill>(BillTracker.Bills);
+            //Bills = new ObservableCollection<Bill>(BillTracker.Bills);
+            Bills.Clear();
+            foreach (var item in BillTracker.Bills)
+            {
+                Bills.Add(new BillViewModel(item));
+            }
         }
         #endregion
 

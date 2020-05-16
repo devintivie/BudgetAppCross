@@ -21,6 +21,8 @@ namespace BudgetAppCross.Core.ViewModels
         public StateManager StateManager => StateManager.Instance;
         public BankAccountManager BankAccountManager => BankAccountManager.Instance;
 
+        public BudgetDatabase BudgetDatabase => BudgetDatabase.Instance;
+
         private bool isBusy;
         public bool IsBusy
         {

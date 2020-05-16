@@ -38,15 +38,15 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private ObservableCollection<TransactionViewModel> transactions = new ObservableCollection<TransactionViewModel>();
-        public ObservableCollection<TransactionViewModel> Transactions
-        {
-            get { return transactions; }
-            set
-            {
-                SetProperty(ref transactions, value);
-            }
-        }
+        //private ObservableCollection<TransactionViewModel> transactions = new ObservableCollection<TransactionViewModel>();
+        //public ObservableCollection<TransactionViewModel> Transactions
+        //{
+        //    get { return transactions; }
+        //    set
+        //    {
+        //        SetProperty(ref transactions, value);
+        //    }
+        //}
 
 
         #endregion
@@ -61,21 +61,21 @@ namespace BudgetAppCross.Core.ViewModels
             navigationService = navigation;
             Title = "Paycheck View";
 
-            var data = (from bts in BillManager.AllTrackers
-                        from bill in bts.Bills
-                        select new AgendaBill
-                        {
-                            Company = bts.CompanyName,
-                            Amount = bill.Amount,
-                            Date = bill.Date,
-                            IsPaid = bill.IsPaid,
-                            Confirmation = bill.Confirmation
-                        }).ToList();
+            //var data = (from bts in BillManager.AllTrackers
+            //            from bill in bts.Bills
+            //            select new AgendaBill
+            //            {
+            //                Company = bts.CompanyName,
+            //                Amount = bill.Amount,
+            //                Date = bill.Date,
+            //                IsPaid = bill.IsPaid,
+            //                Confirmation = bill.Confirmation
+            //            }).ToList();
 
-            foreach (var item in data)
-            {
+            //foreach (var item in data)
+            //{
 
-            }
+            //}
 
             //foreach (var group in billGroups)
             //{

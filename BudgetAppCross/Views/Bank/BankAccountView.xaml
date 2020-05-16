@@ -13,7 +13,7 @@
                    FontSize="Title"/>
             <Label Text="{Binding Balance}"
                    FontSize="Title"/>
-            <Label Text="{Binding UniqueID}"
+            <Label Text="{Binding AccountID}"
                    FontSize="Title"/>
         </StackLayout>
     </ContentView.Content>

@@ -42,7 +42,7 @@ namespace BudgetAppCross.Core.Services
             {
                 var budgetSave = new BudgetModel
                 {
-                    BillData = BillManager.AllTrackers,
+                    //BillData = BillManager.AllTrackers,
                     BankAccounts = BankAccountManager.AllAccounts
                    
                 };
@@ -65,7 +65,7 @@ namespace BudgetAppCross.Core.Services
             BillManager.Clear();
             foreach(var bd in model.BillData)
             {
-                BillManager.AddTracker(bd);
+                //BillManager.AddTracker(bd);
             }
 
             foreach(var ba in model.BankAccounts)
@@ -75,6 +75,7 @@ namespace BudgetAppCross.Core.Services
 
             Console.WriteLine(model.ToString());
         }
+
         #endregion
 
     }

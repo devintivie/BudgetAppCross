@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EbpoVBK5I2Oc0Wa8eov37RhUtvagueEQk8En27OeZF/BCe85J6HPyQE3Q3z58vhn0ah9imgkje4KFIVSgMKGqA==",
+  "dgSpecHash": "6OhXUPJ2IysihQpc3mKq5RqniI/TzntgHZQHc05373GNdkysrazsw2JdSJPGQf3sa5uo0vTN2qqyzWAT69MJQg==",
   "success": true,
   "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,10 @@
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.forms\\6.4.2\\mvvmcross.forms.6.4.2.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\sqlite\\3.13.0\\sqlite.3.13.0.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\sqlite-net-pcl\\1.6.292\\sqlite-net-pcl.1.6.292.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\sqlitepclraw.bundle_green\\1.1.13\\sqlitepclraw.bundle_green.1.1.13.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\sqlitepclraw.core\\1.1.13\\sqlitepclraw.core.1.1.13.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.2.0.815419\\xamarin.forms.4.2.0.815419.nupkg.sha512"
   ],
   "logs": []

@@ -34,7 +34,7 @@ namespace BudgetAppCross.Core.Services
 
         private bool CanAddAccount(BankAccount ba)
         {
-            return CanAddAccount(ba.Nickname, ba.UniqueID);
+            return CanAddAccount(ba.Nickname, ba.AccountID);
         }
         private bool CanAddAccount(string name, string id)
         {
@@ -50,23 +50,23 @@ namespace BudgetAppCross.Core.Services
         public void AddAccount(BankAccount ba)
         {
             var random = new Random();
-            if (ba.UniqueID.Equals("0000"))
+            if (ba.AccountID.Equals("0000"))
             {
                 do
                 {
-                    ba.UniqueID = new string(Enumerable.Repeat("0123456789", 4).Select(s => s[random.Next(s.Length)]).ToArray());
+                    ba.AccountID = new string(Enumerable.Repeat("0123456789", 4).Select(s => s[random.Next(s.Length)]).ToArray());
 
-                } while (AccountsByID.ContainsKey(ba.UniqueID));
+                } while (AccountsByID.ContainsKey(ba.AccountID));
             }
             if (CanAddAccount(ba))
             {
                 AccountsByName.Add(ba.Nickname, ba);
-                AccountsByID.Add(ba.UniqueID, ba);
+                AccountsByID.Add(ba.AccountID, ba);
                 AllAccounts.Add(ba);
             }
-            if(!AccountsByID.ContainsKey(ba.UniqueID))
+            if(!AccountsByID.ContainsKey(ba.AccountID))
             {
-                AccountsByID.Add(ba.UniqueID, ba);
+                AccountsByID.Add(ba.AccountID, ba);
             }
         }
 
@@ -86,7 +86,7 @@ namespace BudgetAppCross.Core.Services
 
         public void DeleteAccount(BankAccount account)
         {
-            AccountsByID.Remove(account.UniqueID);
+            AccountsByID.Remove(account.AccountID);
             AccountsByName.Remove(account.Nickname);
             AllAccounts.Remove(account);
         }

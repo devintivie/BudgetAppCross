@@ -4,18 +4,12 @@ using System.Text;
 
 namespace BudgetAppCross.Models
 {
-    public class Transaction : ITransaction
+    public interface ITransaction : IAccountInfo
     {
-        public DateTime Date { get; set; }
-        public double Amount { get; set; }
-        public string Confirmation { get; set; }
-
-        public Transaction()
-        {
-            Date = DateTime.Now;
-            Confirmation = "-";
-            Amount = 0;
-        }
+        string SourceDest { get; set; }
+        DateTime Date { get; set; }
+        double Amount { get; set; }
+        string Confirmation { get; set; }
     }
 
 }

@@ -27,8 +27,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private ObservableCollection<AgendaBillViewModel> bills = new ObservableCollection<AgendaBillViewModel>();
-        public ObservableCollection<AgendaBillViewModel> Bills
+        private ObservableCollection<BillViewModel> bills = new ObservableCollection<BillViewModel>();
+        public ObservableCollection<BillViewModel> Bills
         {
             get { return bills; }
             set
@@ -60,7 +60,25 @@ namespace BudgetAppCross.Core.ViewModels
             Date = datagroup.Key;
             foreach (var item in datagroup)
             {
-                Bills.Add(new AgendaBillViewModel(item));
+                Bills.Add(new BillViewModel(item));
+            }
+
+            MessagingCenter.Subscribe<AgendaBillViewModel>(this, "UpdateTotal", async (obj) => OnUpdateTotal());
+
+            //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+            //{
+            //    var newItem = item as Item;
+            //    Items.Add(newItem);
+            //    await DataStore.AddItemAsync(newItem);
+            //});
+        }
+
+        public AgendaEntryViewModel(Grouping<DateTime, Bill> datagroup)
+        {
+            Date = datagroup.Key;
+            foreach (var item in datagroup)
+            {
+                Bills.Add(new BillViewModel(item));
             }
 
             MessagingCenter.Subscribe<AgendaBillViewModel>(this, "UpdateTotal", async (obj) => OnUpdateTotal());

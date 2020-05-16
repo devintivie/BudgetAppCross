@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class NewBillViewModel : MvxViewModel<string, Bill>
+    public class NewBillViewModel : MvxViewModel//<string, Bill>
     {
         #region Fields
         private IMvxNavigationService navigationService;
@@ -20,15 +20,6 @@ namespace BudgetAppCross.Core.ViewModels
 
         #region Properties
 
-        private string companyName;
-        public string CompanyName => companyName;
-        //{
-        //    get { return companyName; }
-        //    set
-        //    {
-        //        SetProperty(ref companyName, value);
-        //    }
-        //}
         private Bill bill;
         public Bill Bill
         {
@@ -56,16 +47,18 @@ namespace BudgetAppCross.Core.ViewModels
             CancelCommand = new Command(async () => await OnCancel());
         }
 
-        public override void Prepare(string parameter)
-        {
-            companyName = parameter;
-        }
+        //public override void Prepare(string parameter)
+        //{
+        //    companyName = parameter;
+        //}
         #endregion
 
         #region Methods
         private async Task OnSave()
         {
-            await navigationService.Close(this, Bill);
+            //await navigationService.Close(this, Bill);
+            await BudgetDatabase.Instance.SaveBillAsync(Bill);
+            await navigationService.Close(this);
         }
 
         private async Task OnCancel()

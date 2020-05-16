@@ -49,7 +49,7 @@ namespace BudgetAppCross.Core.ViewModels
         #region Methods
         private async Task OnSave()
         {
-            BillManager.Instance.AddTracker(BillTracker);
+            //BillManager.Instance.AddTracker(BillTracker);
             await navigationService.Close(this);
         }
         #endregion

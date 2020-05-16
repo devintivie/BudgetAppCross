@@ -16,18 +16,20 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
-                <Label Text="Paid?"
+                
+                <!--Payee-->
+                <Label Text="Payee"
                        Grid.Row="0" Grid.Column="0"
                        VerticalOptions="Center"
-                       FontSize="Large"
-                       />
-                <CheckBox IsChecked="{Binding Bill.IsPaid}"
-                          Grid.Row="1" Grid.Column="0"
-                          VerticalOptions="Center"
-                          HorizontalOptions="Center"
-                          />
+                       FontSize="Large"/>
+                <Entry Text="{Binding Bill.Payee}" 
+                       Grid.Row="1" Grid.Column="0"
+                       WidthRequest="130"/>
+                
+                <!--Amount Due-->
                 <Label Text="Amount Due"
                        Grid.Row="0" Grid.Column="1"
                        VerticalOptions="Center"
@@ -37,12 +39,26 @@
                        Focused="Entry_Focused"
                        Unfocused="Entry_Unfocused"
                        WidthRequest="130"/>
-                <Label Text="Due Date"
+
+                <!--IsPaid-->
+                <Label Text="Paid?"
                        Grid.Row="0" Grid.Column="2"
+                       VerticalOptions="Center"
+                       FontSize="Large"
+                       />
+                <CheckBox IsChecked="{Binding Bill.IsPaid}"
+                          Grid.Row="1" Grid.Column="2"
+                          VerticalOptions="Center"
+                          HorizontalOptions="Center"
+                          />
+
+                <!--Date-->
+                <Label Text="Due Date"
+                       Grid.Row="0" Grid.Column="3"
                        VerticalOptions="Center"
                        FontSize="Large"/>
                 <DatePicker Date="{Binding Bill.Date}"
-                            Grid.Row="1" Grid.Column="2"
+                            Grid.Row="1" Grid.Column="3"
                             WidthRequest="100"/>
                 <!--<Button Text="{Binding Date, Converter={cvt:DateOnlyConverter}}"/>-->
             </Grid>

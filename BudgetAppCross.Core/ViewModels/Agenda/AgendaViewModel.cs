@@ -45,7 +45,7 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private List<Grouping<DateTime, AgendaBill>> billGroups = new List<Grouping<DateTime, AgendaBill>>();
+        //private List<Grouping<DateTime, AgendaBill>> billGroups = new List<Grouping<DateTime, AgendaBill>>();
 
         #endregion
 
@@ -58,40 +58,40 @@ namespace BudgetAppCross.Core.ViewModels
             navigationService = navigation;
             Title = "Agenda";
 
-            //Entries = new ObservableCollection<AgendaBillViewModel>();
-            var data = (from bts in BillManager.AllTrackers
-                        from bill in bts.Bills
-                        select new AgendaBill
-                        {
-                            Company = bts.CompanyName,
-                            Amount = bill.Amount,
-                            Date = bill.Date,
-                            IsPaid = bill.IsPaid
-                        }).ToList();
+            ////Entries = new ObservableCollection<AgendaBillViewModel>();
+            //var data = (from bts in BillManager.AllTrackers
+            //            from bill in bts.Bills
+            //            select new AgendaBill
+            //            {
+            //                Company = bts.CompanyName,
+            //                Amount = bill.Amount,
+            //                Date = bill.Date,
+            //                IsPaid = bill.IsPaid
+            //            }).ToList();
 
-            //foreach (var bill in data)
+            ////foreach (var bill in data)
+            ////{
+            ////    Entries.Add(new AgendaBillViewModel(bill));
+            ////}
+
+            //billGroups = (from entry in data
+            //              orderby entry.Date
+            //              group entry by entry.Date into agendaGroup
+            //              select new Grouping<DateTime, AgendaBill>(agendaGroup.Key, agendaGroup)).ToList();
+
+            //foreach (var group in billGroups)
             //{
-            //    Entries.Add(new AgendaBillViewModel(bill));
+            //    var dt = DateTime.Today.AddDays(-4);
+            //    var dt2 = DateTime.Today.AddMonths(2);
+            //    if(group.Key >= dt && group.Key <= dt2)
+            //    {
+            //        BillsGrouped.Add(new AgendaEntryViewModel(group));
+            //    }
+                
             //}
 
-            billGroups = (from entry in data
-                          orderby entry.Date
-                          group entry by entry.Date into agendaGroup
-                          select new Grouping<DateTime, AgendaBill>(agendaGroup.Key, agendaGroup)).ToList();
 
-            foreach (var group in billGroups)
-            {
-                var dt = DateTime.Today.AddDays(-4);
-                var dt2 = DateTime.Today.AddMonths(2);
-                if(group.Key >= dt && group.Key <= dt2)
-                {
-                    BillsGrouped.Add(new AgendaEntryViewModel(group));
-                }
-                
-            }
-
-
-            Console.WriteLine();
+            //Console.WriteLine();
 
             /*
             //Works well but can't see any property changed from item template, trying viewmodel approach
@@ -124,17 +124,28 @@ namespace BudgetAppCross.Core.ViewModels
         {
             base.ViewAppeared();
 
-
+            LoadAgenda();
         }
 
-        public override async void ViewDestroy(bool viewFinishing = true)
+        private async void LoadAgenda()
         {
-            base.ViewDestroy(viewFinishing);
-
-            BillManager.Update(billGroups);
-
-            await StateManager.SaveToFile();
+            var bills = await BudgetDatabase.GetBillsAsync();
+            var data = (bills.GroupBy(x => x.Date)
+                .Select(groupedTable => new Grouping<DateTime, Bill>(groupedTable.Key, groupedTable))).ToList();
+            BillsGrouped.Clear();
+            foreach (var item in data)
+            {
+                BillsGrouped.Add(new AgendaEntryViewModel(item));
+            }
         }
+        //public override async void ViewDestroy(bool viewFinishing = true)
+        //{
+        //    base.ViewDestroy(viewFinishing);
+
+        //    //BillManager.Update(billGroups);
+
+        //    //await StateManager.SaveToFile();
+        //}
 
 
         #endregion
