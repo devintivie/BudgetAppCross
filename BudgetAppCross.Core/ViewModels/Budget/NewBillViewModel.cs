@@ -57,7 +57,7 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task OnSave()
         {
             //await navigationService.Close(this, Bill);
-            await BudgetDatabase.Instance.SaveBillAsync(Bill);
+            await BudgetDatabase.Instance.SaveBill(Bill);
             await navigationService.Close(this);
         }
 

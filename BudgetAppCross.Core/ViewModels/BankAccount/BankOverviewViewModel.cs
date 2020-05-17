@@ -64,7 +64,7 @@ namespace BudgetAppCross.Core.ViewModels
             base.ViewAppeared();
             SelectedAccount = null;
             //Accounts = new ObservableCollection<BankAccount>(BankAccountManager.AllAccounts);
-            var accts = await BudgetDatabase.GetBankAccountsAsync();
+            var accts = await BudgetDatabase.GetBankAccounts();
 
             Accounts.Clear();
             foreach (var item in accts)
@@ -83,8 +83,8 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async void OnDeleteAccount()
         {
-            var count = await BudgetDatabase.DeleteBankAccountAsync(SelectedAccount.BankAccount);
-            Console.WriteLine(count); 
+            await BudgetDatabase.DeleteBankAccount(SelectedAccount.BankAccount);
+            //Console.WriteLine(count); 
             //BankAccountManager.DeleteAccount(SelectedAccount);
             Accounts.Remove(selectedAccount);
         }

@@ -129,7 +129,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async void LoadAgenda()
         {
-            var bills = await BudgetDatabase.GetBillsAsync();
+            var bills = await BudgetDatabase.GetBills();
             var data = (bills.GroupBy(x => x.Date)
                         .OrderBy(x => x.Key)
                         .Select(groupedTable => new Grouping<DateTime, Bill>(groupedTable.Key, groupedTable))).ToList();

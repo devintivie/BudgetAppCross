@@ -38,7 +38,7 @@ namespace BudgetAppCross.Models
         #endregion
 
         #region Constructors
-        public BankAccount() : this(0, "-", "-", "My Account") { }
+        public BankAccount() { }// : this(0, "-", "-", "My Account") { }
 
         public BankAccount(double iBalance, string account, string bank, string nickname)
         {

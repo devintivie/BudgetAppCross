@@ -24,7 +24,7 @@ namespace BudgetAppCross.Core.ViewModels
                 var company = Bill.Payee;
                 Bill.Payee = value;
                 SetProperty(ref company, value);
-                BudgetDatabase.SaveBillAsync(Bill);
+                BudgetDatabase.SaveBill(Bill);
 
             }
         }
@@ -37,7 +37,7 @@ namespace BudgetAppCross.Core.ViewModels
                 var dueDate = Bill.Date;
                 Bill.Date = value;
                 SetProperty(ref dueDate, value);
-                BudgetDatabase.SaveBillAsync(Bill);
+                BudgetDatabase.SaveBill(Bill);
                 MessagingCenter.Send(this, "UpdateTotal");
 
             }
@@ -51,7 +51,7 @@ namespace BudgetAppCross.Core.ViewModels
                 var amountDue = Bill.Amount;
                 Bill.Amount = value;
                 SetProperty(ref amountDue, value);
-                BudgetDatabase.SaveBillAsync(Bill);
+                BudgetDatabase.SaveBill(Bill);
                 MessagingCenter.Send(this, "UpdateTotal");
             }
         }
@@ -64,7 +64,7 @@ namespace BudgetAppCross.Core.ViewModels
                 var confirmation = Bill.Confirmation;
                 Bill.Confirmation = value;
                 SetProperty(ref confirmation, value);
-                BudgetDatabase.SaveBillAsync(Bill);
+                BudgetDatabase.SaveBill(Bill);
             }
         }
 
@@ -76,7 +76,7 @@ namespace BudgetAppCross.Core.ViewModels
                 var isPaid = Bill.IsPaid;
                 Bill.IsPaid = value;
                 SetProperty(ref isPaid, value);
-                BudgetDatabase.SaveBillAsync(Bill);
+                BudgetDatabase.SaveBill(Bill);
             }
         }
 
@@ -88,7 +88,7 @@ namespace BudgetAppCross.Core.ViewModels
                 var isAuto = Bill.IsPaid;
                 Bill.IsPaid = value;
                 SetProperty(ref isAuto, value);
-                BudgetDatabase.SaveBillAsync(Bill);
+                BudgetDatabase.SaveBill(Bill);
             }
         }
 

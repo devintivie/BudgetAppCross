@@ -649,3 +649,5 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Deb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\SQLiteNetExtensions.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\SQLiteNetExtensions.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\System.Resources.ResourceManager.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\SQLiteNetExtensionsAsync.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\SQLiteNetExtensionsAsync.pdb

@@ -103,7 +103,7 @@ namespace BudgetAppCross.Core.ViewModels
         {
             try
             {
-                var bills = await BudgetDatabase.GetBillsAsync();
+                var bills = await BudgetDatabase.GetBills();
                 var data = (bills.GroupBy(x => x.Payee, StringComparer.OrdinalIgnoreCase)
                             .Select(groupedTable => new Grouping<string, Bill>(groupedTable.Key, groupedTable))).ToList();
                 Trackers.Clear();

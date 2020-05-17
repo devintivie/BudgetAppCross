@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BudgetAppCross.Models;
 using SQLite;
+using SQLiteNetExtensions.Extensions;
 //using SQLiteNetExtensionsAsync.Extensions;
 
 namespace BudgetAppCross.Core.Services
@@ -41,7 +42,7 @@ namespace BudgetAppCross.Core.Services
 
         void Initialize()
         {
-            File.Delete(Constants.DatabasePath);
+            //File.Delete(Constants.DatabasePath);
             if (!initialized)
             {
                 Database.CreateTable<BankAccount>(CreateFlags.None);
@@ -66,6 +67,159 @@ namespace BudgetAppCross.Core.Services
                 ////}
             }
         }
+
+        #region BankAccount
+        public async Task SaveBankAccount(BankAccount acct)
+        {
+            await Task.Run(() =>
+            {
+                if(acct.AccountID != 0)
+                {
+                    Database.UpdateWithChildren(acct);
+                }
+                else
+                {
+                    Database.InsertWithChildren(acct);
+                }
+            });
+        }
+
+        public async Task<List<BankAccount>> GetBankAccounts()
+        {
+            //var list = new List<BankAccount>();
+            return await Task.Run(() =>
+            {
+                return Database.GetAllWithChildren<BankAccount>();
+            });
+
+            //return list;
+        }
+
+        public async Task<BankAccount> GetBankAccount(int id)
+        {
+            return await Task.Run(() =>
+            {
+                return Database.GetWithChildren<BankAccount>(id);
+            });
+        }
+
+        public async Task DeleteBankAccount(BankAccount acct)
+        {
+            await Task.Run(() =>
+            {
+                Database.Delete(acct);
+            });
+        }
+
+        //public Task<int> DeleteBillAsync(Bill bill)
+        //{
+        //    return Database.DeleteAsync(bill);
+        //}
+        #endregion
+
+        #region Balance
+        public async Task SaveBalance(Balance balance)
+        {
+            await Task.Run(() =>
+            {
+                if (balance.AccountID != 0)
+                {
+                    Database.UpdateWithChildren(balance);
+                }
+                else
+                {
+                    Database.InsertWithChildren(balance);
+                }
+            });
+        }
+
+        public async Task<List<Balance>> GetBalances()
+        {
+            //var list = new List<BankAccount>();
+            return await Task.Run(() =>
+            {
+                return Database.GetAllWithChildren<Balance>();
+            });
+
+            //return list;
+        }
+
+        public async Task<Balance> GetBalance(int id)
+        {
+            return await Task.Run(() =>
+            {
+                return Database.GetWithChildren<Balance>(id);
+            });
+        }
+
+        public async Task<Balance> GetLatestBalanceAsync(DateTime date)
+        {
+            return await Task.Run(() =>
+            {
+                var list = Database.Table<Balance>().ToList();
+                return list.First();
+            });
+            //var list = Database.Table<Balance>().ToList();
+            //return list.FirstOrDefault();
+            //return await (Database.Table<Balance>().Where(bal => bal.Timestamp <= date)
+            //    .OrderByDescending(x => x.Timestamp)).FirstAsync();
+        }
+
+        public async Task DeleteBalance(Balance balance)
+        {
+            await Task.Run(() =>
+            {
+                Database.Delete(balance);
+            });
+        }
+        #endregion
+
+        #region Bill
+        public async Task SaveBill(Bill bill)
+        {
+            await Task.Run(() =>
+            {
+                if (bill.AccountID != 0)
+                {
+                    Database.UpdateWithChildren(bill);
+                }
+                else
+                {
+                    Database.InsertWithChildren(bill);
+                }
+            });
+        }
+
+        public async Task<List<Bill>> GetBills()
+        {
+            //var list = new List<BankAccount>();
+            return await Task.Run(() =>
+            {
+                return Database.GetAllWithChildren<Bill>();
+            });
+
+            //return list;
+        }
+
+        public async Task<Bill> GetBill(int id)
+        {
+            return await Task.Run(() =>
+            {
+                return Database.GetWithChildren<Bill>(id);
+            });
+        }
+
+        public async Task DeleteBill(Bill bill)
+        {
+            await Task.Run(() =>
+            {
+                Database.Delete(bill);
+            });
+        }
+        #endregion
+
+
+
 
 
 

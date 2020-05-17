@@ -107,7 +107,7 @@ namespace BudgetAppCross.Core.ViewModels
         #region Methods
         private async void LoadData()
         {
-            var bills = await BudgetDatabase.GetBillsAsync();
+            var bills = await BudgetDatabase.GetBills();
             var data = (bills.Where(x => x.Date >= StartDate && x.Date <= EndDate)
                         .OrderBy(x => x.Date)
                         .Select(bill => bill)).ToList();
