@@ -21,6 +21,9 @@ namespace BudgetAppCross.Models
 
         [ForeignKey(typeof(BankAccount))]
         public int AccountID { get; set; }
+        [ManyToOne(CascadeOperations =CascadeOperation.CascadeRead)]
+        public BankAccount BankAccount { get; set; }
+
 
         #endregion
 

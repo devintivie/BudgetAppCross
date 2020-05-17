@@ -29,9 +29,9 @@ namespace BudgetAppCross.Models
         //Does not need to be unique
         public string BankName { get; set; }
 
-        [OneToMany]
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Balance> History { get; set; } = new List<Balance>();
-        [OneToMany]
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Bill> Bills { get; set; } = new List<Bill>();
 
 

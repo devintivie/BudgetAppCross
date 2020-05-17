@@ -113,14 +113,16 @@ namespace BudgetAppCross.Core.ViewModels
             }
 
             //BankAccount.History.Add(new Balance(Balance, Date));
-            await BudgetDatabase.Instance.SaveBankAccountAsync(BankAccount);
             var bal = new Balance
             {
                 Amount = Balance,
                 Timestamp = Date,
                 //AccountID = BankAccount.AccountID
             };
+            BankAccount.History.Add(bal);
+            await BudgetDatabase.Instance.SaveBankAccountAsync(BankAccount);
 
+            bal.AccountID = BankAccount.AccountID;
             await BudgetDatabase.Instance.SaveBalanceAsync(bal);
             //await BudgetDatabase.Instance.SaveBalanceAsync(BankAccount.History.First());
             //BankAccountManager.Instance.AddAccount(BankAccount);
