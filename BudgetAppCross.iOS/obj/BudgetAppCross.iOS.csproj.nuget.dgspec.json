@@ -198,6 +198,10 @@
               "target": "Package",
               "version": "[12.0.3, )"
             },
+            "SQLiteNetExtensions": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.6.292, )"

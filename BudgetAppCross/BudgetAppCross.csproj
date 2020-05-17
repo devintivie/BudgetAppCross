@@ -75,12 +75,11 @@
     <Compile Update="Views\Bank\NewBankAccountPage.xaml.cs">
       <DependentUpon>NewBankAccountPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\DateRange\DateRangePage.xaml.cs">
+      <DependentUpon>DateRangePage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Transactions\TransactionView.xaml.cs">
       <DependentUpon>TransactionView.xaml</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\DateRange\" />
   </ItemGroup>
 </Project>

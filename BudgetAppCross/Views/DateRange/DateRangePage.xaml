@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BudgetAppCross.Views.DateRangePage"
+             xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
+             xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
+             x:TypeArguments="vms:DateRangeViewModel"
+             x:Name="currentPage"
+             Title="{Binding Title}"
+             >
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Text="Start Date" Grid.Row="0" Grid.Column="0"
+                       FontSize="Title"/>
+                <Label Text="End Date" Grid.Row="0" Grid.Column="1"
+                       FontSize="Title"/>
+                <DatePicker Date="{Binding StartDate}"
+                            Grid.Row="1" Grid.Column="0"
+                            FontSize="Title"/>
+                <DatePicker Date="{Binding EndDate}"
+                            Grid.Row="1" Grid.Column="1"
+                            FontSize="Title"/>
+            </Grid>
+            <StackLayout BindableLayout.ItemsSource="{Binding Transactions}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <controls:AgendaBillView/>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+                <!--<ListView ItemsSource="{Binding BillsGrouped}"
+                      MinimumHeightRequest="70"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <controls:AgendaEntryView/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+            </StackLayout>
+            <Label Text="{Binding DateRangeTotal}"
+                   FontSize="Title"/>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</views:MvxContentPage>
+
+
+
+
+<!--<ContentPage.Content>
+    <StackLayout>
+        <ListView IsGroupingEnabled="True"
+                      GroupDisplayBinding="{Binding Key}"
+                      GroupShortNameBinding="{Binding Key}"
+                      ItemsSource="{Binding MonkeysGrouped}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="{Binding Name}" />
+                                <Label Text="{Binding Location}" />
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage.Content>-->
+
+
+
+
+<!--<ContentPage.Content>
+    <StackLayout>
+        <ListView IsGroupingEnabled="True"
+                      GroupDisplayBinding="{Binding Key}"
+                      GroupShortNameBinding="{Binding Key}"
+                      ItemsSource="{Binding BillsGrouped}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            --><!--<StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="{Binding Company}" />
+                                    <Label Text="{Binding Amount}" />
+                                </StackLayout>--><!--
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Company}"
+                                           WidthRequest="150"/>
+                                <CheckBox VerticalOptions="Center"
+                                          HorizontalOptions="Center"
+                                          IsChecked="{Binding IsPaid}"
+                                          />
+                                <Entry Text="{Binding Amount}"
+                                           WidthRequest="70"/>
+                                <Entry Text="{Binding Confirmation}"
+                                           WidthRequest="120"/>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage.Content>-->
+
+
+
+<!--Working code for just datatemplate to viewmodel as wrapped model
+    simple listview-->
+<!--<StackLayout>
+    <ListView ItemsSource="{Binding Entries}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <controls:AgendaBillView/>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</StackLayout>-->

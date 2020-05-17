@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Acr.UserDialogs;
+using System.Linq;
 
 namespace BudgetAppCross.Core.ViewModels
 {
@@ -51,6 +52,28 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+        private DateTime date = DateTime.Today;
+        public DateTime Date
+        {
+            get { return date; }
+            set
+            {
+                SetProperty(ref date, value);
+            }
+        }
+
+        private double balance;
+        public double Balance
+        {
+            get { return balance; }
+            set
+            {
+                SetProperty(ref balance, value);
+            }
+        }
+
+
+
 
 
 
@@ -88,7 +111,19 @@ namespace BudgetAppCross.Core.ViewModels
                 UserDialogs.Instance.Alert(config);
                 return;
             }
-            BankAccountManager.Instance.AddAccount(BankAccount);
+
+            //BankAccount.History.Add(new Balance(Balance, Date));
+            await BudgetDatabase.Instance.SaveBankAccountAsync(BankAccount);
+            var bal = new Balance
+            {
+                Amount = Balance,
+                Timestamp = Date,
+                //AccountID = BankAccount.AccountID
+            };
+
+            await BudgetDatabase.Instance.SaveBalanceAsync(bal);
+            //await BudgetDatabase.Instance.SaveBalanceAsync(BankAccount.History.First());
+            //BankAccountManager.Instance.AddAccount(BankAccount);
             await navigationService.Close(this);
         }
 
@@ -100,14 +135,14 @@ namespace BudgetAppCross.Core.ViewModels
         private void BalanceFocused()
         {
             BalanceCursorPosition = 0;
-            BalanceSelectedLength = BankAccount.Balance.ToString().Length;
+            BalanceSelectedLength = Balance.ToString().Length;
         }
 
         private void BalanceUnfocused()
         {
-            if (string.IsNullOrWhiteSpace(BankAccount.Balance.ToString()))
+            if (string.IsNullOrWhiteSpace(Balance.ToString()))
             {
-                BankAccount.Balance = 0;
+                Balance = 0;
             }
         }
         #endregion

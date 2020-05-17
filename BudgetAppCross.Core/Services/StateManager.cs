@@ -18,8 +18,8 @@ namespace BudgetAppCross.Core.Services
         #endregion
 
         #region Properties
-        public BillManager BillManager => BillManager.Instance;
-        public BankAccountManager BankAccountManager => BankAccountManager.Instance;
+        //public BillManager BillManager => BillManager.Instance;
+        //public BankAccountManager BankAccountManager => BankAccountManager.Instance;
         #endregion
 
         #region Singleton
@@ -36,45 +36,45 @@ namespace BudgetAppCross.Core.Services
         #endregion 
 
         #region Methods
-        public async Task SaveToFile( )
-        {
-            await Task.Run(() =>
-            {
-                var budgetSave = new BudgetModel
-                {
-                    //BillData = BillManager.AllTrackers,
-                    BankAccounts = BankAccountManager.AllAccounts
+        //public async Task SaveToFile( )
+        //{
+        //    await Task.Run(() =>
+        //    {
+        //        var budgetSave = new BudgetModel
+        //        {
+        //            //BillData = BillManager.AllTrackers,
+        //            BankAccounts = BankAccountManager.AllAccounts
                    
-                };
+        //        };
 
-                using (StreamWriter file = File.CreateText(path))
-                {
-                    JsonSerializer serializer = new JsonSerializer();
-                    serializer.Serialize(file, budgetSave);
-                }
+        //        using (StreamWriter file = File.CreateText(path))
+        //        {
+        //            JsonSerializer serializer = new JsonSerializer();
+        //            serializer.Serialize(file, budgetSave);
+        //        }
 
-            });
-        }
+        //    });
+        //}
 
-        public async Task LoadFromFile()
-        {
-            var text = "";
-            await Task.Run(() => text = File.ReadAllText(path));
-            var model = JsonConvert.DeserializeObject<BudgetModel>(text);
+        //public async Task LoadFromFile()
+        //{
+        //    var text = "";
+        //    await Task.Run(() => text = File.ReadAllText(path));
+        //    var model = JsonConvert.DeserializeObject<BudgetModel>(text);
 
-            BillManager.Clear();
-            foreach(var bd in model.BillData)
-            {
-                //BillManager.AddTracker(bd);
-            }
+        //    BillManager.Clear();
+        //    foreach(var bd in model.BillData)
+        //    {
+        //        //BillManager.AddTracker(bd);
+        //    }
 
-            foreach(var ba in model.BankAccounts)
-            {
-                BankAccountManager.AddAccount(ba);
-            }
+        //    foreach(var ba in model.BankAccounts)
+        //    {
+        //        BankAccountManager.AddAccount(ba);
+        //    }
 
-            Console.WriteLine(model.ToString());
-        }
+        //    Console.WriteLine(model.ToString());
+        //}
 
         #endregion
 

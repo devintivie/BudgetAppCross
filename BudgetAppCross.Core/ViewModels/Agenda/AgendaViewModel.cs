@@ -131,7 +131,8 @@ namespace BudgetAppCross.Core.ViewModels
         {
             var bills = await BudgetDatabase.GetBillsAsync();
             var data = (bills.GroupBy(x => x.Date)
-                .Select(groupedTable => new Grouping<DateTime, Bill>(groupedTable.Key, groupedTable))).ToList();
+                        .OrderBy(x => x.Key)
+                        .Select(groupedTable => new Grouping<DateTime, Bill>(groupedTable.Key, groupedTable))).ToList();
             BillsGrouped.Clear();
             foreach (var item in data)
             {

@@ -18,35 +18,48 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Properties
-        private DateTime startDate;
+        private DateTime startDate = DateTime.Today;
         public DateTime StartDate
         {
             get { return startDate; }
             set
             {
                 SetProperty(ref startDate, value);
+                LoadData();
             }
         }
 
-        private DateTime endDate;
+        private DateTime endDate = DateTime.Today.AddDays(14);
         public DateTime EndDate
         {
             get { return endDate; }
             set
             {
                 SetProperty(ref endDate, value);
+                LoadData();
             }
         }
 
-        //private ObservableCollection<TransactionViewModel> transactions = new ObservableCollection<TransactionViewModel>();
-        //public ObservableCollection<TransactionViewModel> Transactions
-        //{
-        //    get { return transactions; }
-        //    set
-        //    {
-        //        SetProperty(ref transactions, value);
-        //    }
-        //}
+        private ObservableCollection<BillViewModel> transactions = new ObservableCollection<BillViewModel>();
+        public ObservableCollection<BillViewModel> Transactions
+        {
+            get { return transactions; }
+            set
+            {
+                SetProperty(ref transactions, value);
+            }
+        }
+
+        private double dateRangeTotal;
+        public double DateRangeTotal
+        {
+            get { return dateRangeTotal; }
+            set
+            {
+                SetProperty(ref dateRangeTotal, value);
+            }
+        }
+
 
 
         #endregion
@@ -60,6 +73,8 @@ namespace BudgetAppCross.Core.ViewModels
         {
             navigationService = navigation;
             Title = "Paycheck View";
+
+            LoadData();
 
             //var data = (from bts in BillManager.AllTrackers
             //            from bill in bts.Bills
@@ -90,7 +105,25 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Methods
+        private async void LoadData()
+        {
+            var bills = await BudgetDatabase.GetBillsAsync();
+            var data = (bills.Where(x => x.Date >= StartDate && x.Date <= EndDate)
+                        .OrderBy(x => x.Date)
+                        .Select(bill => bill)).ToList();
+            Transactions.Clear();
 
+            foreach (var item in data)
+            {
+                Transactions.Add(new BillViewModel(item));
+            }
+
+            //BillsGrouped.Clear();
+            //foreach (var item in data)
+            //{
+            //    BillsGrouped.Add(new AgendaEntryViewModel(item));
+            //}
+        }
         #endregion
 
     }

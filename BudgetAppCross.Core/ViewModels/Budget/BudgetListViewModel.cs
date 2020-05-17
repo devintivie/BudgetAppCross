@@ -65,8 +65,8 @@ namespace BudgetAppCross.Core.ViewModels
             AddBTCommand = new Command(async () => await navigationService.Navigate<NewBillViewModel>());
             EditCommand = new Command(async () => await OnEdit());
             DeleteCommand = new Command(async () => await OnDelete());
-            SaveBudgetCommand = new Command(async() => await OnSaveBudget());
-            LoadBudgetCommand = new Command(async () => await OnLoadBudget());
+            //SaveBudgetCommand = new Command(async() => await OnSaveBudget());
+            //LoadBudgetCommand = new Command(async () => await OnLoadBudget());
             RefreshItemsCommand = new Command(async () => await OnRefresh());
 
             
@@ -101,14 +101,23 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async void LoadBills()
         {
-            var bills = await BudgetDatabase.GetBillsAsync();
-            var data = (bills.GroupBy(x => x.Payee, StringComparer.OrdinalIgnoreCase)
-                .Select(groupedTable => new Grouping<string, Bill>(groupedTable.Key, groupedTable))).ToList();
-            Trackers.Clear();
-            foreach (var item in data)
+            try
             {
-                Trackers.Add(new BillTracker(item.Key, item.Grouped));
+                var bills = await BudgetDatabase.GetBillsAsync();
+                var data = (bills.GroupBy(x => x.Payee, StringComparer.OrdinalIgnoreCase)
+                            .Select(groupedTable => new Grouping<string, Bill>(groupedTable.Key, groupedTable))).ToList();
+                Trackers.Clear();
+                foreach (var item in data)
+                {
+                    Trackers.Add(new BillTracker(item.Key, item.Grouped));
+                }
             }
+            catch (InvalidOperationException ex)
+            {
+                Trackers.Clear();
+            }
+            
+            
         }
 
         public override void ViewAppeared()
@@ -124,17 +133,17 @@ namespace BudgetAppCross.Core.ViewModels
             return navigationService.Navigate<BillTrackerViewModel, BillTracker>(bt);
         }
 
-        private async Task OnSaveBudget()
-        {
-            await StateManager.SaveToFile();
-        }
+        //private async Task OnSaveBudget()
+        //{
+        //    await StateManager.SaveToFile();
+        //}
 
-        private async Task OnLoadBudget()
-        {
-            await StateManager.LoadFromFile();
-            UpdateTrackers();
+        //private async Task OnLoadBudget()
+        //{
+        //    await StateManager.LoadFromFile();
+        //    UpdateTrackers();
 
-        }
+        //}
 
         private async Task OnEdit()
         {

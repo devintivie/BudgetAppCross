@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -62,8 +63,9 @@ namespace BudgetAppCross.Models
             }
         }
 
+        [ForeignKey(typeof(BankAccount))]
+        public int AccountID { get; set; }
 
-        //public string AccountID { get; set; }
         [JsonIgnore][Ignore]
         public BillStatus BillStatus { get; set; }
         public string Confirmation { get; set; }

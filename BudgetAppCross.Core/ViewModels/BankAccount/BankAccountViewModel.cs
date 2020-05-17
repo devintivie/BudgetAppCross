@@ -14,16 +14,16 @@ namespace BudgetAppCross.Core.ViewModels
         #region Properties
         public BankAccount BankAccount { get; private set; }
 
+        private double balance;
         public double Balance
         {
-            get { return BankAccount.Balance; }
+            get { return balance; }
             set
             {
-                var balance = BankAccount.Balance;
-                BankAccount.Balance = value;
                 SetProperty(ref balance, value);
             }
         }
+
 
         public string Nickname
         {
@@ -46,11 +46,24 @@ namespace BudgetAppCross.Core.ViewModels
         public BankAccountViewModel(BankAccount account)
         {
             BankAccount = account;
+            GetLatestBalance();
         }
         #endregion
 
         #region Methods
-
+        private async void GetLatestBalance()
+        {
+            //var temp = (double?)(await BudgetDatabase.GetLatestBalanceAsync(DateTime.Today)).Amount;
+            var temp = 0.0;
+            if(temp == null)
+            {
+                Balance = 0.0;
+            }
+            else
+            {
+                Balance =(double) temp;
+            }
+        }
         #endregion
 
     }

@@ -16,21 +16,27 @@
             <Entry Text="{Binding BillTracker.CompanyName}"/>
             <Button Text="Save" Command="{Binding SaveCommand}"/>-->
 
+            <!--Account Nickname-->
             <Label Text="Account Nickname"/>
             <Entry Text="{Binding BankAccount.Nickname}"/>
+            
+            <!--Account Balance-->
             <Label Text="Initial Balance"/>
-
             <!--<ListView.Behaviors>
                 <behaviors:EventHandlerBehavior EventName="ItemSelected">
                     <behaviors:InvokeCommandAction Command="{Binding ShowDetailPageAsyncCommand}"/>
                 </behaviors:EventHandlerBehavior>
             </ListView.Behaviors>-->
             <Entry Keyboard="Numeric"
-                   Text="{Binding BankAccount.Balance}"
+                   Text="{Binding Balance}"
                    Focused="Entry_Focused"
                    Unfocused="Entry_Unfocused"
                    >
             </Entry>
+            
+            <!--Balance Date-->
+            <Label Text="Date of Balance"/>
+            <DatePicker Date="{Binding Date}"/>
             <StackLayout Orientation="Horizontal">
                 <Button Text="Cancel" Command="{Binding CancelCommand}"/>
                 <Button Text="Save" Command="{Binding SaveCommand}"/>
