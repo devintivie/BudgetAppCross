@@ -119,19 +119,6 @@
           "lib/netstandard1.1/SQLiteNetExtensions.dll": {}
         }
       },
-      "SQLiteNetExtensions.Async/2.1.0": {
-        "type": "package",
-        "dependencies": {
-          "SQLiteNetExtensions": "2.0.0",
-          "sqlite-net-pcl": "1.4.118"
-        },
-        "compile": {
-          "lib/netstandard1.1/SQLiteNetExtensionsAsync.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.1/SQLiteNetExtensionsAsync.dll": {}
-        }
-      },
       "SQLitePCLRaw.bundle_green/1.1.13": {
         "type": "package",
         "dependencies": {
@@ -570,35 +557,6 @@
         "src/SQLiteNetExtensions/Properties/AssemblyInfo.cs"
       ]
     },
-    "SQLiteNetExtensions.Async/2.1.0": {
-      "sha512": "jiIewsMh0Zfv1dB5Jp9eylckDOmVqNx5uPoFunfwAJApimL71bja7OxF55pFlz7TTiSm0rTkn3aWE6Gz89qUDw==",
-      "type": "package",
-      "path": "sqlitenetextensions.async/2.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard1.1/SQLiteNetExtensionsAsync.dll",
-        "lib/netstandard1.1/SQLiteNetExtensionsAsync.pdb",
-        "sqlitenetextensions.async.2.1.0.nupkg.sha512",
-        "sqlitenetextensions.async.nuspec",
-        "src/SQLiteNetExtensions/Attributes/CascadeOperation.cs",
-        "src/SQLiteNetExtensions/Attributes/ForeignKeyAttribute.cs",
-        "src/SQLiteNetExtensions/Attributes/ManyToManyAttribute.cs",
-        "src/SQLiteNetExtensions/Attributes/ManyToOneAttribute.cs",
-        "src/SQLiteNetExtensions/Attributes/OneToManyAttribute.cs",
-        "src/SQLiteNetExtensions/Attributes/OneToOneAttribute.cs",
-        "src/SQLiteNetExtensions/Attributes/RelationshipAttribute.cs",
-        "src/SQLiteNetExtensions/Attributes/TextBlobAttribute.cs",
-        "src/SQLiteNetExtensions/Exceptions/IncorrectRelationshipException.cs",
-        "src/SQLiteNetExtensions/Extensions/ReadOperations.cs",
-        "src/SQLiteNetExtensions/Extensions/ReflectionExtensions.cs",
-        "src/SQLiteNetExtensions/Extensions/TextBlob/ITextBlobSerializer.cs",
-        "src/SQLiteNetExtensions/Extensions/TextBlob/Serializers/JsonBlobSerializer.cs",
-        "src/SQLiteNetExtensions/Extensions/TextBlob/TextBlobOperations.cs",
-        "src/SQLiteNetExtensions/Extensions/WriteOperations.cs",
-        "src/SQLiteNetExtensions/Properties/AssemblyInfo.cs"
-      ]
-    },
     "SQLitePCLRaw.bundle_green/1.1.13": {
       "sha512": "E0Hm/XTfleE/LlrRZVucB1dQqDlIDPgqvkFymbGqMO7bSaoB6R2X5Cgzq/RDxBFSzHjpzet2Tp5Kar8faLSZ+Q==",
       "type": "package",
@@ -931,7 +889,6 @@
       "MvvmCross.Forms >= 6.4.2",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.3",
-      "SQLiteNetExtensions.Async >= 2.1.0",
       "sqlite >= 3.13.0",
       "sqlite-net-pcl >= 1.6.292"
     ]
@@ -1001,10 +958,6 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.3, )"
-          },
-          "SQLiteNetExtensions.Async": {
-            "target": "Package",
-            "version": "[2.1.0, )"
           },
           "sqlite": {
             "target": "Package",

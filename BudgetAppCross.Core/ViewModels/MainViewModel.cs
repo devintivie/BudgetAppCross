@@ -22,9 +22,13 @@ namespace BudgetAppCross.Core.ViewModels
         public override async void ViewAppearing()
         {
             base.ViewAppearing();
+
+            //var mainAccount = new BankAccount(450, "-", "Chase", "Main Account");
+            //await BudgetDatabase.SaveBankAccount(mainAccount);
             
             await navigationService.Navigate<MenuViewModel>();
             await navigationService.Navigate<BankOverviewViewModel>();
+
         }
 
         public override async void ViewDestroy(bool viewFinishing = true)

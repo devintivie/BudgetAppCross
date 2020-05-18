@@ -21,6 +21,7 @@ namespace BudgetAppCross.Models
 
         //Useful name i.e. Main Account, Savings, College etc.
         //Unique
+        [Unique]
         public string Nickname { get; set; }
         //Bank account number
         //Not required

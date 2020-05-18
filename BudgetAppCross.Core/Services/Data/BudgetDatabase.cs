@@ -87,12 +87,22 @@ namespace BudgetAppCross.Core.Services
         public async Task<List<BankAccount>> GetBankAccounts()
         {
             //var list = new List<BankAccount>();
-            return await Task.Run(() =>
+            var list = await Task.Run(() =>
             {
                 return Database.GetAllWithChildren<BankAccount>();
             });
 
-            //return list;
+            return list;
+        }
+
+        public async Task<IEnumerable<string>> GetBankAccountNames()
+        {
+            return await Task.Run(() =>
+            {
+                var list = Database.Table<BankAccount>().ToList();
+                var names = list.Select(x => x.Nickname);//.ToList();
+                return names;
+            });
         }
 
         public async Task<BankAccount> GetBankAccount(int id)
@@ -122,13 +132,13 @@ namespace BudgetAppCross.Core.Services
         {
             await Task.Run(() =>
             {
-                if (balance.AccountID != 0)
+                if (balance.ID != 0)
                 {
-                    Database.UpdateWithChildren(balance);
+                    Database.Update(balance);//     UpdateWithChildren(balance);
                 }
                 else
                 {
-                    Database.InsertWithChildren(balance);
+                    Database.Insert(balance);//  WithChildren(balance);
                 }
             });
         }
@@ -138,7 +148,8 @@ namespace BudgetAppCross.Core.Services
             //var list = new List<BankAccount>();
             return await Task.Run(() =>
             {
-                return Database.GetAllWithChildren<Balance>();
+                return Database.Table<Balance>().ToList();
+                //return Database.Get WithChildren<Balance>();
             });
 
             //return list;
@@ -148,16 +159,32 @@ namespace BudgetAppCross.Core.Services
         {
             return await Task.Run(() =>
             {
-                return Database.GetWithChildren<Balance>(id);
+                return Database.Get<Balance>(id);//    WithChildren<Balance>(id);
             });
         }
 
-        public async Task<Balance> GetLatestBalanceAsync(DateTime date)
+        public async Task<Balance> GetLatestBalance(int id, DateTime date)
         {
             return await Task.Run(() =>
             {
-                var list = Database.Table<Balance>().ToList();
-                return list.First();
+                var balances = Database.Table<Balance>()
+                .Where(bal => bal.AccountID == id).ToList();
+
+                return balances.First();
+
+                //if(balances.Count == 0)
+                //{
+                //    return new Balance();
+                //}
+                //else
+                //{
+                //    return new Balance();
+                //}
+                //return balance;
+                //var list =  await (Database.Table<Balance>().Where(bal => bal.Timestamp <= date && )
+                //.OrderByDescending(x => x.Timestamp)).FirstAsync();
+                //var list = Database.Table<Balance>().ToList();
+                //return list.First();
             });
             //var list = Database.Table<Balance>().ToList();
             //return list.FirstOrDefault();
@@ -179,7 +206,7 @@ namespace BudgetAppCross.Core.Services
         {
             await Task.Run(() =>
             {
-                if (bill.AccountID != 0)
+                if (bill.ID != 0)
                 {
                     Database.UpdateWithChildren(bill);
                 }
@@ -193,19 +220,33 @@ namespace BudgetAppCross.Core.Services
         public async Task<List<Bill>> GetBills()
         {
             //var list = new List<BankAccount>();
-            return await Task.Run(() =>
+            var list = await Task.Run(() =>
             {
+                //return Database.Table<Bill>().ToList();
                 return Database.GetAllWithChildren<Bill>();
             });
 
-            //return list;
+            return list;
+        }
+
+        public async Task<List<Bill>> GetBillsForPayee(string payee)
+        {
+            var list = await Task.Run(() =>
+            {
+                return Database.GetAllWithChildren<Bill>().Where(x => x.Payee.Equals(payee)).ToList();
+                //return Database.Table<Bill>().Where(x => x.Payee.Equals(payee)).ToList();
+            });
+
+            return list;
+            // SQL queries are also possible
+            //return Database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
         }
 
         public async Task<Bill> GetBill(int id)
         {
             return await Task.Run(() =>
             {
-                return Database.GetWithChildren<Bill>(id);
+                return Database.Get<Bill>(id);
             });
         }
 

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "YqWaMZZIfSabTWLrKxDmKMRjN9IsX5u4p+ctPILlDZZ4VDK8ujalJS1mnMgb4IQ3HpIhnsfQLB9Nq/a77z53rQ==",
+  "dgSpecHash": "ANwnlWGRIqrqryK0tsriUyG3zBom7oB5hzHJKCEjNLZl+w6J0hmAshrwaYcq8v0GQNmVqar4lDb3Vou1SXNyXA==",
   "success": true,
   "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj",
   "expectedPackageFiles": [
@@ -14,7 +14,6 @@
     "C:\\Users\\devin\\.nuget\\packages\\sqlite\\3.13.0\\sqlite.3.13.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\sqlite-net-pcl\\1.6.292\\sqlite-net-pcl.1.6.292.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\sqlitenetextensions\\2.1.0\\sqlitenetextensions.2.1.0.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\sqlitenetextensions.async\\2.1.0\\sqlitenetextensions.async.2.1.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\sqlitepclraw.bundle_green\\1.1.13\\sqlitepclraw.bundle_green.1.1.13.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\sqlitepclraw.core\\1.1.13\\sqlitepclraw.core.1.1.13.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",

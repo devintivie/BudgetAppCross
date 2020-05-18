@@ -15,26 +15,27 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Grid>
-                <Grid.ColumnDefinitions>
+            <StackLayout>
+                <!--<Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
+                </Grid.RowDefinitions>-->
                 <Label Text="Start Date" Grid.Row="0" Grid.Column="0"
-                       FontSize="Title"/>
-                <Label Text="End Date" Grid.Row="0" Grid.Column="1"
                        FontSize="Title"/>
                 <DatePicker Date="{Binding StartDate}"
                             Grid.Row="1" Grid.Column="0"
                             FontSize="Title"/>
+                <Label Text="End Date" Grid.Row="0" Grid.Column="1"
+                       FontSize="Title"/>
+                
                 <DatePicker Date="{Binding EndDate}"
                             Grid.Row="1" Grid.Column="1"
                             FontSize="Title"/>
-            </Grid>
+            </StackLayout>
             <StackLayout BindableLayout.ItemsSource="{Binding Transactions}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>

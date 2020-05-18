@@ -133,13 +133,30 @@ namespace BudgetAppCross.Core.ViewModels
             UpdateBills();
         }
 
-        private void UpdateBills()
+        public override void ViewDestroy(bool viewFinishing = true)
         {
-            //Bills = new ObservableCollection<Bill>(BillTracker.Bills);
+            base.ViewDestroy(viewFinishing);
+            SaveBills();
+        }
+
+        private async void UpdateBills()
+        {
+            
             Bills.Clear();
-            foreach (var item in BillTracker.Bills)
+
+            var temp = await BudgetDatabase.GetBillsForPayee(BillTracker.CompanyName);
+
+            foreach (var item in temp)
             {
                 Bills.Add(new BillViewModel(item));
+            }
+        }
+
+        private async void SaveBills()
+        {
+            foreach (var bill in Bills)
+            {
+                await BudgetDatabase.SaveBill(bill.Bill);
             }
         }
         #endregion

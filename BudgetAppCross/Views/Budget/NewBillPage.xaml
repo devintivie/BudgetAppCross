@@ -18,6 +18,7 @@
                     <ColumnDefinition Width="130"/>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
                 
                 <!--Payee-->
@@ -59,6 +60,16 @@
                        FontSize="Large"/>
                 <DatePicker Date="{Binding Bill.Date}"
                             Grid.Row="1" Grid.Column="3"
+                            WidthRequest="100"/>
+
+                <!--Account-->
+                <Label Text="Account"
+                       Grid.Row="0" Grid.Column="4"
+                       VerticalOptions="Center"
+                       FontSize="Large"/>
+                <Picker ItemsSource="{Binding AccountOptions}"
+                        SelectedItem="{Binding SelectedAccount}"
+                            Grid.Row="1" Grid.Column="4"
                             WidthRequest="100"/>
                 <!--<Button Text="{Binding Date, Converter={cvt:DateOnlyConverter}}"/>-->
             </Grid>

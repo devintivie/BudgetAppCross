@@ -63,7 +63,12 @@ namespace BudgetAppCross.Core.ViewModels
         {
             base.ViewAppeared();
             SelectedAccount = null;
-            //Accounts = new ObservableCollection<BankAccount>(BankAccountManager.AllAccounts);
+
+            LoadAccounts();
+        }
+
+        private async void LoadAccounts()
+        {
             var accts = await BudgetDatabase.GetBankAccounts();
 
             Accounts.Clear();
@@ -71,9 +76,7 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 Accounts.Add(new BankAccountViewModel(item));
             }
-
-            //Accounts = new ObservableCollection<BankAccount>(accts);
-        }
+        } 
 
         //public override async void ViewDestroy(bool viewFinishing = true)
         //{

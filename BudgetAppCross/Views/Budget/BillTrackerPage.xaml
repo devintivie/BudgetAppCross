@@ -26,7 +26,17 @@
                 <Label Text="Due Date" WidthRequest="100"/>
             </StackLayout>
             <ScrollView>
-                <StackLayout BindableLayout.ItemsSource="{Binding Bills}">
+                <ListView ItemsSource="{Binding Bills}"
+                          SelectedItem="{Binding SelectedBill}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <controls:BillView/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <!--<StackLayout BindableLayout.ItemsSource="{Binding Bills}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <StackLayout>
@@ -34,7 +44,7 @@
                             </StackLayout>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
-                </StackLayout>
+                </StackLayout>-->
             </ScrollView>
             
             <Label Text="{Binding DateTotal}"/>

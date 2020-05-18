@@ -65,6 +65,8 @@ namespace BudgetAppCross.Models
 
         [ForeignKey(typeof(BankAccount))]
         public int AccountID { get; set; }
+        [ManyToOne(CascadeOperations = CascadeOperation.CascadeRead)]
+        public BankAccount BankAccount { get; set; }
 
         [JsonIgnore][Ignore]
         public BillStatus BillStatus { get; set; }
@@ -74,22 +76,24 @@ namespace BudgetAppCross.Models
         #endregion
 
         #region Constructors
-        public Bill() : this(0.0, DateTime.Now.Date.AddDays(7)) { }
+        public Bill() : this("Payee", 0.0, DateTime.Now.Date.AddDays(7)) { }
 
-        public Bill(int month, int day) : this(0, month, day) { }
+        public Bill(string name, int month, int day) : this(name, 0, month, day) { }
 
-        public Bill(double iAmount, int month, int day) : this(iAmount, new DateTime(DateTime.Now.Year, month, day)) { }
+        public Bill(string name, double iAmount, int month, int day) : this(name, iAmount, new DateTime(DateTime.Now.Year, month, day)) { }
 
         //public Bill(double iAmount, int month, int day) : this(iAmount, new DateTime(DateTime.Now.Year, month, day), acctID) { }
 
-        public Bill(double iAmount, DateTime iDueDate)
+        public Bill(string payee, double iAmount, DateTime iDueDate)
         {
+            Payee = payee;
             Date = iDueDate;
             Amount = iAmount;
             Confirmation = DEFAULT_CONFIRMATION;
             IsPaid = false;
             GetBillStatus();
         }
+
         #endregion
 
         #region Methods

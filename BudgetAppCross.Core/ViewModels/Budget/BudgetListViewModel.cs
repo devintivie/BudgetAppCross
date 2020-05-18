@@ -69,11 +69,6 @@ namespace BudgetAppCross.Core.ViewModels
             //LoadBudgetCommand = new Command(async () => await OnLoadBudget());
             RefreshItemsCommand = new Command(async () => await OnRefresh());
 
-            
-
-            
-
-
 
             //    var countGroupQuery = from table in dataTable.AsEnumerable()
             //                          group table by table.Field<string>(Column1) into groupedTable
@@ -94,39 +89,31 @@ namespace BudgetAppCross.Core.ViewModels
 
         }
 
-        
+
         #endregion
 
         #region Methods
-
-        private async void LoadBills()
-        {
-            try
-            {
-                var bills = await BudgetDatabase.GetBills();
-                var data = (bills.GroupBy(x => x.Payee, StringComparer.OrdinalIgnoreCase)
-                            .Select(groupedTable => new Grouping<string, Bill>(groupedTable.Key, groupedTable))).ToList();
-                Trackers.Clear();
-                foreach (var item in data)
-                {
-                    Trackers.Add(new BillTracker(item.Key, item.Grouped));
-                }
-            }
-            catch (InvalidOperationException ex)
-            {
-                Trackers.Clear();
-            }
-            
-            
-        }
-
         public override void ViewAppeared()
         {
             base.ViewAppeared();
             SelectedTracker = null;
             LoadBills();
-            //Trackers = new ObservableCollection<BillTracker>(BillManager.AllTrackers);
         }
+
+        private async void LoadBills()
+        {
+            var bills = await BudgetDatabase.GetBills();
+            List<Grouping<string, Bill>> data = (bills.GroupBy(x => x.Payee, StringComparer.OrdinalIgnoreCase)
+                        .Select(groupedTable => new Grouping<string, Bill>(groupedTable.Key, groupedTable))).ToList();
+            Trackers.Clear();
+            foreach (var item in data)
+            {
+                Trackers.Add(new BillTracker(item.Key, item.Grouped));
+            }
+            
+        }
+
+        
 
         public Task ShowBillTracker(BillTracker bt)
         {
