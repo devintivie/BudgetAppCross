@@ -14,7 +14,7 @@ namespace BudgetAppCross.Core.ViewModels
     {
         #region Fields
         private IMvxNavigationService navigationService;
-        private List<Grouping<DateTime, AgendaBill>> billGroups = new List<Grouping<DateTime, AgendaBill>>();
+        private List<Grouping<DateTime, Bill>> billGroups = new List<Grouping<DateTime, Bill>>();
         #endregion
 
         #region Properties
@@ -123,6 +123,24 @@ namespace BudgetAppCross.Core.ViewModels
             //{
             //    BillsGrouped.Add(new AgendaEntryViewModel(item));
             //}
+        }
+
+        public override void ViewAppeared()
+        {
+            base.ViewAppeared();
+        }
+        public override void ViewDestroy(bool viewFinishing = true)
+        {
+            base.ViewDestroy(viewFinishing);
+            SaveBills();
+        }
+
+        public async void SaveBills()
+        {
+            foreach (var bill in Transactions)
+            {
+                await BudgetDatabase.SaveBill(bill.Bill);
+            }
         }
         #endregion
 

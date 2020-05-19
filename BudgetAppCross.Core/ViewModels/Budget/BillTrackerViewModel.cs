@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BillTrackerViewModel : BaseViewModel<BillTracker>//MvxViewModel<BillTracker>
+    public class BillTrackerViewModel : BaseViewModel<string>//MvxViewModel<BillTracker>
     {
         #region Fields
         private IMvxNavigationService navigationService;
@@ -19,7 +19,8 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Properties
-        public BillTracker BillTracker { get; private set; }
+        //public BillTracker BillTracker { get; private set; }
+        public string CompanyName { get; private set; }
 
         private ObservableCollection<BillViewModel> bills = new ObservableCollection<BillViewModel>();
         public ObservableCollection<BillViewModel> Bills
@@ -84,72 +85,48 @@ namespace BudgetAppCross.Core.ViewModels
             DeleteBillCommand = new Command(() =>  OnDeleteBill(), () => CanDeleteBill());
         }
 
-        
-
-        public override void ViewAppeared()
-        {
-            base.ViewAppeared();
-
-        }
-
-        private void RefreshCanExecutes()
-        {
-            (DeleteBillCommand as Command).ChangeCanExecute();
-        }
-
-        private async Task OnAddBill()
-        {
-            //var result = await navigationService.Navigate<NewBillViewModel, string, Bill>(BillTracker.CompanyName);
-
-            //if(result != null)
-            //{
-            //    BillManager.AddBill(BillTracker.CompanyName, result);
-            //}
-
-            //UpdateBills();
-
-        }
-
-        
-
-        private void OnDeleteBill()
-        {
-            //BillManager.DeleteBill(BillTracker.CompanyName, SelectedBill);
-            UpdateBills();
-        }
-
-        private bool CanDeleteBill()
-        {
-            return SelectedBill != null;
-        }
-
         #endregion
 
         #region Methods
-        public override void Prepare(BillTracker parameter)
+        public override void Prepare(string parameter)
         {
-            BillTracker = parameter;
+            CompanyName = parameter;
             //billTracker = parameter;
             UpdateBills();
         }
 
         public override void ViewDestroy(bool viewFinishing = true)
         {
+            //SaveBills();
             base.ViewDestroy(viewFinishing);
-            SaveBills();
+            
         }
 
         private async void UpdateBills()
         {
-            
-            Bills.Clear();
-
-            var temp = await BudgetDatabase.GetBillsForPayee(BillTracker.CompanyName);
-
+            var options = await LoadAccountOptions();
+            var temp = await BudgetDatabase.GetBillsForPayee(CompanyName);
+            var bvms = new List<BillViewModel>();
             foreach (var item in temp)
             {
-                Bills.Add(new BillViewModel(item));
+                bvms.Add(new BillViewModel(item, options));
             }
+
+            Bills = new ObservableCollection<BillViewModel>(bvms);
+        }
+
+        private async Task<List<string>> LoadAccountOptions()
+        {
+            var options = await BudgetDatabase.GetBankAccounts();
+
+            var names = new List<string>();
+            foreach (var item in options)
+            {
+                names.Add(item.Nickname);
+            }
+
+            return names;
+
         }
 
         private async void SaveBills()
@@ -159,13 +136,42 @@ namespace BudgetAppCross.Core.ViewModels
                 await BudgetDatabase.SaveBill(bill.Bill);
             }
         }
+
+        private void RefreshCanExecutes()
+        {
+            (DeleteBillCommand as Command).ChangeCanExecute();
+        }
+
+        private async Task OnAddBill()
+        {
+            await navigationService.Navigate<NewBillViewModel, Bill, bool>(new Bill(CompanyName));
+
+            UpdateBills();
+
+
+
+        }
+
+
+
+        private async void OnDeleteBill()
+        {
+            await BudgetDatabase.DeleteBill(SelectedBill.Bill);
+            //BillManager.DeleteBill(BillTracker.CompanyName, SelectedBill);
+            UpdateBills();
+        }
+
+        private bool CanDeleteBill()
+        {
+            return SelectedBill != null;
+        }
         #endregion
 
-        
-
-        
 
 
-        
+
+
+
+
     }
 }

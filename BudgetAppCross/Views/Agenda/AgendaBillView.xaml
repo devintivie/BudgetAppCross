@@ -11,7 +11,7 @@
         <FlexLayout Wrap="Wrap">
             <CheckBox IsChecked="{Binding IsPaid}"
                       WidthRequest="60"/>
-            <Label Text="{Binding Company}"
+            <Label Text="{Binding Payee}"
                    FontSize="Body"
                        VerticalOptions="Center"
                        WidthRequest="120"/>
@@ -21,6 +21,10 @@
                        VerticalOptions="CenterAndExpand"/>
             <Entry Text="{Binding Confirmation}"
                        WidthRequest="200"/>
+            <Picker ItemsSource="{Binding AccountOptions}"
+                    SelectedItem="{Binding SelectedAccount}"
+                    WidthRequest="120"/>
+            
         </FlexLayout>
         <!--<StackLayout>
             <StackLayout Orientation="Horizontal">

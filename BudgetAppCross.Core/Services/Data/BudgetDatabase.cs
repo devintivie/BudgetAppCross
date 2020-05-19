@@ -10,7 +10,7 @@ using SQLiteNetExtensions.Extensions;
 
 namespace BudgetAppCross.Core.Services
 {
-    public class BudgetDatabase
+    public class BudgetDatabase : IDataManager
     {
         #region Singleton
         static readonly Lazy<BudgetDatabase> instance = new Lazy<BudgetDatabase>();
@@ -233,7 +233,9 @@ namespace BudgetAppCross.Core.Services
         {
             var list = await Task.Run(() =>
             {
-                return Database.GetAllWithChildren<Bill>().Where(x => x.Payee.Equals(payee)).ToList();
+                return Database.GetAllWithChildren<Bill>()
+                        .Where(x => x.Payee.Equals(payee))
+                        .OrderBy(x => x.Date) .ToList();
                 //return Database.Table<Bill>().Where(x => x.Payee.Equals(payee)).ToList();
             });
 

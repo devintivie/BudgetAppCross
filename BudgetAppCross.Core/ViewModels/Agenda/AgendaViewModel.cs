@@ -127,11 +127,20 @@ namespace BudgetAppCross.Core.ViewModels
             LoadAgenda();
         }
 
+        public override void ViewDestroy(bool viewFinishing = true)
+        {
+            base.ViewDestroy(viewFinishing);
+            SaveBills();
+        }
+
         private async void LoadAgenda()
         {
+            var dt = DateTime.Today.AddDays(-4);
+            var dt2 = DateTime.Today.AddMonths(2);
             var bills = await BudgetDatabase.GetBills();
             var data = (bills.GroupBy(x => x.Date)
                         .OrderBy(x => x.Key)
+                        .Where(x => x.Key >= dt && x.Key <= dt2)
                         .Select(groupedTable => new Grouping<DateTime, Bill>(groupedTable.Key, groupedTable))).ToList();
             BillsGrouped.Clear();
             foreach (var item in data)
@@ -139,6 +148,19 @@ namespace BudgetAppCross.Core.ViewModels
                 BillsGrouped.Add(new AgendaEntryViewModel(item));
             }
         }
+
+        private async void SaveBills()
+        {
+            foreach (var bill in BillsGrouped)
+            {
+                foreach (var item in bill.Bills)
+                {
+                    await BudgetDatabase.SaveBill(item.Bill);
+                }
+            }
+        }
+
+
         //public override async void ViewDestroy(bool viewFinishing = true)
         //{
         //    base.ViewDestroy(viewFinishing);

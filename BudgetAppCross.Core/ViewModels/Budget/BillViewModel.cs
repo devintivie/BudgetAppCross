@@ -18,14 +18,14 @@ namespace BudgetAppCross.Core.ViewModels
         #region Properties
         public Bill Bill { get; private set; }
 
-        public string Company
+        public string Payee
         {
             get { return Bill.Payee; }
             set
             {
-                var company = Bill.Payee;
+                var payee = Bill.Payee;
                 Bill.Payee = value;
-                SetProperty(ref company, value);
+                SetProperty(ref payee, value);
             }
         }
 
@@ -126,7 +126,14 @@ namespace BudgetAppCross.Core.ViewModels
         public BillViewModel(Bill bill)
         {
             Bill = bill;
-            LoadAccountOptions();
+            //LoadAccountOptions();
+        }
+
+        public BillViewModel(Bill bill, List<string> options)
+        {
+            Bill = bill;
+            AccountOptions = new ObservableCollection<string>(options);
+            SelectedAccount = Bill.BankAccount.Nickname;
         }
         #endregion
 

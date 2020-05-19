@@ -55,23 +55,23 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        public AgendaEntryViewModel(Grouping<DateTime, AgendaBill> datagroup )
-        {
-            Date = datagroup.Key;
-            foreach (var item in datagroup)
-            {
-                Bills.Add(new BillViewModel(item));
-            }
+        //public AgendaEntryViewModel(Grouping<DateTime, Bill> datagroup )
+        //{
+        //    Date = datagroup.Key;
+        //    foreach (var item in datagroup)
+        //    {
+        //        Bills.Add(new BillViewModel(item));
+        //    }
 
-            MessagingCenter.Subscribe<AgendaBillViewModel>(this, "UpdateTotal", async (obj) => OnUpdateTotal());
+        //    MessagingCenter.Subscribe<AgendaBillViewModel>(this, "UpdateTotal", async (obj) => OnUpdateTotal());
 
-            //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
-            //{
-            //    var newItem = item as Item;
-            //    Items.Add(newItem);
-            //    await DataStore.AddItemAsync(newItem);
-            //});
-        }
+        //    //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+        //    //{
+        //    //    var newItem = item as Item;
+        //    //    Items.Add(newItem);
+        //    //    await DataStore.AddItemAsync(newItem);
+        //    //});
+        //}
 
         public AgendaEntryViewModel(Grouping<DateTime, Bill> datagroup)
         {

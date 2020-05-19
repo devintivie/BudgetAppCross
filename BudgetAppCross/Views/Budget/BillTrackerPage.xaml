@@ -17,15 +17,17 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding BillTracker.CompanyName}"
+            <Label Text="{Binding CompanyName}"
                    FontSize="Title"/>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Paid" WidthRequest="60"/>
                 <Label Text="Amount Due" WidthRequest="130"
                        HorizontalOptions="Center"/>
                 <Label Text="Due Date" WidthRequest="100"/>
+                <Label Text="Account" WidthRequest="100"/>
+                <Label Text="Confirmation" WidthRequest="100"/>
             </StackLayout>
-            <ScrollView>
+            <!--<ScrollView>-->
                 <ListView ItemsSource="{Binding Bills}"
                           SelectedItem="{Binding SelectedBill}">
                     <ListView.ItemTemplate>
@@ -45,7 +47,7 @@
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </StackLayout>-->
-            </ScrollView>
+            <!--</ScrollView>-->
             
             <Label Text="{Binding DateTotal}"/>
             <!--<RefreshView >

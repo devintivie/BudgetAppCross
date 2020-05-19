@@ -62,7 +62,7 @@ namespace BudgetAppCross.Core.ViewModels
             navigationService = navigation;
             Title = "Bill List";
 
-            AddBTCommand = new Command(async () => await navigationService.Navigate<NewBillViewModel>());
+            AddBTCommand = new Command(async () => await navigationService.Navigate<NewBillViewModel, Bill>(new Bill()));
             EditCommand = new Command(async () => await OnEdit());
             DeleteCommand = new Command(async () => await OnDelete());
             //SaveBudgetCommand = new Command(async() => await OnSaveBudget());
@@ -110,14 +110,11 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 Trackers.Add(new BillTracker(item.Key, item.Grouped));
             }
-            
         }
-
-        
 
         public Task ShowBillTracker(BillTracker bt)
         {
-            return navigationService.Navigate<BillTrackerViewModel, BillTracker>(bt);
+            return navigationService.Navigate<BillTrackerViewModel, string>(bt.CompanyName);
         }
 
         //private async Task OnSaveBudget()

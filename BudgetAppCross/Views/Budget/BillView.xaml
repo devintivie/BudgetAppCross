@@ -9,26 +9,29 @@
   <ContentView.Content>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
+                <!--<ColumnDefinition Width="Auto"/>-->
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="130"/>
                 <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
-            <Entry Text="{Binding Payee}"
-                   Grid.Column="0"/>
+            <!--<Entry Text="{Binding Payee}"
+                   Grid.Column="0"/>-->
             <CheckBox IsChecked="{Binding IsPaid}"
-                      Grid.Column="1"
+                      Grid.Column="0"
                       VerticalOptions="Center"
                       HorizontalOptions="Center"
                       />
             <Entry Text="{Binding Amount}"
-                   Grid.Column="2"/>
+                   Grid.Column="1"/>
             <DatePicker Date="{Binding Date}"
-                        Grid.Column="3"/>
+                        Grid.Column="2"/>
             <Picker ItemsSource="{Binding AccountOptions}"
                     SelectedItem="{Binding SelectedAccount}"
-                    Grid.Column="4"/>
+                    Grid.Column="3"/>
+            <Entry Text="{Binding Confirmation}"
+                   Grid.Column="4"/>
         </Grid>
 
         <!--<RefreshView >

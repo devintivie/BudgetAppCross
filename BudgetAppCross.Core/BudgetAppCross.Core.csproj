@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BudgetAppCore.Sqlite\BudgetAppCore.Sqlite.csproj" />
     <ProjectReference Include="..\BudgetAppCross.Models\BudgetAppCross.Models.csproj" />
   </ItemGroup>
 

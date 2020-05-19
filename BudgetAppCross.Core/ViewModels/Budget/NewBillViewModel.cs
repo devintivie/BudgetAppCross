@@ -13,7 +13,7 @@ using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class NewBillViewModel : BaseViewModel//<string, Bill>
+    public class NewBillViewModel : MvxViewModel<Bill, bool>//<string, Bill>
     {
         #region Fields
         private IMvxNavigationService navigationService;
@@ -143,11 +143,16 @@ namespace BudgetAppCross.Core.ViewModels
         public NewBillViewModel(IMvxNavigationService nav)
         {
             navigationService = nav;
-            Bill = new Bill();
+            //Bill = new Bill();
             LoadAccountOptions();
 
             SaveCommand = new Command(async () => await OnSave());
             CancelCommand = new Command(async () => await OnCancel());
+        }
+
+        public override void Prepare(Bill parameter)
+        {
+            Bill = parameter;
         }
 
         //public override void Prepare(string parameter)
@@ -160,12 +165,12 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task OnSave()
         {
             //await navigationService.Close(this, Bill);
-            var accts = await BudgetDatabase.GetBankAccounts();
+            var accts = await BudgetDatabase.Instance.GetBankAccounts();
             var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
             Bill.BankAccount = acct;
             //Bill.AccountID = acct.AccountID;
             await BudgetDatabase.Instance.SaveBill(Bill);
-            await navigationService.Close(this);
+            await navigationService.Close(this, true);
         }
 
         private async Task OnCancel()
@@ -175,7 +180,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async void LoadAccountOptions()
         {
-            var options = await BudgetDatabase.GetBankAccounts();
+            var options = await BudgetDatabase.Instance.GetBankAccounts();
             AccountOptions.Clear();
             foreach (var item in options)
             {
@@ -184,6 +189,8 @@ namespace BudgetAppCross.Core.ViewModels
             SelectedAccount = AccountOptions.FirstOrDefault();
 
         }
+
+        
 
         #endregion
 
