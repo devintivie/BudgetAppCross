@@ -38,7 +38,6 @@ public class MonoPackageManager_Resources {
 		"Newtonsoft.Json.dll",
 		"SQLite-net.dll",
 		"SQLiteNetExtensions.dll",
-		"SQLitePCLRaw.batteries_green.dll",
 		"SQLitePCLRaw.batteries_v2.dll",
 		"SQLitePCLRaw.core.dll",
 		"SQLitePCLRaw.lib.e_sqlite3.android.dll",
@@ -92,7 +91,6 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
 		"BudgetAppCross.Models.dll",
-		"BudgetAppCore.Sqlite.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};

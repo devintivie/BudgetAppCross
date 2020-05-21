@@ -25,18 +25,18 @@ namespace BudgetAppCross.Core.ViewModels
 
             //var mainAccount = new BankAccount(450, "-", "Chase", "Main Account");
             //await BudgetDatabase.SaveBankAccount(mainAccount);
-            
+
             await navigationService.Navigate<MenuViewModel>();
-            await navigationService.Navigate<BankOverviewViewModel>();
+            await navigationService.Navigate<BudgetListViewModel>();
 
         }
 
-        public override async void ViewDestroy(bool viewFinishing = true)
-        {
-            base.ViewDestroy(viewFinishing);
+        //public override async void ViewDestroy(bool viewFinishing = true)
+        //{
+        //    base.ViewDestroy(viewFinishing);
 
-            //await StateManager.Instance.SaveToFile();
-        }
+        //    //await StateManager.Instance.SaveToFile();
+        //}
 
     }
 }

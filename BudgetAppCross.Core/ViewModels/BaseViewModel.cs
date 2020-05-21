@@ -23,8 +23,8 @@ namespace BudgetAppCross.Core.ViewModels
         public StateManager StateManager => StateManager.Instance;
         //public BankAccountManager BankAccountManager => BankAccountManager.Instance;
 
-        public BudgetDatabase BudgetDatabase => BudgetDatabase.Instance;
-        //public IDataManager BudgetDatabase = Mvx.IoCProvider.Resolve<IDataManager>();
+        //public BudgetDatabase BudgetDatabase => BudgetDatabase.Instance;
+        public IDataManager BudgetDatabase = Mvx.IoCProvider.Resolve<IDataManager>();
 
 
         private bool isBusy;

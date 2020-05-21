@@ -18,7 +18,7 @@ namespace BudgetAppCross.Core.ViewModels
     {
         #region Fields
         private IMvxNavigationService navigationService;
-        //private IDataManager DataManager = Mvx.IoCProvider.Resolve<IDataManager>();   
+        //private IDataManager DataManager = Mvx.IoCProvider.Resolve<IDataManager>();
         #endregion
 
         #region Properties

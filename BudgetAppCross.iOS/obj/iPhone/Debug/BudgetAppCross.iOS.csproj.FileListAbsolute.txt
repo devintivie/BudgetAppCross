@@ -73,10 +73,8 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.exe
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\SQLite-net.dll
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\SQLitePCLRaw.batteries_green.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\SQLitePCLRaw.batteries_v2.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\SQLitePCLRaw.core.dll
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\SQLitePCLRaw.provider.sqlite3.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\SQLiteNetExtensions.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\SQLiteNetExtensions.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Microsoft.Bcl.AsyncInterfaces.dll
@@ -108,5 +106,5 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\System.Text.Encodings.Web.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\System.Text.Json.dll
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCore.Sqlite.dll
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCore.Sqlite.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\SQLitePCLRaw.nativelibrary.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\SQLitePCLRaw.provider.dynamic_cdecl.dll
