@@ -10,13 +10,15 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using Acr.UserDialogs;
 using System.Linq;
+using MvvmCross;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class NewBankAccountViewModel : MvxViewModel
+    public class NewBankAccountViewModel : BaseViewModel// MvxViewModel
     {
         #region Fields
         private IMvxNavigationService navigationService;
+        //private IDataManager DataManager = Mvx.IoCProvider.Resolve<IDataManager>();   
         #endregion
 
         #region Properties
@@ -99,6 +101,8 @@ namespace BudgetAppCross.Core.ViewModels
             CancelCommand = new Command(async () => await OnCancel());
             BalanceFocusedCommand = new Command(() => BalanceFocused());
             BalanceUnfocusedCommand = new Command(() => BalanceUnfocused());
+
+            
         }
         #endregion
 
@@ -121,7 +125,9 @@ namespace BudgetAppCross.Core.ViewModels
             //};
             var bal = new Balance(Balance, Date);
             BankAccount.History.Add(bal);
-            await BudgetDatabase.Instance.SaveBankAccount(BankAccount);
+            await BudgetDatabase.SaveBankAccount(BankAccount);
+            //await BudgetDatabase.Instance.SaveBankAccount(BankAccount);
+
 
             //bal.AccountID = BankAccount.AccountID;
             //await BudgetDatabase.Instance.SaveBalance(bal);

@@ -20,6 +20,7 @@ namespace BudgetAppCross.Core.Services
         Task SaveBalance(Balance balance);
         Task<Balance> GetBalance(int id);
         Task DeleteBalance(Balance balance);
+        Task<Balance> GetLatestBalance(int id, DateTime date);
         #endregion
 
         #region Bills
@@ -27,6 +28,8 @@ namespace BudgetAppCross.Core.Services
         Task SaveBill(Bill bill);
         Task<Bill> GetBill(int id);
         Task DeleteBill(Bill bill);
+
+        Task<List<Bill>> GetBillsForPayee(string payee);
         #endregion
 
     }

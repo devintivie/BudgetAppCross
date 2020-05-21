@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BudgetAppCross.Core.Services.Data
+namespace BudgetAppCross.Core.Services
 {
     public class DataManagerSqlite : IDataManager
     {
@@ -32,7 +32,7 @@ namespace BudgetAppCross.Core.Services.Data
                 {
                     if (acct.AccountID != 0)
                     {
-                        ctx.Add(      Database.UpdateWithChildren(acct);
+                        ctx.BankAccounts.Add(acct);
                     }
                     else
                     {
@@ -60,9 +60,12 @@ namespace BudgetAppCross.Core.Services.Data
         {
             return await Task.Run(() =>
             {
-                var list = Database.Table<BankAccount>().ToList();
-                var names = list.Select(x => x.Nickname);//.ToList();
-                return names;
+                using (var ctx = new SQLiteDBContext())
+                {
+                    var list = ctx.BankAccounts.ToList();
+                    var names = list.Select(x => x.Nickname);//.ToList();
+                    return names;
+                }
             });
         }
 
@@ -70,7 +73,10 @@ namespace BudgetAppCross.Core.Services.Data
         {
             return await Task.Run(() =>
             {
-                return Database.GetWithChildren<BankAccount>(id);
+                using (var ctx = new SQLiteDBContext())
+                {
+                    return ctx.BankAccounts.Single(ba => ba.AccountID == id);
+                }
             });
         }
 
@@ -78,14 +84,12 @@ namespace BudgetAppCross.Core.Services.Data
         {
             await Task.Run(() =>
             {
-                Database.Delete(acct);
+                using (var ctx = new SQLiteDBContext())
+                {
+                    ctx.BankAccounts.Remove(acct);
+                }
             });
         }
-
-        //public Task<int> DeleteBillAsync(Bill bill)
-        //{
-        //    return Database.DeleteAsync(bill);
-        //}
         #endregion
 
         #region Balance
@@ -93,34 +97,39 @@ namespace BudgetAppCross.Core.Services.Data
         {
             await Task.Run(() =>
             {
-                if (balance.ID != 0)
+                using (var ctx = new SQLiteDBContext())
                 {
-                    Database.Update(balance);//     UpdateWithChildren(balance);
-                }
-                else
-                {
-                    Database.Insert(balance);//  WithChildren(balance);
+                    if (balance.ID != 0)
+                    {
+                        ctx.BalanceHistory.Add(balance);
+                    }
+                    else
+                    {
+                        ctx.BalanceHistory.Update(balance);
+                    }
                 }
             });
         }
 
         public async Task<List<Balance>> GetBalances()
         {
-            //var list = new List<BankAccount>();
             return await Task.Run(() =>
             {
-                return Database.Table<Balance>().ToList();
-                //return Database.Get WithChildren<Balance>();
+                using (var ctx = new SQLiteDBContext())
+                {
+                    return ctx.BalanceHistory.ToList();
+                }
             });
-
-            //return list;
         }
 
         public async Task<Balance> GetBalance(int id)
         {
             return await Task.Run(() =>
             {
-                return Database.Get<Balance>(id);//    WithChildren<Balance>(id);
+                using (var ctx = new SQLiteDBContext())
+                {
+                    return ctx.BalanceHistory.Single(b => b.ID == id);
+                }
             });
         }
 
@@ -128,36 +137,26 @@ namespace BudgetAppCross.Core.Services.Data
         {
             return await Task.Run(() =>
             {
-                var balances = Database.Table<Balance>()
-                .Where(bal => bal.AccountID == id).ToList();
+                using (var ctx = new SQLiteDBContext())
+                {
+                    var balances = ctx.BalanceHistory.Where(bal => bal.Timestamp <= date)
+                    .Where(bal => bal.AccountID == id)
+                    .OrderByDescending(x => x.Timestamp).ToList();
 
-                return balances.First();
-
-                //if(balances.Count == 0)
-                //{
-                //    return new Balance();
-                //}
-                //else
-                //{
-                //    return new Balance();
-                //}
-                //return balance;
-                //var list =  await (Database.Table<Balance>().Where(bal => bal.Timestamp <= date && )
-                //.OrderByDescending(x => x.Timestamp)).FirstAsync();
-                //var list = Database.Table<Balance>().ToList();
-                //return list.First();
+                    var balance = balances.FirstOrDefault();
+                    return balance;
+                }
             });
-            //var list = Database.Table<Balance>().ToList();
-            //return list.FirstOrDefault();
-            //return await (Database.Table<Balance>().Where(bal => bal.Timestamp <= date)
-            //    .OrderByDescending(x => x.Timestamp)).FirstAsync();
         }
 
         public async Task DeleteBalance(Balance balance)
         {
             await Task.Run(() =>
             {
-                Database.Delete(balance);
+                using (var ctx = new SQLiteDBContext())
+                {
+                    ctx.BalanceHistory.Remove(balance);
+                }
             });
         }
         #endregion
@@ -167,24 +166,28 @@ namespace BudgetAppCross.Core.Services.Data
         {
             await Task.Run(() =>
             {
-                if (bill.ID != 0)
+                using (var ctx = new SQLiteDBContext())
                 {
-                    Database.UpdateWithChildren(bill);
-                }
-                else
-                {
-                    Database.InsertWithChildren(bill);
+                    if (bill.ID != 0)
+                    {
+                        ctx.Bills.Add(bill);
+                    }
+                    else
+                    {
+                        ctx.Bills.Update(bill);
+                    }
                 }
             });
         }
 
         public async Task<List<Bill>> GetBills()
         {
-            //var list = new List<BankAccount>();
             var list = await Task.Run(() =>
             {
-                //return Database.Table<Bill>().ToList();
-                return Database.GetAllWithChildren<Bill>();
+                using (var ctx = new SQLiteDBContext())
+                {
+                    return ctx.Bills.ToList();
+                }
             });
 
             return list;
@@ -194,30 +197,35 @@ namespace BudgetAppCross.Core.Services.Data
         {
             var list = await Task.Run(() =>
             {
-                return Database.GetAllWithChildren<Bill>()
-                        .Where(x => x.Payee.Equals(payee))
-                        .OrderBy(x => x.Date).ToList();
-                //return Database.Table<Bill>().Where(x => x.Payee.Equals(payee)).ToList();
+                using (var ctx = new SQLiteDBContext())
+                {
+                    return ctx.Bills.Where(b => b.Payee.Equals(payee))
+                    .OrderBy(x => x.Date).ToList();
+                }
             });
 
             return list;
-            // SQL queries are also possible
-            //return Database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
         }
 
         public async Task<Bill> GetBill(int id)
         {
             return await Task.Run(() =>
             {
-                return Database.Get<Bill>(id);
-            }); 
+                using (var ctx = new SQLiteDBContext())
+                {
+                    return ctx.Bills.Single(b => b.ID == id);
+                }
+            });
         }
 
         public async Task DeleteBill(Bill bill)
         {
             await Task.Run(() =>
             {
-                Database.Delete(bill);
+                using (var ctx = new SQLiteDBContext())
+                {
+                    ctx.Bills.Remove(bill);
+                }
             });
         }
         #endregion

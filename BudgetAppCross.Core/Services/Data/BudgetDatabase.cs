@@ -10,7 +10,7 @@ using SQLiteNetExtensions.Extensions;
 
 namespace BudgetAppCross.Core.Services
 {
-    public class BudgetDatabase : IDataManager
+    public class BudgetDatabase// : IDataManager
     {
         #region Singleton
         static readonly Lazy<BudgetDatabase> instance = new Lazy<BudgetDatabase>();

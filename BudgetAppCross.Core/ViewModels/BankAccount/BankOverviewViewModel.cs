@@ -1,5 +1,7 @@
-﻿using BudgetAppCross.Models;
+﻿using BudgetAppCross.Core.Services;
+using BudgetAppCross.Models;
 using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,7 +12,7 @@ using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BankOverviewViewModel : BaseViewModel
+    public class BankOverviewViewModel : MvxViewModel// BaseViewModel
     {
         #region Fields
         private IMvxNavigationService navigationService;
@@ -49,7 +51,7 @@ namespace BudgetAppCross.Core.ViewModels
         public BankOverviewViewModel(IMvxNavigationService navigation)
         {
             navigationService = navigation;
-            Title = "Bank Accounts";
+            //Title = "Bank Accounts";
 
             AddAccountCommand = new Command(async () => await navigationService.Navigate<NewBankAccountViewModel>());
             DeleteAccountCommand = new Command(() => OnDeleteAccount());
@@ -69,7 +71,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async void LoadAccounts()
         {
-            var accts = await BudgetDatabase.GetBankAccounts();
+            var accts = await BudgetDatabase.Instance.GetBankAccounts();
 
             Accounts.Clear();
             foreach (var item in accts)
@@ -86,7 +88,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async void OnDeleteAccount()
         {
-            await BudgetDatabase.DeleteBankAccount(SelectedAccount.BankAccount);
+            await BudgetDatabase.Instance.DeleteBankAccount(SelectedAccount.BankAccount);
             //Console.WriteLine(count); 
             //BankAccountManager.DeleteAccount(SelectedAccount);
             Accounts.Remove(selectedAccount);

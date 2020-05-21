@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 using System.Threading.Tasks;
+using MvvmCross;
 
 namespace BudgetAppCross.Core.ViewModels
 {
@@ -23,6 +24,8 @@ namespace BudgetAppCross.Core.ViewModels
         //public BankAccountManager BankAccountManager => BankAccountManager.Instance;
 
         public BudgetDatabase BudgetDatabase => BudgetDatabase.Instance;
+        //public IDataManager BudgetDatabase = Mvx.IoCProvider.Resolve<IDataManager>();
+
 
         private bool isBusy;
         public bool IsBusy
@@ -55,7 +58,6 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-
         #endregion
 
         #region Methods

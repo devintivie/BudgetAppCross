@@ -37,3 +37,5 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netst
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Bank\BankAccountView.xaml.g.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Transactions\TransactionView.xaml.g.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\DateRange\DateRangePage.xaml.g.cs
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCore.Sqlite.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCore.Sqlite.pdb

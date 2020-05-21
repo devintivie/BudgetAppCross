@@ -1,5 +1,6 @@
 ﻿using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
+using MvvmCross;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
@@ -17,6 +18,7 @@ namespace BudgetAppCross.Core.ViewModels
     {
         #region Fields
         private IMvxNavigationService navigationService;
+        //private IDataManager DataManager = Mvx.IoCProvider.Resolve<IDataManager>();
         //private BillTracker billTracker;
         #endregion
 
@@ -166,10 +168,12 @@ namespace BudgetAppCross.Core.ViewModels
         {
             //await navigationService.Close(this, Bill);
             var accts = await BudgetDatabase.Instance.GetBankAccounts();
+            //var accts = await DataManager.GetBankAccounts();
             var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
             Bill.BankAccount = acct;
             //Bill.AccountID = acct.AccountID;
             await BudgetDatabase.Instance.SaveBill(Bill);
+            //await DataManager.SaveBill(Bill);
             await navigationService.Close(this, true);
         }
 
@@ -181,6 +185,7 @@ namespace BudgetAppCross.Core.ViewModels
         private async void LoadAccountOptions()
         {
             var options = await BudgetDatabase.Instance.GetBankAccounts();
+            //var options = await DataManager.GetBankAccounts();
             AccountOptions.Clear();
             foreach (var item in options)
             {

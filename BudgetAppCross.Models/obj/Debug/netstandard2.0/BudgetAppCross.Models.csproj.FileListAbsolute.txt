@@ -5,5 +5,4 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debu
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.AssemblyInfo.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.pdb
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.csprojAssemblyReference.cache
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.csproj.CoreCompileInputs.cache

@@ -9,7 +9,7 @@ using SQLite;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class MainViewModel : BaseViewModel//MvxViewModel
+    public class MainViewModel : MvxViewModel
     {
         readonly IMvxNavigationService navigationService;
         public MainViewModel(IMvxNavigationService navService)

@@ -6,3 +6,7 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCore.Sqlite\obj\Debug
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.csprojAssemblyReference.cache
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCore.Sqlite\bin\Debug\netstandard2.0\BudgetAppCross.Models.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCore.Sqlite\bin\Debug\netstandard2.0\BudgetAppCross.Models.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.csproj.CopyComplete
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.csproj.CoreCompileInputs.cache

@@ -7,7 +7,9 @@ namespace BudgetAppCross.Core
 {
     public static class Constants
     {
-        public const string DatabaseFilename = "BudgetSQLite.db3";
+        public const string DatabaseFilename = "BudgetSQLite.db3";//"BudgetSQLite.db3";
+
+        //public const string BudgetEFCoreFilename = "BudgetEFCore.db3";
 
         public const SQLite.SQLiteOpenFlags Flags =
             // open the database in read/write mode
@@ -22,8 +24,11 @@ namespace BudgetAppCross.Core
             get
             {
                 var basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-                return Path.Combine(basePath, DatabaseFilename);
+                var fullpath = Path.Combine(basePath, DatabaseFilename);
+                return fullpath;
             }
         }
+
+
     }
 }
