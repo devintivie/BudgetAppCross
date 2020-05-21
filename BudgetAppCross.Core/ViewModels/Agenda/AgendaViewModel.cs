@@ -123,18 +123,20 @@ namespace BudgetAppCross.Core.ViewModels
         public override void ViewAppeared()
         {
             base.ViewAppeared();
-
             LoadAgenda();
+            
         }
 
         public override void ViewDestroy(bool viewFinishing = true)
         {
-            base.ViewDestroy(viewFinishing);
             SaveBills();
+            base.ViewDestroy(viewFinishing);
+            
         }
 
         private async void LoadAgenda()
         {
+            await BudgetDatabase.UpdateBankAccountNames();
             var dt = DateTime.Today.AddDays(-4);
             var dt2 = DateTime.Today.AddMonths(2);
             var bills = await BudgetDatabase.GetBills();
@@ -147,6 +149,8 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 BillsGrouped.Add(new AgendaEntryViewModel(item));
             }
+
+            
         }
 
         private async void SaveBills()

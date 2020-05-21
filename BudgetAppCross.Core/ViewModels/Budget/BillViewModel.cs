@@ -1,4 +1,5 @@
-﻿using BudgetAppCross.Models;
+﻿using BudgetAppCross.Core.Services;
+using BudgetAppCross.Models;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -126,15 +127,16 @@ namespace BudgetAppCross.Core.ViewModels
         public BillViewModel(Bill bill)
         {
             Bill = bill;
-            //LoadAccountOptions();
+            
+            LoadAccountOptions();
         }
 
-        public BillViewModel(Bill bill, List<string> options)
-        {
-            Bill = bill;
-            AccountOptions = new ObservableCollection<string>(options);
-            SelectedAccount = Bill.BankAccount.Nickname;
-        }
+        //public BillViewModel(Bill bill, List<string> options)
+        //{
+        //    Bill = bill;
+        //    AccountOptions = new ObservableCollection<string>(options);
+        //    SelectedAccount = Bill.BankAccount.Nickname;
+        //}
         #endregion
 
         #region Methods
@@ -145,21 +147,21 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async void LoadAccountOptions()
         {
-            var options = await BudgetDatabase.GetBankAccounts();
-            AccountOptions.Clear();
-            foreach (var item in options)
-            {
-                AccountOptions.Add(item.Nickname);
-            }
-            SelectedAccount = Bill.BankAccount.Nickname;
+            
+            AccountOptions = new ObservableCollection<string>(BudgetDatabase.BankAccountNicknames);
+            SelectedAccount = AccountOptions.Where(x => x.Equals(Bill.BankAccount.Nickname)).FirstOrDefault();
 
         }
 
         private async void UpdateAccount()
         {
-            var accts = await BudgetDatabase.GetBankAccounts();
-            var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
-            Bill.BankAccount = acct;
+            if(SelectedAccount != null)
+            {
+                var accts = await BudgetDatabase.GetBankAccounts();
+                var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
+                Bill.BankAccount = acct;
+            }
+            
         }
 
         //private async void LoadAccountOptions()

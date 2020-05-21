@@ -85,6 +85,12 @@ namespace BudgetAppCross.Core.ViewModels
             DeleteBillCommand = new Command(() =>  OnDeleteBill(), () => CanDeleteBill());
         }
 
+        public override void ViewAppeared()
+        {
+            base.ViewAppeared();
+            UpdateBills();
+        }
+
         #endregion
 
         #region Methods
@@ -92,24 +98,27 @@ namespace BudgetAppCross.Core.ViewModels
         {
             CompanyName = parameter;
             //billTracker = parameter;
-            UpdateBills();
+            
         }
+
+        
 
         public override void ViewDestroy(bool viewFinishing = true)
         {
-            //SaveBills();
+            SaveBills();
             base.ViewDestroy(viewFinishing);
             
         }
 
         private async void UpdateBills()
         {
-            var options = await LoadAccountOptions();
+            //var options = await LoadAccountOptions();
+            await BudgetDatabase.UpdateBankAccountNames();
             var temp = await BudgetDatabase.GetBillsForPayee(CompanyName);
             var bvms = new List<BillViewModel>();
             foreach (var item in temp)
             {
-                bvms.Add(new BillViewModel(item, options));
+                bvms.Add(new BillViewModel(item));
             }
 
             Bills = new ObservableCollection<BillViewModel>(bvms);

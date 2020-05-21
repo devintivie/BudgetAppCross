@@ -8,11 +8,16 @@ namespace BudgetAppCross.Core.Services
 {
     public interface IDataManager
     {
+
+        #region Properties
+        List<string> BankAccountNicknames { get; set; }
+        #endregion
         #region BankAccounts
         Task<List<BankAccount>> GetBankAccounts();
         Task SaveBankAccount(BankAccount acct);
         Task<BankAccount> GetBankAccount(int id);
         Task DeleteBankAccount(BankAccount acct);
+        Task UpdateBankAccountNames();
         #endregion
 
         #region Balances

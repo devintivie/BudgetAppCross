@@ -74,7 +74,7 @@ namespace BudgetAppCross.Core.ViewModels
             navigationService = navigation;
             Title = "Paycheck View";
 
-            LoadData();
+            
 
             //var data = (from bts in BillManager.AllTrackers
             //            from bill in bts.Bills
@@ -107,6 +107,7 @@ namespace BudgetAppCross.Core.ViewModels
         #region Methods
         private async void LoadData()
         {
+            await BudgetDatabase.UpdateBankAccountNames();
             var bills = await BudgetDatabase.GetBills();
             var data = (bills.Where(x => x.Date >= StartDate && x.Date <= EndDate)
                         .OrderBy(x => x.Date)
@@ -118,6 +119,8 @@ namespace BudgetAppCross.Core.ViewModels
                 Transactions.Add(new BillViewModel(item));
             }
 
+            
+
             //BillsGrouped.Clear();
             //foreach (var item in data)
             //{
@@ -127,7 +130,9 @@ namespace BudgetAppCross.Core.ViewModels
 
         public override void ViewAppeared()
         {
+            LoadData();
             base.ViewAppeared();
+            
         }
         public override void ViewDestroy(bool viewFinishing = true)
         {

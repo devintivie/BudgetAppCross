@@ -15,6 +15,7 @@
                    FontSize="Body"
                        VerticalOptions="Center"
                        WidthRequest="120"/>
+            <DatePicker Date="{Binding Date}"/>
             <Entry Text="{Binding Amount}"
                        WidthRequest="85"
                        HorizontalOptions="Center"

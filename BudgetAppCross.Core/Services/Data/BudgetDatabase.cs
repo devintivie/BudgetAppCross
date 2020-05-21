@@ -35,7 +35,7 @@ namespace BudgetAppCross.Core.Services
         #endregion
 
         #region Properties
-
+        public List<string> BankAccountNicknames { get; set; } = new List<string>();
         #endregion
 
         #region Methods
@@ -92,18 +92,36 @@ namespace BudgetAppCross.Core.Services
                 return Database.GetAllWithChildren<BankAccount>();
             });
 
+            await UpdateBankAccountNames();
+
             return list;
         }
 
-        public async Task<IEnumerable<string>> GetBankAccountNames()
+        public async Task UpdateBankAccountNames()
         {
-            return await Task.Run(() =>
+            var list = await Task.Run(() =>
             {
-                var list = Database.Table<BankAccount>().ToList();
-                var names = list.Select(x => x.Nickname);//.ToList();
-                return names;
+                return Database.GetAllWithChildren<BankAccount>();
             });
+
+            BankAccountNicknames.Clear();
+            foreach (var item in list)
+            {
+                BankAccountNicknames.Add(item.Nickname);
+            }
         }
+
+        //public async Task<IEnumerable<string>> GetBankAccountNames()
+        //{
+        //    return await Task.Run(() =>
+        //    {
+        //        var list = Database.Table<BankAccount>().ToList();
+        //        var names = list.Select(x => x.Nickname);//.ToList();
+        //        return names;
+        //    });
+        //}
+
+
 
         public async Task<BankAccount> GetBankAccount(int id)
         {
