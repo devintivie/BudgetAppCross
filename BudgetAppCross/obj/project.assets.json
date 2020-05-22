@@ -323,6 +323,18 @@
           "lib/netstandard2.0/MvvmCross.Forms.dll": {}
         }
       },
+      "MvvmCross.Plugin.Messenger/6.4.2": {
+        "type": "package",
+        "dependencies": {
+          "MvvmCross": "6.4.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/MvvmCross.Plugin.Messenger.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MvvmCross.Plugin.Messenger.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
@@ -693,6 +705,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "MvvmCross.Plugin.Messenger": "6.4.2",
           "Newtonsoft.Json": "12.0.3",
           "SQLiteNetExtensions": "2.1.0",
           "sqlite-net-pcl": "1.6.292"
@@ -1238,6 +1251,21 @@
         "mvvmcross.forms.6.4.2.nupkg.sha512",
         "mvvmcross.forms.nuspec",
         "readme.txt"
+      ]
+    },
+    "MvvmCross.Plugin.Messenger/6.4.2": {
+      "sha512": "oOVxyj8H1GqZFoxbMMgpW2jy9R4PJUpgdrmP61kjA3EPV3S+Shzy481NLnCN0gHzmlxKTM/w+b+W5RWD65CmRg==",
+      "type": "package",
+      "path": "mvvmcross.plugin.messenger/6.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/netstandard2.0/MvvmCross.Plugin.Messenger.dll",
+        "lib/netstandard2.0/MvvmCross.Plugin.Messenger.pdb",
+        "lib/netstandard2.0/MvvmCross.Plugin.Messenger.xml",
+        "mvvmcross.plugin.messenger.6.4.2.nupkg.sha512",
+        "mvvmcross.plugin.messenger.nuspec"
       ]
     },
     "NETStandard.Library/2.0.3": {

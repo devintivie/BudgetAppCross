@@ -75,6 +75,9 @@
     <Compile Update="Views\Bank\NewBankAccountPage.xaml.cs">
       <DependentUpon>NewBankAccountPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\DateRange\DateRangeEntryView.xaml.cs">
+      <DependentUpon>DateRangeEntryView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\DateRange\DateRangePage.xaml.cs">
       <DependentUpon>DateRangePage.xaml</DependentUpon>
     </Compile>

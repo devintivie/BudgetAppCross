@@ -56,7 +56,17 @@
                 </ListView.ItemTemplate>
             </ListView>-->
             </StackLayout>
+            <Label Text="{Binding StartingBalance}"
+                   FontSize="Title"/>
             <Label Text="{Binding DateRangeTotal}"
+                   FontSize="Title"/>
+            <Label Text="{Binding EndingBalance}"
+                   FontSize="Title"/>
+            <Label Text="{Binding StartingBalance2}"
+                   FontSize="Title"/>
+            <Label Text="{Binding DateRangeTotal2}"
+                   FontSize="Title"/>
+            <Label Text="{Binding EndingBalance2}"
                    FontSize="Title"/>
         </StackLayout>
         

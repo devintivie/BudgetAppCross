@@ -26,6 +26,8 @@ namespace BudgetAppCross.Core.ViewModels
         //public BudgetDatabase BudgetDatabase => BudgetDatabase.Instance;
         public IDataManager BudgetDatabase = Mvx.IoCProvider.Resolve<IDataManager>();
 
+        public Messenger Messenger => Messenger.Instance;
+
 
         private bool isBusy;
         public bool IsBusy

@@ -43,6 +43,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "MvvmCross.Plugin.Messenger": {
+              "target": "Package",
+              "version": "[6.4.2, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

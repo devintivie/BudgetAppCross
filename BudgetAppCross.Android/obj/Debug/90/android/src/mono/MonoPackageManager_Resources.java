@@ -35,6 +35,7 @@ public class MonoPackageManager_Resources {
 		"MvvmCross.Droid.Support.Fragment.dll",
 		"MvvmCross.Droid.Support.V7.AppCompat.dll",
 		"MvvmCross.Forms.dll",
+		"MvvmCross.Plugin.Messenger.dll",
 		"Newtonsoft.Json.dll",
 		"SQLite-net.dll",
 		"SQLiteNetExtensions.dll",

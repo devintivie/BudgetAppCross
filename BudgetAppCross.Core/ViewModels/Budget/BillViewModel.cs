@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
@@ -35,11 +36,14 @@ namespace BudgetAppCross.Core.ViewModels
             get { return Bill.Date; }
             set
             {
-                var dueDate = Bill.Date;
-                Bill.Date = value;
-                SetProperty(ref dueDate, value);
-                MessagingCenter.Send(this, "UpdateTotal");
-
+                if(Bill.Date != value)
+                {
+                    var dueDate = Bill.Date;
+                    Bill.Date = value;
+                    SetProperty(ref dueDate, value);
+                    UpdateAndSave();
+                }
+                
             }
         }
 
@@ -48,10 +52,17 @@ namespace BudgetAppCross.Core.ViewModels
             get { return Bill.Amount; }
             set
             {
-                var amountDue = Bill.Amount;
-                Bill.Amount = value;
-                SetProperty(ref amountDue, value);
-                MessagingCenter.Send(this, "UpdateTotal");
+                if(Bill.Amount != value)
+                {
+                    var amountDue = Bill.Amount;
+                    Bill.Amount = value;
+                    SetProperty(ref amountDue, value);
+
+                    UpdateAndSave();
+                    //MessagingCenter.Send(this, "Update");
+                    //Messenger.Send(new UpdateBillMessage());
+                }
+                
             }
         }
 
@@ -116,8 +127,12 @@ namespace BudgetAppCross.Core.ViewModels
             get { return selectedAccount; }
             set
             {
-                SetProperty(ref selectedAccount, value);
-                UpdateAccount();
+                if(selectedAccount != value)
+                {
+                    SetProperty(ref selectedAccount, value);
+                    UpdateAccount();
+                }
+                
             }
         }
 
@@ -160,8 +175,15 @@ namespace BudgetAppCross.Core.ViewModels
                 var accts = await BudgetDatabase.GetBankAccounts();
                 var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
                 Bill.BankAccount = acct;
+
+                UpdateAndSave();
             }
-            
+        }
+
+        private async void UpdateAndSave()
+        {
+            await BudgetDatabase.SaveBill(Bill);
+            Messenger.Send(new UpdateBillMessage());
         }
 
         //private async void LoadAccountOptions()
