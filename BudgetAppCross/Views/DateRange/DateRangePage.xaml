@@ -12,7 +12,10 @@
              x:Name="currentPage"
              Title="{Binding Title}"
              >
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddBillCommand}"/>
+        <ToolbarItem Text="Delete" Command="{Binding DeleteCommand}"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
@@ -36,7 +39,19 @@
                             Grid.Row="1" Grid.Column="1"
                             FontSize="Title"/>
             </StackLayout>
-            <StackLayout BindableLayout.ItemsSource="{Binding Transactions}">
+            <ScrollView>
+                <StackLayout BindableLayout.ItemsSource="{Binding Accounts}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <controls:DateRangeEntryView/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
+            
+            <!--<StackLayout BindableLayout.ItemsSource="{Binding Transactions}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
@@ -44,7 +59,7 @@
                         </StackLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
-                <!--<ListView ItemsSource="{Binding BillsGrouped}"
+                --><!--<ListView ItemsSource="{Binding BillsGrouped}"
                       MinimumHeightRequest="70"
                       HasUnevenRows="True">
                 <ListView.ItemTemplate>
@@ -54,9 +69,9 @@
                         </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>-->
-            </StackLayout>
-            <Label Text="{Binding StartingBalance}"
+            </ListView>--><!--
+            </StackLayout>-->
+            <!--<Label Text="{Binding StartingBalance}"
                    FontSize="Title"/>
             <Label Text="{Binding DateRangeTotal}"
                    FontSize="Title"/>
@@ -67,7 +82,7 @@
             <Label Text="{Binding DateRangeTotal2}"
                    FontSize="Title"/>
             <Label Text="{Binding EndingBalance2}"
-                   FontSize="Title"/>
+                   FontSize="Title"/>-->
         </StackLayout>
         
     </ContentPage.Content>

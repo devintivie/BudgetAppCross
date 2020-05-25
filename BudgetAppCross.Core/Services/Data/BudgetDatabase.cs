@@ -51,6 +51,8 @@ namespace BudgetAppCross.Core.Services
 
                 initialized = true;
 
+                var names = UpdateBankAccountNames();
+
                 //, type).ConfigureAwait(false);
                 //MapTable(typeof(BankAccount));
                 //MapTable(typeof(Bill));

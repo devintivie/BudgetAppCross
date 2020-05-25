@@ -39,3 +39,4 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netst
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\ref\BudgetAppCross.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\DateRange\DateRangeEntryView.xaml.g.cs

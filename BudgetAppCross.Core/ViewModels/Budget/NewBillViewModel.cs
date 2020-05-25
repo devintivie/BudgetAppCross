@@ -185,7 +185,7 @@ namespace BudgetAppCross.Core.ViewModels
         private async void LoadAccountOptions()
         {
             //var options = await BudgetDatabase.Instance.GetBankAccounts();
-            AccountOptions = new ObservableCollection<string>(BudgetDatabase.Instance.BankAccountNicknames);// await DataManager.GetBankAccounts();
+            AccountOptions = new ObservableCollection<string>(DataManager.BankAccountNicknames);// await DataManager.GetBankAccounts();
             //AccountOptions.Clear();
             //foreach (var item in options)
             //{

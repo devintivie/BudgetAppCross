@@ -7,25 +7,22 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class DateRangeEntryViewModel : MvxViewModel
+    public class DateRangeEntryViewModel : BaseViewModel// MvxViewModel
     {
         #region Fields
         #endregion
 
         #region Properties
-        private DateTime date;
-        public DateTime Date
-        {
-            get { return date; }
-            set
-            {
-                SetProperty(ref date, value);
-            }
-        }
+        private readonly DateTime StartDate; //{ get; private set; }
+        private readonly DateTime EndDate; //{ get; private set; }
+        private List<Bill> billList;
+
+        public BankAccount BankAccount { get; private set; }
 
         private ObservableCollection<BillViewModel> bills = new ObservableCollection<BillViewModel>();
         public ObservableCollection<BillViewModel> Bills
@@ -37,13 +34,33 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private double dateTotal;
-        public double DateTotal
+        private double dateRangeTotal;
+        public double DateRangeTotal
         {
-            get { return dateTotal; }
+            get { return dateRangeTotal; }
             set
             {
-                SetProperty(ref dateTotal, value);
+                SetProperty(ref dateRangeTotal, value);
+            }
+        }
+
+        private double startingBalance;
+        public double StartingBalance
+        {
+            get { return startingBalance; }
+            set
+            {
+                SetProperty(ref startingBalance, value);
+            }
+        }
+
+        private double endingBalance;
+        public double EndingBalance
+        {
+            get { return endingBalance; }
+            set
+            {
+                SetProperty(ref endingBalance, value);
             }
         }
 
@@ -55,61 +72,57 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        //public AgendaEntryViewModel(Grouping<DateTime, Bill> datagroup )
-        //{
-        //    Date = datagroup.Key;
-        //    foreach (var item in datagroup)
-        //    {
-        //        Bills.Add(new BillViewModel(item));
-        //    }
-
-        //    MessagingCenter.Subscribe<AgendaBillViewModel>(this, "UpdateTotal", async (obj) => OnUpdateTotal());
-
-        //    //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
-        //    //{
-        //    //    var newItem = item as Item;
-        //    //    Items.Add(newItem);
-        //    //    await DataStore.AddItemAsync(newItem);
-        //    //});
-        //}
-
-        public DateRangeEntryViewModel(Grouping<DateTime, Bill> datagroup)
+        public DateRangeEntryViewModel(DateTime start, DateTime end, BankAccount acct)
         {
-            Date = datagroup.Key;
-            foreach (var item in datagroup)
-            {
-                Bills.Add(new BillViewModel(item));
-            }
+            StartDate = start;
+            EndDate = end;
+            BankAccount = acct;
+            Bills.Clear();
 
-            MessagingCenter.Subscribe<AgendaBillViewModel>(this, "UpdateTotal", async (obj) => OnUpdateTotal());
-
-            //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
-            //{
-            //    var newItem = item as Item;
-            //    Items.Add(newItem);
-            //    await DataStore.AddItemAsync(newItem);
-            //});
+            var load = LoadData();
         }
 
         #endregion
 
         #region Methods
 
-        public override void ViewAppeared()
-        {
-            base.ViewAppeared();
-        }
+        //private void OnUpdateTotal()
+        //{
+        //    var total = 0.0;
+        //    foreach (var item in Bills)
+        //    {
+        //        total += item.Amount;
+        //    }
 
+        //    DateTotal = total;
+        //}
 
-        private void OnUpdateTotal()
+        private async Task LoadData()
         {
-            var total = 0.0;
-            foreach (var item in Bills)
+            var data = (await BudgetDatabase.GetBills())
+                        .Where(x => x.Date >= StartDate)
+                        .Where(x => x.Date <= EndDate)
+                        .Where(x => x.AccountID == BankAccount.AccountID)
+                        .OrderBy(x => x.Date)
+                        .Select(bill => bill).ToList();
+
+            billList = new List<Bill>(data);
+            foreach (var item in billList)
             {
-                total += item.Amount;
+                Bills.Add(new BillViewModel(item));
             }
 
-            DateTotal = total;
+            var bal = await BudgetDatabase.GetLatestBalance(BankAccount.AccountID, StartDate);
+            StartingBalance = bal.Amount;
+            var billTotal = 0.0;
+            foreach (var bill in billList)
+            {
+                billTotal += bill.Amount;
+            }
+
+            DateRangeTotal = billTotal;
+            EndingBalance = StartingBalance - DateRangeTotal;
+
         }
 
 

@@ -7,9 +7,10 @@
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.DateRangeEntryView">
+    
     <ContentView.Content>
         <StackLayout>
-            <Grid>
+            <!--<Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
@@ -22,8 +23,23 @@
                        HorizontalTextAlignment="End"
                        Grid.Column="1"
                        />
+            </Grid>-->
+            <Label Text="{Binding BankAccount.Nickname}"
+                   FontSize="Title"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Start"
+                       FontSize="Title"
+                       HorizontalTextAlignment="Start"/>
+                <Label Text="{Binding StartingBalance}"
+                       FontSize="Title"
+                       HorizontalTextAlignment="End"
+                       Grid.Column="1"
+                       />
             </Grid>
-            
             <StackLayout BindableLayout.ItemsSource="{Binding Bills}">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
@@ -33,6 +49,33 @@
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
             </StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Text="Expenses"
+                       FontSize="Title"
+                       HorizontalTextAlignment="Start"/>
+                <Label Text="{Binding DateRangeTotal}"
+                       FontSize="Title"
+                       HorizontalTextAlignment="End"
+                       Grid.Column="1"
+                       />
+                <Label Text="Remaining"
+                       FontSize="Title"
+                       HorizontalTextAlignment="Start"
+                       Grid.Row="1"/>
+                <Label Text="{Binding EndingBalance}"
+                       FontSize="Title"
+                       HorizontalTextAlignment="End"
+                       Grid.Row="1" Grid.Column="1"
+                       />
+            </Grid>
             
             <!--<ListView ItemsSource="{Binding Bills}"
                       >

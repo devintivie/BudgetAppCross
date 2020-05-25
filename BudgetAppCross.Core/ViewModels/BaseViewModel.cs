@@ -7,6 +7,8 @@ using System.Text;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using MvvmCross;
+using System.Windows.Input;
+using MvvmCross.Navigation;
 
 namespace BudgetAppCross.Core.ViewModels
 {
@@ -14,7 +16,7 @@ namespace BudgetAppCross.Core.ViewModels
     {
 
         #region Fields
-
+        IMvxNavigationService navigationService;
         #endregion
 
         #region Properties
@@ -59,12 +61,16 @@ namespace BudgetAppCross.Core.ViewModels
 
         #endregion
 
+        #region Commands
+        #endregion
+
         #region Constructors
         #endregion
 
         #region Methods
-
+        
         #endregion
+
 
 
 
