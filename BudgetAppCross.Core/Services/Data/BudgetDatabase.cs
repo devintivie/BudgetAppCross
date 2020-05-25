@@ -243,7 +243,7 @@ namespace BudgetAppCross.Core.Services
             var list = await Task.Run(() =>
             {
                 //return Database.Table<Bill>().ToList();
-                return Database.GetAllWithChildren<Bill>();
+                return Database.GetAllWithChildren<Bill>(recursive: true);
             });
 
             return list;

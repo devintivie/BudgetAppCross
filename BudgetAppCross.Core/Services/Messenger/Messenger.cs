@@ -56,7 +56,7 @@ namespace BudgetAppCross.Core.Services
         /// <param name=""action""></param>
         public void Register<T>(object recipient, Action<T> action)
         {
-            Register(recipient, action, null);
+            Register(recipient, action, typeof(T));
         }
 
         /// <summary>
@@ -70,7 +70,8 @@ namespace BudgetAppCross.Core.Services
         public void Register<T>(object recipient, Action<T> action, object context)
         {
             var key = new MessengerKey(recipient, context);
-            Dictionary.TryAdd(key, action);
+            var success = Dictionary.TryAdd(key, action);
+            Console.WriteLine(success);
         }
 
         /// <summary>
@@ -104,7 +105,8 @@ namespace BudgetAppCross.Core.Services
         /// <param name=""message""></param>
         public void Send<T>(T message)
         {
-            Send(message, null);
+            Send(message, typeof(T));
+            //Send(message, null);
         }
 
         /// <summary>

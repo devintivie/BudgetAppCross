@@ -29,7 +29,7 @@ namespace BudgetAppCross.Core.ViewModels
             set
             {
                 SetProperty(ref startDate, value);
-                if (initialized) { var _ = LoadData(); }
+                if (initialized) { var _ = UpdateAccounts(); }
             }
         }
 
@@ -40,7 +40,7 @@ namespace BudgetAppCross.Core.ViewModels
             set
             {
                 SetProperty(ref endDate, value);
-                if (initialized) { var _ = LoadData(); }
+                if (initialized) { var _ = UpdateAccounts(); }
             }
         }
 
@@ -179,6 +179,14 @@ namespace BudgetAppCross.Core.ViewModels
             foreach (var acct in accts)
             {
                 Accounts.Add(new DateRangeEntryViewModel(StartDate, EndDate, acct));
+            }
+        }
+
+        private async Task UpdateAccounts()
+        {
+            foreach (var acct in Accounts)
+            {
+                await acct.UpdateData(StartDate, EndDate);
             }
         }
 

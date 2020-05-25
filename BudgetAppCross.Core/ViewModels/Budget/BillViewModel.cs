@@ -25,9 +25,13 @@ namespace BudgetAppCross.Core.ViewModels
             get { return Bill.Payee; }
             set
             {
-                var payee = Bill.Payee;
-                Bill.Payee = value;
-                SetProperty(ref payee, value);
+                if(Bill.Payee != value)
+                {
+                    var payee = Bill.Payee;
+                    Bill.Payee = value;
+                    SetProperty(ref payee, value);
+                }
+                
             }
         }
 
@@ -36,14 +40,16 @@ namespace BudgetAppCross.Core.ViewModels
             get { return Bill.Date; }
             set
             {
-                if(Bill.Date != value)
+                if(!Bill.Date.Equals(value))
                 {
                     var dueDate = Bill.Date;
                     Bill.Date = value;
                     SetProperty(ref dueDate, value);
-                    UpdateAndSave();
+
+                    //Switch to change and save because daterangeentry needs to requery
+                    ChangeAndSave();
+
                 }
-                
             }
         }
 
@@ -59,6 +65,7 @@ namespace BudgetAppCross.Core.ViewModels
                     SetProperty(ref amountDue, value);
 
                     UpdateAndSave();
+                    
                     //MessagingCenter.Send(this, "Update");
                     //Messenger.Send(new UpdateBillMessage());
                 }
@@ -160,7 +167,7 @@ namespace BudgetAppCross.Core.ViewModels
         //    await BudgetDatabase.SaveBill(Bill);
         //}
 
-        private async void LoadAccountOptions()
+        private async Task LoadAccountOptions()
         {
             
             AccountOptions = new ObservableCollection<string>(BudgetDatabase.BankAccountNicknames);
@@ -168,22 +175,34 @@ namespace BudgetAppCross.Core.ViewModels
 
         }
 
-        private async void UpdateAccount()
+        private async Task UpdateAccount()
         {
             if(SelectedAccount != null)
             {
                 var accts = await BudgetDatabase.GetBankAccounts();
                 var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
-                Bill.BankAccount = acct;
 
-                UpdateAndSave();
+                if(Bill.BankAccount.Nickname != acct.Nickname)
+                {
+                    Bill.BankAccount = acct;
+
+                    //Switch to change and save because daterangeentry needs to requery
+                    ChangeAndSave();
+                }
+
             }
         }
 
-        private async void UpdateAndSave()
+        private async Task UpdateAndSave()
         {
             await BudgetDatabase.SaveBill(Bill);
-            Messenger.Send(new UpdateBillMessage());
+            Messenger.Send(new UpdateBillMessage(Bill.AccountID));
+        }
+
+        private async Task ChangeAndSave()
+        {
+            await BudgetDatabase.SaveBill(Bill);
+            Messenger.Send(new ChangeBillMessage());// Bill.AccountID);//);
         }
 
         //private async void LoadAccountOptions()
