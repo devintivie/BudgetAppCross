@@ -81,7 +81,7 @@ namespace BudgetAppCross.Core.ViewModels
 
             var load = LoadData();
             Messenger.Register<UpdateBillMessage>(this, async x => await OnUpdateBillMessage(x.AccountId));
-            Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage());
+            Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage(x.AccountId));
 
         }
 
@@ -95,14 +95,12 @@ namespace BudgetAppCross.Core.ViewModels
             //LoadData();
         }
 
-        private async Task OnChangeBillMessage()
+        private async Task OnChangeBillMessage(int id)
         {
-            //if (BankAccount.AccountID == id)
-            //{
-            //    await LoadData();
-            //}
-
-            await LoadData();
+            if (BankAccount.AccountID == id)
+            {
+                await LoadData();
+            }
             
         }
         #endregion

@@ -13,7 +13,7 @@
              <!--x:TypeArguments="vms:BudgetListViewModel"-->
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddBillCommand}"/>
-        <ToolbarItem Text="Delete" Command="{Binding DeleteBillCommand}"/>
+        <!--<ToolbarItem Text="Delete" Command="{Binding DeleteBillCommand}"/>-->
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
@@ -33,6 +33,11 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Delete"
+                                              Command="{Binding DeleteThisCommand}"
+                                              CommandParameter="{Binding .}"/>
+                                </ViewCell.ContextActions>
                                 <controls:BillView/>
                             </ViewCell>
                         </DataTemplate>

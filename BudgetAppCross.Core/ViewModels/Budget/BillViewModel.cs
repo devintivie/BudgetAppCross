@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
@@ -145,11 +146,17 @@ namespace BudgetAppCross.Core.ViewModels
 
         #endregion
 
+        #region Commands
+        public ICommand DeleteThisCommand { get; private set; }
+        #endregion
+
         #region Constructors
         public BillViewModel(Bill bill)
         {
             Bill = bill;
-            
+
+            DeleteThisCommand = new Command(async () => await OnDeleteThis());
+
             LoadAccountOptions();
         }
 
@@ -202,8 +209,15 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task ChangeAndSave()
         {
             await BudgetDatabase.SaveBill(Bill);
-            Messenger.Send(new ChangeBillMessage());// Bill.AccountID);//);
+            Messenger.Send(new ChangeBillMessage(Bill.AccountID));
         }
+
+        private async Task OnDeleteThis()
+        {
+            await BudgetDatabase.DeleteBill(Bill);
+            Messenger.Send(new ChangeBillMessage(Bill.AccountID));
+        }
+
 
         //private async void LoadAccountOptions()
         //{

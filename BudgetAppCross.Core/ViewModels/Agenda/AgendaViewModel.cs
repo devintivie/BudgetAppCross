@@ -45,6 +45,17 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+        private ObservableCollection<Grouping<DateTime, Bill>> bills = new ObservableCollection<Grouping<DateTime, Bill>>();
+        public ObservableCollection<Grouping<DateTime, Bill>> Bills
+        {
+            get { return bills; }
+            set
+            {
+                SetProperty(ref bills, value);
+            }
+        }
+
+
         //private List<Grouping<DateTime, AgendaBill>> billGroups = new List<Grouping<DateTime, AgendaBill>>();
 
         #endregion
@@ -144,11 +155,16 @@ namespace BudgetAppCross.Core.ViewModels
                         .OrderBy(x => x.Key)
                         .Where(x => x.Key >= dt && x.Key <= dt2)
                         .Select(groupedTable => new Grouping<DateTime, Bill>(groupedTable.Key, groupedTable))).ToList();
+
+            Bills = new ObservableCollection<Grouping<DateTime, Bill>>(data);
             BillsGrouped.Clear();
             foreach (var item in data)
             {
                 BillsGrouped.Add(new AgendaEntryViewModel(item));
             }
+
+
+
 
             
         }

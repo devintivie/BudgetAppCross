@@ -40,16 +40,31 @@
                        Grid.Column="1"
                        />
             </Grid>
-            <StackLayout BindableLayout.ItemsSource="{Binding Bills}">
-                <BindableLayout.ItemTemplate>
+            <ListView ItemsSource="{Binding Bills}"
+                      BackgroundColor="Beige"
+                      WidthRequest="300"
+                      HeightRequest="250"
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <controls:AgendaBillView/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--<StackLayout BindableLayout.ItemsSource="{Binding Bills}"
+                         >
+                <BindableLayout.ItemTemplate
+                    >
                     <DataTemplate>
                         <StackLayout>
                             <controls:AgendaBillView/>
                         </StackLayout>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>
-            </StackLayout>
-            <Grid>
+            </StackLayout>-->
+            <!--<Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="Auto"/>
@@ -75,7 +90,7 @@
                        HorizontalTextAlignment="End"
                        Grid.Row="1" Grid.Column="1"
                        />
-            </Grid>
+            </Grid>-->
             
             <!--<ListView ItemsSource="{Binding Bills}"
                       >

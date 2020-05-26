@@ -17,10 +17,14 @@ namespace BudgetAppCross.Models
 
     public class ChangeBillMessage
     {
-        //public int AccountId { get; private set; }
-        //public ChangeBillMessage(int id)
-        //{
-        //    AccountId = id;
-        //}
+        public int AccountId { get; private set; }
+        public ChangeBillMessage(int id)
+        {
+            AccountId = id;
+        }
+        public ChangeBillMessage()
+        {
+
+        }
     }
 }

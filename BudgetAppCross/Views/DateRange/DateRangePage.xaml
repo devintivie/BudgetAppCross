@@ -12,10 +12,13 @@
              x:Name="currentPage"
              Title="{Binding Title}"
              >
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Command="{Binding AddBillCommand}"/>
-        <ToolbarItem Text="Delete" Command="{Binding DeleteCommand}"/>
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Add" Command="{Binding AddBillCommand}"
+                     Order="Primary"/>
+        <ToolbarItem Text="Delete" Command="{Binding DeleteCommand}"
+                     Order="Secondary"/>
     </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
@@ -40,7 +43,8 @@
                             FontSize="Title"/>
             </StackLayout>
             <ScrollView>
-                <StackLayout BindableLayout.ItemsSource="{Binding Accounts}">
+                <StackLayout BindableLayout.ItemsSource="{Binding Accounts}"
+                             VerticalOptions="FillAndExpand">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <StackLayout>

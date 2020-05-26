@@ -27,7 +27,7 @@ namespace BudgetAppCross.Core.ViewModels
             //await BudgetDatabase.SaveBankAccount(mainAccount);
 
             await navigationService.Navigate<MenuViewModel>();
-            await navigationService.Navigate<DateRangeViewModel>();
+            await navigationService.Navigate<AgendaViewModel>();
 
         }
 

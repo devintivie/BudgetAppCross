@@ -83,7 +83,11 @@ namespace BudgetAppCross.Core.ViewModels
             AddBillCommand = new Command(async () => await OnAddBill());
             ShowOptionsCommand = new Command(() => Console.WriteLine("Swipe Left"));
             DeleteBillCommand = new Command(() =>  OnDeleteBill(), () => CanDeleteBill());
+
+            Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage());
         }
+
+        
 
         public override void ViewAppeared()
         {
@@ -110,7 +114,7 @@ namespace BudgetAppCross.Core.ViewModels
             
         }
 
-        private async void UpdateBills()
+        private async Task UpdateBills()
         {
             //var options = await LoadAccountOptions();
             await BudgetDatabase.UpdateBankAccountNames();
@@ -138,7 +142,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         }
 
-        private async void SaveBills()
+        private async Task SaveBills()
         {
             foreach (var bill in Bills)
             {
@@ -170,6 +174,14 @@ namespace BudgetAppCross.Core.ViewModels
         {
             return SelectedBill != null;
         }
+
+        private async Task OnChangeBillMessage()
+        {
+            await UpdateBills();
+            
+        }
+
+
         #endregion
 
 

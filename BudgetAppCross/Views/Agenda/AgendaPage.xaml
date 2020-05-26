@@ -14,7 +14,7 @@
              >
 
     <ContentPage.Content>
-        <StackLayout BindableLayout.ItemsSource="{Binding BillsGrouped}">
+        <!--<StackLayout BindableLayout.ItemsSource="{Binding BillsGrouped}">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>
                     <StackLayout>
@@ -22,18 +22,31 @@
                     </StackLayout>
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
-            <!--<ListView ItemsSource="{Binding BillsGrouped}"
-                      MinimumHeightRequest="70"
-                      HasUnevenRows="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <controls:AgendaEntryView/>
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>-->
-        </StackLayout>
+        </StackLayout>-->
+        <ListView ItemsSource="{Binding Bills}"
+                  HasUnevenRows="True"
+                  IsGroupingEnabled="True">
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding Key}"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Delete"
+                                              Command="{Binding DeleteThisCommand}"
+                                              CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                        <controls:BillView/>
+                    </ViewCell>
+                    
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </ContentPage.Content>
 </views:MvxContentPage>
 
