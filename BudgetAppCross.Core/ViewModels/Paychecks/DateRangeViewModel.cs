@@ -17,7 +17,7 @@ namespace BudgetAppCross.Core.ViewModels
     {
         #region Fields
         private IMvxNavigationService navigationService;
-        private List<Grouping<DateTime, Bill>> billGroups = new List<Grouping<DateTime, Bill>>();
+        
         private bool initialized = false;
         #endregion
 
@@ -29,7 +29,7 @@ namespace BudgetAppCross.Core.ViewModels
             set
             {
                 SetProperty(ref startDate, value);
-                if (initialized) { var _ = UpdateAccounts(); }
+                if (initialized) { var _ = GetGroups(); }
             }
         }
 
@@ -40,7 +40,7 @@ namespace BudgetAppCross.Core.ViewModels
             set
             {
                 SetProperty(ref endDate, value);
-                if (initialized) { var _ = UpdateAccounts(); }
+                if (initialized) { var _ = GetGroups(); }
             }
         }
 
@@ -63,6 +63,19 @@ namespace BudgetAppCross.Core.ViewModels
                 SetProperty(ref accounts, value);
             }
         }
+
+        private ObservableCollection<Grouping<string, AgendaBillViewModel>> billsGrouped = new ObservableCollection<Grouping<string, AgendaBillViewModel>>();
+        public ObservableCollection<Grouping<string, AgendaBillViewModel>> BillsGrouped
+        {
+            get { return billsGrouped; }
+            set
+            {
+                SetProperty(ref billsGrouped, value);
+            }
+        }
+
+
+        //private List<Grouping<string, Bill>> billGroups = new List<Grouping<string, Bill>>();
 
 
 
@@ -140,12 +153,14 @@ namespace BudgetAppCross.Core.ViewModels
             Title = "Paycheck View";
 
             var _ = LoadAccounts();
+            var _groups = GetGroups();
             //var _ = LoadData();
             //Messenger.Register<UpdateBillMessage>(this, x => OnUpdateBillMessage());
             //token = messenger.Subscribe<UpdateBillMessage>(OnUpdateBillMessage);
 
             AddBillCommand = new Command(async () => await navigationService.Navigate<NewBillViewModel, Bill>(new Bill()));
 
+            Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage(x.AccountId));
 
 
         }
@@ -180,6 +195,34 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 Accounts.Add(new DateRangeEntryViewModel(StartDate, EndDate, acct));
             }
+        }
+
+        private async Task GetGroups()
+        {
+            var bills = await BudgetDatabase.GetBills();
+            var billData = (bills)
+                        .Where(x => x.Date >= StartDate)
+                        .Where(x => x.Date <= EndDate)
+                        .OrderBy(x => x.Date)
+                        .Select(bill => bill).ToList();
+            
+            var data = billData.GroupBy(x => x.BankAccount.Nickname )
+                        .OrderBy(x => x.Key)
+                        .Select(grouped => new Grouping<string, Bill>(grouped.Key, grouped)).ToList();
+
+            var newGroup = new List<Grouping<string, AgendaBillViewModel>>();
+            foreach (var item in data)
+            {
+                var key = item.Key;
+                var bvms = new List<AgendaBillViewModel>();
+                foreach (var group in item.Grouped)
+                {
+                    bvms.Add(new AgendaBillViewModel(group));
+                }
+                newGroup.Add(new Grouping<string, AgendaBillViewModel>(key, bvms));
+            }
+
+            BillsGrouped = new ObservableCollection<Grouping<string, AgendaBillViewModel>>(newGroup);
         }
 
         private async Task UpdateAccounts()
@@ -228,6 +271,11 @@ namespace BudgetAppCross.Core.ViewModels
         private void OnUpdateBillMessage()
         {
             //UpdateCalculations();
+        }
+
+        private async Task OnChangeBillMessage(int id)
+        {
+            await GetGroups();
         }
 
         //private async Task UpdateCalculations()

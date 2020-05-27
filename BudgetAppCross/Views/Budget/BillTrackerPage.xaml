@@ -6,6 +6,7 @@
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              mc:Ignorable="d"
+             Title="{Binding CompanyName}"
              x:Class="BudgetAppCross.Views.BillTrackerPage">
 
     <!--xmlns:controls="clr-namespace:BudgetAppCross.Views"-->
@@ -17,15 +18,20 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding CompanyName}"
-                   FontSize="Title"/>
+            <!--<Label Text="{Binding CompanyName}"
+                   FontSize="Title"/>-->
             <StackLayout Orientation="Horizontal">
-                <Label Text="Paid" WidthRequest="60"/>
-                <Label Text="Amount Due" WidthRequest="130"
+                <Label Text="Paid" WidthRequest="50"
+                       FontSize="Subtitle"/>
+                <Label Text="Amount Due" WidthRequest="120"
+                       FontSize="Subtitle"
                        HorizontalOptions="Center"/>
-                <Label Text="Due Date" WidthRequest="100"/>
-                <Label Text="Account" WidthRequest="100"/>
-                <Label Text="Confirmation" WidthRequest="100"/>
+                <Label Text="Due Date" WidthRequest="100"
+                       FontSize="Subtitle"/>
+                <Label Text="Account" WidthRequest="100"
+                       FontSize="Subtitle"/>
+                <Label Text="Confirmation" WidthRequest="100"
+                       FontSize="Subtitle"/>
             </StackLayout>
             <!--<ScrollView>-->
                 <ListView ItemsSource="{Binding Bills}"

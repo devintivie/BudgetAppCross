@@ -24,8 +24,8 @@ namespace BudgetAppCross.Core.ViewModels
         #region Properties
         //public ObservableCollection<BillTracker> Trackers { get; set; } = new ObservableCollection<BillTracker>();
 
-        private ObservableCollection<BillTracker> trackers = new ObservableCollection<BillTracker>();
-        public ObservableCollection<BillTracker> Trackers
+        private ObservableCollection<BillTrackerQuickViewModel> trackers = new ObservableCollection<BillTrackerQuickViewModel>();
+        public ObservableCollection<BillTrackerQuickViewModel> Trackers
         {
             get { return trackers; }
             set
@@ -34,8 +34,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private BillTracker selectedTracker;
-        public BillTracker SelectedTracker
+        private BillTrackerQuickViewModel selectedTracker;
+        public BillTrackerQuickViewModel SelectedTracker
         {
             get { return selectedTracker; }
             set
@@ -69,6 +69,8 @@ namespace BudgetAppCross.Core.ViewModels
             //LoadBudgetCommand = new Command(async () => await OnLoadBudget());
             RefreshItemsCommand = new Command(async () => await OnRefresh());
 
+            Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage());
+
 
             //    var countGroupQuery = from table in dataTable.AsEnumerable()
             //                          group table by table.Field<string>(Column1) into groupedTable
@@ -89,6 +91,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         }
 
+        
 
         #endregion
 
@@ -100,21 +103,35 @@ namespace BudgetAppCross.Core.ViewModels
             LoadBills();
         }
 
-        private async void LoadBills()
+        private async Task LoadBills()
         {
-            var bills = await BudgetDatabase.GetBills();
-            List<Grouping<string, Bill>> data = (bills.GroupBy(x => x.Payee, StringComparer.OrdinalIgnoreCase)
-                        .Select(groupedTable => new Grouping<string, Bill>(groupedTable.Key, groupedTable))).ToList();
+            var names = await BudgetDatabase.GetBillPayees();
+            //List<Grouping<string, Bill>> data = (bills.GroupBy(x => x.Payee, StringComparer.OrdinalIgnoreCase)
+            //            .Select(groupedTable => new Grouping<string, Bill>(groupedTable.Key, groupedTable))).ToList();
+
+            names.Sort();
             Trackers.Clear();
-            foreach (var item in data)
+            foreach (var name in names)
             {
-                Trackers.Add(new BillTracker(item.Key, item.Grouped));
+                //var bt = new BillTracker(item.Key, item.Grouped);
+                Trackers.Add(new BillTrackerQuickViewModel(name));
             }
         }
 
-        public Task ShowBillTracker(BillTracker bt)
+        private async Task OnChangeBillMessage()
         {
-            return navigationService.Navigate<BillTrackerViewModel, string>(bt.CompanyName);
+            await LoadBills();
+        }
+
+
+        //public Task ShowBillTracker(BillTracker bt)
+        //{
+        //    return navigationService.Navigate<BillTrackerViewModel, string>(bt.CompanyName);
+        //}
+
+        public Task ShowBillTracker(string payee)
+        {
+            return navigationService.Navigate<BillTrackerViewModel, string>(payee);
         }
 
         //private async Task OnSaveBudget()

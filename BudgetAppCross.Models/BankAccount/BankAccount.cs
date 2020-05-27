@@ -43,7 +43,7 @@ namespace BudgetAppCross.Models
 
         public BankAccount(double iBalance, string account, string bank, string nickname)
         {
-            History.Add(new Balance(iBalance, DateTime.Now));
+            History.Add(new Balance(AccountID, iBalance, DateTime.Now));
             //CurrentBalance = iBalance;
             AccountNumber = account;
             BankName = bank;

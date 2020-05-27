@@ -1,70 +1,83 @@
 ﻿using BudgetAppCross.Models;
+using MvvmCross.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BankAccountViewModel : BaseViewModel
+    public class BankAccountViewModel : BaseViewModel<BankAccount>
     {
         #region Fields
+        private IMvxNavigationService navigationService;
 
         #endregion
 
         #region Properties
+
         public BankAccount BankAccount { get; private set; }
-
-        private double balance;
-        public double Balance
+        private ObservableCollection<BalanceViewModel> balances;
+        public ObservableCollection<BalanceViewModel> Balances
         {
-            get { return balance; }
+            get { return balances; }
             set
             {
-                SetProperty(ref balance, value);
+                SetProperty(ref balances, value);
             }
         }
-
-
-        public string Nickname
-        {
-            get { return BankAccount.Nickname; }
-            set
-            {
-                var nickname = BankAccount.Nickname;
-                BankAccount.Nickname = value;
-                SetProperty(ref nickname, value);
-            }
-        }
-
-
-
-
 
         #endregion
 
+        #region Commands
+        public ICommand AddBalanceCommand { get; }
+        #endregion
+
         #region Constructors
-        public BankAccountViewModel(BankAccount account)
+        public BankAccountViewModel()
         {
-            BankAccount = account;
-            GetLatestBalance();
+            AddBalanceCommand = new Command(async () => await OnAddBalance());
         }
         #endregion
 
         #region Methods
-        private async void GetLatestBalance()
+        public override void Prepare(BankAccount parameter)
         {
-            var temp = await BudgetDatabase.GetLatestBalance(BankAccount.AccountID, DateTime.Today);
-            //var temp = 0.0;
-            if (temp == null)
+            BankAccount = parameter;
+        }
+
+        public override void ViewAppeared()
+        {
+            base.ViewAppeared();
+            UpdateBalances();
+        }
+
+        private async Task UpdateBalances()
+        {
+            var temp = await BudgetDatabase.GetBalances();
+            var tempBalances = temp.Where(x => x.AccountID == BankAccount.AccountID)
+                .OrderBy(x => x.Timestamp).ToList();
+
+            var vms = new List<BalanceViewModel>();
+            foreach (var item in tempBalances)
             {
-                Balance = 0.0;
+                vms.Add(new BalanceViewModel(item));
             }
-            else
-            {
-                Balance = temp.Amount;
-            }
+
+            Balances = new ObservableCollection<BalanceViewModel>(vms);
+        }
+
+        private async Task OnAddBalance()
+        {
+            await navigationService.Navigate<NewBalanceViewModel, Balance, bool>(new Balance(BankAccount.AccountID));
+            UpdateBalances();
         }
         #endregion
+
 
     }
 }

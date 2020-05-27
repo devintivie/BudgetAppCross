@@ -12,7 +12,7 @@
             <CheckBox IsChecked="{Binding IsPaid}"
                       WidthRequest="60"/>
             <Label Text="{Binding Payee}"
-                   FontSize="Body"
+                   FontSize="Title"
                        VerticalOptions="Center"
                        WidthRequest="120"/>
             <DatePicker Date="{Binding Date}"/>

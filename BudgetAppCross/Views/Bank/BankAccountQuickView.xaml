@@ -4,9 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-             
              mc:Ignorable="d"
-             x:Class="BudgetAppCross.Views.BankAccountView">
+             x:Class="BudgetAppCross.Views.BankAccountQuickView">
     <ContentView.Content>
         <StackLayout Orientation="Horizontal">
             <Label Text="{Binding Nickname}"

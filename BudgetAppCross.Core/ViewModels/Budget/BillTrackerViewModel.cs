@@ -15,11 +15,9 @@ namespace BudgetAppCross.Core.ViewModels
     {
         #region Fields
         private IMvxNavigationService navigationService;
-        //private BillTracker billTracker;
         #endregion
 
         #region Properties
-        //public BillTracker BillTracker { get; private set; }
         public string CompanyName { get; private set; }
 
         private ObservableCollection<BillViewModel> bills = new ObservableCollection<BillViewModel>();
@@ -101,17 +99,12 @@ namespace BudgetAppCross.Core.ViewModels
         public override void Prepare(string parameter)
         {
             CompanyName = parameter;
-            //billTracker = parameter;
-            
         }
-
-        
 
         public override void ViewDestroy(bool viewFinishing = true)
         {
             SaveBills();
             base.ViewDestroy(viewFinishing);
-            
         }
 
         private async Task UpdateBills()

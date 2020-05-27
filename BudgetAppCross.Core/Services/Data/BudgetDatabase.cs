@@ -25,7 +25,6 @@ namespace BudgetAppCross.Core.Services
 
         public BudgetDatabase()
         {
-            //InitializeAsync().SafeFireAndForget(false);
             Initialize();
         }
         #endregion
@@ -75,7 +74,7 @@ namespace BudgetAppCross.Core.Services
         {
             await Task.Run(() =>
             {
-                if(acct.AccountID != 0)
+                if (acct.AccountID != 0)
                 {
                     Database.UpdateWithChildren(acct);
                 }
@@ -255,7 +254,7 @@ namespace BudgetAppCross.Core.Services
             {
                 return Database.GetAllWithChildren<Bill>()
                         .Where(x => x.Payee.Equals(payee))
-                        .OrderBy(x => x.Date) .ToList();
+                        .OrderBy(x => x.Date).ToList();
                 //return Database.Table<Bill>().Where(x => x.Payee.Equals(payee)).ToList();
             });
 
@@ -263,6 +262,32 @@ namespace BudgetAppCross.Core.Services
             // SQL queries are also possible
             //return Database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
         }
+
+        public async Task<int> DeleteBillsForPayee(string payee)
+        {
+            var count = 0;
+            var bills = await GetBillsForPayee(payee);
+
+            foreach (var bill in bills)
+            {
+                count += await DeleteBill(bill);
+            }
+
+            return count;
+        }
+
+        public async Task<List<string>> GetBillPayees()
+        {
+            var list = await Task.Run(() =>
+            {
+                return Database.GetAllWithChildren<Bill>()
+                        .GroupBy(x => x.Payee)
+                        .Select(x => x.Key).ToList();
+            });
+            return list;
+        }
+
+
 
         public async Task<Bill> GetBill(int id)
         {
@@ -272,12 +297,14 @@ namespace BudgetAppCross.Core.Services
             });
         }
 
-        public async Task DeleteBill(Bill bill)
+        public async Task<int> DeleteBill(Bill bill)
         {
-            await Task.Run(() =>
+            var count = await Task.Run(() =>
             {
-                Database.Delete(bill);
+                return Database.Delete(bill);
             });
+
+            return count;
         }
         #endregion
 

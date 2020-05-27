@@ -19,8 +19,8 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Properties
-        private ObservableCollection<BankAccountViewModel> accounts = new ObservableCollection<BankAccountViewModel>();
-        public ObservableCollection<BankAccountViewModel> Accounts
+        private ObservableCollection<BankAccountQuickViewModel> accounts = new ObservableCollection<BankAccountQuickViewModel>();
+        public ObservableCollection<BankAccountQuickViewModel> Accounts
         {
             get { return accounts; }
             set
@@ -29,8 +29,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private BankAccountViewModel selectedAccount;
-        public BankAccountViewModel SelectedAccount
+        private BankAccountQuickViewModel selectedAccount;
+        public BankAccountQuickViewModel SelectedAccount
         {
             get { return selectedAccount; }
             set
@@ -44,17 +44,17 @@ namespace BudgetAppCross.Core.ViewModels
 
         #region Commands
         public ICommand AddAccountCommand { get; }
-        public ICommand DeleteAccountCommand { get; }
+        //public ICommand DeleteAccountCommand { get; }
         #endregion
 
         #region Constructors
         public BankOverviewViewModel(IMvxNavigationService navigation)
         {
             navigationService = navigation;
-            //Title = "Bank Accounts";
+            Title = "Bank Accounts";
 
             AddAccountCommand = new Command(async () => await navigationService.Navigate<NewBankAccountViewModel>());
-            DeleteAccountCommand = new Command(() => OnDeleteAccount());
+            //DeleteAccountCommand = new Command(() => OnDeleteAccount());
         }
 
         #endregion
@@ -76,9 +76,15 @@ namespace BudgetAppCross.Core.ViewModels
             Accounts.Clear();
             foreach (var item in accts)
             {
-                Accounts.Add(new BankAccountViewModel(item));
+                Accounts.Add(new BankAccountQuickViewModel(item));
             }
         } 
+
+        public Task ShowBankAccount(BankAccount account)
+        {
+            return navigationService.Navigate<BankAccountViewModel, BankAccount>(account);
+
+        }
 
         //public override async void ViewDestroy(bool viewFinishing = true)
         //{

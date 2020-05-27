@@ -27,4 +27,19 @@ namespace BudgetAppCross.Models
 
         }
     }
+
+    
+    public class ChangeBalanceMessage
+    {
+        public int AccountId { get; private set; }
+        public ChangeBalanceMessage(int id)
+        {
+            AccountId = id;
+        }
+        public ChangeBalanceMessage()
+        {
+
+        }
+    }
 }
+

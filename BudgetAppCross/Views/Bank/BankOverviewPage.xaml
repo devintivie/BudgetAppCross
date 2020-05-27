@@ -12,15 +12,16 @@
              Title="{Binding Title}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddAccountCommand}"/>
-        <ToolbarItem Text="Delete" Command="{Binding DeleteAccountCommand}"/>
+        <!--<ToolbarItem Text="Delete" Command="{Binding DeleteAccountCommand}"/>-->
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ListView ItemsSource="{Binding Accounts}"
-                  SelectedItem="{Binding SelectedAccount}">
+                  SelectedItem="{Binding SelectedAccount}"
+                  ItemTapped="BankAccount_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <controls:BankAccountView/>
+                        <controls:BankAccountQuickView/>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

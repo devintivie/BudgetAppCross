@@ -25,11 +25,14 @@
         </StackLayout>-->
         <ListView ItemsSource="{Binding Bills}"
                   HasUnevenRows="True"
+                  SelectionMode="None"
                   IsGroupingEnabled="True">
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Label Text="{Binding Key}"/>
+                        <Label Text="{Binding Key}"
+                               FontSize="Title"
+                               BackgroundColor="Aqua"/>
                     </ViewCell>
                 </DataTemplate>
             </ListView.GroupHeaderTemplate>
@@ -41,7 +44,7 @@
                                               Command="{Binding DeleteThisCommand}"
                                               CommandParameter="{Binding .}"/>
                         </ViewCell.ContextActions>
-                        <controls:BillView/>
+                        <controls:AgendaBillView/>
                     </ViewCell>
                     
                 </DataTemplate>

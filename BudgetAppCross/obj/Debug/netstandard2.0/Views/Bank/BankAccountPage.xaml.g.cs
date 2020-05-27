@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("BudgetAppCross.Views.Bank.BankAccountView.xaml", "Views/Bank/BankAccountView.xaml", typeof(global::BudgetAppCross.Views.BankAccountView))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("BudgetAppCross.Views.Bank.BankAccountPage.xaml", "Views/Bank/BankAccountPage.xaml", typeof(global::BudgetAppCross.Views.BankAccountPage))]
 
 namespace BudgetAppCross.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Bank\\BankAccountView.xaml")]
-    public partial class BankAccountView : global::MvvmCross.Forms.Views.MvxContentView {
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Bank\\BankAccountPage.xaml")]
+    public partial class BankAccountPage : global::MvvmCross.Forms.Views.MvxContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(BankAccountView));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(BankAccountPage));
         }
     }
 }
