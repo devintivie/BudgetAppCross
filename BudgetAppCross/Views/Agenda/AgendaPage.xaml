@@ -32,7 +32,7 @@
                     <ViewCell>
                         <Label Text="{Binding Key}"
                                FontSize="Title"
-                               BackgroundColor="Aqua"/>
+                               BackgroundColor="Red"/>
                     </ViewCell>
                 </DataTemplate>
             </ListView.GroupHeaderTemplate>

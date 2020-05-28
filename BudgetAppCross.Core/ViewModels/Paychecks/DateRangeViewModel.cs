@@ -29,11 +29,12 @@ namespace BudgetAppCross.Core.ViewModels
             set
             {
                 SetProperty(ref startDate, value);
+                EndDate = StartDate.AddDays(14);
                 if (initialized) { var _ = GetGroups(); }
             }
         }
 
-        private DateTime endDate = DateTime.Today.AddDays(14);
+        private DateTime endDate;// = DateTime.Today.AddDays(14);
         public DateTime EndDate
         {
             get { return endDate; }
@@ -225,13 +226,13 @@ namespace BudgetAppCross.Core.ViewModels
             BillsGrouped = new ObservableCollection<Grouping<string, AgendaBillViewModel>>(newGroup);
         }
 
-        private async Task UpdateAccounts()
-        {
-            foreach (var acct in Accounts)
-            {
-                await acct.UpdateData(StartDate, EndDate);
-            }
-        }
+        //private async Task UpdateAccounts()
+        //{
+        //    foreach (var acct in Accounts)
+        //    {
+        //        await acct.UpdateData(StartDate, EndDate);
+        //    }
+        //}
 
         //public override async Task Initialize()
         //{
@@ -247,18 +248,18 @@ namespace BudgetAppCross.Core.ViewModels
         //    initialized = true;
         //}
 
-        public override void ViewAppeared()
-        {
-            base.ViewAppeared();
-            initialized = true;
-        }
+        //public override void ViewAppeared()
+        //{
+        //    base.ViewAppeared();
+        //    //initialized = true;
+        //}
 
-        public override void ViewDestroy(bool viewFinishing = true)
-        {
-            //SaveBills();
-            base.ViewDestroy(viewFinishing);
+        //public override void ViewDestroy(bool viewFinishing = true)
+        //{
+        //    //SaveBills();
+        //    base.ViewDestroy(viewFinishing);
             
-        }
+        //}
 
         //public async Task SaveBills()
         //{
@@ -268,10 +269,10 @@ namespace BudgetAppCross.Core.ViewModels
         //    }
         //}
 
-        private void OnUpdateBillMessage()
-        {
-            //UpdateCalculations();
-        }
+        //private void OnUpdateBillMessage()
+        //{
+        //    //UpdateCalculations();
+        //}
 
         private async Task OnChangeBillMessage(int id)
         {

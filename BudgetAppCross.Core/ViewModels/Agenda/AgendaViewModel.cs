@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
@@ -15,38 +18,8 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Properties
-        //private ObservableCollection<Grouping<DateTime, AgendaBill>> billsGrouped;
-        //public ObservableCollection<Grouping<DateTime, AgendaBill>> BillsGrouped
-        //{
-        //    get { return billsGrouped; }
-        //    set
-        //    {
-        //        SetProperty(ref billsGrouped, value);
-        //    }
-        //}
-
-        //private ObservableCollection<AgendaBillViewModel> entries;
-        //public ObservableCollection<AgendaBillViewModel> Entries
-        //{
-        //    get { return entries; }
-        //    set
-        //    {
-        //        SetProperty(ref entries, value);
-        //    }
-        //}
-
-        private ObservableCollection<AgendaEntryViewModel> billsGrouped = new ObservableCollection<AgendaEntryViewModel>();
-        public ObservableCollection<AgendaEntryViewModel> BillsGrouped
-        {
-            get { return billsGrouped; }
-            set
-            {
-                SetProperty(ref billsGrouped, value);
-            }
-        }
-
-        private ObservableCollection<Grouping<DateTime, Bill>> bills = new ObservableCollection<Grouping<DateTime, Bill>>();
-        public ObservableCollection<Grouping<DateTime, Bill>> Bills
+        private ObservableCollection<Grouping<DateTime, BillViewModel>> bills = new ObservableCollection<Grouping<DateTime, BillViewModel>>();
+        public ObservableCollection<Grouping<DateTime, BillViewModel>> Bills
         {
             get { return bills; }
             set
@@ -55,12 +28,10 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-
-        //private List<Grouping<DateTime, AgendaBill>> billGroups = new List<Grouping<DateTime, AgendaBill>>();
-
         #endregion
 
         #region Commands
+        public ICommand AddBillCommand { get; }
         #endregion
 
         #region Constructors
@@ -68,6 +39,10 @@ namespace BudgetAppCross.Core.ViewModels
         {
             navigationService = navigation;
             Title = "Agenda";
+            var getgroup = GetGroups();
+
+            AddBillCommand = new Command(async () => await navigationService.Navigate<NewBillViewModel, Bill>(new Bill()));
+            Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage(x.AccountId));
 
             ////Entries = new ObservableCollection<AgendaBillViewModel>();
             //var data = (from bts in BillManager.AllTrackers
@@ -98,7 +73,7 @@ namespace BudgetAppCross.Core.ViewModels
             //    {
             //        BillsGrouped.Add(new AgendaEntryViewModel(group));
             //    }
-                
+
             //}
 
 
@@ -126,28 +101,55 @@ namespace BudgetAppCross.Core.ViewModels
 
         }
 
+        
+
 
         #endregion
 
         #region Methods
 
-        public override void ViewAppeared()
-        {
-            base.ViewAppeared();
-            LoadAgenda();
+        //public override void ViewAppeared()
+        //{
+        //    base.ViewAppeared();
+        //    LoadAgenda();
             
-        }
+        //}
 
-        public override void ViewDestroy(bool viewFinishing = true)
-        {
-            SaveBills();
-            base.ViewDestroy(viewFinishing);
+        //public override void ViewDestroy(bool viewFinishing = true)
+        //{
+        //    SaveBills();
+        //    base.ViewDestroy(viewFinishing);
             
-        }
+        //}
 
-        private async void LoadAgenda()
+        private async Task GetGroups()
         {
+            var dt = DateTime.Today.AddDays(-4);
+            var dt2 = DateTime.Today.AddMonths(2);
+            var bills = await BudgetDatabase.GetBills();
+            var billData = bills.Where(x => x.Date >= dt)
+                            .Where(x => x.Date <= dt2)
+                            .ToList();
 
+            var data = billData.GroupBy(x => x.Date)
+                        .OrderBy(x => x.Key)
+                        .Select(grouped => new Grouping<DateTime, Bill>(grouped.Key, grouped)).ToList();
+
+            var groupVM = new List<Grouping<DateTime, BillViewModel>>();
+
+            foreach (var group in data)
+            {
+                var key = group.Key;
+                var bvms = new List<BillViewModel>();
+                foreach (var item in group.Grouped)
+                {
+                    bvms.Add(new BillViewModel(item));
+                }
+
+                groupVM.Add(new Grouping<DateTime, BillViewModel>(key, bvms));
+            }
+
+            Bills = new ObservableCollection<Grouping<DateTime, BillViewModel>>(groupVM);
 
             //await BudgetDatabase.UpdateBankAccountNames();
             //var dt = DateTime.Today.AddDays(-4);
@@ -171,16 +173,21 @@ namespace BudgetAppCross.Core.ViewModels
             
         }
 
-        private async void SaveBills()
+        private async Task OnChangeBillMessage(int accountId)
         {
-            foreach (var bill in BillsGrouped)
-            {
-                foreach (var item in bill.Bills)
-                {
-                    await BudgetDatabase.SaveBill(item.Bill);
-                }
-            }
+            await GetGroups();
         }
+
+        //private async void SaveBills()
+        //{
+        //    foreach (var bill in BillsGrouped)
+        //    {
+        //        foreach (var item in bill.Bills)
+        //        {
+        //            await BudgetDatabase.SaveBill(item.Bill);
+        //        }
+        //    }
+        //}
 
 
         //public override async void ViewDestroy(bool viewFinishing = true)
