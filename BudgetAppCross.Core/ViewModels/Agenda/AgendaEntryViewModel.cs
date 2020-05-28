@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class AgendaEntryViewModel : MvxViewModel
+    public class AgendaEntryViewModel : BaseViewModel
     {
         #region Fields
         #endregion

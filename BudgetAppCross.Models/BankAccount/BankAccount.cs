@@ -32,7 +32,7 @@ namespace BudgetAppCross.Models
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Balance> History { get; set; } = new List<Balance>();
-        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        [OneToMany(CascadeOperations = CascadeOperation.CascadeRead | CascadeOperation.CascadeInsert)]
         public List<Bill> Bills { get; set; } = new List<Bill>();
 
 
@@ -43,12 +43,14 @@ namespace BudgetAppCross.Models
 
         public BankAccount(double iBalance, string account, string bank, string nickname)
         {
-            History.Add(new Balance(AccountID, iBalance, DateTime.Now));
+            History.Add(new Balance(iBalance, DateTime.Now));
             //CurrentBalance = iBalance;
             AccountNumber = account;
             BankName = bank;
             Nickname = nickname;
         }
+
+        public BankAccount(double iBalance, string nickname) : this(iBalance, "-", "-", nickname) { }
         #endregion
 
         #region Methods

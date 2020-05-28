@@ -21,6 +21,11 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Delete"
+                                              Command="{Binding DeleteThisCommand}"
+                                              CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
                         <controls:BankAccountQuickView/>
                     </ViewCell>
                 </DataTemplate>

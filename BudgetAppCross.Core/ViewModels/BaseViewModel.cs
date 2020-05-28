@@ -16,7 +16,7 @@ namespace BudgetAppCross.Core.ViewModels
     {
 
         #region Fields
-        IMvxNavigationService navigationService;
+
         #endregion
 
         #region Properties

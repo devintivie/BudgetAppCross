@@ -26,10 +26,13 @@ namespace BudgetAppCross.Core.ViewModels
             get { return Balance.Amount; }
             set
             {
-                var amount = Balance.Amount;
-                Balance.Amount = value;
-                SetProperty(ref amount, value);
-                ChangeAndSave();
+                if(Balance.Amount != value)
+                {
+                    var amount = Balance.Amount;
+                    Balance.Amount = value;
+                    SetProperty(ref amount, value);
+                    var _ = ChangeAndSave();
+                }
             }
         }
 
@@ -38,10 +41,14 @@ namespace BudgetAppCross.Core.ViewModels
             get { return Balance.Timestamp; }
             set
             {
-                var timestamp = Balance.Timestamp;
-                Balance.Timestamp = value;
-                SetProperty(ref timestamp, value);
-                ChangeAndSave();
+                if (!Balance.Timestamp.Equals(value))
+                {
+                    var timestamp = Balance.Timestamp;
+                    Balance.Timestamp = value;
+                    SetProperty(ref timestamp, value);
+                    var _ = ChangeAndSave();
+                }
+                
             }
         }
 

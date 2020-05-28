@@ -2,6 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
@@ -36,8 +39,9 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-
-
+        #region Commands
+        public ICommand DeleteThisCommand { get; private set; }
+        #endregion
 
 
         #endregion
@@ -47,6 +51,8 @@ namespace BudgetAppCross.Core.ViewModels
         {
             BankAccount = account;
             GetLatestBalance();
+
+            DeleteThisCommand = new Command(async () => await OnDeleteThis());
         }
         #endregion
 
@@ -63,6 +69,12 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 Balance = temp.Amount;
             }
+        }
+
+        private async Task OnDeleteThis()
+        {
+            await BudgetDatabase.DeleteBankAccount(BankAccount);
+            Messenger.Send(new ChangeBalanceMessage());
         }
         #endregion
 

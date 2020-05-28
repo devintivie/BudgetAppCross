@@ -7,7 +7,7 @@ namespace BudgetAppCross.Core
 {
     public static class Constants
     {
-        public const string DatabaseFilename = "BudgetSQLite.db3";//"BudgetSQLite.db3";
+        public const string DatabaseFilename = "BudgetSQLiteTemp.db3";//"BudgetSQLite.db3";
 
         //public const string BudgetEFCoreFilename = "BudgetEFCore.db3";
 

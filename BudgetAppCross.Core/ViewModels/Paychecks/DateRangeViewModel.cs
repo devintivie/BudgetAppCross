@@ -147,7 +147,7 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        public DateRangeViewModel(IMvxNavigationService navigation, IMvxMessenger messenger)
+        public DateRangeViewModel(IMvxNavigationService navigation)
         {
             navigationService = navigation;
             Title = "Paycheck View";
@@ -167,24 +167,24 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Methods
-        private async Task LoadData()
-        {
-            //await BudgetDatabase.UpdateBankAccountNames();
-            //var bills = await BudgetDatabase.GetBills();
-            //var data = (bills.Where(x => x.Date >= StartDate && x.Date <= EndDate)
-            //            .OrderBy(x => x.Date)
-            //            .Select(bill => bill)).ToList();
+        //private async Task LoadData()
+        //{
+        //    //await BudgetDatabase.UpdateBankAccountNames();
+        //    //var bills = await BudgetDatabase.GetBills();
+        //    //var data = (bills.Where(x => x.Date >= StartDate && x.Date <= EndDate)
+        //    //            .OrderBy(x => x.Date)
+        //    //            .Select(bill => bill)).ToList();
 
-            //Transactions.Clear();
+        //    //Transactions.Clear();
 
-            //foreach (var item in data)
-            //{
-            //    Transactions.Add(new BillViewModel(item));
-            //}
+        //    //foreach (var item in data)
+        //    //{
+        //    //    Transactions.Add(new BillViewModel(item));
+        //    //}
 
-            //await UpdateCalculations();
+        //    //await UpdateCalculations();
             
-        }
+        //}
 
         private async Task LoadAccounts()
         {

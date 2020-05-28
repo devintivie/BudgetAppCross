@@ -5,6 +5,7 @@ using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -55,6 +56,7 @@ namespace BudgetAppCross.Core.ViewModels
 
             AddAccountCommand = new Command(async () => await navigationService.Navigate<NewBankAccountViewModel>());
             //DeleteAccountCommand = new Command(() => OnDeleteAccount());
+            Messenger.Register<ChangeBalanceMessage>(this, async x => await OnChangeBalanceMessage());
         }
 
         #endregion
@@ -69,9 +71,10 @@ namespace BudgetAppCross.Core.ViewModels
             LoadAccounts();
         }
 
-        private async void LoadAccounts()
+        private async Task LoadAccounts()
         {
-            var accts = await BudgetDatabase.GetBankAccounts();
+            var allAccts = await BudgetDatabase.GetBankAccounts();
+            var accts = allAccts.Where(x => x.AccountID != 1);
 
             Accounts.Clear();
             foreach (var item in accts)
@@ -98,6 +101,11 @@ namespace BudgetAppCross.Core.ViewModels
             //Console.WriteLine(count); 
             //BankAccountManager.DeleteAccount(SelectedAccount);
             Accounts.Remove(selectedAccount);
+        }
+
+        private async Task OnChangeBalanceMessage()
+        {
+            await LoadAccounts();
         }
         #endregion
 

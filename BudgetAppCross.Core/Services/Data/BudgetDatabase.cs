@@ -25,7 +25,7 @@ namespace BudgetAppCross.Core.Services
 
         public BudgetDatabase()
         {
-            Initialize();
+            var _ = Initialize();
         }
         #endregion
 
@@ -39,7 +39,7 @@ namespace BudgetAppCross.Core.Services
 
         #region Methods
 
-        void Initialize()
+        async Task Initialize()
         {
             //File.Delete(Constants.DatabasePath);
             if (!initialized)
@@ -48,9 +48,12 @@ namespace BudgetAppCross.Core.Services
                 Database.CreateTable<Bill>(CreateFlags.None);
                 Database.CreateTable<Balance>(CreateFlags.None);
 
-                initialized = true;
+                var defaultAccount = new BankAccount(0, "Undecided");
+                
 
-                var names = UpdateBankAccountNames();
+                initialized = true;
+                await SaveBankAccount(defaultAccount);
+                await UpdateBankAccountNames();
 
                 //, type).ConfigureAwait(false);
                 //MapTable(typeof(BankAccount));
@@ -134,8 +137,19 @@ namespace BudgetAppCross.Core.Services
 
         public async Task DeleteBankAccount(BankAccount acct)
         {
-            await Task.Run(() =>
+            var associatedBills = await GetBillsForAccount(acct.AccountID);
+            var defaultAcct = await GetBankAccount(1);
+            await Task.Run(async () =>
             {
+                foreach (var bill in associatedBills)
+                {
+                    bill.AccountID = 1;
+                    bill.BankAccount = defaultAcct;
+                    await SaveBill(bill);
+                }
+
+                var tempbills = await GetBills();
+
                 Database.Delete(acct);
             });
         }
@@ -153,11 +167,11 @@ namespace BudgetAppCross.Core.Services
             {
                 if (balance.ID != 0)
                 {
-                    Database.Update(balance);//     UpdateWithChildren(balance);
+                    Database.UpdateWithChildren(balance);//     UpdateWithChildren(balance);
                 }
                 else
                 {
-                    Database.Insert(balance);//  WithChildren(balance);
+                    Database.InsertWithChildren(balance);//  WithChildren(balance);
                 }
             });
         }
@@ -167,8 +181,8 @@ namespace BudgetAppCross.Core.Services
             //var list = new List<BankAccount>();
             return await Task.Run(() =>
             {
-                return Database.Table<Balance>().ToList();
-                //return Database.Get WithChildren<Balance>();
+                //return Database.Table<Balance>().ToList();
+                return Database.GetAllWithChildren<Balance>(recursive: true);
             });
 
             //return list;
@@ -184,31 +198,49 @@ namespace BudgetAppCross.Core.Services
 
         public async Task<Balance> GetLatestBalance(int id, DateTime date)
         {
-            return await Task.Run(() =>
+            var balances = (await GetBalances()).Where(bal => bal.AccountID == id && bal.Timestamp <= date);
+            if(balances.Count() == 0)
             {
-                var balances = Database.Table<Balance>()
-                .Where(bal => bal.AccountID == id).ToList();
+                return null;
+            }
+            else
+            {
+                var latest = (balances)
+                .OrderByDescending(x => x.Timestamp).FirstOrDefault();
 
-                return balances.First();
+                return latest;
+            }
+            
 
-                //if(balances.Count == 0)
-                //{
-                //    return new Balance();
-                //}
-                //else
-                //{
-                //    return new Balance();
-                //}
-                //return balance;
-                //var list =  await (Database.Table<Balance>().Where(bal => bal.Timestamp <= date && )
-                //.OrderByDescending(x => x.Timestamp)).FirstAsync();
-                //var list = Database.Table<Balance>().ToList();
-                //return list.First();
-            });
-            //var list = Database.Table<Balance>().ToList();
-            //return list.FirstOrDefault();
-            //return await (Database.Table<Balance>().Where(bal => bal.Timestamp <= date)
-            //    .OrderByDescending(x => x.Timestamp)).FirstAsync();
+
+            //return await Task.Run(() =>
+            //{
+            //    var balances = Database.Table<Balance>()
+            //    .Where(bal => bal.AccountID == id).ToList();
+
+            //    var latest = await Database.GetBalances()
+                
+
+            //    return balances.First();
+
+            //    //if(balances.Count == 0)
+            //    //{
+            //    //    return new Balance();
+            //    //}
+            //    //else
+            //    //{
+            //    //    return new Balance();
+            //    //}
+            //    //return balance;
+            //    //var list =  await (Database.Table<Balance>().Where(bal => bal.Timestamp <= date && )
+            //    //.OrderByDescending(x => x.Timestamp)).FirstAsync();
+            //    //var list = Database.Table<Balance>().ToList();
+            //    //return list.First();
+            //});
+            ////var list = Database.Table<Balance>().ToList();
+            ////return list.FirstOrDefault();
+            ////return await (Database.Table<Balance>().Where(bal => bal.Timestamp <= date)
+            ////    .OrderByDescending(x => x.Timestamp)).FirstAsync();
         }
 
         public async Task DeleteBalance(Balance balance)
@@ -256,6 +288,20 @@ namespace BudgetAppCross.Core.Services
                         .Where(x => x.Payee.Equals(payee))
                         .OrderBy(x => x.Date).ToList();
                 //return Database.Table<Bill>().Where(x => x.Payee.Equals(payee)).ToList();
+            });
+
+            return list;
+            // SQL queries are also possible
+            //return Database.QueryAsync<TodoItem>("SELECT * FROM [TodoItem] WHERE [Done] = 0");
+        }
+
+        public async Task<List<Bill>> GetBillsForAccount(int acctId)
+        {
+            var list = await Task.Run(() =>
+            {
+                return Database.GetAllWithChildren<Bill>()
+                        .Where(x => x.AccountID == acctId)
+                        .OrderBy(x => x.Date).ToList();
             });
 
             return list;

@@ -147,21 +147,23 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async void LoadAgenda()
         {
-            await BudgetDatabase.UpdateBankAccountNames();
-            var dt = DateTime.Today.AddDays(-4);
-            var dt2 = DateTime.Today.AddMonths(2);
-            var bills = await BudgetDatabase.GetBills();
-            var data = (bills.GroupBy(x => x.Date)
-                        .OrderBy(x => x.Key)
-                        .Where(x => x.Key >= dt && x.Key <= dt2)
-                        .Select(groupedTable => new Grouping<DateTime, Bill>(groupedTable.Key, groupedTable))).ToList();
 
-            Bills = new ObservableCollection<Grouping<DateTime, Bill>>(data);
-            BillsGrouped.Clear();
-            foreach (var item in data)
-            {
-                BillsGrouped.Add(new AgendaEntryViewModel(item));
-            }
+
+            //await BudgetDatabase.UpdateBankAccountNames();
+            //var dt = DateTime.Today.AddDays(-4);
+            //var dt2 = DateTime.Today.AddMonths(2);
+            //var bills = await BudgetDatabase.GetBills();
+            //var data = (bills.GroupBy(x => x.Date)
+            //            .OrderBy(x => x.Key)
+            //            .Where(x => x.Key >= dt && x.Key <= dt2)
+            //            .Select(groupedTable => new Grouping<DateTime, Bill>(groupedTable.Key, groupedTable))).ToList();
+
+            //Bills = new ObservableCollection<Grouping<DateTime, Bill>>(data);
+            //BillsGrouped.Clear();
+            //foreach (var item in data)
+            //{
+            //    BillsGrouped.Add(new AgendaEntryViewModel(item));
+            //}
 
 
 

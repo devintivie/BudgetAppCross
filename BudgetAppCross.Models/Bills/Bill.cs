@@ -76,9 +76,9 @@ namespace BudgetAppCross.Models
         #endregion
 
         #region Constructors
-        public Bill() : this("Payee", 0.0, DateTime.Now.Date.AddDays(7)) { }
+        public Bill() : this("Payee", 0.0, DateTime.Today) { }
 
-        public Bill(string payee) : this(payee, 0.0, DateTime.Now) { }
+        public Bill(string payee) : this(payee, 0.0, DateTime.Today) { }
 
         public Bill(string name, int month, int day) : this(name, 0, month, day) { }
 

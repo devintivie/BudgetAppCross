@@ -40,6 +40,9 @@
     <EmbeddedResource Update="Views\Bank\BankOverviewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Bank\NewBalancePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Budget\BillTrackerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -81,6 +84,9 @@
     </Compile>
     <Compile Update="Views\Bank\NewBankAccountPage.xaml.cs">
       <DependentUpon>NewBankAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Bank\NewBalancePage.xaml.cs">
+      <DependentUpon>NewBalancePage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Budget\BillTrackerQuickView.xaml.cs">
       <DependentUpon>BillTrackerQuickView.xaml</DependentUpon>

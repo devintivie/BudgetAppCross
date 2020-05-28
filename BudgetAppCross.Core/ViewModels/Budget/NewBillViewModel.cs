@@ -182,7 +182,7 @@ namespace BudgetAppCross.Core.ViewModels
             await navigationService.Close(this);
         }
 
-        private async void LoadAccountOptions()
+        private void LoadAccountOptions()
         {
             //var options = await BudgetDatabase.Instance.GetBankAccounts();
             AccountOptions = new ObservableCollection<string>(DataManager.BankAccountNicknames);// await DataManager.GetBankAccounts();

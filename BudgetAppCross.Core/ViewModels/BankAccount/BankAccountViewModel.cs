@@ -19,7 +19,6 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Properties
-
         public BankAccount BankAccount { get; private set; }
         private ObservableCollection<BalanceViewModel> balances;
         public ObservableCollection<BalanceViewModel> Balances
@@ -38,10 +37,15 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        public BankAccountViewModel()
+        public BankAccountViewModel(IMvxNavigationService navigation)
         {
+            navigationService = navigation;
             AddBalanceCommand = new Command(async () => await OnAddBalance());
+
+            Messenger.Register<ChangeBalanceMessage>(this, async x => await OnChangeBalanceMessage());
         }
+
+        
         #endregion
 
         #region Methods
@@ -53,7 +57,7 @@ namespace BudgetAppCross.Core.ViewModels
         public override void ViewAppeared()
         {
             base.ViewAppeared();
-            UpdateBalances();
+            var _ = UpdateBalances();
         }
 
         private async Task UpdateBalances()
@@ -73,8 +77,17 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnAddBalance()
         {
-            await navigationService.Navigate<NewBalanceViewModel, Balance, bool>(new Balance(BankAccount.AccountID));
-            UpdateBalances();
+            var newBalance = new Balance()
+            {
+                BankAccount = BankAccount
+            };
+            await navigationService.Navigate<NewBalanceViewModel, Balance, bool>(newBalance);
+            var _ = UpdateBalances();
+        }
+
+        private async Task OnChangeBalanceMessage()
+        {
+            await UpdateBalances();
         }
         #endregion
 

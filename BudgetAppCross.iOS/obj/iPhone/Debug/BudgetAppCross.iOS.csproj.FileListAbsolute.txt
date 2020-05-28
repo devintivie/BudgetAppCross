@@ -1,11 +1,3 @@
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\coremlc\_PartialAppManifest.items
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\coremlc\_BundleResourceWithLogicalName.items
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\optimized\
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.csproj.CoreCompileInputs.cache
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.csprojAssemblyReference.cache
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.iOS.exe
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.iOS.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\Acr.UserDialogs.dll
@@ -106,6 +98,14 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.Core.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.Models.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\coremlc\_PartialAppManifest.items
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\coremlc\_BundleResourceWithLogicalName.items
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\optimized\
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.csprojAssemblyReference.cache
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.csproj.CoreCompileInputs.cache
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\XamlC.stamp
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.csproj.CopyComplete
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.exe

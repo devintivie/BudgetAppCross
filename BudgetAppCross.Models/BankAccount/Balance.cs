@@ -27,19 +27,13 @@ namespace BudgetAppCross.Models
         #endregion
 
         #region Constructors
-        public Balance(int accountid, double amount, DateTime time)
+        public Balance(double amount, DateTime time)
         {
             Amount = amount;
             Timestamp = time;
-            AccountID = accountid;
         }
 
-        public Balance(int accountid) : this(accountid, 0, DateTime.Today) { }
-
-        public Balance()
-        {
-
-        }
+        public Balance() : this(0, DateTime.Today) { }
         #endregion
 
         #region Methods
