@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              mc:Ignorable="d"
-             Title="Add Bill"
+             Title="Add Balance History"
              x:Class="BudgetAppCross.Views.NewBalancePage">
     <ContentPage.Content>
         <StackLayout>

@@ -32,7 +32,6 @@ namespace BudgetAppCross.Core.ViewModels
                     Bill.Payee = value;
                     SetProperty(ref payee, value);
                 }
-                
             }
         }
 
@@ -116,6 +115,8 @@ namespace BudgetAppCross.Core.ViewModels
                 SetProperty(ref accountOptions, value);
             }
         }
+
+        public bool IsFirstInGroup { get; set; }
 
         //private string selectedAccount;
         //public string SelectedAccount

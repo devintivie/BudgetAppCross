@@ -81,7 +81,7 @@ namespace BudgetAppCross.Core.ViewModels
                 Bills.Add(new BillViewModel(item));
             }
 
-            MessagingCenter.Subscribe<AgendaBillViewModel>(this, "UpdateTotal", async (obj) => OnUpdateTotal());
+            //MessagingCenter.Subscribe<AgendaBillViewModel>(this, "UpdateTotal", async (obj) => OnUpdateTotal());
 
             //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
             //{

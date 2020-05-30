@@ -9,7 +9,7 @@ using SQLite;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class MainViewModel : MvxViewModel
+    public class MainViewModel : BaseViewModel
     {
         readonly IMvxNavigationService navigationService;
         public MainViewModel(IMvxNavigationService navService)
@@ -26,8 +26,10 @@ namespace BudgetAppCross.Core.ViewModels
             //var mainAccount = new BankAccount(450, "-", "Chase", "Main Account");
             //await BudgetDatabase.SaveBankAccount(mainAccount);
 
+            await BudgetDatabase.GetBankAccounts();
+
             await navigationService.Navigate<MenuViewModel>();
-            await navigationService.Navigate<BankOverviewViewModel>();
+            await navigationService.Navigate<DateRangeViewModel>();
 
         }
 

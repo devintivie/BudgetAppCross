@@ -50,11 +50,10 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout>
-                                <Label Text="{Binding Key}"
+                                <Label Text="{Binding Key.Nickname}"
                                        FontSize="Title"
                                        BackgroundColor="{StaticResource NavigationPrimary}"/>
                             </StackLayout>
-                            
                         </ViewCell>
                     </DataTemplate>
                 </ListView.GroupHeaderTemplate>

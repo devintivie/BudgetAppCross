@@ -34,7 +34,7 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private DateTime endDate;// = DateTime.Today.AddDays(14);
+        private DateTime endDate = DateTime.Today.AddDays(14);
         public DateTime EndDate
         {
             get { return endDate; }
@@ -65,8 +65,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private ObservableCollection<Grouping<string, AgendaBillViewModel>> billsGrouped = new ObservableCollection<Grouping<string, AgendaBillViewModel>>();
-        public ObservableCollection<Grouping<string, AgendaBillViewModel>> BillsGrouped
+        private ObservableCollection<DateRangeGrouping<BankAccount, BillViewModel>> billsGrouped = new ObservableCollection<DateRangeGrouping<BankAccount, BillViewModel>>();
+        public ObservableCollection<DateRangeGrouping<BankAccount, BillViewModel>> BillsGrouped
         {
             get { return billsGrouped; }
             set
@@ -206,24 +206,37 @@ namespace BudgetAppCross.Core.ViewModels
                         .Where(x => x.Date <= EndDate)
                         .OrderBy(x => x.Date)
                         .Select(bill => bill).ToList();
-            
-            var data = billData.GroupBy(x => x.BankAccount.Nickname )
-                        .OrderBy(x => x.Key)
-                        .Select(grouped => new Grouping<string, Bill>(grouped.Key, grouped)).ToList();
 
-            var newGroup = new List<Grouping<string, AgendaBillViewModel>>();
+            //var data = billData.GroupBy(item => item.BankAccount.Nickname)
+            //            .Select(x => new
+            //            {
+            //                x.Key,
+            //                x,
+            //                sum = x.Sum(i => i.Amount)
+            //            });
+
+            var moreData = billData.GroupBy(x => x.BankAccount)
+                        .OrderBy(x => x.Key.Nickname).ToList();
+            var data = moreData.Select(grouped => new DateRangeGrouping<BankAccount, Bill>(grouped.Key, grouped)
+            {
+                Sum = grouped.Sum(i => i.Amount),
+
+            }).ToList();
+
+
+            var newGroup = new List<DateRangeGrouping<BankAccount, BillViewModel>>();
             foreach (var item in data)
             {
                 var key = item.Key;
-                var bvms = new List<AgendaBillViewModel>();
+                var bvms = new List<BillViewModel>();
                 foreach (var group in item.Grouped)
                 {
-                    bvms.Add(new AgendaBillViewModel(group));
+                    bvms.Add(new BillViewModel(group));
                 }
-                newGroup.Add(new Grouping<string, AgendaBillViewModel>(key, bvms));
+                newGroup.Add(new DateRangeGrouping<BankAccount, BillViewModel>(key, bvms));
             }
 
-            BillsGrouped = new ObservableCollection<Grouping<string, AgendaBillViewModel>>(newGroup);
+            BillsGrouped = new ObservableCollection<DateRangeGrouping<BankAccount, BillViewModel>>(newGroup);
         }
 
         //private async Task UpdateAccounts()
