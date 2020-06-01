@@ -35,6 +35,7 @@
             </StackLayout>
             <!--<ScrollView>-->
                 <ListView ItemsSource="{Binding Bills}"
+                          HasUnevenRows="True"
                           SelectedItem="{Binding SelectedBill}">
                     <ListView.ItemTemplate>
                         <DataTemplate>

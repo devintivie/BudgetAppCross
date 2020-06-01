@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BudgetAppCross.Views.SelectBudgetPage"
+             xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
+             xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
+             x:TypeArguments="vms:SelectBudgetViewModel"
+             x:Name="currentPage"
+             Title="{Binding Title}"
+             >
+
+    <ContentPage.Content>
+        <RelativeLayout BackgroundColor="{StaticResource NavigationPrimary}">
+            <CollectionView ItemsSource="{Binding Budgets}"
+                            BackgroundColor="{StaticResource NavigationPrimary}"
+                            SelectedItem="{Binding SelectedBudget}" SelectionMode="Single"
+                            
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.15}"
+                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.60}"
+                            HorizontalOptions="Center"
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}"
+                            >
+                <CollectionView.EmptyView>
+                    <Label Text="Create a Budget"
+                       TextColor="White"
+                           HorizontalTextAlignment="Center"
+                       FontSize="Header"/>
+                </CollectionView.EmptyView>
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="LightGray"
+                               BorderColor="Gray"
+                               CornerRadius="100"
+                               >
+                            <Label Text="{Binding }" HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               FontSize="Title"/>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+                
+            </CollectionView>
+            <Button Text="Add Budget" HorizontalOptions="CenterAndExpand" 
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.75}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}"/>
+        </RelativeLayout>
+        
+    </ContentPage.Content>
+</views:MvxContentPage>
+

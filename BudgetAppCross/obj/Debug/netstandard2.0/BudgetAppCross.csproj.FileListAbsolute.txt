@@ -44,3 +44,4 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\bin\Debug\netst
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCore.Sqlite.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\XamlC.stamp
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.csproj.CopyComplete
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Admin\SelectBudgetPage.xaml.g.cs

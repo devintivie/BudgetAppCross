@@ -6,6 +6,7 @@ namespace BudgetAppCross.Core
 {
     public enum NavigablePage
     {
+        LoadBudget,
         Paycheck,
         BillList,
         Agenda,

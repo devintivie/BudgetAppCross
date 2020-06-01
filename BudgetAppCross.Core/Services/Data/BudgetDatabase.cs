@@ -20,7 +20,7 @@ namespace BudgetAppCross.Core.Services
 
         public static SQLiteConnection Database
         {
-            get { return database ?? (database = new SQLiteConnection(Constants.DatabasePath, Constants.Flags)); }
+            get { return database ?? (database = new SQLiteConnection(StateManager.Instance.DatabasePath, StateManager.Flags)); }
         }
 
         public BudgetDatabase()

@@ -116,6 +116,7 @@ namespace BudgetAppCross.Core.ViewModels
             foreach (var item in temp)
             {
                 bvms.Add(new BillViewModel(item));
+
             }
 
             Bills = new ObservableCollection<BillViewModel>(bvms);

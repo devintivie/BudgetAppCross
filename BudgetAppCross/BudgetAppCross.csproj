@@ -64,6 +64,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Admin\SelectBudgetPage.xaml.cs">
+      <DependentUpon>SelectBudgetPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Agenda\AgendaEntryView.xaml.cs">
       <DependentUpon>AgendaEntryView.xaml</DependentUpon>
     </Compile>

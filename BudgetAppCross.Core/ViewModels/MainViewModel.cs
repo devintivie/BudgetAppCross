@@ -26,10 +26,10 @@ namespace BudgetAppCross.Core.ViewModels
             //var mainAccount = new BankAccount(450, "-", "Chase", "Main Account");
             //await BudgetDatabase.SaveBankAccount(mainAccount);
 
-            await BudgetDatabase.GetBankAccounts();
+            
 
             await navigationService.Navigate<MenuViewModel>();
-            await navigationService.Navigate<DateRangeViewModel>();
+            await navigationService.Navigate<SelectBudgetViewModel>();
 
         }
 

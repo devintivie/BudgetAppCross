@@ -114,6 +114,9 @@ namespace BudgetAppCross.Core.ViewModels
             //}
             switch (SelectedPage)
             {
+                case NavigablePage.LoadBudget:
+                    await navigationService.Navigate<SelectBudgetViewModel>();
+                    break;
                 case NavigablePage.Paycheck:
                     await navigationService.Navigate<DateRangeViewModel>();
                     break;

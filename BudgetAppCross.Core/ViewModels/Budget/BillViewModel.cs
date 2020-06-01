@@ -116,20 +116,6 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        public bool IsFirstInGroup { get; set; }
-
-        //private string selectedAccount;
-        //public string SelectedAccount
-        //{
-        //    get { return Bill.AccountID; }
-        //    set
-        //    {
-        //        var selectedAccount = Bill.AccountID;
-        //        Bill.AccountID = value;
-        //        SetProperty(ref selectedAccount, value);
-        //    }
-        //}
-
         private string selectedAccount;
         public string SelectedAccount
         {

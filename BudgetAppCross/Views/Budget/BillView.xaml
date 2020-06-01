@@ -9,32 +9,35 @@
 
    
     <ContentView.Content>
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <!--<ColumnDefinition Width="Auto"/>-->
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="130"/>
-                <ColumnDefinition Width="100"/>
-                <ColumnDefinition Width="100"/>
-                <ColumnDefinition Width="100"/>
-            </Grid.ColumnDefinitions>
-            <!--<Entry Text="{Binding Payee}"
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <!--<ColumnDefinition Width="Auto"/>-->
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <!--<Entry Text="{Binding Payee}"
                    Grid.Column="0"/>-->
-            <CheckBox IsChecked="{Binding IsPaid}"
+                <CheckBox IsChecked="{Binding IsPaid}"
                       Grid.Column="0"
                       VerticalOptions="Center"
                       HorizontalOptions="Center"
                       />
-            <Entry Text="{Binding Amount}"
+                <Entry Text="{Binding Amount}"
                    Grid.Column="1"/>
-            <DatePicker Date="{Binding Date}"
+                <DatePicker Date="{Binding Date}"
                         Grid.Column="2"/>
-            <Picker ItemsSource="{Binding AccountOptions}"
+                <Picker ItemsSource="{Binding AccountOptions}"
                     SelectedItem="{Binding SelectedAccount}"
                     Grid.Column="3"/>
-            <Entry Text="{Binding Confirmation}"
+                <Entry Text="{Binding Confirmation}"
                    Grid.Column="4"/>
-        </Grid>
+            </Grid>
+        </StackLayout>
+        
 
         <!--<RefreshView >
             <ListView x:Name="BillListView" ItemsSource="{Binding Bills}"

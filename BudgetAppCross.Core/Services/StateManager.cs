@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -12,30 +13,73 @@ namespace BudgetAppCross.Core.Services
 {
     public class StateManager
     {
+        #region Singleton
+        private static readonly Lazy<StateManager> instance = new Lazy<StateManager>();
+        public static StateManager Instance => instance.Value;
+        public StateManager() { }
+        #endregion
+
         #region Fields
-        private string libFolder = FileSystem.AppDataDirectory;
-        private string path;
+        private const string stateFilename = "budgetState.json";
+        private string basePath = "";
+
         #endregion
 
         #region Properties
-        //public BillManager BillManager => BillManager.Instance;
-        //public BankAccountManager BankAccountManager => BankAccountManager.Instance;
+        public string DatabaseFilename { get; set; } = null;
+        [JsonIgnore]
+        public List<string> Budgets { get; private set; }
+
+        [JsonIgnore]
+        public const SQLite.SQLiteOpenFlags Flags =
+            // open the database in read/write mode
+            SQLite.SQLiteOpenFlags.ReadWrite |
+            // create the database if it doesn't exist
+            SQLite.SQLiteOpenFlags.Create |
+            // enable multi-threaded database access
+            SQLite.SQLiteOpenFlags.SharedCache;
+
+        [JsonIgnore]
+        public string DatabasePath
+        {
+            get
+            {
+                basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                var currentFileAndExt = $"{DatabaseFilename}.db3";
+                var fullpath = Path.Combine(basePath, currentFileAndExt);
+                return fullpath;
+            }
+        }
         #endregion
 
-        #region Singleton
-        private static StateManager instance;
-        public static StateManager Instance
-        {
-            get { return instance ?? (instance = new StateManager()); }
-        }
 
-        private StateManager()
-        {
-            path = $"{libFolder}/test";
-        }
-        #endregion 
 
         #region Methods
+        public async Task SaveState()
+        {
+            var path = $"{basePath}/{stateFilename}";
+            await Task.Run(() =>
+            {
+                using (StreamWriter file = File.CreateText(path))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    serializer.Serialize(file, this);
+                }
+            });
+        }
+
+        public async Task<List<string>> FindBudgetFiles()
+        {
+            await Task.Run(() =>
+            {
+                var filenames = Directory.GetFiles(basePath, "*.db3");
+
+                Budgets = filenames.Select(fn => Path.GetFileNameWithoutExtension(fn)).ToList();
+            });
+
+            return Budgets;
+        }
+
         //public async Task SaveToFile( )
         //{
         //    await Task.Run(() =>
@@ -44,7 +88,7 @@ namespace BudgetAppCross.Core.Services
         //        {
         //            //BillData = BillManager.AllTrackers,
         //            BankAccounts = BankAccountManager.AllAccounts
-                   
+
         //        };
 
         //        using (StreamWriter file = File.CreateText(path))
