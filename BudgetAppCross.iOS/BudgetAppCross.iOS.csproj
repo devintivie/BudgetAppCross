@@ -137,6 +137,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\BudgetAppCross.Core\BudgetAppCross.Core.csproj">
+      <Project>{367885f9-3ea9-4379-852e-95c2c320ccd5}</Project>
+      <Name>BudgetAppCross.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BudgetAppCross\BudgetAppCross.csproj">
       <Project>{A9152B4C-6FA6-457D-BC58-65103EEA384D}</Project>
       <Name>BudgetAppCross</Name>

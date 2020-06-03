@@ -39,11 +39,11 @@ namespace BudgetAppCross.Core.ViewModels
             set
             {
                 SetProperty(ref selectedBudget, value);
-                //if(SelectedBudget != null)
-                //{
-                //    var _ = BudgetSelected();
-                //}
-                
+                if (SelectedBudget != null)
+                {
+                    var _ = BudgetSelected();
+                }
+
             }
         }
 
@@ -51,13 +51,14 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-
+        public ICommand AddBudgetCommand { get; }
         #endregion
 
         #region Constructors
         public SelectBudgetViewModel(IMvxNavigationService navigation)
         {
             navigationService = navigation;
+            AddBudgetCommand = new Command(async () => await navigationService.Navigate<NewBudgetViewModel>());
 
             var _ = GetRecentBudgets();
         }
@@ -75,6 +76,7 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task BudgetSelected()
         {
             StateManager.DatabaseFilename = SelectedBudget;
+            await BudgetDatabase.Initialize();
             await BudgetDatabase.GetBankAccounts();
             await navigationService.Navigate<DateRangeViewModel>();
 

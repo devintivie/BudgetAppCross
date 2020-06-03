@@ -16,7 +16,10 @@ namespace BudgetAppCross.Core.Services
         #region Singleton
         private static readonly Lazy<StateManager> instance = new Lazy<StateManager>();
         public static StateManager Instance => instance.Value;
-        public StateManager() { }
+        public StateManager()
+        {
+            basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        }
         #endregion
 
         #region Fields
@@ -44,7 +47,7 @@ namespace BudgetAppCross.Core.Services
         {
             get
             {
-                basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                
                 var currentFileAndExt = $"{DatabaseFilename}.db3";
                 var fullpath = Path.Combine(basePath, currentFileAndExt);
                 return fullpath;

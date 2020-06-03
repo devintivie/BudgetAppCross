@@ -4623,6 +4623,7 @@
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
       "BudgetAppCross >= 1.0.0",
+      "BudgetAppCross.Core >= 1.0.0",
       "Xamarin.Essentials >= 1.3.1",
       "Xamarin.Forms >= 4.4.0.991265"
     ]
@@ -4659,6 +4660,9 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
+            "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj": {
+              "projectPath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj"
+            },
             "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj": {
               "projectPath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj"
             }

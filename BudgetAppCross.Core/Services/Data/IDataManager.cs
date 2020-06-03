@@ -9,9 +9,13 @@ namespace BudgetAppCross.Core.Services
     public interface IDataManager
     {
 
+        
         #region Properties
         List<string> BankAccountNicknames { get; set; }
+        List<string> PayeeNames { get; set; }
         #endregion
+
+        Task Initialize();
         #region BankAccounts
         Task<List<BankAccount>> GetBankAccounts();
         Task SaveBankAccount(BankAccount acct);
@@ -36,6 +40,7 @@ namespace BudgetAppCross.Core.Services
         Task<List<string>> GetBillPayees();
         Task<int> DeleteBillsForPayee(string payee);
         Task<List<Bill>> GetBillsForPayee(string payee);
+        Task UpdatePayeeNames();
         #endregion
 
     }

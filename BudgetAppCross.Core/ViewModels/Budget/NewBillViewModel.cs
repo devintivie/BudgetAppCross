@@ -26,18 +26,29 @@ namespace BudgetAppCross.Core.ViewModels
 
         public Bill Bill { get; private set; }
 
-        public string Company
+        private string newPayee;
+        public string NewPayee
         {
-            get { return Bill.Payee; }
+            get { return newPayee; }
             set
             {
-                var company = Bill.Payee;
-                Bill.Payee = value;
-                SetProperty(ref company, value);
-                //SaveBill();
-
+                SetProperty(ref newPayee, value);
             }
         }
+
+
+        //public string Payee
+        //{
+        //    get { return Bill.Payee; }
+        //    set
+        //    {
+        //        var company = Bill.Payee;
+        //        Bill.Payee = value;
+        //        SetProperty(ref company, value);
+        //        //SaveBill();
+
+        //    }
+        //}
 
         public DateTime Date
         {
@@ -48,7 +59,7 @@ namespace BudgetAppCross.Core.ViewModels
                 Bill.Date = value;
                 SetProperty(ref dueDate, value);
                 //SaveBill();
-                MessagingCenter.Send(this, "UpdateTotal");
+                //MessagingCenter.Send(this, "UpdateTotal");
 
             }
         }
@@ -62,7 +73,7 @@ namespace BudgetAppCross.Core.ViewModels
                 Bill.Amount = value;
                 SetProperty(ref amountDue, value);
                 //SaveBill();
-                MessagingCenter.Send(this, "UpdateTotal");
+                //MessagingCenter.Send(this, "UpdateTotal");
             }
         }
 
@@ -112,6 +123,28 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+        private ObservableCollection<string> payeeOptions;
+        public ObservableCollection<string> PayeeOptions
+        {
+            get { return payeeOptions; }
+            set
+            {
+                SetProperty(ref payeeOptions, value);
+            }
+        }
+
+        private bool isNewPayee;
+        public bool IsNewPayee
+        {
+            get { return isNewPayee; }
+            set
+            {
+                SetProperty(ref isNewPayee, value);
+            }
+        }
+
+
+
         //public int SelectedAccount
         //{
         //    get { return Bill.AccountID; }
@@ -133,6 +166,17 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+        private string selectedPayee;
+        public string SelectedPayee
+        {
+            get { return selectedPayee; }
+            set
+            {
+                SetProperty(ref selectedPayee, value);
+            }
+        }
+
+
 
         #endregion
 
@@ -147,6 +191,7 @@ namespace BudgetAppCross.Core.ViewModels
             navigationService = nav;
             //Bill = new Bill();
             LoadAccountOptions();
+            LoadPayeeOptions();
 
             SaveCommand = new Command(async () => await OnSave());
             CancelCommand = new Command(async () => await OnCancel());
@@ -166,6 +211,15 @@ namespace BudgetAppCross.Core.ViewModels
         #region Methods
         private async Task OnSave()
         {
+            if (IsNewPayee)
+            {
+                Bill.Payee = NewPayee;
+            }
+            else
+            {
+                Bill.Payee = SelectedPayee;
+            }
+
             //await navigationService.Close(this, Bill);
             //var accts = await BudgetDatabase.Instance.GetBankAccounts();
             var accts = await DataManager.GetBankAccounts();
@@ -174,6 +228,8 @@ namespace BudgetAppCross.Core.ViewModels
             //Bill.AccountID = acct.AccountID;
             //await BudgetDatabase.Instance.SaveBill(Bill);
             await DataManager.SaveBill(Bill);
+            Messenger.Instance.Send(new ChangeBillMessage(Bill.AccountID));
+            await DataManager.UpdatePayeeNames();
             await navigationService.Close(this, true);
         }
 
@@ -192,6 +248,23 @@ namespace BudgetAppCross.Core.ViewModels
             //    AccountOptions.Add(item.Nickname);
             //}
             SelectedAccount = AccountOptions.FirstOrDefault();
+
+        }
+
+        private async Task LoadPayeeOptions()
+        {
+            PayeeOptions = new ObservableCollection<string>(DataManager.PayeeNames);
+
+            if(PayeeOptions.Count == 0)
+            {
+                IsNewPayee = true;
+            }
+            else
+            {
+                SelectedPayee = PayeeOptions.First();
+            }
+
+            
 
         }
 

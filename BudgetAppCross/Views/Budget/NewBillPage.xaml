@@ -9,8 +9,8 @@
              x:Class="BudgetAppCross.Views.NewBillPage">
     <ContentPage.Content>
         <StackLayout>
-            <Grid>
-                <Grid.RowDefinitions>
+            <StackLayout>
+                <!--<Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
@@ -20,14 +20,21 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="100"/>
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions>-->
                 
+                               
                 <!--Payee-->
-                <Label Text="Payee"
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="New Payee"
                        Grid.Row="0" Grid.Column="0"
                        VerticalOptions="Center"
                        FontSize="Large"/>
-                <Entry Text="{Binding Bill.Payee}" 
+                    <Switch IsToggled="{Binding IsNewPayee}"/>
+                </StackLayout>
+                <Picker ItemsSource="{Binding PayeeOptions}"
+                        SelectedItem="{Binding SelectedPayee}"/>
+                <Entry Text="{Binding NewPayee}" 
+                       IsVisible="{Binding IsNewPayee}"
                        Grid.Row="1" Grid.Column="0"
                        WidthRequest="130"/>
                 
@@ -43,16 +50,19 @@
                        WidthRequest="130"/>
 
                 <!--IsPaid-->
-                <Label Text="Paid?"
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Paid?"
                        Grid.Row="0" Grid.Column="2"
                        VerticalOptions="Center"
                        FontSize="Large"
                        />
-                <CheckBox IsChecked="{Binding Bill.IsPaid}"
+                    <CheckBox IsChecked="{Binding Bill.IsPaid}"
                           Grid.Row="1" Grid.Column="2"
                           VerticalOptions="Center"
                           HorizontalOptions="Center"
                           />
+                </StackLayout>
+                
 
                 <!--Date-->
                 <Label Text="Due Date"
@@ -73,7 +83,7 @@
                             Grid.Row="1" Grid.Column="4"
                             WidthRequest="100"/>
                 <!--<Button Text="{Binding Date, Converter={cvt:DateOnlyConverter}}"/>-->
-            </Grid>
+            </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Button Text="Cancel" Command="{Binding CancelCommand}"/>
                 <Button Text="Save" Command="{Binding SaveCommand}"/>

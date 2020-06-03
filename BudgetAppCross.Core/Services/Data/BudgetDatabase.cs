@@ -25,7 +25,7 @@ namespace BudgetAppCross.Core.Services
 
         public BudgetDatabase()
         {
-            var _ = Initialize();
+            //var _ = Initialize();
         }
         #endregion
 
@@ -35,11 +35,12 @@ namespace BudgetAppCross.Core.Services
 
         #region Properties
         public List<string> BankAccountNicknames { get; set; } = new List<string>();
+        public List<string> PayeeNames { get; set; } = new List<string>();
         #endregion
 
         #region Methods
 
-        async Task Initialize()
+        public async Task Initialize()
         {
             //File.Delete(Constants.DatabasePath);
             if (!initialized)
@@ -48,12 +49,12 @@ namespace BudgetAppCross.Core.Services
                 Database.CreateTable<Bill>(CreateFlags.None);
                 Database.CreateTable<Balance>(CreateFlags.None);
 
-                var defaultAccount = new BankAccount(0, "Undecided");
                 
 
                 initialized = true;
-                await SaveBankAccount(defaultAccount);
+                
                 await UpdateBankAccountNames();
+                await UpdatePayeeNames();
 
                 //, type).ConfigureAwait(false);
                 //MapTable(typeof(BankAccount));
@@ -90,10 +91,16 @@ namespace BudgetAppCross.Core.Services
 
         public async Task<List<BankAccount>> GetBankAccounts()
         {
-            //var list = new List<BankAccount>();
-            var list = await Task.Run(() =>
+            var list = new List<BankAccount>();
+            await Task.Run(() =>
             {
-                return Database.GetAllWithChildren<BankAccount>();
+                list = Database.Table<BankAccount>().ToList();
+                foreach (var element in list)
+                {
+                    Database.GetChildren(element, recursive: false);
+                }
+
+                //list =  Database.GetAllWithChildren<BankAccount>();
             });
 
             await UpdateBankAccountNames();
@@ -113,6 +120,14 @@ namespace BudgetAppCross.Core.Services
             {
                 BankAccountNicknames.Add(item.Nickname);
             }
+        }
+
+        public async Task UpdatePayeeNames()
+        {
+            var list = await GetBills();
+            var names = list.Select(x => x.Payee).Distinct().OrderBy(x => x);
+
+            PayeeNames = new List<string>(names);
         }
 
         //public async Task<IEnumerable<string>> GetBankAccountNames()

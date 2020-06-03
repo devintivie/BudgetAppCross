@@ -49,6 +49,7 @@
                 
             </CollectionView>
             <Button Text="Add Budget" HorizontalOptions="CenterAndExpand" 
+                    Command="{Binding AddBudgetCommand}"
                     RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.75}"
                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}"/>

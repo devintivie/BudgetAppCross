@@ -197,6 +197,9 @@
         "frameworks": {
           "xamarinios10": {
             "projectReferences": {
+              "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj": {
+                "projectPath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj"
+              },
               "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj": {
                 "projectPath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj"
               }

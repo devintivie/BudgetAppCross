@@ -1,4 +1,4 @@
-IsIncrementalBuild=true
+IsIncrementalBuild=false
 AndroidUseAapt2=True
 UseSharedRuntime=true
 UseFastDeployment=false
@@ -22,7 +22,7 @@ CodegenTarget=
 AndroidDexTool=d8
 AndroidLinkTool=
 AndroidEnableProfiledAot=
-AndroidInstallAfterBuild=True
-AndroidSessionId=ca225202-4d0d-4db1-a7c5-a1b43e6af39e
+AndroidInstallAfterBuild=False
+AndroidSessionId=
 BuildConfiguration=Debug
 TemplateName={9AA2D3C6-3393-45F1-8E7C-5A9901728795}

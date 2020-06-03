@@ -141,7 +141,7 @@ namespace BudgetAppCross.Core.ViewModels
             AddBillCommand = new Command(async () => await navigationService.Navigate<NewBillViewModel, Bill>(new Bill()));
 
             Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage(x.AccountId));
-            Messenger.Register<ChangeBillMessage>(this, async x => await OnUpdateBillMessage(x.AccountId));
+            Messenger.Register<UpdateBillMessage>(this, async x => await OnUpdateBillMessage(x.AccountId));
 
 
         }
@@ -153,8 +153,8 @@ namespace BudgetAppCross.Core.ViewModels
             var billcall = await BudgetDatabase.GetBills();
             
             var billData = billcall
-                //.Where(x => x.Date >= StartDate)
-                //.Where(x => x.Date <= EndDate)
+                .Where(x => x.Date >= StartDate)
+                .Where(x => x.Date <= EndDate)
                 .Where(x => x.BankAccount.Nickname.Equals(SelectedAccount))
                 .OrderBy(x => x.Date).ToList();
 
