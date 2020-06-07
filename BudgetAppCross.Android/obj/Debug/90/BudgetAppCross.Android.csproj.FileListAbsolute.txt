@@ -7,9 +7,11 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Deb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BudgetAppCross.Core.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BudgetAppCross.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BudgetAppCross.Models.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\CustomXamarinFormsConverters.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BudgetAppCross.Core.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BudgetAppCross.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BudgetAppCross.Models.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\CustomXamarinFormsConverters.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\build.props
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\adb.props
@@ -93,6 +95,8 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Deb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\BudgetAppCross.Models.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\BudgetAppCross.Models.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\BudgetAppCross.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\CustomXamarinFormsConverters.dll
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\CustomXamarinFormsConverters.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\FormsViewGroup.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\FormsViewGroup.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\Java.Interop.dll

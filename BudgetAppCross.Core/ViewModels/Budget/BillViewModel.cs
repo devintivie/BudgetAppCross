@@ -106,6 +106,16 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+        public BillStatus BillStatus
+        {
+            get { return Bill.BillStatus; }
+            
+        }
+
+
+        //public BillStatus BillStatus => Bill.BillStatus;
+
+
         private ObservableCollection<string> accountOptions = new ObservableCollection<string>();
         public ObservableCollection<string> AccountOptions
         {

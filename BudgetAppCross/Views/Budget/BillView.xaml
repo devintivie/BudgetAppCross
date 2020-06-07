@@ -4,21 +4,22 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:cvtlocal="clr-namespace:BudgetAppCross.Converters"
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.BillView">
 
    
     <ContentView.Content>
         <StackLayout>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <!--<ColumnDefinition Width="Auto"/>-->
+            <FlexLayout Wrap="Wrap" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:Class1}}">
+                <!--<Grid.ColumnDefinitions>
+                    --><!--<ColumnDefinition Width="Auto"/>--><!--
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="130"/>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="100"/>
-                </Grid.ColumnDefinitions>
+                </Grid.ColumnDefinitions>-->
                 <!--<Entry Text="{Binding Payee}"
                    Grid.Column="0"/>-->
                 <CheckBox IsChecked="{Binding IsPaid}"
@@ -35,7 +36,8 @@
                     Grid.Column="3"/>
                 <Entry Text="{Binding Confirmation}"
                    Grid.Column="4"/>
-            </Grid>
+                <Label Text="{Binding BillStatus}"/>
+            </FlexLayout>
         </StackLayout>
         
 

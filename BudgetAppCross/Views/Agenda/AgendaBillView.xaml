@@ -4,27 +4,36 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-             
+             xmlns:cvtlocal="clr-namespace:BudgetAppCross.Converters"
+             xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.AgendaBillView">
     <ContentView.Content>
-        <FlexLayout Wrap="Wrap">
+        <FlexLayout Wrap="Wrap" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:Class1}}">
             <CheckBox IsChecked="{Binding IsPaid}"
                       WidthRequest="60"/>
             <Label Text="{Binding Payee}"
                    FontSize="Title"
                        VerticalOptions="Center"
                        WidthRequest="120"/>
-            <DatePicker Date="{Binding Date}"/>
             <Entry Text="{Binding Amount}"
                        WidthRequest="85"
                        HorizontalOptions="Center"
                        VerticalOptions="CenterAndExpand"/>
-            <Entry Text="{Binding Confirmation}"
-                       WidthRequest="200"/>
+            <DatePicker Date="{Binding Date}"
+                        >
+                <DatePicker.Behaviors>
+                    <behav:OnUnfocusedBehavior/>
+                </DatePicker.Behaviors>
+            </DatePicker>
+            
             <Picker ItemsSource="{Binding AccountOptions}"
+                    
                     SelectedItem="{Binding SelectedAccount}"
                     WidthRequest="120"/>
+            <Entry Text="{Binding Confirmation}"
+                       WidthRequest="200"/>
+            
             
         </FlexLayout>
         <!--<StackLayout>

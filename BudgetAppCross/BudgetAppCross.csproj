@@ -34,6 +34,8 @@
   <ItemGroup>
     <ProjectReference Include="..\BudgetAppCross.Core\BudgetAppCross.Core.csproj" />
     <ProjectReference Include="..\BudgetAppCross.Models\BudgetAppCross.Models.csproj" />
+    <ProjectReference Include="..\CustomXamarinFormsBehaviors\CustomXamarinFormsBehaviors.csproj" />
+    <ProjectReference Include="..\CustomXamarinFormsConverters\CustomXamarinFormsConverters.csproj" />
   </ItemGroup>
 
   <ItemGroup>

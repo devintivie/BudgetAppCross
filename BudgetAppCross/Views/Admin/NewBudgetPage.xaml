@@ -4,9 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
              mc:Ignorable="d"
+             ios:Page.UseSafeArea="True"
              x:Class="BudgetAppCross.Views.NewBudgetPage">
+    
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>

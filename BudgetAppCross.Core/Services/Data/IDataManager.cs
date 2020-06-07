@@ -30,6 +30,7 @@ namespace BudgetAppCross.Core.Services
         Task<Balance> GetBalance(int id);
         Task DeleteBalance(Balance balance);
         Task<Balance> GetLatestBalance(int id, DateTime date);
+        Task<Balance> GetLatestBalance(string name, DateTime date);
         #endregion
 
         #region Bills

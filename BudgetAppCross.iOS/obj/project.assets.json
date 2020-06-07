@@ -751,6 +751,8 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "CustomXamarinFormsBehaviors": "1.0.0",
+          "CustomXamarinFormsConverters": "1.0.0",
           "MvvmCross": "6.4.2",
           "MvvmCross.Forms": "6.4.2",
           "System.Dynamic.Runtime": "4.3.0",
@@ -797,6 +799,26 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
+        }
+      },
+      "CustomXamarinFormsBehaviors/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/CustomXamarinFormsBehaviors.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinFormsBehaviors.dll": {}
+        }
+      },
+      "CustomXamarinFormsConverters/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/CustomXamarinFormsConverters.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinFormsConverters.dll": {}
         }
       }
     },
@@ -1532,6 +1554,8 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "CustomXamarinFormsBehaviors": "1.0.0",
+          "CustomXamarinFormsConverters": "1.0.0",
           "MvvmCross": "6.4.2",
           "MvvmCross.Forms": "6.4.2",
           "System.Dynamic.Runtime": "4.3.0",
@@ -1578,6 +1602,26 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
+        }
+      },
+      "CustomXamarinFormsBehaviors/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/CustomXamarinFormsBehaviors.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinFormsBehaviors.dll": {}
+        }
+      },
+      "CustomXamarinFormsConverters/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/CustomXamarinFormsConverters.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinFormsConverters.dll": {}
         }
       }
     },
@@ -2313,6 +2357,8 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "CustomXamarinFormsBehaviors": "1.0.0",
+          "CustomXamarinFormsConverters": "1.0.0",
           "MvvmCross": "6.4.2",
           "MvvmCross.Forms": "6.4.2",
           "System.Dynamic.Runtime": "4.3.0",
@@ -2359,6 +2405,26 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
+        }
+      },
+      "CustomXamarinFormsBehaviors/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/CustomXamarinFormsBehaviors.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinFormsBehaviors.dll": {}
+        }
+      },
+      "CustomXamarinFormsConverters/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/CustomXamarinFormsConverters.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinFormsConverters.dll": {}
         }
       }
     },
@@ -3094,6 +3160,8 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "CustomXamarinFormsBehaviors": "1.0.0",
+          "CustomXamarinFormsConverters": "1.0.0",
           "MvvmCross": "6.4.2",
           "MvvmCross.Forms": "6.4.2",
           "System.Dynamic.Runtime": "4.3.0",
@@ -3140,6 +3208,26 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
+        }
+      },
+      "CustomXamarinFormsBehaviors/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/CustomXamarinFormsBehaviors.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinFormsBehaviors.dll": {}
+        }
+      },
+      "CustomXamarinFormsConverters/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/CustomXamarinFormsConverters.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinFormsConverters.dll": {}
         }
       }
     }
@@ -4618,6 +4706,16 @@
       "type": "project",
       "path": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj",
       "msbuildProject": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj"
+    },
+    "CustomXamarinFormsBehaviors/1.0.0": {
+      "type": "project",
+      "path": "../CustomXamarinFormsBehaviors/CustomXamarinFormsBehaviors.csproj",
+      "msbuildProject": "../CustomXamarinFormsBehaviors/CustomXamarinFormsBehaviors.csproj"
+    },
+    "CustomXamarinFormsConverters/1.0.0": {
+      "type": "project",
+      "path": "../CustomXamarinFormsConverters/CustomXamarinFormsConverters.csproj",
+      "msbuildProject": "../CustomXamarinFormsConverters/CustomXamarinFormsConverters.csproj"
     }
   },
   "projectFileDependencyGroups": {

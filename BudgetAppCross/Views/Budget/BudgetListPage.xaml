@@ -29,6 +29,7 @@
                       SelectedItem="{Binding SelectedTracker}"
                       ItemTapped="BTItemTapped"
                       >
+                
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <!--<controls:BillTrackerGlanceView/>-->

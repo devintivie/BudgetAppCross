@@ -49,8 +49,6 @@ namespace BudgetAppCross.Core.Services
                 Database.CreateTable<Bill>(CreateFlags.None);
                 Database.CreateTable<Balance>(CreateFlags.None);
 
-                
-
                 initialized = true;
                 
                 await UpdateBankAccountNames();
@@ -94,7 +92,8 @@ namespace BudgetAppCross.Core.Services
             var list = new List<BankAccount>();
             await Task.Run(() =>
             {
-                list = Database.Table<BankAccount>().ToList();
+                var ienum = Database.Table<BankAccount>();
+                list = ienum.ToList();
                 foreach (var element in list)
                 {
                     Database.GetChildren(element, recursive: false);
@@ -256,6 +255,22 @@ namespace BudgetAppCross.Core.Services
             ////return list.FirstOrDefault();
             ////return await (Database.Table<Balance>().Where(bal => bal.Timestamp <= date)
             ////    .OrderByDescending(x => x.Timestamp)).FirstAsync();
+        }
+
+        public async Task<Balance> GetLatestBalance(string name, DateTime date)
+        {
+            var balances = (await GetBalances()).Where(bal => bal.BankAccount.Nickname.Equals(name) && bal.Timestamp <= date);
+            if (balances.Count() == 0)
+            {
+                return null;
+            }
+            else
+            {
+                var latest = (balances)
+                .OrderByDescending(x => x.Timestamp).FirstOrDefault();
+
+                return latest;
+            }
         }
 
         public async Task DeleteBalance(Balance balance)

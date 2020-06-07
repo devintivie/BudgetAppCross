@@ -12,6 +12,8 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "CustomXamarinFormsBehaviors": "1.0.0",
+          "CustomXamarinFormsConverters": "1.0.0",
           "MvvmCross": "6.4.2",
           "MvvmCross.Forms": "6.4.2",
           "NETStandard.Library": "2.0.3",
@@ -793,6 +795,16 @@
         "runtime": {
           "BudgetAppCross.Models.dll": {}
         }
+      },
+      "CustomXamarinFormsBehaviors/1.0.0": {
+        "runtime": {
+          "CustomXamarinFormsBehaviors.dll": {}
+        }
+      },
+      "CustomXamarinFormsConverters/1.0.0": {
+        "runtime": {
+          "CustomXamarinFormsConverters.dll": {}
+        }
       }
     }
   },
@@ -1317,6 +1329,16 @@
       "sha512": ""
     },
     "BudgetAppCross.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CustomXamarinFormsBehaviors/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CustomXamarinFormsConverters/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -92,6 +92,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Forms.Platform.dll",
 		"Xamarin.Forms.Xaml.dll",
 		"BudgetAppCross.Models.dll",
+		"CustomXamarinFormsConverters.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};

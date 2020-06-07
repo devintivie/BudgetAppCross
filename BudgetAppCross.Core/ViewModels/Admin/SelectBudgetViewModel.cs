@@ -22,7 +22,7 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Properties
-        private ObservableCollection<string> budgets;
+        private ObservableCollection<string> budgets = new ObservableCollection<string>();
         public ObservableCollection<string> Budgets
         {
             get { return budgets; }
@@ -70,7 +70,11 @@ namespace BudgetAppCross.Core.ViewModels
         {
             var files = await StateManager.FindBudgetFiles();
 
-            Budgets = new ObservableCollection<string>(files);
+            if(files.Count > 0)
+            {
+                Budgets = new ObservableCollection<string>(files);
+            }
+           
         }
 
         private async Task BudgetSelected()

@@ -150,21 +150,25 @@ namespace BudgetAppCross.Core.ViewModels
         #region Methods
         private async Task GetBills()
         {
-            var billcall = await BudgetDatabase.GetBills();
-            
-            var billData = billcall
-                .Where(x => x.Date >= StartDate)
-                .Where(x => x.Date <= EndDate)
-                .Where(x => x.BankAccount.Nickname.Equals(SelectedAccount))
-                .OrderBy(x => x.Date).ToList();
-
-            Bills.Clear();
-            foreach (var bill in billData)
+            if(SelectedAccount != null)
             {
-                Bills.Add(new BillViewModel(bill));
-            }
+                var billcall = await BudgetDatabase.GetBills();
 
-            await UpdateCalculations();
+                var billData = billcall
+                    .Where(x => x.Date >= StartDate)
+                    .Where(x => x.Date <= EndDate)
+                    .Where(x => x.BankAccount.Nickname.Equals(SelectedAccount))
+                    .OrderBy(x => x.Date).ToList();
+
+                Bills.Clear();
+                foreach (var bill in billData)
+                {
+                    Bills.Add(new BillViewModel(bill));
+                }
+
+                await UpdateCalculations();
+            }
+            
 
 
 
@@ -233,12 +237,13 @@ namespace BudgetAppCross.Core.ViewModels
             var billcall = await BudgetDatabase.GetBills();
 
             var billData = billcall
-                //.Where(x => x.Date >= StartDate)
-                //.Where(x => x.Date <= EndDate)
+                .Where(x => x.Date >= StartDate)
+                .Where(x => x.Date <= EndDate)
                 .Where(x => x.BankAccount.Nickname.Equals(SelectedAccount))
                 .OrderBy(x => x.Date).ToList();
 
-            var bal = await BudgetDatabase.GetLatestBalance(billData.First().AccountID, StartDate);
+            //Doesnt work if there are no bills
+            var bal = await BudgetDatabase.GetLatestBalance(SelectedAccount, StartDate);
             if (bal == null)
             {
                 StartingBalance = 0.0;

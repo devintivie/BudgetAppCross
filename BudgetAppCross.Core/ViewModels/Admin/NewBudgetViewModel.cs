@@ -62,7 +62,7 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private DateTime initialBalanceDate;
+        private DateTime initialBalanceDate = DateTime.Today;
         public DateTime InitialBalanceDate
         {
             get { return initialBalanceDate; }

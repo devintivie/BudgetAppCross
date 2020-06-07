@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "WvNFKM64Ucnq23lthEKYhazE1F+UyiX1jmULVvqCwKUtAY7DA4srjfLrBs8PfFSvQ13Z2A5reLnay1WGy2s6PA==",
+  "success": true,
+  "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\CustomXamarinFormsBehaviors\\CustomXamarinFormsBehaviors.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

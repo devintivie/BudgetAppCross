@@ -40,14 +40,14 @@ namespace BudgetAppCross.Core.Services
             // create the database if it doesn't exist
             SQLite.SQLiteOpenFlags.Create |
             // enable multi-threaded database access
-            SQLite.SQLiteOpenFlags.SharedCache;
+            SQLite.SQLiteOpenFlags.SharedCache |
+            SQLite.SQLiteOpenFlags.FullMutex;
 
         [JsonIgnore]
         public string DatabasePath
         {
             get
             {
-                
                 var currentFileAndExt = $"{DatabaseFilename}.db3";
                 var fullpath = Path.Combine(basePath, currentFileAndExt);
                 return fullpath;
