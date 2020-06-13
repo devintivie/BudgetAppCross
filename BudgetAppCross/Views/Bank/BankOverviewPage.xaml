@@ -9,6 +9,8 @@
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
              x:TypeArguments="vms:BankOverviewViewModel"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
              Title="{Binding Title}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddAccountCommand}"/>

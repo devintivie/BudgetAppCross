@@ -11,13 +11,19 @@
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.MenuPage"
              x:Name="MainContent"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
              Title="Menu">
 
     <!--<ContentPage.Behaviors>
         <behaviors:EventToCommandBehavior EventName="ItemSelected" Command="{Binding ShowDetailPageAsyncCommand}"/>
     </ContentPage.Behaviors>-->
     
-    <StackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
         <!--<ListView ItemsSource="{Binding MenuItemList}"
                   SelectedItem="{Binding SelectedMenuItem }">-->
         <ListView ItemsSource="{Binding PageList}"
@@ -28,12 +34,13 @@
                 </DataTemplate>
             </ListView.ItemTemplate>-->
             <ListView.Behaviors>
-                <behaviors:EventHandlerBehavior EventName="ItemSelected">
+                <behaviors:EventHandlerBehavior EventName="ItemTapped">
                     <behaviors:InvokeCommandAction Command="{Binding ShowDetailPageAsyncCommand}"/>
                 </behaviors:EventHandlerBehavior>
             </ListView.Behaviors>
         </ListView>
-    </StackLayout>
+        <Button Grid.Row="1" Text="Settings" Command="{Binding ShowAccountPageCommand}"/>
+    </Grid>
              
     <!--<StackLayout VerticalOptions="FillAndExpand">
         <ListView x:Name="ListViewMenu"

@@ -21,12 +21,31 @@ namespace BudgetAppCross.Core.ViewModels
         {
             base.ViewAppearing();
 
+            var _ = NavigateInitial();
             //var mainAccount = new BankAccount(450, "-", "Chase", "Main Account");
             //await BudgetDatabase.SaveBankAccount(mainAccount);
 
-            navigationService.Navigate<MenuViewModel>();
-            navigationService.Navigate<SelectBudgetViewModel>();
+            
+        }
 
+        private async Task NavigateInitial()
+        {
+            var name = await StateManager.LoadState();
+
+            if (name == null)
+            {
+                await navigationService.Navigate<MenuViewModel>();
+                await navigationService.Navigate<SelectBudgetViewModel>();
+            }
+            else
+            {
+                await BudgetDatabase.Initialize();
+                await BudgetDatabase.GetBankAccounts();
+                await navigationService.Navigate<MenuViewModel>();
+                await navigationService.Navigate<DateRangeViewModel>();
+            }
+
+            
         }
 
         //public override async void ViewDestroy(bool viewFinishing = true)

@@ -127,8 +127,9 @@ namespace BudgetAppCross.Core.ViewModels
             var dt = DateTime.Today.AddDays(-4);
             var dt2 = DateTime.Today.AddMonths(2);
             var bills = await BudgetDatabase.GetBills();
-            var billData = bills.Where(x => x.Date >= dt)
-                            .Where(x => x.Date <= dt2)
+            var billData = bills
+                //.Where(x => x.Date >= dt)
+                            //.Where(x => x.Date <= dt2)
                             .ToList();
 
             var data = billData.GroupBy(x => x.Date)

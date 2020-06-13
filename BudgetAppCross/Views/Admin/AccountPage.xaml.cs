@@ -12,7 +12,7 @@ using Xamarin.Forms.Xaml;
 namespace BudgetAppCross.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    [MvxMasterDetailPagePresentation(Position = MasterDetailPosition.Detail, NoHistory = true, Title = "Date Select")]
+    [MvxMasterDetailPagePresentation(Position = MasterDetailPosition.Detail, NoHistory = false)]
     public partial class AccountPage
     {
         public AccountPage()

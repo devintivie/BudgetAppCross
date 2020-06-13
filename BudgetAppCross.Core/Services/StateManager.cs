@@ -19,6 +19,7 @@ namespace BudgetAppCross.Core.Services
         public StateManager()
         {
             basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
         }
         #endregion
 
@@ -29,11 +30,9 @@ namespace BudgetAppCross.Core.Services
         #endregion
 
         #region Properties
-        public string DatabaseFilename { get; set; } = null;
-        [JsonIgnore]
+        public string DatabaseFilename { get; set; } = null;//"None";
         public List<string> Budgets { get; private set; }
 
-        [JsonIgnore]
         public const SQLite.SQLiteOpenFlags Flags =
             // open the database in read/write mode
             SQLite.SQLiteOpenFlags.ReadWrite |
@@ -43,7 +42,6 @@ namespace BudgetAppCross.Core.Services
             SQLite.SQLiteOpenFlags.SharedCache |
             SQLite.SQLiteOpenFlags.FullMutex;
 
-        [JsonIgnore]
         public string DatabasePath
         {
             get
@@ -55,21 +53,76 @@ namespace BudgetAppCross.Core.Services
         }
         #endregion
 
-
-
         #region Methods
         public async Task SaveState()
         {
             var path = $"{basePath}/{stateFilename}";
-            await Task.Run(() =>
+
+            var state = new State
             {
-                using (StreamWriter file = File.CreateText(path))
-                {
-                    JsonSerializer serializer = new JsonSerializer();
-                    serializer.Serialize(file, this);
-                }
-            });
+                DatabaseFilename = DatabaseFilename
+            };
+            //await Task.Run(() =>
+            //{
+            using (StreamWriter file = File.CreateText(path))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(file, state);
+            }
+            //});
         }
+
+        //public void SaveState()
+        //{
+        //    var path = Path.Combine(basePath, stateFilename);
+
+        //    var state = new State
+        //    {
+        //        DatabaseFilename = DatabaseFilename
+        //    };
+        //    using (StreamWriter file = File.CreateText(path))
+        //    {
+        //        JsonSerializer serializer = new JsonSerializer();
+        //        serializer.Serialize(file, state);
+        //    }
+        //}
+
+        public async Task<string> LoadState()
+        {
+            var path = Path.Combine(basePath, stateFilename);
+
+            //await Task.Run(() =>
+            //{
+                //File.Delete(path);
+                var state = new State();
+                try
+                {
+                    var filenames = Directory.GetFiles(basePath);
+                    foreach (var item in filenames)
+                    {
+                        Console.WriteLine(item);
+                    }
+                    var str = File.ReadAllText(path);
+                    state = JsonConvert.DeserializeObject<State>(str);
+                    DatabaseFilename = state.DatabaseFilename;
+                }
+                catch (FileNotFoundException e)
+                {
+                    await SaveState();
+                    var filenames2 = Directory.GetFiles(basePath);
+                    foreach (var item in filenames2)
+                    {
+                        Console.WriteLine(item);
+                    }
+                    var str = File.ReadAllText(path);
+                    state = JsonConvert.DeserializeObject<State>(str);
+
+                    DatabaseFilename = state.DatabaseFilename;
+                }
+            //});
+            return DatabaseFilename;
+        }
+
 
         public async Task<List<string>> FindBudgetFiles()
         {
@@ -125,5 +178,11 @@ namespace BudgetAppCross.Core.Services
 
         #endregion
 
+    }
+
+    [Serializable]
+    public class State
+    {
+        public string DatabaseFilename { get; set; }
     }
 }

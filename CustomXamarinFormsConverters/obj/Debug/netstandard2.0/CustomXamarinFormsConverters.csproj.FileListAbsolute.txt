@@ -47,3 +47,4 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\CustomXamarinFormsConverters\o
 D:\OneDrive\Documents\source\repos\BudgetAppCross\CustomXamarinFormsConverters\obj\Debug\netstandard2.0\CustomXamarinFormsConverters.csproj.CopyComplete
 D:\OneDrive\Documents\source\repos\BudgetAppCross\CustomXamarinFormsConverters\obj\Debug\netstandard2.0\CustomXamarinFormsConverters.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\CustomXamarinFormsConverters\obj\Debug\netstandard2.0\CustomXamarinFormsConverters.pdb
+D:\OneDrive\Documents\source\repos\BudgetAppCross\CustomXamarinFormsConverters\obj\Debug\netstandard2.0\CustomXamarinFormsConverters.csprojAssemblyReference.cache

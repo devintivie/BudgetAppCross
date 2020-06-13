@@ -38,9 +38,9 @@
                             <Grid>
                                 <Label Text="{Binding }" HorizontalOptions="Center"
                                     HorizontalTextAlignment="Center"
-                                       BackgroundColor="Orange"
-                                           Margin="0"
-                                           Padding="0"
+                                    BackgroundColor="Orange"
+                                    Margin="0"
+                                    Padding="0"
                                     FontSize="Subtitle"/>
                                 <!--<Frame BackgroundColor="Transparent"
                                         BorderColor="Gray"

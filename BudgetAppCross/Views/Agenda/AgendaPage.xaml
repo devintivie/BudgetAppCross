@@ -9,6 +9,7 @@
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
              x:TypeArguments="vms:AgendaViewModel"
+             xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              x:Name="currentPage"
              Title="{Binding Title}"
              >
@@ -26,11 +27,12 @@
         <ListView ItemsSource="{Binding Bills}"
                   HasUnevenRows="True"
                   SelectionMode="None"
+                  
                   IsGroupingEnabled="True">
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Label Text="{Binding Key}"
+                        <Label Text="{Binding Key, Converter={cvt:DateOnlyConverter}}"
                                FontSize="Title"
                                BackgroundColor="LightGray"/>
                     </ViewCell>

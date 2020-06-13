@@ -73,13 +73,13 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 Budgets = new ObservableCollection<string>(files);
             }
-           
         }
 
         private async Task BudgetSelected()
         {
             StateManager.DatabaseFilename = SelectedBudget;
-            
+            //await StateManager.SaveState();
+            await StateManager.SaveState();
             await BudgetDatabase.Initialize();
             await BudgetDatabase.GetBankAccounts();
             await navigationService.Navigate<DateRangeViewModel>();

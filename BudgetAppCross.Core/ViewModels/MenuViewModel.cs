@@ -73,6 +73,20 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+        private IMvxAsyncCommand showAccountPageCommand;
+
+        public IMvxAsyncCommand ShowAccountPageCommand
+        {
+            get 
+            {
+                showAccountPageCommand = showAccountPageCommand ?? new MvxAsyncCommand(ShowAccountPageAsync); 
+                return showAccountPageCommand;
+            }
+        }
+
+        //new Command(async () => await navigationService.Navigate<NewBankAccountViewModel>());
+
+
         #endregion
 
         #region Constructors
@@ -88,7 +102,7 @@ namespace BudgetAppCross.Core.ViewModels
 
             PageList = new MvxObservableCollection<NavigablePage>()
             {
-                NavigablePage.Account,
+                
                 NavigablePage.Paycheck,
                 NavigablePage.BillList,
                 NavigablePage.Agenda,
@@ -113,11 +127,12 @@ namespace BudgetAppCross.Core.ViewModels
             //    default:
             //        break;
             //}
+            CloseMenu();
             switch (SelectedPage)
             {
-                case NavigablePage.Account:
-                    await navigationService.Navigate<AccountViewModel>();
-                    break;
+                //case NavigablePage.Account:
+                //    await navigationService.Navigate<AccountViewModel>();
+                //    break;
                 case NavigablePage.LoadBudget:
                     await navigationService.Navigate<SelectBudgetViewModel>();
                     break;
@@ -139,6 +154,18 @@ namespace BudgetAppCross.Core.ViewModels
                 default:
                     break;
             }
+            
+        }
+
+        private async Task ShowAccountPageAsync()
+        {
+            CloseMenu();
+            await navigationService.Navigate<AccountViewModel>();
+            
+        }
+
+        private void CloseMenu()
+        {
             if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
             {
                 masterDetailPage.IsPresented = false;
