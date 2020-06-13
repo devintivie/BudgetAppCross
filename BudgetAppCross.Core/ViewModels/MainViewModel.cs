@@ -15,21 +15,17 @@ namespace BudgetAppCross.Core.ViewModels
         public MainViewModel(IMvxNavigationService navService)
         {
             navigationService = navService;
-
-            
         }
 
-        public override async void ViewAppearing()
+        public override void ViewAppearing()
         {
             base.ViewAppearing();
 
             //var mainAccount = new BankAccount(450, "-", "Chase", "Main Account");
             //await BudgetDatabase.SaveBankAccount(mainAccount);
 
-            
-
-            await navigationService.Navigate<MenuViewModel>();
-            await navigationService.Navigate<SelectBudgetViewModel>();
+            navigationService.Navigate<MenuViewModel>();
+            navigationService.Navigate<SelectBudgetViewModel>();
 
         }
 

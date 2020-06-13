@@ -5,37 +5,43 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:cvtlocal="clr-namespace:BudgetAppCross.Converters"
+             xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.AgendaBillView">
     <ContentView.Content>
-        <FlexLayout Wrap="Wrap" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:Class1}}">
-            <CheckBox IsChecked="{Binding IsPaid}"
+        <Frame BorderColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+               Margin="0"
+               Padding="0">
+            <FlexLayout Wrap="Wrap" >
+                <CheckBox IsChecked="{Binding IsPaid}" Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
                       WidthRequest="60"/>
-            <Label Text="{Binding Payee}"
+                    <Label Text="{Binding Payee}"
                    FontSize="Title"
                        VerticalOptions="Center"
                        WidthRequest="120"/>
-            <Entry Text="{Binding Amount}"
-                       WidthRequest="85"
-                       HorizontalOptions="Center"
-                       VerticalOptions="CenterAndExpand"/>
-            <DatePicker Date="{Binding Date}"
+                    <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
+                   WidthRequest="85"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"/>
+                    <DatePicker Date="{Binding Date}"
                         >
-                <DatePicker.Behaviors>
-                    <behav:OnUnfocusedBehavior/>
-                </DatePicker.Behaviors>
-            </DatePicker>
-            
-            <Picker ItemsSource="{Binding AccountOptions}"
+                        <DatePicker.Behaviors>
+                            <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                        </DatePicker.Behaviors>
+                    </DatePicker>
+
+                    <Picker ItemsSource="{Binding AccountOptions}"
                     
                     SelectedItem="{Binding SelectedAccount}"
                     WidthRequest="120"/>
-            <Entry Text="{Binding Confirmation}"
+                    <Entry Text="{Binding Confirmation}"
                        WidthRequest="200"/>
-            
-            
-        </FlexLayout>
+
+
+            </FlexLayout>
+        </Frame>
+        
         <!--<StackLayout>
             <StackLayout Orientation="Horizontal">
                 <CheckBox IsChecked="{Binding IsPaid}"

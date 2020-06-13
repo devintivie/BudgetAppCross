@@ -41,7 +41,6 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\CustomXamarinFormsBehaviors\bi
 D:\OneDrive\Documents\source\repos\BudgetAppCross\CustomXamarinFormsBehaviors\bin\Debug\netstandard2.0\zh-Hans\Xamarin.Forms.Platform.iOS.resources.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\CustomXamarinFormsBehaviors\bin\Debug\netstandard2.0\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\CustomXamarinFormsBehaviors\bin\Debug\netstandard2.0\zh-HK\Xamarin.Forms.Platform.iOS.resources.dll
-D:\OneDrive\Documents\source\repos\BudgetAppCross\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.csprojAssemblyReference.cache
 D:\OneDrive\Documents\source\repos\BudgetAppCross\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.csproj.CoreCompileInputs.cache
 D:\OneDrive\Documents\source\repos\BudgetAppCross\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.AssemblyInfoInputs.cache
 D:\OneDrive\Documents\source\repos\BudgetAppCross\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.AssemblyInfo.cs

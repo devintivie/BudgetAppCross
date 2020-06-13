@@ -5,41 +5,70 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:cvtlocal="clr-namespace:BudgetAppCross.Converters"
+             xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.BillView">
 
    
     <ContentView.Content>
-        <StackLayout>
-            <FlexLayout Wrap="Wrap" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:Class1}}">
-                <!--<Grid.ColumnDefinitions>
-                    --><!--<ColumnDefinition Width="Auto"/>--><!--
+        <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.3*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <CheckBox IsChecked="{Binding IsPaid}"
+                      Grid.Column="0" Grid.RowSpan="2"
+                      VerticalOptions="Center"
+                      HorizontalOptions="Center"
+                      />
+            <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
+                   Grid.Column="1"/>
+            <DatePicker Date="{Binding Date}"
+                        Grid.Column="2"/>
+            <Picker ItemsSource="{Binding AccountOptions}"
+                    SelectedItem="{Binding SelectedAccount}"
+                    Grid.Column="3"/>
+            <Entry Text="{Binding Confirmation}"
+                   Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"/>
+            <!--<Label Text="{Binding BillStatus}"/>-->
+            
+        </Grid>
+        <!--<FlexLayout Wrap="Wrap" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:Class1}}">
+            --><!--<Grid.ColumnDefinitions>
+                    -->
+            <!--<ColumnDefinition Width="Auto"/>-->
+            <!--
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="130"/>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>-->
-                <!--<Entry Text="{Binding Payee}"
-                   Grid.Column="0"/>-->
-                <CheckBox IsChecked="{Binding IsPaid}"
+            <!--<Entry Text="{Binding Payee}"
+                   Grid.Column="0"/>--><!--
+            <CheckBox IsChecked="{Binding IsPaid}"
                       Grid.Column="0"
                       VerticalOptions="Center"
                       HorizontalOptions="Center"
                       />
-                <Entry Text="{Binding Amount}"
+            <Entry Text="{Binding Amount}"
                    Grid.Column="1"/>
-                <DatePicker Date="{Binding Date}"
+            <DatePicker Date="{Binding Date}"
                         Grid.Column="2"/>
-                <Picker ItemsSource="{Binding AccountOptions}"
+            <Picker ItemsSource="{Binding AccountOptions}"
                     SelectedItem="{Binding SelectedAccount}"
                     Grid.Column="3"/>
-                <Entry Text="{Binding Confirmation}"
+            <Entry Text="{Binding Confirmation}"
                    Grid.Column="4"/>
-                <Label Text="{Binding BillStatus}"/>
-            </FlexLayout>
-        </StackLayout>
-        
+            <Label Text="{Binding BillStatus}"/>
+        </FlexLayout>-->
+
 
         <!--<RefreshView >
             <ListView x:Name="BillListView" ItemsSource="{Binding Bills}"

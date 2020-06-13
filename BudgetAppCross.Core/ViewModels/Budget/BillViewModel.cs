@@ -24,15 +24,15 @@ namespace BudgetAppCross.Core.ViewModels
         public string Payee
         {
             get { return Bill.Payee; }
-            set
-            {
-                if(Bill.Payee != value)
-                {
-                    var payee = Bill.Payee;
-                    Bill.Payee = value;
-                    SetProperty(ref payee, value);
-                }
-            }
+            //set
+            //{
+            //    if(Bill.Payee != value)
+            //    {
+            //        var payee = Bill.Payee;
+            //        Bill.Payee = value;
+            //        SetProperty(ref payee, value);
+            //    }
+            //}
         }
 
         public DateTime Date
@@ -45,9 +45,9 @@ namespace BudgetAppCross.Core.ViewModels
                     var dueDate = Bill.Date;
                     Bill.Date = value;
                     SetProperty(ref dueDate, value);
-
+                    RaisePropertyChanged(nameof(BillStatus));
                     //Switch to change and save because daterangeentry needs to requery
-                    ChangeAndSave();
+                    //ChangeAndSave();
 
                 }
             }
@@ -92,6 +92,8 @@ namespace BudgetAppCross.Core.ViewModels
                 var isPaid = Bill.IsPaid;
                 Bill.IsPaid = value;
                 SetProperty(ref isPaid, value);
+                RaisePropertyChanged(nameof(BillStatus));
+                var _ = UpdateAndSave();
             }
         }
 
@@ -103,6 +105,9 @@ namespace BudgetAppCross.Core.ViewModels
                 var isAuto = Bill.IsPaid;
                 Bill.IsPaid = value;
                 SetProperty(ref isAuto, value);
+                var _ = UpdateAndSave();
+                RaisePropertyChanged(nameof(BillStatus));
+
             }
         }
 
@@ -145,6 +150,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         #region Commands
         public ICommand DeleteThisCommand { get; private set; }
+        public ICommand OnDateSelectedCommand { get; private set; }
         #endregion
 
         #region Constructors
@@ -153,6 +159,7 @@ namespace BudgetAppCross.Core.ViewModels
             Bill = bill;
 
             DeleteThisCommand = new Command(async () => await OnDeleteThis());
+            OnDateSelectedCommand = new Command(async () => await ChangeAndSave());
 
             LoadAccountOptions();
         }

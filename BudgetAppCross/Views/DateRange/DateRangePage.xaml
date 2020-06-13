@@ -8,6 +8,7 @@
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
+             xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              x:TypeArguments="vms:DateRangeViewModel"
              x:Name="currentPage"
              Title="{Binding Title}"
@@ -96,7 +97,7 @@
                 </Grid.ColumnDefinitions>
                 <Label Text="Starting Balance" FontSize="Subtitle"
                        Grid.Row="0"/>
-                <Label Text="{Binding StartingBalance}"
+                <Label Text="{Binding StartingBalance, Converter={cvt:CurrencyConverter}}"
                        FontSize="Subtitle"
                        HorizontalOptions="Center"
                        Grid.Row="0" Grid.Column="1"/>
@@ -109,10 +110,10 @@
                 <Label Text="Remaining" Grid.Row="1" Grid.Column="1"
                        FontSize="Subtitle"
                        HorizontalTextAlignment="Center"/>
-                <Label Text="{Binding BillTotal}" Grid.Row="2" Grid.Column="0"
+                <Label Text="{Binding BillTotal, Converter={cvt:CurrencyConverter}}" Grid.Row="2" Grid.Column="0"
                        FontSize="Subtitle"
                        HorizontalOptions="Center"/>
-                <Label Text="{Binding Remainder}" Grid.Row="2" Grid.Column="1"
+                <Label Text="{Binding Remainder, Converter={cvt:CurrencyConverter}}" Grid.Row="2" Grid.Column="1"
                        FontSize="Subtitle"
                        HorizontalTextAlignment="Center"/>
             </Grid>

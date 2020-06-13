@@ -43,7 +43,6 @@ namespace BudgetAppCross.Core.ViewModels
                 {
                     var _ = BudgetSelected();
                 }
-
             }
         }
 
@@ -80,6 +79,7 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task BudgetSelected()
         {
             StateManager.DatabaseFilename = SelectedBudget;
+            
             await BudgetDatabase.Initialize();
             await BudgetDatabase.GetBankAccounts();
             await navigationService.Navigate<DateRangeViewModel>();

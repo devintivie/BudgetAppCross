@@ -13,48 +13,52 @@
              x:Name="currentPage"
              Title="{Binding Title}"
              ios:Page.UseSafeArea="True"
-                       BackgroundColor="#00000000"
+             BackgroundColor="#00000000"
              >
 
     <ContentPage.Content>
-        <RelativeLayout BackgroundColor="{StaticResource NavigationPrimary}"
-                        >
-            <CollectionView ItemsSource="{Binding Budgets}"
-                            BackgroundColor="{StaticResource NavigationPrimary}"
-                            SelectedItem="{Binding SelectedBudget}" SelectionMode="Single"
+        <RelativeLayout BackgroundColor="{StaticResource NavigationPrimary}">
+            <ListView ItemsSource="{Binding Budgets}"
+                      BackgroundColor="{StaticResource NavigationPrimary}"
+                      SelectedItem="{Binding SelectedBudget}" SelectionMode="Single"
                             
-                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.15}"
-                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.60}"
-                            HorizontalOptions="Center"
-                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}"
-                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}"
-                            >
-                <CollectionView.EmptyView>
-                    <Label Text="Add a budget to start..."
-                       TextColor="White"
-                           HorizontalTextAlignment="Center"
-                       FontSize="Header"/>
-                </CollectionView.EmptyView>
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
+                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.15}"
+                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.60}"
+                      HorizontalOptions="Center"
+                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.15}"
+                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.7}">
+                <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Padding="5">
-                            <Frame BackgroundColor="LightGray"
-                               BorderColor="Gray"
-                               CornerRadius="33"
-                               >
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Delete"
+                                              Command="{Binding DeleteThisCommand}"
+                                              CommandParameter="{Binding .}"/>
+                            </ViewCell.ContextActions>
+                            <Grid>
                                 <Label Text="{Binding }" HorizontalOptions="Center"
-                               HorizontalTextAlignment="Center"
-                               FontSize="Subtitle"/>
-                            </Frame>
-                        </Grid>
+                                    HorizontalTextAlignment="Center"
+                                       BackgroundColor="Orange"
+                                           Margin="0"
+                                           Padding="0"
+                                    FontSize="Subtitle"/>
+                                <!--<Frame BackgroundColor="Transparent"
+                                        BorderColor="Gray"
+                                        CornerRadius="33"
+                                        >
+                                    <Label Text="{Binding }" HorizontalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                           Margin="0"
+                                           Padding="0"
+                                    FontSize="Subtitle"/>
+                                </Frame>-->
+                            </Grid>
+                        </ViewCell>
                         
                     </DataTemplate>
-                </CollectionView.ItemTemplate>
-                
-            </CollectionView>
+                </ListView.ItemTemplate>
+            </ListView>
+            
             <Button Text="Add Budget" HorizontalOptions="CenterAndExpand" 
                     Command="{Binding AddBudgetCommand}"
                     TextColor="Black"
@@ -66,3 +70,39 @@
     </ContentPage.Content>
 </views:MvxContentPage>
 
+
+
+<!--<CollectionView ItemsSource="{Binding Budgets}"
+                            BackgroundColor="{StaticResource NavigationPrimary}"
+                            SelectedItem="{Binding SelectedBudget}" SelectionMode="Single"
+                            
+                            RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.15}"
+                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.60}"
+                            HorizontalOptions="Center"
+                            RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.2}"
+                            RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.6}"
+                            >
+    <CollectionView.EmptyView>
+        <Label Text="Add a budget to start..."
+                       TextColor="White"
+                           HorizontalTextAlignment="Center"
+                       FontSize="Header"/>
+    </CollectionView.EmptyView>
+    <CollectionView.ItemsLayout>
+        <LinearItemsLayout Orientation="Vertical" ItemSpacing="10"/>
+    </CollectionView.ItemsLayout>
+    <CollectionView.ItemTemplate>
+        <DataTemplate>
+            <Grid Padding="5">
+                <Frame BackgroundColor="LightGray"
+                               BorderColor="Gray"
+                               CornerRadius="33"
+                               >
+                    <Label Text="{Binding }" HorizontalOptions="Center"
+                                HorizontalTextAlignment="Center"
+                                FontSize="Subtitle"/>
+                </Frame>
+            </Grid>
+        </DataTemplate>
+    </CollectionView.ItemTemplate>
+</CollectionView>-->

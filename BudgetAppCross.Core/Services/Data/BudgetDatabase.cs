@@ -43,8 +43,9 @@ namespace BudgetAppCross.Core.Services
         public async Task Initialize()
         {
             //File.Delete(Constants.DatabasePath);
-            if (!initialized)
-            {
+            //if (!initialized)
+            //{
+            database = null;
                 Database.CreateTable<BankAccount>(CreateFlags.None);
                 Database.CreateTable<Bill>(CreateFlags.None);
                 Database.CreateTable<Balance>(CreateFlags.None);
@@ -68,8 +69,13 @@ namespace BudgetAppCross.Core.Services
                 ////    await Database.CreateTablesAsync(CreateFlags.None, typeof(Bill)).ConfigureAwait(false);
                 ////    initialized = true;
                 ////}
-            }
+            //}
         }
+
+        //public async Task Reinitialize()
+        //{
+
+        //}
 
         #region BankAccount
         public async Task SaveBankAccount(BankAccount acct)
