@@ -11,7 +11,9 @@
 
    
     <ContentView.Content>
-        <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}">
+        <Frame BorderColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+               Margin="0" Padding="0">
+            <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -39,6 +41,8 @@
             <!--<Label Text="{Binding BillStatus}"/>-->
             
         </Grid>
+        </Frame>
+        
         <!--<FlexLayout Wrap="Wrap" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:Class1}}">
             --><!--<Grid.ColumnDefinitions>
                     -->

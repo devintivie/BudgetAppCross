@@ -24,7 +24,7 @@
                     <Label Text="Bank Account Name"/>
                     <Entry Text="{Binding FirstBankAccountName}"/>
                     <Label Text="Balance"/>
-                    <Entry Text="{Binding InitialBalance}"/>
+                    <Entry Text="{Binding InitialBalance, Converter={cvt:CurrencyConverter}}"/>
                     <Label Text="Date"/>
                     <DatePicker Date="{Binding InitialBalanceDate}"/>
                 </StackLayout>

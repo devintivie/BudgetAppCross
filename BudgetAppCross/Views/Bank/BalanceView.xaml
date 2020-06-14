@@ -5,6 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              mc:Ignorable="d"
+             xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+             xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
              x:Class="BudgetAppCross.Views.BalanceView">
 
    
@@ -15,10 +17,14 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Entry Text="{Binding Amount}"
+            <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
                    Grid.Column="0"/>
             <DatePicker Date="{Binding Timestamp}"
-                    Grid.Column="1"/>
+                    Grid.Column="1">
+                <DatePicker.Behaviors>
+                    <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                </DatePicker.Behaviors>
+            </DatePicker>
         </Grid>
 
         <!--<RefreshView >

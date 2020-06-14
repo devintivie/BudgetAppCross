@@ -46,7 +46,7 @@ namespace BudgetAppCross.Core.ViewModels
                     var timestamp = Balance.Timestamp;
                     Balance.Timestamp = value;
                     SetProperty(ref timestamp, value);
-                    var _ = ChangeAndSave();
+                    //var _ = ChangeAndSave();
                 }
                 
             }
@@ -58,6 +58,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         #region Commands
         public ICommand DeleteThisCommand { get; private set; }
+        public ICommand OnDateSelectedCommand { get; private set; }
         #endregion
 
         #region Constructors
@@ -66,6 +67,7 @@ namespace BudgetAppCross.Core.ViewModels
             Balance = balance;
 
             DeleteThisCommand = new Command(async () => await OnDeleteThis());
+            OnDateSelectedCommand = new Command(async () => await ChangeAndSave());
         }
 
         #endregion

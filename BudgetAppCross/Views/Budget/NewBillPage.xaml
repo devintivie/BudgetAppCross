@@ -45,7 +45,8 @@
                        Grid.Row="0" Grid.Column="1"
                        VerticalOptions="Center"
                        FontSize="Large"/>
-                <Entry Text="{Binding Bill.Amount}" Keyboard="Numeric"
+                <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}" 
+                       Keyboard="Numeric"
                        Grid.Row="1" Grid.Column="1"
                        Focused="Entry_Focused"
                        Unfocused="Entry_Unfocused"
@@ -58,7 +59,7 @@
                        VerticalOptions="Center"
                        FontSize="Large"
                        />
-                    <CheckBox IsChecked="{Binding Bill.IsPaid}"
+                    <CheckBox IsChecked="{Binding IsPaid}"
                           Grid.Row="1" Grid.Column="2"
                           VerticalOptions="Center"
                           HorizontalOptions="Center"
@@ -71,7 +72,7 @@
                        Grid.Row="0" Grid.Column="3"
                        VerticalOptions="Center"
                        FontSize="Large"/>
-                <DatePicker Date="{Binding Bill.Date}"
+                <DatePicker Date="{Binding Date}"
                             Grid.Row="1" Grid.Column="3"
                             WidthRequest="100"/>
 

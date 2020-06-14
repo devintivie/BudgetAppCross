@@ -247,7 +247,15 @@ namespace BudgetAppCross.Core.ViewModels
             //{
             //    AccountOptions.Add(item.Nickname);
             //}
-            SelectedAccount = AccountOptions.FirstOrDefault();
+            if(AccountOptions.Count > 1)
+            {
+                SelectedAccount = AccountOptions.ElementAt(1);
+            }
+            else
+            {
+                SelectedAccount = AccountOptions.FirstOrDefault();
+            }
+            
 
         }
 

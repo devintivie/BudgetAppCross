@@ -221,7 +221,8 @@ namespace BudgetAppCross.Core.Services
             var balances = (await GetBalances()).Where(bal => bal.AccountID == id && bal.Timestamp <= date);
             if(balances.Count() == 0)
             {
-                return null;
+                var first = (await GetBalances()).Where(bal => bal.AccountID == id).FirstOrDefault();
+                return first;
             }
             else
             {
@@ -230,37 +231,6 @@ namespace BudgetAppCross.Core.Services
 
                 return latest;
             }
-            
-
-
-            //return await Task.Run(() =>
-            //{
-            //    var balances = Database.Table<Balance>()
-            //    .Where(bal => bal.AccountID == id).ToList();
-
-            //    var latest = await Database.GetBalances()
-                
-
-            //    return balances.First();
-
-            //    //if(balances.Count == 0)
-            //    //{
-            //    //    return new Balance();
-            //    //}
-            //    //else
-            //    //{
-            //    //    return new Balance();
-            //    //}
-            //    //return balance;
-            //    //var list =  await (Database.Table<Balance>().Where(bal => bal.Timestamp <= date && )
-            //    //.OrderByDescending(x => x.Timestamp)).FirstAsync();
-            //    //var list = Database.Table<Balance>().ToList();
-            //    //return list.First();
-            //});
-            ////var list = Database.Table<Balance>().ToList();
-            ////return list.FirstOrDefault();
-            ////return await (Database.Table<Balance>().Where(bal => bal.Timestamp <= date)
-            ////    .OrderByDescending(x => x.Timestamp)).FirstAsync();
         }
 
         public async Task<Balance> GetLatestBalance(string name, DateTime date)
@@ -558,3 +528,38 @@ namespace BudgetAppCross.Core.Services
 
     }
 }
+
+
+
+//Getlatest old code
+
+
+
+//return await Task.Run(() =>
+//{
+//    var balances = Database.Table<Balance>()
+//    .Where(bal => bal.AccountID == id).ToList();
+
+//    var latest = await Database.GetBalances()
+
+
+//    return balances.First();
+
+//    //if(balances.Count == 0)
+//    //{
+//    //    return new Balance();
+//    //}
+//    //else
+//    //{
+//    //    return new Balance();
+//    //}
+//    //return balance;
+//    //var list =  await (Database.Table<Balance>().Where(bal => bal.Timestamp <= date && )
+//    //.OrderByDescending(x => x.Timestamp)).FirstAsync();
+//    //var list = Database.Table<Balance>().ToList();
+//    //return list.First();
+//});
+////var list = Database.Table<Balance>().ToList();
+////return list.FirstOrDefault();
+////return await (Database.Table<Balance>().Where(bal => bal.Timestamp <= date)
+////    .OrderByDescending(x => x.Timestamp)).FirstAsync();

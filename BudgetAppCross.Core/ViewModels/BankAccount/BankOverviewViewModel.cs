@@ -74,7 +74,7 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task LoadAccounts()
         {
             var allAccts = await BudgetDatabase.GetBankAccounts();
-            var accts = allAccts.Where(x => x.AccountID != 1);
+            var accts = allAccts.Where(x => x.AccountID != 1).OrderBy(x => x.Nickname);
 
             Accounts.Clear();
             foreach (var item in accts)
