@@ -11,10 +11,12 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              x:TypeArguments="vms:SelectBudgetViewModel"
              x:Name="currentPage"
-             Title="{Binding Title}"
+             Title="Select Budget"
+             
              ios:Page.UseSafeArea="True"
-             BackgroundColor="#00000000"
+             BackgroundColor="{StaticResource NavigationPrimary}"
              >
+    <!--BackgroundColor="#00000000"-->
 
     <ContentPage.Content>
         <RelativeLayout BackgroundColor="{StaticResource NavigationPrimary}">
@@ -35,12 +37,10 @@
                                               Command="{Binding DeleteThisCommand}"
                                               CommandParameter="{Binding .}"/>
                             </ViewCell.ContextActions>
-                            <Grid>
+                            <Grid VerticalOptions="Center" HorizontalOptions="Center">
                                 <Label Text="{Binding }" HorizontalOptions="Center"
                                     HorizontalTextAlignment="Center"
-                                    BackgroundColor="Orange"
-                                    Margin="0"
-                                    Padding="0"
+                                       VerticalTextAlignment="Center"
                                     FontSize="Subtitle"/>
                                 <!--<Frame BackgroundColor="Transparent"
                                         BorderColor="Gray"

@@ -29,7 +29,7 @@ namespace BudgetAppCross.Core.ViewModels
                 SetProperty(ref startDate, value);
                 EndDate = StartDate.AddDays(14);
                 //if (initialized) { var _ = GetGroups(); }
-                var _ = GetBills();
+                //var _ = GetBills();
             }
         }
 
@@ -41,7 +41,7 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 SetProperty(ref endDate, value);
                 //if (initialized) { var _ = GetGroups(); }
-                var _ = GetBills();
+                //var _ = GetBills();
             }
         }
 
@@ -121,7 +121,8 @@ namespace BudgetAppCross.Core.ViewModels
 
         #region Commands
         public ICommand AddBillCommand { get; }
-        public ICommand DeleteBillCommand { get; }
+        //public ICommand DeleteBillCommand { get; }
+        public ICommand OnDateSelectedCommand { get; }
         #endregion
 
         #region Constructors
@@ -139,6 +140,7 @@ namespace BudgetAppCross.Core.ViewModels
             //token = messenger.Subscribe<UpdateBillMessage>(OnUpdateBillMessage);
 
             AddBillCommand = new Command(async () => await navigationService.Navigate<NewBillViewModel, Bill>(new Bill()));
+            OnDateSelectedCommand = new Command(async () => await GetBills());
 
             Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage(x.AccountId));
             Messenger.Register<UpdateBillMessage>(this, async x => await OnUpdateBillMessage(x.AccountId));

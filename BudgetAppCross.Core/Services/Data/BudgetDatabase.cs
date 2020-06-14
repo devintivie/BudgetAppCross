@@ -155,6 +155,18 @@ namespace BudgetAppCross.Core.Services
             });
         }
 
+        public async Task<int> GetBankAccountID(string name)
+        {
+            //return await Task.Run(() =>
+            //{
+            //    var acct = await GetBankAccounts()
+            //});
+
+            var acct = (await GetBankAccounts()).Where(x => string.Equals(x.Nickname, name, StringComparison.OrdinalIgnoreCase)).First();
+            var id = acct.AccountID;
+            return id;
+        }
+
         public async Task DeleteBankAccount(BankAccount acct)
         {
             var associatedBills = await GetBillsForAccount(acct.AccountID);
@@ -235,18 +247,27 @@ namespace BudgetAppCross.Core.Services
 
         public async Task<Balance> GetLatestBalance(string name, DateTime date)
         {
-            var balances = (await GetBalances()).Where(bal => bal.BankAccount.Nickname.Equals(name) && bal.Timestamp <= date);
-            if (balances.Count() == 0)
-            {
-                return null;
-            }
-            else
-            {
-                var latest = (balances)
-                .OrderByDescending(x => x.Timestamp).FirstOrDefault();
+            var acctid = await GetBankAccountID(name);
 
-                return latest;
-            }
+            //if(acctid == null)
+            //{
+            //    return null;
+            //}
+
+            return await GetLatestBalance((int)acctid, date);
+
+            //var balances = (await GetBalances()).Where(bal => bal.BankAccount.Nickname.Equals(name) && bal.Timestamp <= date);
+            //if (balances.Count() == 0)
+            //{
+            //    return null;
+            //}
+            //else
+            //{
+            //    var latest = (balances)
+            //    .OrderByDescending(x => x.Timestamp).FirstOrDefault();
+
+            //    return latest;
+            //}
         }
 
         public async Task DeleteBalance(Balance balance)

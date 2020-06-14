@@ -7,6 +7,7 @@
              x:Class="BudgetAppCross.Views.DateRangePage"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
+             xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
              xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              x:TypeArguments="vms:DateRangeViewModel"
@@ -40,7 +41,11 @@
                             Grid.Row="0" Grid.Column="1"
                             FontSize="Subtitle"
                                 BackgroundColor="Transparent"
-                                HorizontalOptions="End"/>
+                                HorizontalOptions="End">
+                        <DatePicker.Behaviors>
+                            <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                        </DatePicker.Behaviors>
+                    </DatePicker>
 
                     <!--End Date-->
                     <Label Text="End Date" Grid.Row="1" Grid.Column="0"

@@ -112,7 +112,10 @@ namespace BudgetAppCross.Core.ViewModels
 
                 await BudgetDatabase.SaveBankAccount(ba);
             }
-            
+            if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
+            {
+                masterDetailPage.IsGestureEnabled = true;
+            }
             await navigationService.Navigate<DateRangeViewModel>();
         }
 

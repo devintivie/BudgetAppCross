@@ -77,6 +77,11 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task BudgetSelected()
         {
+
+            if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
+            {
+                masterDetailPage.IsGestureEnabled = true;
+            }
             StateManager.DatabaseFilename = SelectedBudget;
             //await StateManager.SaveState();
             await StateManager.SaveState();

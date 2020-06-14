@@ -6,6 +6,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using SQLite;
+using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
@@ -34,6 +35,22 @@ namespace BudgetAppCross.Core.ViewModels
 
             if (name == null)
             {
+                //if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
+                //{
+                //    masterDetailPage.IsPresented = false;
+                //}
+                //else if (Application.Current.MainPage is NavigationPage navigationPage
+                //         && navigationPage.CurrentPage is MasterDetailPage nestedMasterDetail)
+                //{
+                //    nestedMasterDetail.IsPresented = false;
+                //}
+
+                if(Application.Current.MainPage is MasterDetailPage masterDetailPage)
+                {
+                    masterDetailPage.IsGestureEnabled = false;
+                }
+
+
                 await navigationService.Navigate<MenuViewModel>();
                 await navigationService.Navigate<SelectBudgetViewModel>();
             }
