@@ -52,7 +52,7 @@ namespace BudgetAppCross.Core.ViewModels
 
 
                 await navigationService.Navigate<MenuViewModel>();
-                await navigationService.Navigate<SelectBudgetViewModel>();
+                await navigationService.Navigate<WelcomeViewModel>();
             }
             else
             {

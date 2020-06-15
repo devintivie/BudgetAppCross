@@ -71,6 +71,8 @@ namespace BudgetAppCross.Core.ViewModels
 
             Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage());
 
+            var _ = LoadBills();
+
 
             //    var countGroupQuery = from table in dataTable.AsEnumerable()
             //                          group table by table.Field<string>(Column1) into groupedTable
@@ -99,8 +101,8 @@ namespace BudgetAppCross.Core.ViewModels
         public override void ViewAppeared()
         {
             base.ViewAppeared();
-            SelectedTracker = null;
-            LoadBills();
+            //SelectedTracker = null;
+            //LoadBills();
         }
 
         private async Task LoadBills()

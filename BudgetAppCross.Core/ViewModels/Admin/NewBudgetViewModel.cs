@@ -111,6 +111,7 @@ namespace BudgetAppCross.Core.ViewModels
                 };
 
                 await BudgetDatabase.SaveBankAccount(ba);
+                await StateManager.SaveState();
             }
             if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
             {

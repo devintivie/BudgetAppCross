@@ -19,10 +19,11 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Text="Balance"/>
+                <Label Text="Balance"
+                       HorizontalOptions="Center"/>
                 <Label Text="Timestamp"
                        Grid.Column="1"
-                       HorizontalOptions="End"/>
+                       HorizontalOptions="Center"/>
             </Grid>
             <ListView ItemsSource="{Binding Balances}">
                 <ListView.ItemTemplate>

@@ -103,7 +103,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         public override void ViewDestroy(bool viewFinishing = true)
         {
-            SaveBills();
+            //SaveBills();
             base.ViewDestroy(viewFinishing);
         }
 

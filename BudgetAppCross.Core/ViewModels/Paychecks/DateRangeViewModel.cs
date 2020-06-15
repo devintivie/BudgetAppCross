@@ -230,7 +230,7 @@ namespace BudgetAppCross.Core.ViewModels
             AccountOptions = new ObservableCollection<string>(accts);
             SelectedAccount = AccountOptions.FirstOrDefault();
 
-            await GetBills();
+            //await GetBills();
         }
 
 

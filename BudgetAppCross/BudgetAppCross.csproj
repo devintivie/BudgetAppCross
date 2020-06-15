@@ -69,6 +69,9 @@
     <Compile Update="Views\Admin\NewBudgetPage.xaml.cs">
       <DependentUpon>NewBudgetPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Admin\WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Admin\SelectBudgetPage.xaml.cs">
       <DependentUpon>SelectBudgetPage.xaml</DependentUpon>
     </Compile>

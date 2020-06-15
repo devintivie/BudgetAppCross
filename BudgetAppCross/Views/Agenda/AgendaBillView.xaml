@@ -19,8 +19,9 @@
                 <CheckBox IsChecked="{Binding IsPaid}" 
                       WidthRequest="60"/>
                     <Label Text="{Binding Payee}"
-                            FontSize="Title"
+                            FontSize="Subtitle"
                             VerticalOptions="Center"
+                            
                             WidthRequest="120"/>
                     <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
                             WidthRequest="85"

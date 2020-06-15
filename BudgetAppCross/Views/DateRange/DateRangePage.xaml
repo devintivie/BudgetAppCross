@@ -101,6 +101,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label Text="Starting Balance" FontSize="Subtitle"
+                       HorizontalOptions="Center"
                        Grid.Row="0"/>
                 <Label Text="{Binding StartingBalance, Converter={cvt:CurrencyConverter}}"
                        FontSize="Subtitle"
