@@ -107,7 +107,6 @@ namespace BudgetAppCross.Core.ViewModels
                 SetProperty(ref isAuto, value);
                 var _ = UpdateAndSave();
                 RaisePropertyChanged(nameof(BillStatus));
-
             }
         }
 
@@ -200,7 +199,6 @@ namespace BudgetAppCross.Core.ViewModels
                     //Switch to change and save because daterangeentry needs to requery
                     ChangeAndSave();
                 }
-
             }
         }
 

@@ -56,7 +56,11 @@
                             Grid.Row="1" Grid.Column="1"
                             FontSize="Subtitle"
                                 HorizontalOptions="End"
-                                />
+                            >
+                        <DatePicker.Behaviors>
+                            <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                        </DatePicker.Behaviors>
+                    </DatePicker>
                 </Grid>
                 
                 <!-- Select Account-->
@@ -71,7 +75,7 @@
             </StackLayout>
             
             <ListView ItemsSource="{Binding Bills}"
-                      
+                      HasUnevenRows="True"
                       Grid.Row="1"
                             
                   >
@@ -79,9 +83,14 @@
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.ContextActions>
-                                <MenuItem Text="Delete"
+                                <MenuItem Text="Delete" 
                                               Command="{Binding DeleteThisCommand}"
+                                          IsDestructive="True"
+                                          
                                               CommandParameter="{Binding .}"/>
+                                <MenuItem Text="Copy"
+                                          Command="{Binding CopyThisCommand}"
+                                          CommandParameter="{Binding .}"/>
                             </ViewCell.ContextActions>
                             <controls:AgendaBillView/>
                         </ViewCell>

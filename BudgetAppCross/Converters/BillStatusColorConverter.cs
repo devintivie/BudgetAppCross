@@ -16,7 +16,7 @@ namespace BudgetAppCross.Converters
             {
                 case BillStatus.Paid:
                 case BillStatus.AutoPayPast:
-                    return Color.LightGreen;
+                    return Color.Blue;
                 case BillStatus.PastDue:
                     return Color.Red;
                 case BillStatus.DueToday:

@@ -27,16 +27,21 @@
             </BindableLayout.ItemTemplate>
         </StackLayout>-->
         <ListView ItemsSource="{Binding Bills}"
-                  HasUnevenRows="True"
                   SelectionMode="None"
-                  
+                  HasUnevenRows="True"
                   IsGroupingEnabled="True">
+            <!--HasUnevenRows="True"-->
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Label Text="{Binding Key, Converter={cvt:DateOnlyConverter}}"
-                               FontSize="Title"
-                               BackgroundColor="LightGray"/>
+                        <Grid VerticalOptions="FillAndExpand"
+                                     BackgroundColor="LightGray">
+                            <Label Text="{Binding Key, Converter={cvt:DateOnlyConverter}}"
+                               FontSize="Subtitle"
+                                   VerticalOptions="Center"
+                               />
+                        </Grid>
+                        
                     </ViewCell>
                 </DataTemplate>
             </ListView.GroupHeaderTemplate>
@@ -48,7 +53,8 @@
                                               Command="{Binding DeleteThisCommand}"
                                               CommandParameter="{Binding .}"/>
                         </ViewCell.ContextActions>
-                        <controls:AgendaBillView/>
+                        <controls:AgendaBillView />
+                        
                     </ViewCell>
                     
                 </DataTemplate>

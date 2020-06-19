@@ -11,23 +11,69 @@
              x:Class="BudgetAppCross.Views.AgendaBillView">
     <ContentView.Content>
         <Frame BorderColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
-               Margin="0"
-               
-               
-               Padding="0">
-            <FlexLayout Wrap="Wrap" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
+               Margin="2" Padding="0"
+               >
+            <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="125"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
                 <CheckBox IsChecked="{Binding IsPaid}" 
-                      WidthRequest="60"/>
-                    <Label Text="{Binding Payee}"
-                            FontSize="Subtitle"
+                          Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+                          Grid.Row="0" Grid.RowSpan="2"/>
+                <Label Text="{Binding Payee}"
+                       Grid.Column="1"
                             VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            WidthRequest="120"/>
+                <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
+                            WidthRequest="100"
+                           Grid.Column="2"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Center"/>
+                <DatePicker Date="{Binding Date}"
+                            Grid.Column="3"
                             
+                        >
+                    <DatePicker.Behaviors>
+                        <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                    </DatePicker.Behaviors>
+                </DatePicker>
+
+                <Picker ItemsSource="{Binding AccountOptions}"
+                            Grid.Row="1" Grid.Column="1"
+                            SelectedItem="{Binding SelectedAccount}"
+                        VerticalOptions="Center"
+                            WidthRequest="200"/>
+                <Entry Text="{Binding Confirmation}"
+                       Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"
+                           WidthRequest="200"/>
+
+
+            </Grid>
+            <!--<FlexLayout Wrap="Wrap" 
+                        
+                        BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
+                <CheckBox IsChecked="{Binding IsPaid}" 
+                      WidthRequest="30"/>
+                    <Label Text="{Binding Payee}"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
                             WidthRequest="120"/>
                     <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
-                            WidthRequest="85"
+                            WidthRequest="100"
+                           
                             HorizontalOptions="Center"
-                            VerticalOptions="CenterAndExpand"/>
+                            VerticalOptions="CenterAndExpand"
+                           BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}"/>
                     <DatePicker Date="{Binding Date}"
+                                BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}"
                         >
                         <DatePicker.Behaviors>
                             <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
@@ -35,14 +81,16 @@
                     </DatePicker>
 
                     <Picker ItemsSource="{Binding AccountOptions}"
+                            BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}"
                     
-                    SelectedItem="{Binding SelectedAccount}"
-                    WidthRequest="200"/>
+                            SelectedItem="{Binding SelectedAccount}"
+                            WidthRequest="200"/>
                     <Entry Text="{Binding Confirmation}"
-                       WidthRequest="200"/>
+                           BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}"
+                           WidthRequest="200"/>
 
 
-            </FlexLayout>
+            </FlexLayout>-->
         </Frame>
         
         <!--<StackLayout>

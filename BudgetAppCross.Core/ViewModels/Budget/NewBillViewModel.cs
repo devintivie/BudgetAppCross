@@ -133,6 +133,28 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+        private ObservableCollection<MultipleBillOptions> multiBillOptions;
+        public ObservableCollection<MultipleBillOptions> MultiBillOptions
+        {
+            get { return multiBillOptions; }
+            set
+            {
+                SetProperty(ref multiBillOptions, value);
+            }
+        }
+
+        private MultipleBillOptions selectedBillOption;
+        public MultipleBillOptions SelectedBillOption
+        {
+            get { return selectedBillOption; }
+            set
+            {
+                SetProperty(ref selectedBillOption, value);
+            }
+        }
+
+
+
         private bool isNewPayee;
         public bool IsNewPayee
         {
@@ -142,6 +164,17 @@ namespace BudgetAppCross.Core.ViewModels
                 SetProperty(ref isNewPayee, value);
             }
         }
+
+        private bool addMultiple;
+        public bool AddMultiple
+        {
+            get { return addMultiple; }
+            set
+            {
+                SetProperty(ref addMultiple, value);
+            }
+        }
+
 
 
 
@@ -186,7 +219,7 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        public NewBillViewModel(IMvxNavigationService nav)
+        public NewBillsViewModel(IMvxNavigationService nav)
         {
             navigationService = nav;
             //Bill = new Bill();
@@ -195,6 +228,13 @@ namespace BudgetAppCross.Core.ViewModels
 
             SaveCommand = new Command(async () => await OnSave());
             CancelCommand = new Command(async () => await OnCancel());
+
+            MultiBillOptions = new MvxObservableCollection<MultipleBillOptions>()
+            {
+                MultipleBillOptions.ByDateRange,
+                MultipleBillOptions.ByNumber
+            };
+            SelectedBillOption = MultipleBillOptions.ByDateRange;
         }
 
         public override void Prepare(Bill parameter)

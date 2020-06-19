@@ -151,7 +151,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnAddBill()
         {
-            await navigationService.Navigate<NewBillViewModel, Bill, bool>(new Bill(CompanyName));
+            await navigationService.Navigate<NewBillsViewModel, Bill, bool>(new Bill(CompanyName));
             UpdateBills();
         }
 

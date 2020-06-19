@@ -139,7 +139,7 @@ namespace BudgetAppCross.Core.ViewModels
             //Messenger.Register<UpdateBillMessage>(this, x => OnUpdateBillMessage());
             //token = messenger.Subscribe<UpdateBillMessage>(OnUpdateBillMessage);
 
-            AddBillCommand = new Command(async () => await navigationService.Navigate<NewBillViewModel, Bill>(new Bill()));
+            AddBillCommand = new Command(async () => await navigationService.Navigate<NewBillsViewModel, Bill>(new Bill()));
             OnDateSelectedCommand = new Command(async () => await GetBills());
 
             Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage(x.AccountId));

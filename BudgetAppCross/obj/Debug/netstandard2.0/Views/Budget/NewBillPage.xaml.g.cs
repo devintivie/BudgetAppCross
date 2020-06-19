@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("BudgetAppCross.Views.Budget.NewBillPage.xaml", "Views/Budget/NewBillPage.xaml", typeof(global::BudgetAppCross.Views.NewBillPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("BudgetAppCross.Views.Budget.NewBillPage.xaml", "Views/Budget/NewBillPage.xaml", typeof(global::BudgetAppCross.Views.NewBillsPage))]
 
 namespace BudgetAppCross.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Budget\\NewBillPage.xaml")]
-    public partial class NewBillPage : global::MvvmCross.Forms.Views.MvxContentPage {
+    public partial class NewBillsPage : global::MvvmCross.Forms.Views.MvxContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(NewBillPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(NewBillsPage));
         }
     }
 }

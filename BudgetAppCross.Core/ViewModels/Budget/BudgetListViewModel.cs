@@ -62,7 +62,7 @@ namespace BudgetAppCross.Core.ViewModels
             navigationService = navigation;
             Title = "Bill List";
 
-            AddBTCommand = new Command(async () => await navigationService.Navigate<NewBillViewModel, Bill>(new Bill()));
+            AddBTCommand = new Command(async () => await navigationService.Navigate<NewBillsViewModel, Bill>(new Bill()));
             EditCommand = new Command(async () => await OnEdit());
             DeleteCommand = new Command(async () => await OnDelete());
             //SaveBudgetCommand = new Command(async() => await OnSaveBudget());

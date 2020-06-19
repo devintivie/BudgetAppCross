@@ -13,7 +13,7 @@
     <ContentView.Content>
         <Frame BorderColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
                Margin="0" Padding="0">
-            <Grid>
+            <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -28,6 +28,7 @@
                       Grid.Column="0" Grid.RowSpan="2"
                       VerticalOptions="Center"
                       HorizontalOptions="Center"
+                      Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
                       />
             <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
                    Grid.Column="1"/>
