@@ -112,7 +112,8 @@ namespace BudgetAppCross.Core.ViewModels
             if (string.IsNullOrWhiteSpace(BankAccount.Nickname))
             {
                 var config = new AlertConfig().SetMessage("Invalid Company Name");//.SetOkText(ConfirmConfig.DefaultOkText);
-                UserDialogs.Instance.Alert(config);
+                Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
+                //UserDialogs.Instance.Alert(config);
                 return;
             }
 

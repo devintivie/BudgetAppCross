@@ -105,6 +105,9 @@
     <Compile Update="Views\Budget\NewBillsPage.xaml.cs">
       <DependentUpon>NewBillsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Budget\NewMultiBillView.xaml.cs">
+      <DependentUpon>NewMultiBillView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Budget\NewBillView.xaml.cs">
       <DependentUpon>NewBillView.xaml</DependentUpon>
     </Compile>

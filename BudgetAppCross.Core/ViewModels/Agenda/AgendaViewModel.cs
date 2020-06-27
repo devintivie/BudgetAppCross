@@ -41,7 +41,7 @@ namespace BudgetAppCross.Core.ViewModels
             Title = "Agenda";
             var getgroup = GetGroups();
 
-            AddBillCommand = new Command(async () => await navigationService.Navigate<NewBillsViewModel, Bill>(new Bill()));
+            AddBillCommand = new Command(async () => await navigationService.Navigate<NewBillsViewModel, string>(string.Empty));
             Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage(x.AccountId));
 
             ////Entries = new ObservableCollection<AgendaBillViewModel>();

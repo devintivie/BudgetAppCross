@@ -32,7 +32,6 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netst
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\BillTrackerQuickView.xaml.g.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\BillView.xaml.g.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\BudgetListPage.xaml.g.cs
-D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\NewBillPage.xaml.g.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\NewBillTrackerPage.xaml.g.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\ContactDetailsPage.xaml.g.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\DateRange\DateRangeEntryView.xaml.g.cs
@@ -53,3 +52,5 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netst
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Admin\AccountPage.xaml.g.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Admin\WelcomePage.xaml.g.cs
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\NewBillView.xaml.g.cs
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\NewBillsPage.xaml.g.cs
+D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\NewMultiBillView.xaml.g.cs

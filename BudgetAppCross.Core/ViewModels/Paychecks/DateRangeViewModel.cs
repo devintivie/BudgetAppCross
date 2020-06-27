@@ -1,4 +1,5 @@
-﻿using BudgetAppCross.Core.Services;
+﻿using Acr.UserDialogs;
+using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
 using MvvmCross.Navigation;
 using MvvmCross.Plugin.Messenger;
@@ -20,18 +21,35 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Properties
+        //private DateTime startDate = DateTime.Today;
+        //public DateTime StartDate
+        //{
+        //    get { return startDate; }
+        //    set
+        //    {
+        //        var currStart = new DateTime(startDate.Ticks);
+        //        SetProperty(ref startDate, value);
+
+        //        EndDate = StartDate.AddDays(14);
+        //        //if (initialized) { var _ = GetGroups(); }
+        //        //var _ = GetBills();
+        //    }
+        //}
+
         private DateTime startDate = DateTime.Today;
         public DateTime StartDate
         {
             get { return startDate; }
             set
             {
-                SetProperty(ref startDate, value);
-                EndDate = StartDate.AddDays(14);
-                //if (initialized) { var _ = GetGroups(); }
-                //var _ = GetBills();
+                if (startDate != value)
+                {
+                    startDate = value;
+                    RaisePropertyChanged();
+                }
             }
         }
+
 
         private DateTime endDate = DateTime.Today.AddDays(14);
         public DateTime EndDate
@@ -39,7 +57,16 @@ namespace BudgetAppCross.Core.ViewModels
             get { return endDate; }
             set
             {
-                SetProperty(ref endDate, value);
+                if (value >= startDate)
+                {
+                    SetProperty(ref endDate, value);
+                }
+                else
+                {
+                    var config = new AlertConfig().SetMessage("Ending date must be after start date");
+                    UserDialogs.Instance.Alert(config);
+                }
+
                 //if (initialized) { var _ = GetGroups(); }
                 //var _ = GetBills();
             }
@@ -139,7 +166,7 @@ namespace BudgetAppCross.Core.ViewModels
             //Messenger.Register<UpdateBillMessage>(this, x => OnUpdateBillMessage());
             //token = messenger.Subscribe<UpdateBillMessage>(OnUpdateBillMessage);
 
-            AddBillCommand = new Command(async () => await navigationService.Navigate<NewBillsViewModel, Bill>(new Bill()));
+            AddBillCommand = new Command(async () => await navigationService.Navigate<NewBillsViewModel, string>(string.Empty));
             OnDateSelectedCommand = new Command(async () => await GetBills());
 
             Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage(x.AccountId));

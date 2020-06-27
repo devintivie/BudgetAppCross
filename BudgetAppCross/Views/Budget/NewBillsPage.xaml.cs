@@ -12,6 +12,8 @@ namespace BudgetAppCross.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewBillsPage
     {
+        DateTime prevStart;
+        DateTime prevEnd;
         public NewBillsPage()
         {
             InitializeComponent();
@@ -33,6 +35,27 @@ namespace BudgetAppCross.Views
             {
                 entry.Text = "0";
             }
+        }
+
+        private void pickerStartDate_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            //if (pickerEndDate.Date < pickerStartDate.Date)
+            //{
+            //    pickerStartDate.Date = prevStart;
+            //}
+
+            //prevStart = pickerStartDate.Date;
+        }
+
+        private void pickerEndDate_DateSelected(object sender, DateChangedEventArgs e)
+        {
+
+            if(pickerEndDate.Date < pickerStartDate.Date)
+            {
+                pickerEndDate.Date = prevEnd;
+            }
+
+            prevEnd = pickerEndDate.Date;
         }
     }
 }
