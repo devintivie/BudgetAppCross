@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
@@ -22,19 +23,35 @@ namespace BudgetAppCross.Views
         private void Entry_Focused(object sender, FocusEventArgs e)
         {
             var entry = sender as Entry;
-            if (entry.Text.Equals("0"))
+            entry.CursorPosition = entry.Text.Length;
+            if (entry.Text.Equals("0.00") || entry.Text.Equals("$0.00"))
             {
                 entry.Text = "";
             }
+            if (entry.Text.StartsWith("$"))
+            {
+                entry.Text = entry.Text.Replace("$", "");
+            }
+
         }
 
         private void Entry_Unfocused(object sender, FocusEventArgs e)
         {
             var entry = sender as Entry;
-            if (string.IsNullOrWhiteSpace(entry.Text))
+            var text = entry.Text;
+            if (string.IsNullOrWhiteSpace(text))
             {
                 entry.Text = "0";
             }
+            else if(double.TryParse(text, out var result))
+            {
+                entry.Text = result.ToString("C");
+            }
+            //if (!entry.Text.StartsWith("$"))
+            //{
+            //    entry.Text = $@"${entry.Text}";
+            //}
+            //entry.Text = $@"${entry.Text}";
         }
 
         private void pickerStartDate_DateSelected(object sender, DateChangedEventArgs e)
@@ -57,5 +74,14 @@ namespace BudgetAppCross.Views
 
             prevEnd = pickerEndDate.Date;
         }
+
+        //private void Entry_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    var entry = sender as Entry;
+        //    var doubleString = Regex.Match(entry.Text, @"(\d+(\.\d*)?)|(\.\d+)");
+
+        //    entry.Text = doubleString.Value;
+
+        //}
     }
 }

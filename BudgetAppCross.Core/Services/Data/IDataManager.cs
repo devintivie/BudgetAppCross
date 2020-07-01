@@ -37,6 +37,7 @@ namespace BudgetAppCross.Core.Services
         #region Bills
         Task<List<Bill>> GetBills();
         Task SaveBill(Bill bill);
+        Task SaveBills(IEnumerable<Bill> bills);
         Task<Bill> GetBill(int id);
         Task<int> DeleteBill(Bill bill);
         Task<List<string>> GetBillPayees();

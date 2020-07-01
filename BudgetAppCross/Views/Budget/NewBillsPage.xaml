@@ -48,7 +48,7 @@
                                 VerticalOptions="Center"
                                 Grid.Row="0" Grid.Column="1"
                                 FontSize="Large"/>
-                        <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}" 
+                        <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}, UpdateSourceEventName=Unfocused}" 
                                 Keyboard="Numeric"
                                 Grid.Row="1" Grid.Column="1"
                                 Focused="Entry_Focused"
@@ -118,8 +118,8 @@
                     </StackLayout>
 
                     <!--Bill Count-->
-                    <Frame IsVisible="{Binding AddMultiple}">
-                        <StackLayout>
+                    <!--<Frame IsVisible="{Binding AddMultiple}" HasShadow="False">-->
+                    <StackLayout IsVisible="{Binding AddMultiple}">
                             <StackLayout Orientation="Horizontal" IsVisible="{Binding AddMultiple}">
                                 <Label Text="Bills to be added: Count = " TextDecorations="Underline"/>
                                 <Label Text="{Binding BillCount}" VerticalOptions="Center" 
@@ -137,7 +137,7 @@
                                 </BindableLayout.ItemTemplate>
                             </StackLayout>
                         </StackLayout>
-                    </Frame>
+                    <!--</Frame>-->
                     
                     
 

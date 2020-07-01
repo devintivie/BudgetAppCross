@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BudgetAppCross.Models;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 using SQLiteNetExtensions.Extensions;
 //using SQLiteNetExtensionsAsync.Extensions;
 
@@ -38,37 +39,36 @@ namespace BudgetAppCross.Core.Services
         public List<string> PayeeNames { get; set; } = new List<string>();
         #endregion
 
-        #region Methods
-
+        #region Init
         public async Task Initialize()
         {
             //File.Delete(Constants.DatabasePath);
             //if (!initialized)
             //{
             database = null;
-                Database.CreateTable<BankAccount>(CreateFlags.None);
-                Database.CreateTable<Bill>(CreateFlags.None);
-                Database.CreateTable<Balance>(CreateFlags.None);
+            Database.CreateTable<BankAccount>(CreateFlags.None);
+            Database.CreateTable<Bill>(CreateFlags.None);
+            Database.CreateTable<Balance>(CreateFlags.None);
 
-                initialized = true;
-                
-                await UpdateBankAccountNames();
-                await UpdatePayeeNames();
+            initialized = true;
 
-                //, type).ConfigureAwait(false);
-                //MapTable(typeof(BankAccount));
-                //MapTable(typeof(Bill));
-                //MapTable(typeof(Balance));
+            await UpdateBankAccountNames();
+            await UpdatePayeeNames();
+
+            //, type).ConfigureAwait(false);
+            //MapTable(typeof(BankAccount));
+            //MapTable(typeof(Bill));
+            //MapTable(typeof(Balance));
 
 
-                //initialized = true;
-                //Console.WriteLine();
-                ////await MapTable(typeof(Bill));
-                ////if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Bill).Name))
-                ////{
-                ////    await Database.CreateTablesAsync(CreateFlags.None, typeof(Bill)).ConfigureAwait(false);
-                ////    initialized = true;
-                ////}
+            //initialized = true;
+            //Console.WriteLine();
+            ////await MapTable(typeof(Bill));
+            ////if (!Database.TableMappings.Any(m => m.MappedType.Name == typeof(Bill).Name))
+            ////{
+            ////    await Database.CreateTablesAsync(CreateFlags.None, typeof(Bill)).ConfigureAwait(false);
+            ////    initialized = true;
+            ////}
             //}
         }
 
@@ -76,6 +76,7 @@ namespace BudgetAppCross.Core.Services
         //{
 
         //}
+        #endregion
 
         #region BankAccount
         public async Task SaveBankAccount(BankAccount acct)
@@ -293,6 +294,14 @@ namespace BudgetAppCross.Core.Services
                     Database.InsertWithChildren(bill);
                 }
             });
+        }
+
+        public async Task SaveBills(IEnumerable<Bill> bills)
+        {
+            foreach (var item in bills)
+            {
+                await SaveBill(item);
+            }
         }
 
         public async Task<List<Bill>> GetBills()
@@ -536,7 +545,6 @@ namespace BudgetAppCross.Core.Services
         //#region Income
 
         //#endregion
-        #endregion
 
 
 

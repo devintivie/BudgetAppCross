@@ -7,6 +7,7 @@ using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,15 +50,20 @@ namespace BudgetAppCross.Core.ViewModels
             get { return amount; }
             set
             {
-                if (amount != value)
+                //amount = value;
+                //RaisePropertyChanged();
+                if (amount != value || amount == 0.0)
                 {
-                    amount = value;
+                    amount = Math.Truncate(100.0 * value) / 100.0;
+                    //amount = value;
                     RaisePropertyChanged();
+                    //RaisePropertyChanged(nameof(CursorPosition));
                 }
             }
         }
 
         public int BillCount => NewBills.Count;
+        public int CursorPosition => Amount.ToString("C", CultureInfo.CurrentCulture).Length;
 
         public string BillDueString
         {
@@ -70,27 +76,6 @@ namespace BudgetAppCross.Core.ViewModels
                 return "Due Date";
             }
         }
-
-
-        //private ObservableCollection<MultipleBillOptions> multiBillOptions;
-        //public ObservableCollection<MultipleBillOptions> MultiBillOptions
-        //{
-        //    get { return multiBillOptions; }
-        //    set
-        //    {
-        //        SetProperty(ref multiBillOptions, value);
-        //    }
-        //}
-
-        //private ObservableCollection<INewBillViewModel> newBills = new ObservableCollection<INewBillViewModel>();
-        //public ObservableCollection<INewBillViewModel> NewBills
-        //{
-        //    get { return newBills; }
-        //    set
-        //    {
-        //        SetProperty(ref newBills, value);
-        //    }
-        //}
 
         private ObservableCollection<INewBillViewModel> newBills = new ObservableCollection<INewBillViewModel>();
         public ObservableCollection<INewBillViewModel> NewBills
@@ -106,18 +91,6 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-
-
-        //private MultipleBillOptions selectedBillOption;
-        //public MultipleBillOptions SelectedBillOption
-        //{
-        //    get { return selectedBillOption; }
-        //    set
-        //    {
-        //        SetProperty(ref selectedBillOption, value);
-        //    }
-        //}
-
         private bool isNewPayee;
         public bool IsNewPayee
         {
@@ -127,29 +100,6 @@ namespace BudgetAppCross.Core.ViewModels
                 SetProperty(ref isNewPayee, value);
             }
         }
-
-        //private bool addMultiple;
-        //public bool AddMultiple
-        //{
-        //    get { return addMultiple; }
-        //    set
-        //    {
-        //        if(addMultiple != value)
-        //        {
-        //            if (!value)
-        //            {
-        //                ResetNewBillsToSingle();
-        //            }
-        //            else
-        //            {
-        //                CreateBillsForDateRange();
-        //            }
-        //            SetProperty(ref addMultiple, value);
-        //        }
-                
-                
-        //    }
-        //}
 
         private bool addMultiple;
         public bool AddMultiple
@@ -254,16 +204,6 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        //private DueDateFrequencies dueDateFrequency;
-        //public DueDateFrequencies DueDateFrequency
-        //{
-        //    get { return dueDateFrequency; }
-        //    set
-        //    {
-        //        SetProperty(ref dueDateFrequency, value);
-        //    }
-        //}
-
         private DueDateFrequencies dueDateFrequency;
         public DueDateFrequencies DueDateFrequency
         {
@@ -325,7 +265,6 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 SelectedPayee = parameter;
             }
-            
         }
 
         private void ResetNewBillsToSingle()
@@ -401,6 +340,21 @@ namespace BudgetAppCross.Core.ViewModels
         #region Methods
         private async Task OnSave()
         {
+            var accts = await DataManager.GetBankAccounts();
+            var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
+            var payee = IsNewPayee ? NewPayee : SelectedPayee;
+            var tempBills = new List<Bill>();
+
+            foreach (var item in NewBills)
+            {
+                var bill = new Bill(payee, Amount, item.Date);
+                tempBills.Add(bill);
+            }
+
+            await DataManager.SaveBills(tempBills);
+            await navigationService.Close(this);
+
+
             //if (IsNewPayee)
             //{
             //    Bill.Payee = NewPayee;
