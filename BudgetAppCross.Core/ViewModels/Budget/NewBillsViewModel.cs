@@ -44,17 +44,18 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private double amount;
-        public double Amount
+        private decimal amount;
+        public decimal Amount
         {
             get { return amount; }
             set
             {
                 //amount = value;
                 //RaisePropertyChanged();
-                if (amount != value || amount == 0.0)
+                if (amount != value || amount == 0.0m)
                 {
-                    amount = Math.Truncate(100.0 * value) / 100.0;
+                    var temp = Math.Truncate(100 * value) / 100;
+                    amount = temp;
                     //amount = value;
                     RaisePropertyChanged();
                     //RaisePropertyChanged(nameof(CursorPosition));
@@ -347,7 +348,7 @@ namespace BudgetAppCross.Core.ViewModels
 
             foreach (var item in NewBills)
             {
-                var bill = new Bill(payee, Amount, item.Date);
+                var bill = new Bill(payee, (double)Amount, item.Date);
                 tempBills.Add(bill);
             }
 

@@ -10,7 +10,7 @@ namespace CustomXamarinFormsConverters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var dollarAmount = (double)value;
+            var dollarAmount = (decimal)value;
             if (dollarAmount == 0) { return ""; }
             var displayString = dollarAmount.ToString();
             //if (!displayString.StartsWith("$"))
@@ -27,10 +27,10 @@ namespace CustomXamarinFormsConverters
         {
             var strValue = value.ToString().Replace("$", "");
             //var doubleString = strValue.Replace("$", "");
-            var doubleString = Regex.Match(strValue, @"(\d+(\.\d*)?)|(\.\d*)");
+            var decimalString = Regex.Match(strValue, @"(\d+(\.\d*)?)|(\.\d*)");
             
             
-            if(double.TryParse(doubleString.Value, out var amount))
+            if(decimal.TryParse(decimalString.Value, out var amount))
             {
                 return amount;// Math.Round(amount, 2);
             }
