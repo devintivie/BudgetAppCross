@@ -50,16 +50,21 @@ namespace BudgetAppCross.Core.ViewModels
             get { return amount; }
             set
             {
+
+                if (amount != value)
+                {
+                    amount = value;
+                    RaisePropertyChanged();
+                }
                 //amount = value;
                 //RaisePropertyChanged();
-                if (amount != value || amount == 0.0m)
-                {
-                    var temp = Math.Truncate(100 * value) / 100;
-                    amount = temp;
-                    //amount = value;
-                    RaisePropertyChanged();
-                    //RaisePropertyChanged(nameof(CursorPosition));
-                }
+                //if (amount != value || amount == 0.0m)
+                //{
+                //    var temp = Math.Truncate(100 * value) / 100;
+                //    amount = temp;
+                //    //amount = value;
+                //    RaisePropertyChanged();
+                //}
             }
         }
 

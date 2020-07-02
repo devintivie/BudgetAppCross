@@ -45,7 +45,8 @@ namespace BudgetAppCross.Views
             }
             else if(decimal.TryParse(text, out var result))
             {
-                entry.Text = result.ToString("C");
+                var temp = Math.Truncate(100 * result) / 100;
+                entry.Text = temp.ToString("C");
             }
             //if (!entry.Text.StartsWith("$"))
             //{
@@ -75,5 +76,28 @@ namespace BudgetAppCross.Views
             prevEnd = pickerEndDate.Date;
         }
 
+        private void Entry_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var entry = sender as Entry;
+            var text = entry.Text;
+            var array = text.ToCharArray();
+            var dotCount = array.Count(c => c == '.');
+            if(dotCount > 1)
+            {
+                var lastIndex = text.LastIndexOf('.');
+                entry.Text = text.Remove(lastIndex, text.Length - lastIndex);
+            }
+        }
+
+        //private void Entry_TextChanged(object sender, TextChangedEventArgs e)
+        //{
+        //    var entry = sender as Entry;
+        //    var text = entry.Text;
+
+        //    var value = Regex.Replace(text, @"\..*?(\.)", "");
+        //    Console.WriteLine(value);
+        //    entry.Text = value;
+
+        //}
     }
 }
