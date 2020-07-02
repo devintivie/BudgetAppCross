@@ -37,8 +37,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private double dateTotal;
-        public double DateTotal
+        private decimal dateTotal;
+        public decimal DateTotal
         {
             get { return dateTotal; }
             set
@@ -103,7 +103,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private void OnUpdateTotal()
         {
-            var total = 0.0;
+            var total = 0.0m;
             foreach (var item in Bills)
             {
                 total += item.Amount;

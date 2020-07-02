@@ -32,8 +32,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private double amount;
-        public double Amount
+        private decimal amount;
+        public decimal Amount
         {
             get { return amount; }
             set

@@ -25,7 +25,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         public Balance Balance { get; private set; }
 
-        public double Amount
+        public decimal Amount
         {
             get { return Balance.Amount; }
             set

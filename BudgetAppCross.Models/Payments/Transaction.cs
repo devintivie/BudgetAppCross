@@ -8,7 +8,7 @@ namespace BudgetAppCross.Models
     {
         string SourceDest { get; set; }
         DateTime Date { get; set; }
-        double Amount { get; set; }
+        decimal Amount { get; set; }
         string Confirmation { get; set; }
     }
 

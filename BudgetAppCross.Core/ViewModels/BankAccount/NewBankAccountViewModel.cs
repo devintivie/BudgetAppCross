@@ -64,8 +64,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private double balance;
-        public double Balance
+        private decimal balance;
+        public decimal Balance
         {
             get { return balance; }
             set

@@ -17,7 +17,7 @@ namespace BudgetAppCross.Models
         #region Properties
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
-        public double Amount { get; set; }
+        public decimal Amount { get; set; }
         public DateTime Timestamp { get; set; }
 
         [ForeignKey(typeof(BankAccount))]
@@ -27,7 +27,7 @@ namespace BudgetAppCross.Models
         #endregion
 
         #region Constructors
-        public Balance(double amount, DateTime time)
+        public Balance(decimal amount, DateTime time)
         {
             Amount = amount;
             Timestamp = time;

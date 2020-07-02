@@ -53,7 +53,7 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        public double Amount
+        public decimal Amount
         {
             get { return Bill.Amount; }
             set

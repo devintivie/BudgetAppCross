@@ -27,7 +27,7 @@ namespace CustomXamarinFormsConverters
         {
             var strValue = value.ToString().Replace("$", "");
             //var doubleString = strValue.Replace("$", "");
-            var decimalString = Regex.Match(strValue, @"(\d+(\.\d*)?)|(\.\d*)");
+            var decimalString = Regex.Match(strValue, @"\d");
             
             
             if(decimal.TryParse(decimalString.Value, out var amount))

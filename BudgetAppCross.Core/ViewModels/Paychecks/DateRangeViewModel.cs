@@ -107,8 +107,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private double startingBalance;
-        public double StartingBalance
+        private decimal startingBalance;
+        public decimal StartingBalance
         {
             get { return startingBalance; }
             set
@@ -118,8 +118,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private double billTotal;
-        public double BillTotal
+        private decimal billTotal;
+        public decimal BillTotal
         {
             get { return billTotal; }
             set
@@ -129,7 +129,7 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        public double Remainder => StartingBalance - BillTotal;
+        public decimal Remainder => StartingBalance - BillTotal;
 
 
 
@@ -275,7 +275,7 @@ namespace BudgetAppCross.Core.ViewModels
             var bal = await BudgetDatabase.GetLatestBalance(SelectedAccount, StartDate);
             if (bal == null)
             {
-                StartingBalance = 0.0;
+                StartingBalance = 0.0m;
             }
             else
             {

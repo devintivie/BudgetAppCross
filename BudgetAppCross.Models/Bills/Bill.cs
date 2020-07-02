@@ -32,7 +32,7 @@ namespace BudgetAppCross.Models
             }
         }
 
-        public double Amount { get; set; }
+        public decimal Amount { get; set; }
         public string Payee { get; set; }
 
         private bool isPaid;
@@ -76,17 +76,17 @@ namespace BudgetAppCross.Models
         #endregion
 
         #region Constructors
-        public Bill() : this("", 0.0, DateTime.Today) { }
+        public Bill() : this("", 0.0m, DateTime.Today) { }
 
-        public Bill(string payee) : this(payee, 0.0, DateTime.Today) { }
+        public Bill(string payee) : this(payee, 0.0m, DateTime.Today) { }
 
         public Bill(string name, int month, int day) : this(name, 0, month, day) { }
 
-        public Bill(string name, double iAmount, int month, int day) : this(name, iAmount, new DateTime(DateTime.Now.Year, month, day)) { }
+        public Bill(string name, decimal iAmount, int month, int day) : this(name, iAmount, new DateTime(DateTime.Now.Year, month, day)) { }
 
         //public Bill(double iAmount, int month, int day) : this(iAmount, new DateTime(DateTime.Now.Year, month, day), acctID) { }
 
-        public Bill(string payee, double iAmount, DateTime iDueDate)
+        public Bill(string payee, decimal iAmount, DateTime iDueDate)
         {
             Payee = payee;
             Date = iDueDate;

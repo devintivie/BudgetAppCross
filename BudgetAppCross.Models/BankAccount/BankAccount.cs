@@ -41,7 +41,7 @@ namespace BudgetAppCross.Models
         #region Constructors
         public BankAccount() { }// : this(0, "-", "-", "My Account") { }
 
-        public BankAccount(double iBalance, string account, string bank, string nickname)
+        public BankAccount(decimal iBalance, string account, string bank, string nickname)
         {
             History.Add(new Balance(iBalance, DateTime.Now));
             //CurrentBalance = iBalance;
@@ -50,7 +50,7 @@ namespace BudgetAppCross.Models
             Nickname = nickname;
         }
 
-        public BankAccount(double iBalance, string nickname) : this(iBalance, "-", "-", nickname) { }
+        public BankAccount(decimal iBalance, string nickname) : this(iBalance, "-", "-", nickname) { }
         #endregion
 
         #region Methods

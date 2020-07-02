@@ -348,7 +348,7 @@ namespace BudgetAppCross.Core.ViewModels
 
             foreach (var item in NewBills)
             {
-                var bill = new Bill(payee, (double)Amount, item.Date);
+                var bill = new Bill(payee, Amount, item.Date);
                 tempBills.Add(bill);
             }
 

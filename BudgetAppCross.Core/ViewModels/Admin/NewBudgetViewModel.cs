@@ -52,8 +52,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private double initialBalance;
-        public double InitialBalance
+        private decimal initialBalance;
+        public decimal InitialBalance
         {
             get { return initialBalance; }
             set

@@ -34,8 +34,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private double dateRangeTotal;
-        public double DateRangeTotal
+        private decimal dateRangeTotal;
+        public decimal DateRangeTotal
         {
             get { return dateRangeTotal; }
             set
@@ -44,8 +44,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private double startingBalance;
-        public double StartingBalance
+        private decimal startingBalance;
+        public decimal StartingBalance
         {
             get { return startingBalance; }
             set
@@ -54,8 +54,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private double endingBalance;
-        public double EndingBalance
+        private decimal endingBalance;
+        public decimal EndingBalance
         {
             get { return endingBalance; }
             set
@@ -121,7 +121,7 @@ namespace BudgetAppCross.Core.ViewModels
         {
             var bal = await BudgetDatabase.GetLatestBalance(BankAccount.AccountID, StartDate);
             StartingBalance = bal.Amount;
-            var billTotal = 0.0;
+            var billTotal = 0.0m;
             foreach (var bill in billList)
             {
                 billTotal += bill.Amount;

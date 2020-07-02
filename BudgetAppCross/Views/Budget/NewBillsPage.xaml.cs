@@ -43,7 +43,7 @@ namespace BudgetAppCross.Views
             {
                 entry.Text = "0";
             }
-            else if(double.TryParse(text, out var result))
+            else if(decimal.TryParse(text, out var result))
             {
                 entry.Text = result.ToString("C");
             }
@@ -75,13 +75,5 @@ namespace BudgetAppCross.Views
             prevEnd = pickerEndDate.Date;
         }
 
-        //private void Entry_TextChanged(object sender, TextChangedEventArgs e)
-        //{
-        //    var entry = sender as Entry;
-        //    var doubleString = Regex.Match(entry.Text, @"(\d+(\.\d*)?)|(\.\d+)");
-
-        //    entry.Text = doubleString.Value;
-
-        //}
     }
 }

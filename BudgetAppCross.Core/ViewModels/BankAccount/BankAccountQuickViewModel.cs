@@ -17,8 +17,8 @@ namespace BudgetAppCross.Core.ViewModels
         #region Properties
         public BankAccount BankAccount { get; private set; }
 
-        private double balance;
-        public double Balance
+        private decimal balance;
+        public decimal Balance
         {
             get { return balance; }
             set
@@ -63,7 +63,7 @@ namespace BudgetAppCross.Core.ViewModels
             //var temp = 0.0;
             if (temp == null)
             {
-                Balance = 0.0;
+                Balance = 0.0m;
             }
             else
             {
