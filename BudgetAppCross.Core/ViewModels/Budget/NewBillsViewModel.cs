@@ -44,7 +44,7 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private decimal amount;
+        private decimal amount = 120m;
         public decimal Amount
         {
             get { return amount; }
@@ -67,6 +67,21 @@ namespace BudgetAppCross.Core.ViewModels
                 //}
             }
         }
+
+        private decimal customAmount = 100m;
+        public decimal CustomAmount
+        {
+            get { return customAmount; }
+            set
+            {
+                if (customAmount != value)
+                {
+                    customAmount = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
 
         public int BillCount => NewBills.Count;
         public int CursorPosition => Amount.ToString("C", CultureInfo.CurrentCulture).Length;

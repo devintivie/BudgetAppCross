@@ -24,10 +24,10 @@ namespace BudgetAppCross.Views
         {
             var entry = sender as Entry;
             entry.CursorPosition = entry.Text.Length;
-            if (entry.Text.Equals("0.00") || entry.Text.Equals("$0.00"))
-            {
-                entry.Text = "";
-            }
+            //if (entry.Text.Equals("0.00") || entry.Text.Equals("$0.00"))
+            //{
+            //    entry.Text = "";
+            //}
             if (entry.Text.StartsWith("$"))
             {
                 entry.Text = entry.Text.Replace("$", "");
@@ -80,6 +80,10 @@ namespace BudgetAppCross.Views
         {
             var entry = sender as Entry;
             var text = entry.Text;
+            if (text.Equals("0.00") || text.Equals("$0.00") || text.Equals("0"))
+            {
+                entry.Text = "";
+            }
             var array = text.ToCharArray();
             var dotCount = array.Count(c => c == '.');
             var lastIndex = text.LastIndexOf('.');

@@ -48,14 +48,27 @@
                                 VerticalOptions="Center"
                                 Grid.Row="0" Grid.Column="1"
                                 FontSize="Large"/>
-                        <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}, UpdateSourceEventName=Unfocused}" 
+                        <Entry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
                                 Keyboard="Numeric"
                                ClearButtonVisibility="WhileEditing"
                                Placeholder="$0.00"
                                 Grid.Row="1" Grid.Column="1"
                                 Focused="Entry_Focused"
                                 Unfocused="Entry_Unfocused"
+                               
                                TextChanged="Entry_TextChanged"
+                               HorizontalTextAlignment="End"
+                               HorizontalOptions="EndAndExpand"
+                                WidthRequest="140"/>
+                    </StackLayout>
+
+                    <!--Amount Due-->
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Amount Currency"
+                                VerticalOptions="Center"
+                                Grid.Row="0" Grid.Column="1"
+                                FontSize="Large"/>
+                        <controls:CurrencyEntry Text="{Binding CustomAmount, UpdateSourceEventName=Unfocused}" 
                                HorizontalTextAlignment="End"
                                HorizontalOptions="EndAndExpand"
                                 WidthRequest="140"/>

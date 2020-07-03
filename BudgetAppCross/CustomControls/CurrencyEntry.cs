@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace BudgetAppCross.Views
 {
-    public class MyEntry : Entry
+    public class CurrencyEntry : Entry
     {
     }
 }
