@@ -82,11 +82,26 @@ namespace BudgetAppCross.Views
             var text = entry.Text;
             var array = text.ToCharArray();
             var dotCount = array.Count(c => c == '.');
-            if(dotCount > 1)
+            var lastIndex = text.LastIndexOf('.');
+            if (dotCount > 1)
             {
-                var lastIndex = text.LastIndexOf('.');
+                
                 entry.Text = text.Remove(lastIndex, text.Length - lastIndex);
             }
+            else if (dotCount == 1)
+            {
+                Console.WriteLine($"text.length = {text.Length}");
+                Console.WriteLine($"lastIndex = {lastIndex}");
+                Console.WriteLine();
+                if ((text.Length - lastIndex) > 3)
+                {
+                    entry.Text = text.Substring(0, lastIndex + 3);
+                }
+            }
+            //else if(text.Length > )
+            //{
+
+            //}
         }
 
         //private void Entry_TextChanged(object sender, TextChangedEventArgs e)
