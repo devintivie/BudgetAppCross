@@ -7,6 +7,7 @@
              xmlns:cvtlocal="clr-namespace:BudgetAppCross.Converters"
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.AgendaBillView">
     <ContentView.Content>
@@ -32,9 +33,9 @@
                             VerticalOptions="Center"
                             VerticalTextAlignment="Center"
                             WidthRequest="120"/>
-                <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
+                <controls:CurrencyEntry Text="{Binding Amount}"
                             WidthRequest="100"
-                           Grid.Column="2"
+                            Grid.Column="2"
                             HorizontalOptions="FillAndExpand"
                             VerticalOptions="Center"/>
                 <DatePicker Date="{Binding Date}"

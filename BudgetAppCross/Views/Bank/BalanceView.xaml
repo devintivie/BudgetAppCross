@@ -7,6 +7,7 @@
              mc:Ignorable="d"
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
              x:Class="BudgetAppCross.Views.BalanceView">
 
    
@@ -17,8 +18,9 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
-                   Grid.Column="0"/>
+            <!--<Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
+                   Grid.Column="0"/>-->
+            <controls:CurrencyEntry Text="{Binding Amount}" Grid.Column="0"/>
             <DatePicker Date="{Binding Timestamp}"
                     Grid.Column="1">
                 <DatePicker.Behaviors>

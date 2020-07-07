@@ -7,6 +7,7 @@
              xmlns:cvtlocal="clr-namespace:BudgetAppCross.Converters"
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              mc:Ignorable="d"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
              x:Class="BudgetAppCross.Views.NewBillView">
 
     <ContentView.Content>
@@ -35,13 +36,16 @@
                        VerticalOptions="Center"
                        Grid.Row="0" Grid.Column="1"
                        FontSize="Large"/>
-                    <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}" 
+                    <!--<Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}" 
                        Keyboard="Numeric"
                        Grid.Row="1" Grid.Column="1"
                        Focused="Entry_Focused"
                        Unfocused="Entry_Unfocused"
-                       WidthRequest="130"/>
-                    <!--IsPaid-->
+                       WidthRequest="130"/>-->
+                <controls:CurrencyEntry Text="{Binding Amount}" Keyboard="Numeric"
+                                            Grid.Row="1" Grid.Column="1"
+                                            WidthRequest="130"/>
+                <!--IsPaid-->
                     <Label Text="Paid?"
                        Grid.Row="0" Grid.Column="0"
                        VerticalOptions="Center"

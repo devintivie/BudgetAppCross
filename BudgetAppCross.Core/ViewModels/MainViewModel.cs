@@ -59,7 +59,7 @@ namespace BudgetAppCross.Core.ViewModels
                 await BudgetDatabase.Initialize();
                 await BudgetDatabase.GetBankAccounts();
                 await navigationService.Navigate<MenuViewModel>();
-                await navigationService.Navigate<DateRangeViewModel>();
+                await navigationService.Navigate<SelectBudgetViewModel>();
             }
 
             

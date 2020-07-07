@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "Xamarin.iOS,Version=v1.0": {
-      "Acr.UserDialogs/7.1.0.442": {
+      "Acr.UserDialogs/7.1.0.446": {
         "type": "package",
         "dependencies": {
           "BTProgressHUD": "1.3.1"
@@ -770,7 +770,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Acr.UserDialogs": "7.1.0.442",
+          "Acr.UserDialogs": "7.1.0.446",
           "BudgetAppCore.Sqlite": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
@@ -823,7 +823,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win": {
-      "Acr.UserDialogs/7.1.0.442": {
+      "Acr.UserDialogs/7.1.0.446": {
         "type": "package",
         "dependencies": {
           "BTProgressHUD": "1.3.1"
@@ -1573,7 +1573,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Acr.UserDialogs": "7.1.0.442",
+          "Acr.UserDialogs": "7.1.0.446",
           "BudgetAppCore.Sqlite": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
@@ -1626,7 +1626,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x64": {
-      "Acr.UserDialogs/7.1.0.442": {
+      "Acr.UserDialogs/7.1.0.446": {
         "type": "package",
         "dependencies": {
           "BTProgressHUD": "1.3.1"
@@ -2376,7 +2376,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Acr.UserDialogs": "7.1.0.442",
+          "Acr.UserDialogs": "7.1.0.446",
           "BudgetAppCore.Sqlite": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
@@ -2429,7 +2429,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x86": {
-      "Acr.UserDialogs/7.1.0.442": {
+      "Acr.UserDialogs/7.1.0.446": {
         "type": "package",
         "dependencies": {
           "BTProgressHUD": "1.3.1"
@@ -3179,7 +3179,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Acr.UserDialogs": "7.1.0.442",
+          "Acr.UserDialogs": "7.1.0.446",
           "BudgetAppCore.Sqlite": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
@@ -3233,14 +3233,14 @@
     }
   },
   "libraries": {
-    "Acr.UserDialogs/7.1.0.442": {
-      "sha512": "4z+sp3nTkFZuY75gd4zo2+86S8eaWlHl7KhLs/EAG9TH7Ng9+a4jfOap8v3fq1RXrF3gVae2ycLPcndZptxHZQ==",
+    "Acr.UserDialogs/7.1.0.446": {
+      "sha512": "7YF7hk4qy4x9pKrVzKnjTEvua+kTSlHqdPPvP4gIqsxymPH6I3nAW2lpSo8kX97nTBbwkfddtrikwAXIYxRNIw==",
       "type": "package",
-      "path": "acr.userdialogs/7.1.0.442",
+      "path": "acr.userdialogs/7.1.0.446",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "acr.userdialogs.7.1.0.442.nupkg.sha512",
+        "acr.userdialogs.7.1.0.446.nupkg.sha512",
         "acr.userdialogs.nuspec",
         "lib/monoandroid10.0/Acr.UserDialogs.dll",
         "lib/monoandroid10.0/Acr.UserDialogs.pdb",

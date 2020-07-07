@@ -6,6 +6,7 @@
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:cvtlocal="clr-namespace:BudgetAppCross.Converters"
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.BillView">
 
@@ -30,8 +31,10 @@
                       HorizontalOptions="Center"
                       Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
                       />
-            <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
-                   Grid.Column="1"/>
+            <!--<Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
+                   Grid.Column="1"/>-->
+            <controls:CurrencyEntry Text="{Binding Amount}"
+                        Grid.Column="1"/>
             <DatePicker Date="{Binding Date}"
                         Grid.Column="2"/>
             <Picker ItemsSource="{Binding AccountOptions}"

@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "kg2YJWbTFU3sqcAsE1IPdInid7R4/pc4aQkuIevzT16F3jXiry3noZ8XpgZPDX0mbcdj7kqbxk5u1BxRC2UTcA==",
+  "dgSpecHash": "0PJiSKsbM3PBRQ1NX4EE2aFVbsfCHVOr/ckj5QzkXMw8tTMREvpm999nvkIIfW6gaW/m7ncBeGK9EFHHThZkBQ==",
   "success": true,
   "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.iOS\\BudgetAppCross.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.442\\acr.userdialogs.7.1.0.442.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.446\\acr.userdialogs.7.1.0.446.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\behaviors.xamarinforms\\4.0.4\\behaviors.xamarinforms.4.0.4.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\btprogresshud\\1.3.1\\btprogresshud.1.3.1.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

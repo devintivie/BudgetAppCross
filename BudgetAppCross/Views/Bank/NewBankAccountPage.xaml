@@ -9,6 +9,7 @@
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.NewBankAccountPage"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
              ios:Page.UseSafeArea="True">
     <ContentPage.Content>
         
@@ -30,13 +31,15 @@
                     <behaviors:InvokeCommandAction Command="{Binding ShowDetailPageAsyncCommand}"/>
                 </behaviors:EventHandlerBehavior>
             </ListView.Behaviors>-->
-            <Entry Keyboard="Numeric"
+            <!--<Entry Keyboard="Numeric"
                    Text="{Binding Balance, Converter={cvt:CurrencyConverter}}"
                    Focused="Entry_Focused"
                    Unfocused="Entry_Unfocused"
                    >
-            </Entry>
-            
+            </Entry>-->
+
+            <controls:CurrencyEntry Text="{Binding Balance}" Keyboard="Numeric"/>
+
             <!--Balance Date-->
             <Label Text="Date of Balance"/>
             <DatePicker Date="{Binding Date}"/>

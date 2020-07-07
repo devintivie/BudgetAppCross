@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "re6io2LCoLfNGwii4XPSfFBwkg8UuTGmRlgssueLOnWBMbm16Zb+leeO7sn42NHnGeXvc4eDsb3gM/n/1ftwLg==",
+  "dgSpecHash": "5Ux6/1lmBgTRcq/DuvYIsaRAVoUgdeByVwhKINteA/jWWG6YRaKInkxfLZ5Trwq6CbHQBKoKmISZshsTsNh5Ag==",
   "success": true,
   "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Android\\BudgetAppCross.Android.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.442\\acr.userdialogs.7.1.0.442.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.446\\acr.userdialogs.7.1.0.446.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\andhud\\1.4.2\\andhud.1.4.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\behaviors.xamarinforms\\4.0.4\\behaviors.xamarinforms.4.0.4.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

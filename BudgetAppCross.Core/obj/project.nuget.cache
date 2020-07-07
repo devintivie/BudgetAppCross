@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ldUYMLvxVx6zFbWRvkOXRrGm+CUgXuRZ29TfFz+oSyJ38ZHD9+0MxvFimgs8enNlPaLG6V1j0sCiLJOFQlu9LQ==",
+  "dgSpecHash": "tHIom0NWPZKxS2TElVpdz2QuvDVbrnjS7Z3u8Crsr+Qc6GZ1n/X0cF8DpOGDzd21dDKUjaI/NxJNZT0uipyW2A==",
   "success": true,
   "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.442\\acr.userdialogs.7.1.0.442.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.446\\acr.userdialogs.7.1.0.446.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.data.sqlite.core\\3.1.4\\microsoft.data.sqlite.core.3.1.4.nupkg.sha512",
