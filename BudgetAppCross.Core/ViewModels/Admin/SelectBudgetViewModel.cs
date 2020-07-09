@@ -87,7 +87,7 @@ namespace BudgetAppCross.Core.ViewModels
             await StateManager.SaveState();
             await BudgetDatabase.Initialize();
             await BudgetDatabase.GetBankAccounts();
-            await navigationService.Navigate<DateRangeViewModel>();
+            await navigationService.Navigate<BudgetListViewModel>();
 
         }
         #endregion

@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.7.0.1080" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
       <HintPath>C:\Microsoft\Xamarin\NuGet\xamarin.forms\4.4.0.991265\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>

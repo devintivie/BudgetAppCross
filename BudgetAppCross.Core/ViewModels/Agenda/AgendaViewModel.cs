@@ -101,36 +101,45 @@ namespace BudgetAppCross.Core.ViewModels
 
         }
 
-        
+
 
 
         #endregion
 
         #region Methods
 
+        public override void ViewAppearing()
+        {
+            base.ViewAppearing();
+            var _ = SendScrollMessage();
+        }
+
+        public async Task SendScrollMessage()
+        {
+            await Task.Delay(100);
+            Messenger.Send(new UpdateViewMessage());
+        }
+
         //public override void ViewAppeared()
         //{
         //    base.ViewAppeared();
         //    LoadAgenda();
-            
+
         //}
 
         //public override void ViewDestroy(bool viewFinishing = true)
         //{
         //    SaveBills();
         //    base.ViewDestroy(viewFinishing);
-            
+
         //}
 
         private async Task GetGroups()
         {
-            var dt = DateTime.Today.AddDays(-4);
-            var dt2 = DateTime.Today.AddMonths(2);
+            //var dt = DateTime.Today.AddDays(-4);
+            //var dt2 = DateTime.Today.AddMonths(2);
             var bills = await BudgetDatabase.GetBills();
-            var billData = bills
-                //.Where(x => x.Date >= dt)
-                            //.Where(x => x.Date <= dt2)
-                            .ToList();
+            var billData = bills.ToList();
 
             var data = billData.GroupBy(x => x.Date)
                         .OrderBy(x => x.Key)
@@ -167,11 +176,6 @@ namespace BudgetAppCross.Core.ViewModels
             //{
             //    BillsGrouped.Add(new AgendaEntryViewModel(item));
             //}
-
-
-
-
-            
         }
 
         private async Task OnChangeBillMessage(int accountId)

@@ -173,6 +173,10 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task OnChangeBillMessage()
         {
             await UpdateBills();
+            if(Bills.Count == 0)
+            {
+                await navigationService.Close(this);
+            }
             
         }
 

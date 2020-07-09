@@ -191,14 +191,24 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 var accts = await BudgetDatabase.GetBankAccounts();
                 var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
-
-                if(Bill.BankAccount.Nickname != acct.Nickname || Bill.BankAccount == null)
+                if(Bill.BankAccount == null)
                 {
                     Bill.BankAccount = acct;
 
                     //Switch to change and save because daterangeentry needs to requery
                     ChangeAndSave();
                 }
+                else
+                {
+                    if (Bill.BankAccount.Nickname != acct.Nickname)
+                    {
+                        Bill.BankAccount = acct;
+
+                        //Switch to change and save because daterangeentry needs to requery
+                        ChangeAndSave();
+                    }
+                }
+                
             }
         }
 

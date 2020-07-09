@@ -50,7 +50,7 @@ namespace CustomXamarinFormsConverters
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var dollarAmount = (double)value;
+            var dollarAmount = (decimal)value;
             return dollarAmount.ToString("C", CultureInfo.CurrentCulture);
         }
 

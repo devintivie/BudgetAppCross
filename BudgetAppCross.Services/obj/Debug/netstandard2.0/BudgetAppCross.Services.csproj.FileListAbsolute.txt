@@ -10,3 +10,15 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\De
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.csproj.CopyComplete
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.pdb
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\bin\Debug\netstandard2.0\BudgetAppCross.Services.deps.json
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\bin\Debug\netstandard2.0\BudgetAppCross.Services.dll
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\bin\Debug\netstandard2.0\BudgetAppCross.Services.pdb
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\bin\Debug\netstandard2.0\BudgetAppCross.Models.dll
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\bin\Debug\netstandard2.0\BudgetAppCross.Models.pdb
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.csprojAssemblyReference.cache
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.AssemblyInfoInputs.cache
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.AssemblyInfo.cs
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.csproj.CoreCompileInputs.cache
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.csproj.CopyComplete
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.dll
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.pdb

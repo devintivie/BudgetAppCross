@@ -7,3 +7,12 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debu
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.pdb
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.csprojAssemblyReference.cache
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.AssemblyInfoInputs.cache
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.AssemblyInfo.cs
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.csproj.CoreCompileInputs.cache
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.dll
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.pdb
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\bin\Debug\netstandard2.0\BudgetAppCross.Models.deps.json
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\bin\Debug\netstandard2.0\BudgetAppCross.Models.dll
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\bin\Debug\netstandard2.0\BudgetAppCross.Models.pdb
+C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.csprojAssemblyReference.cache

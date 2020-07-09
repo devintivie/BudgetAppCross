@@ -41,5 +41,10 @@ namespace BudgetAppCross.Models
 
         }
     }
+
+    public class UpdateViewMessage
+    {
+
+    }
 }
 

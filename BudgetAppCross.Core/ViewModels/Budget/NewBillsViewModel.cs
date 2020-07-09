@@ -44,7 +44,7 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private decimal amount = 120m;
+        private decimal amount;
         public decimal Amount
         {
             get { return amount; }
@@ -68,7 +68,7 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private decimal customAmount = 100m;
+        private decimal customAmount;
         public decimal CustomAmount
         {
             get { return customAmount; }
@@ -369,10 +369,12 @@ namespace BudgetAppCross.Core.ViewModels
             foreach (var item in NewBills)
             {
                 var bill = new Bill(payee, Amount, item.Date);
+                bill.BankAccount = acct;
                 tempBills.Add(bill);
             }
 
             await DataManager.SaveBills(tempBills);
+            Messenger.Instance.Send(new ChangeBillMessage());
             await navigationService.Close(this);
 
 

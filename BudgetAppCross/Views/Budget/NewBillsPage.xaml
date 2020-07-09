@@ -48,7 +48,7 @@
                                 VerticalOptions="Center"
                                 Grid.Row="0" Grid.Column="1"
                                 FontSize="Large"/>
-                        <Entry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
+                        <!--<Entry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
                                 Keyboard="Numeric"
                                ClearButtonVisibility="WhileEditing"
                                Placeholder="$0.00"
@@ -59,10 +59,14 @@
                                TextChanged="Entry_TextChanged"
                                HorizontalTextAlignment="End"
                                HorizontalOptions="EndAndExpand"
+                                WidthRequest="140"/>-->
+                        <controls:CurrencyEntry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
+                               HorizontalTextAlignment="End"
+                               HorizontalOptions="EndAndExpand"
                                 WidthRequest="140"/>
                     </StackLayout>
 
-                    <!--Amount Due-->
+                    <!--Amount Due--><!--
                     <StackLayout Orientation="Horizontal">
                         <Label Text="Amount Currency"
                                 VerticalOptions="Center"
@@ -72,7 +76,7 @@
                                HorizontalTextAlignment="End"
                                HorizontalOptions="EndAndExpand"
                                 WidthRequest="140"/>
-                    </StackLayout>
+                    </StackLayout>-->
 
                     <!--Account-->
                     <StackLayout Orientation="Horizontal">

@@ -14,8 +14,14 @@
              Title="{Binding Title}"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="True"
+                      
              >
-
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Add" Command="{Binding AddBillCommand}"
+                     Order="Primary"/>
+        <!--<ToolbarItem Text="Delete" Command="{Binding DeleteCommand}"
+                     Order="Secondary"/>-->
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <!--<StackLayout BindableLayout.ItemsSource="{Binding BillsGrouped}">
             <BindableLayout.ItemTemplate>
@@ -26,9 +32,10 @@
                 </DataTemplate>
             </BindableLayout.ItemTemplate>
         </StackLayout>-->
-        <ListView ItemsSource="{Binding Bills}"
+        <ListView x:Name="agendaList" ItemsSource="{Binding Bills}"
                   SelectionMode="None"
                   HasUnevenRows="True"
+                  Scrolled="agendaList_Scrolled"
                   IsGroupingEnabled="True">
             <!--HasUnevenRows="True"-->
             <ListView.GroupHeaderTemplate>
