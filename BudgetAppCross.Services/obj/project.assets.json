@@ -502,19 +502,21 @@
   },
   "packageFolders": {
     "C:\\Users\\devin\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\devin\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj",
+      "projectUniqueName": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj",
       "projectName": "BudgetAppCross.Services",
-      "projectPath": "C:\\Users\\devin\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj",
+      "projectPath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj",
       "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\devin\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\obj\\",
+      "outputPath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -531,8 +533,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\Users\\devin\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
-              "projectPath": "C:\\Users\\devin\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj"
+            "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
+              "projectPath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj"
             }
           }
         }

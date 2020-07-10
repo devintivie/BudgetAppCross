@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "EvR/Kiy2+GSHAyK0BYxcFW6ymcjFP1pxyLG5qaok81iGd5OVveCJdR5u9aUyQAfAuKK5m5f/mvipkGtTeSXafQ==",
+  "dgSpecHash": "wn7Mhgg6jQnYGxgB83lqflcIAi5p3aReYO9UhGdyQDDswaUzA3nqw/EbBmdIPHrSx/lNIsLbtjZjTeqme6GWBg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\devin\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj",
+  "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\devin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross\\6.4.2\\mvvmcross.6.4.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.plugin.messenger\\6.4.2\\mvvmcross.plugin.messenger.6.4.2.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\sqlite-net-pcl\\1.6.292\\sqlite-net-pcl.1.6.292.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\sqlitenetextensions\\2.1.0\\sqlitenetextensions.2.1.0.nupkg.sha512",

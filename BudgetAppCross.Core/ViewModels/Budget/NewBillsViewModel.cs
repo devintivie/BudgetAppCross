@@ -240,6 +240,21 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+        private bool isPaid;
+        public bool IsPaid
+        {
+            get { return isPaid; }
+            set
+            {
+                if (isPaid != value)
+                {
+                    isPaid = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+
 
         #endregion
 
@@ -339,7 +354,7 @@ namespace BudgetAppCross.Core.ViewModels
                     }
                     for (int i = 0; i < months; i++)
                     {
-                        NewBills.Add(new NewMultiBillViewModel(StartDate.AddMonths(i)));
+                        NewBills.Add(new NewMultiBillViewModel(i+1, StartDate.AddMonths(i)));
                     }
                     break;
                 case DueDateFrequencies.Quarterly:
@@ -364,16 +379,29 @@ namespace BudgetAppCross.Core.ViewModels
             var accts = await DataManager.GetBankAccounts();
             var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
             var payee = IsNewPayee ? NewPayee : SelectedPayee;
-            var tempBills = new List<Bill>();
 
-            foreach (var item in NewBills)
+            if (AddMultiple)
             {
-                var bill = new Bill(payee, Amount, item.Date);
-                bill.BankAccount = acct;
-                tempBills.Add(bill);
-            }
+                var tempBills = new List<Bill>();
 
-            await DataManager.SaveBills(tempBills);
+                foreach (var item in NewBills)
+                {
+                    var bill = new Bill(payee, Amount, item.Date);
+                    bill.BankAccount = acct;
+                    tempBills.Add(bill);
+                }
+
+                await DataManager.SaveBills(tempBills);
+            }
+            else
+            {
+                var newBill = new Bill(payee, Amount, StartDate)
+                {
+                    BankAccount = acct,
+                    IsPaid = IsPaid
+                };
+                await DataManager.SaveBill(newBill);
+            }
             Messenger.Instance.Send(new ChangeBillMessage());
             await navigationService.Close(this);
 

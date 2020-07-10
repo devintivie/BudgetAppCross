@@ -512,19 +512,21 @@
   },
   "packageFolders": {
     "C:\\Users\\devin\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\devin\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\CustomXamarinFormsBehaviors\\CustomXamarinFormsBehaviors.csproj",
+      "projectUniqueName": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\CustomXamarinFormsBehaviors\\CustomXamarinFormsBehaviors.csproj",
       "projectName": "CustomXamarinFormsBehaviors",
-      "projectPath": "C:\\Users\\devin\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\CustomXamarinFormsBehaviors\\CustomXamarinFormsBehaviors.csproj",
+      "projectPath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\CustomXamarinFormsBehaviors\\CustomXamarinFormsBehaviors.csproj",
       "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\devin\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\CustomXamarinFormsBehaviors\\obj\\",
+      "outputPath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\CustomXamarinFormsBehaviors\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",

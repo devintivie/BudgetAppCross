@@ -110,6 +110,13 @@
                                     DateSelected="pickerStartDate_DateSelected"
                                     />
                     </StackLayout>
+                    <!--Add Multiple-->
+                    <StackLayout Orientation="Horizontal" IsVisible="{Binding AddMultiple, Converter={cvt:InverseBoolConverter}}">
+                        <Label Text="Already Paid?"
+                           VerticalOptions="Center"
+                           FontSize="Large"/>
+                        <Switch IsToggled="{Binding IsPaid}"/>
+                    </StackLayout>
                     
                     <!--Repeat Frequency-->
                     <StackLayout Orientation="Horizontal" IsVisible="{Binding AddMultiple}">
@@ -163,10 +170,21 @@
 
 
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Cancel" Command="{Binding CancelCommand}"
+                            TextColor="Red"/>
+                    <Button Text="Save" Command="{Binding SaveCommand}"
+                            TextColor="Green"
+                            Grid.Column="1"/>
+                </Grid>
+                <!--<StackLayout Orientation="Horizontal">
                     <Button Text="Cancel" Command="{Binding CancelCommand}"/>
                     <Button Text="Save" Command="{Binding SaveCommand}"/>
-                </StackLayout>
+                </StackLayout>-->
             </StackLayout>
         </ScrollView>
         

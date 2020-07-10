@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ik0RTYMsS2n9cTJFLHcl9i/2YFY2cv6OJkY4HDJy4M3FbcQ7tkawciyc6fW04AY0uBYHuAQEYt+wtlB/LCbdZw==",
+  "dgSpecHash": "SUVWUBHC356yX4GuAayMVdBu1SJqfZIyGFV2qrpFUGz/96huD+T7hCwPguMrTq4F7kvB7r5oHF+tabehazvbWg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\devin\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.iOS\\BudgetAppCross.iOS.csproj",
+  "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.iOS\\BudgetAppCross.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.446\\acr.userdialogs.7.1.0.446.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\behaviors.xamarinforms\\4.0.4\\behaviors.xamarinforms.4.0.4.nupkg.sha512",
@@ -49,40 +49,12 @@
     "C:\\Users\\devin\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\system.dynamic.runtime\\4.3.0\\system.dynamic.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.1\\system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\system.text.encodings.web\\4.7.1\\system.text.encodings.web.4.7.1.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.4.0.991265\\xamarin.forms.4.4.0.991265.nupkg.sha512"
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.7.0.1080\\xamarin.forms.4.7.0.1080.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Xamarin.Essentials from 1.5.3.2 to 1.3.1. Reference the package directly from the project to select a different version. \r\n BudgetAppCross.iOS -> BudgetAppCross -> Xamarin.Essentials (>= 1.5.3.2) \r\n BudgetAppCross.iOS -> Xamarin.Essentials (>= 1.3.1)",
-      "libraryId": "Xamarin.Essentials",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Xamarin.Forms from 4.7.0.1080 to 4.4.0.991265. Reference the package directly from the project to select a different version. \r\n BudgetAppCross.iOS -> BudgetAppCross -> Xamarin.Forms (>= 4.7.0.1080) \r\n BudgetAppCross.iOS -> Xamarin.Forms (>= 4.4.0.991265)",
-      "libraryId": "Xamarin.Forms",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    }
-  ]
+  "logs": []
 }

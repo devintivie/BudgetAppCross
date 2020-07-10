@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -43,7 +39,7 @@ namespace BudgetAppCross.Views
             {
                 entry.Text = "0";
             }
-            else if(decimal.TryParse(text, out var result))
+            else if (decimal.TryParse(text, out var result))
             {
                 var temp = Math.Truncate(100 * result) / 100;
                 entry.Text = temp.ToString("C");
@@ -68,7 +64,7 @@ namespace BudgetAppCross.Views
         private void pickerEndDate_DateSelected(object sender, DateChangedEventArgs e)
         {
 
-            if(pickerEndDate.Date < pickerStartDate.Date)
+            if (pickerEndDate.Date < pickerStartDate.Date)
             {
                 pickerEndDate.Date = prevEnd;
             }
@@ -89,7 +85,7 @@ namespace BudgetAppCross.Views
             var lastIndex = text.LastIndexOf('.');
             if (dotCount > 1)
             {
-                
+
                 entry.Text = text.Remove(lastIndex, text.Length - lastIndex);
             }
             else if (dotCount == 1)

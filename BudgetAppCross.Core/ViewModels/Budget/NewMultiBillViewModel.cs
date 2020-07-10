@@ -17,10 +17,12 @@ namespace BudgetAppCross.Core.ViewModels
     public class NewMultiBillViewModel : BaseViewModel, INewBillViewModel
     {
         #region Fields
-
+        private int billNumber;
         #endregion
 
         #region Properties
+
+        public string BillNumberString => $"Bill {billNumber}";
 
         private DateTime date;
         public DateTime Date
@@ -94,12 +96,12 @@ namespace BudgetAppCross.Core.ViewModels
 
 
 
-
         #endregion
 
         #region Constructors
-        public NewMultiBillViewModel(DateTime? dueDate = null)
+        public NewMultiBillViewModel(int number, DateTime? dueDate = null)
         {
+            billNumber = number;
             LoadAccountOptions();
             if(dueDate == null)
             {
@@ -110,16 +112,6 @@ namespace BudgetAppCross.Core.ViewModels
                 Date = (DateTime)dueDate;
             }
         }
-
-        //public override void Prepare(Bill parameter)
-        //{
-        //    Bill = parameter;
-        //}
-
-        //public override void Prepare(string parameter)
-        //{
-        //    companyName = parameter;
-        //}
         #endregion
 
         #region Methods

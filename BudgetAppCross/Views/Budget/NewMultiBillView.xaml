@@ -13,32 +13,39 @@
     <ContentView.Content>
         <Frame HasShadow="True" Padding="2">
             <StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="{Binding BillNumberString}"/>
                     <!--Date-->
                     <Label Text="Due Date"
-                       Grid.Row="0" Grid.Column="3"
+                       Grid.Row="0" Grid.Column="1"
                        VerticalOptions="Center"
                        FontSize="Large"/>
-                    <DatePicker Date="{Binding Date}" IsEnabled="False"
-                                Grid.Row="1" Grid.Column="3"
-                                WidthRequest="100"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <!--Amount Due-->
+                    <Label Text="{Binding Date, Converter={cvt:DateOnlyConverter}}"
+                           Grid.Row="0" Grid.Column="2"
+                           HorizontalTextAlignment="End"
+                           VerticalOptions="Center"
+                           FontSize="Large"
+                           WidthRequest="130"/>
+                    <!--<DatePicker Date="{Binding Date}" IsEnabled="False"
+                                Grid.Row="0" Grid.Column="2"
+                                WidthRequest="100"/>-->
+                </Grid>
+                <!--<StackLayout Orientation="Horizontal">
+                    
+                    --><!--Amount Due--><!--
                     <Label Text="Amount Due"
                                    VerticalOptions="Center"
                                    Grid.Row="0" Grid.Column="0"
                                    FontSize="Large"/>
-                    <!--<Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}" 
-                                           Keyboard="Numeric"
-                                           Grid.Row="1" Grid.Column="0"
-                                           Focused="Entry_Focused"
-                                           Unfocused="Entry_Unfocused"
-                                           WidthRequest="130"/>-->
-                    <controls:CurrencyEntry Text="{Binding Amount}" Keyboard="Numeric"
+                    --><!--<controls:CurrencyEntry Text="{Binding Amount}" Keyboard="Numeric"
                                             Grid.Row="1" Grid.Column="0"
-                                            WidthRequest="130"/>
-                </StackLayout>
+                                            WidthRequest="130"/>--><!--
+                </StackLayout>-->
                
                 
 
