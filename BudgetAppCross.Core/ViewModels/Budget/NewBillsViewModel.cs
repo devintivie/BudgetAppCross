@@ -140,7 +140,7 @@ namespace BudgetAppCross.Core.ViewModels
                         CreateBillsForDateRange();
                     }
                 }
-                
+
                 RaisePropertyChanged();
                 RaisePropertyChanged(nameof(BillDueString));
             }
@@ -177,7 +177,7 @@ namespace BudgetAppCross.Core.ViewModels
             get { return endDate; }
             set
             {
-                if(value >= StartDate)
+                if (value >= StartDate)
                 {
                     if (endDate != value)
                     {
@@ -191,7 +191,7 @@ namespace BudgetAppCross.Core.ViewModels
                     var config = new AlertConfig().SetMessage("Ending date must be after start date");
                     Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
                 }
-                
+
             }
         }
 
@@ -281,14 +281,16 @@ namespace BudgetAppCross.Core.ViewModels
             //};
             //SelectedBillOption = MultipleBillOptions.ByDateRange;
 
-            DueFrequencies = new ObservableCollection<DueDateFrequencies>()
-            {
-                DueDateFrequencies.OneWeek,
-                DueDateFrequencies.TwoWeek,
-                DueDateFrequencies.FourWeek,
-                DueDateFrequencies.Monthly,
-                DueDateFrequencies.Quarterly
-            };
+            //DueFrequencies = new ObservableCollection<DueDateFrequencies>()
+            //{
+            //    DueDateFrequencies.OneWeek,
+            //    DueDateFrequencies.TwoWeek,
+            //    DueDateFrequencies.FourWeek,
+            //    DueDateFrequencies.Monthly,
+            //    DueDateFrequencies.Quarterly,
+            //    DueDateFrequencies.Quarterly,
+            //    DueDateFrequencies.Quarterly
+            //};
 
             DueDateFrequency = DueDateFrequencies.Monthly;
             ResetNewBillsToSingle();
@@ -297,7 +299,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         public override void Prepare(string parameter)
         {
-            if(parameter != "")
+            if (parameter != "")
             {
                 SelectedPayee = parameter;
             }
@@ -307,14 +309,14 @@ namespace BudgetAppCross.Core.ViewModels
         {
             NewBills.Clear();
             NewBills.Add(new NewBillViewModel(StartDate));
-            
+
         }
 
         private void GetBillsForDateRange()
         {
             var temp = NewBills.Where(b => b.Date >= StartDate && b.Date <= EndDate);
 
-            if(temp.Count() == 0)
+            if (temp.Count() == 0)
             {
                 ResetNewBillsToSingle();
             }
@@ -326,43 +328,96 @@ namespace BudgetAppCross.Core.ViewModels
 
         private void CreateBillsForDateRange()
         {
-            var weeks = 0;
             var days = (EndDate - StartDate).TotalDays;
-            var months = 0;
             double dayCount = 0.0;
+
+            var spacings = 0;   //weeks, months, fortnights, 4weeks etc
 
             NewBills.Clear();
             switch (DueDateFrequency)
             {
                 case DueDateFrequencies.OneWeek:
-                    while(dayCount < days)
+                    while (dayCount <= days)
                     {
-
+                        dayCount = (StartDate.AddDays((spacings + 1) * 7) - StartDate).TotalDays;
+                        spacings++;
+                    }
+                    for (int i = 0; i < spacings; i++)
+                    {
+                        NewBills.Add(new NewMultiBillViewModel(i + 1, StartDate.AddDays(7 * i)));
                     }
                     break;
                 case DueDateFrequencies.TwoWeek:
-                    weeks = 2;
+                    while (dayCount <= days)
+                    {
+                        dayCount = (StartDate.AddDays((spacings + 1) * 14) - StartDate).TotalDays;
+                        spacings++;
+                    }
+                    for (int i = 0; i < spacings; i++)
+                    {
+                        NewBills.Add(new NewMultiBillViewModel(i + 1, StartDate.AddDays(14 * i)));
+                    }
                     break;
                 case DueDateFrequencies.FourWeek:
+                    while (dayCount <= days)
+                    {
+                        dayCount = (StartDate.AddDays((spacings + 1) * 28) - StartDate).TotalDays;
+                        spacings++;
+                    }
+                    for (int i = 0; i < spacings; i++)
+                    {
+                        NewBills.Add(new NewMultiBillViewModel(i + 1, StartDate.AddDays(28 * i)));
+                    }
                     break;
 
                 case DueDateFrequencies.Monthly:
-                    while(dayCount <= days)
+                    while (dayCount <= days)
                     {
-                        dayCount = (StartDate.AddMonths(months + 1) - StartDate).TotalDays;
-                        months++;
+                        dayCount = (StartDate.AddMonths(spacings + 1) - StartDate).TotalDays;
+                        spacings++;
                     }
-                    for (int i = 0; i < months; i++)
+                    for (int i = 0; i < spacings; i++)
                     {
-                        NewBills.Add(new NewMultiBillViewModel(i+1, StartDate.AddMonths(i)));
+                        NewBills.Add(new NewMultiBillViewModel(i + 1, StartDate.AddMonths(i)));
                     }
                     break;
                 case DueDateFrequencies.Quarterly:
+                    while (dayCount <= days)
+                    {
+                        dayCount = (StartDate.AddMonths(3 * (spacings + 1)) - StartDate).TotalDays;
+                        spacings++;
+                    }
+                    for (int i = 0; i < spacings; i++)
+                    {
+                        NewBills.Add(new NewMultiBillViewModel(i + 1, StartDate.AddMonths(3 * i)));
+                    }
+                    break;
+                case DueDateFrequencies.SemiAnnually:
+                    while (dayCount <= days)
+                    {
+                        dayCount = (StartDate.AddMonths(6 * (spacings + 1)) - StartDate).TotalDays;
+                        spacings++;
+                    }
+                    for (int i = 0; i < spacings; i++)
+                    {
+                        NewBills.Add(new NewMultiBillViewModel(i + 1, StartDate.AddMonths(6 * i)));
+                    }
+                    break;
+                case DueDateFrequencies.Yearly:
+                    while (dayCount <= days)
+                    {
+                        dayCount = (StartDate.AddYears(spacings + 1) - StartDate).TotalDays;
+                        spacings++;
+                    }
+                    for (int i = 0; i < spacings; i++)
+                    {
+                        NewBills.Add(new NewMultiBillViewModel(i + 1, StartDate.AddYears(i)));
+                    }
                     break;
                 default:
                     break;
 
-                    
+
             }
             RaisePropertyChanged(nameof(BillCount));
         }
@@ -376,6 +431,13 @@ namespace BudgetAppCross.Core.ViewModels
         #region Methods
         private async Task OnSave()
         {
+            if (string.IsNullOrWhiteSpace(NewPayee))
+            {
+                var config = new AlertConfig().SetMessage("Payee needs a name");
+                Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
+                return;
+            }
+
             var accts = await DataManager.GetBankAccounts();
             var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
             var payee = IsNewPayee ? NewPayee : SelectedPayee;
@@ -468,19 +530,21 @@ namespace BudgetAppCross.Core.ViewModels
         }
         private async Task LoadPayeeOptions()
         {
+
+            await DataManager.UpdatePayeeNames();
             PayeeOptions = new ObservableCollection<string>(DataManager.PayeeNames);
 
-            if(PayeeOptions.Count == 0)
+            if (PayeeOptions.Count == 0)
             {
                 IsNewPayee = true;
             }
-            else if(SelectedPayee == null)
+            else if (SelectedPayee == null)
             {
                 SelectedPayee = PayeeOptions.First();
             }
         }
 
-        
+
 
         #endregion
 

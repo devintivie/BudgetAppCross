@@ -12,7 +12,8 @@ namespace BudgetAppCross.Core
         BillList,
         Agenda,
         BankOverview,
-        About
+        About,
+        Purchasing
     }
     //[TypeConverter(typeof(EnumDescriptionTypeConverter))]
     //public enum Navigation

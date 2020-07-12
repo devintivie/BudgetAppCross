@@ -518,11 +518,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\CustomXamarinFormsConverters\\CustomXamarinFormsConverters.csproj",
+      "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\CustomXamarinFormsConverters\\CustomXamarinFormsConverters.csproj",
       "projectName": "CustomXamarinFormsConverters",
-      "projectPath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\CustomXamarinFormsConverters\\CustomXamarinFormsConverters.csproj",
+      "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\CustomXamarinFormsConverters\\CustomXamarinFormsConverters.csproj",
       "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-      "outputPath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\CustomXamarinFormsConverters\\obj\\",
+      "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\CustomXamarinFormsConverters\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

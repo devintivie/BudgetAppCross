@@ -9,7 +9,6 @@ namespace BudgetAppCross.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewBillsPage
     {
-        DateTime prevStart;
         DateTime prevEnd;
         public NewBillsPage()
         {

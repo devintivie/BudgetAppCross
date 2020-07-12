@@ -107,7 +107,8 @@ namespace BudgetAppCross.Core.ViewModels
                 NavigablePage.BillList,
                 NavigablePage.Agenda,
                 NavigablePage.BankOverview,
-                NavigablePage.About
+                NavigablePage.About,
+                NavigablePage.Purchasing
             };
         }
         #endregion
@@ -150,6 +151,9 @@ namespace BudgetAppCross.Core.ViewModels
                     break;
                 case NavigablePage.About:
                     await navigationService.Navigate<AboutViewModel>();
+                    break;
+                case NavigablePage.Purchasing:
+                    await navigationService.Navigate<PurchasingViewModel>();
                     break;
                 default:
                     break;

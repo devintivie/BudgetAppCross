@@ -107,7 +107,6 @@
                                     Date="{Binding StartDate}"
                                     HorizontalOptions="EndAndExpand"
                                     Grid.Column="1"
-                                    DateSelected="pickerStartDate_DateSelected"
                                     />
                     </StackLayout>
                     <!--Add Multiple-->
@@ -140,7 +139,6 @@
                         <DatePicker x:Name="pickerEndDate"
                                 Date="{Binding EndDate}"
                                 Grid.Row="2" HorizontalOptions="EndAndExpand"
-                                DateSelected="pickerEndDate_DateSelected"
                                 />
                     </StackLayout>
 

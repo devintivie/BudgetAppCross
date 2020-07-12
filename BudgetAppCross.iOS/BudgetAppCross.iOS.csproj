@@ -64,6 +64,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CustomControls\CurrencyEntryRenderer.cs" />
+    <Compile Include="CustomControls\CustomPaymentObserver.cs" />
+    <Compile Include="CustomControls\InAppPurchaseManager.cs" />
+    <Compile Include="CustomControls\MvxPurchaseRenderer.cs" />
+    <Compile Include="CustomControls\PhotoFilterManager.cs" />
+    <Compile Include="CustomControls\PurchaseButtonRenderer.cs" />
+    <Compile Include="CustomControls\PurchaseManager.cs" />
+    <Compile Include="CustomControls\SKProductExtension.cs" />
+    <Compile Include="CustomControls\StoreControlRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />

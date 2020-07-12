@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N9Ey0hcveoTfdCOBdKaKiiasblZg2rILKOxhZuiBdqlTNwCyiNOnIVQLNul9/xAAReLK3ThaRU/zTdzFOutnqw==",
+  "dgSpecHash": "njPnGFLc9MN9o2mUAXZzBwl12W8a7gtAKo17R5jSKytvjDD2ncSrmwFWfE9lhOrJ0Rk/Y145pryV8Aom+3YGrw==",
   "success": true,
-  "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj",
+  "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.446\\acr.userdialogs.7.1.0.446.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

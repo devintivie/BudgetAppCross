@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IB7dy8ZwVRWNupR23/1XGdrSFPJPuR5LPpH1xE9xLVml3s1LvV7iSM1uk1ersB2SSD8XwSoO04vxNQKNBeqCvg==",
+  "dgSpecHash": "KT9+gtJeaE9sqYzRhAr1aJSrC51n2El4CW6GRgg6s5L2SGt1AWk+BU9yKKfHMsLtlVK79jRn4VZUYgdbUV4qPg==",
   "success": true,
-  "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\CustomXamarinFormsConverters\\CustomXamarinFormsConverters.csproj",
+  "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\CustomXamarinFormsConverters\\CustomXamarinFormsConverters.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

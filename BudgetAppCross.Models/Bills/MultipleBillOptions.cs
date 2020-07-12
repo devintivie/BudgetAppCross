@@ -17,6 +17,8 @@ namespace BudgetAppCross.Models
         FourWeek,
         Monthly,
         Quarterly,
+        SemiAnnually,
+        Yearly
     }
 
     public enum PayDateFrequencies
