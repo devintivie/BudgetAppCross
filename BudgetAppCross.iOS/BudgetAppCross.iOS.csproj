@@ -64,14 +64,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CustomControls\CurrencyEntryRenderer.cs" />
-    <Compile Include="CustomControls\CustomPaymentObserver.cs" />
-    <Compile Include="CustomControls\InAppPurchaseManager.cs" />
     <Compile Include="CustomControls\MvxPurchaseRenderer.cs" />
-    <Compile Include="CustomControls\PhotoFilterManager.cs" />
     <Compile Include="CustomControls\PurchaseButtonRenderer.cs" />
-    <Compile Include="CustomControls\PurchaseManager.cs" />
-    <Compile Include="CustomControls\SKProductExtension.cs" />
-    <Compile Include="CustomControls\StoreControlRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
@@ -153,6 +147,12 @@
     <ProjectReference Include="..\BudgetAppCross\BudgetAppCross.csproj">
       <Project>{A9152B4C-6FA6-457D-BC58-65103EEA384D}</Project>
       <Name>BudgetAppCross</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InAppPurchasing.Ios\InAppPurchasing.iOS.csproj">
+      <Project>{DB2C73C3-D1F0-4F40-BF74-266440963912}</Project>
+      <Name>InAppPurchasing.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
   </ItemGroup>
 </Project>

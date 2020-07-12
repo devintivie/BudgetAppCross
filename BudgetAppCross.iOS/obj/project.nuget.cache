@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hgK+s8uGZPlfBcsLFqB3fIiLRIo4UYRL7g9h3NMbaKLbs2+cAhWkvUiNripafuw+Utz1h0dmUujNT1zcl6Zv3g==",
+  "dgSpecHash": "vQYTs0a+O0Z5Z8vsX4Ro4vrVtlYVwtlu9r5g6ibEmiFLihkZ8N8sckRrRQs+mXYf9Thkb1syuUALwdtMZE6IQA==",
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.iOS\\BudgetAppCross.iOS.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.4\\microsoft.extensions.primitives.3.1.4.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross\\6.4.2\\mvvmcross.6.4.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.forms\\6.4.2\\mvvmcross.forms.6.4.2.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.platform\\5.7.0\\mvvmcross.platform.5.7.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.plugin.messenger\\6.4.2\\mvvmcross.plugin.messenger.6.4.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\sqlite\\3.13.0\\sqlite.3.13.0.nupkg.sha512",

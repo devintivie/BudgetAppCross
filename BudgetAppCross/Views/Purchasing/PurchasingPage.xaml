@@ -5,14 +5,28 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
              mc:Ignorable="d"
              x:TypeArguments="vms:PurchasingViewModel"
              x:Class="BudgetAppCross.Views.PurchasingPage">
-    <!--<ContentPage.Content>
+    <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout>
+                <Label Text="Balance"/>
+                <!--<Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}" Keyboard="Numeric"
+                       Focused="Entry_Focused"
+                       Unfocused="Entry_Unfocused"
+                       />-->
+                <controls:CurrencyEntry Text="{Binding Amount}" Keyboard="Numeric"/>
+                <Label Text="Date"/>
+                <DatePicker Date="{Binding Timestamp}"
+                    />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Cancel" Command="{Binding CancelCommand}"/>
+                <Button Text="Save" Command="{Binding SaveCommand}"/>
+            </StackLayout>
         </StackLayout>
-    </ContentPage.Content>-->
+        
+    </ContentPage.Content>
 </views:MvxContentPage>

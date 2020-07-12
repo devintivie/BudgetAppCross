@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using BaseClasses;
 using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
 using MvvmCross;

@@ -43,6 +43,7 @@
                                 <ViewCell.ContextActions>
                                     <MenuItem Text="Delete"
                                               Command="{Binding DeleteThisCommand}"
+                                              IsDestructive="True"
                                               CommandParameter="{Binding .}"/>
                                 </ViewCell.ContextActions>
                                 <controls:BillView/>

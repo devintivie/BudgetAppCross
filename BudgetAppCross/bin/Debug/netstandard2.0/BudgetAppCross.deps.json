@@ -9,6 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "BudgetAppCross/1.0.0": {
         "dependencies": {
+          "BaseClasses": "1.0.0",
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
@@ -770,6 +771,11 @@
           }
         }
       },
+      "BaseClasses/1.0.0": {
+        "runtime": {
+          "BaseClasses.dll": {}
+        }
+      },
       "BudgetAppCore.Sqlite/1.0.0": {
         "dependencies": {
           "BudgetAppCross.Models": "1.0.0",
@@ -783,6 +789,7 @@
       "BudgetAppCross.Core/1.0.0": {
         "dependencies": {
           "Acr.UserDialogs": "7.1.0.446",
+          "BaseClasses": "1.0.0",
           "BudgetAppCore.Sqlite": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
@@ -1339,6 +1346,11 @@
       "sha512": "sha512-YN04zJoVBBKdhYnIK1lwZJTGCFrHJ+bUfqQK4aKy8oDjthh5JlNcjetUS+eV+JK9XcmYpS2SxpmDxFFXxSfONQ==",
       "path": "xamarin.forms/4.7.0.1080",
       "hashPath": "xamarin.forms.4.7.0.1080.nupkg.sha512"
+    },
+    "BaseClasses/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "BudgetAppCore.Sqlite/1.0.0": {
       "type": "project",

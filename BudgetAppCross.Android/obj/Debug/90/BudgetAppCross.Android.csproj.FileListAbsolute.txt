@@ -2068,3 +2068,7 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\s
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BaseClasses.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BaseClasses.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\BaseClasses.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\BaseClasses.pdb

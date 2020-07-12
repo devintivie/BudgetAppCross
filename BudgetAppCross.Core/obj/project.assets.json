@@ -642,6 +642,16 @@
           "build/_._": {}
         }
       },
+      "BaseClasses/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/BaseClasses.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BaseClasses.dll": {}
+        }
+      },
       "BudgetAppCore.Sqlite/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -2125,6 +2135,11 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "BaseClasses/1.0.0": {
+      "type": "project",
+      "path": "../BaseClasses/BaseClasses.csproj",
+      "msbuildProject": "../BaseClasses/BaseClasses.csproj"
+    },
     "BudgetAppCore.Sqlite/1.0.0": {
       "type": "project",
       "path": "../BudgetAppCore.Sqlite/BudgetAppCore.Sqlite.csproj",
@@ -2139,6 +2154,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "Acr.UserDialogs >= 7.1.0.446",
+      "BaseClasses >= 1.0.0",
       "BudgetAppCore.Sqlite >= 1.0.0",
       "BudgetAppCross.Models >= 1.0.0",
       "MvvmCross.Forms >= 6.4.2",
@@ -2181,6 +2197,9 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj"
+            },
             "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj": {
               "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj"
             },

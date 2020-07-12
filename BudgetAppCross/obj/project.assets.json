@@ -979,6 +979,16 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "BaseClasses/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/BaseClasses.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BaseClasses.dll": {}
+        }
+      },
       "BudgetAppCore.Sqlite/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -999,6 +1009,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Acr.UserDialogs": "7.1.0.446",
+          "BaseClasses": "1.0.0",
           "BudgetAppCore.Sqlite": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
@@ -1071,6 +1082,7 @@
         "lib/monoandroid10.0/Acr.UserDialogs.pdb",
         "lib/monoandroid10.0/Acr.UserDialogs.xml",
         "lib/monoandroid90/Acr.UserDialogs.dll",
+        "lib/monoandroid90/Acr.UserDialogs.dll.mdb",
         "lib/monoandroid90/Acr.UserDialogs.pdb",
         "lib/monoandroid90/Acr.UserDialogs.xml",
         "lib/netstandard2.0/Acr.UserDialogs.dll",
@@ -4095,6 +4107,11 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "BaseClasses/1.0.0": {
+      "type": "project",
+      "path": "../BaseClasses/BaseClasses.csproj",
+      "msbuildProject": "../BaseClasses/BaseClasses.csproj"
+    },
     "BudgetAppCore.Sqlite/1.0.0": {
       "type": "project",
       "path": "../BudgetAppCore.Sqlite/BudgetAppCore.Sqlite.csproj",
@@ -4123,6 +4140,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "BaseClasses >= 1.0.0",
       "Behaviors.XamarinForms >= 4.0.4",
       "BudgetAppCross.Core >= 1.0.0",
       "BudgetAppCross.Models >= 1.0.0",
@@ -4170,6 +4188,9 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj"
+            },
             "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj": {
               "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj"
             },

@@ -1,0 +1,9 @@
+C:\Users\devin\source\repos\BudgetAppCross\InAppPurchasing.Core\bin\Debug\netstandard2.0\InAppPurchasing.Core.deps.json
+C:\Users\devin\source\repos\BudgetAppCross\InAppPurchasing.Core\bin\Debug\netstandard2.0\InAppPurchasing.Core.dll
+C:\Users\devin\source\repos\BudgetAppCross\InAppPurchasing.Core\bin\Debug\netstandard2.0\InAppPurchasing.Core.pdb
+C:\Users\devin\source\repos\BudgetAppCross\InAppPurchasing.Core\obj\Debug\netstandard2.0\InAppPurchasing.Core.csprojAssemblyReference.cache
+C:\Users\devin\source\repos\BudgetAppCross\InAppPurchasing.Core\obj\Debug\netstandard2.0\InAppPurchasing.Core.AssemblyInfoInputs.cache
+C:\Users\devin\source\repos\BudgetAppCross\InAppPurchasing.Core\obj\Debug\netstandard2.0\InAppPurchasing.Core.AssemblyInfo.cs
+C:\Users\devin\source\repos\BudgetAppCross\InAppPurchasing.Core\obj\Debug\netstandard2.0\InAppPurchasing.Core.csproj.CoreCompileInputs.cache
+C:\Users\devin\source\repos\BudgetAppCross\InAppPurchasing.Core\obj\Debug\netstandard2.0\InAppPurchasing.Core.dll
+C:\Users\devin\source\repos\BudgetAppCross\InAppPurchasing.Core\obj\Debug\netstandard2.0\InAppPurchasing.Core.pdb

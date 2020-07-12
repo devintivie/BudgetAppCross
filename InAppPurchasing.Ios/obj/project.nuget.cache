@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "nfJEySbP8wnj5JZt32YBv4LS9IILPLjNamvAA0lDsojl3LokfBsFBkkPkGWSXkIZYJN7AwbKWQQot8E2N61B/Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\devin\\.nuget\\packages\\mvvmcross\\6.4.2\\mvvmcross.6.4.2.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.forms\\6.4.2\\mvvmcross.forms.6.4.2.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.platform\\5.7.0\\mvvmcross.platform.5.7.0.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.7.0.1080\\xamarin.forms.4.7.0.1080.nupkg.sha512"
+  ],
+  "logs": []
+}

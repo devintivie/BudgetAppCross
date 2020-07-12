@@ -344,6 +344,17 @@
           "lib/xamarinios10/MvvmCross.Forms.dll": {}
         }
       },
+      "MvvmCross.Platform/5.7.0": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/MvvmCross.Platform.dll": {},
+          "lib/Xamarin.iOS10/MvvmCross.Platform.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/MvvmCross.Platform.dll": {},
+          "lib/Xamarin.iOS10/MvvmCross.Platform.iOS.dll": {}
+        }
+      },
       "MvvmCross.Plugin.Messenger/6.4.2": {
         "type": "package",
         "dependencies": {
@@ -728,6 +739,16 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "BaseClasses/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/BaseClasses.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BaseClasses.dll": {}
+        }
+      },
       "BudgetAppCore.Sqlite/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -747,6 +768,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "BaseClasses": "1.0.0",
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
@@ -771,6 +793,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Acr.UserDialogs": "7.1.0.446",
+          "BaseClasses": "1.0.0",
           "BudgetAppCore.Sqlite": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
@@ -825,6 +848,34 @@
         },
         "runtime": {
           "bin/placeholder/CustomXamarinFormsConverters.dll": {}
+        }
+      },
+      "InAppPurchasing.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/InAppPurchasing.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InAppPurchasing.Core.dll": {}
+        }
+      },
+      "InAppPurchasing.iOS/1.0.0": {
+        "type": "project",
+        "framework": "Xamarin.iOS,Version=v1.0",
+        "dependencies": {
+          "BaseClasses": "1.0.0",
+          "InAppPurchasing.Core": "1.0.0",
+          "MvvmCross": "6.4.2",
+          "MvvmCross.Forms": "6.4.2",
+          "MvvmCross.Platform": "5.7.0",
+          "Xamarin.Forms": "4.7.0.1080"
+        },
+        "compile": {
+          "bin/placeholder/InAppPurchasing.iOS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InAppPurchasing.iOS.dll": {}
         }
       }
     },
@@ -1171,6 +1222,17 @@
           "lib/xamarinios10/MvvmCross.Forms.dll": {}
         }
       },
+      "MvvmCross.Platform/5.7.0": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/MvvmCross.Platform.dll": {},
+          "lib/Xamarin.iOS10/MvvmCross.Platform.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/MvvmCross.Platform.dll": {},
+          "lib/Xamarin.iOS10/MvvmCross.Platform.iOS.dll": {}
+        }
+      },
       "MvvmCross.Plugin.Messenger/6.4.2": {
         "type": "package",
         "dependencies": {
@@ -1537,6 +1599,16 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "BaseClasses/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/BaseClasses.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BaseClasses.dll": {}
+        }
+      },
       "BudgetAppCore.Sqlite/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1556,6 +1628,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "BaseClasses": "1.0.0",
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
@@ -1580,6 +1653,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Acr.UserDialogs": "7.1.0.446",
+          "BaseClasses": "1.0.0",
           "BudgetAppCore.Sqlite": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
@@ -1634,6 +1708,34 @@
         },
         "runtime": {
           "bin/placeholder/CustomXamarinFormsConverters.dll": {}
+        }
+      },
+      "InAppPurchasing.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/InAppPurchasing.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InAppPurchasing.Core.dll": {}
+        }
+      },
+      "InAppPurchasing.iOS/1.0.0": {
+        "type": "project",
+        "framework": "Xamarin.iOS,Version=v1.0",
+        "dependencies": {
+          "BaseClasses": "1.0.0",
+          "InAppPurchasing.Core": "1.0.0",
+          "MvvmCross": "6.4.2",
+          "MvvmCross.Forms": "6.4.2",
+          "MvvmCross.Platform": "5.7.0",
+          "Xamarin.Forms": "4.7.0.1080"
+        },
+        "compile": {
+          "bin/placeholder/InAppPurchasing.iOS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InAppPurchasing.iOS.dll": {}
         }
       }
     },
@@ -1980,6 +2082,17 @@
           "lib/xamarinios10/MvvmCross.Forms.dll": {}
         }
       },
+      "MvvmCross.Platform/5.7.0": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/MvvmCross.Platform.dll": {},
+          "lib/Xamarin.iOS10/MvvmCross.Platform.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/MvvmCross.Platform.dll": {},
+          "lib/Xamarin.iOS10/MvvmCross.Platform.iOS.dll": {}
+        }
+      },
       "MvvmCross.Plugin.Messenger/6.4.2": {
         "type": "package",
         "dependencies": {
@@ -2346,6 +2459,16 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "BaseClasses/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/BaseClasses.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BaseClasses.dll": {}
+        }
+      },
       "BudgetAppCore.Sqlite/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -2365,6 +2488,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "BaseClasses": "1.0.0",
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
@@ -2389,6 +2513,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Acr.UserDialogs": "7.1.0.446",
+          "BaseClasses": "1.0.0",
           "BudgetAppCore.Sqlite": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
@@ -2443,6 +2568,34 @@
         },
         "runtime": {
           "bin/placeholder/CustomXamarinFormsConverters.dll": {}
+        }
+      },
+      "InAppPurchasing.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/InAppPurchasing.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InAppPurchasing.Core.dll": {}
+        }
+      },
+      "InAppPurchasing.iOS/1.0.0": {
+        "type": "project",
+        "framework": "Xamarin.iOS,Version=v1.0",
+        "dependencies": {
+          "BaseClasses": "1.0.0",
+          "InAppPurchasing.Core": "1.0.0",
+          "MvvmCross": "6.4.2",
+          "MvvmCross.Forms": "6.4.2",
+          "MvvmCross.Platform": "5.7.0",
+          "Xamarin.Forms": "4.7.0.1080"
+        },
+        "compile": {
+          "bin/placeholder/InAppPurchasing.iOS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InAppPurchasing.iOS.dll": {}
         }
       }
     },
@@ -2789,6 +2942,17 @@
           "lib/xamarinios10/MvvmCross.Forms.dll": {}
         }
       },
+      "MvvmCross.Platform/5.7.0": {
+        "type": "package",
+        "compile": {
+          "lib/Xamarin.iOS10/MvvmCross.Platform.dll": {},
+          "lib/Xamarin.iOS10/MvvmCross.Platform.iOS.dll": {}
+        },
+        "runtime": {
+          "lib/Xamarin.iOS10/MvvmCross.Platform.dll": {},
+          "lib/Xamarin.iOS10/MvvmCross.Platform.iOS.dll": {}
+        }
+      },
       "MvvmCross.Plugin.Messenger/6.4.2": {
         "type": "package",
         "dependencies": {
@@ -3155,6 +3319,16 @@
           "buildTransitive/Xamarin.Forms.targets": {}
         }
       },
+      "BaseClasses/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/BaseClasses.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BaseClasses.dll": {}
+        }
+      },
       "BudgetAppCore.Sqlite/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -3174,6 +3348,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "BaseClasses": "1.0.0",
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
@@ -3198,6 +3373,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Acr.UserDialogs": "7.1.0.446",
+          "BaseClasses": "1.0.0",
           "BudgetAppCore.Sqlite": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
@@ -3252,6 +3428,34 @@
         },
         "runtime": {
           "bin/placeholder/CustomXamarinFormsConverters.dll": {}
+        }
+      },
+      "InAppPurchasing.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/InAppPurchasing.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InAppPurchasing.Core.dll": {}
+        }
+      },
+      "InAppPurchasing.iOS/1.0.0": {
+        "type": "project",
+        "framework": "Xamarin.iOS,Version=v1.0",
+        "dependencies": {
+          "BaseClasses": "1.0.0",
+          "InAppPurchasing.Core": "1.0.0",
+          "MvvmCross": "6.4.2",
+          "MvvmCross.Forms": "6.4.2",
+          "MvvmCross.Platform": "5.7.0",
+          "Xamarin.Forms": "4.7.0.1080"
+        },
+        "compile": {
+          "bin/placeholder/InAppPurchasing.iOS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InAppPurchasing.iOS.dll": {}
         }
       }
     }
@@ -3858,6 +4062,45 @@
         "mvvmcross.forms.6.4.2.nupkg.sha512",
         "mvvmcross.forms.nuspec",
         "readme.txt"
+      ]
+    },
+    "MvvmCross.Platform/5.7.0": {
+      "sha512": "0J0Rzk3TisxYswq2aDEfNfdfl5X92399TmM8X9L828e36rqXK0z+OFTmwn7ViMqC9d7Cqroz4gVbkxThHfHEng==",
+      "type": "package",
+      "path": "mvvmcross.platform/5.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid/MvvmCross.Platform.Droid.dll",
+        "lib/MonoAndroid/MvvmCross.Platform.Droid.pdb",
+        "lib/MonoAndroid/MvvmCross.Platform.dll",
+        "lib/MonoAndroid/MvvmCross.Platform.pdb",
+        "lib/Xamarin.Mac20/MvvmCross.Platform.Mac.dll",
+        "lib/Xamarin.Mac20/MvvmCross.Platform.Mac.pdb",
+        "lib/Xamarin.Mac20/MvvmCross.Platform.dll",
+        "lib/Xamarin.Mac20/MvvmCross.Platform.pdb",
+        "lib/Xamarin.iOS10/MvvmCross.Platform.dll",
+        "lib/Xamarin.iOS10/MvvmCross.Platform.iOS.dll",
+        "lib/Xamarin.iOS10/MvvmCross.Platform.iOS.pdb",
+        "lib/Xamarin.iOS10/MvvmCross.Platform.pdb",
+        "lib/Xamarin.tvOS/MvvmCross.Platform.dll",
+        "lib/Xamarin.tvOS/MvvmCross.Platform.pdb",
+        "lib/Xamarin.tvOS/MvvmCross.Platform.tvOS.dll",
+        "lib/dotnet/MvvmCross.Platform.dll",
+        "lib/dotnet/MvvmCross.Platform.pdb",
+        "lib/net45/MvvmCross.Platform.Wpf.dll",
+        "lib/net45/MvvmCross.Platform.Wpf.pdb",
+        "lib/net45/MvvmCross.Platform.dll",
+        "lib/net45/MvvmCross.Platform.pdb",
+        "lib/portable-net45+win+wpa81+wp80/MvvmCross.Platform.dll",
+        "lib/portable-net45+win+wpa81+wp80/MvvmCross.Platform.pdb",
+        "lib/uap10.0/MvvmCross.Platform.Uwp.dll",
+        "lib/uap10.0/MvvmCross.Platform.Uwp.pdb",
+        "lib/uap10.0/MvvmCross.Platform.Uwp.pri",
+        "lib/uap10.0/MvvmCross.Platform.dll",
+        "lib/uap10.0/MvvmCross.Platform.pdb",
+        "mvvmcross.platform.5.7.0.nupkg.sha512",
+        "mvvmcross.platform.nuspec"
       ]
     },
     "MvvmCross.Plugin.Messenger/6.4.2": {
@@ -4793,6 +5036,11 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "BaseClasses/1.0.0": {
+      "type": "project",
+      "path": "../BaseClasses/BaseClasses.csproj",
+      "msbuildProject": "../BaseClasses/BaseClasses.csproj"
+    },
     "BudgetAppCore.Sqlite/1.0.0": {
       "type": "project",
       "path": "../BudgetAppCore.Sqlite/BudgetAppCore.Sqlite.csproj",
@@ -4822,12 +5070,23 @@
       "type": "project",
       "path": "../CustomXamarinFormsConverters/CustomXamarinFormsConverters.csproj",
       "msbuildProject": "../CustomXamarinFormsConverters/CustomXamarinFormsConverters.csproj"
+    },
+    "InAppPurchasing.Core/1.0.0": {
+      "type": "project",
+      "path": "../InAppPurchasing.Core/InAppPurchasing.Core.csproj",
+      "msbuildProject": "../InAppPurchasing.Core/InAppPurchasing.Core.csproj"
+    },
+    "InAppPurchasing.iOS/1.0.0": {
+      "type": "project",
+      "path": "../InAppPurchasing.Ios/InAppPurchasing.iOS.csproj",
+      "msbuildProject": "../InAppPurchasing.Ios/InAppPurchasing.iOS.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "Xamarin.iOS,Version=v1.0": [
       "BudgetAppCross >= 1.0.0",
       "BudgetAppCross.Core >= 1.0.0",
+      "InAppPurchasing.iOS >= 1.0.0",
       "Xamarin.Essentials >= 1.5.3.2",
       "Xamarin.Forms >= 4.7.0.1080"
     ]
@@ -4869,6 +5128,9 @@
             },
             "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj": {
               "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj"
+            },
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj"
             }
           }
         }

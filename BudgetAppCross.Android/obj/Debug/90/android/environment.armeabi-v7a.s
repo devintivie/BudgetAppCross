@@ -23,7 +23,7 @@
 	.section	.rodata.env.str.1,"aMS",%progbits,1
 	.type	.L.env.str.1, %object
 .L.env.str.1:
-	.asciz	"com.companyname.budgetappcross"
+	.asciz	"com.companyname.BudgetAppCross"
 	.size	.L.env.str.1, 31
 	.section	.data.application_config,"aw",%progbits
 	.type	application_config, %object
@@ -92,7 +92,7 @@ mono_aot_mode_name:
 	.section	.rodata.env.str.8,"aMS",%progbits,1
 	.type	.L.env.str.8, %object
 .L.env.str.8:
-	.asciz	"4fdd59ae-cfd9-4f86-aa87-fed0829ec749"
+	.asciz	"89635e5f-75df-4b54-8eb8-f0b5471037e1"
 	.size	.L.env.str.8, 37
 	.section	.rodata.env.str.9,"aMS",%progbits,1
 	.type	.L.env.str.9, %object

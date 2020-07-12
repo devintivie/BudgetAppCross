@@ -49,3 +49,5 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstan
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csproj.CopyComplete
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\bin\Debug\netstandard2.0\BaseClasses.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\bin\Debug\netstandard2.0\BaseClasses.pdb

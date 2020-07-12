@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using MvvmCross;
 using System.Windows.Input;
 using MvvmCross.Navigation;
+using BaseClasses;
 
 namespace BudgetAppCross.Core.ViewModels
 {

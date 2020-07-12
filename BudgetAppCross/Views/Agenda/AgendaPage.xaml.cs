@@ -1,4 +1,5 @@
-﻿using BudgetAppCross.Core.Services;
+﻿using BaseClasses;
+using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
 using MvvmCross.Binding.Extensions;
 using MvvmCross.Forms.Presenters.Attributes;
