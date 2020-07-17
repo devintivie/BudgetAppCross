@@ -682,6 +682,16 @@
         "runtime": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
         }
+      },
+      "InAppPurchasing.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/InAppPurchasing.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InAppPurchasing.Core.dll": {}
+        }
       }
     }
   },
@@ -2149,6 +2159,11 @@
       "type": "project",
       "path": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj",
       "msbuildProject": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj"
+    },
+    "InAppPurchasing.Core/1.0.0": {
+      "type": "project",
+      "path": "../InAppPurchasing.Core/InAppPurchasing.Core.csproj",
+      "msbuildProject": "../InAppPurchasing.Core/InAppPurchasing.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2157,6 +2172,7 @@
       "BaseClasses >= 1.0.0",
       "BudgetAppCore.Sqlite >= 1.0.0",
       "BudgetAppCross.Models >= 1.0.0",
+      "InAppPurchasing.Core >= 1.0.0",
       "MvvmCross.Forms >= 6.4.2",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.3",
@@ -2205,6 +2221,9 @@
             },
             "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
               "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj"
+            },
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj"
             }
           }
         }

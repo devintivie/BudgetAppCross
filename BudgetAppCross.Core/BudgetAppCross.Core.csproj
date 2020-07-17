@@ -16,6 +16,7 @@
     <ProjectReference Include="..\BaseClasses\BaseClasses.csproj" />
     <ProjectReference Include="..\BudgetAppCore.Sqlite\BudgetAppCore.Sqlite.csproj" />
     <ProjectReference Include="..\BudgetAppCross.Models\BudgetAppCross.Models.csproj" />
+    <ProjectReference Include="..\InAppPurchasing.Core\InAppPurchasing.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -93,6 +93,7 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Forms.Xaml.dll",
 		"BudgetAppCross.Models.dll",
 		"BaseClasses.dll",
+		"InAppPurchasing.Core.dll",
 		"CustomXamarinFormsBehaviors.dll",
 		"CustomXamarinFormsConverters.dll",
 	};

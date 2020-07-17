@@ -10,7 +10,7 @@ using UIKit;
 
 namespace InAppPurchasing.iOS
 {
-    public class StoreManager
+    public class StoreManager : IStoreManager
     {
         #region Singleton
         private static readonly Lazy<StoreManager> instance = new Lazy<StoreManager>();
@@ -36,6 +36,15 @@ namespace InAppPurchasing.iOS
             // This also kicks off the TransactionObserver which handles the various communications
             SKPaymentQueue.DefaultQueue.AddTransactionObserver(theObserver);
             Messenger.Instance.Register<PurchaseMessage>(this, OnPurchaseMessage);
+            Messenger.Instance.Register<GetPriceMessage>(this, OnGetPriceMessage);
+        }
+        public void Start() { }
+        #endregion
+
+        #region Methods
+        private void OnGetPriceMessage(GetPriceMessage obj)
+        {
+            //throw new NotImplementedException();
         }
         #endregion
 
@@ -45,10 +54,16 @@ namespace InAppPurchasing.iOS
             //throw new NotImplementedException();
         }
 
-        public void Start() { }
+        public decimal GetPrice(string product)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool PurchaseProduct(string product)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
-
-
 
 
     }

@@ -8,12 +8,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("BudgetAppCross.Views.Purchasing.PurchasingPage.xaml", "Views/Purchasing/PurchasingPage.xaml", typeof(global::BudgetAppCross.Views.PurchasingPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("BudgetAppCross.Views.PurchasingPage.xaml", "Views/PurchasingPage.xaml", typeof(global::BudgetAppCross.Views.PurchasingPage))]
 
 namespace BudgetAppCross.Views {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Purchasing\\PurchasingPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\PurchasingPage.xaml")]
     public partial class PurchasingPage : global::MvvmCross.Forms.Views.MvxContentPage<global::BudgetAppCross.Core.ViewModels.PurchasingViewModel> {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]

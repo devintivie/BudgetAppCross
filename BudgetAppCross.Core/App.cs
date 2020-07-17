@@ -20,5 +20,7 @@ namespace BudgetAppCross.Core
             
             RegisterAppStart<MainViewModel>();
         }
+
+        
     }
 }

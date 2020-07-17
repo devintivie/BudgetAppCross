@@ -6,6 +6,7 @@
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
+             xmlns:models="clr-namespace:BudgetAppCross.Models;assembly=BudgetAppCross.Models"
              mc:Ignorable="d"
              Title="Add Bill"
              x:Class="BudgetAppCross.Views.NewBillsPage">
@@ -123,7 +124,7 @@
                                Grid.Row="1" Grid.Column="0"
                                VerticalOptions="Center"
                                FontSize="Large"/>
-                         <Picker ItemsSource="{Binding DueFrequencies}"
+                        <Picker ItemsSource="{Binding Source={cvt:EnumBindingSource {x:Type models:DueDateFrequencies}}}"
                                 Grid.Row="1" Grid.Column="1"
                                  HorizontalOptions="EndAndExpand"
                             SelectedItem="{Binding DueDateFrequency}"

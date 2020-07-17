@@ -166,6 +166,8 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\bin\Debug\netstandard2
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCore.Sqlite.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.csproj.CopyComplete
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Purchasing\PurchasingPage.xaml.g.cs
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\bin\Debug\netstandard2.0\BaseClasses.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\bin\Debug\netstandard2.0\BaseClasses.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\bin\Debug\netstandard2.0\InAppPurchasing.Core.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\bin\Debug\netstandard2.0\InAppPurchasing.Core.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\PurchasingPage.xaml.g.cs

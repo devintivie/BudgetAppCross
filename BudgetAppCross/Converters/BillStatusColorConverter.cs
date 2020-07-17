@@ -24,9 +24,9 @@ namespace BudgetAppCross.Converters
                 case BillStatus.DueTomorrow:
                     return Color.Red;
                 case BillStatus.DueWithinTwoWeeks:
-                    return Color.Orange;
+                    return Color.OrangeRed;
                 case BillStatus.DueWithinOneMonth:
-                    return Color.Yellow;
+                    return Color.Orange;
                 case BillStatus.NoneDue:
                     return Color.LightGreen;
                 case BillStatus.AutoPayUpcoming:
@@ -61,7 +61,7 @@ namespace BudgetAppCross.Converters
                 case BillStatus.AutoPayPast:
                     return Color.LightGreen;
                 default:
-                    return Color.White;
+                    return Color.Transparent;
             }
         }
 

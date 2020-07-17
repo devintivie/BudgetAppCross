@@ -129,4 +129,8 @@
       <DependentUpon>TransactionView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Purchasing\" />
+  </ItemGroup>
 </Project>

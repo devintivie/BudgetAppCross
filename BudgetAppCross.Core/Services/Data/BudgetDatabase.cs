@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Acr.UserDialogs;
 using BudgetAppCross.Models;
+using MvvmCross;
 using SQLite;
 using SQLiteNetExtensions.Attributes;
 using SQLiteNetExtensions.Extensions;
@@ -89,7 +91,17 @@ namespace BudgetAppCross.Core.Services
                 }
                 else
                 {
-                    Database.InsertWithChildren(acct);
+                    var accounts = Database.Table<BankAccount>().ToList();
+                    if(accounts.Count >= StateManager.MAX_ACCOUNTS)
+                    {
+                        var config = new AlertConfig().SetMessage("Purchase full version to add more accounts");
+                        Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
+                    }
+                    else
+                    {
+                        Database.InsertWithChildren(acct);
+                    }
+                    
                 }
             });
         }
@@ -283,7 +295,7 @@ namespace BudgetAppCross.Core.Services
         #region Bill
         public async Task SaveBill(Bill bill)
         {
-            await Task.Run(() =>
+            await Task.Run(async() =>
             {
                 if (bill.ID != 0)
                 {
@@ -291,7 +303,17 @@ namespace BudgetAppCross.Core.Services
                 }
                 else
                 {
-                    Database.InsertWithChildren(bill);
+                    var names= (await GetBills()).Select(x => x.Payee).Distinct().ToList();
+                    if(names.Count >= StateManager.MAX_PAYEES)
+                    {
+                        var config = new AlertConfig().SetMessage("Purchase full version to add payees");
+                        Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
+                    }
+                    else
+                    {
+                        Database.InsertWithChildren(bill);
+                    }
+                    
                 }
             });
         }

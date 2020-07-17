@@ -792,6 +792,7 @@
           "BaseClasses": "1.0.0",
           "BudgetAppCore.Sqlite": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "InAppPurchasing.Core": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
           "Newtonsoft.Json": "12.0.3",
           "SQLite": "3.13.0",
@@ -826,6 +827,11 @@
         },
         "runtime": {
           "CustomXamarinFormsConverters.dll": {}
+        }
+      },
+      "InAppPurchasing.Core/1.0.0": {
+        "runtime": {
+          "InAppPurchasing.Core.dll": {}
         }
       }
     }
@@ -1373,6 +1379,11 @@
       "sha512": ""
     },
     "CustomXamarinFormsConverters/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "InAppPurchasing.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

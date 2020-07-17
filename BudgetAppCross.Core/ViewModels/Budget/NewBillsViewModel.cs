@@ -432,17 +432,18 @@ namespace BudgetAppCross.Core.ViewModels
         #region Methods
         private async Task OnSave()
         {
-            if (string.IsNullOrWhiteSpace(NewPayee))
-            {
-                var config = new AlertConfig().SetMessage("Payee needs a name");
-                Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
-                return;
-            }
+            
 
             var accts = await DataManager.GetBankAccounts();
             var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
             var payee = IsNewPayee ? NewPayee : SelectedPayee;
 
+            if (string.IsNullOrWhiteSpace(payee))
+            {
+                var config = new AlertConfig().SetMessage("Payee needs a name");
+                Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
+                return;
+            }
             if (AddMultiple)
             {
                 var tempBills = new List<Bill>();

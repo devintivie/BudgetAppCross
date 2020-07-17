@@ -27,11 +27,18 @@ namespace BudgetAppCross.Core.Services
         private const string stateFilename = "budgetState.json";
         private string basePath = "";
 
+
+        
         #endregion
 
         #region Properties
         public string DatabaseFilename { get; set; } = null;//"None";
         public List<string> Budgets { get; private set; }
+        public bool FullVersionPaid { get; private set; } = false;
+
+        //Free Version Limitations
+        public const int MAX_PAYEES = 10;
+        public const int MAX_ACCOUNTS = 5;
 
         public const SQLite.SQLiteOpenFlags Flags =
             // open the database in read/write mode

@@ -2072,3 +2072,7 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\Base
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BaseClasses.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\BaseClasses.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\BaseClasses.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\InAppPurchasing.Core.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\InAppPurchasing.Core.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\InAppPurchasing.Core.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\InAppPurchasing.Core.pdb
