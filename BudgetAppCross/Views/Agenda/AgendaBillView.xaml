@@ -28,7 +28,7 @@
                 <CheckBox IsChecked="{Binding IsPaid}" 
                           Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
                           Grid.Row="0" Grid.RowSpan="2"/>
-                <Label Text="{Binding Payee}"
+                <Label Text="{Binding Payee}" TextColor="{StaticResource PrimaryForeground}"
                        Grid.Column="1"
                             VerticalOptions="Center"
                             VerticalTextAlignment="Center"

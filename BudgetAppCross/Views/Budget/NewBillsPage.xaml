@@ -9,6 +9,7 @@
              xmlns:models="clr-namespace:BudgetAppCross.Models;assembly=BudgetAppCross.Models"
              mc:Ignorable="d"
              Title="Add Bill"
+                      BackgroundColor="{StaticResource PrimaryBackground}"
              x:Class="BudgetAppCross.Views.NewBillsPage">
     <ContentPage.Content>
         <ScrollView>
@@ -175,9 +176,9 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Button Text="Cancel" Command="{Binding CancelCommand}"
-                            TextColor="Red"/>
+                            />
                     <Button Text="Save" Command="{Binding SaveCommand}"
-                            TextColor="Green"
+                            
                             Grid.Column="1"/>
                 </Grid>
                 <!--<StackLayout Orientation="Horizontal">

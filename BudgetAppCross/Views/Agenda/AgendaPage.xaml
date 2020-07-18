@@ -12,9 +12,10 @@
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              x:Name="currentPage"
              Title="{Binding Title}"
+                      
+                      BackgroundColor="{StaticResource ButtonBackground}"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="True"
-                      
              >
     <ContentPage.ToolbarItems >
         <ToolbarItem Text="Add" Command="{Binding AddBillCommand}"
@@ -23,15 +24,6 @@
                      Order="Secondary"/>-->
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <!--<StackLayout BindableLayout.ItemsSource="{Binding BillsGrouped}">
-            <BindableLayout.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout>
-                        <controls:AgendaEntryView/>
-                    </StackLayout>
-                </DataTemplate>
-            </BindableLayout.ItemTemplate>
-        </StackLayout>-->
         <ListView x:Name="agendaList" ItemsSource="{Binding Bills}"
                   SelectionMode="None"
                   HasUnevenRows="True"
@@ -41,14 +33,14 @@
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Grid VerticalOptions="FillAndExpand"
-                                     BackgroundColor="LightGray">
+                        <Grid VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource ButtonBackground}">
                             <Label Text="{Binding Key, Converter={cvt:DateOnlyConverter}}"
-                               FontSize="Subtitle"
+                                   FontSize="Subtitle"
+                                   TextColor="{StaticResource PrimaryForeground}"
+                                   Padding="0,0,0,15"
                                    VerticalOptions="Center"
                                />
                         </Grid>
-                        
                     </ViewCell>
                 </DataTemplate>
             </ListView.GroupHeaderTemplate>
@@ -57,14 +49,13 @@
                     <ViewCell>
                         <ViewCell.ContextActions>
                             <MenuItem Text="Delete"
-                                              Command="{Binding DeleteThisCommand}"
+                                      Command="{Binding DeleteThisCommand}"
                                       IsDestructive="True"
-                                              CommandParameter="{Binding .}"/>
+                                      CommandParameter="{Binding .}"/>
                         </ViewCell.ContextActions>
                         <controls:AgendaBillView />
                         
                     </ViewCell>
-                    
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

@@ -11,6 +11,7 @@
              x:TypeArguments="vms:BankOverviewViewModel"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="True"
+                      BackgroundColor="{StaticResource ButtonBackground}"
              Title="{Binding Title}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddAccountCommand}"/>

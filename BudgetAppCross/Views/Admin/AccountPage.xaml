@@ -12,6 +12,7 @@
              x:TypeArguments="vms:AccountViewModel"
              x:Name="currentPage"
              Title="{Binding Title}"
+                      BackgroundColor="{StaticResource PrimaryBackground}"
             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
             ios:Page.UseSafeArea="True"
              >

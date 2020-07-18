@@ -1,5 +1,6 @@
 ﻿using BudgetAppCross.iOS.CustomControls;
 using BudgetAppCross.Views;
+using Foundation;
 using System;
 using System.Linq;
 using UIKit;
@@ -19,10 +20,15 @@ namespace BudgetAppCross.iOS.CustomControls
 
             if(Control != null)
             {
+                var view = (CurrencyEntry)Element;
                 Control.Started += Control_Started;
                 Control.ValueChanged += Control_ValueChanged;
                 Control.EditingChanged += Control_EditingChanged;
                 Control.Ended += Control_Ended;
+                Control.BackgroundColor = UIColor.White;
+                Control.TextColor = UIColor.Black;
+                Control.TintColor = UIColor.Black;
+
                 var text = Control.Text;
                 if (text.Equals("0.00") || text.Equals("$0.00") || text.Equals("0"))
                 {
@@ -148,6 +154,18 @@ namespace BudgetAppCross.iOS.CustomControls
         //{
         //    var entry = sender as UITextField;
         //}
+
+        void SetPlaceholderTextColor(CurrencyEntry view)
+        {
+            /* UIColor *color = [UIColor lightTextColor];
+             * YOURTEXTFIELD.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PlaceHolder Text" attributes:@{NSForegroundColorAttributeName: color}];
+			*/
+            if (string.IsNullOrEmpty(view.Placeholder) == false && view.PlaceholderColor != Color.Default)
+            {
+                NSAttributedString placeholderString = new NSAttributedString(view.Placeholder, new UIStringAttributes() { ForegroundColor = view.PlaceholderColor.ToUIColor() });
+                Control.AttributedPlaceholder = placeholderString;
+            }
+        }
     }
 
 

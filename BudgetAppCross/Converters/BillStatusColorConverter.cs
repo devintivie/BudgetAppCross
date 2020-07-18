@@ -24,9 +24,10 @@ namespace BudgetAppCross.Converters
                 case BillStatus.DueTomorrow:
                     return Color.Red;
                 case BillStatus.DueWithinTwoWeeks:
-                    return Color.OrangeRed;
-                case BillStatus.DueWithinOneMonth:
                     return Color.Orange;
+                case BillStatus.DueWithinOneMonth:
+                    var c = Color.FromHex("#d6bd2d");
+                    return c;
                 case BillStatus.NoneDue:
                     return Color.LightGreen;
                 case BillStatus.AutoPayUpcoming:
@@ -61,7 +62,7 @@ namespace BudgetAppCross.Converters
                 case BillStatus.AutoPayPast:
                     return Color.LightGreen;
                 default:
-                    return Color.Transparent;
+                    return (Color)Application.Current.Resources["ButtonBackground"]; ;
             }
         }
 

@@ -109,14 +109,23 @@ namespace BudgetAppCross.Core.Services
         public async Task<List<BankAccount>> GetBankAccounts()
         {
             var list = new List<BankAccount>();
+
             await Task.Run(() =>
             {
-                var ienum = Database.Table<BankAccount>();
-                list = ienum.ToList();
-                foreach (var element in list)
+                try
                 {
-                    Database.GetChildren(element, recursive: false);
+                    var ienum = Database.Table<BankAccount>();
+                    list = ienum.ToList();
+                    foreach (var element in list)
+                    {
+                        Database.GetChildren(element, recursive: false);
+                    }
                 }
+                catch(InvalidOperationException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                
 
                 //list =  Database.GetAllWithChildren<BankAccount>();
             });
@@ -332,7 +341,19 @@ namespace BudgetAppCross.Core.Services
             var list = await Task.Run(() =>
             {
                 //return Database.Table<Bill>().ToList();
-                return Database.GetAllWithChildren<Bill>(recursive: true);
+                try
+                {
+                    var bills = Database.GetAllWithChildren<Bill>(recursive: true);
+                    return bills;
+                }
+                catch(InvalidOperationException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    return new List<Bill>();
+                }
+                
+
+                
             });
 
             return list;

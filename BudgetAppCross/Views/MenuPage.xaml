@@ -13,41 +13,49 @@
              x:Name="MainContent"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="True"
+             BackgroundColor="{StaticResource PrimaryBackground}"
              Title="Menu">
 
-    <!--<ContentPage.Behaviors>
-        <behaviors:EventToCommandBehavior EventName="ItemSelected" Command="{Binding ShowDetailPageAsyncCommand}"/>
-    </ContentPage.Behaviors>-->
-
-    <NavigationPage.TitleView>
-        <Label Text="Menu"/>
-    </NavigationPage.TitleView>
-    <Grid>
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Label BackgroundColor="{StaticResource NavigationPrimary}"
-               Text="Menu" FontSize="Title"/>
+        <Label
+            Text="Menu" FontSize="Title" HorizontalTextAlignment="Center"
+                TextColor="{StaticResource MenuButtonForeground}"
+            VerticalTextAlignment="End"/>
         <!--<ListView ItemsSource="{Binding MenuItemList}"
-                  SelectedItem="{Binding SelectedMenuItem }">-->
+                SelectedItem="{Binding SelectedMenuItem }">-->
         <ListView ItemsSource="{Binding PageList}"
-                  SelectedItem="{Binding SelectedPage }"
-                  Grid.Row="1">
-            <!--<ListView.ItemTemplate>
+                    SeparatorVisibility="None"
+                      BackgroundColor="{StaticResource PrimaryBackground}"
+                  
+                SelectedItem="{Binding SelectedPage }"
+                  
+                Grid.Row="1">
+            <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding}"/>
+                    <TextCell Text="{Binding}" TextColor="{StaticResource MenuButtonForeground}"/>
                 </DataTemplate>
-            </ListView.ItemTemplate>-->
+            </ListView.ItemTemplate>
+            <!--<ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding}"/>
+            </DataTemplate>
+        </ListView.ItemTemplate>-->
             <ListView.Behaviors>
                 <behaviors:EventHandlerBehavior EventName="ItemTapped">
                     <behaviors:InvokeCommandAction Command="{Binding ShowDetailPageAsyncCommand}"/>
                 </behaviors:EventHandlerBehavior>
             </ListView.Behaviors>
         </ListView>
-        <Button Grid.Row="2" Text="Settings" Command="{Binding ShowAccountPageCommand}"/>
+        <Button Grid.Row="2" Text="Settings" Command="{Binding ShowAccountPageCommand}"
+                TextColor="{StaticResource MenuButtonForeground}"
+                VerticalOptions="Start"/>
     </Grid>
+    
              
     <!--<StackLayout VerticalOptions="FillAndExpand">
         <ListView x:Name="ListViewMenu"

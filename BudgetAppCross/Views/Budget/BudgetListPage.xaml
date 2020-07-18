@@ -11,6 +11,8 @@
              x:TypeArguments="vms:BudgetListViewModel"
              Title="{Binding Title}"
              x:Name="BudgetContentPage"
+                      
+             BackgroundColor="{StaticResource NavigationPrimary}"
              >
     <ContentPage.ToolbarItems>
         <!--<ToolbarItem Text="Save" Command="{Binding SaveBudgetCommand}"/>

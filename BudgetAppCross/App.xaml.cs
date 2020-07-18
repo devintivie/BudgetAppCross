@@ -11,6 +11,9 @@ namespace BudgetAppCross
 
         public App()
         {
+
+            Device.SetFlags(new string[] { "AppTheme_Experimental" });
+
             InitializeComponent();
 
             //DependencyService.Register<MockDataStore>();

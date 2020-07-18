@@ -108,7 +108,7 @@ namespace BudgetAppCross.Core.ViewModels
                 NavigablePage.Agenda,
                 NavigablePage.BankOverview,
                 NavigablePage.About,
-                NavigablePage.Purchasing
+                //NavigablePage.Purchasing
             };
         }
         #endregion

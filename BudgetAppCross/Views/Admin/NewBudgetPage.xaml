@@ -10,6 +10,7 @@
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              mc:Ignorable="d"
              ios:Page.UseSafeArea="True"
+                      BackgroundColor="{StaticResource PrimaryBackground}"
              x:Class="BudgetAppCross.Views.NewBudgetPage">
     
     <ContentPage.Content>

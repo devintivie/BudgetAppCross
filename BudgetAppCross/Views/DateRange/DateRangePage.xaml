@@ -13,7 +13,7 @@
              x:TypeArguments="vms:DateRangeViewModel"
              x:Name="currentPage"
              Title="{Binding Title}"
-                      
+                      BackgroundColor="LightGreen"
             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
             ios:Page.UseSafeArea="True"
              >
@@ -25,7 +25,7 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content >
-        <Grid>
+        <Grid BackgroundColor="{StaticResource ButtonBackground}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -40,7 +40,6 @@
                     <DatePicker Date="{Binding StartDate}"
                             Grid.Row="0" Grid.Column="1"
                             FontSize="Subtitle"
-                                BackgroundColor="Transparent"
                                 HorizontalOptions="End">
                         <DatePicker.Behaviors>
                             <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
@@ -99,7 +98,7 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <Grid Grid.Row="2">
+            <Grid Grid.Row="2" BackgroundColor="LightGreen">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -121,10 +120,10 @@
                        HorizontalTextAlignment="Center"
                        Grid.Row="1" Grid.Column="0"
                        />
-                <Label Text="Remaining" Grid.Row="1" Grid.Column="1"
+                <Label Text="Remaining" Grid.Row="2" Grid.Column="0"
                        FontSize="Subtitle"
                        HorizontalTextAlignment="Center"/>
-                <Label Text="{Binding BillTotal, Converter={cvt:CurrencyConverter}}" Grid.Row="2" Grid.Column="0"
+                <Label Text="{Binding BillTotal, Converter={cvt:CurrencyConverter}}" Grid.Row="1" Grid.Column="1"
                        FontSize="Subtitle"
                        HorizontalOptions="Center"/>
                 <Label Text="{Binding Remainder, Converter={cvt:CurrencyConverter}}" Grid.Row="2" Grid.Column="1"
