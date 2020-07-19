@@ -1,4 +1,5 @@
 ﻿using BudgetAppCross.Models;
+using MvvmCross.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,7 +12,7 @@ namespace BudgetAppCross.Core.ViewModels
     public class BankAccountQuickViewModel : BaseViewModel
     {
         #region Fields
-
+        private IMvxNavigationService navigationService;
         #endregion
 
         #region Properties
@@ -39,19 +40,21 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+
+
+
+        #endregion
         #region Commands
+        public ICommand EditThisCommand { get; private set; }
         public ICommand DeleteThisCommand { get; private set; }
         #endregion
-
-
-        #endregion
-
         #region Constructors
-        public BankAccountQuickViewModel(BankAccount account)
+        public BankAccountQuickViewModel(IMvxNavigationService navService, BankAccount account)
         {
+            navigationService = navService;
             BankAccount = account;
             GetLatestBalance();
-
+            EditThisCommand = new Command(async () => await navigationService.Navigate<EditBankAccountViewModel, BankAccount>(BankAccount));
             DeleteThisCommand = new Command(async () => await OnDeleteThis());
         }
         #endregion

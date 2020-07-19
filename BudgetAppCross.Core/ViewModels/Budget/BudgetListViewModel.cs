@@ -116,7 +116,7 @@ namespace BudgetAppCross.Core.ViewModels
             foreach (var name in names)
             {
                 //var bt = new BillTracker(item.Key, item.Grouped);
-                Trackers.Add(new BillTrackerQuickViewModel(name));
+                Trackers.Add(new BillTrackerQuickViewModel(navigationService, name));
             }
         }
 

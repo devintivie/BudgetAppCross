@@ -50,7 +50,7 @@
     <EmbeddedResource Update="Views\Bank\BankOverviewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Bank\NewBalancePage.xaml">
+    <EmbeddedResource Update="Views\Bank\ModifyBankAccount\NewBalancePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Budget\BillTrackerPage.xaml">
@@ -65,7 +65,7 @@
     <EmbeddedResource Update="Views\Budget\BudgetListPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Budget\NewBillsPage.xaml">
+    <EmbeddedResource Update="Views\Budget\ModifyBudgetItems\NewBillsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\ContactDetailsPage.xaml">
@@ -101,22 +101,28 @@
     <Compile Update="Views\Bank\BalanceView.xaml.cs">
       <DependentUpon>BalanceView.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Bank\NewBankAccountPage.xaml.cs">
+    <Compile Update="Views\Bank\ModifyBankAccount\EditBankAccountPage.xaml.cs">
+      <DependentUpon>EditBankAccountPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Bank\ModifyBankAccount\NewBankAccountPage.xaml.cs">
       <DependentUpon>NewBankAccountPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Bank\NewBalancePage.xaml.cs">
+    <Compile Update="Views\Bank\ModifyBankAccount\NewBalancePage.xaml.cs">
       <DependentUpon>NewBalancePage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Budget\BillTrackerQuickView.xaml.cs">
       <DependentUpon>BillTrackerQuickView.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Budget\NewBillsPage.xaml.cs">
+    <Compile Update="Views\Budget\ModifyBudgetItems\EditBillTrackerPage.xaml.cs">
+      <DependentUpon>EditBillTrackerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Budget\ModifyBudgetItems\NewBillsPage.xaml.cs">
       <DependentUpon>NewBillsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Budget\NewMultiBillView.xaml.cs">
+    <Compile Update="Views\Budget\ModifyBudgetItems\NewMultiBillView.xaml.cs">
       <DependentUpon>NewMultiBillView.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\Budget\NewBillView.xaml.cs">
+    <Compile Update="Views\Budget\ModifyBudgetItems\NewBillView.xaml.cs">
       <DependentUpon>NewBillView.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\DateRange\DateRangeEntryView.xaml.cs">

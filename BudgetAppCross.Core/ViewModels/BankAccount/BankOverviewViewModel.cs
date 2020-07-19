@@ -57,6 +57,8 @@ namespace BudgetAppCross.Core.ViewModels
             AddAccountCommand = new Command(async () => await navigationService.Navigate<NewBankAccountViewModel>());
             //DeleteAccountCommand = new Command(() => OnDeleteAccount());
             Messenger.Register<ChangeBalanceMessage>(this, async x => await OnChangeBalanceMessage());
+
+            var _ = LoadAccounts();
         }
 
         #endregion
@@ -67,8 +69,6 @@ namespace BudgetAppCross.Core.ViewModels
         {
             base.ViewAppeared();
             SelectedAccount = null;
-
-            LoadAccounts();
         }
 
         private async Task LoadAccounts()
@@ -79,7 +79,7 @@ namespace BudgetAppCross.Core.ViewModels
             Accounts.Clear();
             foreach (var item in accts)
             {
-                Accounts.Add(new BankAccountQuickViewModel(item));
+                Accounts.Add(new BankAccountQuickViewModel(navigationService, item));
             }
         } 
 

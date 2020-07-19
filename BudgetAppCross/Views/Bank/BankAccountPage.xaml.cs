@@ -19,5 +19,9 @@ namespace BudgetAppCross.Views
             InitializeComponent();
         }
 
+        private void ListView_Focused(object sender, FocusEventArgs e)
+        {
+            Console.WriteLine();
+        }
     }
 }

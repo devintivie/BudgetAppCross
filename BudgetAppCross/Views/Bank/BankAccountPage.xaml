@@ -61,7 +61,9 @@
                        TextColor="{StaticResource PrimaryForeground}"
                        HorizontalOptions="Center"/>
             </Grid>
-            <ListView ItemsSource="{Binding Balances}">
+            <ListView ItemsSource="{Binding Balances}"
+                      Focused="ListView_Focused"
+                      >
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

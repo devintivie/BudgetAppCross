@@ -42,6 +42,7 @@ namespace BudgetAppCross.Core.Services
         Task<int> DeleteBill(Bill bill);
         Task<List<string>> GetBillPayees();
         Task<int> DeleteBillsForPayee(string payee);
+        Task<int> ChangePayeeName(string oldName, string newName);
         Task<List<Bill>> GetBillsForPayee(string payee);
         Task UpdatePayeeNames();
         #endregion

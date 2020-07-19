@@ -401,6 +401,21 @@ namespace BudgetAppCross.Core.Services
             return count;
         }
 
+        public async Task<int> ChangePayeeName(string oldName, string newName)
+        {
+            var count = 0;
+            var bills = await GetBillsForPayee(oldName);
+
+            foreach (var bill in bills)
+            {
+                bill.Payee = newName;
+                await SaveBill(bill);
+                count++;
+            }
+
+            return count;
+        }
+
         public async Task<List<string>> GetBillPayees()
         {
             var list = await Task.Run(() =>
