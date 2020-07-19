@@ -163,4 +163,7 @@
       <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\clearbutton.png" />
+  </ItemGroup>
 </Project>

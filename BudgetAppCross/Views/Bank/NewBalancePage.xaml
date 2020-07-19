@@ -7,10 +7,14 @@
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              mc:Ignorable="d"
              Title="Add Balance History"
+                      
+                      BackgroundColor="{StaticResource PrimaryBackground}"
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              x:Class="BudgetAppCross.Views.NewBalancePage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout
+            
+                      BackgroundColor="{StaticResource PrimaryBackground}">
             <StackLayout>
                 <Label Text="Balance"/>
                 <!--<Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}" Keyboard="Numeric"

@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "g6ZCxgZub/3jocHRFQQ8uGJyvlFh3oGS8FbHJcoiwG8Rs5EkH/wiG8kyk/sB1qLSYRj8Yf4ox5iAq6sjHpHdNg==",
+  "dgSpecHash": "ttHVc0SkvffPuIw3OShD1pzPwJVFqSUMFAcmd35hZJXqtDwQYryzwgytymFebfZHxk5o4LWt92zhcbh5mVgRlQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\devin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

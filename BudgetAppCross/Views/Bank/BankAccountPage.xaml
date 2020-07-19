@@ -6,23 +6,59 @@
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              mc:Ignorable="d"
-             Title="{Binding BankAccount.Nickname}"
+                      BackgroundColor="{StaticResource PrimaryBackground}"
+                      
+             xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+             Title=""
              x:Class="BudgetAppCross.Views.BankAccountPage">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddBalanceCommand}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout  BackgroundColor="{StaticResource ButtonBackground}">
+            <Grid>
+                <!--<Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>-->
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="{Binding BankAccount.Nickname}" 
+                       FontSize="Title"
+                        HorizontalOptions="Start"
+                       IsVisible="{Binding IsEditing, Converter={cvt:InverseBoolConverter}}"/>
+                <Entry Text="{Binding NewAccountName}" HorizontalOptions="Fill"
+                       IsVisible="{Binding IsEditing}"/>
+                <Grid Grid.Column="1" HorizontalOptions="Fill">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Save" Command="{Binding SaveEditCommand}" IsVisible="{Binding IsEditing}"
+                        HorizontalOptions="Start"
+                        FontSize="Subtitle"/>
+                    <Button Text="{Binding EditButtonText}" Command="{Binding EditCommand}" 
+                        FontSize="Subtitle" HorizontalOptions="End"
+                            Grid.Column="1"/>
+                </Grid>
+                
+                
+                
+            </Grid>
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label Text="Balance"
+                       TextColor="{StaticResource PrimaryForeground}"
                        HorizontalOptions="Center"/>
                 <Label Text="Timestamp"
                        Grid.Column="1"
+                       TextColor="{StaticResource PrimaryForeground}"
                        HorizontalOptions="Center"/>
             </Grid>
             <ListView ItemsSource="{Binding Balances}">

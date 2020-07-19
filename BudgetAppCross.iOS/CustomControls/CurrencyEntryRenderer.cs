@@ -20,6 +20,7 @@ namespace BudgetAppCross.iOS.CustomControls
 
             if(Control != null)
             {
+                var imageView = new UIImageView(UIImage.FromFile(".png"));
                 var view = (CurrencyEntry)Element;
                 Control.Started += Control_Started;
                 Control.ValueChanged += Control_ValueChanged;
@@ -27,7 +28,15 @@ namespace BudgetAppCross.iOS.CustomControls
                 Control.Ended += Control_Ended;
                 Control.BackgroundColor = UIColor.White;
                 Control.TextColor = UIColor.Black;
-                Control.TintColor = UIColor.Black;
+                view.Placeholder = Control.Placeholder;
+                //Control.TintColor = UIColor.Black;
+                //Control.hint
+                SetPlaceholderTextColor(view);
+
+
+                //Control.RightViewMode = UITextFieldViewMode.WhileEditing;
+                //Control.RightView
+
 
                 var text = Control.Text;
                 if (text.Equals("0.00") || text.Equals("$0.00") || text.Equals("0"))
@@ -43,6 +52,7 @@ namespace BudgetAppCross.iOS.CustomControls
                 {
                     Control.Placeholder = $"$0.00";
                 }
+                //view.PlaceholderColor = Color.Green;
                 Control.KeyboardType = UIKeyboardType.DecimalPad;
                 Control.ClearButtonMode = UITextFieldViewMode.WhileEditing;
                 
@@ -162,7 +172,7 @@ namespace BudgetAppCross.iOS.CustomControls
 			*/
             if (string.IsNullOrEmpty(view.Placeholder) == false && view.PlaceholderColor != Color.Default)
             {
-                NSAttributedString placeholderString = new NSAttributedString(view.Placeholder, new UIStringAttributes() { ForegroundColor = view.PlaceholderColor.ToUIColor() });
+                NSAttributedString placeholderString = new NSAttributedString(view.Placeholder, new UIStringAttributes() { ForegroundColor = UIColor.Green });
                 Control.AttributedPlaceholder = placeholderString;
             }
         }

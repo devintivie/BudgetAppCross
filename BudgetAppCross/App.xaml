@@ -40,11 +40,13 @@
             </Style>
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="{StaticResource MenuButtonForeground}"/>
+                <Setter Property="FontSize" Value="Title"/>
             </Style>
 
             <Style TargetType="Label">
                 <!--<Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackground}"/>-->
                 <Setter Property="TextColor" Value="{StaticResource MenuButtonForeground}"/>
+                
             </Style>
 
             <Style TargetType="Entry">

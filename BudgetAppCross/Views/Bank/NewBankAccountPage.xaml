@@ -7,13 +7,17 @@
              xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              mc:Ignorable="d"
+                      
+                      BackgroundColor="{StaticResource PrimaryBackground}"
              x:Class="BudgetAppCross.Views.NewBankAccountPage"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              ios:Page.UseSafeArea="True">
     <ContentPage.Content>
         
-        <StackLayout>
+        <StackLayout
+            
+                      BackgroundColor="{StaticResource PrimaryBackground}">
             <!--<Label Text="Enter Company Name"
                 VerticalOptions="Start" 
                 HorizontalOptions="Start" />

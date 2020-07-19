@@ -1,4 +1,5 @@
 ﻿using BudgetAppCross.Models;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using System;
 using System.Collections.Generic;
@@ -30,10 +31,54 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+        private string editButtonText = "Edit";
+        public string EditButtonText
+        {
+            get { return editButtonText; }
+            set
+            {
+                if (editButtonText != value)
+                {
+                    editButtonText = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        private bool isEditing = false;
+        public bool IsEditing
+        {
+            get { return isEditing; }
+            set
+            {
+                if (isEditing != value)
+                {
+                    isEditing = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        private string newAccountName;
+        public string NewAccountName
+        {
+            get { return newAccountName; }
+            set
+            {
+                if (newAccountName != value)
+                {
+                    newAccountName = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
         #endregion
 
         #region Commands
         public ICommand AddBalanceCommand { get; }
+        public IMvxCommand EditCommand { get; }
+        public IMvxCommand SaveEditCommand { get; }
         #endregion
 
         #region Constructors
@@ -41,6 +86,8 @@ namespace BudgetAppCross.Core.ViewModels
         {
             navigationService = navigation;
             AddBalanceCommand = new Command(async () => await OnAddBalance());
+            EditCommand = new MvxAsyncCommand(async () => await OnEdit());
+            SaveEditCommand = new MvxAsyncCommand(async () => await OnSaveEdit());
 
             Messenger.Register<ChangeBalanceMessage>(this, async x => await OnChangeBalanceMessage());
         }
@@ -52,6 +99,7 @@ namespace BudgetAppCross.Core.ViewModels
         public override void Prepare(BankAccount parameter)
         {
             BankAccount = parameter;
+            NewAccountName = BankAccount.Nickname;
         }
 
         public override void ViewAppeared()
@@ -75,6 +123,13 @@ namespace BudgetAppCross.Core.ViewModels
             Balances = new ObservableCollection<BalanceViewModel>(vms);
         }
 
+        private async Task UpdateAccountName()
+        {
+            BankAccount.Nickname = NewAccountName;
+            await BudgetDatabase.SaveBankAccount(BankAccount);
+
+        }
+
         private async Task OnAddBalance()
         {
             var newBalance = new Balance()
@@ -83,6 +138,31 @@ namespace BudgetAppCross.Core.ViewModels
             };
             await navigationService.Navigate<NewBalanceViewModel, Balance, bool>(newBalance);
             var _ = UpdateBalances();
+        }
+
+        private async Task OnEdit()
+        {
+            if (IsEditing)
+            {
+                EditButtonText = "Edit";
+                IsEditing = false;
+                NewAccountName = BankAccount.Nickname;
+                
+            }
+            else
+            {
+                EditButtonText = "Cancel";
+                IsEditing = true;
+                
+            }
+        }
+
+        private async Task OnSaveEdit()
+        {
+            IsEditing = false;
+            EditButtonText = "Edit";
+
+            await UpdateAccountName();
         }
 
         private async Task OnChangeBalanceMessage()

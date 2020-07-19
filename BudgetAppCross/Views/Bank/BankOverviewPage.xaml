@@ -26,9 +26,9 @@
                     <ViewCell>
                         <ViewCell.ContextActions>
                             <MenuItem Text="Delete"
-                                              Command="{Binding DeleteThisCommand}"
+                                      Command="{Binding DeleteThisCommand}"
                                       IsDestructive="True"
-                                              CommandParameter="{Binding .}"/>
+                                      CommandParameter="{Binding .}"/>
                         </ViewCell.ContextActions>
                         <controls:BankAccountQuickView/>
                     </ViewCell>
