@@ -26,11 +26,11 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Text="{Binding BankAccount.Nickname}" 
+                <Label Text="{Binding Nickname}" 
                        FontSize="Title"
                         HorizontalOptions="Start"
                        IsVisible="{Binding IsEditing, Converter={cvt:InverseBoolConverter}}"/>
-                <Entry Text="{Binding NewAccountName}" HorizontalOptions="Fill"
+                <Entry Text="{Binding NewAccountNickname}" HorizontalOptions="Fill"
                        IsVisible="{Binding IsEditing}"/>
                 <Grid Grid.Column="1" HorizontalOptions="Fill">
                     <Grid.ColumnDefinitions>

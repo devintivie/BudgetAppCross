@@ -282,6 +282,10 @@
       "frameworks": {
         "xamarinios10": {
           "dependencies": {
+            "Xam.Plugins.Forms.KeyboardOverlap": {
+              "target": "Package",
+              "version": "[1.0.0.4, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.5.3.2, )"

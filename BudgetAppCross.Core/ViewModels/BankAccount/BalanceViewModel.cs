@@ -21,20 +21,35 @@ namespace BudgetAppCross.Core.ViewModels
         #region Properties
         public Balance Balance { get; private set; }
 
+        //public decimal Amount
+        //{
+        //    get { return Balance.Amount; }
+        //    set
+        //    {
+        //        if(Balance.Amount != value)
+        //        {
+        //            var amount = Balance.Amount;
+        //            Balance.Amount = value;
+        //            SetProperty(ref amount, value);
+        //            var _ = ChangeAndSave();
+        //        }
+        //    }
+        //}
+
         public decimal Amount
         {
             get { return Balance.Amount; }
             set
             {
-                if(Balance.Amount != value)
+                if (Balance.Amount != value)
                 {
-                    var amount = Balance.Amount;
                     Balance.Amount = value;
-                    SetProperty(ref amount, value);
-                    var _ = ChangeAndSave();
+                    RaisePropertyChanged();
+                    var _ = UpdateAndSave();
                 }
             }
         }
+
 
         public DateTime Timestamp
         {
@@ -46,7 +61,7 @@ namespace BudgetAppCross.Core.ViewModels
                     var timestamp = Balance.Timestamp;
                     Balance.Timestamp = value;
                     SetProperty(ref timestamp, value);
-                    //var _ = ChangeAndSave();
+                    var _ = ChangeAndSave();
                 }
                 
             }
@@ -78,6 +93,11 @@ namespace BudgetAppCross.Core.ViewModels
         {
             await BudgetDatabase.SaveBalance(Balance);
             Messenger.Send(new ChangeBalanceMessage(Balance.AccountID));
+        }
+
+        private async Task UpdateAndSave()
+        {
+            await BudgetDatabase.SaveBalance(Balance);
         }
 
         //private async Task UpdateAccount()

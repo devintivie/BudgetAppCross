@@ -2,6 +2,7 @@
 using BudgetAppCross.Views;
 using Foundation;
 using System;
+using System.Drawing;
 using System.Linq;
 using UIKit;
 using Xamarin.Forms;
@@ -31,7 +32,7 @@ namespace BudgetAppCross.iOS.CustomControls
                 view.Placeholder = Control.Placeholder;
                 //Control.TintColor = UIColor.Black;
                 //Control.hint
-                SetPlaceholderTextColor(view);
+                //SetPlaceholderTextColor(view);
 
 
                 //Control.RightViewMode = UITextFieldViewMode.WhileEditing;
@@ -54,6 +55,8 @@ namespace BudgetAppCross.iOS.CustomControls
                 }
                 //view.PlaceholderColor = Color.Green;
                 Control.KeyboardType = UIKeyboardType.DecimalPad;
+                AddDoneButton();
+                
                 Control.ClearButtonMode = UITextFieldViewMode.WhileEditing;
                 
                 //Control.AllEvents += Control_AllEvents;
@@ -165,16 +168,34 @@ namespace BudgetAppCross.iOS.CustomControls
         //    var entry = sender as UITextField;
         //}
 
-        void SetPlaceholderTextColor(CurrencyEntry view)
+   //     void SetPlaceholderTextColor(CurrencyEntry view)
+   //     {
+   //         /* UIColor *color = [UIColor lightTextColor];
+   //          * YOURTEXTFIELD.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PlaceHolder Text" attributes:@{NSForegroundColorAttributeName: color}];
+			//*/
+   //         if (string.IsNullOrEmpty(view.Placeholder) == false && view.PlaceholderColor != Color.Default)
+   //         {
+   //             NSAttributedString placeholderString = new NSAttributedString(view.Placeholder, new UIStringAttributes() { ForegroundColor = UIColor.Green });
+   //             Control.AttributedPlaceholder = placeholderString;
+   //         }
+   //     }
+
+        void AddDoneButton()
         {
-            /* UIColor *color = [UIColor lightTextColor];
-             * YOURTEXTFIELD.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"PlaceHolder Text" attributes:@{NSForegroundColorAttributeName: color}];
-			*/
-            if (string.IsNullOrEmpty(view.Placeholder) == false && view.PlaceholderColor != Color.Default)
+            var toolbar = new UIToolbar(new RectangleF(0.0f, 0.0f, 50f, 44f));
+
+            var doneButton = new UIBarButtonItem(UIBarButtonSystemItem.Done, delegate
             {
-                NSAttributedString placeholderString = new NSAttributedString(view.Placeholder, new UIStringAttributes() { ForegroundColor = UIColor.Green });
-                Control.AttributedPlaceholder = placeholderString;
-            }
+                Control.ResignFirstResponder();
+                var baseEntry = Element.GetType();
+                ((IEntryController)Element).SendCompleted();
+            });
+            toolbar.Items = new UIBarButtonItem[]
+            {
+                new UIBarButtonItem (UIBarButtonSystemItem.FlexibleSpace),
+                doneButton
+            };
+            this.Control.InputAccessoryView = toolbar;
         }
     }
 

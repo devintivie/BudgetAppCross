@@ -21,6 +21,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         #region Properties
         public BankAccount BankAccount { get; private set; }
+
         private ObservableCollection<BalanceViewModel> balances;
         public ObservableCollection<BalanceViewModel> Balances
         {
@@ -59,15 +60,29 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private string newAccountName;
-        public string NewAccountName
+        private string newAccountNickname;
+        public string NewAccountNickname
         {
-            get { return newAccountName; }
+            get { return newAccountNickname; }
             set
             {
-                if (newAccountName != value)
+                if (newAccountNickname != value)
                 {
-                    newAccountName = value;
+                    newAccountNickname = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        private string nickname;
+        public string Nickname
+        {
+            get { return BankAccount.Nickname; }
+            set
+            {
+                if (nickname != value)
+                {
+                    nickname = value;
                     RaisePropertyChanged();
                 }
             }
@@ -88,7 +103,7 @@ namespace BudgetAppCross.Core.ViewModels
             AddBalanceCommand = new Command(async () => await OnAddBalance());
             EditCommand = new MvxAsyncCommand(async () => await OnEdit());
             SaveEditCommand = new MvxAsyncCommand(async () => await OnSaveEdit());
-
+            //Messenger.Register<ChangeBalanceMessage>(this, async x => await OnUpdateBalanceMessage());
             Messenger.Register<ChangeBalanceMessage>(this, async x => await OnChangeBalanceMessage());
         }
 
@@ -99,7 +114,7 @@ namespace BudgetAppCross.Core.ViewModels
         public override void Prepare(BankAccount parameter)
         {
             BankAccount = parameter;
-            NewAccountName = BankAccount.Nickname;
+            NewAccountNickname = BankAccount.Nickname;
         }
 
         public override void ViewAppeared()
@@ -125,7 +140,8 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task UpdateAccountName()
         {
-            BankAccount.Nickname = NewAccountName;
+            Nickname = NewAccountNickname;
+            BankAccount.Nickname = NewAccountNickname.Trim();
             await BudgetDatabase.SaveBankAccount(BankAccount);
 
         }
@@ -146,7 +162,7 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 EditButtonText = "Edit";
                 IsEditing = false;
-                NewAccountName = BankAccount.Nickname;
+                NewAccountNickname = BankAccount.Nickname;
                 
             }
             else
@@ -169,6 +185,10 @@ namespace BudgetAppCross.Core.ViewModels
         {
             await UpdateBalances();
         }
+        //private async Task OnUpdateBalanceMessage()
+        //{
+        //}
+        
         #endregion
 
 
