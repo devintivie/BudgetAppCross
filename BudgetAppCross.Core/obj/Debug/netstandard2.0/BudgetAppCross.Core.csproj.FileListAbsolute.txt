@@ -13,3 +13,9 @@ D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csproj.CopyComplete
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.dll
 D:\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csprojAssemblyReference.cache
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.AssemblyInfoInputs.cache
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.AssemblyInfo.cs
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csproj.CoreCompileInputs.cache
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.pdb

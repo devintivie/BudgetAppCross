@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "J7HLsw/PEo+vYakirUaaHknQdcnO0sSbOL4TMFJ8Y1/00PpYBfSwx9nJBSXngZBue2i6n9BH9eAuHWqfc5Dfvg==",
+  "dgSpecHash": "vEzn0tsyJ5eIt65LH6x0pjarkYX1OW4jPgS6Vfos1Fd9rNyJL0ZNE1TbFPBzmEhLDMcCjYy85U+6veJdXglPrA==",
   "success": true,
-  "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Android\\BudgetAppCross.Android.csproj",
+  "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Android\\BudgetAppCross.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.442\\acr.userdialogs.7.1.0.442.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\andhud\\1.4.2\\andhud.1.4.2.nupkg.sha512",
@@ -56,7 +56,7 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.viewpager\\28.0.0.3\\xamarin.android.support.viewpager.28.0.0.3.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\xamarin.build.download\\0.4.11\\xamarin.build.download.0.4.11.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.4.0.991265\\xamarin.forms.4.4.0.991265.nupkg.sha512"
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.4.0.991265\\xamarin.forms.4.4.0.991265.nupkg.sha512"
   ],
   "logs": []
 }

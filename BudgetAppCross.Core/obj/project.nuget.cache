@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EbpoVBK5I2Oc0Wa8eov37RhUtvagueEQk8En27OeZF/BCe85J6HPyQE3Q3z58vhn0ah9imgkje4KFIVSgMKGqA==",
+  "dgSpecHash": "xTaUCTvJCde14Ttid+eh7ZOJ/YO4HYUo2sgQpOyGr/wfyW5MxtwVPWSSqRS6r7Wp4dV0OI2HssZsuOzbel1NOQ==",
   "success": true,
-  "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj",
+  "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.442\\acr.userdialogs.7.1.0.442.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

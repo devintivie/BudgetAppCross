@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r30+J86eGtxKt21STI5/2W9NXBL1j0411I5QttoQAmJA3yYKDQ3rxUw+u+Bfu/2bQLVrk/UGuvEUt3cmHXJs7Q==",
+  "dgSpecHash": "BNVru/mULYc7wqtEylnWIVsT3z9/6YtXwfpmyyHkcHYIU0PUfWCAJvQ6YCXpUDyuXdT+ppqt4cipoJ0tX5Vo6Q==",
   "success": true,
-  "projectFilePath": "D:\\OneDrive\\Documents\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
+  "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
   "expectedPackageFiles": [
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
