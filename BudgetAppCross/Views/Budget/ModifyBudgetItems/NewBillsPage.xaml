@@ -29,7 +29,7 @@
 
 
                     <!--Payee-->
-                    <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal" IsVisible="{Binding PayeeSet, Converter={cvt:InverseBoolConverter}}">
                         <Label Text="New Payee"
                            Grid.Row="0" Grid.Column="0"
                            VerticalOptions="Center"

@@ -23,12 +23,15 @@ namespace BudgetAppCross.Views
         private void BTItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             //ViewModel.ShowBillTracker(e.SelectedItem as BillTracker);
+            BudgetCompanyList.SelectedItem = null;
         }
 
         private void BTItemTapped(object sender, ItemTappedEventArgs e)
         {
             var payee = (string)e.Item.GetType().GetProperty("Payee").GetValue(e.Item);
             ViewModel.ShowBillTracker(payee);
+
+
             //ViewModel.ShowBillTracker(e.Item as BillTracker);
 
         }

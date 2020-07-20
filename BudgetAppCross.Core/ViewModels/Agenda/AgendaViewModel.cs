@@ -116,7 +116,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         public async Task SendScrollMessage()
         {
-            await Task.Delay(100);
+            await Task.Delay(200);
             Messenger.Send(new UpdateViewMessage());
         }
 

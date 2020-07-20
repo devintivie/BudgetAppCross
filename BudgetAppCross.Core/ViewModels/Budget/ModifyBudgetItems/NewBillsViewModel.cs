@@ -255,6 +255,21 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+        private bool payeeSet;
+        public bool PayeeSet
+        {
+            get { return payeeSet; }
+            set
+            {
+                if (payeeSet != value)
+                {
+                    payeeSet = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+
 
 
         #endregion
@@ -270,7 +285,7 @@ namespace BudgetAppCross.Core.ViewModels
             navigationService = nav;
             //Bill = new Bill();
             LoadAccountOptions();
-            LoadPayeeOptions();
+            
 
             SaveCommand = new Command(async () => await OnSave());
             CancelCommand = new Command(async () => await OnCancel());
@@ -300,8 +315,19 @@ namespace BudgetAppCross.Core.ViewModels
 
         public override void Prepare(string parameter)
         {
-            if (parameter != "")
+            //if (parameter != "")
+            //{
+            //    SelectedPayee = parameter;
+            //}
+            var _ = PrepareAsync(parameter);
+        }
+
+        private async Task PrepareAsync(string parameter)
+        {
+            await LoadPayeeOptions();
+            if (parameter != string.Empty)
             {
+                PayeeSet = true;
                 SelectedPayee = parameter;
             }
         }
@@ -532,7 +558,6 @@ namespace BudgetAppCross.Core.ViewModels
         }
         private async Task LoadPayeeOptions()
         {
-
             await DataManager.UpdatePayeeNames();
             PayeeOptions = new ObservableCollection<string>(DataManager.PayeeNames);
 
@@ -543,6 +568,7 @@ namespace BudgetAppCross.Core.ViewModels
             else if (SelectedPayee == null)
             {
                 SelectedPayee = PayeeOptions.First();
+                               
             }
         }
 

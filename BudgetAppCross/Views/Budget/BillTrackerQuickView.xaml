@@ -10,10 +10,13 @@
     <ContentView.Content>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Label Text="{Binding Payee}"
+                   LineBreakMode="CharacterWrap"
+                   
+                   MaxLines="2"
                    FontSize="Title"/>
         </Grid>
     </ContentView.Content>

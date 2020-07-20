@@ -37,8 +37,8 @@ namespace BudgetAppCross.Core.Services
         public bool FullVersionPaid { get; private set; } = false;
 
         //Free Version Limitations
-        public const int MAX_PAYEES = 10;
-        public const int MAX_ACCOUNTS = 5;
+        public const int MAX_PAYEES = int.MaxValue;
+        public const int MAX_ACCOUNTS = int.MaxValue;
 
         public const SQLite.SQLiteOpenFlags Flags =
             // open the database in read/write mode

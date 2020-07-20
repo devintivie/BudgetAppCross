@@ -101,7 +101,7 @@ namespace BudgetAppCross.Core.ViewModels
         public override void ViewAppeared()
         {
             base.ViewAppeared();
-            //SelectedTracker = null;
+            SelectedTracker = null;
             //LoadBills();
         }
 

@@ -130,20 +130,36 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+        //private string selectedAccount;
+        //public string SelectedAccount
+        //{
+        //    get { return selectedAccount; }
+        //    set
+        //    {
+        //        if(selectedAccount != value)
+        //        {
+        //            SetProperty(ref selectedAccount, value);
+        //            var _ = UpdateAccount();
+        //        }
+                
+        //    }
+        //}
+
         private string selectedAccount;
         public string SelectedAccount
         {
             get { return selectedAccount; }
             set
             {
-                if(selectedAccount != value)
+                if (selectedAccount != value)
                 {
-                    SetProperty(ref selectedAccount, value);
-                    UpdateAccount();
+                    selectedAccount = value;
+                    var _ = UpdateAccount();
+                    RaisePropertyChanged();
                 }
-                
             }
         }
+
 
         #endregion
 
