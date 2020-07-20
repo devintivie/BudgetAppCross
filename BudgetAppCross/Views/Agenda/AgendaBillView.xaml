@@ -12,52 +12,56 @@
              x:Class="BudgetAppCross.Views.AgendaBillView">
     <ContentView.Content>
         <Frame BorderColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
-               Margin="2" Padding="0"
+               BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+               Margin="2" Padding="3"
                >
-            <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="125"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <CheckBox IsChecked="{Binding IsPaid}" 
+            <Frame Padding="0" HasShadow="False">
+
+                <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox IsChecked="{Binding IsPaid}" 
                           Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
                           Grid.Row="0" Grid.RowSpan="2"/>
-                <Label Text="{Binding Payee}" TextColor="{StaticResource PrimaryForeground}"
+                    <Label Text="{Binding Payee}" TextColor="{StaticResource PrimaryForeground}"
                        Grid.Column="1"
                             VerticalOptions="Center"
                             VerticalTextAlignment="Center"
                             WidthRequest="120"/>
-                <controls:CurrencyEntry Text="{Binding Amount}"
+                    <controls:CurrencyEntry Text="{Binding Amount}"
                             WidthRequest="100"
                             Grid.Column="2"
                             HorizontalOptions="FillAndExpand"
                             VerticalOptions="Center"/>
-                <DatePicker Date="{Binding Date}"
+                    <DatePicker Date="{Binding Date}"
                             Grid.Column="3"
                             
                         >
-                    <DatePicker.Behaviors>
-                        <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
-                    </DatePicker.Behaviors>
-                </DatePicker>
+                        <DatePicker.Behaviors>
+                            <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                        </DatePicker.Behaviors>
+                    </DatePicker>
 
-                <Picker ItemsSource="{Binding AccountOptions}"
+                    <Picker ItemsSource="{Binding AccountOptions}"
                             Grid.Row="1" Grid.Column="1"
                             SelectedItem="{Binding SelectedAccount}"
                         VerticalOptions="Center"
                             WidthRequest="200"/>
-                <Entry Text="{Binding Confirmation}"
+                    <Entry Text="{Binding Confirmation}"
                        Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"
                            WidthRequest="200"/>
 
 
-            </Grid>
+                </Grid>
+            </Frame>
             <!--<FlexLayout Wrap="Wrap" 
                         
                         BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">

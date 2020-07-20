@@ -8,4 +8,9 @@ namespace BudgetAppCross.Views
     public class CurrencyEntry : Entry
     {
     }
+
+    public class BillViewFrame : Frame
+    {
+
+    }
 }

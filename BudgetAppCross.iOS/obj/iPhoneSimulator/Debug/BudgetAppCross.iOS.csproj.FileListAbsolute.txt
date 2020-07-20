@@ -54,6 +54,7 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhoneSimulato
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\System.Text.Encodings.Web.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\System.Text.Json.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\KeyboardOverlap.Forms.Plugin.iOSUnified.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\Xamarin.Essentials.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\Xamarin.Essentials.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\Xamarin.Forms.Core.dll
@@ -201,6 +202,7 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulato
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\System.Runtime.CompilerServices.Unsafe.dll.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\System.Text.Encodings.Web.dll.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\System.Text.Json.dll.ReferenceCopyLocalPaths.stamp
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\KeyboardOverlap.Forms.Plugin.iOSUnified.dll.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Xamarin.Essentials.dll.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Xamarin.Essentials.pdb.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Xamarin.Forms.Core.dll.ReferenceCopyLocalPaths.stamp
@@ -234,5 +236,3 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulato
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\BudgetAppCross.iOS.pdb.DebugSymbolsProjectOutputGroupOutput.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Entitlements.plist.NoneOutput.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Info.plist.NoneOutput.stamp
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\KeyboardOverlap.Forms.Plugin.iOSUnified.dll
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\KeyboardOverlap.Forms.Plugin.iOSUnified.dll.ReferenceCopyLocalPaths.stamp

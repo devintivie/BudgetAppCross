@@ -44,7 +44,10 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 if (startDate != value)
                 {
+                    var delta = (int)(EndDate - StartDate).TotalDays;
+                    
                     startDate = value;
+                    EndDate = value.AddDays(delta);
                     RaisePropertyChanged();
                 }
             }

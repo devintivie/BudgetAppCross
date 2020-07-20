@@ -36,13 +36,28 @@
                            FontSize="Large"/>
                         <Switch IsToggled="{Binding IsNewPayee}"/>
                     </StackLayout>
-                    <Picker ItemsSource="{Binding PayeeOptions}"
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Select Payee"
+                                VerticalOptions="Center"
+                                Grid.Row="0" Grid.Column="1"
+                               IsVisible="{Binding IsNewPayee, Converter={cvt:InverseBoolConverter}}"
+                                FontSize="Large"/>
+                        <Label Text="Input Payee"
+                                VerticalOptions="Center"
+                                Grid.Row="0" Grid.Column="1"
+                                FontSize="Large"
+                               IsVisible="{Binding IsNewPayee}"/>
+                        <Picker ItemsSource="{Binding PayeeOptions}"
+                                HorizontalOptions="EndAndExpand"
+                                WidthRequest="170"
                             SelectedItem="{Binding SelectedPayee}"
                             IsVisible="{Binding IsNewPayee, Converter={cvt:InverseBoolConverter}}"/>
-                    <Entry Text="{Binding NewPayee}" 
+                        <Entry Text="{Binding NewPayee}" 
+                               HorizontalOptions="EndAndExpand"
                            IsVisible="{Binding IsNewPayee}"
                            Grid.Row="1" Grid.Column="0"
-                           WidthRequest="130"/>
+                           WidthRequest="170"/>
+                    </StackLayout>
                     
                     <!--Amount Due-->
                     <StackLayout Orientation="Horizontal">

@@ -11,7 +11,8 @@
              x:Class="BudgetAppCross.Views.NewMultiBillView">
 
     <ContentView.Content>
-        <Frame HasShadow="True" Padding="2">
+        <Frame HasShadow="True" Padding="2"
+               BackgroundColor="Transparent">
             <StackLayout>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -19,7 +20,10 @@
                         <ColumnDefinition/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <Label Text="{Binding BillNumberString}"/>
+                    <Label Text="{Binding BillNumberString}"
+                           VerticalTextAlignment="Center"
+                           FontSize="Large"
+                           />
                     <!--Date-->
                     <Label Text="Due Date"
                        Grid.Row="0" Grid.Column="1"

@@ -13,7 +13,7 @@
              x:TypeArguments="vms:DateRangeViewModel"
              x:Name="currentPage"
              Title="{Binding Title}"
-                       BackgroundColor="{StaticResource PrimaryBackground}"
+                       BackgroundColor="{StaticResource ButtonBackground}"
             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
             ios:Page.UseSafeArea="True"
              >
