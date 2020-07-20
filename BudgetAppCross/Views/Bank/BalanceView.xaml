@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<views:MvxContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             mc:Ignorable="d"
+             xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+             xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
+             x:Class="BudgetAppCross.Views.BalanceView">
+
+   
+    <ContentView.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <!--<ColumnDefinition Width="Auto"/>-->
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!--<Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
+                   Grid.Column="0"/>-->
+            <controls:CurrencyEntry Text="{Binding Amount}" Grid.Column="0"/>
+            <DatePicker Date="{Binding Timestamp}"
+                    Grid.Column="1">
+                <DatePicker.Behaviors>
+                    <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                </DatePicker.Behaviors>
+            </DatePicker>
+        </Grid>
+
+        <!--<RefreshView >
+            <ListView x:Name="BillListView" ItemsSource="{Binding Bills}"
+                          SelectedItem="{Binding SelectedBill}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        --><!--<views:BillView/>-->
+                        <!--BackgroundColor="{Binding BillStatus, Converter={local:NextBillColorConverter}--><!--
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <CheckBox VerticalOptions="Center"
+                                          HorizontalOptions="Center"
+                                          IsChecked="{Binding IsPaid}"/>
+                                <Entry Text="{Binding Amount}"
+                                           WidthRequest="70"/>
+                                <DatePicker Date="{Binding Date}"
+                                                WidthRequest="100"/>
+                            </StackLayout>
+                        </ViewCell>
+
+
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </RefreshView>-->
+    </ContentView.Content>
+</views:MvxContentView>

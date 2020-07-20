@@ -1,8 +1,11 @@
-﻿using BudgetAppCross.Models;
+﻿using BudgetAppCross.Core.Services;
+using BudgetAppCross.Models;
 using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -17,8 +20,8 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Properties
-        private ObservableCollection<BankAccount> accounts;
-        public ObservableCollection<BankAccount> Accounts
+        private ObservableCollection<BankAccountQuickViewModel> accounts = new ObservableCollection<BankAccountQuickViewModel>();
+        public ObservableCollection<BankAccountQuickViewModel> Accounts
         {
             get { return accounts; }
             set
@@ -27,8 +30,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private BankAccount selectedAccount;
-        public BankAccount SelectedAccount
+        private BankAccountQuickViewModel selectedAccount;
+        public BankAccountQuickViewModel SelectedAccount
         {
             get { return selectedAccount; }
             set
@@ -42,7 +45,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         #region Commands
         public ICommand AddAccountCommand { get; }
-        public ICommand DeleteAccountCommand { get; }
+        //public ICommand DeleteAccountCommand { get; }
         #endregion
 
         #region Constructors
@@ -52,30 +55,57 @@ namespace BudgetAppCross.Core.ViewModels
             Title = "Bank Accounts";
 
             AddAccountCommand = new Command(async () => await navigationService.Navigate<NewBankAccountViewModel>());
-            DeleteAccountCommand = new Command(() => OnDeleteAccount());
+            //DeleteAccountCommand = new Command(() => OnDeleteAccount());
+            Messenger.Register<ChangeBalanceMessage>(this, async x => await OnChangeBalanceMessage());
+
+            var _ = LoadAccounts();
         }
 
         #endregion
 
         #region Methods
 
-        public override void ViewAppeared()
+        public async override void ViewAppeared()
         {
             base.ViewAppeared();
             SelectedAccount = null;
-            Accounts = new ObservableCollection<BankAccount>(BankAccountManager.AllAccounts);
         }
 
-        public override async void ViewDestroy(bool viewFinishing = true)
+        private async Task LoadAccounts()
         {
-            base.ViewDestroy(viewFinishing);
-            await StateManager.SaveToFile();
+            var allAccts = await BudgetDatabase.GetBankAccounts();
+            var accts = allAccts.Where(x => x.AccountID != 1).OrderBy(x => x.Nickname);
+
+            Accounts.Clear();
+            foreach (var item in accts)
+            {
+                Accounts.Add(new BankAccountQuickViewModel(navigationService, item));
+            }
+        } 
+
+        public Task ShowBankAccount(BankAccount account)
+        {
+            return navigationService.Navigate<BankAccountViewModel, BankAccount>(account);
+
         }
 
-        private void OnDeleteAccount()
+        //public override async void ViewDestroy(bool viewFinishing = true)
+        //{
+        //    base.ViewDestroy(viewFinishing);
+        //    //await StateManager.SaveToFile();
+        //}
+
+        private async void OnDeleteAccount()
         {
-            BankAccountManager.DeleteAccount(SelectedAccount);
+            await BudgetDatabase.DeleteBankAccount(SelectedAccount.BankAccount);
+            //Console.WriteLine(count); 
+            //BankAccountManager.DeleteAccount(SelectedAccount);
             Accounts.Remove(selectedAccount);
+        }
+
+        private async Task OnChangeBalanceMessage()
+        {
+            await LoadAccounts();
         }
         #endregion
 

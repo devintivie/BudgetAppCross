@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
+             xmlns:models="clr-namespace:BudgetAppCross.Models;assembly=BudgetAppCross.Models"
+             mc:Ignorable="d"
+             Title="Add Bill"
+                      BackgroundColor="{StaticResource PrimaryBackground}"
+             x:Class="BudgetAppCross.Views.NewBillsPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout>
+                    <!--<Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="130"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>-->
+
+
+                    <!--Payee-->
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="New Payee"
+                           Grid.Row="0" Grid.Column="0"
+                           VerticalOptions="Center"
+                           FontSize="Large"/>
+                        <Switch IsToggled="{Binding IsNewPayee}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Select Payee"
+                                VerticalOptions="Center"
+                                Grid.Row="0" Grid.Column="1"
+                               IsVisible="{Binding IsNewPayee, Converter={cvt:InverseBoolConverter}}"
+                                FontSize="Large"/>
+                        <Label Text="Input Payee"
+                                VerticalOptions="Center"
+                                Grid.Row="0" Grid.Column="1"
+                                FontSize="Large"
+                               IsVisible="{Binding IsNewPayee}"/>
+                        <Picker ItemsSource="{Binding PayeeOptions}"
+                                HorizontalOptions="EndAndExpand"
+                                WidthRequest="170"
+                            SelectedItem="{Binding SelectedPayee}"
+                            IsVisible="{Binding IsNewPayee, Converter={cvt:InverseBoolConverter}}"/>
+                        <Entry Text="{Binding NewPayee}" 
+                               HorizontalOptions="EndAndExpand"
+                           IsVisible="{Binding IsNewPayee}"
+                           Grid.Row="1" Grid.Column="0"
+                           WidthRequest="170"/>
+                    </StackLayout>
+                    
+                    <!--Amount Due-->
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Amount Due"
+                                VerticalOptions="Center"
+                                Grid.Row="0" Grid.Column="1"
+                                FontSize="Large"/>
+                        <!--<Entry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
+                                Keyboard="Numeric"
+                               ClearButtonVisibility="WhileEditing"
+                               Placeholder="$0.00"
+                                Grid.Row="1" Grid.Column="1"
+                                Focused="Entry_Focused"
+                                Unfocused="Entry_Unfocused"
+                               
+                               TextChanged="Entry_TextChanged"
+                               HorizontalTextAlignment="End"
+                               HorizontalOptions="EndAndExpand"
+                                WidthRequest="140"/>-->
+                        <controls:CurrencyEntry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
+                               HorizontalTextAlignment="End"
+                               HorizontalOptions="EndAndExpand"
+                                WidthRequest="140"/>
+                    </StackLayout>
+
+                    <!--Amount Due--><!--
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Amount Currency"
+                                VerticalOptions="Center"
+                                Grid.Row="0" Grid.Column="1"
+                                FontSize="Large"/>
+                        <controls:CurrencyEntry Text="{Binding CustomAmount, UpdateSourceEventName=Unfocused}" 
+                               HorizontalTextAlignment="End"
+                               HorizontalOptions="EndAndExpand"
+                                WidthRequest="140"/>
+                    </StackLayout>-->
+
+                    <!--Account-->
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Account"
+                               Grid.Row="0" Grid.Column="4"
+                               VerticalOptions="Center"
+                               FontSize="Large"/>
+                        <Picker ItemsSource="{Binding AccountOptions}"
+                                SelectedItem="{Binding SelectedAccount}"
+                                HorizontalOptions="EndAndExpand"
+                                WidthRequest="100"/>
+                    </StackLayout>
+                    <!--Add Multiple-->
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Add Multiple"
+                           VerticalOptions="Center"
+                           FontSize="Large"/>
+                        <Switch IsToggled="{Binding AddMultiple}"/>
+                    </StackLayout>
+
+                    <!--First Bill Due-->
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding BillDueString}"
+                               Grid.Row="0" Grid.Column="0"
+                               VerticalOptions="Center"
+                               FontSize="Large"/>
+                        <DatePicker x:Name="pickerStartDate"
+                                    Date="{Binding StartDate}"
+                                    HorizontalOptions="EndAndExpand"
+                                    Grid.Column="1"
+                                    />
+                    </StackLayout>
+                    <!--Add Multiple-->
+                    <StackLayout Orientation="Horizontal" IsVisible="{Binding AddMultiple, Converter={cvt:InverseBoolConverter}}">
+                        <Label Text="Already Paid?"
+                           VerticalOptions="Center"
+                           FontSize="Large"/>
+                        <Switch IsToggled="{Binding IsPaid}"/>
+                    </StackLayout>
+                    
+                    <!--Repeat Frequency-->
+                    <StackLayout Orientation="Horizontal" IsVisible="{Binding AddMultiple}">
+                         <Label Text="Repeat..."
+                               Grid.Row="1" Grid.Column="0"
+                               VerticalOptions="Center"
+                               FontSize="Large"/>
+                        <Picker ItemsSource="{Binding Source={cvt:EnumBindingSource {x:Type models:DueDateFrequencies}}}"
+                                Grid.Row="1" Grid.Column="1"
+                                 HorizontalOptions="EndAndExpand"
+                            SelectedItem="{Binding DueDateFrequency}"
+                            />
+                    </StackLayout>
+                    
+                    <!--Repeat Until-->
+                    <StackLayout Orientation="Horizontal" IsVisible="{Binding AddMultiple}">
+                        <Label Text="Repeat Until"
+                           Grid.Row="2" Grid.Column="0"
+                           VerticalOptions="Center"
+                           FontSize="Large"/>
+                        <DatePicker x:Name="pickerEndDate"
+                                Date="{Binding EndDate}"
+                                Grid.Row="2" HorizontalOptions="EndAndExpand"
+                                />
+                    </StackLayout>
+
+                    <!--Bill Count-->
+                    <!--<Frame IsVisible="{Binding AddMultiple}" HasShadow="False">-->
+                    <StackLayout IsVisible="{Binding AddMultiple}">
+                            <StackLayout Orientation="Horizontal" IsVisible="{Binding AddMultiple}">
+                                <Label Text="Bills to be added: Count = " TextDecorations="Underline"/>
+                                <Label Text="{Binding BillCount}" VerticalOptions="Center" 
+                               HorizontalOptions="End"/>
+                            </StackLayout>
+
+
+                            <StackLayout BindableLayout.ItemsSource="{Binding NewBills}">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout>
+                                            <controls:NewMultiBillView/>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </StackLayout>
+                        </StackLayout>
+                    <!--</Frame>-->
+                    
+                    
+
+
+                </StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Cancel" Command="{Binding CancelCommand}"
+                            />
+                    <Button Text="Save" Command="{Binding SaveCommand}"
+                            
+                            Grid.Column="1"/>
+                </Grid>
+                <!--<StackLayout Orientation="Horizontal">
+                    <Button Text="Cancel" Command="{Binding CancelCommand}"/>
+                    <Button Text="Save" Command="{Binding SaveCommand}"/>
+                </StackLayout>-->
+            </StackLayout>
+        </ScrollView>
+        
+        
+    </ContentPage.Content>
+</views:MvxContentPage>

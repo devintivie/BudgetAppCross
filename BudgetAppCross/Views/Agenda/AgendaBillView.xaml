@@ -4,24 +4,100 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-             
+             xmlns:cvtlocal="clr-namespace:BudgetAppCross.Converters"
+             xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+             xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.AgendaBillView">
     <ContentView.Content>
-        <FlexLayout Wrap="Wrap">
-            <CheckBox IsChecked="{Binding IsPaid}"
-                      WidthRequest="60"/>
-            <Label Text="{Binding Company}"
-                   FontSize="Body"
-                       VerticalOptions="Center"
-                       WidthRequest="120"/>
-            <Entry Text="{Binding Amount}"
-                       WidthRequest="85"
-                       HorizontalOptions="Center"
-                       VerticalOptions="CenterAndExpand"/>
-            <Entry Text="{Binding Confirmation}"
-                       WidthRequest="200"/>
-        </FlexLayout>
+        <Frame BorderColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+               BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+               Margin="2" Padding="3"
+               >
+            <Frame Padding="0" HasShadow="False">
+
+                <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="125"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox IsChecked="{Binding IsPaid}" 
+                          Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+                          Grid.Row="0" Grid.RowSpan="2"/>
+                    <Label Text="{Binding Payee}" TextColor="{StaticResource PrimaryForeground}"
+                       Grid.Column="1"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            WidthRequest="120"/>
+                    <controls:CurrencyEntry Text="{Binding Amount}"
+                            WidthRequest="100"
+                            Grid.Column="2"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Center"/>
+                    <DatePicker Date="{Binding Date}"
+                            Grid.Column="3"
+                            
+                        >
+                        <DatePicker.Behaviors>
+                            <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                        </DatePicker.Behaviors>
+                    </DatePicker>
+
+                    <Picker ItemsSource="{Binding AccountOptions}"
+                            Grid.Row="1" Grid.Column="1"
+                            SelectedItem="{Binding SelectedAccount}"
+                        VerticalOptions="Center"
+                            WidthRequest="200"/>
+                    <Entry Text="{Binding Confirmation}"
+                       Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"
+                           WidthRequest="200"/>
+
+
+                </Grid>
+            </Frame>
+            <!--<FlexLayout Wrap="Wrap" 
+                        
+                        BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
+                <CheckBox IsChecked="{Binding IsPaid}" 
+                      WidthRequest="30"/>
+                    <Label Text="{Binding Payee}"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            WidthRequest="120"/>
+                    <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
+                            WidthRequest="100"
+                           
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand"
+                           BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}"/>
+                    <DatePicker Date="{Binding Date}"
+                                BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}"
+                        >
+                        <DatePicker.Behaviors>
+                            <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                        </DatePicker.Behaviors>
+                    </DatePicker>
+
+                    <Picker ItemsSource="{Binding AccountOptions}"
+                            BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}"
+                    
+                            SelectedItem="{Binding SelectedAccount}"
+                            WidthRequest="200"/>
+                    <Entry Text="{Binding Confirmation}"
+                           BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}"
+                           WidthRequest="200"/>
+
+
+            </FlexLayout>-->
+        </Frame>
+        
         <!--<StackLayout>
             <StackLayout Orientation="Horizontal">
                 <CheckBox IsChecked="{Binding IsPaid}"

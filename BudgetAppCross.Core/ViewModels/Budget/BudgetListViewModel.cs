@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace BudgetAppCross.Core.ViewModels
 {
@@ -23,8 +24,8 @@ namespace BudgetAppCross.Core.ViewModels
         #region Properties
         //public ObservableCollection<BillTracker> Trackers { get; set; } = new ObservableCollection<BillTracker>();
 
-        private ObservableCollection<BillTracker> trackers = new ObservableCollection<BillTracker>();
-        public ObservableCollection<BillTracker> Trackers
+        private ObservableCollection<BillTrackerQuickViewModel> trackers = new ObservableCollection<BillTrackerQuickViewModel>();
+        public ObservableCollection<BillTrackerQuickViewModel> Trackers
         {
             get { return trackers; }
             set
@@ -33,8 +34,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private BillTracker selectedTracker;
-        public BillTracker SelectedTracker
+        private BillTrackerQuickViewModel selectedTracker;
+        public BillTrackerQuickViewModel SelectedTracker
         {
             get { return selectedTracker; }
             set
@@ -60,47 +61,92 @@ namespace BudgetAppCross.Core.ViewModels
         {
             navigationService = navigation;
             Title = "Bill List";
-            AddBTCommand = new Command(async () => await navigationService.Navigate<NewBillTrackerViewModel>());
+
+            AddBTCommand = new Command(async () => await navigationService.Navigate<NewBillsViewModel, string>(string.Empty));
             EditCommand = new Command(async () => await OnEdit());
             DeleteCommand = new Command(async () => await OnDelete());
-            SaveBudgetCommand = new Command(async() => await OnSaveBudget());
-            LoadBudgetCommand = new Command(async () => await OnLoadBudget());
+            //SaveBudgetCommand = new Command(async() => await OnSaveBudget());
+            //LoadBudgetCommand = new Command(async () => await OnLoadBudget());
             RefreshItemsCommand = new Command(async () => await OnRefresh());
+
+            Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage());
+
+            var _ = LoadBills();
+
+
+            //    var countGroupQuery = from table in dataTable.AsEnumerable()
+            //                          group table by table.Field<string>(Column1) into groupedTable
+            //                          select new
+            //                          {
+            //                              value = groupedTable.Key,
+            //                              count = groupedTable.Count()
+            //                          };
+
+            //var query = dataTable.AsEnumerable()
+            //         .GroupBy(x => table.Field<string>(Column1),
+            //                  StringComparer.InvariantCultureIgnoreCase)
+            //         .Select(groupedTable => new
+            //         {
+            //             value = groupedTable.Key,
+            //             count = groupedTable.Count()
+            //         });
+
         }
 
         
+
         #endregion
 
         #region Methods
-
         public override void ViewAppeared()
         {
             base.ViewAppeared();
-            SelectedTracker = null;
-            Trackers = new ObservableCollection<BillTracker>(BillManager.AllTrackers);
+            //SelectedTracker = null;
+            //LoadBills();
         }
 
-        public override async void ViewDestroy(bool viewFinishing = true)
+        private async Task LoadBills()
         {
-            base.ViewDestroy(viewFinishing);
-            await StateManager.SaveToFile();
-        }
-        public Task ShowBillTracker(BillTracker bt)
-        {
-            return navigationService.Navigate<BillTrackerViewModel, BillTracker>(bt);
+            var names = await BudgetDatabase.GetBillPayees();
+            //List<Grouping<string, Bill>> data = (bills.GroupBy(x => x.Payee, StringComparer.OrdinalIgnoreCase)
+            //            .Select(groupedTable => new Grouping<string, Bill>(groupedTable.Key, groupedTable))).ToList();
+
+            names.Sort();
+            Trackers.Clear();
+            foreach (var name in names)
+            {
+                //var bt = new BillTracker(item.Key, item.Grouped);
+                Trackers.Add(new BillTrackerQuickViewModel(navigationService, name));
+            }
         }
 
-        private async Task OnSaveBudget()
+        private async Task OnChangeBillMessage()
         {
-            await StateManager.SaveToFile();
+            await LoadBills();
         }
 
-        private async Task OnLoadBudget()
-        {
-            await StateManager.LoadFromFile();
-            UpdateTrackers();
 
+        //public Task ShowBillTracker(BillTracker bt)
+        //{
+        //    return navigationService.Navigate<BillTrackerViewModel, string>(bt.CompanyName);
+        //}
+
+        public Task ShowBillTracker(string payee)
+        {
+            return navigationService.Navigate<BillTrackerViewModel, string>(payee);
         }
+
+        //private async Task OnSaveBudget()
+        //{
+        //    await StateManager.SaveToFile();
+        //}
+
+        //private async Task OnLoadBudget()
+        //{
+        //    await StateManager.LoadFromFile();
+        //    UpdateTrackers();
+
+        //}
 
         private async Task OnEdit()
         {
@@ -123,7 +169,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private void UpdateTrackers()
         {
-            Trackers = new ObservableCollection<BillTracker>(BillManager.AllTrackers);
+            //Trackers = new ObservableCollection<BillTracker>(BillManager.AllTrackers);
         }
 
         private void Test()

@@ -8,6 +8,8 @@
              x:TypeArguments="vms:AboutViewModel"
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.AboutPage"
+                      xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
              Title="{Binding Title}">
     
     <!--<ContentPage.BindingContext>

@@ -19,5 +19,11 @@ namespace BudgetAppCross.Views
         {
             InitializeComponent();
         }
+
+        private void BankAccount_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var acct = (BankAccount)e.Item.GetType().GetProperty("BankAccount").GetValue(e.Item);
+            ViewModel.ShowBankAccount(acct);
+        }
     }
 }

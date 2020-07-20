@@ -6,6 +6,8 @@
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              mc:Ignorable="d"
+             Title="{Binding CompanyName}"
+                      BackgroundColor="{StaticResource PrimaryBackground}"
              x:Class="BudgetAppCross.Views.BillTrackerPage">
 
     <!--xmlns:controls="clr-namespace:BudgetAppCross.Views"-->
@@ -13,20 +15,44 @@
              <!--x:TypeArguments="vms:BudgetListViewModel"-->
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddBillCommand}"/>
-        <ToolbarItem Text="Delete" Command="{Binding DeleteBillCommand}"/>
+        <!--<ToolbarItem Text="Delete" Command="{Binding DeleteBillCommand}"/>-->
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding BillTracker.CompanyName}"
-                   FontSize="Title"/>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Paid" WidthRequest="60"/>
-                <Label Text="Amount Due" WidthRequest="130"
-                       HorizontalOptions="Center"/>
-                <Label Text="Due Date" WidthRequest="100"/>
-            </StackLayout>
-            <ScrollView>
-                <StackLayout BindableLayout.ItemsSource="{Binding Bills}">
+            <!--<Label Text="{Binding CompanyName}"
+                   FontSize="Title"/>-->
+            <!--<StackLayout Orientation="Horizontal">
+                <Label Text="Paid" 
+                       />
+                <Label Text="Amount Due" 
+                       
+                       />
+                <Label Text="Due Date" 
+                       />
+                <Label Text="Account" 
+                       />
+                <Label Text="Confirmatadadassasdasdasdsadion" 
+                       />
+            </StackLayout>-->
+            <!--<ScrollView>-->
+                <ListView ItemsSource="{Binding Bills}"
+                          HasUnevenRows="True"
+                          SelectedItem="{Binding SelectedBill}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Delete"
+                                              Command="{Binding DeleteThisCommand}"
+                                              IsDestructive="True"
+                                              CommandParameter="{Binding .}"/>
+                                </ViewCell.ContextActions>
+                                <controls:BillView/>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <!--<StackLayout BindableLayout.ItemsSource="{Binding Bills}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <StackLayout>
@@ -34,8 +60,8 @@
                             </StackLayout>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
-                </StackLayout>
-            </ScrollView>
+                </StackLayout>-->
+            <!--</ScrollView>-->
             
             <Label Text="{Binding DateTotal}"/>
             <!--<RefreshView >

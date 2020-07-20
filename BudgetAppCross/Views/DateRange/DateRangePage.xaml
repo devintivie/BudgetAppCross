@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="BudgetAppCross.Views.DateRangePage"
+             xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
+             xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
+             xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
+             xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+             x:TypeArguments="vms:DateRangeViewModel"
+             x:Name="currentPage"
+             Title="{Binding Title}"
+                       BackgroundColor="{StaticResource ButtonBackground}"
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+            ios:Page.UseSafeArea="True"
+             >
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Add" Command="{Binding AddBillCommand}"
+                     Order="Primary"/>
+        <!--<ToolbarItem Text="Delete" Command="{Binding DeleteCommand}"
+                     Order="Secondary"/>-->
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content >
+        <Grid BackgroundColor="{StaticResource ButtonBackground}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0">
+                <Grid>
+                    <!--Start Date-->
+                    <Label Text="Start Date" Grid.Row="0" Grid.Column="0"
+                           
+                       FontSize="Title"/>
+                    <DatePicker Date="{Binding StartDate}"
+                            Grid.Row="0" Grid.Column="1"
+                            FontSize="Subtitle"
+                                HorizontalOptions="End">
+                        <DatePicker.Behaviors>
+                            <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                        </DatePicker.Behaviors>
+                    </DatePicker>
+
+                    <!--End Date-->
+                    <Label Text="End Date" Grid.Row="1" Grid.Column="0"
+                       FontSize="Title"
+                           />
+
+                    <DatePicker Date="{Binding EndDate}"
+                            Grid.Row="1" Grid.Column="1"
+                            FontSize="Subtitle"
+                                HorizontalOptions="End"
+                            >
+                        <DatePicker.Behaviors>
+                            <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                        </DatePicker.Behaviors>
+                    </DatePicker>
+                </Grid>
+                
+                <!-- Select Account-->
+                <Label Text="Account To View" Grid.Row="0" Grid.Column="1"
+                       FontSize="Title"/>
+                <Picker ItemsSource="{Binding AccountOptions}"
+                    SelectedItem="{Binding SelectedAccount}"
+                    Grid.Column="3"/>
+                
+                <Label Text="Bills" FontSize="Title"/>
+
+            </StackLayout>
+            
+            <ListView ItemsSource="{Binding Bills}"
+                      HasUnevenRows="True"
+                      Grid.Row="1"
+                            
+                  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Delete" 
+                                              Command="{Binding DeleteThisCommand}"
+                                          IsDestructive="True"
+                                          
+                                              CommandParameter="{Binding .}"/>
+                                <MenuItem Text="Copy"
+                                          Command="{Binding CopyThisCommand}"
+                                          CommandParameter="{Binding .}"/>
+                            </ViewCell.ContextActions>
+                            <controls:AgendaBillView/>
+                        </ViewCell>
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Grid Grid.Row="2" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Starting Balance" FontSize="Subtitle"
+                       HorizontalOptions="Center"
+                       Grid.Row="0"/>
+                <Label Text="{Binding StartingBalance, Converter={cvt:CurrencyConverter}}"
+                       FontSize="Subtitle"
+                       HorizontalOptions="Center"
+                       Grid.Row="0" Grid.Column="1"/>
+                <Label Text="Bill Total"
+                       FontSize="Subtitle"
+                       HorizontalTextAlignment="Center"
+                       Grid.Row="1" Grid.Column="0"
+                       />
+                <Label Text="Remaining" Grid.Row="2" Grid.Column="0"
+                       FontSize="Subtitle"
+                       HorizontalTextAlignment="Center"/>
+                <Label Text="{Binding BillTotal, Converter={cvt:CurrencyConverter}}" Grid.Row="1" Grid.Column="1"
+                       FontSize="Subtitle"
+                       HorizontalOptions="Center"/>
+                <Label Text="{Binding Remainder, Converter={cvt:CurrencyConverter}}" Grid.Row="2" Grid.Column="1"
+                       FontSize="Subtitle"
+                       HorizontalTextAlignment="Center"/>
+            </Grid>
+           
+        </Grid>
+        
+    </ContentPage.Content>
+</views:MvxContentPage>
+
+
+
+
+<!--<ContentPage.Content>
+    <StackLayout>
+        <ListView IsGroupingEnabled="True"
+                      GroupDisplayBinding="{Binding Key}"
+                      GroupShortNameBinding="{Binding Key}"
+                      ItemsSource="{Binding MonkeysGrouped}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <Label Text="{Binding Name}" />
+                                <Label Text="{Binding Location}" />
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage.Content>-->
+
+
+
+
+<!--<ContentPage.Content>
+    <StackLayout>
+        <ListView IsGroupingEnabled="True"
+                      GroupDisplayBinding="{Binding Key}"
+                      GroupShortNameBinding="{Binding Key}"
+                      ItemsSource="{Binding BillsGrouped}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            --><!--<StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="{Binding Company}" />
+                                    <Label Text="{Binding Amount}" />
+                                </StackLayout>--><!--
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Company}"
+                                           WidthRequest="150"/>
+                                <CheckBox VerticalOptions="Center"
+                                          HorizontalOptions="Center"
+                                          IsChecked="{Binding IsPaid}"
+                                          />
+                                <Entry Text="{Binding Amount}"
+                                           WidthRequest="70"/>
+                                <Entry Text="{Binding Confirmation}"
+                                           WidthRequest="120"/>
+                            </StackLayout>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage.Content>-->
+
+
+
+<!--Working code for just datatemplate to viewmodel as wrapped model
+    simple listview-->
+<!--<StackLayout>
+    <ListView ItemsSource="{Binding Entries}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <controls:AgendaBillView/>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</StackLayout>-->
+
+
+<!--<ScrollView>
+                <StackLayout BindableLayout.ItemsSource="{Binding Accounts}"
+                             VerticalOptions="FillAndExpand">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <controls:DateRangeEntryView/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>-->
+
+<!--<StackLayout BindableLayout.ItemsSource="{Binding Transactions}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <controls:AgendaBillView/>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+                -->
+<!--<ListView ItemsSource="{Binding BillsGrouped}"
+                      MinimumHeightRequest="70"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <controls:AgendaEntryView/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+<!--
+            </StackLayout>-->
+<!--<Label Text="{Binding StartingBalance}"
+                   FontSize="Title"/>
+            <Label Text="{Binding DateRangeTotal}"
+                   FontSize="Title"/>
+            <Label Text="{Binding EndingBalance}"
+                   FontSize="Title"/>
+            <Label Text="{Binding StartingBalance2}"
+                   FontSize="Title"/>
+            <Label Text="{Binding DateRangeTotal2}"
+                   FontSize="Title"/>
+            <Label Text="{Binding EndingBalance2}"
+                   FontSize="Title"/>-->

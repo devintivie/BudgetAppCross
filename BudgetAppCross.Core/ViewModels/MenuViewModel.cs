@@ -73,6 +73,20 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+        private IMvxAsyncCommand showAccountPageCommand;
+
+        public IMvxAsyncCommand ShowAccountPageCommand
+        {
+            get 
+            {
+                showAccountPageCommand = showAccountPageCommand ?? new MvxAsyncCommand(ShowAccountPageAsync); 
+                return showAccountPageCommand;
+            }
+        }
+
+        //new Command(async () => await navigationService.Navigate<NewBankAccountViewModel>());
+
+
         #endregion
 
         #region Constructors
@@ -88,11 +102,13 @@ namespace BudgetAppCross.Core.ViewModels
 
             PageList = new MvxObservableCollection<NavigablePage>()
             {
+                
                 NavigablePage.Paycheck,
                 NavigablePage.BillList,
                 NavigablePage.Agenda,
                 NavigablePage.BankOverview,
-                NavigablePage.About
+                NavigablePage.About,
+                //NavigablePage.Purchasing
             };
         }
         #endregion
@@ -112,8 +128,15 @@ namespace BudgetAppCross.Core.ViewModels
             //    default:
             //        break;
             //}
+            CloseMenu();
             switch (SelectedPage)
             {
+                //case NavigablePage.Account:
+                //    await navigationService.Navigate<AccountViewModel>();
+                //    break;
+                case NavigablePage.LoadBudget:
+                    await navigationService.Navigate<SelectBudgetViewModel>();
+                    break;
                 case NavigablePage.Paycheck:
                     await navigationService.Navigate<DateRangeViewModel>();
                     break;
@@ -129,9 +152,24 @@ namespace BudgetAppCross.Core.ViewModels
                 case NavigablePage.About:
                     await navigationService.Navigate<AboutViewModel>();
                     break;
+                case NavigablePage.Purchasing:
+                    await navigationService.Navigate<PurchasingViewModel>();
+                    break;
                 default:
                     break;
             }
+            
+        }
+
+        private async Task ShowAccountPageAsync()
+        {
+            CloseMenu();
+            await navigationService.Navigate<AccountViewModel>();
+            
+        }
+
+        private void CloseMenu()
+        {
             if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
             {
                 masterDetailPage.IsPresented = false;

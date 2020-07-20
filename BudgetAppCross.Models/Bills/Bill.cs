@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json;
+using SQLite;
+using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -7,13 +9,15 @@ using System.Text;
 namespace BudgetAppCross.Models
 {
     [Serializable]
-    public class Bill : IComparable//, ITransaction
+    public class Bill : IComparable
     {
         #region Fields
         const string DEFAULT_CONFIRMATION = "None";
         #endregion
 
         #region Properties
+        [PrimaryKey, AutoIncrement]
+        public int ID { get; set; }
         private DateTime date;
         public DateTime Date
         {
@@ -28,8 +32,8 @@ namespace BudgetAppCross.Models
             }
         }
 
-        public double Amount { get; set; }
-        public string Confirmation { get; set; }
+        public decimal Amount { get; set; }
+        public string Payee { get; set; }
 
         private bool isPaid;
         public bool IsPaid
@@ -59,32 +63,39 @@ namespace BudgetAppCross.Models
             }
         }
 
+        [ForeignKey(typeof(BankAccount))]
+        public int AccountID { get; set; }
+        [ManyToOne(CascadeOperations = CascadeOperation.CascadeRead)]
+        public BankAccount BankAccount { get; set; }
 
-        public string AccountID { get; set; }
-        [JsonIgnore]
+        [JsonIgnore][Ignore]
         public BillStatus BillStatus { get; set; }
+        public string Confirmation { get; set; }
 
 
         #endregion
 
         #region Constructors
-        public Bill() : this(0.0, DateTime.Now.Date.AddDays(7)) { }
+        public Bill() : this("", 0.0m, DateTime.Today) { }
 
-        public Bill(int month, int day, string acctID = "0000") : this(0, month, day, acctID) { }
+        public Bill(string payee) : this(payee, 0.0m, DateTime.Today) { }
 
-        public Bill(double iAmount, int month, int day, string acctID = "0000") : this(iAmount, new DateTime(DateTime.Now.Year, month, day), acctID) { }
+        public Bill(string name, int month, int day) : this(name, 0, month, day) { }
+
+        public Bill(string name, decimal iAmount, int month, int day) : this(name, iAmount, new DateTime(DateTime.Now.Year, month, day)) { }
 
         //public Bill(double iAmount, int month, int day) : this(iAmount, new DateTime(DateTime.Now.Year, month, day), acctID) { }
 
-        public Bill(double iAmount, DateTime iDueDate, string acctID = "0000")
+        public Bill(string payee, decimal iAmount, DateTime iDueDate)
         {
+            Payee = payee;
             Date = iDueDate;
             Amount = iAmount;
             Confirmation = DEFAULT_CONFIRMATION;
             IsPaid = false;
-            AccountID = acctID;
             GetBillStatus();
         }
+
         #endregion
 
         #region Methods

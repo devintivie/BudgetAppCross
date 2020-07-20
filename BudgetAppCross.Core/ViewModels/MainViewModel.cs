@@ -5,33 +5,72 @@ using MvvmCross.ViewModels;
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using SQLite;
+using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class MainViewModel : MvxViewModel
+    public class MainViewModel : BaseViewModel
     {
         readonly IMvxNavigationService navigationService;
         public MainViewModel(IMvxNavigationService navService)
         {
             navigationService = navService;
-
-            StateManager.Instance.LoadFromFile();
         }
 
-        public override async void ViewAppearing()
+        public override void ViewAppearing()
         {
             base.ViewAppearing();
+
+            var _ = NavigateInitial();
+            //var mainAccount = new BankAccount(450, "-", "Chase", "Main Account");
+            //await BudgetDatabase.SaveBankAccount(mainAccount);
+
             
-            await navigationService.Navigate<MenuViewModel>();
-            await navigationService.Navigate<DateRangeViewModel>();
         }
 
-        public override async void ViewDestroy(bool viewFinishing = true)
+        private async Task NavigateInitial()
         {
-            base.ViewDestroy(viewFinishing);
+            var name = await StateManager.LoadState();
 
-            await StateManager.Instance.SaveToFile();
+            if (name == null)
+            {
+                //if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
+                //{
+                //    masterDetailPage.IsPresented = false;
+                //}
+                //else if (Application.Current.MainPage is NavigationPage navigationPage
+                //         && navigationPage.CurrentPage is MasterDetailPage nestedMasterDetail)
+                //{
+                //    nestedMasterDetail.IsPresented = false;
+                //}
+
+                if(Application.Current.MainPage is MasterDetailPage masterDetailPage)
+                {
+                    masterDetailPage.IsGestureEnabled = false;
+                }
+
+
+                await navigationService.Navigate<MenuViewModel>();
+                await navigationService.Navigate<WelcomeViewModel>();
+            }
+            else
+            {
+                await BudgetDatabase.Initialize();
+                await BudgetDatabase.GetBankAccounts();
+                await navigationService.Navigate<MenuViewModel>();
+                await navigationService.Navigate<AgendaViewModel>();
+            }
+
+            
         }
+
+        //public override async void ViewDestroy(bool viewFinishing = true)
+        //{
+        //    base.ViewDestroy(viewFinishing);
+
+        //    //await StateManager.Instance.SaveToFile();
+        //}
 
     }
 }

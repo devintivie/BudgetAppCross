@@ -27,7 +27,10 @@ namespace BudgetAppCross.Views
 
         private void BTItemTapped(object sender, ItemTappedEventArgs e)
         {
-            ViewModel.ShowBillTracker(e.Item as BillTracker);
+            var payee = (string)e.Item.GetType().GetProperty("Payee").GetValue(e.Item);
+            ViewModel.ShowBillTracker(payee);
+            //ViewModel.ShowBillTracker(e.Item as BillTracker);
+
         }
     }
 }

@@ -11,7 +11,7 @@ using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class AgendaEntryViewModel : MvxViewModel
+    public class AgendaEntryViewModel : BaseViewModel
     {
         #region Fields
         #endregion
@@ -27,8 +27,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private ObservableCollection<AgendaBillViewModel> bills = new ObservableCollection<AgendaBillViewModel>();
-        public ObservableCollection<AgendaBillViewModel> Bills
+        private ObservableCollection<BillViewModel> bills = new ObservableCollection<BillViewModel>();
+        public ObservableCollection<BillViewModel> Bills
         {
             get { return bills; }
             set
@@ -37,8 +37,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private double dateTotal;
-        public double DateTotal
+        private decimal dateTotal;
+        public decimal DateTotal
         {
             get { return dateTotal; }
             set
@@ -55,15 +55,33 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        public AgendaEntryViewModel(Grouping<DateTime, AgendaBill> datagroup )
+        //public AgendaEntryViewModel(Grouping<DateTime, Bill> datagroup )
+        //{
+        //    Date = datagroup.Key;
+        //    foreach (var item in datagroup)
+        //    {
+        //        Bills.Add(new BillViewModel(item));
+        //    }
+
+        //    MessagingCenter.Subscribe<AgendaBillViewModel>(this, "UpdateTotal", async (obj) => OnUpdateTotal());
+
+        //    //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+        //    //{
+        //    //    var newItem = item as Item;
+        //    //    Items.Add(newItem);
+        //    //    await DataStore.AddItemAsync(newItem);
+        //    //});
+        //}
+
+        public AgendaEntryViewModel(Grouping<DateTime, Bill> datagroup)
         {
             Date = datagroup.Key;
             foreach (var item in datagroup)
             {
-                Bills.Add(new AgendaBillViewModel(item));
+                Bills.Add(new BillViewModel(item));
             }
 
-            MessagingCenter.Subscribe<AgendaBillViewModel>(this, "UpdateTotal", async (obj) => OnUpdateTotal());
+            //MessagingCenter.Subscribe<AgendaBillViewModel>(this, "UpdateTotal", async (obj) => OnUpdateTotal());
 
             //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
             //{
@@ -85,7 +103,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private void OnUpdateTotal()
         {
-            var total = 0.0;
+            var total = 0.0m;
             foreach (var item in Bills)
             {
                 total += item.Amount;

@@ -9,18 +9,32 @@
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
              x:TypeArguments="vms:BankOverviewViewModel"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+                      BackgroundColor="{StaticResource ButtonBackground}"
              Title="{Binding Title}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddAccountCommand}"/>
-        <ToolbarItem Text="Delete" Command="{Binding DeleteAccountCommand}"/>
+        <!--<ToolbarItem Text="Delete" Command="{Binding DeleteAccountCommand}"/>-->
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ListView ItemsSource="{Binding Accounts}"
-                  SelectedItem="{Binding SelectedAccount}">
+                  SelectedItem="{Binding SelectedAccount}"
+                  ItemTapped="BankAccount_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <controls:BankAccountView/>
+                    <ViewCell >
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Edit"
+                                      Command="{Binding EditThisCommand}"
+                                      IsDestructive="False"
+                                      CommandParameter="{Binding .}"/>
+                            <MenuItem Text="Delete"
+                                      Command="{Binding DeleteThisCommand}"
+                                      IsDestructive="True"
+                                      CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                        <controls:BankAccountQuickView/>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -47,7 +61,7 @@
                                        FontSize="Title"/>
                                 <Label Text="{Binding Balance}"
                                        FontSize="Title"/>
-                                <Label Text="{Binding UniqueID}"
+                                <Label Text="{Binding AccountID}"
                                        FontSize="Title"/>
                             </StackLayout>
                         </ViewCell>

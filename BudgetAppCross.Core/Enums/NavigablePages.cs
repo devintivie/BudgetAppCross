@@ -6,11 +6,14 @@ namespace BudgetAppCross.Core
 {
     public enum NavigablePage
     {
+        Account,
+        LoadBudget,
         Paycheck,
         BillList,
         Agenda,
         BankOverview,
-        About
+        About,
+        Purchasing
     }
     //[TypeConverter(typeof(EnumDescriptionTypeConverter))]
     //public enum Navigation

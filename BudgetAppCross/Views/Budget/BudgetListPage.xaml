@@ -11,13 +11,15 @@
              x:TypeArguments="vms:BudgetListViewModel"
              Title="{Binding Title}"
              x:Name="BudgetContentPage"
+                      
+             BackgroundColor="{StaticResource NavigationPrimary}"
              >
     <ContentPage.ToolbarItems>
         <!--<ToolbarItem Text="Save" Command="{Binding SaveBudgetCommand}"/>
         <ToolbarItem Text="Load" Command="{Binding LoadBudgetCommand}"/>-->
         <ToolbarItem Text="Add" Command="{Binding AddBTCommand}"/>
         <!--<ToolbarItem Text="Edit" Command="{Binding EditCommand}"/>-->
-        <ToolbarItem Text="Delete" Command="{Binding DeleteCommand}"/>
+        <!--<ToolbarItem Text="Delete" Command="{Binding DeleteCommand}"/>-->
         
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
@@ -29,17 +31,19 @@
                       SelectedItem="{Binding SelectedTracker}"
                       ItemTapped="BTItemTapped"
                       >
+                
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <!--<controls:BillTrackerGlanceView/>-->
                         <ViewCell>
-                            <StackLayout>
+                            <!--<StackLayout>
                                 <Label Text="{Binding CompanyName}"
                                        FontSize="Title"/>
-                            </StackLayout>
+                            </StackLayout>-->
+                            <controls:BillTrackerQuickView/>
                             <ViewCell.ContextActions>
-                                <MenuItem Text="Edit" IsDestructive="True" Command="{Binding Path=BindingContext.DeleteCommand, Source={x:Reference Name=BudgetContentPage}}" CommandParameter="{Binding .}"/>
-                                <MenuItem Text="Delete" IsDestructive="True" Command="{Binding DeleteCommand}" CommandParameter="{Binding .}"/>
+                                <MenuItem Text="Edit" IsDestructive="False" Command="{Binding EditThisCommand}" CommandParameter="{Binding .}"/>
+                                <MenuItem Text="Delete" IsDestructive="True" Command="{Binding DeleteThisCommand}" CommandParameter="{Binding .}"/>
                             </ViewCell.ContextActions>
                         </ViewCell>
                     </DataTemplate>

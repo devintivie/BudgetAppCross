@@ -9,10 +9,6 @@ namespace BudgetAppCross.Models
 {
     public class Grouping<TKey, T> : Collection<T>//ObservableCollection<T>
     {
-        
-
-        
-
         #region Fields
 
         #endregion
@@ -46,12 +42,4 @@ namespace BudgetAppCross.Models
 
     }
 
-    //public class Grouping<TKey, TElement> : IEnumerable
-    //{
-    //    public IEnumerator GetEnumerator()
-    //    {
-    //        throw new NotImplementedException();
-    //        items
-    //    }
-    //}
 }

@@ -5,6 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
+using System.Threading.Tasks;
+using MvvmCross;
+using System.Windows.Input;
+using MvvmCross.Navigation;
+using BaseClasses;
 
 namespace BudgetAppCross.Core.ViewModels
 {
@@ -17,9 +22,15 @@ namespace BudgetAppCross.Core.ViewModels
 
         #region Properties
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
-        public BillManager BillManager => BillManager.Instance;
+        //public BillManager BillManager => BillManager.Instance;
         public StateManager StateManager => StateManager.Instance;
-        public BankAccountManager BankAccountManager => BankAccountManager.Instance;
+        //public BankAccountManager BankAccountManager => BankAccountManager.Instance;
+
+        //public BudgetDatabase BudgetDatabase => BudgetDatabase.Instance;
+        public IDataManager BudgetDatabase = Mvx.IoCProvider.Resolve<IDataManager>();
+
+        public Messenger Messenger => Messenger.Instance;
+
 
         private bool isBusy;
         public bool IsBusy
@@ -51,13 +62,16 @@ namespace BudgetAppCross.Core.ViewModels
 
         #endregion
 
-        #region Constructors
+        #region Commands
+        #endregion
 
+        #region Constructors
         #endregion
 
         #region Methods
-
+        
         #endregion
+
 
 
 

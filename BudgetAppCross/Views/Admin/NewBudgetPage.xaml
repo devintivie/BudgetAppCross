@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
+             mc:Ignorable="d"
+             ios:Page.UseSafeArea="True"
+                      BackgroundColor="{StaticResource PrimaryBackground}"
+             x:Class="BudgetAppCross.Views.NewBudgetPage">
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Budget Name"/>
+                <Entry Text="{Binding BudgetFilename}"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Add Bank Account?"/>
+                    <Switch IsToggled="{Binding IsAddingBankAccount}"/>
+                </StackLayout>
+                <StackLayout IsVisible="{Binding IsAddingBankAccount}">
+                    <Label Text="Bank Account Name"/>
+                    <Entry Text="{Binding FirstBankAccountName}"/>
+                    <Label Text="Balance"/>
+                    <!--<Entry Text="{Binding InitialBalance, Converter={cvt:CurrencyConverter}}"
+                           Keyboard="Numeric"/>-->
+                    <controls:CurrencyEntry Text="{Binding InitialBalance}" Keyboard="Numeric"/>
+                    <Label Text="Date"/>
+                    <DatePicker Date="{Binding InitialBalanceDate}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Go Back" Command="{Binding CancelCommand}"/>
+                    <Button Text="Get Started" Command="{Binding SaveCommand}"/>
+                </StackLayout>
+            </StackLayout>
+            
+        </ScrollView>
+        
+    </ContentPage.Content>
+</views:MvxContentPage>

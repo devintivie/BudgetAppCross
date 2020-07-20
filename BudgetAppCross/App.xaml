@@ -10,11 +10,68 @@
         <ResourceDictionary>
             <!--Global Styles-->
             <Color x:Key="NavigationPrimary">#2196F3</Color>
+            
+            <!--Menu Background-->
+            <Color x:Key="MenuBackground">Black</Color>
+            <!--Menu Button Foreground-->
+            <Color x:Key="MenuButtonForeground">White</Color>
+            <!--Primary Background-->
+            <Color x:Key="PrimaryBackground">#324158</Color>
+            <!--Primary Button Foreground-->
+            <Color x:Key="PrimaryForeground">Black</Color>
+            <!--Primary Button Background-->
+            <Color x:Key="ButtonBackground">#667182</Color>
+            <!--Primary Disabled Background-->
+            <Color x:Key="PrimaryDisabledBackground">#FFDDDDDD</Color>
+            <!--Default Selection Background-->
+            <Color x:Key="DefaultSelectionBackground">#FF4F4F4F</Color>
+
+            <Color x:Key="ControlBackground">White</Color>
+            <Color x:Key="DefaultBackground">#d6bd2d</Color>
+            
+            
+            
+            
+            
             <Style TargetType="NavigationPage">
-                <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
+                <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryBackground}" />
                 <Setter Property="BarTextColor" Value="White" />
+                
             </Style>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="{StaticResource MenuButtonForeground}"/>
+                <Setter Property="FontSize" Value="Title"/>
+            </Style>
+
+            <Style TargetType="Label">
+                <!--<Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackground}"/>-->
+                <Setter Property="TextColor" Value="{StaticResource MenuButtonForeground}"/>
+                
+            </Style>
+
+            <Style TargetType="Entry">
+                <Setter Property="BackgroundColor" Value="{StaticResource ControlBackground}"/>
+                <Setter Property="TextColor" Value="{StaticResource PrimaryForeground}"/>
+            </Style>
+
+            <Style TargetType="Picker">
+                <Setter Property="BackgroundColor" Value="{StaticResource ControlBackground}"/>
+                <Setter Property="TextColor" Value="{StaticResource PrimaryForeground}"/>
+                <Setter Property="Visual" Value="Material"/>
+            </Style>
+            
+            <Style TargetType="DatePicker">
+                <Setter Property="BackgroundColor" Value="{StaticResource ControlBackground}"/>
+                <Setter Property="TextColor" Value="{StaticResource PrimaryForeground}"/>
+            </Style>
+
+            <Style TargetType="ListView">
+                <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackground}"/>
+                
+            </Style>
+            
         </ResourceDictionary>
+        
     </Application.Resources>
     
 </Application>

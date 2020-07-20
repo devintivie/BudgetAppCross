@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 IsIncrementalBuild=true
 IsLocal=False
 EnableLLVM=False
@@ -8,3 +9,15 @@ HttpClientImplementation=NSUrlSessionHandler
 SupportedArchitectures=ARM64
 BuildConfiguration=Debug
 TemplateName={65C0771A-452F-423B-995C-F0AE46E643BA}
+=======
+IsIncrementalBuild=true
+IsLocal=False
+EnableLLVM=False
+UseConcurrentGC=true
+LinkerBehavior=None
+AdditionalSupportedEncodings=
+HttpClientImplementation=NSUrlSessionHandler
+SupportedArchitectures=ARM64
+BuildConfiguration=Debug
+TemplateName={65C0771A-452F-423B-995C-F0AE46E643BA}
+>>>>>>> detached_fix

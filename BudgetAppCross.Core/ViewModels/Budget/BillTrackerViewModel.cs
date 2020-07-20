@@ -11,29 +11,17 @@ using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BillTrackerViewModel : BaseViewModel<BillTracker>//MvxViewModel<BillTracker>
+    public class BillTrackerViewModel : BaseViewModel<string>//MvxViewModel<BillTracker>
     {
         #region Fields
         private IMvxNavigationService navigationService;
-        //private BillTracker billTracker;
         #endregion
 
         #region Properties
-        public BillTracker BillTracker { get; private set; }
+        public string CompanyName { get; private set; }
 
-        //private BillTracker billTracker;
-        //public BillTracker BillTracker
-        //{
-        //    get { return billTracker; }
-        //    private set
-        //    {
-        //        SetProperty(ref billTracker, value);
-        //    }
-        //}
-
-
-        private ObservableCollection<Bill> bills;
-        public ObservableCollection<Bill> Bills
+        private ObservableCollection<BillViewModel> bills = new ObservableCollection<BillViewModel>();
+        public ObservableCollection<BillViewModel> Bills
         {
             get { return bills; }
             private set
@@ -42,8 +30,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        private Bill selectedBill;
-        public Bill SelectedBill
+        private BillViewModel selectedBill;
+        public BillViewModel SelectedBill
         {
             get { return selectedBill; }
             set
@@ -93,6 +81,8 @@ namespace BudgetAppCross.Core.ViewModels
             AddBillCommand = new Command(async () => await OnAddBill());
             ShowOptionsCommand = new Command(() => Console.WriteLine("Swipe Left"));
             DeleteBillCommand = new Command(() =>  OnDeleteBill(), () => CanDeleteBill());
+
+            Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage());
         }
 
         
@@ -100,7 +90,58 @@ namespace BudgetAppCross.Core.ViewModels
         public override void ViewAppeared()
         {
             base.ViewAppeared();
+            UpdateBills();
+        }
 
+        #endregion
+
+        #region Methods
+        public override void Prepare(string parameter)
+        {
+            CompanyName = parameter;
+        }
+
+        public override void ViewDestroy(bool viewFinishing = true)
+        {
+            //SaveBills();
+            base.ViewDestroy(viewFinishing);
+        }
+
+        private async Task UpdateBills()
+        {
+            //var options = await LoadAccountOptions();
+            await BudgetDatabase.UpdateBankAccountNames();
+            var temp = await BudgetDatabase.GetBillsForPayee(CompanyName);
+            var bvms = new List<BillViewModel>();
+            foreach (var item in temp)
+            {
+                bvms.Add(new BillViewModel(item));
+
+            }
+
+            Bills = new ObservableCollection<BillViewModel>(bvms);
+        }
+
+        private async Task<List<string>> LoadAccountOptions()
+        {
+            var options = await BudgetDatabase.GetBankAccounts();
+
+            var names = new List<string>();
+            foreach (var item in options)
+            {
+                names.Add(item.Nickname);
+            }
+
+            return names;
+
+        }
+
+        private async Task SaveBills()
+        {
+            foreach (var bill in Bills)
+            {
+                await BudgetDatabase.SaveBill(bill.Bill);
+            }
         }
 
         private void RefreshCanExecutes()
@@ -110,22 +151,17 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnAddBill()
         {
-            var result = await navigationService.Navigate<NewBillViewModel, string, Bill>(BillTracker.CompanyName);
-
-            if(result != null)
-            {
-                BillManager.AddBill(BillTracker.CompanyName, result);
-            }
-
-            UpdateBills();
-
+            await navigationService.Navigate<NewBillsViewModel, string>(CompanyName);
+            //await navigationService.Navigate<NewBillsViewModel, string, bool>(new Bill(CompanyName));
+            //UpdateBills();
         }
 
-        
 
-        private void OnDeleteBill()
+
+        private async void OnDeleteBill()
         {
-            BillManager.DeleteBill(BillTracker.CompanyName, SelectedBill);
+            await BudgetDatabase.DeleteBill(SelectedBill.Bill);
+            //BillManager.DeleteBill(BillTracker.CompanyName, SelectedBill);
             UpdateBills();
         }
 
@@ -134,27 +170,24 @@ namespace BudgetAppCross.Core.ViewModels
             return SelectedBill != null;
         }
 
-        #endregion
-
-        #region Methods
-        public override void Prepare(BillTracker parameter)
+        private async Task OnChangeBillMessage()
         {
-            BillTracker = parameter;
-            //billTracker = parameter;
-            UpdateBills();
+            await UpdateBills();
+            if(Bills.Count == 0)
+            {
+                await navigationService.Close(this);
+            }
+            
         }
 
-        private void UpdateBills()
-        {
-            Bills = new ObservableCollection<Bill>(BillTracker.Bills);
-        }
+
         #endregion
 
-        
-
-        
 
 
-        
+
+
+
+
     }
 }
