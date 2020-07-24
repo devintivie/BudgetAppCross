@@ -630,7 +630,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.7.0.1080": {
+      "Xamarin.Forms/4.7.0.1142": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -791,7 +791,7 @@
           "MvvmCross.Forms": "6.4.2",
           "System.Dynamic.Runtime": "4.3.0",
           "Xamarin.Essentials": "1.5.3.2",
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "4.7.0.1142"
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.dll": {}
@@ -828,7 +828,7 @@
           "MvvmCross.Plugin.Messenger": "6.4.2",
           "Newtonsoft.Json": "12.0.3",
           "SQLiteNetExtensions": "2.1.0",
-          "sqlite-net-pcl": "1.6.292"
+          "sqlite-net-pcl": "1.7.335"
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
@@ -1503,7 +1503,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.7.0.1080": {
+      "Xamarin.Forms/4.7.0.1142": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1664,7 +1664,7 @@
           "MvvmCross.Forms": "6.4.2",
           "System.Dynamic.Runtime": "4.3.0",
           "Xamarin.Essentials": "1.5.3.2",
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "4.7.0.1142"
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.dll": {}
@@ -1701,7 +1701,7 @@
           "MvvmCross.Plugin.Messenger": "6.4.2",
           "Newtonsoft.Json": "12.0.3",
           "SQLiteNetExtensions": "2.1.0",
-          "sqlite-net-pcl": "1.6.292"
+          "sqlite-net-pcl": "1.7.335"
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
@@ -2376,7 +2376,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.7.0.1080": {
+      "Xamarin.Forms/4.7.0.1142": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -2537,7 +2537,7 @@
           "MvvmCross.Forms": "6.4.2",
           "System.Dynamic.Runtime": "4.3.0",
           "Xamarin.Essentials": "1.5.3.2",
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "4.7.0.1142"
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.dll": {}
@@ -2574,7 +2574,7 @@
           "MvvmCross.Plugin.Messenger": "6.4.2",
           "Newtonsoft.Json": "12.0.3",
           "SQLiteNetExtensions": "2.1.0",
-          "sqlite-net-pcl": "1.6.292"
+          "sqlite-net-pcl": "1.7.335"
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
@@ -3249,7 +3249,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/4.7.0.1080": {
+      "Xamarin.Forms/4.7.0.1142": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -3410,7 +3410,7 @@
           "MvvmCross.Forms": "6.4.2",
           "System.Dynamic.Runtime": "4.3.0",
           "Xamarin.Essentials": "1.5.3.2",
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "4.7.0.1142"
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.dll": {}
@@ -3447,7 +3447,7 @@
           "MvvmCross.Plugin.Messenger": "6.4.2",
           "Newtonsoft.Json": "12.0.3",
           "SQLiteNetExtensions": "2.1.0",
-          "sqlite-net-pcl": "1.6.292"
+          "sqlite-net-pcl": "1.7.335"
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
@@ -4786,10 +4786,10 @@
         "xamarin.essentials.nuspec"
       ]
     },
-    "Xamarin.Forms/4.7.0.1080": {
-      "sha512": "YN04zJoVBBKdhYnIK1lwZJTGCFrHJ+bUfqQK4aKy8oDjthh5JlNcjetUS+eV+JK9XcmYpS2SxpmDxFFXxSfONQ==",
+    "Xamarin.Forms/4.7.0.1142": {
+      "sha512": "P/o+VzmgeoFJZ2WoRiar/w0RmkR9WvwAEx6j891Bf31psPjSYjfTI8tGLczFa8LDqdv63pGQNH4hnBoxJjivzg==",
       "type": "package",
-      "path": "xamarin.forms/4.7.0.1080",
+      "path": "xamarin.forms/4.7.0.1142",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5096,7 +5096,7 @@
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.pdb",
         "lib/uap10.0.16299/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.4.7.0.1080.nupkg.sha512",
+        "xamarin.forms.4.7.0.1142.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -5154,7 +5154,7 @@
       "InAppPurchasing.iOS >= 1.0.0",
       "Xam.Plugins.Forms.KeyboardOverlap >= 1.0.0.4",
       "Xamarin.Essentials >= 1.5.3.2",
-      "Xamarin.Forms >= 4.7.0.1080"
+      "Xamarin.Forms >= 4.7.0.1142"
     ]
   },
   "packageFolders": {
@@ -5218,7 +5218,7 @@
           },
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "[4.7.0.1080, )"
+            "version": "[4.7.0.1142, )"
           }
         }
       }

@@ -674,7 +674,7 @@
           "MvvmCross.Plugin.Messenger": "6.4.2",
           "Newtonsoft.Json": "12.0.3",
           "SQLiteNetExtensions": "2.1.0",
-          "sqlite-net-pcl": "1.6.292"
+          "sqlite-net-pcl": "1.7.335"
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}

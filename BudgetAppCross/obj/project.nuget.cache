@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+BF7qesx6uO4913g1g/0GrlPgR0l2bbUcR7qn288Q+cZaAdCK6jKXsvnYvm+mOTLrbL2ucdgUp6rj1wTd3CT+A==",
+  "dgSpecHash": "lpk1W/Y2VYfVHIEweErBjgu2xFRKC2FcKLMKbrsN3aAHqqEdG65ZHKhp5XDAYNd3jj/RyT7VtRA39TXYarNRRQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj",
   "expectedPackageFiles": [
@@ -76,7 +76,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.7.0.1080\\xamarin.forms.4.7.0.1080.nupkg.sha512"
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.7.0.1142\\xamarin.forms.4.7.0.1142.nupkg.sha512"
   ],
   "logs": []
 }

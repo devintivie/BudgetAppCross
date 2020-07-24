@@ -43,6 +43,7 @@ namespace BudgetAppCross.Views
                     dynamic selected = agendaList.ItemsSource.ElementAt(mostRecent);
                     agendaList.ScrollTo(selected[0], ScrollToPosition.Start, true);
                     //agendaList.ScrollTo(mostRecent[0], ScrollToPosition.Center, true);
+                    return;
                     break;
                 }
 

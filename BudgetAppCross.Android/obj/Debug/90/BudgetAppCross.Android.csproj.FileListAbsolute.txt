@@ -1656,8 +1656,6 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\a
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\Xamarin.Forms.Xaml.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\typemaps.arm64-v8a.s
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\typemaps.armeabi-v7a.s
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\typemaps.x86.s
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\typemaps.x86_64.s
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\typemaps.armeabi-v7a-shared.inc
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\typemaps.shared.inc
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\AndroidManifest.xml
@@ -1669,8 +1667,6 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\s
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\buildid.txt
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\environment.arm64-v8a.s
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\environment.armeabi-v7a.s
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\environment.x86.s
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\environment.x86_64.s
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\androidhud\ProgressWheel.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\androidhud\ProgressWheel_SpinHandler.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\android\support\compat\R.java
@@ -1721,6 +1717,8 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\a
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\CarouselPageRenderer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\CarouselSpacingItemDecoration.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\CarouselViewRenderer.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\CarouselViewRenderer_CarouselViewOnScrollListener.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\CarouselViewRenderer_CarouselViewwOnGlobalLayoutListener.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\CellAdapter.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\CellRenderer_RendererHolder.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\CenterSnapHelper.java
@@ -1740,6 +1738,8 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\a
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\EditorEditText.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\EditorRenderer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\EditorRendererBase_1.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\EllipseRenderer.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\EllipseView.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\EmptyViewAdapter.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\EndSingleSnapHelper.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\EndSnapHelper.java
@@ -1760,6 +1760,7 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\a
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\FormsImageView.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\FormsSeekBar.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\FormsTextView.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\FormsVideoView.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\FormsWebChromeClient.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\FormsWebViewClient.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\FrameRenderer.java
@@ -1783,6 +1784,8 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\a
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ItemsViewAdapter_2.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ItemsViewRenderer_3.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\LabelRenderer.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\LineRenderer.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\LineView.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ListViewAdapter.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ListViewRenderer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ListViewRenderer_Container.java
@@ -1791,9 +1794,11 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\a
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\LocalizedDigitsKeyListener.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\MasterDetailContainer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\MasterDetailRenderer.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\MediaElementRenderer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\NativeViewWrapperRenderer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\NavigationRenderer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\NongreedySnapHelper.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\NongreedySnapHelper_InitialScrollListener.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ObjectJavaBox_1.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\OpenGLViewRenderer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\OpenGLViewRenderer_Renderer.java
@@ -1801,14 +1806,23 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\a
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\PageExtensions_EmbeddedFragment.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\PageExtensions_EmbeddedSupportFragment.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\PageRenderer.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\PathRenderer.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\PathView.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\PickerEditText.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\PickerManager_PickerListener.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\PickerRenderer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\PlatformRenderer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\Platform_DefaultRenderer.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\PolygonRenderer.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\PolygonView.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\PolylineRenderer.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\PolylineView.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\PositionalSmoothScroller.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\PowerSaveModeBroadcastReceiver.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ProgressBarRenderer.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\RadioButtonRenderer.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\RectangleRenderer.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\RectView.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\RefreshViewRenderer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ScrollHelper.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ScrollLayoutManager.java
@@ -1818,6 +1832,8 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\a
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\SelectableItemsViewAdapter_2.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\SelectableItemsViewRenderer_3.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\SelectableViewHolder.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ShapeRenderer_2.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ShapeView.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ShellContentFragment.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ShellFlyoutRecyclerAdapter.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ShellFlyoutRecyclerAdapter_ElementViewHolder.java
@@ -1862,6 +1878,7 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\a
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\TimePickerRendererBase_1.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ViewCellRenderer_ViewCellContainer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ViewCellRenderer_ViewCellContainer_LongPressGestureListener.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ViewCellRenderer_ViewCellContainer_TapGestureListener.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ViewRenderer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\ViewRenderer_2.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643f46942d9dd1fff9\VisualElementRenderer_1.java
@@ -1914,6 +1931,7 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\a
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\ActivityLifecycleContextListener.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\BarometerListener.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\BatteryBroadcastReceiver.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\ClipboardChangeListener.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\ConnectivityBroadcastReceiver.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\EnergySaverBroadcastReceiver.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\GyroscopeListener.java
@@ -1923,6 +1941,7 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\a
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\SensorListener.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\SingleLocationListener.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\TextToSpeechImplementation.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64a0e0a82d0db9a07d\WebAuthenticatorCallbackActivity.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64a98abb514ffad9f1\CustomTabsServiceConnectionImpl.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64a98abb514ffad9f1\KeepAliveService.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64abe4e87dda539dc2\MvxEventSourceFormsAppCompatActivity.java
@@ -1941,6 +1960,7 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\a
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64db62d61d9af52c56\MvxDialogFragment_1.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64db62d61d9af52c56\MvxFragment_1.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64db62d61d9af52c56\MvxPreferenceFragment_1.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64ed51ef5ae445a715\CurrencyEntryRenderer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64ee486da937c010f4\ButtonRenderer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64ee486da937c010f4\FrameRenderer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64ee486da937c010f4\ImageRenderer.java
@@ -2057,16 +2077,10 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\a
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\com\companyname\budgetappcross\R.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\typemaps.arm64-v8a.o
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\typemaps.armeabi-v7a.o
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\typemaps.x86.o
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\typemaps.x86_64.o
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\environment.arm64-v8a.o
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\environment.armeabi-v7a.o
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\environment.x86.o
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\environment.x86_64.o
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\app_shared_libraries\arm64-v8a\libxamarin-app.so
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\app_shared_libraries\armeabi-v7a\libxamarin-app.so
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\app_shared_libraries\x86\libxamarin-app.so
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\app_shared_libraries\x86_64\libxamarin-app.so
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\bin\classes.dex
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\stamp\_CleanIntermediateIfNeeded.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\stamp\_CompileToDalvik.stamp

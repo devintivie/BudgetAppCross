@@ -20,6 +20,7 @@ android.support.v7.widget.Toolbar;obj\Debug\90\res\layout\toolbar.xml
 androidhud.ProgressWheel;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\1\jl\res\layout\loadingprogress.xml
 attr;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\1\jl\res\values\attrs.xml
 attr;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\3\jl\res\values\mvxbindingattributes.xml
+attr;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\50\jl\res\values\attrs.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\icon.xml
 background;obj\Debug\90\res\mipmap-anydpi-v26\icon_round.xml
 cache-path;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\49\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
@@ -28,6 +29,7 @@ corners;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\De
 corners;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\1\jl\res\drawable\roundedbgdark.xml
 declare-styleable;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\1\jl\res\values\attrs.xml
 declare-styleable;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\3\jl\res\values\mvxbindingattributes.xml
+declare-styleable;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\50\jl\res\values\attrs.xml
 external-cache-path;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\49\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 external-path;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\49\jl\res\xml\xamarin_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\90\res\mipmap-anydpi-v26\icon.xml
@@ -51,6 +53,7 @@ resources;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\
 resources;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\3\jl\res\values\ids.xml
 resources;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\3\jl\res\values\mvxbindingattributes.xml
 resources;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\5\jl\res\values\strings.xml
+resources;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\50\jl\res\values\attrs.xml
 resources;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\50\jl\res\values\styles.xml
 resources;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\7\jl\res\xml\empty.xml
 resources;obj\Debug\90\res\values\colors.xml

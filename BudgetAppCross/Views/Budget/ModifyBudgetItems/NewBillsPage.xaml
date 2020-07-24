@@ -36,7 +36,7 @@
                            FontSize="Large"/>
                         <Switch IsToggled="{Binding IsNewPayee}"/>
                     </StackLayout>
-                    <StackLayout Orientation="Horizontal">
+                    <StackLayout Orientation="Horizontal" IsVisible="{Binding PayeeSet, Converter={cvt:InverseBoolConverter}}">
                         <Label Text="Select Payee"
                                 VerticalOptions="Center"
                                 Grid.Row="0" Grid.Column="1"
@@ -58,6 +58,17 @@
                            Grid.Row="1" Grid.Column="0"
                            WidthRequest="170"/>
                     </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Add bill(s) for"
+                                VerticalOptions="Center"
+                                FontSize="Large"
+                               IsVisible="{Binding PayeeSet}"/>
+                        <Label Text="{Binding SelectedPayee}"
+                                VerticalOptions="Center"
+                                FontSize="Large"
+                               IsVisible="{Binding PayeeSet}"/>
+                    </StackLayout>
+                    
                     
                     <!--Amount Due-->
                     <StackLayout Orientation="Horizontal">
@@ -104,7 +115,7 @@
                         <Picker ItemsSource="{Binding AccountOptions}"
                                 SelectedItem="{Binding SelectedAccount}"
                                 HorizontalOptions="EndAndExpand"
-                                WidthRequest="100"/>
+                                WidthRequest="170"/>
                     </StackLayout>
                     <!--Add Multiple-->
                     <StackLayout Orientation="Horizontal">

@@ -24,4 +24,3 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netst
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.csproj.CoreCompileInputs.cache
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.pdb
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Models\obj\Debug\netstandard2.0\BudgetAppCross.Models.csprojAssemblyReference.cache

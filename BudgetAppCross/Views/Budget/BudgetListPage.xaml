@@ -23,8 +23,8 @@
         
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding RefreshItemsCommand}"
-                     BackgroundColor="Green">
+        <!--<RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding RefreshItemsCommand}"
+                     BackgroundColor="Green">-->
             <ListView x:Name="BudgetCompanyList"
                       ItemsSource="{Binding Trackers}"
                       ItemSelected="BTItemSelected"
@@ -50,7 +50,7 @@
                 </ListView.ItemTemplate>
                 
             </ListView>
-        </RefreshView>
+        <!--</RefreshView>-->
         
     </ContentPage.Content>
 </views:MvxContentPage>

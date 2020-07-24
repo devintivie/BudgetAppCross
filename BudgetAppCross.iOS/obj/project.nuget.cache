@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FTGgPKHVF4S8n3Rz/Zr3aF9O021kpXZZPyF3yWFN/SrHyHMdtQY+uPRmEhhbBhRhEGLnjyaWSt8JEG2cmvqkiQ==",
+  "dgSpecHash": "9NlJ7eSWPCKwSz0F8RsHILZJoVrymwzqrYM6vKaqejQ6Sc2+60HmkdTiNAB5OGCU/TQs57gVR0iavG+8/0oEiQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.iOS\\BudgetAppCross.iOS.csproj",
   "expectedPackageFiles": [
@@ -56,7 +56,7 @@
     "C:\\Users\\devin\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\xam.plugins.forms.keyboardoverlap\\1.0.0.4\\xam.plugins.forms.keyboardoverlap.1.0.0.4.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.7.0.1080\\xamarin.forms.4.7.0.1080.nupkg.sha512"
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.7.0.1142\\xamarin.forms.4.7.0.1142.nupkg.sha512"
   ],
   "logs": []
 }
