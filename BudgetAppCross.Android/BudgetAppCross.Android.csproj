@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomControls\CurrencyEntryRenderer.cs" />
+    <Compile Include="CustomControls\EntryRenderer.cs" />
     <Compile Include="CustomRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />

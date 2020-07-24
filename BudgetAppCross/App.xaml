@@ -41,12 +41,13 @@
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="{StaticResource MenuButtonForeground}"/>
                 <Setter Property="FontSize" Value="Title"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
             </Style>
 
             <Style TargetType="Label">
-                <!--<Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackground}"/>-->
-                <!--<Setter Property="TextColor" Value="{StaticResource MenuButtonForeground}"/>-->
-                <Setter Property="TextColor">
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackground}"/>
+                <Setter Property="TextColor" Value="{StaticResource MenuButtonForeground}"/>
+                <!--<Setter Property="TextColor">
                     <Setter.Value>
                         <OnPlatform x:TypeArguments="Color" 
                                     
@@ -59,7 +60,7 @@
                         <OnPlatform x:TypeArguments="Color" iOS="{StaticResource MenuBackground}"
                                     Android="{StaticResource MenuBackground}"/>
                     </Setter.Value>
-                </Setter>
+                </Setter>-->
             </Style>
 
             <Style TargetType="Entry">

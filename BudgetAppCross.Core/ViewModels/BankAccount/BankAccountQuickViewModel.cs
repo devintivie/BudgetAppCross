@@ -44,10 +44,12 @@ namespace BudgetAppCross.Core.ViewModels
 
 
         #endregion
+       
         #region Commands
         public ICommand EditThisCommand { get; private set; }
         public ICommand DeleteThisCommand { get; private set; }
         #endregion
+        
         #region Constructors
         public BankAccountQuickViewModel(IMvxNavigationService navService, BankAccount account)
         {

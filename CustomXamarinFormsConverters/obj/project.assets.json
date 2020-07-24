@@ -512,21 +512,19 @@
   },
   "packageFolders": {
     "C:\\Users\\devin\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\devin\\Source\\Repos\\BudgetAppCross\\CustomXamarinFormsConverters\\CustomXamarinFormsConverters.csproj",
+      "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\CustomXamarinFormsConverters\\CustomXamarinFormsConverters.csproj",
       "projectName": "CustomXamarinFormsConverters",
-      "projectPath": "C:\\Users\\devin\\Source\\Repos\\BudgetAppCross\\CustomXamarinFormsConverters\\CustomXamarinFormsConverters.csproj",
+      "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\CustomXamarinFormsConverters\\CustomXamarinFormsConverters.csproj",
       "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\devin\\Source\\Repos\\BudgetAppCross\\CustomXamarinFormsConverters\\obj\\",
+      "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\CustomXamarinFormsConverters\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",

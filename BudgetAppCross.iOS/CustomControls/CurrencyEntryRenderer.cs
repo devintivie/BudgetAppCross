@@ -21,7 +21,6 @@ namespace BudgetAppCross.iOS.CustomControls
 
             if(Control != null)
             {
-                var imageView = new UIImageView(UIImage.FromFile(".png"));
                 var view = (CurrencyEntry)Element;
                 Control.Started += Control_Started;
                 Control.ValueChanged += Control_ValueChanged;

@@ -180,21 +180,19 @@
   },
   "packageFolders": {
     "C:\\Users\\devin\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\devin\\Source\\Repos\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj",
+      "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj",
       "projectName": "BaseClasses",
-      "projectPath": "C:\\Users\\devin\\Source\\Repos\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj",
+      "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj",
       "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\devin\\Source\\Repos\\BudgetAppCross\\BaseClasses\\obj\\",
+      "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BaseClasses\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",
