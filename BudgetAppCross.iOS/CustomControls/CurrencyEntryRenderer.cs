@@ -42,7 +42,8 @@ namespace BudgetAppCross.iOS.CustomControls
                 if (text.Equals("0.00") || text.Equals("$0.00") || text.Equals("0"))
                 {
                     Control.Text = "";
-                }else 
+                }
+                else 
                 if (decimal.TryParse(text, out var result))
                 {
                     var temp = Math.Truncate(100 * result) / 100;

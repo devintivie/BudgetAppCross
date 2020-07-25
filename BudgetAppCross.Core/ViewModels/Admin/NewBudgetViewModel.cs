@@ -96,6 +96,13 @@ namespace BudgetAppCross.Core.ViewModels
         #region Methods
         private async Task OnSave()
         {
+            if (string.IsNullOrWhiteSpace(BudgetFilename))
+            {
+                var config = new AlertConfig().SetMessage("Invalid Budget Name");//.SetOkText(ConfirmConfig.DefaultOkText);
+                Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
+                return;
+            }
+
             StateManager.DatabaseFilename = BudgetFilename;
             await BudgetDatabase.Initialize();
 
