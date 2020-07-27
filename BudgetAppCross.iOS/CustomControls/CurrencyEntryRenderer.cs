@@ -26,9 +26,18 @@ namespace BudgetAppCross.iOS.CustomControls
                 Control.ValueChanged += Control_ValueChanged;
                 Control.EditingChanged += Control_EditingChanged;
                 Control.Ended += Control_Ended;
-                Control.BackgroundColor = UIColor.White;
-                Control.TextColor = UIColor.Black;
+
+                if(Control.BackgroundColor == null)
+                {
+                    Control.BackgroundColor = UIColor.White;
+                }
+                if (Control.TextColor == null)
+                {
+                    Control.TextColor = UIColor.Black;
+                }
                 view.Placeholder = Control.Placeholder;
+
+                
                 //Control.TintColor = UIColor.Black;
                 //Control.hint
                 //SetPlaceholderTextColor(view);
@@ -39,6 +48,7 @@ namespace BudgetAppCross.iOS.CustomControls
 
 
                 var text = Control.Text;
+                
                 if (text.Equals("0.00") || text.Equals("$0.00") || text.Equals("0"))
                 {
                     Control.Text = "";

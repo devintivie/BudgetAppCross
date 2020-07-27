@@ -1041,6 +1041,19 @@
           "bin/placeholder/BudgetAppCross.Models.dll": {}
         }
       },
+      "CustomXamarinControls/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Xamarin.Forms": "4.7.0.1142"
+        },
+        "compile": {
+          "bin/placeholder/CustomXamarinControls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinControls.dll": {}
+        }
+      },
       "CustomXamarinFormsBehaviors/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -4138,6 +4151,11 @@
       "path": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj",
       "msbuildProject": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj"
     },
+    "CustomXamarinControls/1.0.0": {
+      "type": "project",
+      "path": "../../CustomXamarinControls/CustomXamarinControls/CustomXamarinControls.csproj",
+      "msbuildProject": "../../CustomXamarinControls/CustomXamarinControls/CustomXamarinControls.csproj"
+    },
     "CustomXamarinFormsBehaviors/1.0.0": {
       "type": "project",
       "path": "../CustomXamarinFormsBehaviors/CustomXamarinFormsBehaviors.csproj",
@@ -4160,6 +4178,7 @@
       "Behaviors.XamarinForms >= 4.0.4",
       "BudgetAppCross.Core >= 1.0.0",
       "BudgetAppCross.Models >= 1.0.0",
+      "CustomXamarinControls >= 1.0.0",
       "CustomXamarinFormsBehaviors >= 1.0.0",
       "CustomXamarinFormsConverters >= 1.0.0",
       "Microsoft.CSharp >= 4.7.0",
@@ -4218,6 +4237,9 @@
             },
             "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\CustomXamarinFormsConverters\\CustomXamarinFormsConverters.csproj": {
               "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\CustomXamarinFormsConverters\\CustomXamarinFormsConverters.csproj"
+            },
+            "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj"
             }
           }
         }

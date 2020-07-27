@@ -8,6 +8,7 @@ public class MonoPackageManager_Resources {
 		"Behaviors.dll",
 		"BudgetAppCross.Core.dll",
 		"BudgetAppCross.dll",
+		"CustomXamarinControls.Android.dll",
 		"FormsViewGroup.dll",
 		"Microsoft.Bcl.AsyncInterfaces.dll",
 		"Microsoft.Bcl.HashCode.dll",
@@ -95,6 +96,7 @@ public class MonoPackageManager_Resources {
 		"BaseClasses.dll",
 		"InAppPurchasing.Core.dll",
 		"CustomXamarinFormsBehaviors.dll",
+		"CustomXamarinControls.dll",
 		"CustomXamarinFormsConverters.dll",
 	};
 	public static String[] Dependencies = new String[]{

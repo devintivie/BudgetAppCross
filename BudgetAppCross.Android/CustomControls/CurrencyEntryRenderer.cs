@@ -10,6 +10,7 @@ using Android.Content.Res;
 using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.Design.Widget;
 using Android.Text;
 using Android.Views;
 using Android.Views.InputMethods;
@@ -35,15 +36,29 @@ namespace BudgetAppCross.Droid.CustomControls
             {
                 var view = (CurrencyEntry)Element;
                 view.Keyboard = Keyboard.Numeric;
+                var text = Control.Text;
+                Console.WriteLine(Control.PaddingBottom);
+                Console.WriteLine(Control.PaddingEnd);
+                Console.WriteLine(Control.PaddingLeft);
+                Console.WriteLine(Control.PaddingRight);
+                Console.WriteLine(Control.PaddingStart);
+                Console.WriteLine(Control.PaddingTop);
+                //Control.SetPadding()
+
+                Control.SetPadding(8, 8, 8, 8);
 
                 GradientDrawable gd = new GradientDrawable();
                 gd.SetColor(Android.Graphics.Color.White);
                 Control.SetBackground(gd);
 
-                var text = Control.Text;
                 if (text.Equals("0.00") || text.Equals("$0.00") || text.Equals("0"))
                 {
                     Control.Text = "";
+                }
+                else if (decimal.TryParse(text, out var result))
+                {
+                    var temp = Math.Truncate(100 * result) / 100;
+                    Control.Text = temp.ToString("C");
                 }
 
                 if (Control.Hint == null)
@@ -153,6 +168,8 @@ namespace BudgetAppCross.Droid.CustomControls
                 }
                 InputMethodManager imm = (InputMethodManager)Context.GetSystemService(Context.InputMethodService);
                 imm.ShowSoftInput(Control.FindFocus(), ShowFlags.Implicit);
+
+                entry.SetSelection(entry.Text.Length);
 
             }
             //if (!e.HasFocus)

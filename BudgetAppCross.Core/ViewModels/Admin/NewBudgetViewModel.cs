@@ -110,6 +110,12 @@ namespace BudgetAppCross.Core.ViewModels
             await BudgetDatabase.SaveBankAccount(defaultAccount);
             if (IsAddingBankAccount)
             {
+                if (string.IsNullOrWhiteSpace(FirstBankAccountName))
+                {
+                    var config = new AlertConfig().SetMessage("Invalid Account Name");//.SetOkText(ConfirmConfig.DefaultOkText);
+                    Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
+                    return;
+                }
                 var bal = new Balance(InitialBalance, InitialBalanceDate);
                 var ba = new BankAccount()
                 {

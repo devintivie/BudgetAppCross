@@ -40,13 +40,14 @@
             </Style>
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="{StaticResource MenuButtonForeground}"/>
-                <Setter Property="FontSize" Value="Title"/>
                 <Setter Property="BackgroundColor" Value="Transparent"/>
             </Style>
 
             <Style TargetType="Label">
-                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryBackground}"/>
+                <!--<Setter Property="BackgroundColor" Value="{StaticResource ButtonBackground}"/>-->
                 <Setter Property="TextColor" Value="{StaticResource MenuButtonForeground}"/>
+                
+                
                 <!--<Setter Property="TextColor">
                     <Setter.Value>
                         <OnPlatform x:TypeArguments="Color" 
@@ -66,12 +67,19 @@
             <Style TargetType="Entry">
                 <Setter Property="BackgroundColor" Value="{StaticResource ControlBackground}"/>
                 <Setter Property="TextColor" Value="{StaticResource PrimaryForeground}"/>
+                
+                <!--<Setter.Value>
+                        <OnPlatform x:TypeArguments="FontSizeConverter" iOS="Subtitle"
+                    </Setter.Value>
+                </Setter>-->
             </Style>
+
 
             <Style TargetType="Picker">
                 <Setter Property="BackgroundColor" Value="{StaticResource ControlBackground}"/>
                 <Setter Property="TextColor" Value="{StaticResource PrimaryForeground}"/>
                 <Setter Property="Visual" Value="Material"/>
+                
             </Style>
             
             <Style TargetType="DatePicker">

@@ -40,15 +40,17 @@
                     <!--<Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
                        Grid.Column="1"/>-->
                     <controls:CurrencyEntry Text="{Binding Amount}"
+                                            Margin="-4" 
                             Grid.Column="1" Grid.ColumnSpan="3"/>
-                    <Picker ItemsSource="{Binding AccountOptions}"
+                    <!--<Picker ItemsSource="{Binding AccountOptions}"
                         SelectedItem="{Binding SelectedAccount}"
-                        Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="1"/>
+                        Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="1"/>-->
                     <DatePicker Date="{Binding Date}"
                             Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1"/>
 
                     <Entry Text="{Binding Confirmation}"
-                       Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3"/>
+                           
+                           Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3"/>
                     <!--<Label Text="{Binding BillStatus}"/>-->
 
                 </Grid>

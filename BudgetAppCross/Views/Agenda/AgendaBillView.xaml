@@ -8,6 +8,7 @@
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
+                      xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.AgendaBillView">
     <ContentView.Content>
@@ -19,8 +20,8 @@
 
                 <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30"/>
@@ -37,25 +38,26 @@
                             VerticalTextAlignment="Center"
                             WidthRequest="120"/>
                     <controls:CurrencyEntry Text="{Binding Amount}"
+                                            BackgroundColor="Red"
+                                            Margin="0"
                             WidthRequest="100"
                             Grid.Column="2"
                             HorizontalOptions="FillAndExpand"
                             VerticalOptions="Center"/>
-                    <DatePicker Date="{Binding Date}"
-                            Grid.Column="3"
-                            
-                        >
+                    <custom:CustomDatePicker Date="{Binding Date}"
+                            Grid.Column="3">
                         <DatePicker.Behaviors>
                             <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
                         </DatePicker.Behaviors>
-                    </DatePicker>
+                    </custom:CustomDatePicker>
 
-                    <Picker ItemsSource="{Binding AccountOptions}"
+                    <custom:CustomPicker ItemsSource="{Binding AccountOptions}"
                             Grid.Row="1" Grid.Column="1"
+                                         BackgroundColor="White"
                             SelectedItem="{Binding SelectedAccount}"
                         VerticalOptions="Center"
                             WidthRequest="200"/>
-                    <Entry Text="{Binding Confirmation}"
+                    <custom:CustomEntry Text="{Binding Confirmation}"
                        Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"
                            WidthRequest="200"/>
 
