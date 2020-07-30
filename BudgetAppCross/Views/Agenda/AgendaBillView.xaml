@@ -26,8 +26,8 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="30"/>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="125"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="105"/>
+                        <ColumnDefinition Width="110"/>
                     </Grid.ColumnDefinitions>
                     <CheckBox IsChecked="{Binding IsPaid}" 
                           Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
