@@ -17,7 +17,6 @@
                Margin="2" Padding="3"
                >
             <Frame Padding="0" HasShadow="False">
-
                 <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
@@ -38,7 +37,6 @@
                             VerticalTextAlignment="Center"
                             WidthRequest="120"/>
                     <controls:CurrencyEntry Text="{Binding Amount}"
-                                            BackgroundColor="Red"
                                             Margin="0"
                             WidthRequest="100"
                             Grid.Column="2"
@@ -53,7 +51,6 @@
 
                     <custom:CustomPicker ItemsSource="{Binding AccountOptions}"
                             Grid.Row="1" Grid.Column="1"
-                                         BackgroundColor="White"
                             SelectedItem="{Binding SelectedAccount}"
                         VerticalOptions="Center"
                             WidthRequest="200"/>

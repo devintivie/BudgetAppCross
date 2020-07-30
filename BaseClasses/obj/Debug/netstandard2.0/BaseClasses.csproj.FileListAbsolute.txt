@@ -1,7 +1,6 @@
 C:\Users\devin\source\repos\BudgetAppCross\BaseClasses\bin\Debug\netstandard2.0\BaseClasses.deps.json
 C:\Users\devin\source\repos\BudgetAppCross\BaseClasses\bin\Debug\netstandard2.0\BaseClasses.dll
 C:\Users\devin\source\repos\BudgetAppCross\BaseClasses\bin\Debug\netstandard2.0\BaseClasses.pdb
-C:\Users\devin\source\repos\BudgetAppCross\BaseClasses\obj\Debug\netstandard2.0\BaseClasses.csprojAssemblyReference.cache
 C:\Users\devin\source\repos\BudgetAppCross\BaseClasses\obj\Debug\netstandard2.0\BaseClasses.AssemblyInfoInputs.cache
 C:\Users\devin\source\repos\BudgetAppCross\BaseClasses\obj\Debug\netstandard2.0\BaseClasses.AssemblyInfo.cs
 C:\Users\devin\source\repos\BudgetAppCross\BaseClasses\obj\Debug\netstandard2.0\BaseClasses.csproj.CoreCompileInputs.cache

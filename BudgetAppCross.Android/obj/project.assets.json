@@ -1599,7 +1599,7 @@
           "bin/placeholder/CustomXamarinControls.dll": {}
         }
       },
-      "CustomXamarinControls.Android/1.0.0": {
+      "CustomXamarinControls.Droid/1.0.0": {
         "type": "project",
         "framework": "MonoAndroid,Version=v9.0",
         "dependencies": {
@@ -1608,10 +1608,10 @@
           "Xamarin.Forms": "4.7.0.1142"
         },
         "compile": {
-          "bin/placeholder/CustomXamarinControls.Android.dll": {}
+          "bin/placeholder/CustomXamarinControls.Droid.dll": {}
         },
         "runtime": {
-          "bin/placeholder/CustomXamarinControls.Android.dll": {}
+          "bin/placeholder/CustomXamarinControls.Droid.dll": {}
         }
       },
       "CustomXamarinFormsBehaviors/1.0.0": {
@@ -4090,10 +4090,10 @@
       "path": "../../CustomXamarinControls/CustomXamarinControls/CustomXamarinControls.csproj",
       "msbuildProject": "../../CustomXamarinControls/CustomXamarinControls/CustomXamarinControls.csproj"
     },
-    "CustomXamarinControls.Android/1.0.0": {
+    "CustomXamarinControls.Droid/1.0.0": {
       "type": "project",
-      "path": "../../CustomXamarinControls/CustomXamarinControls.Android/CustomXamarinControls.Android.csproj",
-      "msbuildProject": "../../CustomXamarinControls/CustomXamarinControls.Android/CustomXamarinControls.Android.csproj"
+      "path": "../../CustomXamarinControls/CustomXamarinControls.Android/CustomXamarinControls.Droid.csproj",
+      "msbuildProject": "../../CustomXamarinControls/CustomXamarinControls.Android/CustomXamarinControls.Droid.csproj"
     },
     "CustomXamarinFormsBehaviors/1.0.0": {
       "type": "project",
@@ -4115,7 +4115,7 @@
     "MonoAndroid,Version=v9.0": [
       "BudgetAppCross >= 1.0.0",
       "BudgetAppCross.Core >= 1.0.0",
-      "CustomXamarinControls.Android >= 1.0.0",
+      "CustomXamarinControls.Droid >= 1.0.0",
       "MvvmCross.Forms >= 6.4.2",
       "Xamarin.Essentials >= 1.5.3.2",
       "Xamarin.Forms >= 4.7.0.1142"
@@ -4159,8 +4159,8 @@
             "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj": {
               "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj"
             },
-            "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Android.csproj": {
-              "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Android.csproj"
+            "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Droid.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Droid.csproj"
             }
           }
         }

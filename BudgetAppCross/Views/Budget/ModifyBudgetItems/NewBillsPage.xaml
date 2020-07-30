@@ -7,6 +7,7 @@
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              xmlns:models="clr-namespace:BudgetAppCross.Models;assembly=BudgetAppCross.Models"
+                      xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
              mc:Ignorable="d"
              Title="Add Bill"
                       BackgroundColor="{StaticResource PrimaryBackground}"
@@ -52,8 +53,9 @@
                                 WidthRequest="170"
                             SelectedItem="{Binding SelectedPayee}"
                             IsVisible="{Binding IsNewPayee, Converter={cvt:InverseBoolConverter}}"/>
-                        <Entry Text="{Binding NewPayee}" 
+                        <custom:CustomEntry Text="{Binding NewPayee}" 
                                HorizontalOptions="EndAndExpand"
+                                            BackgroundColor="Yellow"
                            IsVisible="{Binding IsNewPayee}"
                            Grid.Row="1" Grid.Column="0"
                            WidthRequest="170"/>
@@ -89,6 +91,7 @@
                                HorizontalOptions="EndAndExpand"
                                 WidthRequest="140"/>-->
                         <controls:CurrencyEntry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
+                                                BackgroundColor="Pink"
                                HorizontalTextAlignment="End"
                                HorizontalOptions="EndAndExpand"
                                 WidthRequest="140"/>

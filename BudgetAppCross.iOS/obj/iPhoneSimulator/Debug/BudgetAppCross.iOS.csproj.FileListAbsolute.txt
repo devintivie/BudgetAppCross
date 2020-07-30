@@ -236,3 +236,7 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulato
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\BudgetAppCross.iOS.pdb.DebugSymbolsProjectOutputGroupOutput.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Entitlements.plist.NoneOutput.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Info.plist.NoneOutput.stamp
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\CustomXamarinControls.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\CustomXamarinControls.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\CustomXamarinControls.dll.ReferenceCopyLocalPaths.stamp
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\CustomXamarinControls.pdb.ReferenceCopyLocalPaths.stamp

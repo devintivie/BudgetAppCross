@@ -14,8 +14,7 @@
         "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BaseClasses\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -74,8 +73,7 @@
         "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCore.Sqlite\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -176,8 +174,8 @@
               "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj": {
                 "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj"
               },
-              "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Android.csproj": {
-                "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Android.csproj"
+              "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Droid.csproj": {
+                "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Droid.csproj"
               }
             }
           }
@@ -212,8 +210,7 @@
         "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -305,8 +302,7 @@
         "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -381,8 +377,7 @@
         "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -488,8 +483,7 @@
         "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\CustomXamarinFormsBehaviors\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -552,8 +546,7 @@
         "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\CustomXamarinFormsConverters\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -616,8 +609,7 @@
         "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -666,12 +658,12 @@
         }
       }
     },
-    "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Android.csproj": {
+    "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Droid.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Android.csproj",
-        "projectName": "CustomXamarinControls.Android",
-        "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Android.csproj",
+        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Droid.csproj",
+        "projectName": "CustomXamarinControls.Droid",
+        "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Droid.csproj",
         "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\obj\\",
         "projectStyle": "PackageReference",
@@ -726,8 +718,7 @@
         "outputPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",

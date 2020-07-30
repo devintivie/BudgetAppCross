@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BaseClasses", "BaseClasses\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomXamarinControls.iOS", "..\CustomXamarinControls\CustomXamarinControls.iOS\CustomXamarinControls.iOS.csproj", "{D4B72C82-4736-4CBF-B552-2DFBDB23769E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomXamarinControls.Android", "..\CustomXamarinControls\CustomXamarinControls.Android\CustomXamarinControls.Android.csproj", "{C38DC000-8BAB-47E3-B3D8-D62C44234B19}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomXamarinControls.Droid", "..\CustomXamarinControls\CustomXamarinControls.Android\CustomXamarinControls.Droid.csproj", "{C38DC000-8BAB-47E3-B3D8-D62C44234B19}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomXamarinControls", "..\CustomXamarinControls\CustomXamarinControls\CustomXamarinControls.csproj", "{34B9231C-CD9B-44D3-B8A1-4F510A0679F8}"
 EndProject

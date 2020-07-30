@@ -27,7 +27,6 @@ cache-path;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj
 color;obj\Debug\90\res\values\colors.xml
 corners;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\1\jl\res\drawable\roundedbg.xml
 corners;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\1\jl\res\drawable\roundedbgdark.xml
-crc64720bb2db43a66fe9.FormsViewPager;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\50\jl\res\layout\rootlayout.xml
 declare-styleable;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\1\jl\res\values\attrs.xml
 declare-styleable;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\3\jl\res\values\mvxbindingattributes.xml
 declare-styleable;C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\lp\50\jl\res\values\attrs.xml

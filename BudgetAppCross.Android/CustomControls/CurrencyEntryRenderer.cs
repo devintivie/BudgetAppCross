@@ -47,8 +47,20 @@ namespace BudgetAppCross.Droid.CustomControls
 
                 Control.SetPadding(8, 8, 8, 8);
 
+                var color = view.BackgroundColor.ToAndroid();
+
+                //view.BackgroundColor
+                //Control.Background.
                 GradientDrawable gd = new GradientDrawable();
-                gd.SetColor(Android.Graphics.Color.White);
+                if (view.BackgroundColor.IsDefault)
+                {
+                    gd.SetColor(Android.Graphics.Color.White);
+                }
+                else
+                {
+                    gd.SetColor(color);
+                }
+
                 Control.SetBackground(gd);
 
                 if (text.Equals("0.00") || text.Equals("$0.00") || text.Equals("0"))

@@ -100,9 +100,9 @@
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CustomXamarinControls\CustomXamarinControls.Android\CustomXamarinControls.Android.csproj">
+    <ProjectReference Include="..\..\CustomXamarinControls\CustomXamarinControls.Android\CustomXamarinControls.Droid.csproj">
       <Project>{c38dc000-8bab-47e3-b3d8-d62c44234b19}</Project>
-      <Name>CustomXamarinControls.Android</Name>
+      <Name>CustomXamarinControls.Droid</Name>
     </ProjectReference>
     <ProjectReference Include="..\BudgetAppCross.Core\BudgetAppCross.Core.csproj">
       <Project>{367885f9-3ea9-4379-852e-95c2c320ccd5}</Project>
