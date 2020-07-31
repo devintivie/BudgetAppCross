@@ -17,7 +17,7 @@
                    LineBreakMode="CharacterWrap"
                    
                    MaxLines="2"
-                   FontSize="Title"/>
+                   FontSize="{StaticResource FontSizeLarge}"/>
         </Grid>
     </ContentView.Content>
 

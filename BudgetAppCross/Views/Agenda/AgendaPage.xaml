@@ -35,9 +35,9 @@
                     <ViewCell>
                         <Grid VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource ButtonBackground}">
                             <Label Text="{Binding Key, Converter={cvt:DateOnlyConverter}}"
-                                   FontSize="Subtitle"
+                                   FontSize="{StaticResource FontSizeLarge}"
+                                   
                                    TextColor="{StaticResource PrimaryForeground}"
-                                   Padding="0,0,0,0"
                                    VerticalOptions="Center"
                                />
                         </Grid>

@@ -28,7 +28,6 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label Text="{Binding Nickname}" 
-                       FontSize="Title"
                         HorizontalOptions="Start"
                        IsVisible="{Binding IsEditing, Converter={cvt:InverseBoolConverter}}"/>
                 <custom:CustomEntry Text="{Binding NewAccountNickname}" HorizontalOptions="Fill"
@@ -40,9 +39,9 @@
                     </Grid.ColumnDefinitions>
                     <Button Text="Save" Command="{Binding SaveEditCommand}" IsVisible="{Binding IsEditing}"
                         HorizontalOptions="Start"
-                        FontSize="Subtitle"/>
+                        FontSize="{StaticResource FontSizeMedium}"/>
                     <Button Text="{Binding EditButtonText}" Command="{Binding EditCommand}" 
-                        FontSize="Subtitle" HorizontalOptions="End"
+                        FontSize="{StaticResource FontSizeMedium}" HorizontalOptions="End"
                             Grid.Column="1"/>
                 </Grid>
                 

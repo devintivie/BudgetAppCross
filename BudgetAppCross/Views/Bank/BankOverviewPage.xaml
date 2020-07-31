@@ -60,11 +60,11 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal">
                                 <Label Text="{Binding Nickname}"
-                                       FontSize="Title"/>
+                                       />
                                 <Label Text="{Binding Balance}"
-                                       FontSize="Title"/>
+                                       />
                                 <Label Text="{Binding AccountID}"
-                                       FontSize="Title"/>
+                                       />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

@@ -20,7 +20,7 @@
     <ContentPage.Content>
         <StackLayout>
             <!--<Label Text="{Binding CompanyName}"
-                   FontSize="Title"/>-->
+                   />-->
             <!--<StackLayout Orientation="Horizontal">
                 <Label Text="Paid" 
                        />

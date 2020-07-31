@@ -20,7 +20,7 @@
                    Grid.Column="1"
                    FontSize="Subtitle"/>
             <!--<Label Text="{Binding AccountID}"
-                   FontSize="Title"/>-->
+                   />-->
         </Grid>
     </ContentView.Content>
 </views:MvxContentView>

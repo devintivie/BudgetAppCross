@@ -15,10 +15,10 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
                 <Label Text="{Binding Date}"
-                       FontSize="Title"
+                       
                        HorizontalTextAlignment="Start"/>
                 <Label Text="{Binding DateTotal}"
-                       FontSize="Title"
+                       
                        HorizontalTextAlignment="End"
                        Grid.Column="1"
                        />

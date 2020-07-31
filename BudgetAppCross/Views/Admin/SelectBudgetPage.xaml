@@ -42,7 +42,7 @@
                                 <Label Text="{Binding }" HorizontalOptions="Center"
                                     HorizontalTextAlignment="Center"
                                        VerticalTextAlignment="Center"
-                                    FontSize="Subtitle"/>
+                                    FontSize="{StaticResource FontSizeMedium}"/>
                                 <!--<Frame BackgroundColor="Transparent"
                                         BorderColor="Gray"
                                         CornerRadius="33"
@@ -51,7 +51,7 @@
                                     HorizontalTextAlignment="Center"
                                            Margin="0"
                                            Padding="0"
-                                    FontSize="Subtitle"/>
+                                    FontSize="{StaticResource FontSizeMedium}"/>
                                 </Frame>-->
                             </Grid>
                         </ViewCell>
@@ -101,7 +101,7 @@
                                >
                     <Label Text="{Binding }" HorizontalOptions="Center"
                                 HorizontalTextAlignment="Center"
-                                FontSize="Subtitle"/>
+                                FontSize="{StaticResource FontSizeMedium}"/>
                 </Frame>
             </Grid>
         </DataTemplate>
