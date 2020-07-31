@@ -54,7 +54,7 @@ namespace BudgetAppCross.Core.ViewModels
         }
 
 
-        private DateTime endDate = DateTime.Today.AddDays(14);
+        private DateTime endDate = DateTime.Today.AddDays(13);
         public DateTime EndDate
         {
             get { return endDate; }

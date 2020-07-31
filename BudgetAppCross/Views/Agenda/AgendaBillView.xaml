@@ -23,10 +23,10 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="1.8*"/>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="105"/>
-                        <ColumnDefinition Width="110"/>
+                        <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <CheckBox IsChecked="{Binding IsPaid}" 
                           Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"

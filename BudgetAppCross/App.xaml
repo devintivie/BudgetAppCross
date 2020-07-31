@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
              mc:Ignorable="d"
              x:Class="BudgetAppCross.App">
 
@@ -10,7 +11,6 @@
         <ResourceDictionary>
             <!--Global Styles-->
             <Color x:Key="NavigationPrimary">#2196F3</Color>
-            
             <!--Menu Background-->
             <Color x:Key="MenuBackground">Black</Color>
             <!--Menu Button Foreground-->
@@ -28,16 +28,25 @@
 
             <Color x:Key="ControlBackground">White</Color>
             <Color x:Key="DefaultBackground">#d6bd2d</Color>
-            
-            
-            
-            
-            
+
+            <OnPlatform x:Key="FontSizeDefault" x:TypeArguments="x:Double" >
+                <On Platform="iOS" Value="16" />
+                <On Platform="Android" Value="12"/>
+            </OnPlatform>
+            <OnPlatform x:Key="FontSizeMedium" x:TypeArguments="x:Double" >
+                <On Platform="iOS" Value="18" />
+                <On Platform="Android" Value="14"/>
+            </OnPlatform>
+            <OnPlatform x:Key="FontSizeLarge" x:TypeArguments="x:Double" >
+                <On Platform="iOS" Value="22" />
+                <On Platform="Android" Value="20"/>
+            </OnPlatform>
+
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource PrimaryBackground}" />
                 <Setter Property="BarTextColor" Value="White" />
-                
             </Style>
+            
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="{StaticResource MenuButtonForeground}"/>
                 <Setter Property="BackgroundColor" Value="Transparent"/>
@@ -46,50 +55,30 @@
             <Style TargetType="Label">
                 <!--<Setter Property="BackgroundColor" Value="{StaticResource ButtonBackground}"/>-->
                 <Setter Property="TextColor" Value="{StaticResource MenuButtonForeground}"/>
-                
-                
-                <!--<Setter Property="TextColor">
-                    <Setter.Value>
-                        <OnPlatform x:TypeArguments="Color" 
-                                    
-                                    iOS="{StaticResource MenuButtonForeground}"
-                                    Android="Orange"/>
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="BackgroundColor">
-                    <Setter.Value>
-                        <OnPlatform x:TypeArguments="Color" iOS="{StaticResource MenuBackground}"
-                                    Android="{StaticResource MenuBackground}"/>
-                    </Setter.Value>
-                </Setter>-->
+                <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"/>
             </Style>
 
-            <Style TargetType="Entry">
+            <Style TargetType="Entry" ApplyToDerivedTypes="True">
                 <Setter Property="BackgroundColor" Value="{StaticResource ControlBackground}"/>
                 <Setter Property="TextColor" Value="{StaticResource PrimaryForeground}"/>
-                
-                <!--<Setter.Value>
-                        <OnPlatform x:TypeArguments="FontSizeConverter" iOS="Subtitle"
-                    </Setter.Value>
-                </Setter>-->
+                <Setter Property="FontSize" Value="{StaticResource FontSizeDefault}"/>
             </Style>
 
-
-            <Style TargetType="Picker">
+            <Style TargetType="Picker" ApplyToDerivedTypes="True">
                 <Setter Property="BackgroundColor" Value="{StaticResource ControlBackground}"/>
                 <Setter Property="TextColor" Value="{StaticResource PrimaryForeground}"/>
-                <Setter Property="Visual" Value="Material"/>
-                
+                <Setter Property="FontSize" Value="{StaticResource FontSizeDefault}"/>
+                <!--<Setter Property="Visual" Value="Material"/>-->
             </Style>
             
-            <Style TargetType="DatePicker">
+            <Style TargetType="DatePicker" ApplyToDerivedTypes="True">
                 <Setter Property="BackgroundColor" Value="{StaticResource ControlBackground}"/>
                 <Setter Property="TextColor" Value="{StaticResource PrimaryForeground}"/>
+                <Setter Property="FontSize" Value="{StaticResource FontSizeDefault}"/>
             </Style>
 
             <Style TargetType="ListView">
                 <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackground}"/>
-                
             </Style>
             
         </ResourceDictionary>

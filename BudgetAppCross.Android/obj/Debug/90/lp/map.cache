@@ -1,5 +1,6 @@
 Acr.UserDialogs
 AndHUD
+CustomXamarinControls.Android
 FormsViewGroup
 MvvmCross
 MvvmCross.Droid.Support.Core.UI
@@ -50,4 +51,3 @@ Xamarin.Android.Support.ViewPager
 Xamarin.Essentials
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
-CustomXamarinControls.Android

@@ -13,6 +13,8 @@
              x:TypeArguments="vms:DateRangeViewModel"
              x:Name="currentPage"
              Title="{Binding Title}"
+                      
+             xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
                        BackgroundColor="{StaticResource ButtonBackground}"
             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
             ios:Page.UseSafeArea="True"
@@ -35,41 +37,43 @@
                 <Grid>
                     <!--Start Date-->
                     <Label Text="Start Date" Grid.Row="0" Grid.Column="0"
-                           
-                       FontSize="Title"/>
-                    <DatePicker Date="{Binding StartDate}"
+                           FontSize="{StaticResource FontSizeLarge}"
+                       />
+                    <custom:CustomDatePicker Date="{Binding StartDate}"
+                                             FontSize="{StaticResource FontSizeLarge}"
                             Grid.Row="0" Grid.Column="1"
-                            FontSize="Subtitle"
                                 HorizontalOptions="End">
                         <DatePicker.Behaviors>
                             <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
                         </DatePicker.Behaviors>
-                    </DatePicker>
+                    </custom:CustomDatePicker>
 
                     <!--End Date-->
                     <Label Text="End Date" Grid.Row="1" Grid.Column="0"
-                       FontSize="Title"
+                           FontSize="{StaticResource FontSizeLarge}"
                            />
 
-                    <DatePicker Date="{Binding EndDate}"
+                    <custom:CustomDatePicker Date="{Binding EndDate}"
+                                             FontSize="{StaticResource FontSizeLarge}"
                             Grid.Row="1" Grid.Column="1"
-                            FontSize="Subtitle"
                                 HorizontalOptions="End"
                             >
                         <DatePicker.Behaviors>
                             <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
                         </DatePicker.Behaviors>
-                    </DatePicker>
+                    </custom:CustomDatePicker>
                 </Grid>
                 
                 <!-- Select Account-->
                 <Label Text="Account To View" Grid.Row="0" Grid.Column="1"
-                       FontSize="Title"/>
-                <Picker ItemsSource="{Binding AccountOptions}"
+                       FontSize="{StaticResource FontSizeLarge}"
+                       />
+                <custom:CustomPicker ItemsSource="{Binding AccountOptions}"
+                                     FontSize="{StaticResource FontSizeLarge}"
                     SelectedItem="{Binding SelectedAccount}"
                     Grid.Column="3"/>
-                
-                <Label Text="Bills" FontSize="Title"/>
+
+                <Label Text="Bills" FontSize="{StaticResource FontSizeLarge}"/>
 
             </StackLayout>
             

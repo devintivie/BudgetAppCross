@@ -21,34 +21,20 @@ namespace BudgetAppCross.Core.ViewModels
         #region Properties
         public Bill Bill { get; private set; }
 
-        public string Payee
-        {
-            get { return Bill.Payee; }
-            //set
-            //{
-            //    if(Bill.Payee != value)
-            //    {
-            //        var payee = Bill.Payee;
-            //        Bill.Payee = value;
-            //        SetProperty(ref payee, value);
-            //    }
-            //}
-        }
+        public string Payee => Bill.Payee;
+        public BillStatus BillStatus => Bill.BillStatus;
 
         public DateTime Date
         {
             get { return Bill.Date; }
             set
             {
-                if(!Bill.Date.Equals(value))
+                if (!Bill.Date.Equals(value))
                 {
-                    var dueDate = Bill.Date;
                     Bill.Date = value;
-                    SetProperty(ref dueDate, value);
+                    RaisePropertyChanged();
                     RaisePropertyChanged(nameof(BillStatus));
-                    //Switch to change and save because daterangeentry needs to requery
-                    //ChangeAndSave();
-
+                    var _ = UpdateAndSave();
                 }
             }
         }
@@ -58,18 +44,12 @@ namespace BudgetAppCross.Core.ViewModels
             get { return Bill.Amount; }
             set
             {
-                if(Bill.Amount != value)
+                if (Bill.Amount != value)
                 {
-                    var amountDue = Bill.Amount;
                     Bill.Amount = value;
-                    SetProperty(ref amountDue, value);
-
-                    UpdateAndSave();
-                    
-                    //MessagingCenter.Send(this, "Update");
-                    //Messenger.Send(new UpdateBillMessage());
+                    RaisePropertyChanged();
+                    var _ = UpdateAndSave();
                 }
-                
             }
         }
 
@@ -78,9 +58,13 @@ namespace BudgetAppCross.Core.ViewModels
             get { return Bill.Confirmation; }
             set
             {
-                var confirmation = Bill.Confirmation;
-                Bill.Confirmation = value;
-                SetProperty(ref confirmation, value);
+                if (Bill.Confirmation != value)
+                {
+                    Bill.Confirmation = value;
+                    RaisePropertyChanged();
+
+                    var _ = UpdateAndSave();
+                }
             }
         }
 
@@ -89,11 +73,13 @@ namespace BudgetAppCross.Core.ViewModels
             get { return Bill.IsPaid; }
             set
             {
-                var isPaid = Bill.IsPaid;
-                Bill.IsPaid = value;
-                SetProperty(ref isPaid, value);
-                RaisePropertyChanged(nameof(BillStatus));
-                var _ = UpdateAndSave();
+                if (Bill.IsPaid != value)
+                {
+                    Bill.IsPaid = value;
+                    RaisePropertyChanged();
+                    RaisePropertyChanged(nameof(BillStatus));
+                    var _ = UpdateAndSave();
+                }
             }
         }
 
@@ -102,22 +88,17 @@ namespace BudgetAppCross.Core.ViewModels
             get { return Bill.IsAuto; }
             set
             {
-                var isAuto = Bill.IsPaid;
-                Bill.IsPaid = value;
-                SetProperty(ref isAuto, value);
-                var _ = UpdateAndSave();
-                RaisePropertyChanged(nameof(BillStatus));
+                if (Bill.IsAuto != value)
+                {
+                    Bill.IsAuto = value;
+                    RaisePropertyChanged();
+
+                    var _ = UpdateAndSave();
+                    RaisePropertyChanged(nameof(BillStatus));
+                }
             }
         }
-
-        public BillStatus BillStatus
-        {
-            get { return Bill.BillStatus; }
-            
-        }
-
-
-        //public BillStatus BillStatus => Bill.BillStatus;
+ 
 
 
         private ObservableCollection<string> accountOptions = new ObservableCollection<string>();

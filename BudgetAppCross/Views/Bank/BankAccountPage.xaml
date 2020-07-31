@@ -6,7 +6,8 @@
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              mc:Ignorable="d"
-                      BackgroundColor="{StaticResource PrimaryBackground}"
+             BackgroundColor="{StaticResource PrimaryBackground}"
+             xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
                       
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              Title=""
@@ -30,7 +31,7 @@
                        FontSize="Title"
                         HorizontalOptions="Start"
                        IsVisible="{Binding IsEditing, Converter={cvt:InverseBoolConverter}}"/>
-                <Entry Text="{Binding NewAccountNickname}" HorizontalOptions="Fill"
+                <custom:CustomEntry Text="{Binding NewAccountNickname}" HorizontalOptions="Fill"
                        IsVisible="{Binding IsEditing}"/>
                 <Grid Grid.Column="1" HorizontalOptions="Fill">
                     <Grid.ColumnDefinitions>

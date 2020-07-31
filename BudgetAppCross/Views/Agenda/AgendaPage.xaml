@@ -37,7 +37,7 @@
                             <Label Text="{Binding Key, Converter={cvt:DateOnlyConverter}}"
                                    FontSize="Subtitle"
                                    TextColor="{StaticResource PrimaryForeground}"
-                                   Padding="0,0,0,15"
+                                   Padding="0,0,0,0"
                                    VerticalOptions="Center"
                                />
                         </Grid>

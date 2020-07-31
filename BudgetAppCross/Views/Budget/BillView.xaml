@@ -43,21 +43,14 @@
                        Grid.Column="1"/>-->
                     <controls:CurrencyEntry Text="{Binding Amount}"
                                             Margin="0"
-                                            FontSize="Small"
                             Grid.Column="1" Grid.ColumnSpan="3"/>
                     <custom:CustomPicker ItemsSource="{Binding AccountOptions}"
                         SelectedItem="{Binding SelectedAccount}"
-                                         
-                                            FontSize="Small"
                         Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="1"/>
                     <custom:CustomDatePicker Date="{Binding Date}"
-                                             
-                                            FontSize="Small"
                             Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="1"/>
 
                     <custom:CustomEntry Text="{Binding Confirmation}"
-                           
-                                            FontSize="Small"
                            Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3"/>
                     <!--<Label Text="{Binding BillStatus}"/>-->
 

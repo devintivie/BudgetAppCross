@@ -10,6 +10,8 @@
              xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
              x:TypeArguments="vms:BankOverviewViewModel"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+                      
+             xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
              ios:Page.UseSafeArea="True"
                       BackgroundColor="{StaticResource ButtonBackground}"
              Title="{Binding Title}">
