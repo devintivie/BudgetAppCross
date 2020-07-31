@@ -14,11 +14,12 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Label Text="{Binding Nickname}"
-                   FontSize="Subtitle"
+                   FontSize="{StaticResource FontSizeLarge}"
+                   
                    />
             <Label Text="{Binding Balance, Converter={cvt:CurrencyConverter}}"
                    Grid.Column="1"
-                   FontSize="Subtitle"/>
+                   FontSize="{StaticResource FontSizeLarge}"/>
             <!--<Label Text="{Binding AccountID}"
                    />-->
         </Grid>

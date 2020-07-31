@@ -7,17 +7,15 @@
              xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              mc:Ignorable="d"
-                      
-                      BackgroundColor="{StaticResource PrimaryBackground}"
+             BackgroundColor="{StaticResource PrimaryBackground}"
              x:Class="BudgetAppCross.Views.NewBankAccountPage"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
+             xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
              ios:Page.UseSafeArea="True">
     <ContentPage.Content>
         
-        <StackLayout
-            
-                      BackgroundColor="{StaticResource PrimaryBackground}">
+        <StackLayout BackgroundColor="{StaticResource PrimaryBackground}">
             <!--<Label Text="Enter Company Name"
                 VerticalOptions="Start" 
                 HorizontalOptions="Start" />
@@ -25,11 +23,14 @@
             <Button Text="Save" Command="{Binding SaveCommand}"/>-->
 
             <!--Account Nickname-->
-            <Label Text="Account Nickname"/>
-            <Entry Text="{Binding BankAccount.Nickname}"/>
+            <Label Text="Account Nickname"
+                   Style="{StaticResource BigLightLabel}"/>
+            <custom:CustomEntry Text="{Binding BankAccount.Nickname}"
+                   FontSize="{StaticResource FontSizeLarge}"/>
             
             <!--Account Balance-->
-            <Label Text="Initial Balance"/>
+            <Label Text="Initial Balance"
+                   Style="{StaticResource BigLightLabel}"/>
             <!--<ListView.Behaviors>
                 <behaviors:EventHandlerBehavior EventName="ItemSelected">
                     <behaviors:InvokeCommandAction Command="{Binding ShowDetailPageAsyncCommand}"/>
@@ -42,11 +43,14 @@
                    >
             </Entry>-->
 
-            <controls:CurrencyEntry Text="{Binding Balance}" Keyboard="Numeric"/>
+            <controls:CurrencyEntry Text="{Binding Balance}" Keyboard="Numeric"
+                                    FontSize="{StaticResource FontSizeLarge}"/>
 
             <!--Balance Date-->
-            <Label Text="Date of Balance"/>
-            <DatePicker Date="{Binding Date}"/>
+            <Label Text="Date of Balance"
+                   Style="{StaticResource BigLightLabel}"/>
+            <custom:CustomDatePicker Date="{Binding Date}"
+                                     FontSize="{StaticResource FontSizeLarge}"/>
             <StackLayout Orientation="Horizontal">
                 <Button Text="Cancel" Command="{Binding CancelCommand}"/>
                 <Button Text="Save" Command="{Binding SaveCommand}"/>

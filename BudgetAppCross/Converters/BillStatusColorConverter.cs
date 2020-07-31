@@ -34,7 +34,7 @@ namespace BudgetAppCross.Converters
                     return Color.DarkBlue;
                 case BillStatus.DueInOverOneMonth:
                 default:
-                    return Color.Gray;
+                    return Color.Black;
             }
         }
 

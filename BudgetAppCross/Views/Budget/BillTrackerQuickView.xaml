@@ -15,7 +15,7 @@
             </Grid.ColumnDefinitions>
             <Label Text="{Binding Payee}"
                    LineBreakMode="CharacterWrap"
-                   
+                   TextColor="{StaticResource PrimaryForeground}"
                    MaxLines="2"
                    FontSize="{StaticResource FontSizeLarge}"/>
         </Grid>

@@ -20,7 +20,8 @@
             <!--Primary Button Foreground-->
             <Color x:Key="PrimaryForeground">Black</Color>
             <!--Primary Button Background-->
-            <Color x:Key="ButtonBackground">#667182</Color>
+            <!--was 667182-->
+            <Color x:Key="ButtonBackground">#7e899a</Color>
             <!--Primary Disabled Background-->
             <Color x:Key="PrimaryDisabledBackground">#FFDDDDDD</Color>
             <!--Default Selection Background-->
@@ -54,8 +55,15 @@
 
             <Style TargetType="Label">
                 <!--<Setter Property="BackgroundColor" Value="{StaticResource ButtonBackground}"/>-->
-                <Setter Property="TextColor" Value="{StaticResource MenuButtonForeground}"/>
+                <Setter Property="TextColor" Value="{StaticResource PrimaryForeground}"/>
                 <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+
+            <Style x:Key="BigLightLabel" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource MenuButtonForeground}"/>
+                <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"/>
             </Style>
 
             <Style TargetType="Entry" ApplyToDerivedTypes="True">

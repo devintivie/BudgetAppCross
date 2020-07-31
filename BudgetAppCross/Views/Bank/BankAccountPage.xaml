@@ -10,7 +10,8 @@
              xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
                       
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
-             Title=""
+             
+             Title="Bank Account"
              x:Class="BudgetAppCross.Views.BankAccountPage">
 
     <ContentPage.ToolbarItems>
@@ -27,21 +28,32 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Text="{Binding Nickname}" 
-                        HorizontalOptions="Start"
-                       IsVisible="{Binding IsEditing, Converter={cvt:InverseBoolConverter}}"/>
+                <StackLayout Orientation="Horizontal"
+                             IsVisible="{Binding IsEditing, Converter={cvt:InverseBoolConverter}}"
+                             VerticalOptions="Center">
+                    <Label Text="Nickname : " 
+                       FontSize="{StaticResource FontSizeLarge}"
+                       VerticalTextAlignment="Center"/>
+                    <Label Text="{Binding Nickname}" 
+                       FontSize="{StaticResource FontSizeLarge}"
+                       VerticalTextAlignment="Center"/>
+                </StackLayout>
+              
                 <custom:CustomEntry Text="{Binding NewAccountNickname}" HorizontalOptions="Fill"
+                                    FontSize="{StaticResource FontSizeLarge}"
                        IsVisible="{Binding IsEditing}"/>
                 <Grid Grid.Column="1" HorizontalOptions="Fill">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Button Text="Save" Command="{Binding SaveEditCommand}" IsVisible="{Binding IsEditing}"
-                        HorizontalOptions="Start"
-                        FontSize="{StaticResource FontSizeMedium}"/>
+                    <Button Text="Save" Command="{Binding SaveEditCommand}" 
+                            TextColor="{StaticResource PrimaryForeground}"
+                            IsVisible="{Binding IsEditing}"
+                        HorizontalOptions="Start"/>
                     <Button Text="{Binding EditButtonText}" Command="{Binding EditCommand}" 
-                        FontSize="{StaticResource FontSizeMedium}" HorizontalOptions="End"
+                            TextColor="{StaticResource PrimaryForeground}"
+                         HorizontalOptions="End"
                             Grid.Column="1"/>
                 </Grid>
                 
@@ -54,11 +66,9 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label Text="Balance"
-                       TextColor="{StaticResource PrimaryForeground}"
                        HorizontalOptions="Center"/>
                 <Label Text="Timestamp"
                        Grid.Column="1"
-                       TextColor="{StaticResource PrimaryForeground}"
                        HorizontalOptions="Center"/>
             </Grid>
             <ListView ItemsSource="{Binding Balances}"
