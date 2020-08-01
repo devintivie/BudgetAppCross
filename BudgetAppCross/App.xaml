@@ -85,7 +85,7 @@
                 <Setter Property="FontSize" Value="{StaticResource FontSizeDefault}"/>
             </Style>
 
-            <Style TargetType="ListView">
+            <Style TargetType="ListView" ApplyToDerivedTypes="True">
                 <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackground}"/>
                 
             </Style>

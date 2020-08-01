@@ -2103,3 +2103,4 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\a
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64b82ae033eec6a178\CustomPickerRenderer.java
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\43C8226D8AA7F5E6.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\43C8226D8AA7F5E6.flata
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64b82ae033eec6a178\TransparentSelectListViewRenderer.java

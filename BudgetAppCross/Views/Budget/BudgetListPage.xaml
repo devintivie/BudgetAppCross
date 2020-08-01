@@ -26,13 +26,12 @@
     <ContentPage.Content>
         <!--<RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding RefreshItemsCommand}"
                      BackgroundColor="Green">-->
-            <ListView x:Name="BudgetCompanyList"
+            <custom:TransparentSelectListView x:Name="BudgetCompanyList"
                       ItemsSource="{Binding Trackers}"
-                      ItemSelected="BTItemSelected"
                       SelectedItem="{Binding SelectedTracker}"
                       ItemTapped="BTItemTapped"
+                      
                       >
-                
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <!--<controls:BillTrackerGlanceView/>-->
@@ -50,7 +49,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 
-            </ListView>
+            </custom:TransparentSelectListView>
         <!--</RefreshView>-->
         
     </ContentPage.Content>

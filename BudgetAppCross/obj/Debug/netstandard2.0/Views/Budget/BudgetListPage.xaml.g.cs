@@ -20,13 +20,13 @@ namespace BudgetAppCross.Views {
         private global::MvvmCross.Forms.Views.MvxContentPage<global::BudgetAppCross.Core.ViewModels.BudgetListViewModel> BudgetContentPage;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.ListView BudgetCompanyList;
+        private global::CustomXamarinControls.TransparentSelectListView BudgetCompanyList;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(BudgetListPage));
             BudgetContentPage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MvvmCross.Forms.Views.MvxContentPage<global::BudgetAppCross.Core.ViewModels.BudgetListViewModel>>(this, "BudgetContentPage");
-            BudgetCompanyList = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "BudgetCompanyList");
+            BudgetCompanyList = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::CustomXamarinControls.TransparentSelectListView>(this, "BudgetCompanyList");
         }
     }
 }

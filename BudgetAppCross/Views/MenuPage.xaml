@@ -29,7 +29,7 @@
             VerticalTextAlignment="End"/>
         <!--<ListView ItemsSource="{Binding MenuItemList}"
                 SelectedItem="{Binding SelectedMenuItem }">-->
-        <ListView x:Name="MenuList" ItemsSource="{Binding PageList}"
+        <custom:TransparentSelectListView x:Name="MenuList" ItemsSource="{Binding PageList}"
                     SeparatorVisibility="None"
                       BackgroundColor="{StaticResource PrimaryBackground}"
                   ItemSelected="ListView_ItemSelected"
@@ -51,7 +51,7 @@
                     <behaviors:InvokeCommandAction Command="{Binding ShowDetailPageAsyncCommand}"/>
                 </behaviors:EventHandlerBehavior>
             </ListView.Behaviors>
-        </ListView>
+        </custom:TransparentSelectListView>
         <Button Grid.Row="2" Text="Settings" Command="{Binding ShowAccountPageCommand}"
                 TextColor="{StaticResource MenuButtonForeground}"
                 VerticalOptions="Start"/>

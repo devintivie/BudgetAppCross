@@ -20,13 +20,13 @@ namespace BudgetAppCross.Views {
         private global::MvvmCross.Forms.Views.MvxContentPage<global::BudgetAppCross.Core.ViewModels.MenuViewModel> MainContent;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.ListView MenuList;
+        private global::CustomXamarinControls.TransparentSelectListView MenuList;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(MenuPage));
             MainContent = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MvvmCross.Forms.Views.MvxContentPage<global::BudgetAppCross.Core.ViewModels.MenuViewModel>>(this, "MainContent");
-            MenuList = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "MenuList");
+            MenuList = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::CustomXamarinControls.TransparentSelectListView>(this, "MenuList");
         }
     }
 }
