@@ -19,6 +19,11 @@ namespace BudgetAppCross.Views
         {
             InitializeComponent();
         }
+
+        private void ListView_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        {
+            MenuList.SelectedItem = null;
+        }
     }
 }
 //    // Learn more about making custom code visible in the Xamarin.Forms previewer

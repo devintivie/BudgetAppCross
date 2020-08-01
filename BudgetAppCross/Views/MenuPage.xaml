@@ -12,6 +12,7 @@
              x:Class="BudgetAppCross.Views.MenuPage"
              x:Name="MainContent"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
              ios:Page.UseSafeArea="True"
              BackgroundColor="{StaticResource PrimaryBackground}"
              Title="Menu">
@@ -28,10 +29,10 @@
             VerticalTextAlignment="End"/>
         <!--<ListView ItemsSource="{Binding MenuItemList}"
                 SelectedItem="{Binding SelectedMenuItem }">-->
-        <ListView ItemsSource="{Binding PageList}"
+        <ListView x:Name="MenuList" ItemsSource="{Binding PageList}"
                     SeparatorVisibility="None"
                       BackgroundColor="{StaticResource PrimaryBackground}"
-                  
+                  ItemSelected="ListView_ItemSelected"
                 SelectedItem="{Binding SelectedPage }"
                   
                 Grid.Row="1">

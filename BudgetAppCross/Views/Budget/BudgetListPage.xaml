@@ -9,6 +9,7 @@
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
              x:TypeArguments="vms:BudgetListViewModel"
+             xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
              Title="{Binding Title}"
              x:Name="BudgetContentPage"
                       

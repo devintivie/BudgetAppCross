@@ -8,7 +8,7 @@ public class MonoPackageManager_Resources {
 		"Behaviors.dll",
 		"BudgetAppCross.Core.dll",
 		"BudgetAppCross.dll",
-		"CustomXamarinControls.Android.dll",
+		"CustomXamarinControls.Droid.dll",
 		"FormsViewGroup.dll",
 		"Microsoft.Bcl.AsyncInterfaces.dll",
 		"Microsoft.Bcl.HashCode.dll",

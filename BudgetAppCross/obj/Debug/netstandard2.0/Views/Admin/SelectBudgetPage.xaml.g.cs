@@ -20,9 +20,13 @@ namespace BudgetAppCross.Views {
         private global::MvvmCross.Forms.Views.MvxContentPage<global::BudgetAppCross.Core.ViewModels.SelectBudgetViewModel> currentPage;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.ListView mainListView;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(SelectBudgetPage));
             currentPage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::MvvmCross.Forms.Views.MvxContentPage<global::BudgetAppCross.Core.ViewModels.SelectBudgetViewModel>>(this, "currentPage");
+            mainListView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "mainListView");
         }
     }
 }

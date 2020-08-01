@@ -87,6 +87,7 @@
 
             <Style TargetType="ListView">
                 <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackground}"/>
+                
             </Style>
             
         </ResourceDictionary>

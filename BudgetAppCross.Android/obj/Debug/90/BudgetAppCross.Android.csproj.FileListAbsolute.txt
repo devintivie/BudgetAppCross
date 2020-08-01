@@ -1407,14 +1407,12 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\com.
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\com.companyname.BudgetAppCross-Signed.apk
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BudgetAppCross.Core.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BudgetAppCross.dll
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\CustomXamarinControls.Android.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\CustomXamarinControls.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BudgetAppCross.Models.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BaseClasses.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\InAppPurchasing.Core.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\CustomXamarinFormsBehaviors.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\CustomXamarinFormsConverters.dll
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\CustomXamarinControls.Android.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BudgetAppCross.Core.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\BudgetAppCross.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\CustomXamarinControls.pdb
@@ -1465,8 +1463,6 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\a
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\BudgetAppCross.Models.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\BudgetAppCross.Models.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\BudgetAppCross.pdb
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\CustomXamarinControls.Android.dll
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\CustomXamarinControls.Android.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\CustomXamarinControls.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\CustomXamarinControls.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\CustomXamarinFormsBehaviors.dll
@@ -2076,10 +2072,6 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\s
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643bb19d8ab41eaa8b\CustomDatePickerRenderer.java
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643bb19d8ab41eaa8b\CustomEntryRenderer.java
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc643bb19d8ab41eaa8b\CustomPickerRenderer.java
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\43C8226D8AA7F5E6.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\DB5141DAF6A7BB76.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\53D99F48DDA78106.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\80F111EC5C817E7D.stamp
@@ -2091,7 +2083,6 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\f
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\87BEED58F2AF47CD.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\0F3633CAD9AF7DBD.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\771FD9437E8D540A.stamp
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\43C8226D8AA7F5E6.flata
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\DB5141DAF6A7BB76.flata
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\53D99F48DDA78106.flata
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\80F111EC5C817E7D.flata
@@ -2103,3 +2094,12 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\f
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\87BEED58F2AF47CD.flata
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\0F3633CAD9AF7DBD.flata
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\771FD9437E8D540A.flata
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\CustomXamarinControls.Droid.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\bin\Debug\CustomXamarinControls.Droid.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\CustomXamarinControls.Droid.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\assets\CustomXamarinControls.Droid.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64b82ae033eec6a178\CustomDatePickerRenderer.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64b82ae033eec6a178\CustomEntryRenderer.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\android\src\crc64b82ae033eec6a178\CustomPickerRenderer.java
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\43C8226D8AA7F5E6.stamp
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Android\obj\Debug\90\flata\43C8226D8AA7F5E6.flata

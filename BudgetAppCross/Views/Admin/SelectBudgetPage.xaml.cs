@@ -19,5 +19,10 @@ namespace BudgetAppCross.Views
         {
             InitializeComponent();
         }
+
+        private void mainListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            mainListView.SelectedItem = null;
+        }
     }
 }
