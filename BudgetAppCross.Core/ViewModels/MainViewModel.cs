@@ -35,24 +35,26 @@ namespace BudgetAppCross.Core.ViewModels
 
             if (name == null)
             {
-                //if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
-                //{
-                //    masterDetailPage.IsPresented = false;
-                //}
-                //else if (Application.Current.MainPage is NavigationPage navigationPage
-                //         && navigationPage.CurrentPage is MasterDetailPage nestedMasterDetail)
-                //{
-                //    nestedMasterDetail.IsPresented = false;
-                //}
-
-                if(Application.Current.MainPage is MasterDetailPage masterDetailPage)
+                if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
                 {
                     masterDetailPage.IsGestureEnabled = false;
                 }
 
+                var files = await StateManager.FindBudgetFiles();
+                if (files.Count == 0)
+                {
+                    await navigationService.Navigate<MenuViewModel>();
+                    await navigationService.Navigate<WelcomeViewModel>();
+                }
+                else
+                {
+                    await navigationService.Navigate<MenuViewModel>();
+                    await navigationService.Navigate<SelectBudgetViewModel>();
+                }
 
-                await navigationService.Navigate<MenuViewModel>();
-                await navigationService.Navigate<WelcomeViewModel>();
+
+                //await navigationService.Navigate<MenuViewModel>();
+                //await navigationService.Navigate<WelcomeViewModel>();
             }
             else
             {

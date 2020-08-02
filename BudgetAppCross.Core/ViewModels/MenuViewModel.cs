@@ -1,4 +1,9 @@
-﻿using MvvmCross.Commands;
+﻿using Acr.UserDialogs;
+using BaseClasses;
+using BudgetAppCross.Core.Services;
+using BudgetAppCross.Models;
+using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
@@ -58,6 +63,8 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+        public string BudgetName => StateManager.Instance.DatabaseFilename;
+
 
         #endregion
 
@@ -84,9 +91,6 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        //new Command(async () => await navigationService.Navigate<NewBankAccountViewModel>());
-
-
         #endregion
 
         #region Constructors
@@ -99,6 +103,8 @@ namespace BudgetAppCross.Core.ViewModels
             //    "Bill List",
             //    "About"
             //};
+            Messenger.Instance.Register<UpdateMenuMessage>(this, async x => await OnUpdate());
+            
 
             PageList = new MvxObservableCollection<NavigablePage>()
             {
@@ -111,23 +117,13 @@ namespace BudgetAppCross.Core.ViewModels
                 //NavigablePage.Purchasing
             };
         }
+
+
         #endregion
 
         #region Methods
         private async Task ShowDetailPageAsync()
         {
-            // Implement your logic here.
-            //switch (SelectedMenuItem)
-            //{
-            //    case "Bill List":
-            //        await navigationService.Navigate<BudgetListViewModel>();
-            //        break;
-            //    case "About":
-            //        await navigationService.Navigate<AboutViewModel>();
-            //        break;
-            //    default:
-            //        break;
-            //}
             CloseMenu();
             switch (SelectedPage)
             {
@@ -159,6 +155,11 @@ namespace BudgetAppCross.Core.ViewModels
                     break;
             }
             
+        }
+
+        private async Task OnUpdate()
+        {
+            RaisePropertyChanged(nameof(BudgetName));
         }
 
         private async Task ShowAccountPageAsync()

@@ -11,7 +11,7 @@ using MvvmCross.Forms.Views;
 
 namespace BudgetAppCross.Views
 {
-    [MvxMasterDetailPagePresentation(Position = MasterDetailPosition.Master, WrapInNavigationPage = false, Title = "HamburgerMenu Demo") ]
+    [MvxMasterDetailPagePresentation(Position = MasterDetailPosition.Master, WrapInNavigationPage = false) ]
     public partial class MenuPage// : MvxContentPage<MenuViewModel>
     {
         

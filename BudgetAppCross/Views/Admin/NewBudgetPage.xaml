@@ -9,6 +9,7 @@
              xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              mc:Ignorable="d"
+             xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
              ios:Page.UseSafeArea="True"
                       BackgroundColor="{StaticResource PrimaryBackground}"
              x:Class="BudgetAppCross.Views.NewBudgetPage">
@@ -16,21 +17,25 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Label Text="Budget Name"/>
-                <Entry Text="{Binding BudgetFilename}"/>
+                <Label Text="Budget Name" Style="{StaticResource BigLightLabel}"/>
+                <custom:CustomEntry Text="{Binding BudgetFilename}"
+                                    FontSize="{StaticResource FontSizeLarge}"/>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Add Bank Account?"/>
+                    <Label Text="Add Bank Account?" Style="{StaticResource BigLightLabel}"/>
                     <Switch IsToggled="{Binding IsAddingBankAccount}"/>
                 </StackLayout>
                 <StackLayout IsVisible="{Binding IsAddingBankAccount}">
-                    <Label Text="Bank Account Name"/>
-                    <Entry Text="{Binding FirstBankAccountName}"/>
-                    <Label Text="Balance"/>
+                    <Label Text="Bank Account Name" Style="{StaticResource BigLightLabel}"/>
+                    <custom:CustomEntry Text="{Binding FirstBankAccountName}"
+                                        FontSize="{StaticResource FontSizeLarge}"/>
+                    <Label Text="Balance" Style="{StaticResource BigLightLabel}"/>
                     <!--<Entry Text="{Binding InitialBalance, Converter={cvt:CurrencyConverter}}"
                            Keyboard="Numeric"/>-->
-                    <controls:CurrencyEntry Text="{Binding InitialBalance}"/>
-                    <Label Text="Date"/>
-                    <DatePicker Date="{Binding InitialBalanceDate}"/>
+                    <controls:CurrencyEntry Text="{Binding InitialBalance}"
+                                            FontSize="{StaticResource FontSizeLarge}"/>
+                    <Label Text="Date" Style="{StaticResource BigLightLabel}"/>
+                    <custom:CustomDatePicker Date="{Binding InitialBalanceDate}"
+                                             FontSize="{StaticResource FontSizeLarge}"/>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Button Text="Go Back" Command="{Binding CancelCommand}"/>

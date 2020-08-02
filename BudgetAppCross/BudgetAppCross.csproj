@@ -75,6 +75,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Admin\BudgetQuickView.xaml.cs">
+      <DependentUpon>BudgetQuickView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Admin\NewBudgetPage.xaml.cs">
       <DependentUpon>NewBudgetPage.xaml</DependentUpon>
     </Compile>

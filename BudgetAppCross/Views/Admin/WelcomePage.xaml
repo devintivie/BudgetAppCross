@@ -19,7 +19,7 @@
     <!--BackgroundColor="#00000000"-->
 
     <ContentPage.Content>
-        <RelativeLayout BackgroundColor="{StaticResource NavigationPrimary}">
+        <RelativeLayout BackgroundColor="{StaticResource PrimaryBackground}">
             <!--<ListView ItemsSource="{Binding Budgets}"
                       BackgroundColor="{StaticResource NavigationPrimary}"
                       SelectedItem="{Binding SelectedBudget}" SelectionMode="Single"
@@ -61,11 +61,11 @@
             
             <Button Text="Start a budget" HorizontalOptions="CenterAndExpand" 
                     Command="{Binding AddBudgetCommand}"
-                    TextColor="Black"
+                    FontSize="{StaticResource FontSizeLarge}"
                     
-                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.1}"
                     RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.45}"
-                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}"/>
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.8}"/>
         </RelativeLayout>
         
     </ContentPage.Content>

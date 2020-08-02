@@ -20,7 +20,7 @@
         <!--<ToolbarItem Text="Delete" Command="{Binding DeleteAccountCommand}"/>-->
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding Accounts}"
+        <custom:TransparentSelectListView ItemsSource="{Binding Accounts}"
                   SelectedItem="{Binding SelectedAccount}"
                   ItemTapped="BankAccount_ItemTapped">
             <ListView.ItemTemplate>
@@ -40,7 +40,7 @@
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+        </custom:TransparentSelectListView>
         <!--<StackLayout BindableLayout.ItemsSource="{Binding Accounts}">
             <BindableLayout.ItemTemplate>
                 <DataTemplate>

@@ -15,50 +15,82 @@ using System.Linq;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class SelectBudgetViewModel : BaseViewModel// MvxViewModel
+    public class SelectBudgetViewModel : WelcomeViewModel//BaseViewModel// MvxViewModel
     {
         #region Fields
-        private IMvxNavigationService navigationService;
+        //private IMvxNavigationService navigationService;
         #endregion
 
         #region Properties
-        private ObservableCollection<string> budgets = new ObservableCollection<string>();
-        public ObservableCollection<string> Budgets
+        //private ObservableCollection<string> budgets = new ObservableCollection<string>();
+        //public ObservableCollection<string> Budgets
+        //{
+        //    get { return budgets; }
+        //    set
+        //    {
+        //        SetProperty(ref budgets, value);
+        //    }
+        //}
+
+        private ObservableCollection<BudgetQuickViewModel> budgets = new ObservableCollection<BudgetQuickViewModel>();
+        public ObservableCollection<BudgetQuickViewModel> Budgets
         {
             get { return budgets; }
             set
             {
-                SetProperty(ref budgets, value);
-            }
-        }
-
-        private string selectedBudget;
-        public string SelectedBudget
-        {
-            get { return selectedBudget; }
-            set
-            {
-                SetProperty(ref selectedBudget, value);
-                if (SelectedBudget != null)
+                if (budgets != value)
                 {
-                    var _ = BudgetSelected();
+                    budgets = value;
+                    RaisePropertyChanged();
                 }
             }
         }
 
 
+        //private string selectedBudget;
+        //public string SelectedBudget
+        //{
+        //    get { return selectedBudget; }
+        //    set
+        //    {
+        //        SetProperty(ref selectedBudget, value);
+        //        if (SelectedBudget != null)
+        //        {
+        //            var _ = BudgetSelected();
+        //        }
+        //    }
+        //}
+
+        private BudgetQuickViewModel selectedBudget;
+        public BudgetQuickViewModel SelectedBudget
+        {
+            get { return selectedBudget; }
+            set
+            {
+                if (selectedBudget != value)
+                {
+                    selectedBudget = value;
+                    if (SelectedBudget != null)
+                    {
+                        var _ = BudgetSelected();
+                    }
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+
+
         #endregion
 
         #region Commands
-        public ICommand AddBudgetCommand { get; }
+        
         #endregion
 
         #region Constructors
-        public SelectBudgetViewModel(IMvxNavigationService navigation)
+        public SelectBudgetViewModel(IMvxNavigationService navigation) : base(navigation)
         {
-            navigationService = navigation;
-            AddBudgetCommand = new Command(async () => await navigationService.Navigate<NewBudgetViewModel>());
-
+            Messenger.Register<ChangeBudgetsMessage>(this, async x => await OnChangeBudgetsMessage());
             var _ = GetRecentBudgets();
         }
 
@@ -69,25 +101,43 @@ namespace BudgetAppCross.Core.ViewModels
         {
             var files = await StateManager.FindBudgetFiles();
 
-            if(files.Count > 0)
+            Budgets.Clear();
+            foreach (var file in files)
             {
-                Budgets = new ObservableCollection<string>(files);
+                Budgets.Add(new BudgetQuickViewModel(navigationService, file));
             }
+            //Budgets = new ObservableCollection<string>(files);
+            
+        }
+
+        private async Task OnChangeBudgetsMessage()
+        {
+            var files = await StateManager.FindBudgetFiles();
+            if(files.Count == 0)
+            {
+                await navigationService.Navigate<WelcomeViewModel>();
+            }
+            else
+            {
+                await GetRecentBudgets();
+            }
+            
         }
 
         private async Task BudgetSelected()
         {
-
+            //Enables access to swipe right main menu after this page closes
             if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
             {
                 masterDetailPage.IsGestureEnabled = true;
             }
-            StateManager.DatabaseFilename = SelectedBudget;
+            StateManager.DatabaseFilename = SelectedBudget.BudgetName;
             //await StateManager.SaveState();
             await StateManager.SaveState();
             await BudgetDatabase.Initialize();
             await BudgetDatabase.GetBankAccounts();
             await navigationService.Navigate<BudgetListViewModel>();
+            Messenger.Send(new UpdateMenuMessage());
 
         }
         #endregion

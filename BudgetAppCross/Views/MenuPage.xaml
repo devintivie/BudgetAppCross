@@ -23,22 +23,22 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Label
-            Text="Menu" FontSize="Title" HorizontalTextAlignment="Center"
-                TextColor="{StaticResource MenuButtonForeground}"
-            VerticalTextAlignment="End"/>
+        <Label Text="{Binding BudgetName}" FontSize="Title" HorizontalTextAlignment="Center"
+               BackgroundColor="{StaticResource PrimaryBackground}"
+               TextColor="{StaticResource MenuButtonForeground}"
+               Margin="5 0 25 0"
+               VerticalTextAlignment="End"/>
         <!--<ListView ItemsSource="{Binding MenuItemList}"
                 SelectedItem="{Binding SelectedMenuItem }">-->
         <custom:TransparentSelectListView x:Name="MenuList" ItemsSource="{Binding PageList}"
-                    SeparatorVisibility="None"
-                      BackgroundColor="{StaticResource PrimaryBackground}"
-                  ItemSelected="ListView_ItemSelected"
-                SelectedItem="{Binding SelectedPage }"
-                  
-                Grid.Row="1">
+                                          SeparatorVisibility="None"
+                                        BackgroundColor="{StaticResource PrimaryBackground}"
+                                        ItemSelected="ListView_ItemSelected"
+                                        SelectedItem="{Binding SelectedPage }"
+                                        Grid.Row="1">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding}" TextColor="{StaticResource MenuButtonForeground}"/>
+                    <TextCell Text="{Binding}" TextColor="{StaticResource MenuButtonForeground}" IsEnabled="{Binding BudgetLoaded}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
             <!--<ListView.ItemTemplate>
@@ -52,6 +52,8 @@
                 </behaviors:EventHandlerBehavior>
             </ListView.Behaviors>
         </custom:TransparentSelectListView>
+        <!--<Label Text="{Binding BudgetName}" Grid.Row="2"
+               Style="{StaticResource BigLightLabel}"/>-->
         <Button Grid.Row="2" Text="Settings" Command="{Binding ShowAccountPageCommand}"
                 TextColor="{StaticResource MenuButtonForeground}"
                 VerticalOptions="Start"/>

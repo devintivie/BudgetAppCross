@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<views:MvxContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+             mc:Ignorable="d"
+             x:Class="BudgetAppCross.Views.BudgetQuickView">
+    <ContentView.Content>
+        <Grid x:Name="mainGrid" VerticalOptions="Center" HorizontalOptions="Fill"
+                                  BackgroundColor="{StaticResource ButtonBackground}">
+            <Label Text="{Binding BudgetName}"
+                   FontSize="{StaticResource FontSizeLarge}"/>
+        </Grid>
+
+        <!--<Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="{Binding BudgetName}"
+                   FontSize="{StaticResource FontSizeLarge}"
+                   
+                   />
+            <Label Text="{Binding Balance, Converter={cvt:CurrencyConverter}}"
+                   Grid.Column="1"
+                   FontSize="{StaticResource FontSizeLarge}"/>
+            --><!--<Label Text="{Binding AccountID}"
+                   />--><!--
+        </Grid>-->
+    </ContentView.Content>
+</views:MvxContentView>

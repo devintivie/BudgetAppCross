@@ -39,76 +39,51 @@
                                 Grid.Row="0" Grid.Column="1"
                                IsVisible="{Binding IsNewPayee}"/>
                             <custom:CustomPicker ItemsSource="{Binding PayeeOptions}"
-                                                 Style="{StaticResource BigLightLabel}"
+                                                 FontSize="{StaticResource FontSizeLarge}"
                                              HorizontalOptions="EndAndExpand"
                                              WidthRequest="170"
                                              SelectedItem="{Binding SelectedPayee}"
                                              IsVisible="{Binding IsNewPayee, Converter={cvt:InverseBoolConverter}}"/>
                             <custom:CustomEntry Text="{Binding NewPayee}" 
-                                                Style="{StaticResource BigLightLabel}"
-                               HorizontalOptions="EndAndExpand"
-                           IsVisible="{Binding IsNewPayee}"
-                           Grid.Row="1" Grid.Column="0"
-                           WidthRequest="170"/>
+                                                FontSize="{StaticResource FontSizeLarge}"
+                                                HorizontalOptions="EndAndExpand"
+                                                IsVisible="{Binding IsNewPayee}"
+                                                Grid.Row="1" Grid.Column="0"
+                                                WidthRequest="170"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal" IsVisible="{Binding PayeeSet}">
                             <Label Text="Add bill(s) for"
-                                Style="{StaticResource BigLightLabel}"/>
+                                   Style="{StaticResource BigLightLabel}" />
                             <Label Text="{Binding SelectedPayee}"
-                                Style="{StaticResource BigLightLabel}"
-                               />
+                                    Style="{StaticResource BigLightLabel}"/>
                         </StackLayout>
 
 
                         <!--Amount Due-->
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Amount Due"
-                               Style="{StaticResource BigLightLabel}"
-                                Grid.Row="0" Grid.Column="1"
-                                />
-                            <!--<Entry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
-                                Keyboard="Numeric"
-                               ClearButtonVisibility="WhileEditing"
-                               Placeholder="$0.00"
-                                Grid.Row="1" Grid.Column="1"
-                                Focused="Entry_Focused"
-                                Unfocused="Entry_Unfocused"
-                               
-                               TextChanged="Entry_TextChanged"
-                               HorizontalTextAlignment="End"
-                               HorizontalOptions="EndAndExpand"
-                                WidthRequest="140"/>-->
+                                   Style="{StaticResource BigLightLabel}"
+                                   Grid.Row="0" Grid.Column="1"
+                                   />
                             <controls:CurrencyEntry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
-                                                Style="{StaticResource BigLightLabel}"
-                               HorizontalTextAlignment="End"
-                               HorizontalOptions="EndAndExpand"
-                                WidthRequest="140"/>
+                                                    FontSize="{StaticResource FontSizeLarge}"
+                                                    HorizontalTextAlignment="End"
+                                                    HorizontalOptions="EndAndExpand"
+                                                    WidthRequest="140"/>
                         </StackLayout>
-
-                        <!--Amount Due-->
-                        <!--
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="Amount Currency"
-                                VerticalOptions="Center"
-                                Grid.Row="0" Grid.Column="1"
-                                FontSize="{StaticResource FontSizeLarge}"/>
-                        <controls:CurrencyEntry Text="{Binding CustomAmount, UpdateSourceEventName=Unfocused}" 
-                               HorizontalTextAlignment="End"
-                               HorizontalOptions="EndAndExpand"
-                                WidthRequest="140"/>
-                    </StackLayout>-->
 
                         <!--Account-->
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Account"
-                               Style="{StaticResource BigLightLabel}"
-                               Grid.Row="0" Grid.Column="4"/>
+                                   Style="{StaticResource BigLightLabel}"
+                                   Grid.Row="0" Grid.Column="4"/>
                             <custom:CustomPicker ItemsSource="{Binding AccountOptions}"
-                                             Style="{StaticResource BigLightLabel}"
-                                SelectedItem="{Binding SelectedAccount}"
-                                HorizontalOptions="EndAndExpand"
-                                WidthRequest="170"/>
+                                                 FontSize="{StaticResource FontSizeLarge}"
+                                                 SelectedItem="{Binding SelectedAccount}"
+                                                 HorizontalOptions="EndAndExpand"
+                                                 WidthRequest="170"/>
                         </StackLayout>
+                        
                         <!--Add Multiple-->
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Add Multiple"
@@ -128,6 +103,7 @@
                                     Grid.Column="1"
                                     />
                         </StackLayout>
+                        
                         <!--Add Multiple-->
                         <StackLayout Orientation="Horizontal" IsVisible="{Binding AddMultiple, Converter={cvt:InverseBoolConverter}}">
                             <Label Text="Already Paid?"
@@ -143,7 +119,7 @@
                                />
                             <custom:CustomPicker ItemsSource="{Binding Source={cvt:EnumBindingSource {x:Type models:DueDateFrequencies}}}"
                                                  SelectedItem="{Binding DueDateFrequency}"
-                                                 Style="{StaticResource BigLightLabel}"
+                                                 FontSize="{StaticResource FontSizeLarge}"
                                 Grid.Row="1" Grid.Column="1"
                                  HorizontalOptions="EndAndExpand"
                             
@@ -156,7 +132,7 @@
                                    Style="{StaticResource BigLightLabel}"
                                    Grid.Row="2" Grid.Column="0"/>
                             <custom:CustomDatePicker x:Name="pickerEndDate"
-                                                     Style="{StaticResource BigLightLabel}"
+                                                     FontSize="{StaticResource FontSizeLarge}"
                                 Date="{Binding EndDate}"
                                 Grid.Row="2" HorizontalOptions="EndAndExpand"
                                 />

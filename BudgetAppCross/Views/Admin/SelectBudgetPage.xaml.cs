@@ -12,7 +12,7 @@ using Xamarin.Forms.Xaml;
 namespace BudgetAppCross.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    [MvxMasterDetailPagePresentation(Position = MasterDetailPosition.Detail, NoHistory = false, Title = "Select Budget", WrapInNavigationPage =true)]
+    [MvxMasterDetailPagePresentation(Position = MasterDetailPosition.Detail, NoHistory = false, Title = "Select Budget", WrapInNavigationPage =false)]
     public partial class SelectBudgetPage
     {
         public SelectBudgetPage()

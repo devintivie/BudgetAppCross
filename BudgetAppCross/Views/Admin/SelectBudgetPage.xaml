@@ -13,7 +13,7 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              x:TypeArguments="vms:SelectBudgetViewModel"
              x:Name="currentPage"
-             Title="Select Budget"
+             Title=""
              
              ios:Page.UseSafeArea="True"
              BackgroundColor="{StaticResource PrimaryBackground}"
@@ -47,7 +47,8 @@
                                           IsDestructive="True"
                                               CommandParameter="{Binding .}"/>
                             </ViewCell.ContextActions>
-                            <Grid VerticalOptions="Center" HorizontalOptions="Center"
+                            <controls:BudgetQuickView WidthRequest="{Binding Source={x:Reference mainListView}, Path=Width}"/>
+                            <!--<Grid VerticalOptions="Center" HorizontalOptions="Center"
                                   BackgroundColor="{StaticResource ButtonBackground}">
                                 <Label Text="{Binding }" HorizontalOptions="Center"
                                        WidthRequest="{Binding Source={x:Reference mainListView}, Path=Width}"
@@ -55,7 +56,7 @@
                                     HorizontalTextAlignment="Center"
                                        VerticalTextAlignment="Center"
                                     FontSize="{StaticResource FontSizeLarge}"/>
-                                <!--<Frame BackgroundColor="Transparent"
+                                --><!--<Frame BackgroundColor="Transparent"
                                         BorderColor="Gray"
                                         CornerRadius="33"
                                         >
@@ -64,8 +65,10 @@
                                            Margin="0"
                                            Padding="0"
                                     FontSize="{StaticResource FontSizeMedium}"/>
-                                </Frame>-->
-                            </Grid>
+                                </Frame>--><!--
+                            </Grid>-->
+
+                            
                         </ViewCell>
                         
                     </DataTemplate>
