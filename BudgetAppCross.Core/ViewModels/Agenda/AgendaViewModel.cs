@@ -180,6 +180,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnChangeBillMessage(int accountId)
         {
+            Console.WriteLine("On change");
             await GetGroups();
         }
 

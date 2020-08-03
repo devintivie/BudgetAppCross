@@ -51,10 +51,11 @@
                    Style="{StaticResource BigLightLabel}"/>
             <custom:CustomDatePicker Date="{Binding Date}"
                                      FontSize="{StaticResource FontSizeLarge}"/>
-            <StackLayout Orientation="Horizontal">
+            <Grid >
                 <Button Text="Cancel" Command="{Binding CancelCommand}"/>
-                <Button Text="Save" Command="{Binding SaveCommand}"/>
-            </StackLayout>
+                <Button Text="Save" Command="{Binding SaveCommand}"
+                        Grid.Column="1"/>
+            </Grid>
         </StackLayout>
         
     </ContentPage.Content>

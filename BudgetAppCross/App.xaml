@@ -51,6 +51,7 @@
             <Style TargetType="Button">
                 <Setter Property="TextColor" Value="{StaticResource MenuButtonForeground}"/>
                 <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="FontSize" Value="{StaticResource FontSizeMedium}"/>
             </Style>
 
             <Style TargetType="Label">
