@@ -8,6 +8,8 @@
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              xmlns:models="clr-namespace:BudgetAppCross.Models;assembly=BudgetAppCross.Models"
              xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
+                      xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+                      ios:Page.UseSafeArea="True"
              mc:Ignorable="d"
              Title="Add Bill"
              BackgroundColor="{StaticResource PrimaryBackground}"
@@ -176,7 +178,6 @@
                 <Button Text="Cancel" Command="{Binding CancelCommand}"
                             />
                 <Button Text="Save" Command="{Binding SaveCommand}"
-                            
                             Grid.Column="1"/>
             </Grid>
         </Grid>

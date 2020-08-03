@@ -14,7 +14,7 @@
     <ContentView.Content>
         <Frame BorderColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
                BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
-               Margin="2" Padding="3"
+               Margin="2" Padding="3" HasShadow="False"
                >
             <Frame Padding="0" HasShadow="False">
                 <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
@@ -24,11 +24,12 @@
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="1.8*"/>
+                        <ColumnDefinition Width="1.0*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <CheckBox IsChecked="{Binding IsPaid}" 
+                    <CheckBox IsChecked="{Binding IsPaid}"
+                              Margin="0"
                           Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
                           Grid.Row="0" Grid.RowSpan="2"/>
                     <Label Text="{Binding Payee}" TextColor="{StaticResource PrimaryForeground}"

@@ -31,11 +31,11 @@
             <Color x:Key="DefaultBackground">#d6bd2d</Color>
 
             <OnPlatform x:Key="FontSizeDefault" x:TypeArguments="x:Double" >
-                <On Platform="iOS" Value="16" />
+                <On Platform="iOS" Value="14" />
                 <On Platform="Android" Value="12"/>
             </OnPlatform>
             <OnPlatform x:Key="FontSizeMedium" x:TypeArguments="x:Double" >
-                <On Platform="iOS" Value="18" />
+                <On Platform="iOS" Value="16" />
                 <On Platform="Android" Value="14"/>
             </OnPlatform>
             <OnPlatform x:Key="FontSizeLarge" x:TypeArguments="x:Double" >

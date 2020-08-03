@@ -14,7 +14,7 @@
              Title="Select Budget"
              
              ios:Page.UseSafeArea="True"
-             BackgroundColor="{StaticResource NavigationPrimary}"
+             BackgroundColor="{StaticResource PrimaryBackground}"
              >
     <!--BackgroundColor="#00000000"-->
 

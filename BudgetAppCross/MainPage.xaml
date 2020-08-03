@@ -7,6 +7,8 @@
             xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
             x:TypeArguments="vms:MainViewModel"
                            MasterBehavior="Popover"
+                           
+             BackgroundColor="{StaticResource PrimaryBackground}"
             mc:Ignorable="d"
             x:Class="BudgetAppCross.MainPage">
 

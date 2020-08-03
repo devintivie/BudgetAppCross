@@ -37,10 +37,11 @@
                     <custom:CustomDatePicker Date="{Binding InitialBalanceDate}"
                                              FontSize="{StaticResource FontSizeLarge}"/>
                 </StackLayout>
-                <StackLayout Orientation="Horizontal">
+                <Grid >
                     <Button Text="Go Back" Command="{Binding CancelCommand}"/>
-                    <Button Text="Get Started" Command="{Binding SaveCommand}"/>
-                </StackLayout>
+                    <Button Text="Get Started" Command="{Binding SaveCommand}"
+                            Grid.Column="1"/>
+                </Grid>
             </StackLayout>
             
         </ScrollView>
