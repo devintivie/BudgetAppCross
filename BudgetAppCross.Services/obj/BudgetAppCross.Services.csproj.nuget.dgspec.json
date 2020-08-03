@@ -14,8 +14,7 @@
         "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -90,8 +89,7 @@
         "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",
