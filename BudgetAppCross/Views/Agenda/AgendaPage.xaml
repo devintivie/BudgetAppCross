@@ -28,7 +28,8 @@
                   SelectionMode="None"
                   HasUnevenRows="True"
                   Scrolled="agendaList_Scrolled"
-                  IsGroupingEnabled="True">
+                  IsGroupingEnabled="True"
+                  ios:ListView.RowAnimationsEnabled="True">
             <!--HasUnevenRows="True"-->
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>

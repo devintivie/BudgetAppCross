@@ -12,12 +12,15 @@
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.AgendaBillView">
     <ContentView.Content>
-        <Frame BorderColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
-               BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
-               Margin="2" Padding="3" HasShadow="False"
-               >
-            <Frame Padding="0" HasShadow="False">
-                <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
+        <!--<Frame 
+              
+               >-->
+            <!--BorderColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"-->
+               <!--BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"-->
+            <!--Margin="2" Padding="3" HasShadow="False"-->
+            <!--<Frame Padding="0" HasShadow="False">-->
+            <!--BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}"-->
+        <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
@@ -38,7 +41,6 @@
                             VerticalTextAlignment="Center"
                             WidthRequest="120"/>
                     <controls:CurrencyEntry Text="{Binding Amount}"
-                                            Margin="0"
                             WidthRequest="100"
                             Grid.Column="2"
                             HorizontalOptions="FillAndExpand"
@@ -61,42 +63,9 @@
 
 
                 </Grid>
-            </Frame>
-            <!--<FlexLayout Wrap="Wrap" 
-                        
-                        BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
-                <CheckBox IsChecked="{Binding IsPaid}" 
-                      WidthRequest="30"/>
-                    <Label Text="{Binding Payee}"
-                            VerticalOptions="Center"
-                            VerticalTextAlignment="Center"
-                            WidthRequest="120"/>
-                    <Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
-                            WidthRequest="100"
-                           
-                            HorizontalOptions="Center"
-                            VerticalOptions="CenterAndExpand"
-                           BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}"/>
-                    <DatePicker Date="{Binding Date}"
-                                BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}"
-                        >
-                        <DatePicker.Behaviors>
-                            <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
-                        </DatePicker.Behaviors>
-                    </DatePicker>
-
-                    <Picker ItemsSource="{Binding AccountOptions}"
-                            BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}"
-                    
-                            SelectedItem="{Binding SelectedAccount}"
-                            WidthRequest="200"/>
-                    <Entry Text="{Binding Confirmation}"
-                           BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}"
-                           WidthRequest="200"/>
-
-
-            </FlexLayout>-->
-        </Frame>
+            <!--</Frame>-->
+           
+        <!--</Frame>-->
         
         <!--<StackLayout>
             <StackLayout Orientation="Horizontal">
