@@ -93,6 +93,8 @@ namespace BudgetAppCross.Core.ViewModels
             UpdateBills();
         }
 
+        
+
         #endregion
 
         #region Methods
@@ -104,6 +106,8 @@ namespace BudgetAppCross.Core.ViewModels
         public override void ViewDestroy(bool viewFinishing = true)
         {
             //SaveBills();
+
+            Messenger.Unregister(this);
             base.ViewDestroy(viewFinishing);
         }
 

@@ -22,9 +22,10 @@ namespace BudgetAppCross.Views
         {
             InitializeComponent();
 
-            //Messenger.Instance.Register<UpdateViewMessage>(this, OnUpdateView);
-            
+            Messenger.Instance.Register<UpdateViewMessage>(this, OnUpdateView);
         }
+
+
 
         private void OnUpdateView(UpdateViewMessage obj)
         {
@@ -43,39 +44,14 @@ namespace BudgetAppCross.Views
                     dynamic selected = agendaList.ItemsSource.ElementAt(mostRecent);
                     agendaList.ScrollTo(selected[0], ScrollToPosition.Start, true);
                     //agendaList.ScrollTo(mostRecent[0], ScrollToPosition.Center, true);
+                    
                     return;
                 }
 
 
             }
 
-            
-            ////var dates = agendaList.ItemsSource.GetEnumerator();
-            //var dates = new List<DateTime>();
-            //foreach (var item in agendaList.ItemsSource)
-            //{
-            //    var data = item.GetType().GetProperty("Key").GetValue(item);
-
-            //    dates.Add((DateTime)data);
-            //}
-
-            //var pastDates = dates.Where(x => x <= DateTime.Today).OrderByDescending(x => x).ToList();
-            //if(pastDates.Count != 0)
-            //{
-            //    var selectedDate = pastDates.First();
-            //    if(selectedDate != null)
-            //    {
-
-
-            //        //dynamic selected = agendaList.ItemsSource[selectedDate]
-            //        //agendaList.ScrollTo(selected, ScrollToPosition.Center, true);
-            //    }
-                
-            //    //dynamic test = agendaList.ItemsSource.ElementAt(8);
-            //    //agendaList.ScrollTo(test[0], ScrollToPosition.Start, true);
-            //}
-
-
+            Messenger.Instance.Unregister(this);
         }
 
         //private void agendaList_Scrolled(object sender, ScrolledEventArgs e)

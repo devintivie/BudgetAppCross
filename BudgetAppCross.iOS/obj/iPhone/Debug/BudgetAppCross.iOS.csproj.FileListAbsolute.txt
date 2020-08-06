@@ -104,8 +104,8 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\X
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.Models.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BaseClasses.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\CustomXamarinControls.dll
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\CustomXamarinFormsConverters.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\CustomXamarinFormsBehaviors.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\CustomXamarinFormsConverters.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.Core.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\InAppPurchasing.Core.pdb
@@ -114,8 +114,8 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\X
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.Models.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\BaseClasses.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\CustomXamarinControls.pdb
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\CustomXamarinFormsConverters.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\CustomXamarinFormsBehaviors.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\bin\iPhone\Debug\CustomXamarinFormsConverters.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
@@ -221,8 +221,8 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\C
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\BudgetAppCross.Models.dll.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\BaseClasses.dll.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\CustomXamarinControls.dll.ReferenceCopyLocalPaths.stamp
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\CustomXamarinFormsConverters.dll.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\CustomXamarinFormsBehaviors.dll.ReferenceCopyLocalPaths.stamp
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\CustomXamarinFormsConverters.dll.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\BudgetAppCross.Core.pdb.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\BudgetAppCross.pdb.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\InAppPurchasing.Core.pdb.ReferenceCopyLocalPaths.stamp
@@ -232,8 +232,8 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\C
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\BudgetAppCross.Models.pdb.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\BaseClasses.pdb.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\CustomXamarinControls.pdb.ReferenceCopyLocalPaths.stamp
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\CustomXamarinFormsConverters.pdb.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\CustomXamarinFormsBehaviors.pdb.ReferenceCopyLocalPaths.stamp
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\CustomXamarinFormsConverters.pdb.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\MvvmCross.Platform.dll.mdb.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\MvvmCross.Platform.iOS.dll.mdb.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\BudgetAppCross.iOS.exe.mdb.ReferenceCopyLocalPaths.stamp

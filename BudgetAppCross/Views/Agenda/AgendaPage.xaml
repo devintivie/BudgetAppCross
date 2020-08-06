@@ -25,7 +25,6 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ListView x:Name="agendaList" ItemsSource="{Binding Bills}"
-                  SelectionMode="None"
                   HasUnevenRows="True"
                   IsGroupingEnabled="True"
                   ios:ListView.RowAnimationsEnabled="True">

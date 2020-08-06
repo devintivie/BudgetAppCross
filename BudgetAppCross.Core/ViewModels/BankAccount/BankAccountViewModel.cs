@@ -107,7 +107,14 @@ namespace BudgetAppCross.Core.ViewModels
             Messenger.Register<ChangeBalanceMessage>(this, async x => await OnChangeBalanceMessage());
         }
 
-        
+        public override void ViewDestroy(bool viewFinishing = true)
+        {
+            base.ViewDestroy(viewFinishing);
+
+            Messenger.Unregister(this);
+        }
+
+
         #endregion
 
         #region Methods

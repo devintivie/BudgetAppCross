@@ -118,6 +118,13 @@ namespace BudgetAppCross.Core.ViewModels
             };
         }
 
+        public override void ViewDestroy(bool viewFinishing = true)
+        {
+            base.ViewDestroy(viewFinishing);
+
+            Messenger.Instance.Unregister(this);
+        }
+
 
         #endregion
 

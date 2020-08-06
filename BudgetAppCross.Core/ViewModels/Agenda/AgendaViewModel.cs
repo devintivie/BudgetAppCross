@@ -15,6 +15,7 @@ namespace BudgetAppCross.Core.ViewModels
     {
         #region Fields
         private IMvxNavigationService navigationService;
+        private bool scrolled = false;
         #endregion
 
         #region Properties
@@ -100,10 +101,6 @@ namespace BudgetAppCross.Core.ViewModels
 
 
         }
-
-
-
-
         #endregion
 
         #region Methods
@@ -116,8 +113,15 @@ namespace BudgetAppCross.Core.ViewModels
 
         public async Task SendScrollMessage()
         {
-            await Task.Delay(200);
+            await Task.Delay(700);
             Messenger.Send(new UpdateViewMessage());
+            //await SendScrollMessage();
+        }
+
+        public override void ViewDestroy(bool viewFinishing = true)
+        {
+            base.ViewDestroy(viewFinishing);
+            Messenger.Unregister(this);
         }
 
         //public override void ViewAppeared()
@@ -182,6 +186,7 @@ namespace BudgetAppCross.Core.ViewModels
         {
             Console.WriteLine("On change");
             await GetGroups();
+
         }
 
         //private async void SaveBills()

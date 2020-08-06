@@ -94,6 +94,12 @@ namespace BudgetAppCross.Core.ViewModels
             var _ = GetRecentBudgets();
         }
 
+        public override void ViewDestroy(bool viewFinishing = true)
+        {
+            base.ViewDestroy(viewFinishing);
+            Messenger.Unregister(this);
+        }
+
         #endregion
 
         #region Methods

@@ -135,6 +135,7 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Admin\AccountPage.xaml.g.cs
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Admin\BudgetQuickView.xaml.g.cs
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Admin\NewBudgetPage.xaml.g.cs
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Admin\SelectBudgetPage.xaml.g.cs
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Admin\WelcomePage.xaml.g.cs
@@ -175,4 +176,3 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\ref\BudgetAppCross.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.pdb
-C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Admin\BudgetQuickView.xaml.g.cs
