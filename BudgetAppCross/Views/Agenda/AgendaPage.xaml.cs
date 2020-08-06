@@ -22,7 +22,7 @@ namespace BudgetAppCross.Views
         {
             InitializeComponent();
 
-            Messenger.Instance.Register<UpdateViewMessage>(this, OnUpdateView);
+            //Messenger.Instance.Register<UpdateViewMessage>(this, OnUpdateView);
             
         }
 
@@ -78,10 +78,10 @@ namespace BudgetAppCross.Views
 
         }
 
-        private void agendaList_Scrolled(object sender, ScrolledEventArgs e)
-        {
-            Console.WriteLine("WTF");
-        }
+        //private void agendaList_Scrolled(object sender, ScrolledEventArgs e)
+        //{
+        //    Console.WriteLine("WTF");
+        //}
 
         //private void ListView_BindingContextChanged(object sender, EventArgs e)
         //{

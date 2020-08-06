@@ -27,9 +27,10 @@
         <ListView x:Name="agendaList" ItemsSource="{Binding Bills}"
                   SelectionMode="None"
                   HasUnevenRows="True"
-                  Scrolled="agendaList_Scrolled"
                   IsGroupingEnabled="True"
                   ios:ListView.RowAnimationsEnabled="True">
+
+            <!--Scrolled="agendaList_Scrolled"-->
             <!--HasUnevenRows="True"-->
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>

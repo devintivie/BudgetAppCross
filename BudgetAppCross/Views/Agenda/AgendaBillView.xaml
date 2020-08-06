@@ -12,6 +12,11 @@
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.AgendaBillView">
     <ContentView.Content>
+        <Grid Padding="3" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+              Margin="2">
+            
+        
+        
         <!--<Frame 
               
                >-->
@@ -63,7 +68,8 @@
 
 
                 </Grid>
-            <!--</Frame>-->
+        </Grid>
+        <!--</Frame>-->
            
         <!--</Frame>-->
         
