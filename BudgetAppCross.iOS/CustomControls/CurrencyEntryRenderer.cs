@@ -37,16 +37,6 @@ namespace BudgetAppCross.iOS.CustomControls
                 }
                 view.Placeholder = Control.Placeholder;
 
-                
-                //Control.TintColor = UIColor.Black;
-                //Control.hint
-                //SetPlaceholderTextColor(view);
-
-
-                //Control.RightViewMode = UITextFieldViewMode.WhileEditing;
-                //Control.RightView
-
-
                 var text = Control.Text;
                 
                 if (text.Equals("0.00") || text.Equals("$0.00") || text.Equals("0"))
@@ -63,8 +53,8 @@ namespace BudgetAppCross.iOS.CustomControls
                 {
                     Control.Placeholder = $"$0.00";
                 }
-                //view.PlaceholderColor = Color.Green;
                 Control.KeyboardType = UIKeyboardType.DecimalPad;
+                
                 AddDoneButton();
                 
                 Control.ClearButtonMode = UITextFieldViewMode.WhileEditing;

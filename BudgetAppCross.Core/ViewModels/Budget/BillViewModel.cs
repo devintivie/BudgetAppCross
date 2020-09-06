@@ -34,7 +34,7 @@ namespace BudgetAppCross.Core.ViewModels
                     Bill.Date = value;
                     RaisePropertyChanged();
                     RaisePropertyChanged(nameof(BillStatus));
-                    var _ = UpdateAndSave();
+                    //var _ = UpdateAndSave();
                 }
             }
         }

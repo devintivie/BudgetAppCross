@@ -29,27 +29,30 @@ namespace BudgetAppCross.Views
 
         private void OnUpdateView(UpdateViewMessage obj)
         {
-            //DateTime data = DateTime.Today;
-            int mostRecent = 0;
-            foreach (var item in agendaList.ItemsSource)
-            {
-                //dynamic mostRecent = data;
-                var data = (DateTime)item.GetType().GetProperty("Key").GetValue(item);
-                if(data.Date <= DateTime.Today)
-                {
-                    mostRecent++;
-                }
-                else
-                {
-                    dynamic selected = agendaList.ItemsSource.ElementAt(mostRecent);
-                    agendaList.ScrollTo(selected[0], ScrollToPosition.Start, true);
-                    //agendaList.ScrollTo(mostRecent[0], ScrollToPosition.Center, true);
-                    
-                    return;
-                }
+            ////DateTime data = DateTime.Today;
+            //int mostRecent = 0;
+            //foreach (var item in agendaList.ItemsSource)
+            //{
+            //    //dynamic mostRecent = data;
+            //    var data = (DateTime)item.GetType().GetProperty("Key").GetValue(item);
+            //    //var data = (DateTime)item.GetType().GetProperty("Date").GetValue(item);
+
+            //    if (data.Date <= DateTime.Today)
+            //    {
+            //        mostRecent++;
+            //    }
+            //    else
+            //    {
+            //        dynamic selected = agendaList.ItemsSource.ElementAt(mostRecent);
+            //        agendaList.ScrollTo(selected[0], ScrollToPosition.MakeVisible, true);
+            //        //agendaList.ScrollTo(selected, ScrollToPosition.Start, true);
+            //        ////agendaList.ScrollTo(mostRecent[0], ScrollToPosition.Center, true);
+
+            //        return;
+            //    }
 
 
-            }
+            //}
 
             Messenger.Instance.Unregister(this);
         }

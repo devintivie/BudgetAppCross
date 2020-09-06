@@ -19,15 +19,45 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Properties
+        //private ObservableCollection<Grouping<DateTime, BillViewModel>> bills = new ObservableCollection<Grouping<DateTime, BillViewModel>>();
+        //public ObservableCollection<Grouping<DateTime, BillViewModel>> Bills
+        //{
+        //    get { return bills; }
+        //    set
+        //    {
+        //        SetProperty(ref bills, value);
+        //    }
+        //}
+
         private ObservableCollection<Grouping<DateTime, BillViewModel>> bills = new ObservableCollection<Grouping<DateTime, BillViewModel>>();
         public ObservableCollection<Grouping<DateTime, BillViewModel>> Bills
         {
             get { return bills; }
             set
             {
-                SetProperty(ref bills, value);
+                if (bills != value)
+                {
+                    bills = value;
+                    RaisePropertyChanged();
+                }
             }
         }
+
+
+        //private ObservableCollection<BillViewModel> bills = new ObservableCollection<BillViewModel>();
+        //public ObservableCollection<BillViewModel> Bills
+        //{
+        //    get { return bills; }
+        //    set
+        //    {
+        //        if (bills != value)
+        //        {
+        //            bills = value;
+        //            RaiseyPropertyChanged();
+        //        }
+        //    }
+        //}
+
 
         #endregion
 
@@ -142,14 +172,18 @@ namespace BudgetAppCross.Core.ViewModels
         {
             //var dt = DateTime.Today.AddDays(-4);
             //var dt2 = DateTime.Today.AddMonths(2);
-            var bills = await BudgetDatabase.GetBills();
-            var billData = bills.ToList();
+            var tempBills = await BudgetDatabase.GetBills();
+            var billData = tempBills.ToList();
 
             var data = billData.GroupBy(x => x.Date)
                         .OrderBy(x => x.Key)
                         .Select(grouped => new Grouping<DateTime, Bill>(grouped.Key, grouped)).ToList();
 
+            //var data = billData.OrderBy(x => x.Date).ToList();
+
             var groupVM = new List<Grouping<DateTime, BillViewModel>>();
+            var groupBefore = new List<Grouping<DateTime, BillViewModel>>();
+            var groupAfter = new List<Grouping<DateTime, BillViewModel>>();
 
             foreach (var group in data)
             {
@@ -160,10 +194,48 @@ namespace BudgetAppCross.Core.ViewModels
                     bvms.Add(new BillViewModel(item));
                 }
 
+                //var before = bvms.Where(x => key < DateTime.Today).ToList();
+                //var after = bvms.Where(x => key >= DateTime.Today).ToList();
+                //if(before.Count > 0)
+                //{
+                //    groupBefore.Insert(0, new Grouping<DateTime, BillViewModel>(key, before));
+                //}
+
+                //if (after.Count > 0)
+                //{
+                //    groupAfter.Add(new Grouping<DateTime, BillViewModel>(key, after));
+                //}
+
+
                 groupVM.Add(new Grouping<DateTime, BillViewModel>(key, bvms));
             }
 
+            //Bills = new ObservableCollection<Grouping<DateTime, BillViewModel>>(groupAfter);
             Bills = new ObservableCollection<Grouping<DateTime, BillViewModel>>(groupVM);
+
+            //await Task.Delay(2000);
+
+            var idk = groupBefore.ToArray();
+            for (int i = 0; i < 5; i++)
+            {
+                Bills.Insert(0, idk[i]);
+            }
+            //Bills.Insert(0, groupBefore.First());
+
+            //foreach (var group in groupAfter)
+            //{
+            //    Bills.Insert(groupBefore.Count-1, group);
+            //}
+            //Bills = new ObservableCollection<Grouping<DateTime, BillViewModel>>(groupVM);
+            //var bvms = new List<BillViewModel>();
+            //foreach (var item in data)
+            //{
+            //    bvms.Add(new BillViewModel(item));
+            //}
+
+            //Bills = new ObservableCollection<BillViewModel>(bvms);
+
+
 
             //await BudgetDatabase.UpdateBankAccountNames();
             //var dt = DateTime.Today.AddDays(-4);

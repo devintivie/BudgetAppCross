@@ -10,10 +10,10 @@
              xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
              x:TypeArguments="vms:AgendaViewModel"
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+             xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
              x:Name="currentPage"
              Title="{Binding Title}"
-                      
-                      BackgroundColor="{StaticResource ButtonBackground}"
+             BackgroundColor="{StaticResource ButtonBackground}"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="True"
              >
@@ -27,6 +27,7 @@
         <ListView x:Name="agendaList" ItemsSource="{Binding Bills}"
                   HasUnevenRows="True"
                   IsGroupingEnabled="True"
+                  
                   ios:ListView.RowAnimationsEnabled="True">
 
             <!--Scrolled="agendaList_Scrolled"-->
@@ -37,7 +38,6 @@
                         <Grid VerticalOptions="FillAndExpand" BackgroundColor="{StaticResource ButtonBackground}">
                             <Label Text="{Binding Key, Converter={cvt:DateOnlyConverter}}"
                                    FontSize="{StaticResource FontSizeLarge}"
-                                   
                                    TextColor="{StaticResource PrimaryForeground}"
                                    VerticalOptions="Center"
                                />

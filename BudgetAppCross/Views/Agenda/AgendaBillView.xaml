@@ -45,7 +45,7 @@
                             VerticalOptions="Center"
                             VerticalTextAlignment="Center"
                             WidthRequest="120"/>
-                    <controls:CurrencyEntry Text="{Binding Amount}"
+                    <custom:CustomEntry Text="{Binding Amount}"
                             WidthRequest="100"
                             Grid.Column="2"
                             HorizontalOptions="FillAndExpand"
