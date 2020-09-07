@@ -19,9 +19,10 @@ namespace BudgetAppCross.Views
             InitializeComponent();
         }
 
-        private void SwipeItem_Invoked(object sender, EventArgs e)
+        private void BTItemTapped(object sender, ItemTappedEventArgs e)
         {
-
+            var id = e.Item.GetType().GetProperty("ID").GetValue(e.Item);
+            ViewModel.ShowBill(id);
         }
     }
 }

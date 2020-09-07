@@ -69,6 +69,9 @@
     <EmbeddedResource Update="Views\Budget\ModifyBudgetItems\NewBillsPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Budget\BillDetailsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ContactDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -117,6 +120,9 @@
     <Compile Update="Views\Budget\BillTrackerQuickView.xaml.cs">
       <DependentUpon>BillTrackerQuickView.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Budget\BillQuickView.xaml.cs">
+      <DependentUpon>BillQuickView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Budget\ModifyBudgetItems\EditBillTrackerPage.xaml.cs">
       <DependentUpon>EditBillTrackerPage.xaml</DependentUpon>
     </Compile>
@@ -128,6 +134,9 @@
     </Compile>
     <Compile Update="Views\Budget\ModifyBudgetItems\NewBillView.xaml.cs">
       <DependentUpon>NewBillView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Budget\BillDetailsPage.xaml.cs">
+      <DependentUpon>BillDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\DateRange\DateRangeEntryView.xaml.cs">
       <DependentUpon>DateRangeEntryView.xaml</DependentUpon>

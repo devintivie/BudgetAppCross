@@ -18,7 +18,7 @@
         <!--<ToolbarItem Text="Delete" Command="{Binding DeleteBillCommand}"/>-->
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="{StaticResource ButtonBackground}">
             <!--<Label Text="{Binding CompanyName}"
                    />-->
             <!--<StackLayout Orientation="Horizontal">
@@ -35,20 +35,30 @@
                        />
             </StackLayout>-->
             <!--<ScrollView>-->
+            <Grid  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Paid?" VerticalOptions="Center"/>
+                <Label Text="Amount Due" Grid.Column="1"/>
+                <Label Text="Due Date" Grid.Column="2"/>
+            </Grid>
                 <ListView ItemsSource="{Binding Bills}"
                           HasUnevenRows="True"
-                          
+                          ItemTapped="ItemTapped"
                           SelectedItem="{Binding SelectedBill}">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <ViewCell.ContextActions>
-                                    <MenuItem Text="Delete"
+                                <MenuItem Text="Delete"
                                               Command="{Binding DeleteThisCommand}"
                                               IsDestructive="True"
                                               CommandParameter="{Binding .}"/>
                                 </ViewCell.ContextActions>
-                                <controls:BillView/>
+                                <controls:BillQuickView/>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>

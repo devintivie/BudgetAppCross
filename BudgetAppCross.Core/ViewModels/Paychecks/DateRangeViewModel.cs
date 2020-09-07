@@ -159,7 +159,7 @@ namespace BudgetAppCross.Core.ViewModels
         public DateRangeViewModel(IMvxNavigationService navigation)
         {
             navigationService = navigation;
-            Title = "Paycheck View";
+            Title = "Custom Dates";
 
             //var _ = LoadAccounts();
             var _accts = LoadAccountOptions();

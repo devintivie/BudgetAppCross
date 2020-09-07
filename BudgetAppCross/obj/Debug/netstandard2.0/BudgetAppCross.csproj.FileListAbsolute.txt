@@ -176,3 +176,5 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\ref\BudgetAppCross.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\BillDetailsPage.xaml.g.cs
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\BillQuickView.xaml.g.cs

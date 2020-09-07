@@ -173,7 +173,8 @@ namespace BudgetAppCross.Core.ViewModels
             //var dt = DateTime.Today.AddDays(-4);
             //var dt2 = DateTime.Today.AddMonths(2);
             var tempBills = await BudgetDatabase.GetBills();
-            var billData = tempBills.ToList();
+            var allUnpaid = tempBills.Where(x => x.IsPaid == false || (x.Date >= DateTime.Today && x.Date <= DateTime.Today.AddMonths(1)));
+            var billData = allUnpaid.ToList();
 
             var data = billData.GroupBy(x => x.Date)
                         .OrderBy(x => x.Key)

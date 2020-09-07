@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<views:MvxContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:cvtlocal="clr-namespace:BudgetAppCross.Converters"
+             xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+             xmlns:controls="clr-namespace:BudgetAppCross.Views"
+                      
+                      xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
+             mc:Ignorable="d"
+             x:Class="BudgetAppCross.Views.BillQuickView">
+
+   
+    <ContentView.Content>
+        <Grid Padding="3" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+              Margin="2">
+            <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <!--<ColumnDefinition Width="Auto"/>-->
+                </Grid.ColumnDefinitions>
+                <!--<Label Text="Paid?"
+                       InputTransparent="True" HorizontalOptions="Center"
+                       Grid.Column="0"/>-->
+                <CheckBox IsChecked="{Binding IsPaid}"
+                          VerticalOptions="Center"
+                          HorizontalOptions="Center"
+                          Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+                          />
+                <Label Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
+                            Grid.Column="1" />
+                <Label Text="{Binding Date, Converter={cvt:DateOnlyConverter}}" Grid.Column="2" />
+
+                <!--<custom:CustomEntry Text="{Binding Confirmation}"
+                           Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3"/>-->
+                <!--<Label Text="{Binding BillStatus}"/>-->
+
+                <!--<Label Text="Autopay?"
+                       InputTransparent="True" HorizontalOptions="Center"
+                       Grid.Column="5"/>
+                <CheckBox IsChecked="{Binding IsAuto}"
+                          
+                          Grid.Column="5" Grid.RowSpan="2"
+                          VerticalOptions="End"
+                          HorizontalOptions="Center"
+                          Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+                          />-->
+            </Grid>
+        </Grid>
+        <!--</Frame>
+        </Frame>-->
+        
+        <!--<FlexLayout Wrap="Wrap" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:Class1}}">
+            --><!--<Grid.ColumnDefinitions>
+                    -->
+            <!--<ColumnDefinition Width="Auto"/>-->
+            <!--
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>-->
+            <!--<Entry Text="{Binding Payee}"
+                   Grid.Column="0"/>--><!--
+            <CheckBox IsChecked="{Binding IsPaid}"
+                      Grid.Column="0"
+                      VerticalOptions="Center"
+                      HorizontalOptions="Center"
+                      />
+            <Entry Text="{Binding Amount}"
+                   Grid.Column="1"/>
+            <DatePicker Date="{Binding Date}"
+                        Grid.Column="2"/>
+            <Picker ItemsSource="{Binding AccountOptions}"
+                    SelectedItem="{Binding SelectedAccount}"
+                    Grid.Column="3"/>
+            <Entry Text="{Binding Confirmation}"
+                   Grid.Column="4"/>
+            <Label Text="{Binding BillStatus}"/>
+        </FlexLayout>-->
+
+
+        <!--<RefreshView >
+            <ListView x:Name="BillListView" ItemsSource="{Binding Bills}"
+                          SelectedItem="{Binding SelectedBill}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        --><!--<views:BillView/>-->
+                        <!--BackgroundColor="{Binding BillStatus, Converter={local:NextBillColorConverter}--><!--
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <CheckBox VerticalOptions="Center"
+                                          HorizontalOptions="Center"
+                                          IsChecked="{Binding IsPaid}"/>
+                                <Entry Text="{Binding Amount}"
+                                           WidthRequest="70"/>
+                                <DatePicker Date="{Binding Date}"
+                                                WidthRequest="100"/>
+                            </StackLayout>
+                        </ViewCell>
+
+
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </RefreshView>-->
+    </ContentView.Content>
+</views:MvxContentView>

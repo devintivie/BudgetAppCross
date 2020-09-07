@@ -34,8 +34,13 @@
                     <ColumnDefinition Width="0.5*"/>
                     <ColumnDefinition Width="0.5*"/>
                     <ColumnDefinition Width="5*"/>
+                    <!--<ColumnDefinition Width="Auto"/>-->
                 </Grid.ColumnDefinitions>
+                <!--<Label Text="Paid?"
+                       InputTransparent="True" HorizontalOptions="Center"
+                       Grid.Column="0"/>-->
                 <CheckBox IsChecked="{Binding IsPaid}"
+                          
                           Grid.Column="0" Grid.RowSpan="2"
                           VerticalOptions="Center"
                           HorizontalOptions="Center"
@@ -56,6 +61,16 @@
                            Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3"/>
                 <!--<Label Text="{Binding BillStatus}"/>-->
 
+                <!--<Label Text="Autopay?"
+                       InputTransparent="True" HorizontalOptions="Center"
+                       Grid.Column="5"/>
+                <CheckBox IsChecked="{Binding IsAuto}"
+                          
+                          Grid.Column="5" Grid.RowSpan="2"
+                          VerticalOptions="End"
+                          HorizontalOptions="Center"
+                          Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+                          />-->
             </Grid>
         </Grid>
         <!--</Frame>

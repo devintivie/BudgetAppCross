@@ -8,7 +8,7 @@ namespace BudgetAppCross.Core
     {
         Account,
         LoadBudget,
-        Paycheck,
+        DateRange,
         BillList,
         Agenda,
         BankOverview,
