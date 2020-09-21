@@ -184,10 +184,10 @@ namespace BudgetAppCross.Core.ViewModels
             
         }
 
-        public Task ShowBill(int id)
-        {
-            return navigationService.Navigate<BillViewModel, int>(id);
-        }
+        //public Task ShowBill(int id)
+        //{
+        //    return navigationService.Navigate<BillViewModel, int>(id);
+        //}
 
 
         #endregion

@@ -47,8 +47,9 @@
             </Grid>
                 <ListView ItemsSource="{Binding Bills}"
                           HasUnevenRows="True"
-                          ItemTapped="ItemTapped"
                           SelectedItem="{Binding SelectedBill}">
+                <!-- 
+                          ItemTapped="ItemTapped" -->
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

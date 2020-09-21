@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BillViewModel : BaseViewModel<int>
+    public class BillViewModel : BaseViewModel//<int>
     {
         #region Fields
 
@@ -160,10 +160,10 @@ namespace BudgetAppCross.Core.ViewModels
             LoadAccountOptions();
         }
 
-        public override void Prepare(int id)
-        {
-            CompanyName = parameter;
-        }
+        //public override void Prepare(int id)
+        //{
+        //    //CompanyName = parameter;
+        //}
 
         //public BillViewModel(Bill bill, List<string> options)
         //{

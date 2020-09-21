@@ -135,18 +135,18 @@ namespace BudgetAppCross.Core.ViewModels
 
         #region Methods
 
-        public override void ViewAppearing()
-        {
-            base.ViewAppearing();
-            var _ = SendScrollMessage();
-        }
+        //public override void ViewAppearing()
+        //{
+        //    base.ViewAppearing();
+        //    var _ = SendScrollMessage();
+        //}
 
-        public async Task SendScrollMessage()
-        {
-            await Task.Delay(700);
-            Messenger.Send(new UpdateViewMessage());
-            //await SendScrollMessage();
-        }
+        //public async Task SendScrollMessage()
+        //{
+        //    await Task.Delay(700);
+        //    Messenger.Send(new UpdateViewMessage());
+        //    //await SendScrollMessage();
+        //}
 
         public override void ViewDestroy(bool viewFinishing = true)
         {
@@ -216,11 +216,11 @@ namespace BudgetAppCross.Core.ViewModels
 
             //await Task.Delay(2000);
 
-            var idk = groupBefore.ToArray();
-            for (int i = 0; i < 5; i++)
-            {
-                Bills.Insert(0, idk[i]);
-            }
+            //var idk = groupBefore.ToArray();
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    Bills.Insert(0, idk[i]);
+            //}
             //Bills.Insert(0, groupBefore.First());
 
             //foreach (var group in groupAfter)
