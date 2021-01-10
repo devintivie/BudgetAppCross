@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b/QNfgAuaT94aWQ+K5m83/SfWJrP6BFcLOPK64bGWsGIbQ89MNN7U/79tS04OTD2Z3dgQAF2p15/fCuOxA1JmQ==",
+  "dgSpecHash": "VkziL5sNN9fJmGjZdRzTfhvCrWL4vtyA/hnhfmqZ02bobFC488G/KaMQ1TaEzJjYmutSv6JPy+rOIA+tKq+iJA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj",
+  "projectFilePath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

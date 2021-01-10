@@ -1,10 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\BudgetAppCross",
-    "\\BudgetAppCross\\Views",
-    "\\BudgetAppCross\\Views\\Budget"
+    ""
   ],
-  "SelectedNode": "\\BudgetAppCross\\Views\\Budget\\NewBillsPage.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

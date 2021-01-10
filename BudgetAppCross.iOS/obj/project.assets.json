@@ -784,7 +784,7 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
-          "CustomXamarinControls": "1.0.0",
+          "C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj": "1.0.0",
           "CustomXamarinFormsBehaviors": "1.0.0",
           "CustomXamarinFormsConverters": "1.0.0",
           "Microsoft.CSharp": "4.7.0",
@@ -836,19 +836,6 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
-        }
-      },
-      "CustomXamarinControls/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Xamarin.Forms": "4.7.0.1142"
-        },
-        "compile": {
-          "bin/placeholder/CustomXamarinControls.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CustomXamarinControls.dll": {}
         }
       },
       "CustomXamarinFormsBehaviors/1.0.0": {
@@ -1671,7 +1658,7 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
-          "CustomXamarinControls": "1.0.0",
+          "C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj": "1.0.0",
           "CustomXamarinFormsBehaviors": "1.0.0",
           "CustomXamarinFormsConverters": "1.0.0",
           "Microsoft.CSharp": "4.7.0",
@@ -1723,19 +1710,6 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
-        }
-      },
-      "CustomXamarinControls/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Xamarin.Forms": "4.7.0.1142"
-        },
-        "compile": {
-          "bin/placeholder/CustomXamarinControls.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CustomXamarinControls.dll": {}
         }
       },
       "CustomXamarinFormsBehaviors/1.0.0": {
@@ -2558,7 +2532,7 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
-          "CustomXamarinControls": "1.0.0",
+          "C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj": "1.0.0",
           "CustomXamarinFormsBehaviors": "1.0.0",
           "CustomXamarinFormsConverters": "1.0.0",
           "Microsoft.CSharp": "4.7.0",
@@ -2610,19 +2584,6 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
-        }
-      },
-      "CustomXamarinControls/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Xamarin.Forms": "4.7.0.1142"
-        },
-        "compile": {
-          "bin/placeholder/CustomXamarinControls.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CustomXamarinControls.dll": {}
         }
       },
       "CustomXamarinFormsBehaviors/1.0.0": {
@@ -3445,7 +3406,7 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
-          "CustomXamarinControls": "1.0.0",
+          "C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj": "1.0.0",
           "CustomXamarinFormsBehaviors": "1.0.0",
           "CustomXamarinFormsConverters": "1.0.0",
           "Microsoft.CSharp": "4.7.0",
@@ -3497,19 +3458,6 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
-        }
-      },
-      "CustomXamarinControls/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Xamarin.Forms": "4.7.0.1142"
-        },
-        "compile": {
-          "bin/placeholder/CustomXamarinControls.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CustomXamarinControls.dll": {}
         }
       },
       "CustomXamarinFormsBehaviors/1.0.0": {
@@ -5181,11 +5129,6 @@
       "path": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj",
       "msbuildProject": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj"
     },
-    "CustomXamarinControls/1.0.0": {
-      "type": "project",
-      "path": "../../CustomXamarinControls/CustomXamarinControls/CustomXamarinControls.csproj",
-      "msbuildProject": "../../CustomXamarinControls/CustomXamarinControls/CustomXamarinControls.csproj"
-    },
     "CustomXamarinFormsBehaviors/1.0.0": {
       "type": "project",
       "path": "../CustomXamarinFormsBehaviors/CustomXamarinFormsBehaviors.csproj",
@@ -5225,11 +5168,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.iOS\\BudgetAppCross.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.iOS\\BudgetAppCross.iOS.csproj",
       "projectName": "BudgetAppCross.iOS",
-      "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.iOS\\BudgetAppCross.iOS.csproj",
+      "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.iOS\\BudgetAppCross.iOS.csproj",
       "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.iOS\\obj\\",
+      "outputPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -5250,17 +5193,17 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj": {
-              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj"
+            "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj": {
+              "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj"
             },
-            "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj": {
-              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj"
+            "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj": {
+              "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj"
             },
-            "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj": {
-              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj"
+            "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj": {
+              "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj"
             },
-            "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj": {
-              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj"
+            "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj": {
+              "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj"
             }
           }
         }
@@ -5295,5 +5238,19 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    }
+  ]
 }

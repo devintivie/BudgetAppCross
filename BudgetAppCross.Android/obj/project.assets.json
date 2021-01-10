@@ -1532,7 +1532,7 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
-          "CustomXamarinControls": "1.0.0",
+          "C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj": "1.0.0",
           "CustomXamarinFormsBehaviors": "1.0.0",
           "CustomXamarinFormsConverters": "1.0.0",
           "Microsoft.CSharp": "4.7.0",
@@ -1584,34 +1584,6 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
-        }
-      },
-      "CustomXamarinControls/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Xamarin.Forms": "4.7.0.1142"
-        },
-        "compile": {
-          "bin/placeholder/CustomXamarinControls.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CustomXamarinControls.dll": {}
-        }
-      },
-      "CustomXamarinControls.Droid/1.0.0": {
-        "type": "project",
-        "framework": "MonoAndroid,Version=v9.0",
-        "dependencies": {
-          "CustomXamarinControls": "1.0.0",
-          "Xamarin.Android.Support.v7.AppCompat": "28.0.0.3",
-          "Xamarin.Forms": "4.7.0.1142"
-        },
-        "compile": {
-          "bin/placeholder/CustomXamarinControls.Droid.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CustomXamarinControls.Droid.dll": {}
         }
       },
       "CustomXamarinFormsBehaviors/1.0.0": {
@@ -4085,16 +4057,6 @@
       "path": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj",
       "msbuildProject": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj"
     },
-    "CustomXamarinControls/1.0.0": {
-      "type": "project",
-      "path": "../../CustomXamarinControls/CustomXamarinControls/CustomXamarinControls.csproj",
-      "msbuildProject": "../../CustomXamarinControls/CustomXamarinControls/CustomXamarinControls.csproj"
-    },
-    "CustomXamarinControls.Droid/1.0.0": {
-      "type": "project",
-      "path": "../../CustomXamarinControls/CustomXamarinControls.Android/CustomXamarinControls.Droid.csproj",
-      "msbuildProject": "../../CustomXamarinControls/CustomXamarinControls.Android/CustomXamarinControls.Droid.csproj"
-    },
     "CustomXamarinFormsBehaviors/1.0.0": {
       "type": "project",
       "path": "../CustomXamarinFormsBehaviors/CustomXamarinFormsBehaviors.csproj",
@@ -4115,7 +4077,6 @@
     "MonoAndroid,Version=v9.0": [
       "BudgetAppCross >= 1.0.0",
       "BudgetAppCross.Core >= 1.0.0",
-      "CustomXamarinControls.Droid >= 1.0.0",
       "MvvmCross.Forms >= 6.4.2",
       "Xamarin.Essentials >= 1.5.3.2",
       "Xamarin.Forms >= 4.7.0.1142"
@@ -4128,11 +4089,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Android\\BudgetAppCross.Android.csproj",
+      "projectUniqueName": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Android\\BudgetAppCross.Android.csproj",
       "projectName": "BudgetAppCross.Android",
-      "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Android\\BudgetAppCross.Android.csproj",
+      "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Android\\BudgetAppCross.Android.csproj",
       "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Android\\obj\\",
+      "outputPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -4153,14 +4114,11 @@
       "frameworks": {
         "monoandroid90": {
           "projectReferences": {
-            "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj": {
-              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj"
+            "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj": {
+              "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj"
             },
-            "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj": {
-              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj"
-            },
-            "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Droid.csproj": {
-              "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Droid.csproj"
+            "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj": {
+              "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj"
             }
           }
         }
@@ -4184,5 +4142,16 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj",
+      "targetGraphs": [
+        "MonoAndroid,Version=v9.0"
+      ]
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lEInI2lHFA3JplCwXQgatudE7HQQVYW7VkaJrdHkXOg/18Ex08gWdgvSiB0JGSQovR06m3EqlSxxnEMv7kqEWA==",
+  "dgSpecHash": "yeRFna7kYuJpaNqY6lS4+wBX0SgM6DeR1szXE3knv07EXIVd3hIXbVuqveXGChn2BExRj2BsZR6YNctZpcmPtQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj",
+  "projectFilePath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross\\6.4.2\\mvvmcross.6.4.2.nupkg.sha512",

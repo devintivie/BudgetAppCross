@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b/HwjXsgBeew3T0/J5hczbHerIsh0WkEJul0XVJF/AKUkqp4oYv8EZ8yfIzgI2gs9lw5Rna5BApqjyuaDEY3TQ==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj",
+  "dgSpecHash": "Q9WQvq/OQRunaBzrHUrBLfU6OrXklglF4jWkENamTOtW7R34D/jViVoJRFOtg5hqrO+c2ohNyZsDm06n10k1RA==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.446\\acr.userdialogs.7.1.0.446.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\behaviors.xamarinforms\\4.0.4\\behaviors.xamarinforms.4.0.4.nupkg.sha512",
@@ -75,8 +75,18 @@
     "C:\\Users\\devin\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.7.0.1142\\xamarin.forms.4.7.0.1142.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }

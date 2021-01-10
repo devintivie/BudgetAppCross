@@ -661,11 +661,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj",
       "projectName": "InAppPurchasing.iOS",
-      "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj",
+      "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj",
       "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Ios\\obj\\",
+      "outputPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Ios\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -686,11 +686,11 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj": {
-              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj"
+            "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj": {
+              "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj"
             },
-            "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj": {
-              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj"
+            "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj": {
+              "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj"
             }
           }
         }

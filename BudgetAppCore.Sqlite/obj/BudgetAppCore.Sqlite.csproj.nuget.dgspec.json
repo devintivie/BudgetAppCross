@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj": {}
+    "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj": {}
   },
   "projects": {
-    "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj": {
+    "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj",
+        "projectUniqueName": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj",
         "projectName": "BudgetAppCore.Sqlite",
-        "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj",
+        "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj",
         "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCore.Sqlite\\obj\\",
+        "outputPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCore.Sqlite\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -30,9 +30,10 @@
         },
         "frameworks": {
           "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
-                "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj"
+              "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
+                "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj"
               }
             }
           }
@@ -45,6 +46,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -77,18 +79,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
+    "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
+        "projectUniqueName": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
         "projectName": "BudgetAppCross.Models",
-        "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
+        "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
         "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\obj\\",
+        "outputPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -107,6 +109,7 @@
         },
         "frameworks": {
           "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
         },
@@ -118,6 +121,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "dependencies": {
             "MvvmCross.Plugin.Messenger": {
               "target": "Package",
@@ -152,7 +156,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

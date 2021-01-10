@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YHdq4aptowBrhBIdw+/8wVV83mMhdk8itkvYHW3MRd0Qn45TLaTEtBMYZWsdZT9wSb1rVI1sPZYicqJgbxS6UQ==",
+  "dgSpecHash": "dzHySobILm3ZMgpVnDbWPVR2cWOEv6Un5PRoUKjntj0hysIIWSx/abtpRft+ZsEaKMISXnvqYOn3PJNCEVqVaA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj",
+  "projectFilePath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross\\6.4.2\\mvvmcross.6.4.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.forms\\6.4.2\\mvvmcross.forms.6.4.2.nupkg.sha512",

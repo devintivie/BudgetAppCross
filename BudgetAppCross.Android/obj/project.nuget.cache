@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0+06z5S6dBJUPJSszY8YdwtN/LBa3WxW5Vh57SYFTuadakxNTVaV7r8aT1DhcQQACKz+H/nfDOUQlDMjHIiv0Q==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Android\\BudgetAppCross.Android.csproj",
+  "dgSpecHash": "+WsUpVlA1MFERnNo/14soKmQpAguF8kXpKOGHeWCY2Pl5Rhm8N/1PBJTeLY7bpR4vTXyCpqd00046xMzhwzaFQ==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Android\\BudgetAppCross.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.446\\acr.userdialogs.7.1.0.446.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\andhud\\1.4.2\\andhud.1.4.2.nupkg.sha512",
@@ -96,8 +96,18 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.versionedparcelable\\28.0.0.3\\xamarin.android.support.versionedparcelable.28.0.0.3.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.viewpager\\28.0.0.3\\xamarin.android.support.viewpager.28.0.0.3.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\xamarin.build.download\\0.4.11\\xamarin.build.download.0.4.11.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.7.0.1142\\xamarin.forms.4.7.0.1142.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj",
+      "targetGraphs": [
+        "MonoAndroid,Version=v9.0"
+      ]
+    }
+  ]
 }
