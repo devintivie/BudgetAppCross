@@ -9,10 +9,9 @@
     ".NETStandard,Version=v2.0/": {
       "BudgetAppCross.Models/1.0.0": {
         "dependencies": {
-          "MvvmCross.Plugin.Messenger": "6.4.2",
+          "MvvmCross.Plugin.Messenger": "7.1.2",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.3",
-          "SQLiteNetExtensions": "2.1.0",
           "sqlite-net-pcl": "1.7.335"
         },
         "runtime": {
@@ -20,22 +19,22 @@
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
-      "MvvmCross/6.4.2": {
+      "MvvmCross/7.1.2": {
         "runtime": {
           "lib/netstandard2.0/MvvmCross.dll": {
-            "assemblyVersion": "6.4.2.0",
-            "fileVersion": "6.4.2.0"
+            "assemblyVersion": "7.1.2.0",
+            "fileVersion": "7.1.2.0"
           }
         }
       },
-      "MvvmCross.Plugin.Messenger/6.4.2": {
+      "MvvmCross.Plugin.Messenger/7.1.2": {
         "dependencies": {
-          "MvvmCross": "6.4.2"
+          "MvvmCross": "7.1.2"
         },
         "runtime": {
           "lib/netstandard2.0/MvvmCross.Plugin.Messenger.dll": {
-            "assemblyVersion": "6.4.2.0",
-            "fileVersion": "6.4.2.0"
+            "assemblyVersion": "7.1.2.0",
+            "fileVersion": "7.1.2.0"
           }
         }
       },
@@ -60,18 +59,6 @@
           "lib/netstandard2.0/SQLite-net.dll": {
             "assemblyVersion": "1.7.335.0",
             "fileVersion": "1.7.335.0"
-          }
-        }
-      },
-      "SQLiteNetExtensions/2.1.0": {
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.3",
-          "sqlite-net-pcl": "1.7.335"
-        },
-        "runtime": {
-          "lib/netstandard1.1/SQLiteNetExtensions.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -163,19 +150,19 @@
       "path": "microsoft.netcore.platforms/1.1.0",
       "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
     },
-    "MvvmCross/6.4.2": {
+    "MvvmCross/7.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ttJOEXQE8MFEMlcuJL6Eonzj1QtfhO95qTrQLcdirV+41PgT7se4XqdDWqL263nrl/2i4CATC2qgokh7IV8msA==",
-      "path": "mvvmcross/6.4.2",
-      "hashPath": "mvvmcross.6.4.2.nupkg.sha512"
+      "sha512": "sha512-1tYkYslR8c7Dp/3itlx8+djBp+cim/ieS1Xp+d/waL0Yrl3H4HGmqxSm89yz/Ts+H9pmrS5DeKpOb+HUOzaERQ==",
+      "path": "mvvmcross/7.1.2",
+      "hashPath": "mvvmcross.7.1.2.nupkg.sha512"
     },
-    "MvvmCross.Plugin.Messenger/6.4.2": {
+    "MvvmCross.Plugin.Messenger/7.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-oOVxyj8H1GqZFoxbMMgpW2jy9R4PJUpgdrmP61kjA3EPV3S+Shzy481NLnCN0gHzmlxKTM/w+b+W5RWD65CmRg==",
-      "path": "mvvmcross.plugin.messenger/6.4.2",
-      "hashPath": "mvvmcross.plugin.messenger.6.4.2.nupkg.sha512"
+      "sha512": "sha512-Fc1RUrSVk2FbEUNod/001PJ29jCOtIVppHx34ycX8zHB40XjpdX5dGYTGitcxmse5rz6SUL1pVf+7+fslBcbrg==",
+      "path": "mvvmcross.plugin.messenger/7.1.2",
+      "hashPath": "mvvmcross.plugin.messenger.7.1.2.nupkg.sha512"
     },
     "NETStandard.Library/2.0.3": {
       "type": "package",
@@ -197,13 +184,6 @@
       "sha512": "sha512-0A9YNPbp66aB+Sitxmh9lq1KDtD4+EBPfdtnYN8WenvQqh5dNgMxUV7kaEG6EXYTi4zBxcsDKpyYJzbViWJXtw==",
       "path": "sqlite-net-pcl/1.7.335",
       "hashPath": "sqlite-net-pcl.1.7.335.nupkg.sha512"
-    },
-    "SQLiteNetExtensions/2.1.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-oiyhVxCi7M2nr3tI6h05jdHGT0HKW6GxMNKUiO04zWAxv42MHtX12c4tW67w6VqGwcnXj1bwyTpq9P0W8QoGYQ==",
-      "path": "sqlitenetextensions/2.1.0",
-      "hashPath": "sqlitenetextensions.2.1.0.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_green/2.0.3": {
       "type": "package",

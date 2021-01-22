@@ -120,7 +120,7 @@ namespace BudgetAppCross.Core.ViewModels
                 var ba = new BankAccount()
                 {
                     Nickname = FirstBankAccountName,
-                    History = new List<Balance> { bal }
+                    //History = new List<Balance> { bal }
                 };
 
                 await BudgetDatabase.SaveBankAccount(ba);

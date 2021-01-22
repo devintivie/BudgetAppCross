@@ -1,0 +1,12 @@
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.deps.json
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\bin\Debug\netstandard2.0\BudgetAppCross.Models.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\bin\Debug\netstandard2.0\BudgetAppCross.Models.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\obj\Debug\netstandard2.0\BudgetAppCross.StateManagers.csprojAssemblyReference.cache
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\obj\Debug\netstandard2.0\BudgetAppCross.StateManagers.AssemblyInfoInputs.cache
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\obj\Debug\netstandard2.0\BudgetAppCross.StateManagers.AssemblyInfo.cs
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\obj\Debug\netstandard2.0\BudgetAppCross.StateManagers.csproj.CoreCompileInputs.cache
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\obj\Debug\netstandard2.0\BudgetAppCross.StateManagers.csproj.CopyComplete
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\obj\Debug\netstandard2.0\BudgetAppCross.StateManagers.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\obj\Debug\netstandard2.0\BudgetAppCross.StateManagers.pdb

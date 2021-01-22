@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BudgetAppCross", "BudgetApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BudgetAppCross.Core", "BudgetAppCross.Core\BudgetAppCross.Core.csproj", "{367885F9-3EA9-4379-852E-95C2C320CCD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetAppCross.ViewModels", "BudgetAppCross.ViewModels\BudgetAppCross.ViewModels.csproj", "{53539723-0084-4C15-9DB1-DC2D6DFE69CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BudgetAppCross.ViewModels", "BudgetAppCross.ViewModels\BudgetAppCross.ViewModels.csproj", "{53539723-0084-4C15-9DB1-DC2D6DFE69CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetAppCross.Services", "BudgetAppCross.Services\BudgetAppCross.Services.csproj", "{697630EA-D58D-43FD-B686-697A6F400B25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BudgetAppCross.Services", "BudgetAppCross.Services\BudgetAppCross.Services.csproj", "{697630EA-D58D-43FD-B686-697A6F400B25}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BudgetAppCross.Models", "BudgetAppCross.Models\BudgetAppCross.Models.csproj", "{A57F6BDF-840F-4AC3-A05B-3F376B2225CB}"
 EndProject
@@ -33,7 +33,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomXamarinControls.iOS",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomXamarinControls.Droid", "..\CustomXamarinControls\CustomXamarinControls.Android\CustomXamarinControls.Droid.csproj", "{C38DC000-8BAB-47E3-B3D8-D62C44234B19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomXamarinControls", "..\CustomXamarinControls\CustomXamarinControls\CustomXamarinControls.csproj", "{34B9231C-CD9B-44D3-B8A1-4F510A0679F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomXamarinControls", "..\CustomXamarinControls\CustomXamarinControls\CustomXamarinControls.csproj", "{34B9231C-CD9B-44D3-B8A1-4F510A0679F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetAppCross.DataAccess", "BudgetAppCross.DataAccess\BudgetAppCross.DataAccess.csproj", "{4545F1DC-8EB3-4D00-8052-AA643095974C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetAppCross.SQLiteAccess", "BudgetAppCross.SQLiteAccess\BudgetAppCross.SQLiteAccess.csproj", "{F2F1DD0B-8D19-4296-8988-2D7166A90266}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetAppCross.StateManagers", "BudgetAppCross.StateManager\BudgetAppCross.StateManagers.csproj", "{FCD587BC-8DCF-4C3D-9F6D-592CF592435A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -255,6 +261,42 @@ Global
 		{34B9231C-CD9B-44D3-B8A1-4F510A0679F8}.Release|iPhone.Build.0 = Release|Any CPU
 		{34B9231C-CD9B-44D3-B8A1-4F510A0679F8}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{34B9231C-CD9B-44D3-B8A1-4F510A0679F8}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{4545F1DC-8EB3-4D00-8052-AA643095974C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4545F1DC-8EB3-4D00-8052-AA643095974C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4545F1DC-8EB3-4D00-8052-AA643095974C}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{4545F1DC-8EB3-4D00-8052-AA643095974C}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{4545F1DC-8EB3-4D00-8052-AA643095974C}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{4545F1DC-8EB3-4D00-8052-AA643095974C}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{4545F1DC-8EB3-4D00-8052-AA643095974C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4545F1DC-8EB3-4D00-8052-AA643095974C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4545F1DC-8EB3-4D00-8052-AA643095974C}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{4545F1DC-8EB3-4D00-8052-AA643095974C}.Release|iPhone.Build.0 = Release|Any CPU
+		{4545F1DC-8EB3-4D00-8052-AA643095974C}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{4545F1DC-8EB3-4D00-8052-AA643095974C}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{F2F1DD0B-8D19-4296-8988-2D7166A90266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2F1DD0B-8D19-4296-8988-2D7166A90266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2F1DD0B-8D19-4296-8988-2D7166A90266}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{F2F1DD0B-8D19-4296-8988-2D7166A90266}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{F2F1DD0B-8D19-4296-8988-2D7166A90266}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{F2F1DD0B-8D19-4296-8988-2D7166A90266}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{F2F1DD0B-8D19-4296-8988-2D7166A90266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2F1DD0B-8D19-4296-8988-2D7166A90266}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2F1DD0B-8D19-4296-8988-2D7166A90266}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{F2F1DD0B-8D19-4296-8988-2D7166A90266}.Release|iPhone.Build.0 = Release|Any CPU
+		{F2F1DD0B-8D19-4296-8988-2D7166A90266}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{F2F1DD0B-8D19-4296-8988-2D7166A90266}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{FCD587BC-8DCF-4C3D-9F6D-592CF592435A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCD587BC-8DCF-4C3D-9F6D-592CF592435A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCD587BC-8DCF-4C3D-9F6D-592CF592435A}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{FCD587BC-8DCF-4C3D-9F6D-592CF592435A}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{FCD587BC-8DCF-4C3D-9F6D-592CF592435A}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{FCD587BC-8DCF-4C3D-9F6D-592CF592435A}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{FCD587BC-8DCF-4C3D-9F6D-592CF592435A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCD587BC-8DCF-4C3D-9F6D-592CF592435A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCD587BC-8DCF-4C3D-9F6D-592CF592435A}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{FCD587BC-8DCF-4C3D-9F6D-592CF592435A}.Release|iPhone.Build.0 = Release|Any CPU
+		{FCD587BC-8DCF-4C3D-9F6D-592CF592435A}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{FCD587BC-8DCF-4C3D-9F6D-592CF592435A}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

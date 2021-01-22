@@ -7,7 +7,7 @@ using System.Text;
 
 namespace BudgetAppCross.Models
 {
-    public class Grouping<TKey, T> : Collection<T>//ObservableCollection<T>
+    public class Grouping<TKey, T> : Collection<T>
     {
         #region Fields
 

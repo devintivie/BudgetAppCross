@@ -1,1 +1,1 @@
-values/strings.xml;values/strings.xml
+Xml/Empty.xml;xml/empty.xml

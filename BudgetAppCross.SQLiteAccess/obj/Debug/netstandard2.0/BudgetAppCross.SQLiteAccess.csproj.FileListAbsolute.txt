@@ -1,0 +1,16 @@
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.SQLiteAccess\obj\Debug\netstandard2.0\BudgetAppCross.SQLiteAccess.csprojAssemblyReference.cache
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.SQLiteAccess\obj\Debug\netstandard2.0\BudgetAppCross.SQLiteAccess.AssemblyInfoInputs.cache
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.SQLiteAccess\obj\Debug\netstandard2.0\BudgetAppCross.SQLiteAccess.AssemblyInfo.cs
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.SQLiteAccess\obj\Debug\netstandard2.0\BudgetAppCross.SQLiteAccess.csproj.CoreCompileInputs.cache
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.SQLiteAccess\bin\Debug\netstandard2.0\BudgetAppCross.SQLiteAccess.deps.json
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.SQLiteAccess\bin\Debug\netstandard2.0\BudgetAppCross.SQLiteAccess.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.SQLiteAccess\bin\Debug\netstandard2.0\BudgetAppCross.SQLiteAccess.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.SQLiteAccess\bin\Debug\netstandard2.0\BudgetAppCross.DataAccess.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.SQLiteAccess\bin\Debug\netstandard2.0\BudgetAppCross.Models.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.SQLiteAccess\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.SQLiteAccess\bin\Debug\netstandard2.0\BudgetAppCross.DataAccess.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.SQLiteAccess\bin\Debug\netstandard2.0\BudgetAppCross.Models.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.SQLiteAccess\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.SQLiteAccess\obj\Debug\netstandard2.0\BudgetAppCross.SQLiteAccess.csproj.CopyComplete
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.SQLiteAccess\obj\Debug\netstandard2.0\BudgetAppCross.SQLiteAccess.dll
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.SQLiteAccess\obj\Debug\netstandard2.0\BudgetAppCross.SQLiteAccess.pdb

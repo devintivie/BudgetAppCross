@@ -1,57 +1,57 @@
-﻿using BudgetAppCross.Models;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿//using BudgetAppCross.Models;
+//using System;
+//using System.Collections.Generic;
+//using System.Collections.ObjectModel;
+//using System.Diagnostics;
+//using System.Text;
+//using System.Threading.Tasks;
+//using Xamarin.Forms;
 
-namespace BudgetAppCross.Core.ViewModels
-{
-    public class ItemsViewModel : BaseViewModel
-    {
-        #region Fields
+//namespace BudgetAppCross.Core.ViewModels
+//{
+//    public class ItemsViewModel : BaseViewModel
+//    {
+//        #region Fields
 
-        #endregion
+//        #endregion
 
-        #region Properties
-        public ObservableCollection<Item> Items { get; set; }
-        public Command LoadItemsCommand { get; set; }
-        #endregion
+//        #region Properties
+//        public ObservableCollection<Item> Items { get; set; }
+//        public Command LoadItemsCommand { get; set; }
+//        #endregion
 
-        #region Constructors
-        public ItemsViewModel()
-        {
-            Title = "Browse";
+//        #region Constructors
+//        public ItemsViewModel()
+//        {
+//            Title = "Browse";
 
-        }
-        #endregion
+//        }
+//        #endregion
 
-        #region Methods
-        async Task ExecuteLoadItemsCommand()
-        {
-            IsBusy = true;
+//        #region Methods
+//        async Task ExecuteLoadItemsCommand()
+//        {
+//            IsBusy = true;
 
-            try
-            {
-                Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
-                foreach (var item in items)
-                {
-                    Items.Add(item);
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-            finally
-            {
-                IsBusy = false;
-            }
-        }
-        #endregion
+//            try
+//            {
+//                Items.Clear();
+//                var items = await DataStore.GetItemsAsync(true);
+//                foreach (var item in items)
+//                {
+//                    Items.Add(item);
+//                }
+//            }
+//            catch (Exception ex)
+//            {
+//                Debug.WriteLine(ex);
+//            }
+//            finally
+//            {
+//                IsBusy = false;
+//            }
+//        }
+//        #endregion
 
-    }
-}
+//    }
+//}

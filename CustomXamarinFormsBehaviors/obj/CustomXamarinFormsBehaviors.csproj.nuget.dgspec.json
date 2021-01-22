@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\CustomXamarinFormsBehaviors\\CustomXamarinFormsBehaviors.csproj": {}
+    "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\CustomXamarinFormsBehaviors\\CustomXamarinFormsBehaviors.csproj": {}
   },
   "projects": {
-    "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\CustomXamarinFormsBehaviors\\CustomXamarinFormsBehaviors.csproj": {
+    "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\CustomXamarinFormsBehaviors\\CustomXamarinFormsBehaviors.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\CustomXamarinFormsBehaviors\\CustomXamarinFormsBehaviors.csproj",
+        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\CustomXamarinFormsBehaviors\\CustomXamarinFormsBehaviors.csproj",
         "projectName": "CustomXamarinFormsBehaviors",
-        "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\CustomXamarinFormsBehaviors\\CustomXamarinFormsBehaviors.csproj",
+        "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\CustomXamarinFormsBehaviors\\CustomXamarinFormsBehaviors.csproj",
         "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\CustomXamarinFormsBehaviors\\obj\\",
+        "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\CustomXamarinFormsBehaviors\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -52,7 +52,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.7.0.1080, )"
+              "version": "[5.0.0.1905, )"
             }
           },
           "imports": [

@@ -1,6 +1,6 @@
 ﻿using Acr.UserDialogs;
 using BaseClasses;
-using BudgetAppCross.Core.Services;
+using BudgetAppCross.StateManagers;
 using BudgetAppCross.Models;
 using MvvmCross;
 using MvvmCross.Commands;
@@ -97,12 +97,6 @@ namespace BudgetAppCross.Core.ViewModels
         public MenuViewModel(IMvxNavigationService navService)
         {
             navigationService = navService;
-
-            //MenuItemList = new MvxObservableCollection<string>()
-            //{
-            //    "Bill List",
-            //    "About"
-            //};
             Messenger.Instance.Register<UpdateMenuMessage>(this, async x => await OnUpdate());
             
 

@@ -5,17 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.446" />
-    <PackageReference Include="MvvmCross.Forms" Version="6.4.2" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.475" />
+    <PackageReference Include="MvvmCross.Forms" Version="7.1.2" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="sqlite" Version="3.13.0" />
-    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BaseClasses\BaseClasses.csproj" />
     <ProjectReference Include="..\BudgetAppCore.Sqlite\BudgetAppCore.Sqlite.csproj" />
+    <ProjectReference Include="..\BudgetAppCross.DataAccess\BudgetAppCross.DataAccess.csproj" />
     <ProjectReference Include="..\BudgetAppCross.Models\BudgetAppCross.Models.csproj" />
+    <ProjectReference Include="..\BudgetAppCross.SQLiteAccess\BudgetAppCross.SQLiteAccess.csproj" />
+    <ProjectReference Include="..\BudgetAppCross.StateManager\BudgetAppCross.StateManagers.csproj" />
     <ProjectReference Include="..\InAppPurchasing.Core\InAppPurchasing.Core.csproj" />
   </ItemGroup>
 

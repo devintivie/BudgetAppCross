@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj": {}
+    "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj": {
+    "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj",
+        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj",
         "projectName": "InAppPurchasing.Core",
-        "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj",
+        "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj",
         "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Core\\obj\\",
+        "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\InAppPurchasing.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

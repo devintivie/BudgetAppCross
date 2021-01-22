@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.ViewModels\\BudgetAppCross.ViewModels.csproj": {}
+    "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.ViewModels\\BudgetAppCross.ViewModels.csproj": {}
   },
   "projects": {
-    "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
+    "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
+        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
         "projectName": "BudgetAppCross.Models",
-        "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
+        "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
         "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Models\\obj\\",
+        "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -81,14 +81,14 @@
         }
       }
     },
-    "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj": {
+    "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj",
+        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj",
         "projectName": "BudgetAppCross.Services",
-        "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj",
+        "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj",
         "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Services\\obj\\",
+        "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -109,8 +109,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
-                "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj"
+              "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
+                "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj"
               }
             }
           }
@@ -146,14 +146,14 @@
         }
       }
     },
-    "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.ViewModels\\BudgetAppCross.ViewModels.csproj": {
+    "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.ViewModels\\BudgetAppCross.ViewModels.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.ViewModels\\BudgetAppCross.ViewModels.csproj",
+        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.ViewModels\\BudgetAppCross.ViewModels.csproj",
         "projectName": "BudgetAppCross.ViewModels",
-        "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.ViewModels\\BudgetAppCross.ViewModels.csproj",
+        "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.ViewModels\\BudgetAppCross.ViewModels.csproj",
         "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.ViewModels\\obj\\",
+        "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.ViewModels\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -174,11 +174,11 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
-                "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj"
+              "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
+                "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj"
               },
-              "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj": {
-                "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj"
+              "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj": {
+                "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj"
               }
             }
           }

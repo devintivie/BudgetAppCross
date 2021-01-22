@@ -1,6 +1,8 @@
 ﻿using Acr.UserDialogs;
 using BudgetAppCross.Core.Services;
 using BudgetAppCross.Core.ViewModels;
+using BudgetAppCross.DataAccess;
+using BudgetAppCross.SQLiteAccess;
 using MvvmCross;
 using MvvmCross.IoC;
 using MvvmCross.ViewModels;
@@ -16,7 +18,7 @@ namespace BudgetAppCross.Core
 
             CreatableTypes().EndingWith("Service").AsInterfaces().RegisterAsLazySingleton();
             Mvx.IoCProvider.RegisterSingleton(() => UserDialogs.Instance);
-            Mvx.IoCProvider.RegisterSingleton<IDataManager>(() => new BudgetDatabase());
+            Mvx.IoCProvider.RegisterSingleton<IBudgetDatabase>(() => new SQLiteBudgetDatabase());
             
             RegisterAppStart<MainViewModel>();
         }

@@ -1,4 +1,5 @@
 ﻿using BudgetAppCross.Models;
+using BudgetAppCross.StateManagers;
 using BudgetAppCross.Core.Services;
 using MvvmCross.ViewModels;
 using System;
@@ -21,14 +22,8 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Properties
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
-        //public BillManager BillManager => BillManager.Instance;
         public StateManager StateManager => StateManager.Instance;
-        //public BankAccountManager BankAccountManager => BankAccountManager.Instance;
-
-        //public BudgetDatabase BudgetDatabase => BudgetDatabase.Instance;
         public IDataManager BudgetDatabase = Mvx.IoCProvider.Resolve<IDataManager>();
-
         public Messenger Messenger => Messenger.Instance;
 
 
