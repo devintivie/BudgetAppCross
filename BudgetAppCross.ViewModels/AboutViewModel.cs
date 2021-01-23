@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
-using Xamarin.Essentials;
+//using Xamarin.Essentials;
 
 namespace BudgetAppCross.ViewModels
 {
@@ -22,7 +22,7 @@ namespace BudgetAppCross.ViewModels
         public AboutViewModel()
         {
             Title = "About";
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://xamarin.com"));
+            //OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://xamarin.com"));
 
         }
         #endregion

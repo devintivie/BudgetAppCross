@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j6B0aCP87pDA1GG3ECB7rmqOIxorbNtNhYz6AMwwEGRK4KGB2nkkkb4+tgGSiWCzPtAIZVe791hVY2ARQTn7MA==",
+  "dgSpecHash": "/7C1cmwZ2sp+tgzKO4/YoW6jmtlB7hxFaJq+IyidcFlDjcq2/qLbw3i6VJykgZj9MwYKiOUG8G6UpW3HQmEjTw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj",
+  "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"

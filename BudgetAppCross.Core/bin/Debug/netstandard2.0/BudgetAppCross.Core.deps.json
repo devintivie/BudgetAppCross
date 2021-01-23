@@ -12,7 +12,9 @@
           "Acr.UserDialogs": "7.1.0.446",
           "BaseClasses": "1.0.0",
           "BudgetAppCore.Sqlite": "1.0.0",
+          "BudgetAppCross.DataAccess": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "BudgetAppCross.SqliteDataAccess": "1.0.0",
           "InAppPurchasing.Core": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
           "NETStandard.Library": "2.0.3",
@@ -515,6 +517,14 @@
           "BudgetAppCore.Sqlite.dll": {}
         }
       },
+      "BudgetAppCross.DataAccess/1.0.0": {
+        "dependencies": {
+          "BudgetAppCross.Models": "1.0.0"
+        },
+        "runtime": {
+          "BudgetAppCross.DataAccess.dll": {}
+        }
+      },
       "BudgetAppCross.Models/1.0.0": {
         "dependencies": {
           "MvvmCross.Plugin.Messenger": "6.4.2",
@@ -524,6 +534,14 @@
         },
         "runtime": {
           "BudgetAppCross.Models.dll": {}
+        }
+      },
+      "BudgetAppCross.SqliteDataAccess/1.0.0": {
+        "dependencies": {
+          "BudgetAppCross.DataAccess": "1.0.0"
+        },
+        "runtime": {
+          "BudgetAppCross.SqliteDataAccess.dll": {}
         }
       },
       "InAppPurchasing.Core/1.0.0": {
@@ -885,7 +903,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "BudgetAppCross.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "BudgetAppCross.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BudgetAppCross.SqliteDataAccess/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

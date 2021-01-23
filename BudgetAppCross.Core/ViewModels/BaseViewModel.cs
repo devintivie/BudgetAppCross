@@ -10,6 +10,7 @@ using MvvmCross;
 using System.Windows.Input;
 using MvvmCross.Navigation;
 using BaseClasses;
+using BudgetAppCross.DataAccess;
 
 namespace BudgetAppCross.Core.ViewModels
 {

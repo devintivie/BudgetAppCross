@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "Xamarin.iOS,Version=v1.0": {
-      "Acr.UserDialogs/7.1.0.446": {
+      "Acr.UserDialogs/7.1.0.475": {
         "type": "package",
         "dependencies": {
           "BTProgressHUD": "1.3.1"
@@ -784,7 +784,7 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
-          "C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj": "1.0.0",
+          "CustomXamarinControls": "1.0.0",
           "CustomXamarinFormsBehaviors": "1.0.0",
           "CustomXamarinFormsConverters": "1.0.0",
           "Microsoft.CSharp": "4.7.0",
@@ -808,7 +808,9 @@
           "Acr.UserDialogs": "7.1.0.446",
           "BaseClasses": "1.0.0",
           "BudgetAppCore.Sqlite": "1.0.0",
+          "BudgetAppCross.DataAccess": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "BudgetAppCross.SqliteDataAccess": "1.0.0",
           "InAppPurchasing.Core": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
           "Newtonsoft.Json": "12.0.3",
@@ -820,6 +822,19 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Core.dll": {}
+        }
+      },
+      "BudgetAppCross.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "BudgetAppCross.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.DataAccess.dll": {}
         }
       },
       "BudgetAppCross.Models/1.0.0": {
@@ -836,6 +851,33 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
+        }
+      },
+      "BudgetAppCross.SqliteDataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "BudgetAppCross.DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.SqliteDataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.SqliteDataAccess.dll": {}
+        }
+      },
+      "CustomXamarinControls/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Acr.UserDialogs": "7.1.0.475",
+          "Xamarin.Forms": "4.7.0.1142"
+        },
+        "compile": {
+          "bin/placeholder/CustomXamarinControls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinControls.dll": {}
         }
       },
       "CustomXamarinFormsBehaviors/1.0.0": {
@@ -894,7 +936,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win": {
-      "Acr.UserDialogs/7.1.0.446": {
+      "Acr.UserDialogs/7.1.0.475": {
         "type": "package",
         "dependencies": {
           "BTProgressHUD": "1.3.1"
@@ -1658,7 +1700,7 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
-          "C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj": "1.0.0",
+          "CustomXamarinControls": "1.0.0",
           "CustomXamarinFormsBehaviors": "1.0.0",
           "CustomXamarinFormsConverters": "1.0.0",
           "Microsoft.CSharp": "4.7.0",
@@ -1682,7 +1724,9 @@
           "Acr.UserDialogs": "7.1.0.446",
           "BaseClasses": "1.0.0",
           "BudgetAppCore.Sqlite": "1.0.0",
+          "BudgetAppCross.DataAccess": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "BudgetAppCross.SqliteDataAccess": "1.0.0",
           "InAppPurchasing.Core": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
           "Newtonsoft.Json": "12.0.3",
@@ -1694,6 +1738,19 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Core.dll": {}
+        }
+      },
+      "BudgetAppCross.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "BudgetAppCross.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.DataAccess.dll": {}
         }
       },
       "BudgetAppCross.Models/1.0.0": {
@@ -1710,6 +1767,33 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
+        }
+      },
+      "BudgetAppCross.SqliteDataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "BudgetAppCross.DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.SqliteDataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.SqliteDataAccess.dll": {}
+        }
+      },
+      "CustomXamarinControls/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Acr.UserDialogs": "7.1.0.475",
+          "Xamarin.Forms": "4.7.0.1142"
+        },
+        "compile": {
+          "bin/placeholder/CustomXamarinControls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinControls.dll": {}
         }
       },
       "CustomXamarinFormsBehaviors/1.0.0": {
@@ -1768,7 +1852,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x64": {
-      "Acr.UserDialogs/7.1.0.446": {
+      "Acr.UserDialogs/7.1.0.475": {
         "type": "package",
         "dependencies": {
           "BTProgressHUD": "1.3.1"
@@ -2532,7 +2616,7 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
-          "C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj": "1.0.0",
+          "CustomXamarinControls": "1.0.0",
           "CustomXamarinFormsBehaviors": "1.0.0",
           "CustomXamarinFormsConverters": "1.0.0",
           "Microsoft.CSharp": "4.7.0",
@@ -2556,7 +2640,9 @@
           "Acr.UserDialogs": "7.1.0.446",
           "BaseClasses": "1.0.0",
           "BudgetAppCore.Sqlite": "1.0.0",
+          "BudgetAppCross.DataAccess": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "BudgetAppCross.SqliteDataAccess": "1.0.0",
           "InAppPurchasing.Core": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
           "Newtonsoft.Json": "12.0.3",
@@ -2568,6 +2654,19 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Core.dll": {}
+        }
+      },
+      "BudgetAppCross.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "BudgetAppCross.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.DataAccess.dll": {}
         }
       },
       "BudgetAppCross.Models/1.0.0": {
@@ -2584,6 +2683,33 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
+        }
+      },
+      "BudgetAppCross.SqliteDataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "BudgetAppCross.DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.SqliteDataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.SqliteDataAccess.dll": {}
+        }
+      },
+      "CustomXamarinControls/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Acr.UserDialogs": "7.1.0.475",
+          "Xamarin.Forms": "4.7.0.1142"
+        },
+        "compile": {
+          "bin/placeholder/CustomXamarinControls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinControls.dll": {}
         }
       },
       "CustomXamarinFormsBehaviors/1.0.0": {
@@ -2642,7 +2768,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x86": {
-      "Acr.UserDialogs/7.1.0.446": {
+      "Acr.UserDialogs/7.1.0.475": {
         "type": "package",
         "dependencies": {
           "BTProgressHUD": "1.3.1"
@@ -3406,7 +3532,7 @@
           "Behaviors.XamarinForms": "4.0.4",
           "BudgetAppCross.Core": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
-          "C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj": "1.0.0",
+          "CustomXamarinControls": "1.0.0",
           "CustomXamarinFormsBehaviors": "1.0.0",
           "CustomXamarinFormsConverters": "1.0.0",
           "Microsoft.CSharp": "4.7.0",
@@ -3430,7 +3556,9 @@
           "Acr.UserDialogs": "7.1.0.446",
           "BaseClasses": "1.0.0",
           "BudgetAppCore.Sqlite": "1.0.0",
+          "BudgetAppCross.DataAccess": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "BudgetAppCross.SqliteDataAccess": "1.0.0",
           "InAppPurchasing.Core": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
           "Newtonsoft.Json": "12.0.3",
@@ -3442,6 +3570,19 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Core.dll": {}
+        }
+      },
+      "BudgetAppCross.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "BudgetAppCross.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.DataAccess.dll": {}
         }
       },
       "BudgetAppCross.Models/1.0.0": {
@@ -3458,6 +3599,33 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
+        }
+      },
+      "BudgetAppCross.SqliteDataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "BudgetAppCross.DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.SqliteDataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.SqliteDataAccess.dll": {}
+        }
+      },
+      "CustomXamarinControls/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Acr.UserDialogs": "7.1.0.475",
+          "Xamarin.Forms": "4.7.0.1142"
+        },
+        "compile": {
+          "bin/placeholder/CustomXamarinControls.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinControls.dll": {}
         }
       },
       "CustomXamarinFormsBehaviors/1.0.0": {
@@ -3517,14 +3685,14 @@
     }
   },
   "libraries": {
-    "Acr.UserDialogs/7.1.0.446": {
-      "sha512": "7YF7hk4qy4x9pKrVzKnjTEvua+kTSlHqdPPvP4gIqsxymPH6I3nAW2lpSo8kX97nTBbwkfddtrikwAXIYxRNIw==",
+    "Acr.UserDialogs/7.1.0.475": {
+      "sha512": "iGW0uda9bmbGcPABm0UzDjSd5DtGwcTCkOg265aUxKhG9IW0HtoNA3gASMXK64hMye2A+9mfkcmWJDOudbhJWw==",
       "type": "package",
-      "path": "acr.userdialogs/7.1.0.446",
+      "path": "acr.userdialogs/7.1.0.475",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "acr.userdialogs.7.1.0.446.nupkg.sha512",
+        "acr.userdialogs.7.1.0.475.nupkg.sha512",
         "acr.userdialogs.nuspec",
         "lib/monoandroid10.0/Acr.UserDialogs.dll",
         "lib/monoandroid10.0/Acr.UserDialogs.pdb",
@@ -3540,11 +3708,6 @@
         "lib/uap10.0.16299/Acr.UserDialogs.pri",
         "lib/uap10.0.16299/Acr.UserDialogs.xml",
         "lib/uap10.0.16299/Acr.UserDialogs/Acr.UserDialogs.xr.xml",
-        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/ActionSheetContentDialog.xaml",
-        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/DatePickerControl.xaml",
-        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/LoginContentDialog.xaml",
-        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/ProgressContentDialog.xaml",
-        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/TimePickerControl.xaml",
         "lib/xamarinios10/Acr.UserDialogs.dll",
         "lib/xamarinios10/Acr.UserDialogs.pdb",
         "lib/xamarinios10/Acr.UserDialogs.xml",
@@ -5124,10 +5287,25 @@
       "path": "../BudgetAppCross.Core/BudgetAppCross.Core.csproj",
       "msbuildProject": "../BudgetAppCross.Core/BudgetAppCross.Core.csproj"
     },
+    "BudgetAppCross.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../BudgetAppCross.DataAccess/BudgetAppCross.DataAccess.csproj",
+      "msbuildProject": "../BudgetAppCross.DataAccess/BudgetAppCross.DataAccess.csproj"
+    },
     "BudgetAppCross.Models/1.0.0": {
       "type": "project",
       "path": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj",
       "msbuildProject": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj"
+    },
+    "BudgetAppCross.SqliteDataAccess/1.0.0": {
+      "type": "project",
+      "path": "../BudgetAppCross.SqliteDataAccess/BudgetAppCross.SqliteDataAccess.csproj",
+      "msbuildProject": "../BudgetAppCross.SqliteDataAccess/BudgetAppCross.SqliteDataAccess.csproj"
+    },
+    "CustomXamarinControls/1.0.0": {
+      "type": "project",
+      "path": "../../CustomXamarinControls/CustomXamarinControls/CustomXamarinControls.csproj",
+      "msbuildProject": "../../CustomXamarinControls/CustomXamarinControls/CustomXamarinControls.csproj"
     },
     "CustomXamarinFormsBehaviors/1.0.0": {
       "type": "project",
@@ -5168,11 +5346,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.iOS\\BudgetAppCross.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.iOS\\BudgetAppCross.iOS.csproj",
       "projectName": "BudgetAppCross.iOS",
-      "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.iOS\\BudgetAppCross.iOS.csproj",
+      "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.iOS\\BudgetAppCross.iOS.csproj",
       "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.iOS\\obj\\",
+      "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -5193,17 +5371,17 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj": {
-              "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj"
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj"
             },
-            "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj": {
-              "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross\\BudgetAppCross.csproj"
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross\\BudgetAppCross.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross\\BudgetAppCross.csproj"
             },
-            "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj": {
-              "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj"
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj"
             },
-            "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj": {
-              "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj"
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj"
             }
           }
         }
@@ -5238,19 +5416,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    }
-  ]
+  }
 }

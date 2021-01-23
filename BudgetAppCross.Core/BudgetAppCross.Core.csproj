@@ -15,7 +15,9 @@
   <ItemGroup>
     <ProjectReference Include="..\BaseClasses\BaseClasses.csproj" />
     <ProjectReference Include="..\BudgetAppCore.Sqlite\BudgetAppCore.Sqlite.csproj" />
+    <ProjectReference Include="..\BudgetAppCross.DataAccess\BudgetAppCross.DataAccess.csproj" />
     <ProjectReference Include="..\BudgetAppCross.Models\BudgetAppCross.Models.csproj" />
+    <ProjectReference Include="..\BudgetAppCross.SqliteDataAccess\BudgetAppCross.SqliteDataAccess.csproj" />
     <ProjectReference Include="..\InAppPurchasing.Core\InAppPurchasing.Core.csproj" />
   </ItemGroup>
 

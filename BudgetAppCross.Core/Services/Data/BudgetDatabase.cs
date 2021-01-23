@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
+using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
 using MvvmCross;
 using SQLite;

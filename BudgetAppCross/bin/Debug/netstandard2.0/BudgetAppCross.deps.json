@@ -28,11 +28,11 @@
           "BudgetAppCross.dll": {}
         }
       },
-      "Acr.UserDialogs/7.1.0.446": {
+      "Acr.UserDialogs/7.1.0.475": {
         "runtime": {
           "lib/netstandard2.0/Acr.UserDialogs.dll": {
-            "assemblyVersion": "7.1.0.446",
-            "fileVersion": "7.1.0.446"
+            "assemblyVersion": "7.1.0.475",
+            "fileVersion": "7.1.0.475"
           }
         }
       },
@@ -789,10 +789,12 @@
       },
       "BudgetAppCross.Core/1.0.0": {
         "dependencies": {
-          "Acr.UserDialogs": "7.1.0.446",
+          "Acr.UserDialogs": "7.1.0.475",
           "BaseClasses": "1.0.0",
           "BudgetAppCore.Sqlite": "1.0.0",
+          "BudgetAppCross.DataAccess": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "BudgetAppCross.SqliteDataAccess": "1.0.0",
           "InAppPurchasing.Core": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
           "Newtonsoft.Json": "12.0.3",
@@ -801,6 +803,14 @@
         },
         "runtime": {
           "BudgetAppCross.Core.dll": {}
+        }
+      },
+      "BudgetAppCross.DataAccess/1.0.0": {
+        "dependencies": {
+          "BudgetAppCross.Models": "1.0.0"
+        },
+        "runtime": {
+          "BudgetAppCross.DataAccess.dll": {}
         }
       },
       "BudgetAppCross.Models/1.0.0": {
@@ -814,8 +824,17 @@
           "BudgetAppCross.Models.dll": {}
         }
       },
+      "BudgetAppCross.SqliteDataAccess/1.0.0": {
+        "dependencies": {
+          "BudgetAppCross.DataAccess": "1.0.0"
+        },
+        "runtime": {
+          "BudgetAppCross.SqliteDataAccess.dll": {}
+        }
+      },
       "CustomXamarinControls/1.0.0": {
         "dependencies": {
+          "Acr.UserDialogs": "7.1.0.475",
           "Xamarin.Forms": "4.7.0.1142"
         },
         "runtime": {
@@ -851,12 +870,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Acr.UserDialogs/7.1.0.446": {
+    "Acr.UserDialogs/7.1.0.475": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7YF7hk4qy4x9pKrVzKnjTEvua+kTSlHqdPPvP4gIqsxymPH6I3nAW2lpSo8kX97nTBbwkfddtrikwAXIYxRNIw==",
-      "path": "acr.userdialogs/7.1.0.446",
-      "hashPath": "acr.userdialogs.7.1.0.446.nupkg.sha512"
+      "sha512": "sha512-iGW0uda9bmbGcPABm0UzDjSd5DtGwcTCkOg265aUxKhG9IW0HtoNA3gASMXK64hMye2A+9mfkcmWJDOudbhJWw==",
+      "path": "acr.userdialogs/7.1.0.475",
+      "hashPath": "acr.userdialogs.7.1.0.475.nupkg.sha512"
     },
     "Behaviors.XamarinForms/4.0.4": {
       "type": "package",
@@ -1377,7 +1396,17 @@
       "serviceable": false,
       "sha512": ""
     },
+    "BudgetAppCross.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "BudgetAppCross.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BudgetAppCross.SqliteDataAccess/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

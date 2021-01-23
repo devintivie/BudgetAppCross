@@ -1,5 +1,5 @@
 ﻿using BudgetAppCross.Models;
-using BudgetAppCross.Services;
+//using BudgetAppCross.Services;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ namespace BudgetAppCross.ViewModels
         #endregion
 
         #region Properties
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        //public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
 
         private bool isBusy;
         public bool IsBusy

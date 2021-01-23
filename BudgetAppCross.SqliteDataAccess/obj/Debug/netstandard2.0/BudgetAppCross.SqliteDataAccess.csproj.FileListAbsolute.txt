@@ -1,0 +1,14 @@
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\obj\Debug\netstandard2.0\BudgetAppCross.SqliteDataAccess.csprojAssemblyReference.cache
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\obj\Debug\netstandard2.0\BudgetAppCross.SqliteDataAccess.AssemblyInfoInputs.cache
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\obj\Debug\netstandard2.0\BudgetAppCross.SqliteDataAccess.AssemblyInfo.cs
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\obj\Debug\netstandard2.0\BudgetAppCross.SqliteDataAccess.csproj.CoreCompileInputs.cache
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\bin\Debug\netstandard2.0\BudgetAppCross.SqliteDataAccess.deps.json
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\bin\Debug\netstandard2.0\BudgetAppCross.SqliteDataAccess.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\bin\Debug\netstandard2.0\BudgetAppCross.SqliteDataAccess.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\bin\Debug\netstandard2.0\BudgetAppCross.DataAccess.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\bin\Debug\netstandard2.0\BudgetAppCross.Models.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\bin\Debug\netstandard2.0\BudgetAppCross.DataAccess.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\bin\Debug\netstandard2.0\BudgetAppCross.Models.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\obj\Debug\netstandard2.0\BudgetAppCross.SqliteDataAccess.csproj.CopyComplete
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\obj\Debug\netstandard2.0\BudgetAppCross.SqliteDataAccess.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\obj\Debug\netstandard2.0\BudgetAppCross.SqliteDataAccess.pdb

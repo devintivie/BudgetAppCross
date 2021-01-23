@@ -667,6 +667,19 @@
           "bin/placeholder/BudgetAppCore.Sqlite.dll": {}
         }
       },
+      "BudgetAppCross.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "BudgetAppCross.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.DataAccess.dll": {}
+        }
+      },
       "BudgetAppCross.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -681,6 +694,19 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
+        }
+      },
+      "BudgetAppCross.SqliteDataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "BudgetAppCross.DataAccess": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.SqliteDataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.SqliteDataAccess.dll": {}
         }
       },
       "InAppPurchasing.Core/1.0.0": {
@@ -2155,10 +2181,20 @@
       "path": "../BudgetAppCore.Sqlite/BudgetAppCore.Sqlite.csproj",
       "msbuildProject": "../BudgetAppCore.Sqlite/BudgetAppCore.Sqlite.csproj"
     },
+    "BudgetAppCross.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../BudgetAppCross.DataAccess/BudgetAppCross.DataAccess.csproj",
+      "msbuildProject": "../BudgetAppCross.DataAccess/BudgetAppCross.DataAccess.csproj"
+    },
     "BudgetAppCross.Models/1.0.0": {
       "type": "project",
       "path": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj",
       "msbuildProject": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj"
+    },
+    "BudgetAppCross.SqliteDataAccess/1.0.0": {
+      "type": "project",
+      "path": "../BudgetAppCross.SqliteDataAccess/BudgetAppCross.SqliteDataAccess.csproj",
+      "msbuildProject": "../BudgetAppCross.SqliteDataAccess/BudgetAppCross.SqliteDataAccess.csproj"
     },
     "InAppPurchasing.Core/1.0.0": {
       "type": "project",
@@ -2171,7 +2207,9 @@
       "Acr.UserDialogs >= 7.1.0.446",
       "BaseClasses >= 1.0.0",
       "BudgetAppCore.Sqlite >= 1.0.0",
+      "BudgetAppCross.DataAccess >= 1.0.0",
       "BudgetAppCross.Models >= 1.0.0",
+      "BudgetAppCross.SqliteDataAccess >= 1.0.0",
       "InAppPurchasing.Core >= 1.0.0",
       "MvvmCross.Forms >= 6.4.2",
       "NETStandard.Library >= 2.0.3",
@@ -2187,11 +2225,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj",
+      "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj",
       "projectName": "BudgetAppCross.Core",
-      "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj",
+      "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj",
       "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Core\\obj\\",
+      "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -2212,17 +2250,23 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj": {
-              "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj"
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BaseClasses\\BaseClasses.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BaseClasses\\BaseClasses.csproj"
             },
-            "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj": {
-              "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj"
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj"
             },
-            "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
-              "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj"
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.DataAccess\\BudgetAppCross.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.DataAccess\\BudgetAppCross.DataAccess.csproj"
             },
-            "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj": {
-              "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj"
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj"
+            },
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.SqliteDataAccess\\BudgetAppCross.SqliteDataAccess.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.SqliteDataAccess\\BudgetAppCross.SqliteDataAccess.csproj"
+            },
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj"
             }
           }
         }
