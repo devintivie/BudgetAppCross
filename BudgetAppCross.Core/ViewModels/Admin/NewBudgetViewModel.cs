@@ -11,6 +11,7 @@ using Acr.UserDialogs;
 using System.Linq;
 using MvvmCross;
 using MvvmCross.Commands;
+using System.IO;
 
 namespace BudgetAppCross.Core.ViewModels
 {
@@ -118,34 +119,39 @@ namespace BudgetAppCross.Core.ViewModels
                 return;
             }
 
+            var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            var filename = Path.Combine(documents, "Write.txt");
+            File.WriteAllText(filename, "Write this text into a file");
+
             StateManager.DatabaseFilename = BudgetFilename;
             await BudgetDatabase.Initialize();
-
-            var defaultAccount = new BankAccount(0, "Undecided");
+            var defaultAccount = new BankAccount("Undecided"); //sarting balance = 0
             await BudgetDatabase.SaveBankAccount(defaultAccount);
-            if (IsAddingBankAccount)
-            {
-                if (string.IsNullOrWhiteSpace(FirstBankAccountName))
-                {
-                    var config = new AlertConfig().SetMessage("Invalid Account Name");//.SetOkText(ConfirmConfig.DefaultOkText);
-                    Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
-                    return;
-                }
-                var bal = new Balance(InitialBalance, InitialBalanceDate);
-                var ba = new BankAccount()
-                {
-                    Nickname = FirstBankAccountName,
-                    History = new List<Balance> { bal }
-                };
+            //if (IsAddingBankAccount)
+            //{
+            //    if (string.IsNullOrWhiteSpace(FirstBankAccountName))
+            //    {
+            //        var config = new AlertConfig().SetMessage("Invalid Account Name");//.SetOkText(ConfirmConfig.DefaultOkText);
+            //        Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
+            //        return;
+            //    }
+            //    var ba = new BankAccount()
+            //    {
+            //        Nickname = FirstBankAccountName,
+            //    };
 
-                await BudgetDatabase.SaveBankAccount(ba);
-                StateManager.SaveState();
-            }
+            //    var acctId = await BudgetDatabase.SaveBankAccount(ba);
+            //    var bal = new Balance(InitialBalance, InitialBalanceDate, acctId);
+            //    await BudgetDatabase.SaveBalance(bal);
+            //    StateManager.SaveState();
+            //}
             //if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
             //{
             //    masterDetailPage.IsGestureEnabled = true;
             //}
-            await navigationService.Navigate<DateRangeViewModel>();
+
+            await navigationService.Navigate<SelectBudgetViewModel>();
+            //await navigationService.Navigate<DateRangeViewModel>();
         }
 
         private async Task OnCancel()

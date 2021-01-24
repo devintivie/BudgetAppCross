@@ -19,7 +19,7 @@ namespace BudgetAppCross.DataAccess
 
         #region BankAccounts
         Task<List<BankAccount>> GetBankAccounts();
-        Task SaveBankAccount(BankAccount acct);
+        Task<int> SaveBankAccount(BankAccount acct);
         Task<BankAccount> GetBankAccount(int id);
         Task<int> GetBankAccountID(string name);
         Task DeleteBankAccount(BankAccount acct);

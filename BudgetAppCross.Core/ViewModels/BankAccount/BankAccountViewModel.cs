@@ -133,7 +133,7 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task UpdateBalances()
         {
             var temp = await BudgetDatabase.GetBalances();
-            var tempBalances = temp.Where(x => x.AccountID == BankAccount.AccountID)
+            var tempBalances = temp.Where(x => x.AccountId == BankAccount.AccountId)
                 .OrderBy(x => x.Timestamp).ToList();
 
             var vms = new List<BalanceViewModel>();

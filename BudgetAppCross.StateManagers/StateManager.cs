@@ -32,7 +32,7 @@ namespace BudgetAppCross.StateManagers//ore.Services
         #endregion
 
         #region Properties
-        public string DatabaseFilename { get; set; } = null;//"None";
+        public string DatabaseFilename { get; set; } = null;
         public List<string> Budgets { get; private set; }
         public bool FullVersionPaid { get; private set; } = false;
 
@@ -53,7 +53,8 @@ namespace BudgetAppCross.StateManagers//ore.Services
         {
             get
             {
-                var currentFileAndExt = $"{DatabaseFilename}.db3";
+                var currentFileAndExt = $"{DatabaseFilename}.sqlite3";
+                //var currentFileAndExt = $"Data Source={DatabaseFilename}.sqlite3;Version=3;";
                 var fullpath = Path.Combine(basePath, currentFileAndExt);
                 return fullpath;
             }

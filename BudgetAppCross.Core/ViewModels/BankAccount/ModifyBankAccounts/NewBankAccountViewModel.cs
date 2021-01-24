@@ -125,7 +125,7 @@ namespace BudgetAppCross.Core.ViewModels
             //    //AccountID = BankAccount.AccountID
             //};
             var bal = new Balance(Balance, Date);
-            BankAccount.History.Add(bal);
+            //BankAccount.History.Add(bal);
             await BudgetDatabase.SaveBankAccount(BankAccount);
             //await BudgetDatabase.Instance.SaveBankAccount(BankAccount);
 

@@ -15,25 +15,23 @@ namespace BudgetAppCross.Models
         #endregion
 
         #region Properties
-        //[PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
+        public int BalanceId { get; set; }
         public decimal Amount { get; set; }
         public DateTime Timestamp { get; set; }
-
-        //[ForeignKey(typeof(BankAccount))]
-        public int AccountID { get; set; }
-        //[ManyToOne(CascadeOperations =CascadeOperation.CascadeRead)]
+        public int AccountId { get; set; }
         public BankAccount BankAccount { get; set; }
         #endregion
 
         #region Constructors
-        public Balance(decimal amount, DateTime time)
+        public Balance(decimal amount, DateTime time, int acctId)
         {
             Amount = amount;
             Timestamp = time;
+            AccountId = acctId;
         }
+        public Balance(decimal amount, DateTime time) : this(amount, time, 0) { }
 
-        public Balance() : this(0, DateTime.Today) { }
+        public Balance() : this(0, DateTime.Today, 0) { }
         #endregion
 
         #region Methods

@@ -64,7 +64,7 @@ namespace BudgetAppCross.Core.ViewModels
         #region Methods
         private async void GetLatestBalance()
         {
-            var temp = await BudgetDatabase.GetLatestBalance(BankAccount.AccountID, DateTime.Today);
+            var temp = await BudgetDatabase.GetLatestBalance(BankAccount.AccountId, DateTime.Today);
             //var temp = 0.0;
             if (temp == null)
             {

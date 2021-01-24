@@ -217,19 +217,19 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task UpdateAndSave()
         {
             await BudgetDatabase.SaveBill(Bill);
-            Messenger.Send(new UpdateBillMessage(Bill.AccountID));
+            Messenger.Send(new UpdateBillMessage(Bill.AccountId));
         }
 
         private async Task ChangeAndSave()
         {
             await BudgetDatabase.SaveBill(Bill);
-            Messenger.Send(new ChangeBillMessage(Bill.AccountID));
+            Messenger.Send(new ChangeBillMessage(Bill.AccountId));
         }
 
         private async Task OnDeleteThis()
         {
             await BudgetDatabase.DeleteBill(Bill);
-            Messenger.Send(new ChangeBillMessage(Bill.AccountID));
+            Messenger.Send(new ChangeBillMessage(Bill.AccountId));
         }
 
 

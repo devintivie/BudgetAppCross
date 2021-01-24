@@ -92,7 +92,7 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task ChangeAndSave()
         {
             await BudgetDatabase.SaveBalance(Balance);
-            Messenger.Send(new ChangeBalanceMessage(Balance.AccountID));
+            Messenger.Send(new ChangeBalanceMessage(Balance.AccountId));
         }
 
         private async Task UpdateAndSave()
@@ -133,7 +133,7 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task OnDeleteThis()
         {
             await BudgetDatabase.DeleteBalance(Balance);
-            Messenger.Send(new ChangeBalanceMessage(Balance.AccountID));
+            Messenger.Send(new ChangeBalanceMessage(Balance.AccountId));
         }
 
 

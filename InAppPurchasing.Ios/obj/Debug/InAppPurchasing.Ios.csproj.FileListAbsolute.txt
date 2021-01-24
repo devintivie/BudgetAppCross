@@ -28,4 +28,3 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Ios\obj\Debug\X
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Ios\obj\Debug\InAppPurchasing.iOS.csproj.CopyComplete
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Ios\obj\Debug\InAppPurchasing.Ios.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Ios\obj\Debug\InAppPurchasing.Ios.pdb
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Ios\obj\Debug\build-signature\signature

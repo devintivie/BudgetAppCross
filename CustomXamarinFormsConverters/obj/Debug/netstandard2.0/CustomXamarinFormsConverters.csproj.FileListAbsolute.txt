@@ -29,6 +29,7 @@ C:\Users\devin\source\repos\BudgetAppCross\CustomXamarinFormsConverters\obj\Debu
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsConverters\bin\Debug\netstandard2.0\CustomXamarinFormsConverters.deps.json
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsConverters\bin\Debug\netstandard2.0\CustomXamarinFormsConverters.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsConverters\bin\Debug\netstandard2.0\CustomXamarinFormsConverters.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsConverters\obj\Debug\netstandard2.0\CustomXamarinFormsConverters.csprojAssemblyReference.cache
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsConverters\obj\Debug\netstandard2.0\CustomXamarinFormsConverters.AssemblyInfoInputs.cache
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsConverters\obj\Debug\netstandard2.0\CustomXamarinFormsConverters.AssemblyInfo.cs
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsConverters\obj\Debug\netstandard2.0\CustomXamarinFormsConverters.csproj.CoreCompileInputs.cache

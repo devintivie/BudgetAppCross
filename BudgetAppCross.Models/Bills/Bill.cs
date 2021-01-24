@@ -16,8 +16,7 @@ namespace BudgetAppCross.Models
         #endregion
 
         #region Properties
-        //[PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
+        public int BillId { get; set; }
         private DateTime date;
         public DateTime Date
         {
@@ -63,12 +62,9 @@ namespace BudgetAppCross.Models
             }
         }
 
-        //[ForeignKey(typeof(BankAccount))]
-        public int AccountID { get; set; }
-        //[ManyToOne(CascadeOperations = CascadeOperation.CascadeRead)]
+        public int AccountId { get; set; }
         public BankAccount BankAccount { get; set; }
 
-        //[JsonIgnore][Ignore]
         public BillStatus BillStatus { get; set; }
         public string Confirmation { get; set; }
 

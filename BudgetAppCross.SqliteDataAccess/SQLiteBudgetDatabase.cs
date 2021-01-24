@@ -25,6 +25,7 @@ namespace BudgetAppCross.SqliteDataAccess
 
         #region Fields
         static bool initialized = false;
+        private IAccountRepo AccountAccess;
         #endregion
 
         #region Properties
@@ -33,7 +34,7 @@ namespace BudgetAppCross.SqliteDataAccess
         #endregion
 
         #region Init
-        public Task Initialize()
+        public async Task Initialize()
         {
             var accountTableName = "BankAccount";
             var balanceTableName = "Balance";
@@ -49,7 +50,11 @@ namespace BudgetAppCross.SqliteDataAccess
             SQLiteHelper.CreateTable(connectionString, balanceTable);
             SQLiteHelper.CreateTable(connectionString, billTable);
 
-            return Task.CompletedTask;
+            AccountAccess = new SQLiteAccountAccess(accountTableName);
+
+            await UpdateBankAccountNames();
+            //await UpdatePayeeNames();
+            //return Task.CompletedTask;
             //CreateTable(transactionTable);
         }
         #endregion
@@ -106,9 +111,18 @@ namespace BudgetAppCross.SqliteDataAccess
             throw new NotImplementedException();
         }
 
-        public Task SaveBankAccount(BankAccount acct)
+        public async Task<int> SaveBankAccount(BankAccount acct)
         {
-            throw new NotImplementedException();
+            if(acct.AccountId != 0)
+            {
+                var acctId = await AccountAccess.UpdateAccountAsync(acct);
+                return acctId;
+            }
+            else
+            {
+                var result = await AccountAccess.InsertAccountAsync(acct);
+                return result.LastId;
+            }
         }
 
         public Task<BankAccount> GetBankAccount(int id)
@@ -126,9 +140,15 @@ namespace BudgetAppCross.SqliteDataAccess
             throw new NotImplementedException();
         }
 
-        public Task UpdateBankAccountNames()
+        public async Task UpdateBankAccountNames()
         {
-            throw new NotImplementedException();
+            var list = await AccountAccess.GetAllAccountsAsync();
+            BankAccountNicknames.Clear();
+
+            foreach (var item in list)
+            {
+                BankAccountNicknames.Add(item.Nickname);
+            }
         }
 
         #endregion
@@ -211,9 +231,9 @@ namespace BudgetAppCross.SqliteDataAccess
             throw new NotImplementedException();
         }
 
-        public Task UpdatePayeeNames()
+        public async Task UpdatePayeeNames()
         {
-            throw new NotImplementedException();
+            
         }
         #endregion
 

@@ -263,7 +263,7 @@ namespace BudgetAppCross.Core.ViewModels
             AccountOptions = new ObservableCollection<string>(BudgetDatabase.BankAccountNicknames);
 
             var allAccts = await BudgetDatabase.GetBankAccounts();
-            var accts = allAccts.Where(x => x.AccountID != 1).Select(x => x.Nickname).ToList();
+            var accts = allAccts.Where(x => x.AccountId != 1).Select(x => x.Nickname).ToList();
             AccountOptions = new ObservableCollection<string>(accts);
             SelectedAccount = AccountOptions.FirstOrDefault();
 

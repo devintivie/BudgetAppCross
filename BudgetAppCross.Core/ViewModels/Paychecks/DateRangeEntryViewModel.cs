@@ -87,7 +87,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnUpdateBillMessage(int id)
         {
-            if(BankAccount.AccountID == id)
+            if(BankAccount.AccountId == id)
             {
                 await UpdateCalculations();
             }
@@ -97,7 +97,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnChangeBillMessage(int id)
         {
-            if (BankAccount.AccountID == id)
+            if (BankAccount.AccountId == id)
             {
                 await LoadData();
             }
@@ -119,7 +119,7 @@ namespace BudgetAppCross.Core.ViewModels
         //}
         private async Task UpdateCalculations()
         {
-            var bal = await BudgetDatabase.GetLatestBalance(BankAccount.AccountID, StartDate);
+            var bal = await BudgetDatabase.GetLatestBalance(BankAccount.AccountId, StartDate);
             StartingBalance = bal.Amount;
             var billTotal = 0.0m;
             foreach (var bill in billList)
@@ -137,7 +137,7 @@ namespace BudgetAppCross.Core.ViewModels
             var data = (bills)
                         .Where(x => x.Date >= StartDate)
                         .Where(x => x.Date <= EndDate)
-                        .Where(x => x.AccountID == BankAccount.AccountID)
+                        .Where(x => x.AccountId == BankAccount.AccountId)
                         .OrderBy(x => x.Date)
                         .Select(bill => bill).ToList();
 

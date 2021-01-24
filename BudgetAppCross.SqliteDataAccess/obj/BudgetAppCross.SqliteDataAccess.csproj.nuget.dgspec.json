@@ -34,6 +34,9 @@
             "projectReferences": {
               "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
                 "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj"
+              },
+              "C:\\Users\\devin\\source\\repos\\SharedProjects\\Standard\\SQLiteHelpers\\SQLiteHelpers.csproj": {
+                "projectPath": "C:\\Users\\devin\\source\\repos\\SharedProjects\\Standard\\SQLiteHelpers\\SQLiteHelpers.csproj"
               }
             }
           }
@@ -188,11 +191,19 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.78, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "System.Data.SQLite.Core": {
+              "target": "Package",
+              "version": "[1.0.113.7, )"
             }
           },
           "imports": [
