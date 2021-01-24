@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using SQLite;
-using SQLiteNetExtensions.Attributes;
+//using SQLite;
+//using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -16,7 +16,7 @@ namespace BudgetAppCross.Models
         #endregion
 
         #region Properties
-        [PrimaryKey, AutoIncrement]
+        //[PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         private DateTime date;
         public DateTime Date
@@ -63,12 +63,12 @@ namespace BudgetAppCross.Models
             }
         }
 
-        [ForeignKey(typeof(BankAccount))]
+        //[ForeignKey(typeof(BankAccount))]
         public int AccountID { get; set; }
-        [ManyToOne(CascadeOperations = CascadeOperation.CascadeRead)]
+        //[ManyToOne(CascadeOperations = CascadeOperation.CascadeRead)]
         public BankAccount BankAccount { get; set; }
 
-        [JsonIgnore][Ignore]
+        //[JsonIgnore][Ignore]
         public BillStatus BillStatus { get; set; }
         public string Confirmation { get; set; }
 

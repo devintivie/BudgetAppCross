@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "f/8vqY+a7AKNlTDgLM2OGgT3Co0vqTg6DSQUECBYtQQ7LDLVbYdmuW5tfqwaPzJYagtEkjlQxLCmAhZFmwkf4Q==",
+  "dgSpecHash": "Z99UtJfVY48pqV91Po1vN1JhrvbVWBGfF0N4SW6WWlcA7xwTBoVB/wKkoecvNHN0NHgmrLvOthAQoNDXrb+MkA==",
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.ViewModels\\BudgetAppCross.ViewModels.csproj",
   "expectedPackageFiles": [
@@ -10,16 +10,6 @@
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.plugin.messenger\\6.4.2\\mvvmcross.plugin.messenger.6.4.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\sqlite-net-pcl\\1.7.335\\sqlite-net-pcl.1.7.335.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\sqlitenetextensions\\2.1.0\\sqlitenetextensions.2.1.0.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.0.3\\sqlitepclraw.bundle_green.2.0.3.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\sqlitepclraw.core\\2.0.3\\sqlitepclraw.core.2.0.3.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.3\\sqlitepclraw.lib.e_sqlite3.2.0.3.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.0.3\\sqlitepclraw.provider.e_sqlite3.2.0.3.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.2.0.815419\\xamarin.forms.4.2.0.815419.nupkg.sha512"
   ],
   "logs": []

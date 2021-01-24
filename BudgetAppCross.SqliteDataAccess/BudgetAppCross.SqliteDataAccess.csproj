@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\SharedProjects\Standard\SQLiteHelpers\SQLiteHelpers.csproj" />
     <ProjectReference Include="..\BudgetAppCross.DataAccess\BudgetAppCross.DataAccess.csproj" />
+    <ProjectReference Include="..\BudgetAppCross.StateManagers\BudgetAppCross.StateManagers.csproj" />
   </ItemGroup>
 
 </Project>

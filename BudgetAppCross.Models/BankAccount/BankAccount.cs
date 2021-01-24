@@ -1,5 +1,5 @@
-﻿using SQLite;
-using SQLiteNetExtensions.Attributes;
+﻿//using SQLite;
+//using SQLiteNetExtensions.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,13 +15,13 @@ namespace BudgetAppCross.Models
         #region Properties
         //Account Balance
         
-        [PrimaryKey, AutoIncrement]
+        //[PrimaryKey, AutoIncrement]
         //Used in app only, no external reference
         public int AccountID { get; set; }
 
         //Useful name i.e. Main Account, Savings, College etc.
         //Unique
-        [Unique]
+        //[Unique]
         public string Nickname { get; set; }
         //Bank account number
         //Not required
@@ -30,9 +30,9 @@ namespace BudgetAppCross.Models
         //Does not need to be unique
         public string BankName { get; set; }
 
-        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        //[OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Balance> History { get; set; } = new List<Balance>();
-        [OneToMany(CascadeOperations = CascadeOperation.CascadeRead | CascadeOperation.CascadeInsert)]
+        //[OneToMany(CascadeOperations = CascadeOperation.CascadeRead | CascadeOperation.CascadeInsert)]
         public List<Bill> Bills { get; set; } = new List<Bill>();
 
 

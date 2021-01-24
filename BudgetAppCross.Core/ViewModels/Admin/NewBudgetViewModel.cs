@@ -7,10 +7,10 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 using Acr.UserDialogs;
 using System.Linq;
 using MvvmCross;
+using MvvmCross.Commands;
 
 namespace BudgetAppCross.Core.ViewModels
 {
@@ -28,9 +28,14 @@ namespace BudgetAppCross.Core.ViewModels
             get { return budgetFilename; }
             set
             {
-                SetProperty(ref budgetFilename, value);
+                if (budgetFilename != value)
+                {
+                    budgetFilename = value;
+                    RaisePropertyChanged();
+                }
             }
         }
+
 
         private bool isAddingBankAccount;
         public bool IsAddingBankAccount
@@ -38,7 +43,11 @@ namespace BudgetAppCross.Core.ViewModels
             get { return isAddingBankAccount; }
             set
             {
-                SetProperty(ref isAddingBankAccount, value);
+                if (isAddingBankAccount != value)
+                {
+                    isAddingBankAccount = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
@@ -48,7 +57,11 @@ namespace BudgetAppCross.Core.ViewModels
             get { return firstBankAccountName; }
             set
             {
-                SetProperty(ref firstBankAccountName, value);
+                if (firstBankAccountName != value)
+                {
+                    firstBankAccountName = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
@@ -58,7 +71,11 @@ namespace BudgetAppCross.Core.ViewModels
             get { return initialBalance; }
             set
             {
-                SetProperty(ref initialBalance, value);
+                if (initialBalance != value)
+                {
+                    initialBalance = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
@@ -68,28 +85,26 @@ namespace BudgetAppCross.Core.ViewModels
             get { return initialBalanceDate; }
             set
             {
-                SetProperty(ref initialBalanceDate, value);
+                if(initialBalanceDate != value)
+                {
+                    initialBalanceDate = value;
+                }
             }
         }
-
-
-
 
         #endregion
 
         #region Commands
-        public ICommand SaveCommand { get; }
-        public ICommand CancelCommand { get; }
+        public IMvxCommand SaveCommand { get; }
+        public IMvxCommand CancelCommand { get; }
         #endregion
 
         #region Constructors
         public NewBudgetViewModel(IMvxNavigationService nav)
         {
             navigationService = nav;
-            SaveCommand = new Command(async () => await OnSave());
-            CancelCommand = new Command(async () => await OnCancel());
-
-            
+            SaveCommand = new MvxAsyncCommand(async () => await OnSave());
+            CancelCommand = new MvxAsyncCommand(async () => await OnCancel());
         }
         #endregion
 
@@ -124,12 +139,12 @@ namespace BudgetAppCross.Core.ViewModels
                 };
 
                 await BudgetDatabase.SaveBankAccount(ba);
-                await StateManager.SaveState();
+                StateManager.SaveState();
             }
-            if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
-            {
-                masterDetailPage.IsGestureEnabled = true;
-            }
+            //if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
+            //{
+            //    masterDetailPage.IsGestureEnabled = true;
+            //}
             await navigationService.Navigate<DateRangeViewModel>();
         }
 

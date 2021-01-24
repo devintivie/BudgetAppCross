@@ -12,3 +12,7 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\obj\Debug\netstandard2.0\BudgetAppCross.SqliteDataAccess.csproj.CopyComplete
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\obj\Debug\netstandard2.0\BudgetAppCross.SqliteDataAccess.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\obj\Debug\netstandard2.0\BudgetAppCross.SqliteDataAccess.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\bin\Debug\netstandard2.0\SQLiteHelpers.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\bin\Debug\netstandard2.0\SQLiteHelpers.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.SqliteDataAccess\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.pdb

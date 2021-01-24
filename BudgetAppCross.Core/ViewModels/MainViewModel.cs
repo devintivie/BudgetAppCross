@@ -5,7 +5,7 @@ using MvvmCross.ViewModels;
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using SQLite;
+//using SQLite;
 using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
@@ -31,9 +31,23 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task NavigateInitial()
         {
-            var name = await StateManager.LoadState();
+            var name = StateManager.LoadState();
 
-            if (name == null)
+            if (name != null)
+            {
+                try
+                {
+                    await BudgetDatabase.Initialize();
+                    await BudgetDatabase.GetBankAccounts();
+                    await navigationService.Navigate<MenuViewModel>();
+                    await navigationService.Navigate<AgendaViewModel>();
+                }
+                catch (Exception ex)
+                {
+                    await LoadWelcome();
+                }
+            }
+            else
             {
                 if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
                 {
@@ -43,37 +57,21 @@ namespace BudgetAppCross.Core.ViewModels
                 var files = await StateManager.FindBudgetFiles();
                 if (files.Count == 0)
                 {
-                    await navigationService.Navigate<MenuViewModel>();
-                    await navigationService.Navigate<WelcomeViewModel>();
+                    await LoadWelcome();
                 }
                 else
                 {
                     await navigationService.Navigate<MenuViewModel>();
                     await navigationService.Navigate<SelectBudgetViewModel>();
                 }
-
-
-                //await navigationService.Navigate<MenuViewModel>();
-                //await navigationService.Navigate<WelcomeViewModel>();
             }
-            else
-            {
-                await BudgetDatabase.Initialize();
-                await BudgetDatabase.GetBankAccounts();
-                await navigationService.Navigate<MenuViewModel>();
-                await navigationService.Navigate<AgendaViewModel>();
-            }
-
-            
         }
 
-        //public override async void ViewDestroy(bool viewFinishing = true)
-        //{
-        //    base.ViewDestroy(viewFinishing);
-
-        //    //await StateManager.Instance.SaveToFile();
-        //}
-
+        private async Task LoadWelcome()
+        {
+            await navigationService.Navigate<MenuViewModel>();
+            await navigationService.Navigate<WelcomeViewModel>();
+        }
     }
 }
 

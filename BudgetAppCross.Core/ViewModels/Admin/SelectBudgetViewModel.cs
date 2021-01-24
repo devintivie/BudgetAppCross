@@ -139,7 +139,7 @@ namespace BudgetAppCross.Core.ViewModels
             }
             StateManager.DatabaseFilename = SelectedBudget.BudgetName;
             //await StateManager.SaveState();
-            await StateManager.SaveState();
+            StateManager.SaveState();
             await BudgetDatabase.Initialize();
             await BudgetDatabase.GetBankAccounts();
             await navigationService.Navigate<BudgetListViewModel>();

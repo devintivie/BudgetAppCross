@@ -3,6 +3,7 @@ using MvvmCross.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
@@ -17,6 +18,10 @@ namespace BudgetAppCross.Core.ViewModels
 
         #endregion
 
+        #region Commands
+        public IMvxCommand AddBudgetCommand { get; }
+        #endregion
+
         #region Constructors
         public WelcomeViewModel(IMvxNavigationService navigation)
         {
@@ -26,16 +31,17 @@ namespace BudgetAppCross.Core.ViewModels
                 masterDetailPage.IsGestureEnabled = false;
             }
             navigationService = navigation;
-            AddBudgetCommand = new MvxAsyncCommand(async () => await navigationService.Navigate<NewBudgetViewModel>());
+            AddBudgetCommand = new MvxAsyncCommand(async () => await OnAddBudget());
         }
         #endregion
 
-        #region Commands
-        public IMvxCommand AddBudgetCommand { get; }
-        #endregion
+        
 
         #region Methods
-
+        private async Task OnAddBudget()
+        {
+            await navigationService.Navigate<NewBudgetViewModel>();
+        } 
         #endregion
 
 

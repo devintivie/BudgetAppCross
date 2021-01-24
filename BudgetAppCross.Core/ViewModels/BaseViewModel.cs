@@ -11,6 +11,7 @@ using System.Windows.Input;
 using MvvmCross.Navigation;
 using BaseClasses;
 using BudgetAppCross.DataAccess;
+using BudgetAppCross.StateManagers;
 
 namespace BudgetAppCross.Core.ViewModels
 {
