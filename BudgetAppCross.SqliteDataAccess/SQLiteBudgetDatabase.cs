@@ -4,6 +4,7 @@ using BudgetAppCross.StateManagers;
 using SQLiteHelpers;
 using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Threading.Tasks;
 
 namespace BudgetAppCross.SqliteDataAccess
@@ -15,6 +16,14 @@ namespace BudgetAppCross.SqliteDataAccess
         public static SQLiteBudgetDatabase Instance => instance.Value;
 
         private string connectionString => StateManager.Instance.DatabasePath;
+        //private const SQLiteOpenFlags flags =
+        //    // open the database in read/write mode
+        //    SQLiteOpenFlags.ReadWrite |
+        //    // create the database if it doesn't exist
+        //    SQLiteOpenFlags.Create |
+        //    // enable multi-threaded database access
+        //    SQLiteOpenFlags.SharedCache |
+        //    SQLiteOpenFlags.FullMutex;
 
         //static SQLiteConnection database;
         public SQLiteBudgetDatabase()
@@ -29,9 +38,11 @@ namespace BudgetAppCross.SqliteDataAccess
         #endregion
 
         #region Properties
-        public List<string> BankAccountNicknames { get; set; }
-        public List<string> PayeeNames { get; set; }
+        public List<string> BankAccountNicknames { get; set; } = new List<string>();
+        public List<string> PayeeNames { get; set; } = new List<string>();
         #endregion
+
+        
 
         #region Init
         public async Task Initialize()
@@ -39,7 +50,7 @@ namespace BudgetAppCross.SqliteDataAccess
             var accountTableName = "BankAccount";
             var balanceTableName = "Balance";
             var billTableName = "Bill";
-            //var transactionTableName = "BankTransaction";
+            var transactionTableName = "BankTransaction";
 
             var accountTable = BuildBankAccountTable(accountTableName);
             var balanceTable = BuildBalanceTable(balanceTableName, accountTable);
@@ -121,7 +132,7 @@ namespace BudgetAppCross.SqliteDataAccess
             else
             {
                 var result = await AccountAccess.InsertAccountAsync(acct);
-                return result.LastId;
+                return result;
             }
         }
 

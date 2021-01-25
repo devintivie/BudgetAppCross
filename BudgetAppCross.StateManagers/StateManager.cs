@@ -18,7 +18,7 @@ namespace BudgetAppCross.StateManagers//ore.Services
         public static StateManager Instance => instance.Value;
         public StateManager()
         {
-            basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            basePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
         }
         #endregion
@@ -53,10 +53,11 @@ namespace BudgetAppCross.StateManagers//ore.Services
         {
             get
             {
-                var currentFileAndExt = $"{DatabaseFilename}.sqlite3";
-                //var currentFileAndExt = $"Data Source={DatabaseFilename}.sqlite3;Version=3;";
-                var fullpath = Path.Combine(basePath, currentFileAndExt);
-                return fullpath;
+                //var currentFileAndExt = $"{DatabaseFilename}.sqlite3";
+                var fullpath = Path.Combine(basePath, DatabaseFilename);
+                var connectionString = $"DataSource={fullpath}.sqlite3;Version=3;";
+                //var fullpath = Path.Combine(basePath, currentFileAndExt);
+                return connectionString;
             }
         }
         #endregion
@@ -122,7 +123,7 @@ namespace BudgetAppCross.StateManagers//ore.Services
         {
             await Task.Run(() =>
             {
-                var filenames = Directory.GetFiles(basePath, "*.db3");
+                var filenames = Directory.GetFiles(basePath, "*.sqlite3");
 
                 Budgets = filenames.Select(fn => Path.GetFileNameWithoutExtension(fn)).ToList();
             });

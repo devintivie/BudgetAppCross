@@ -491,7 +491,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "BudgetAppCross.Models": "1.0.0"
+          "BudgetAppCross.Models": "1.0.0",
+          "System.Data.SQLite.Core": "1.0.113.7"
         },
         "compile": {
           "bin/placeholder/BudgetAppCore.Sqlite.dll": {}
@@ -513,7 +514,8 @@
           "BudgetAppCross.StateManagers": "1.0.0",
           "InAppPurchasing.Core": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
-          "Newtonsoft.Json": "12.0.3"
+          "Newtonsoft.Json": "12.0.3",
+          "System.Data.SQLite.Core": "1.0.113.7"
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.Core.dll": {}
@@ -527,7 +529,7 @@
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "BudgetAppCross.Models": "1.0.0",
-          "SQLiteHelpers": "1.0.0"
+          "System.Data.SQLite.Core": "1.0.113.7"
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.DataAccess.dll": {}

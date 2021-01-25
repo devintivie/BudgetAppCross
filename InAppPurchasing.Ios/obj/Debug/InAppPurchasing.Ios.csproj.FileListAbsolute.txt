@@ -21,6 +21,7 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Ios\bin\Debug\X
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Ios\bin\Debug\BaseClasses.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Ios\bin\Debug\InAppPurchasing.Core.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Ios\bin\Debug\Xamarin.Forms.Platform.iOS.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Ios\obj\Debug\build-signature\signature
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Ios\obj\Debug\optimized\
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Ios\obj\Debug\InAppPurchasing.iOS.csprojAssemblyReference.cache
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Ios\obj\Debug\InAppPurchasing.iOS.csproj.CoreCompileInputs.cache

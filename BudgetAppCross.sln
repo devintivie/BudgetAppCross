@@ -35,13 +35,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomXamarinControls.Droid
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomXamarinControls", "..\CustomXamarinControls\CustomXamarinControls\CustomXamarinControls.csproj", "{34B9231C-CD9B-44D3-B8A1-4F510A0679F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetAppCross.SqliteDataAccess", "BudgetAppCross.SqliteDataAccess\BudgetAppCross.SqliteDataAccess.csproj", "{A611417B-7F5C-4EF7-9D0C-9C3F8B9D0BB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BudgetAppCross.SqliteDataAccess", "BudgetAppCross.SqliteDataAccess\BudgetAppCross.SqliteDataAccess.csproj", "{A611417B-7F5C-4EF7-9D0C-9C3F8B9D0BB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetAppCross.DataAccess", "BudgetAppCross.DataAccess\BudgetAppCross.DataAccess.csproj", "{403EA193-C1C0-4386-8049-251ED8B43FD2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BudgetAppCross.DataAccess", "BudgetAppCross.DataAccess\BudgetAppCross.DataAccess.csproj", "{403EA193-C1C0-4386-8049-251ED8B43FD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLiteHelpers", "..\SharedProjects\Standard\SQLiteHelpers\SQLiteHelpers.csproj", "{B6D7176B-A704-4C39-AD0E-8BFB3729F822}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BudgetAppCross.StateManagers", "BudgetAppCross.StateManagers\BudgetAppCross.StateManagers.csproj", "{692B1478-F1E7-47F9-9A69-5206643273A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetAppCross.StateManagers", "BudgetAppCross.StateManagers\BudgetAppCross.StateManagers.csproj", "{692B1478-F1E7-47F9-9A69-5206643273A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sqlite.pcl.replacement", "sqlite.pcl.replacement\sqlite.pcl.replacement.csproj", "{617A11BB-2915-4D00-ADEF-04D39D40B7BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQLiteHelpers", "..\SharedProjects\Standard\SQLiteHelpers\SQLiteHelpers.csproj", "{2F820529-B866-44A4-B984-953DD3CC37F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -287,18 +289,6 @@ Global
 		{403EA193-C1C0-4386-8049-251ED8B43FD2}.Release|iPhone.Build.0 = Release|Any CPU
 		{403EA193-C1C0-4386-8049-251ED8B43FD2}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{403EA193-C1C0-4386-8049-251ED8B43FD2}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{B6D7176B-A704-4C39-AD0E-8BFB3729F822}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B6D7176B-A704-4C39-AD0E-8BFB3729F822}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B6D7176B-A704-4C39-AD0E-8BFB3729F822}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{B6D7176B-A704-4C39-AD0E-8BFB3729F822}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{B6D7176B-A704-4C39-AD0E-8BFB3729F822}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{B6D7176B-A704-4C39-AD0E-8BFB3729F822}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{B6D7176B-A704-4C39-AD0E-8BFB3729F822}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B6D7176B-A704-4C39-AD0E-8BFB3729F822}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B6D7176B-A704-4C39-AD0E-8BFB3729F822}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{B6D7176B-A704-4C39-AD0E-8BFB3729F822}.Release|iPhone.Build.0 = Release|Any CPU
-		{B6D7176B-A704-4C39-AD0E-8BFB3729F822}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{B6D7176B-A704-4C39-AD0E-8BFB3729F822}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{692B1478-F1E7-47F9-9A69-5206643273A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{692B1478-F1E7-47F9-9A69-5206643273A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{692B1478-F1E7-47F9-9A69-5206643273A0}.Debug|iPhone.ActiveCfg = Debug|Any CPU
@@ -311,6 +301,30 @@ Global
 		{692B1478-F1E7-47F9-9A69-5206643273A0}.Release|iPhone.Build.0 = Release|Any CPU
 		{692B1478-F1E7-47F9-9A69-5206643273A0}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{692B1478-F1E7-47F9-9A69-5206643273A0}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{617A11BB-2915-4D00-ADEF-04D39D40B7BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{617A11BB-2915-4D00-ADEF-04D39D40B7BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{617A11BB-2915-4D00-ADEF-04D39D40B7BF}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{617A11BB-2915-4D00-ADEF-04D39D40B7BF}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{617A11BB-2915-4D00-ADEF-04D39D40B7BF}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{617A11BB-2915-4D00-ADEF-04D39D40B7BF}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{617A11BB-2915-4D00-ADEF-04D39D40B7BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{617A11BB-2915-4D00-ADEF-04D39D40B7BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{617A11BB-2915-4D00-ADEF-04D39D40B7BF}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{617A11BB-2915-4D00-ADEF-04D39D40B7BF}.Release|iPhone.Build.0 = Release|Any CPU
+		{617A11BB-2915-4D00-ADEF-04D39D40B7BF}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{617A11BB-2915-4D00-ADEF-04D39D40B7BF}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{2F820529-B866-44A4-B984-953DD3CC37F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F820529-B866-44A4-B984-953DD3CC37F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F820529-B866-44A4-B984-953DD3CC37F7}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{2F820529-B866-44A4-B984-953DD3CC37F7}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{2F820529-B866-44A4-B984-953DD3CC37F7}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{2F820529-B866-44A4-B984-953DD3CC37F7}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{2F820529-B866-44A4-B984-953DD3CC37F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F820529-B866-44A4-B984-953DD3CC37F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F820529-B866-44A4-B984-953DD3CC37F7}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{2F820529-B866-44A4-B984-953DD3CC37F7}.Release|iPhone.Build.0 = Release|Any CPU
+		{2F820529-B866-44A4-B984-953DD3CC37F7}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{2F820529-B866-44A4-B984-953DD3CC37F7}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

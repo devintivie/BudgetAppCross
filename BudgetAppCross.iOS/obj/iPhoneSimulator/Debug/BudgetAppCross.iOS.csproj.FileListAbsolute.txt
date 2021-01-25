@@ -90,6 +90,7 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhoneSi
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\CustomXamarinFormsBehaviors.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\CustomXamarinFormsConverters.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\SQLiteHelpers.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\build-signature\signature
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\ibtool\_BundleResourceWithLogicalName.items
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\actool\_PartialAppManifest.items
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\actool\_BundleResourceWithLogicalName.items

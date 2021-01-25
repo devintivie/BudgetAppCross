@@ -1,0 +1,9 @@
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\sqlite.pcl.replacement\bin\Debug\netstandard2.0\sqlite.pcl.replacement.deps.json
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\sqlite.pcl.replacement\bin\Debug\netstandard2.0\sqlite.pcl.replacement.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\sqlite.pcl.replacement\bin\Debug\netstandard2.0\sqlite.pcl.replacement.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\sqlite.pcl.replacement\obj\Debug\netstandard2.0\sqlite.pcl.replacement.csprojAssemblyReference.cache
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\sqlite.pcl.replacement\obj\Debug\netstandard2.0\sqlite.pcl.replacement.AssemblyInfoInputs.cache
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\sqlite.pcl.replacement\obj\Debug\netstandard2.0\sqlite.pcl.replacement.AssemblyInfo.cs
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\sqlite.pcl.replacement\obj\Debug\netstandard2.0\sqlite.pcl.replacement.csproj.CoreCompileInputs.cache
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\sqlite.pcl.replacement\obj\Debug\netstandard2.0\sqlite.pcl.replacement.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\sqlite.pcl.replacement\obj\Debug\netstandard2.0\sqlite.pcl.replacement.pdb

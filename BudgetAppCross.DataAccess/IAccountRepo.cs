@@ -1,5 +1,4 @@
 ﻿using BudgetAppCross.Models;
-using SQLiteHelpers;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,7 +20,7 @@ namespace BudgetAppCross.DataAccess
         #endregion
 
         #region Methods
-        Task<InsertResult> InsertAccountAsync(BankAccount acct);
+        Task<int> InsertAccountAsync(BankAccount acct);
         Task<List<BankAccount>> GetAllAccountsAsync();
         Task<BankAccount> GetAccountAsync(string nickname);
         Task<int> DeleteAccountAsync(int accountId);

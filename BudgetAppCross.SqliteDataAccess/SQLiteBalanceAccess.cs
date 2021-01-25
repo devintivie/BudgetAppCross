@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SQLite;
+//using System.Data.SQLite;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BudgetAppCross.DataAccess;
 using BudgetAppCross.StateManagers;
-using SQLiteHelpers;
 using BudgetAppCross.Models;
+using System.Data.SQLite;
 
 namespace BudgetAppCross.SqliteDataAccess
 {
@@ -35,7 +35,7 @@ namespace BudgetAppCross.SqliteDataAccess
 
         #region Methods
 
-        public async Task<InsertResult> InsertBalanceAsync(Balance balance)
+        public async Task<int> InsertBalanceAsync(Balance balance)
         {
             var rowsAffected = 0;
             var lastId = 0;
@@ -52,7 +52,7 @@ namespace BudgetAppCross.SqliteDataAccess
                 }
             }
 
-            return new InsertResult(rowsAffected, lastId);
+            return lastId;
         }
 
         public async Task<int> DeleteBalanceAsync(int accountId)

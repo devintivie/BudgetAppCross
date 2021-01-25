@@ -32,3 +32,17 @@ C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.Vie
 C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.csproj.CopyComplete
 C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.dll
 C:\Users\devin\OneDrive\Documents\source\repos\BudgetAppCross\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\BudgetAppCross.ViewModels.deps.json
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\BudgetAppCross.ViewModels.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\BudgetAppCross.ViewModels.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\BudgetAppCross.Models.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\BudgetAppCross.Services.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\BudgetAppCross.Models.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.ViewModels\bin\Debug\netstandard2.0\BudgetAppCross.Services.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.csprojAssemblyReference.cache
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.AssemblyInfoInputs.cache
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.AssemblyInfo.cs
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.csproj.CoreCompileInputs.cache
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.csproj.CopyComplete
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.ViewModels\obj\Debug\netstandard2.0\BudgetAppCross.ViewModels.pdb

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "druZSeHc/fw7caAdMj7Qj5nBaPhGQf1HkPryfsSVPYQSrg3Nrta+6qq+aR0E25Wt4BfxQ/gQMiPYC3+HIzXP0g==",
+  "dgSpecHash": "LHJHxNJWOYuCYdlG7wBQqXLKriFXGVY4Aed45fLyFjBOxqXaqG8iO1ZklnKZx5zxP1rgRDjcwkd228QPyxDFkA==",
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,9 @@
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross\\6.4.2\\mvvmcross.6.4.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.plugin.messenger\\6.4.2\\mvvmcross.plugin.messenger.6.4.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+    "C:\\Users\\devin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.113.2\\stub.system.data.sqlite.core.netstandard.1.0.113.2.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\system.data.sqlite.core\\1.0.113.7\\system.data.sqlite.core.1.0.113.7.nupkg.sha512"
   ],
   "logs": []
 }

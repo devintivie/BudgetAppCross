@@ -124,6 +124,8 @@ namespace BudgetAppCross.Core.ViewModels
             File.WriteAllText(filename, "Write this text into a file");
 
             StateManager.DatabaseFilename = BudgetFilename;
+
+
             await BudgetDatabase.Initialize();
             var defaultAccount = new BankAccount("Undecided"); //sarting balance = 0
             await BudgetDatabase.SaveBankAccount(defaultAccount);
