@@ -18,7 +18,7 @@ namespace BudgetAppCross.Core.Services
         public static StateManager Instance => instance.Value;
         public StateManager()
         {
-            basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            basePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
         }
         #endregion

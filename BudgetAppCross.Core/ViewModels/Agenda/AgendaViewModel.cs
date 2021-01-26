@@ -292,35 +292,3 @@ namespace BudgetAppCross.Core.ViewModels
 
 }
 
-
-
-
-
-//public AgendaViewModel(IMvxNavigationService navigation)
-//{
-//    navigationService = navigation;
-//    Title = "Agenda";
-
-//    Entries = new ObservableCollection<AgendaBillViewModel>();
-//    var data = (from bts in BillManager.AllTrackers
-//                from bill in bts.Bills
-//                select new AgendaBill
-//                {
-//                    Company = bts.CompanyName,
-//                    Amount = bill.Amount,
-//                    Date = bill.Date,
-//                    IsPaid = bill.IsPaid
-//                }).ToList();
-
-//    //foreach (var bill in data)
-//    //{
-//    //    Entries.Add(new AgendaBillViewModel(bill));
-//    //}
-
-//    var grouped = from entry in data
-//                  orderby entry.Date
-//                  group entry by entry.Date into agendaGroup
-//                  select new Grouping<DateTime, AgendaBill>(agendaGroup.Key, agendaGroup);
-
-
-//    Console.WriteLine();

@@ -19,12 +19,15 @@ namespace BudgetAppCross.Core.Services
         static readonly Lazy<BudgetDatabase> instance = new Lazy<BudgetDatabase>();
         public static BudgetDatabase Instance => instance.Value;
 
-        static SQLiteConnection database;
+        //static SQLiteConnection database;
 
-        public static SQLiteConnection Database
-        {
-            get { return database ?? (database = new SQLiteConnection(StateManager.Instance.DatabasePath, StateManager.Flags)); }
-        }
+        private string connectionString => StateManager.Instance.DatabasePath;
+        private SQLiteOpenFlags flags => StateManager.Flags;
+
+        //public static SQLiteConnection Database
+        //{
+        //    //get { return database ?? (database = new SQLiteConnection(StateManager.Instance.DatabasePath, StateManager.Flags)); }
+        //}
 
         public BudgetDatabase()
         {
