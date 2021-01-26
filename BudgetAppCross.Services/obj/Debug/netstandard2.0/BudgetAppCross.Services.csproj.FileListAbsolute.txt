@@ -34,3 +34,14 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\net
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.csproj.CopyComplete
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Services\bin\Debug\netstandard2.0\BudgetAppCross.Services.deps.json
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Services\bin\Debug\netstandard2.0\BudgetAppCross.Services.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Services\bin\Debug\netstandard2.0\BudgetAppCross.Services.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Services\bin\Debug\netstandard2.0\BudgetAppCross.Models.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Services\bin\Debug\netstandard2.0\BudgetAppCross.Models.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.AssemblyInfoInputs.cache
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.AssemblyInfo.cs
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.csproj.CoreCompileInputs.cache
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.csproj.CopyComplete
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.pdb

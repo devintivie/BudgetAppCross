@@ -16,14 +16,14 @@
              x:Class="BudgetAppCross.Views.BillDetailsPage">
     <ContentPage.Content>
         <Grid>
-            <Grid.RowDefinitions>
+            <!--<Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <ScrollView>
                 <StackLayout>
                     <StackLayout>
-                        <!--Payee-->
+                        --><!--Payee--><!--
                         <StackLayout Orientation="Horizontal" IsVisible="{Binding PayeeSet, Converter={cvt:InverseBoolConverter}}">
                             <Label Text="New Payee"
                                    Style="{StaticResource BigLightLabel}"
@@ -65,7 +65,7 @@
                         </StackLayout>
 
 
-                        <!--Amount Due-->
+                        --><!--Amount Due--><!--
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1.5*"/>
@@ -82,7 +82,7 @@
                                                     />
                         </Grid>
 
-                        <!--Account-->
+                        --><!--Account--><!--
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -99,14 +99,14 @@
                                                  />
                         </Grid>
                         
-                        <!--Add Multiple-->
+                        --><!--Add Multiple--><!--
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Add Multiple"
                                    Style="{StaticResource BigLightLabel}"/>
                             <Switch IsToggled="{Binding AddMultiple}"/>
                         </StackLayout>
 
-                        <!--First Bill Due-->
+                        --><!--First Bill Due--><!--
                         <StackLayout Orientation="Horizontal">
                             <Label Text="{Binding BillDueString}"
                                    Style="{StaticResource BigLightLabel}"
@@ -119,14 +119,14 @@
                                     />
                         </StackLayout>
                         
-                        <!--Add Multiple-->
+                        --><!--Add Multiple--><!--
                         <StackLayout Orientation="Horizontal" IsVisible="{Binding AddMultiple, Converter={cvt:InverseBoolConverter}}">
                             <Label Text="Already Paid?"
                                    Style="{StaticResource BigLightLabel}"/>
                             <Switch IsToggled="{Binding IsPaid}"/>
                         </StackLayout>
 
-                        <!--Repeat Frequency-->
+                        --><!--Repeat Frequency--><!--
                         <StackLayout Orientation="Horizontal" IsVisible="{Binding AddMultiple}">
                             <Label Text="Repeat..."
                                    Style="{StaticResource BigLightLabel}"
@@ -141,7 +141,7 @@
                             />
                         </StackLayout>
 
-                        <!--Repeat Until-->
+                        --><!--Repeat Until--><!--
                         <StackLayout Orientation="Horizontal" IsVisible="{Binding AddMultiple}">
                             <Label Text="Repeat Until"
                                    Style="{StaticResource BigLightLabel}"
@@ -153,8 +153,8 @@
                                 />
                         </StackLayout>
 
-                        <!--Bill Count-->
-                        <!--<Frame IsVisible="{Binding AddMultiple}" HasShadow="False">-->
+                        --><!--Bill Count-->
+                        <!--<Frame IsVisible="{Binding AddMultiple}" HasShadow="False">--><!--
 
                         <StackLayout IsVisible="{Binding AddMultiple}">
                                 <Label Text="Bills to be added:" TextDecorations="Underline"
@@ -183,10 +183,10 @@
 
                     </StackLayout>
 
-                    <!--<StackLayout Orientation="Horizontal">
+                    --><!--<StackLayout Orientation="Horizontal">
                     <Button Text="Cancel" Command="{Binding CancelCommand}"/>
                     <Button Text="Save" Command="{Binding SaveCommand}"/>
-                </StackLayout>-->
+                </StackLayout>--><!--
                 </StackLayout>
             </ScrollView>
             <Grid Grid.Row="1">
@@ -198,7 +198,7 @@
                             />
                 <Button Text="Save" Command="{Binding SaveCommand}"
                             Grid.Column="1"/>
-            </Grid>
+            </Grid>-->
         </Grid>
         
         

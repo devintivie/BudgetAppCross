@@ -17,16 +17,8 @@ namespace BudgetAppCross.Views {
     public partial class BillDetailsPage : global::MvvmCross.Forms.Views.MvxContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::CustomXamarinControls.CustomDatePicker pickerStartDate;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::CustomXamarinControls.CustomDatePicker pickerEndDate;
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
             global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(BillDetailsPage));
-            pickerStartDate = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::CustomXamarinControls.CustomDatePicker>(this, "pickerStartDate");
-            pickerEndDate = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::CustomXamarinControls.CustomDatePicker>(this, "pickerEndDate");
         }
     }
 }

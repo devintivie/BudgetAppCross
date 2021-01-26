@@ -105,8 +105,6 @@ namespace BudgetAppCross.Core.ViewModels
 
         public override void ViewDestroy(bool viewFinishing = true)
         {
-            //SaveBills();
-
             Messenger.Unregister(this);
             base.ViewDestroy(viewFinishing);
         }
@@ -182,6 +180,11 @@ namespace BudgetAppCross.Core.ViewModels
                 await navigationService.Close(this);
             }
             
+        }
+
+        public Task ShowBill()
+        {
+            return navigationService.Navigate<BillDetailsViewModel>();
         }
 
         //public Task ShowBill(int id)
