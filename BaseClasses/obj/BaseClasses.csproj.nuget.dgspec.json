@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj": {}
+    "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BaseClasses\\BaseClasses.csproj": {}
   },
   "projects": {
-    "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj": {
+    "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BaseClasses\\BaseClasses.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj",
+        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BaseClasses\\BaseClasses.csproj",
         "projectName": "BaseClasses",
-        "projectPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BaseClasses\\BaseClasses.csproj",
+        "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BaseClasses\\BaseClasses.csproj",
         "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BaseClasses\\obj\\",
+        "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BaseClasses\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "+WsUpVlA1MFERnNo/14soKmQpAguF8kXpKOGHeWCY2Pl5Rhm8N/1PBJTeLY7bpR4vTXyCpqd00046xMzhwzaFQ==",
+  "dgSpecHash": "uWdRG2QLSkz1VBOwi8go3+4PANkNPDJTBz6K9NwImNJx09ZQaexzT/dNf5yf16iT3BsaKp7Bt/Vg6gaaKTgIig==",
   "success": false,
-  "projectFilePath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCross.Android\\BudgetAppCross.Android.csproj",
+  "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Android\\BudgetAppCross.Android.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.446\\acr.userdialogs.7.1.0.446.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.475\\acr.userdialogs.7.1.0.475.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\andhud\\1.4.2\\andhud.1.4.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\behaviors.xamarinforms\\4.0.4\\behaviors.xamarinforms.4.0.4.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
@@ -101,10 +101,10 @@
   ],
   "logs": [
     {
-      "code": "NU1104",
+      "code": "NU1201",
       "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\devin\\Source\\Repos\\devintivie\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj",
+      "message": "Project CustomXamarinControls.Droid is not compatible with monoandroid90 (MonoAndroid,Version=v9.0). Project CustomXamarinControls.Droid supports: monoandroid10.0 (MonoAndroid,Version=v10.0)",
+      "libraryId": "CustomXamarinControls.Droid",
       "targetGraphs": [
         "MonoAndroid,Version=v9.0"
       ]

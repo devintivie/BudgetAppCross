@@ -170,4 +170,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\clearbutton.png" />
   </ItemGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties TriggeredFromHotReload="False" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

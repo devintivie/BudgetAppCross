@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JfgAWIfXR56sUt4uXhkqDM7GlkqZvwrcF6gn8vys4rGZSJ+7nbtGMeW1VvA4dlTaNbLTzXV1dmFrjlaZ/ZMuVA==",
+  "dgSpecHash": "c/sKKdEvjRWwKTWQ8PgFBXzXVK9ufVt8DVIF3UemiZngRTe0t+r+PfdSixgYrZth5e793vMlVrxvBxsY+r0hxw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\devin\\Source\\Repos\\devintivie\\BudgetAppCross\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj",
+  "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
