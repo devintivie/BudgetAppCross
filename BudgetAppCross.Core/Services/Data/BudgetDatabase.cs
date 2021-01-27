@@ -48,14 +48,17 @@ namespace BudgetAppCross.Core.Services
         public async Task Initialize()
         {
             //File.Delete(Constants.DatabasePath);
-            //if (!initialized)
-            //{
-            database = null;
-            Database.CreateTable<BankAccount>(CreateFlags.None);
-            Database.CreateTable<Bill>(CreateFlags.None);
-            Database.CreateTable<Balance>(CreateFlags.None);
+            using (var connection = new SQLiteConnection(connectionString, flags))
+            {
+                connection.CreateTable<BankAccount>(CreateFlags.None);
+                connection.CreateTable<Bill>(CreateFlags.None);
+                connection.CreateTable<Balance>(CreateFlags.None);
+            }
+            //Database.CreateTable<BankAccount>(CreateFlags.None);
+            //Database.CreateTable<Bill>(CreateFlags.None);
+            //Database.CreateTable<Balance>(CreateFlags.None);
 
-            initialized = true;
+            //initialized = true;
 
             await UpdateBankAccountNames();
             await UpdatePayeeNames();
@@ -140,16 +143,21 @@ namespace BudgetAppCross.Core.Services
 
         public async Task UpdateBankAccountNames()
         {
-            var list = await Task.Run(() =>
-            {
-                return Database.GetAllWithChildren<BankAccount>();
-            });
 
-            BankAccountNicknames.Clear();
-            foreach (var item in list)
+            using (var connection = new SQLiteConnection(connectionString, flags))
             {
-                BankAccountNicknames.Add(item.Nickname);
+                connection.
             }
+            //var list = await Task.Run(() =>
+            //{
+            //    return Database.GetAllWithChildren<BankAccount>();
+            //});
+
+            //BankAccountNicknames.Clear();
+            //foreach (var item in list)
+            //{
+            //    BankAccountNicknames.Add(item.Nickname);
+            //}
         }
 
         public async Task UpdatePayeeNames()
