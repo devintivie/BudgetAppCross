@@ -11,7 +11,7 @@
                       xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
                       ios:Page.UseSafeArea="True"
              mc:Ignorable="d"
-             Title="Add Bill"
+             Title="Bill Details"
              BackgroundColor="{StaticResource PrimaryBackground}"
              x:Class="BudgetAppCross.Views.BillDetailsPage">
     <ContentPage.Content>

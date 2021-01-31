@@ -240,3 +240,5 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSi
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\BudgetAppCross.iOS.pdb.DebugSymbolsProjectOutputGroupOutput.stamp
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Entitlements.plist.NoneOutput.stamp
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Info.plist.NoneOutput.stamp
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\Dapper.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Dapper.dll.ReferenceCopyLocalPaths.stamp

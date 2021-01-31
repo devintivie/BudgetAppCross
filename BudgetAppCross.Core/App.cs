@@ -16,7 +16,7 @@ namespace BudgetAppCross.Core
 
             CreatableTypes().EndingWith("Service").AsInterfaces().RegisterAsLazySingleton();
             Mvx.IoCProvider.RegisterSingleton(() => UserDialogs.Instance);
-            Mvx.IoCProvider.RegisterSingleton<IDataManager>(() => new BudgetDatabase());
+            Mvx.IoCProvider.RegisterSingleton<IDataManager>(() => new SQLiteBudgetDatabase());
             
             RegisterAppStart<MainViewModel>();
         }
