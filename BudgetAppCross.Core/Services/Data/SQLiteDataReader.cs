@@ -22,6 +22,8 @@ using System.Threading.Tasks;
 using System.Globalization;
 using System.Collections.Generic;
 using System.Text;
+using SQLitePCL;
+using System.Runtime.InteropServices;
 
 namespace BudgetAppCross.Core.Services
 {
@@ -73,6 +75,70 @@ namespace BudgetAppCross.Core.Services
             //m_startingChanges = NativeMethods.sqlite3_total_changes(DatabaseHandle);
             m_currentStatementIndex = -1;
         }
+
+        static readonly Dictionary<string, DbType> s_sqlTypeToDbType = new Dictionary<string, DbType>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "bigint", DbType.Int64 },
+            { "bit", DbType.Boolean },
+            { "blob", DbType.Binary },
+            { "bool", DbType.Boolean },
+            { "boolean", DbType.Boolean },
+            { "datetime", DbType.DateTime },
+            { "double", DbType.Double },
+            { "float", DbType.Double },
+            { "guid", DbType.Guid },
+            { "int", DbType.Int32 },
+            { "integer", DbType.Int64 },
+            { "long", DbType.Int64 },
+            { "real", DbType.Double },
+            { "single", DbType.Single},
+            { "string", DbType.String },
+            { "text", DbType.String },
+        };
+
+        static readonly Dictionary<SQLiteColumnType, DbType> s_sqliteTypeToDbType = new Dictionary<SQLiteColumnType, DbType>()
+        {
+            { SQLiteColumnType.Integer, DbType.Int64 },
+            { SQLiteColumnType.Blob, DbType.Binary },
+            { SQLiteColumnType.Text, DbType.String },
+            { SQLiteColumnType.Double, DbType.Double },
+            { SQLiteColumnType.Null, DbType.Object }
+        };
+
+        static readonly string[] s_dateTimeFormats =
+        {
+            "THHmmssK",
+            "THHmmK",
+            "HH:mm:ss.FFFFFFFK",
+            "HH:mm:ssK",
+            "HH:mmK",
+            "yyyy-MM-dd HH:mm:ss.FFFFFFFK",
+            "yyyy-MM-dd HH:mm:ssK",
+            "yyyy-MM-dd HH:mmK",
+            "yyyy-MM-ddTHH:mm:ss.FFFFFFFK",
+            "yyyy-MM-ddTHH:mmK",
+            "yyyy-MM-ddTHH:mm:ssK",
+            "yyyyMMddHHmmssK",
+            "yyyyMMddHHmmK",
+            "yyyyMMddTHHmmssFFFFFFFK",
+            "THHmmss",
+            "THHmm",
+            "HH:mm:ss.FFFFFFF",
+            "HH:mm:ss",
+            "HH:mm",
+            "yyyy-MM-dd HH:mm:ss.FFFFFFF",
+            "yyyy-MM-dd HH:mm:ss",
+            "yyyy-MM-dd HH:mm",
+            "yyyy-MM-ddTHH:mm:ss.FFFFFFF",
+            "yyyy-MM-ddTHH:mm",
+            "yyyy-MM-ddTHH:mm:ss",
+            "yyyyMMddHHmmss",
+            "yyyyMMddHHmm",
+            "yyyyMMddTHHmmssFFFFFFF",
+            "yyyy-MM-dd",
+            "yyyyMMdd",
+            "yy-MM-dd"
+        };
 
 
         public override object this[int ordinal] => throw new NotImplementedException();
@@ -235,7 +301,85 @@ namespace BudgetAppCross.Core.Services
 
         public override object GetValue(int ordinal)
         {
-            throw new NotImplementedException();
+            VerifyRead();
+            if (ordinal < 0 || ordinal > FieldCount)
+                throw new ArgumentOutOfRangeException("ordinal", "value must be between 0 and {0}.".FormatInvariant(FieldCount - 1));
+
+            // determine (and cache) the declared type of the column (e.g., from the SQL schema)
+            DbType dbType;
+            if (m_columnType[ordinal].HasValue)
+            {
+                dbType = m_columnType[ordinal].Value;
+            }
+            else
+            {
+                var declType = Sqlite3.sqlite3_column_decltype(m_currentStatement, ordinal);
+                var declTypeString = declType.utf8_to_string();
+                Console.WriteLine();
+                if (declTypeString != null)
+                {
+                    //string type = declType.utf8_to_string();
+                    if (!s_sqlTypeToDbType.TryGetValue(declTypeString, out dbType))
+                        throw new NotSupportedException("The data type name '{0}' is not supported.".FormatInvariant(declTypeString));
+                }
+                
+                //if (declType.Equals(utf8z.FromIntPtr(IntPtr.Zero))
+                //{
+                //    string type = declType.utf8_to_string();
+                //    if (!s_sqlTypeToDbType.TryGetValue(type, out dbType))
+                //        throw new NotSupportedException("The data type name '{0}' is not supported.".FormatInvariant(type));
+                //}
+                else
+                {
+                    dbType = DbType.Object;
+                }
+                m_columnType[ordinal] = dbType;
+            }
+
+            var sqliteType = (SQLiteColumnType)Sqlite3.sqlite3_column_type(m_currentStatement, ordinal);
+            if (dbType == DbType.Object)
+                dbType = s_sqliteTypeToDbType[sqliteType];
+
+            switch (sqliteType)
+            {
+                case SQLiteColumnType.Null:
+                    return DBNull.Value;
+
+                case SQLiteColumnType.Blob:
+                    int byteCount = Sqlite3.sqlite3_column_bytes(m_currentStatement, ordinal);
+                    byte[] bytes = new byte[byteCount];
+                    if (byteCount > 0)
+                    {
+                        bytes = SQLiteIvie.ColumnBlob(m_currentStatement, ordinal);
+                        //IntPtr bytePointer = SQLiteIvie.ColumnBlob(m_currentStatement, ordinal);
+                        //Marshal.Copy(bytePointer, bytes, 0, byteCount);
+                        //Marshal.Copy()
+                    }
+                    return dbType == DbType.Guid && byteCount == 16 ? (object)new Guid(bytes) : (object)bytes;
+
+                case SQLiteColumnType.Double:
+                    double doubleValue = SQLiteIvie.ColumnDouble(m_currentStatement, ordinal);
+                    return dbType == DbType.Single ? (object)(float)doubleValue : (object)doubleValue;
+
+                case SQLiteColumnType.Integer:
+                    long integerValue = SQLiteIvie.ColumnInt64(m_currentStatement, ordinal);
+                    return dbType == DbType.Int32 ? (object)(int)integerValue :
+                        dbType == DbType.Boolean ? (object)(integerValue != 0) :
+                        dbType == DbType.Int16 ? (object)(short)integerValue :
+                        dbType == DbType.Byte ? (object)(byte)integerValue :
+                        dbType == DbType.Single ? (object)(float)integerValue :
+                        dbType == DbType.Double ? (object)(double)integerValue :
+                        (object)integerValue;
+
+                case SQLiteColumnType.Text:
+                    int stringLength = SQLiteIvie.ColumnBytes(m_currentStatement, ordinal);
+                    string stringValue = SQLiteIvie.ColumnText(m_currentStatement, ordinal);
+                    return dbType == DbType.DateTime ? (object)DateTime.ParseExact(stringValue, s_dateTimeFormats, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.AdjustToUniversal) :
+                        (object)stringValue;
+
+                default:
+                    throw new InvalidOperationException();
+            }
         }
 
         public override int GetValues(object[] values)

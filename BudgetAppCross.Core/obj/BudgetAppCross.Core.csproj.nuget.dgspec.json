@@ -201,10 +201,6 @@
               "target": "Package",
               "version": "[7.1.0.446, )"
             },
-            "Dapper": {
-              "target": "Package",
-              "version": "[2.0.78, )"
-            },
             "MvvmCross.Forms": {
               "target": "Package",
               "version": "[6.4.2, )"

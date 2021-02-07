@@ -101,8 +101,8 @@ namespace BudgetAppCross.Core.Services
 
             //await Task.Run(() =>
             //{
-                //File.Delete(path);
-                var state = new State();
+            File.Delete(path);
+            var state = new State();
                 try
                 {
                     var filenames = Directory.GetFiles(basePath);

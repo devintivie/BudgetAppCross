@@ -10,6 +10,7 @@ using Sqlite3Statement = SQLitePCL.sqlite3_stmt;
 using Sqlite3 = SQLitePCL.raw;
 using System.Diagnostics;
 using System.Linq;
+using SQLitePCL;
 
 namespace BudgetAppCross.Core.Services
 {
@@ -185,5 +186,20 @@ namespace BudgetAppCross.Core.Services
             encoding.GetBytes(value, 0, value.Length, bytes, 0);
             return bytes;
         }
+
+        //internal static string FromUtf8(utf8z ptr)
+        //{
+        //    int length = 0;
+        //    unsafe
+        //    {
+        //        byte* p = (byte*)ptr.ToPointer();
+        //        while (*p++ != 0)
+        //            length++;
+        //    }
+
+        //    return FromUtf8(ptr, length);
+        //}
+
+        //FromUtf8
     }
 }

@@ -7,7 +7,6 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhoneSi
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\Behaviors.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\BTProgressHUD.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\BTProgressHUD.pdb
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\Dapper.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\Microsoft.Bcl.HashCode.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhoneSimulator\Debug\Microsoft.Data.Sqlite.dll
@@ -159,7 +158,6 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSi
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Behaviors.pdb.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\BTProgressHUD.dll.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\BTProgressHUD.pdb.ReferenceCopyLocalPaths.stamp
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Dapper.dll.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Microsoft.Bcl.AsyncInterfaces.dll.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Microsoft.Bcl.HashCode.dll.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhoneSimulator\Debug\CopyFilesToMac\Microsoft.Data.Sqlite.dll.ReferenceCopyLocalPaths.stamp

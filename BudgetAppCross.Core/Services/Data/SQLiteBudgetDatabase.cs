@@ -1,5 +1,4 @@
 ﻿using BudgetAppCross.Models;
-using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -122,8 +121,15 @@ namespace BudgetAppCross.Core.Services
             {
                 using (var connection = new XamarinSQLiteConnection(connectionString))
                 {
-                    var output = await connection.QueryAsync<BankAccount>("select * from BankAccount");
-                    return output.ToList();
+                    connection.Open();
+                    object temp;
+                    using (var cmd = new SQLiteCommand(@"select * from BankAccount", connection))
+                    {
+                        temp = cmd.ExecuteReader();
+                        Console.WriteLine();
+                    }
+                    //var output = await connection.ExecuteScalarAsync        //QueryAsync<BankAccount>("select * from BankAccount");
+                    return new List<BankAccount>();//   output.ToList();
                 }
             }
             catch(Exception ex)
@@ -177,6 +183,15 @@ namespace BudgetAppCross.Core.Services
             accountTable.AddColumn(new SQLiteColumn("BankName").WithDatatype("TEXT").AsNullable(true));
 
             CreateTable(accountTable);
+
+            var newAcct = new BankAccount
+            {
+                Nickname = "MainAccount",
+                AccountNumber = "12345678",
+                BankName = "Main Street Bank"
+            };
+
+            await SaveBankAccount(newAcct);
             //connection.CreateTable<BankAccount>(CreateFlags.None);
             //connection.CreateTable<Bill>(CreateFlags.None);
             //connection.CreateTable<Balance>(CreateFlags.None);
@@ -214,12 +229,20 @@ namespace BudgetAppCross.Core.Services
 
         public Task SaveBalance(Balance balance)
         {
+
             throw new NotImplementedException();
         }
 
         public Task SaveBankAccount(BankAccount acct)
         {
-            throw new NotImplementedException();
+            using (var connection = new XamarinSQLiteConnection(connectionString))
+            {
+                connection.Open();
+                var cmd = new SQLiteCommand($"insert into BankAccount (NickName, AccountNumber, BankName) values ('{acct.Nickname}', '{acct.AccountNumber}', '{acct.BankName}')", connection);
+                cmd.ExecuteNonQuery(); 
+            }
+
+            return Task.CompletedTask;
         }
 
         public Task SaveBill(Bill bill)

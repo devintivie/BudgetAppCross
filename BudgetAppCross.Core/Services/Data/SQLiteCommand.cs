@@ -8,6 +8,8 @@ using Sqlite3DatabaseHandle = SQLitePCL.sqlite3;
 using Sqlite3BackupHandle = SQLitePCL.sqlite3_backup;
 using Sqlite3Statement = SQLitePCL.sqlite3_stmt;
 using Sqlite3 = SQLitePCL.raw;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace BudgetAppCross.Core.Services
 {
@@ -143,6 +145,18 @@ namespace BudgetAppCross.Core.Services
 				} while (reader.NextResult());
 			}
 			return null;
+        }
+        public override async Task<object> ExecuteScalarAsync(CancellationToken cancellationToken)
+        {
+            using (var reader = await ExecuteReaderAsync(CommandBehavior.SingleResult | CommandBehavior.SingleRow, cancellationToken))
+            {
+                do
+                {
+                    if (await reader.ReadAsync(cancellationToken).ConfigureAwait(false))
+                        return reader.GetValue(0);
+                } while (await reader.NextResultAsync(cancellationToken).ConfigureAwait(false));
+            }
+            return null;
         }
 
         //internal SqliteStatementPreparer GetStatementPreparer()
