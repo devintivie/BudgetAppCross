@@ -8,6 +8,8 @@ using Sqlite3DatabaseHandle = SQLitePCL.sqlite3;
 using Sqlite3BackupHandle = SQLitePCL.sqlite3_backup;
 using Sqlite3Statement = SQLitePCL.sqlite3_stmt;
 using Sqlite3 = SQLitePCL.raw;
+using System.Diagnostics;
+using System.Linq;
 
 namespace BudgetAppCross.Core.Services
 {
@@ -18,6 +20,19 @@ namespace BudgetAppCross.Core.Services
         string m_dataSource;
         bool m_isDisposed; 
         ConnectionState m_connectionState;
+        #endregion
+
+        #region Internal
+        readonly Stack<SQLiteTransaction> m_transactions;
+        internal bool IsOnlyTransaction(SQLiteTransaction transaction)
+        {
+            return m_transactions.Count == 1 && m_transactions.Peek() == transaction;
+        }
+        internal SQLiteTransaction CurrentTransaction => m_transactions.FirstOrDefault();
+        internal void PopTransaction()
+        {
+            m_transactions.Pop();
+        }
         #endregion
 
         #region Properties
@@ -48,10 +63,26 @@ namespace BudgetAppCross.Core.Services
         #endregion
 
         #region Constructors
+
+        static XamarinSQLiteConnection()
+        {
+
+            try
+            {
+                SQLitePCL.Batteries_V2.Init();
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            
+        }
         public XamarinSQLiteConnection(string databasePath)
         {
+            m_transactions = new Stack<SQLiteTransaction>();
             DatabasePath = databasePath;
             LibVersionNumber = SQLiteIvie.LibVersionNumber();
+            Debug.WriteLine($"Lib Version {LibVersionNumber}");
         }
         #endregion
 
@@ -73,6 +104,19 @@ namespace BudgetAppCross.Core.Services
             
 
 		}
+
+        protected override void Dispose(bool disposing)
+        {
+            try
+            {
+                //m_parameterCollection = null;
+                //Utility.Dispose(ref m_statementPreparer);
+            }
+            finally
+            {
+                base.Dispose(disposing);
+            }
+        }
         #endregion
 
 
@@ -107,12 +151,20 @@ namespace BudgetAppCross.Core.Services
 
         protected override DbTransaction BeginDbTransaction(IsolationLevel isolationLevel)
         {
-            throw new NotImplementedException();
+            if (isolationLevel == IsolationLevel.Unspecified)
+                isolationLevel = IsolationLevel.Serializable;
+            if (isolationLevel != IsolationLevel.Serializable && isolationLevel != IsolationLevel.ReadCommitted)
+                throw new ArgumentOutOfRangeException("isolationLevel", isolationLevel, "Specified IsolationLevel value is not supported.");
+
+            if (m_transactions.Count == 0)
+                this.ExecuteNonQuery(isolationLevel == IsolationLevel.Serializable ? "BEGIN IMMEDIATE" : "BEGIN");
+            m_transactions.Push(new SQLiteTransaction(this, isolationLevel));
+            return CurrentTransaction;
         }
 
         protected override DbCommand CreateDbCommand()
         {
-            throw new NotImplementedException();
+            return new SQLiteCommand("", this);
         }
 
         private void SetState(ConnectionState newState)
@@ -123,6 +175,15 @@ namespace BudgetAppCross.Core.Services
                 m_connectionState = newState;
                 OnStateChange(new StateChangeEventArgs(previousState, newState));
             }
+        }
+
+        internal static byte[] ToNullTerminatedUtf8(string value)
+        {
+            var encoding = Encoding.UTF8;
+            int len = encoding.GetByteCount(value);
+            byte[] bytes = new byte[len + 1];
+            encoding.GetBytes(value, 0, value.Length, bytes, 0);
+            return bytes;
         }
     }
 }

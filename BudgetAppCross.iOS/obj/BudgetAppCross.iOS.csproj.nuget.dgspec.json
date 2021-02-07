@@ -218,6 +218,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
+            },
+            "SQLitePCLRaw.bundle_green": {
+              "target": "Package",
+              "version": "[2.0.4, )"
             }
           },
           "imports": [
@@ -281,6 +285,10 @@
       "frameworks": {
         "xamarinios10": {
           "dependencies": {
+            "SQLitePCLRaw.provider.e_sqlite3": {
+              "target": "Package",
+              "version": "[2.0.4, )"
+            },
             "Xam.Plugins.Forms.KeyboardOverlap": {
               "target": "Package",
               "version": "[1.0.0.4, )"

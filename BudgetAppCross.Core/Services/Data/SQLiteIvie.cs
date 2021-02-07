@@ -184,24 +184,24 @@ namespace BudgetAppCross.Core.Services
 			return Sqlite3.sqlite3_bind_parameter_index(stmt, name);
 		}
 
-		public static int BindNull(Sqlite3Statement stmt, int index)
+		public static Result BindNull(Sqlite3Statement stmt, int index)
 		{
-			return Sqlite3.sqlite3_bind_null(stmt, index);
+			return (Result)Sqlite3.sqlite3_bind_null(stmt, index);
 		}
 
-		public static int BindInt(Sqlite3Statement stmt, int index, int val)
+		public static Result BindInt(Sqlite3Statement stmt, int index, int val)
 		{
-			return Sqlite3.sqlite3_bind_int(stmt, index, val);
+			return (Result)Sqlite3.sqlite3_bind_int(stmt, index, val);
 		}
 
-		public static int BindInt64(Sqlite3Statement stmt, int index, long val)
+		public static Result BindInt64(Sqlite3Statement stmt, int index, long val)
 		{
-			return Sqlite3.sqlite3_bind_int64(stmt, index, val);
+			return (Result)Sqlite3.sqlite3_bind_int64(stmt, index, val);
 		}
 
-		public static int BindDouble(Sqlite3Statement stmt, int index, double val)
+		public static Result BindDouble(Sqlite3Statement stmt, int index, double val)
 		{
-			return Sqlite3.sqlite3_bind_double(stmt, index, val);
+			return (Result)Sqlite3.sqlite3_bind_double(stmt, index, val);
 		}
 
 		public static int BindText(Sqlite3Statement stmt, int index, string val, int n, IntPtr free)
@@ -339,5 +339,10 @@ namespace BudgetAppCross.Core.Services
 			Blob = 4,
 			Null = 5
 		}
+
+		public static void Interrupt(Sqlite3DatabaseHandle destDb)
+        {
+			Sqlite3.sqlite3_interrupt(destDb);
+        }
 	}
 }
