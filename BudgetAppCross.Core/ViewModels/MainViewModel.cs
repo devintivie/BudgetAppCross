@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using SQLite;
 using Xamarin.Forms;
+using System.Diagnostics;
 
 namespace BudgetAppCross.Core.ViewModels
 {
@@ -58,6 +59,7 @@ namespace BudgetAppCross.Core.ViewModels
             }
             else
             {
+                Debug.WriteLine("debug works");
                 await BudgetDatabase.Initialize();
                 await BudgetDatabase.GetBankAccounts();
                 await navigationService.Navigate<MenuViewModel>();

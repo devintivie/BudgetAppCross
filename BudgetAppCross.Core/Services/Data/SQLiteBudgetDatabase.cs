@@ -3,6 +3,7 @@ using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,8 +64,8 @@ namespace BudgetAppCross.Core.Services
 	}
     public class SQLiteBudgetDatabase : IDataManager
     {
-        public List<string> BankAccountNicknames { get; set; }
-        public List<string> PayeeNames { get; set; }
+        public List<string> BankAccountNicknames { get; set; } = new List<string>();
+        public List<string> PayeeNames { get; set; } = new List<string>();
 
         private string connectionString => StateManager.Instance.DatabasePath;
 
@@ -72,6 +73,8 @@ namespace BudgetAppCross.Core.Services
         {
             throw new NotImplementedException();
         }
+
+
 
         public Task DeleteBalance(Balance balance)
         {
@@ -115,11 +118,20 @@ namespace BudgetAppCross.Core.Services
 
         public async Task<List<BankAccount>> GetBankAccounts()
         {
-            using (IDbConnection connection = new XamarinSQLiteConnection(connectionString))
+            try
             {
-                var output = connection.Query<BankAccount>("select * from BankAccount", new DynamicParameters());
-                return output.ToList();
+                using (var connection = new XamarinSQLiteConnection(connectionString))
+                {
+                    var output = await connection.QueryAsync<BankAccount>("select * from BankAccount");
+                    return output.ToList();
+                }
             }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            return new List<BankAccount>();
+            
         }
 
         public Task<Bill> GetBill(int id)
@@ -154,6 +166,9 @@ namespace BudgetAppCross.Core.Services
 
         public async Task Initialize()
         {
+
+            //SQLitePCL.raw.SetProvider(new SQLitePCL.SQLite3Provider_e_sqlite3());
+
             //File.Delete(Constants.DatabasePath);
             var accountTable = new SQLiteTable("BankAccount");
             accountTable.AddColumn(new SQLiteColumn("AccountId").AsPrimaryKey().WithAutoIncrement().IsUnique());
@@ -162,27 +177,39 @@ namespace BudgetAppCross.Core.Services
             accountTable.AddColumn(new SQLiteColumn("BankName").WithDatatype("TEXT").AsNullable(true));
 
             CreateTable(accountTable);
-                //connection.CreateTable<BankAccount>(CreateFlags.None);
-                //connection.CreateTable<Bill>(CreateFlags.None);
-                //connection.CreateTable<Balance>(CreateFlags.None);
-            
+            //connection.CreateTable<BankAccount>(CreateFlags.None);
+            //connection.CreateTable<Bill>(CreateFlags.None);
+            //connection.CreateTable<Balance>(CreateFlags.None);
+
             //Database.CreateTable<BankAccount>(CreateFlags.None);
             //Database.CreateTable<Bill>(CreateFlags.None);
             //Database.CreateTable<Balance>(CreateFlags.None);
 
             //initialized = true;
+            Console.WriteLine("Updating Account Names");
 
             await UpdateBankAccountNames();
         }
 
         public void CreateTable(SQLiteTable table)
         {
-            using (var connection = new XamarinSQLiteConnection(connectionString))
+            try
             {
-                connection.Open();
-                var cmd = new SQLiteCommand(table.BuildTableScript(), connection);
-                cmd.ExecuteNonQuery();
+                using (var connection = new XamarinSQLiteConnection(connectionString))
+                {
+                    Debug.WriteLine("WTF");
+                    connection.Open();
+                    Debug.WriteLine("Open");
+                    var cmd = new SQLiteCommand(table.BuildTableScript(), connection);
+                    cmd.ExecuteNonQuery();
+                }
+                Debug.WriteLine("WTF");
             }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            
         }
 
         public Task SaveBalance(Balance balance)
@@ -207,12 +234,29 @@ namespace BudgetAppCross.Core.Services
 
         public async Task UpdateBankAccountNames()
         {
-            var accts = await GetBankAccounts();
-
-            BankAccountNicknames.Clear();
-            foreach (var item in accts)
+            var accts = new List<BankAccount>();
+            try
             {
-                BankAccountNicknames.Add(item.Nickname);
+                accts = await GetBankAccounts();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+
+            try 
+            { 
+
+                BankAccountNicknames.Clear();
+                foreach (var item in accts)
+                {
+                    BankAccountNicknames.Add(item.Nickname);
+                    Debug.WriteLine(item.Nickname);
+                }
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
             }
         }
 

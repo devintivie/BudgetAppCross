@@ -5,7 +5,7 @@
     <Compile Update="Services\Data\SQLiteCommand.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Services\Data\SQLiteConnections.cs">
+    <Compile Update="Services\Data\XamarinSQLiteConnection.cs">
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>

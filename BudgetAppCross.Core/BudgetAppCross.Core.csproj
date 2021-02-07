@@ -10,6 +10,11 @@
     <DefineConstants>USE_SQLITEPCL_RAW;RELEASE</DefineConstants>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DocumentationFile>bin\Release\netstandard2.0\SQLite-net.xml</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,6 +22,7 @@
     <PackageReference Include="Dapper" Version="2.0.78" />
     <PackageReference Include="MvvmCross.Forms" Version="6.4.2" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.0.4" />
   </ItemGroup>
 
   <ItemGroup>
