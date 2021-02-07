@@ -68,3 +68,5 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\n
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csproj.CopyComplete
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\Dapper.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\Dapper.xml

@@ -10,6 +10,7 @@ using Sqlite3Statement = SQLitePCL.sqlite3_stmt;
 using Sqlite3 = SQLitePCL.raw;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Diagnostics;
 
 namespace BudgetAppCross.Core.Services
 {
@@ -104,7 +105,8 @@ namespace BudgetAppCross.Core.Services
 
         public override void Cancel()
         {
-            throw new NotImplementedException();
+            Debug.WriteLine("Cancel method");
+            //throw new NotImplementedException();
         }
 
         public override int ExecuteNonQuery()
@@ -189,6 +191,11 @@ namespace BudgetAppCross.Core.Services
             Prepare();
             return SQLiteDataReader.Create(this, behavior);
         }
+
+        //public new SQLiteDataReader ExecuteReader()
+        //{
+        //    return (SQLiteDataReader)base.ExecuteReader();
+        //}
 
         private void VerifyValid()
         {

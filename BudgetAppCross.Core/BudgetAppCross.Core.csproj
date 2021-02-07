@@ -25,6 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Dapper\Dapper\Dapper.csproj" />
     <ProjectReference Include="..\BaseClasses\BaseClasses.csproj" />
     <ProjectReference Include="..\BudgetAppCore.Sqlite\BudgetAppCore.Sqlite.csproj" />
     <ProjectReference Include="..\BudgetAppCross.Models\BudgetAppCross.Models.csproj" />

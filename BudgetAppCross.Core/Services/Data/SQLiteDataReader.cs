@@ -72,7 +72,7 @@ namespace BudgetAppCross.Core.Services
             m_behavior = behavior;
             m_statementPreparer = command.GetStatementPreparer();
 
-            //m_startingChanges = NativeMethods.sqlite3_total_changes(DatabaseHandle);
+            m_startingChanges = Sqlite3.sqlite3_total_changes(DatabaseHandle);
             m_currentStatementIndex = -1;
         }
 
@@ -159,9 +159,9 @@ namespace BudgetAppCross.Core.Services
 
         public override bool HasRows => throw new NotImplementedException();
 
-        public override bool IsClosed => throw new NotImplementedException();
+        public override bool IsClosed => (m_command == null);//     b ase.IsClosed;//  throw new NotImplementedException();
 
-        public override int RecordsAffected => throw new NotImplementedException();
+        public override int RecordsAffected => Sqlite3.sqlite3_total_changes(DatabaseHandle) - m_startingChanges;
 
         public override bool GetBoolean(int ordinal)
         {

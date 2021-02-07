@@ -1,4 +1,5 @@
 ﻿using BudgetAppCross.Models;
+using Dapper;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -119,17 +120,18 @@ namespace BudgetAppCross.Core.Services
         {
             try
             {
-                using (var connection = new XamarinSQLiteConnection(connectionString))
+                using (IDbConnection connection = new XamarinSQLiteConnection(connectionString))
                 {
-                    connection.Open();
-                    object temp;
-                    using (var cmd = new SQLiteCommand(@"select * from BankAccount", connection))
-                    {
-                        temp = cmd.ExecuteReader();
-                        Console.WriteLine();
-                    }
+                    var output = connection.Query<BankAccount>("select * from BankAccount");
+                    //connection.Open();
+                    //object temp;
+                    //using (var cmd = new SQLiteCommand(@"select * from BankAccount", connection))
+                    //{
+                    //    temp = cmd.ExecuteR();
+                    //    Console.WriteLine();
+                    //}
                     //var output = await connection.ExecuteScalarAsync        //QueryAsync<BankAccount>("select * from BankAccount");
-                    return new List<BankAccount>();//   output.ToList();
+                    //return new List<BankAccount>();//   output.ToList();
                 }
             }
             catch(Exception ex)
