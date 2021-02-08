@@ -2133,8 +2133,7 @@
       "MvvmCross.Forms >= 6.4.2",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.3",
-      "SQLitePCLRaw.bundle_green >= 2.0.4",
-      "sqlite-net-pcl >= 1.7.335"
+      "SQLitePCLRaw.bundle_green >= 2.0.4"
     ]
   },
   "packageFolders": {
@@ -2215,10 +2214,6 @@
           "SQLitePCLRaw.bundle_green": {
             "target": "Package",
             "version": "[2.0.4, )"
-          },
-          "sqlite-net-pcl": {
-            "target": "Package",
-            "version": "[1.7.335, )"
           }
         },
         "imports": [

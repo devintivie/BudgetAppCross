@@ -992,8 +992,7 @@
           "InAppPurchasing.Core": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
           "Newtonsoft.Json": "12.0.3",
-          "SQLitePCLRaw.bundle_green": "2.0.4",
-          "sqlite-net-pcl": "1.7.335"
+          "SQLitePCLRaw.bundle_green": "2.0.4"
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.Core.dll": {}

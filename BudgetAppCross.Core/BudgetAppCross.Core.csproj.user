@@ -2,9 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="Services\Data\SQLiteCommand.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Update="Services\Data\XamarinSQLiteConnection.cs">
       <SubType>Component</SubType>
     </Compile>

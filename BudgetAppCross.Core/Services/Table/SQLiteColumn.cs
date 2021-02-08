@@ -7,7 +7,8 @@ namespace BudgetAppCross.Core.Services
     public class SQLiteColumn
     {
         public string Name { get; private set; } = "Id";
-        public string SQLiteDataType { get; private set; } = "INTEGER";// SQLiteDataType.Int;
+        public SQLiteColumnType SQLiteDataType { get; private set; } = SQLiteColumnType.Integer;
+        public Type ColumnType { get; set; } = typeof(int);
         public bool Nullable { get; private set; } = false;
         public bool PrimaryKey { get; private set; } = false;
         public bool AutoIncrement { get; private set; } = false;
@@ -25,7 +26,7 @@ namespace BudgetAppCross.Core.Services
 
         #region FluentMethods
 
-        public SQLiteColumn WithDatatype(string datatype)
+        public SQLiteColumn WithDatatype(SQLiteColumnType datatype)
         {
             SQLiteDataType = datatype;
             return this;

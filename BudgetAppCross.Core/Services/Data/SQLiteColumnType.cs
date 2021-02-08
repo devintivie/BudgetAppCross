@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BudgetAppCross.Core.Services
 {
-	internal enum SQLiteColumnType
+	public enum SQLiteColumnType
 	{
 		/// <summary>
 		/// Not used
