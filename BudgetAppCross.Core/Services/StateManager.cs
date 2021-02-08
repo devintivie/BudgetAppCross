@@ -34,20 +34,20 @@ namespace BudgetAppCross.Core.Services
         #region Properties
         public string DatabaseFilename { get; set; } = null;//"None";
         public List<string> Budgets { get; private set; }
-        public bool FullVersionPaid { get; private set; } = false;
+        //public bool FullVersionPaid { get; private set; } = false;
 
         //Free Version Limitations
-        public const int MAX_PAYEES = int.MaxValue;
-        public const int MAX_ACCOUNTS = int.MaxValue;
+        //public const int MAX_PAYEES = int.MaxValue;
+        //public const int MAX_ACCOUNTS = int.MaxValue;
 
-        public const SQLite.SQLiteOpenFlags Flags =
-            // open the database in read/write mode
-            SQLite.SQLiteOpenFlags.ReadWrite |
-            // create the database if it doesn't exist
-            SQLite.SQLiteOpenFlags.Create |
-            // enable multi-threaded database access
-            SQLite.SQLiteOpenFlags.SharedCache |
-            SQLite.SQLiteOpenFlags.FullMutex;
+        //public const SQLite.SQLiteOpenFlags Flags =
+        //    // open the database in read/write mode
+        //    SQLite.SQLiteOpenFlags.ReadWrite |
+        //    // create the database if it doesn't exist
+        //    SQLite.SQLiteOpenFlags.Create |
+        //    // enable multi-threaded database access
+        //    SQLite.SQLiteOpenFlags.SharedCache |
+        //    SQLite.SQLiteOpenFlags.FullMutex;
 
         public string DatabasePath
         {
