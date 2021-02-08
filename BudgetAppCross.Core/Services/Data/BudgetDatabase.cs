@@ -19,15 +19,15 @@ namespace BudgetAppCross.Core.Services
         static readonly Lazy<BudgetDatabase> instance = new Lazy<BudgetDatabase>();
         public static BudgetDatabase Instance => instance.Value;
 
-        //static SQLiteConnection database;
+        static SQLiteConnection database;
 
         private string connectionString => StateManager.Instance.DatabasePath;
         private SQLiteOpenFlags flags => StateManager.Flags;
 
-        //public static SQLiteConnection Database
-        //{
-        //    //get { return database ?? (database = new SQLiteConnection(StateManager.Instance.DatabasePath, StateManager.Flags)); }
-        //}
+        public static SQLiteConnection Database
+        {
+            get { return database ?? (database = new SQLiteConnection(StateManager.Instance.DatabasePath, StateManager.Flags)); }
+        }
 
         public BudgetDatabase()
         {
@@ -143,21 +143,16 @@ namespace BudgetAppCross.Core.Services
 
         public async Task UpdateBankAccountNames()
         {
-
-            using (var connection = new SQLiteConnection(connectionString, flags))
+            var list = await Task.Run(() =>
             {
-                connection.
-            }
-            //var list = await Task.Run(() =>
-            //{
-            //    return Database.GetAllWithChildren<BankAccount>();
-            //});
+                return Database.GetAllWithChildren<BankAccount>();
+            });
 
-            //BankAccountNicknames.Clear();
-            //foreach (var item in list)
-            //{
-            //    BankAccountNicknames.Add(item.Nickname);
-            //}
+            BankAccountNicknames.Clear();
+            foreach (var item in list)
+            {
+                BankAccountNicknames.Add(item.Nickname);
+            }
         }
 
         public async Task UpdatePayeeNames()

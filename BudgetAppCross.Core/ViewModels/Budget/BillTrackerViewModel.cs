@@ -184,7 +184,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         public Task ShowBill()
         {
-            return navigationService.Navigate<BillDetailsViewModel>();
+            return navigationService.Navigate<BillDetailsViewModel, Bill>(SelectedBill.Bill);
         }
 
         //public Task ShowBill(int id)

@@ -7,15 +7,86 @@
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
              xmlns:models="clr-namespace:BudgetAppCross.Models;assembly=BudgetAppCross.Models"
+                      
+             xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
              xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
                       xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
                       ios:Page.UseSafeArea="True"
              mc:Ignorable="d"
-             Title="Add Bill"
+             Title="Bill Details"
              BackgroundColor="{StaticResource PrimaryBackground}"
              x:Class="BudgetAppCross.Views.BillDetailsPage">
     <ContentPage.Content>
-        <Grid>
+        <ScrollView>
+            <StackLayout>
+                <!--Due Date-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Due Date"
+                           Style="{StaticResource BigLightLabel}"/>
+                    <custom:CustomDatePicker Date="{Binding Date}"
+                                     FontSize="{StaticResource FontSizeLarge}"
+                                     Grid.Row="0" Grid.Column="1"
+                                      
+                                     HorizontalOptions="Fill">
+                        <DatePicker.Behaviors>
+                            <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                        </DatePicker.Behaviors>
+                    </custom:CustomDatePicker>
+                </Grid>
+
+                <!--Amount Due-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Amount Due"
+                                   Style="{StaticResource BigLightLabel}"
+                                   />
+                    <controls:CurrencyEntry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
+                                                    Grid.Column="1"
+                                                    FontSize="{StaticResource FontSizeLarge}"
+                                                    HorizontalTextAlignment="End"
+                                                    HorizontalOptions="Fill"
+                                                    />
+                </Grid>
+
+                <!--Is Paid-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Paid"
+                           Style="{StaticResource BigLightLabel}"/>
+                    <Switch IsToggled="{Binding IsPaid}"/>
+                </StackLayout>
+                
+                <!--On Auto Pay-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Auto Pay"
+                           Style="{StaticResource BigLightLabel}"/>
+                    <Switch IsToggled="{Binding IsPaid}"/>
+                </StackLayout>
+
+                <!--Account-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="1.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Account"
+                                   Style="{StaticResource BigLightLabel}"
+                                   />
+                    <custom:CustomPicker ItemsSource="{Binding AccountOptions}"
+                                                 Grid.Column="1"
+                                                 FontSize="{StaticResource FontSizeLarge}"
+                                                 SelectedItem="{Binding SelectedAccount}"
+                                                 HorizontalOptions="Fill"
+                                                 />
+                </Grid>
+            </StackLayout>
+
             <!--<Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
@@ -199,7 +270,7 @@
                 <Button Text="Save" Command="{Binding SaveCommand}"
                             Grid.Column="1"/>
             </Grid>-->
-        </Grid>
+        </ScrollView>
         
         
     </ContentPage.Content>
