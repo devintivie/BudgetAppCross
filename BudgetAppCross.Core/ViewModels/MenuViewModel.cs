@@ -2,6 +2,7 @@
 using BaseClasses;
 using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
+using BudgetAppCross.StateManagers;
 using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;

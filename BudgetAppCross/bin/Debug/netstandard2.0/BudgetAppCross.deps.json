@@ -792,15 +792,25 @@
           "Acr.UserDialogs": "7.1.0.475",
           "BaseClasses": "1.0.0",
           "BudgetAppCore.Sqlite": "1.0.0",
+          "BudgetAppCross.DataAccess": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "BudgetAppCross.SQLiteDataAccess": "1.0.0",
+          "BudgetAppCross.StateManagers": "1.0.0",
           "InAppPurchasing.Core": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
-          "Newtonsoft.Json": "12.0.3",
           "SQLite": "3.13.0",
           "sqlite-net-pcl": "1.7.335"
         },
         "runtime": {
           "BudgetAppCross.Core.dll": {}
+        }
+      },
+      "BudgetAppCross.DataAccess/1.0.0": {
+        "dependencies": {
+          "BudgetAppCross.Models": "1.0.0"
+        },
+        "runtime": {
+          "BudgetAppCross.DataAccess.dll": {}
         }
       },
       "BudgetAppCross.Models/1.0.0": {
@@ -812,6 +822,25 @@
         },
         "runtime": {
           "BudgetAppCross.Models.dll": {}
+        }
+      },
+      "BudgetAppCross.SQLiteDataAccess/1.0.0": {
+        "dependencies": {
+          "BudgetAppCross.DataAccess": "1.0.0",
+          "BudgetAppCross.Models": "1.0.0",
+          "BudgetAppCross.StateManagers": "1.0.0",
+          "sqlite-net-pcl": "1.7.335"
+        },
+        "runtime": {
+          "BudgetAppCross.SQLiteDataAccess.dll": {}
+        }
+      },
+      "BudgetAppCross.StateManagers/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "BudgetAppCross.StateManagers.dll": {}
         }
       },
       "CustomXamarinControls/1.0.0": {
@@ -1378,7 +1407,22 @@
       "serviceable": false,
       "sha512": ""
     },
+    "BudgetAppCross.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "BudgetAppCross.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BudgetAppCross.SQLiteDataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BudgetAppCross.StateManagers/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

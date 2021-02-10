@@ -35,4 +35,3 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsBehaviors\obj
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.pdb
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.csprojAssemblyReference.cache

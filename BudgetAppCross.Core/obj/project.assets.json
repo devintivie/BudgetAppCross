@@ -667,6 +667,19 @@
           "bin/placeholder/BudgetAppCore.Sqlite.dll": {}
         }
       },
+      "BudgetAppCross.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "BudgetAppCross.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.DataAccess.dll": {}
+        }
+      },
       "BudgetAppCross.Models/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -681,6 +694,35 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
+        }
+      },
+      "BudgetAppCross.SQLiteDataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "BudgetAppCross.DataAccess": "1.0.0",
+          "BudgetAppCross.Models": "1.0.0",
+          "BudgetAppCross.StateManagers": "1.0.0",
+          "sqlite-net-pcl": "1.7.335"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.SQLiteDataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.SQLiteDataAccess.dll": {}
+        }
+      },
+      "BudgetAppCross.StateManagers/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.StateManagers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.StateManagers.dll": {}
         }
       },
       "InAppPurchasing.Core/1.0.0": {
@@ -2155,10 +2197,25 @@
       "path": "../BudgetAppCore.Sqlite/BudgetAppCore.Sqlite.csproj",
       "msbuildProject": "../BudgetAppCore.Sqlite/BudgetAppCore.Sqlite.csproj"
     },
+    "BudgetAppCross.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../BudgetAppCross.DataAccess/BudgetAppCross.DataAccess.csproj",
+      "msbuildProject": "../BudgetAppCross.DataAccess/BudgetAppCross.DataAccess.csproj"
+    },
     "BudgetAppCross.Models/1.0.0": {
       "type": "project",
       "path": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj",
       "msbuildProject": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj"
+    },
+    "BudgetAppCross.SQLiteDataAccess/1.0.0": {
+      "type": "project",
+      "path": "../BudgetAppCross.SQLiteDataAccess/BudgetAppCross.SQLiteDataAccess.csproj",
+      "msbuildProject": "../BudgetAppCross.SQLiteDataAccess/BudgetAppCross.SQLiteDataAccess.csproj"
+    },
+    "BudgetAppCross.StateManagers/1.0.0": {
+      "type": "project",
+      "path": "../BudgetAppCross.StateManager/BudgetAppCross.StateManagers.csproj",
+      "msbuildProject": "../BudgetAppCross.StateManager/BudgetAppCross.StateManagers.csproj"
     },
     "InAppPurchasing.Core/1.0.0": {
       "type": "project",
@@ -2171,11 +2228,13 @@
       "Acr.UserDialogs >= 7.1.0.446",
       "BaseClasses >= 1.0.0",
       "BudgetAppCore.Sqlite >= 1.0.0",
+      "BudgetAppCross.DataAccess >= 1.0.0",
       "BudgetAppCross.Models >= 1.0.0",
+      "BudgetAppCross.SQLiteDataAccess >= 1.0.0",
+      "BudgetAppCross.StateManagers >= 1.0.0",
       "InAppPurchasing.Core >= 1.0.0",
       "MvvmCross.Forms >= 6.4.2",
       "NETStandard.Library >= 2.0.3",
-      "Newtonsoft.Json >= 12.0.3",
       "sqlite >= 3.13.0",
       "sqlite-net-pcl >= 1.7.335"
     ]
@@ -2218,8 +2277,17 @@
             "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj": {
               "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCore.Sqlite\\BudgetAppCore.Sqlite.csproj"
             },
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.DataAccess\\BudgetAppCross.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.DataAccess\\BudgetAppCross.DataAccess.csproj"
+            },
             "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
               "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj"
+            },
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.SQLiteDataAccess\\BudgetAppCross.SQLiteDataAccess.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.SQLiteDataAccess\\BudgetAppCross.SQLiteDataAccess.csproj"
+            },
+            "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.StateManager\\BudgetAppCross.StateManagers.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.StateManager\\BudgetAppCross.StateManagers.csproj"
             },
             "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj": {
               "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj"
@@ -2250,10 +2318,6 @@
             "target": "Package",
             "version": "[2.0.3, )",
             "autoReferenced": true
-          },
-          "Newtonsoft.Json": {
-            "target": "Package",
-            "version": "[12.0.3, )"
           },
           "sqlite": {
             "target": "Package",
