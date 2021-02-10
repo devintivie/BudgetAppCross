@@ -365,6 +365,63 @@ namespace BudgetAppCross.Core.Services
             return list;
         }
 
+        //var billCall = await BudgetDatabase.GetBillsDateRangeForAccount(StartDate, EndDate, SelectedAccount);
+        public async Task<List<Bill>> GetBillsDateRangeForAccount(DateTime start, DateTime end, string selectedAccount)
+        {
+            //var list = new List<BankAccount>();
+            var list = await Task.Run(() =>
+            {
+                //return Database.Table<Bill>().ToList();
+                try
+                {
+
+                    var bills = Database.Query<Bill>(@"SELECT * FROM Bill"); //GetAllWithChildren<Bill>("Select * from BankAccount");//       recursive: true);
+                    var accountIds = bills.Select(x => x.AccountID).Distinct();
+
+                    var idsString = $"(";
+                    var lastItem = accountIds.Last();
+                    foreach (var item in accountIds)
+                    {
+                        if (item == lastItem)
+                        {
+                            idsString += $"{item}";
+                        }
+                        else
+                        {
+                            idsString += $"{item},";
+                        }
+                    }
+
+                    idsString += ")";
+                    
+                    var accounts = Database.Query<BankAccount>($@"SELECT * FROM BankAccount 
+                                                                WHERE AccountId in {idsString}");
+                    var acctDict = accounts.ToDictionary(x => x.AccountID, y => y);
+                    
+                    foreach (var bill in bills)
+                    {
+                        bill.BankAccount = acctDict[bill.AccountID];
+                    }
+                    
+                    return bills;
+                }
+                catch (InvalidOperationException iex)
+                {
+                    Console.WriteLine(iex.Message);
+                    
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+                return new List<Bill>();
+
+            });
+
+            return list;
+        }
+
         public async Task<List<Bill>> GetBillsForPayee(string payee)
         {
             var list = await Task.Run(() =>

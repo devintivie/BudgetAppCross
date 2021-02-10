@@ -461,7 +461,8 @@ namespace BudgetAppCross.Core.ViewModels
             
 
             var accts = await DataManager.GetBankAccounts();
-            var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
+            var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).Single();
+            //var acct = SelectedAccount;
             var payee = IsNewPayee ? NewPayee : SelectedPayee;
 
             if (string.IsNullOrWhiteSpace(payee))

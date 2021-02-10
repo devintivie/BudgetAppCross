@@ -52,7 +52,7 @@ namespace BudgetAppCore.Sqlite
             //Bill Table
             modelBuilder.Entity<Bill>().HasKey(t => t.ID);
             modelBuilder.Entity<Bill>().Property(t => t.ID).ValueGeneratedOnAdd();
-            modelBuilder.Entity<Bill>().HasOne(b => b.BankAccount).WithMany(b => b.Bills);
+            //modelBuilder.Entity<Bill>().HasOne(b => b.BankAccount).WithMany(b => b.Bills);
             //modelBuilder.Entity<Bill>().ToTable("Bills");
 
             base.OnModelCreating(modelBuilder);

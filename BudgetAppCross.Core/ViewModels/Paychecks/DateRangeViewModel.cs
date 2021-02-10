@@ -134,19 +134,6 @@ namespace BudgetAppCross.Core.ViewModels
 
         public decimal Remainder => StartingBalance - BillTotal;
 
-
-
-
-        //private ObservableCollection<DateRangeGrouping<BankAccount, BillViewModel>> billsGrouped = new ObservableCollection<DateRangeGrouping<BankAccount, BillViewModel>>();
-        //public ObservableCollection<DateRangeGrouping<BankAccount, BillViewModel>> BillsGrouped
-        //{
-        //    get { return billsGrouped; }
-        //    set
-        //    {
-        //        SetProperty(ref billsGrouped, value);
-        //    }
-        //}
-
         #endregion
 
         #region Commands
@@ -161,14 +148,8 @@ namespace BudgetAppCross.Core.ViewModels
             navigationService = navigation;
             Title = "Custom Dates";
 
-            //var _ = LoadAccounts();
             var _accts = LoadAccountOptions();
-
-            //var _groups = GetGroups();
-            //var _ = LoadData();
-            //Messenger.Register<UpdateBillMessage>(this, x => OnUpdateBillMessage());
-            //token = messenger.Subscribe<UpdateBillMessage>(OnUpdateBillMessage);
-
+            
             AddBillCommand = new Command(async () => await navigationService.Navigate<NewBillsViewModel, string>(string.Empty));
             OnDateSelectedCommand = new Command(async () => await GetBills());
 
@@ -191,14 +172,17 @@ namespace BudgetAppCross.Core.ViewModels
         {
             if(SelectedAccount != null)
             {
-                var billcall = await BudgetDatabase.GetBills();
+                //var billcall = await BudgetDatabase.GetBills();
 
-                var billData = billcall
-                    .Where(x => x.Date >= StartDate)
-                    .Where(x => x.Date <= EndDate)
-                    .Where(x => x.BankAccount.Nickname.Equals(SelectedAccount))
-                    .OrderBy(x => x.Date).ToList();
+                //var billData = billcall
+                //    .Where(x => x.Date >= StartDate)
+                //    .Where(x => x.Date <= EndDate)
+                //    .Where(x => x.BankAccount.Nickname.Equals(SelectedAccount))
+                //    .OrderBy(x => x.Date).ToList();
 
+                var billData = await BudgetDatabase.GetBillsDateRangeForAccount(StartDate, EndDate, SelectedAccount);
+
+                //var billData = billCall;
                 Bills.Clear();
                 foreach (var bill in billData)
                 {
@@ -208,53 +192,6 @@ namespace BudgetAppCross.Core.ViewModels
                 await UpdateCalculations();
             }
             
-
-
-
-            //    var billData = (bills)
-            //                .Where(x => x.Date >= StartDate)
-            //                .Where(x => x.Date <= EndDate)
-            //                .OrderBy(x => x.Date)
-            //                .Select(bill => bill).ToList();
-
-            //    //var data = billData.GroupBy(item => item.BankAccount.Nickname)
-            //    //            .Select(x => new
-            //    //            {
-            //    //                x.Key,
-            //    //                x,
-            //    //                sum = x.Sum(i => i.Amount)
-            //    //            });
-
-            //    var moreData = billData.GroupBy(x => x.BankAccount)
-            //                .OrderBy(x => x.Key.Nickname).ToList();
-            //    var data = moreData.Select(grouped => new DateRangeGrouping<BankAccount, Bill>(grouped.Key, grouped)
-            //    {
-            //        Sum = grouped.Sum(i => i.Amount),
-
-            //    }).ToList();
-
-
-            //    var newGroup = new List<DateRangeGrouping<BankAccount, BillViewModel>>();
-            //    foreach (var item in data)
-            //    {
-            //        var key = item.Key;
-            //        var bvms = new List<BillViewModel>();
-            //        foreach (var group in item.Grouped)
-            //        {
-            //            bvms.Add(new BillViewModel(group));
-            //        }
-            //        newGroup.Add(new DateRangeGrouping<BankAccount, BillViewModel>(key, bvms));
-            //    }
-
-            //    BillsGrouped = new ObservableCollection<DateRangeGrouping<BankAccount, BillViewModel>>(newGroup);
-
-
-
-
-
-
-
-
 
         }
 
@@ -273,13 +210,16 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task UpdateCalculations()
         {
-            var billcall = await BudgetDatabase.GetBills();
+            //var billcall = await BudgetDatabase.GetBills();
 
-            var billData = billcall
-                .Where(x => x.Date >= StartDate)
-                .Where(x => x.Date <= EndDate)
-                .Where(x => x.BankAccount.Nickname.Equals(SelectedAccount))
-                .OrderBy(x => x.Date).ToList();
+            var billCall = await BudgetDatabase.GetBillsDateRangeForAccount(StartDate, EndDate, SelectedAccount);
+
+            var billData = billCall;
+            //var billData = billcall
+            //    .Where(x => x.Date >= StartDate)
+            //    .Where(x => x.Date <= EndDate)
+            //    .Where(x => x.BankAccount.Nickname.Equals(SelectedAccount))
+            //    .OrderBy(x => x.Date).ToList();
 
             //Doesnt work if there are no bills
             var bal = await BudgetDatabase.GetLatestBalance(SelectedAccount, StartDate);
@@ -293,126 +233,6 @@ namespace BudgetAppCross.Core.ViewModels
             }
             BillTotal = billData.Sum(x => x.Amount);
         }
-
-
-        //private async Task LoadData()
-        //{
-        //    //await BudgetDatabase.UpdateBankAccountNames();
-        //    //var bills = await BudgetDatabase.GetBills();
-        //    //var data = (bills.Where(x => x.Date >= StartDate && x.Date <= EndDate)
-        //    //            .OrderBy(x => x.Date)
-        //    //            .Select(bill => bill)).ToList();
-
-        //    //Transactions.Clear();
-
-        //    //foreach (var item in data)
-        //    //{
-        //    //    Transactions.Add(new BillViewModel(item));
-        //    //}
-
-        //    //await UpdateCalculations();
-
-        //}
-
-        //private async Task LoadAccounts()
-        //{
-        //    var accts = await BudgetDatabase.GetBankAccounts();
-
-        //    Accounts.Clear();
-        //    foreach (var acct in accts)
-        //    {
-        //        Accounts.Add(new DateRangeEntryViewModel(StartDate, EndDate, acct));
-        //    }
-        //}
-
-        //private async Task GetGroups()
-        //{
-        //    var bills = await BudgetDatabase.GetBills();
-        //    var billData = (bills)
-        //                .Where(x => x.Date >= StartDate)
-        //                .Where(x => x.Date <= EndDate)
-        //                .OrderBy(x => x.Date)
-        //                .Select(bill => bill).ToList();
-
-        //    //var data = billData.GroupBy(item => item.BankAccount.Nickname)
-        //    //            .Select(x => new
-        //    //            {
-        //    //                x.Key,
-        //    //                x,
-        //    //                sum = x.Sum(i => i.Amount)
-        //    //            });
-
-        //    var moreData = billData.GroupBy(x => x.BankAccount)
-        //                .OrderBy(x => x.Key.Nickname).ToList();
-        //    var data = moreData.Select(grouped => new DateRangeGrouping<BankAccount, Bill>(grouped.Key, grouped)
-        //    {
-        //        Sum = grouped.Sum(i => i.Amount),
-
-        //    }).ToList();
-
-
-        //    var newGroup = new List<DateRangeGrouping<BankAccount, BillViewModel>>();
-        //    foreach (var item in data)
-        //    {
-        //        var key = item.Key;
-        //        var bvms = new List<BillViewModel>();
-        //        foreach (var group in item.Grouped)
-        //        {
-        //            bvms.Add(new BillViewModel(group));
-        //        }
-        //        newGroup.Add(new DateRangeGrouping<BankAccount, BillViewModel>(key, bvms));
-        //    }
-
-        //    BillsGrouped = new ObservableCollection<DateRangeGrouping<BankAccount, BillViewModel>>(newGroup);
-        //}
-
-        //private async Task UpdateAccounts()
-        //{
-        //    foreach (var acct in Accounts)
-        //    {
-        //        await acct.UpdateData(StartDate, EndDate);
-        //    }
-        //}
-
-        //public override async Task Initialize()
-        //{
-        //    await base.Initialize();
-        //    Console.WriteLine("Start DRVM Init");
-        //    await LoadData();
-        //    Console.WriteLine("Finished DRVM Init");
-        //}
-
-        //public override void Start()
-        //{
-        //    base.Start();
-        //    initialized = true;
-        //}
-
-        //public override void ViewAppeared()
-        //{
-        //    base.ViewAppeared();
-        //    //initialized = true;
-        //}
-
-        //public override void ViewDestroy(bool viewFinishing = true)
-        //{
-        //    //SaveBills();
-        //    base.ViewDestroy(viewFinishing);
-            
-        //}
-
-        //public async Task SaveBills()
-        //{
-        //    foreach (var bill in Transactions)
-        //    {
-        //        await BudgetDatabase.SaveBill(bill.Bill);
-        //    }
-        //}
-
-        //private void OnUpdateBillMessage()
-        //{
-        //    //UpdateCalculations();
-        //}
 
         private async Task OnChangeBillMessage(int id)
         {

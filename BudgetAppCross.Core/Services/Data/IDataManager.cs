@@ -36,6 +36,7 @@ namespace BudgetAppCross.Core.Services
 
         #region Bills
         Task<List<Bill>> GetBills();
+        Task<List<Bill>> GetBillsDateRangeForAccount(DateTime start, DateTime end, string selectedAccount);
         Task SaveBill(Bill bill);
         Task SaveBills(IEnumerable<Bill> bills);
         Task<Bill> GetBill(int id);
