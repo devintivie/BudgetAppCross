@@ -132,12 +132,9 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task UpdateBalances()
         {
-            var temp = await BudgetDatabase.GetBalances();
-            var tempBalances = temp.Where(x => x.AccountID == BankAccount.AccountID)
-                .OrderBy(x => x.Timestamp).ToList();
-
+            var balances = await BudgetDatabase.GetBalancesForAccount(BankAccount.AccountID);
             var vms = new List<BalanceViewModel>();
-            foreach (var item in tempBalances)
+            foreach (var item in balances)
             {
                 vms.Add(new BalanceViewModel(item));
             }
@@ -157,6 +154,7 @@ namespace BudgetAppCross.Core.ViewModels
         {
             var newBalance = new Balance()
             {
+                AccountID = BankAccount.AccountID,
                 BankAccount = BankAccount
             };
             await navigationService.Navigate<NewBalanceViewModel, Balance, bool>(newBalance);

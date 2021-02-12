@@ -4,6 +4,7 @@ using BudgetAppCross.Core.Services;
 using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
 using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
@@ -276,8 +277,8 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-        public ICommand SaveCommand { get; }
-        public ICommand CancelCommand { get; }
+        public IMvxCommand SaveCommand { get; }
+        public IMvxCommand CancelCommand { get; }
         #endregion
 
         #region Constructors
@@ -288,8 +289,8 @@ namespace BudgetAppCross.Core.ViewModels
             LoadAccountOptions();
             
 
-            SaveCommand = new Command(async () => await OnSave());
-            CancelCommand = new Command(async () => await OnCancel());
+            SaveCommand = new MvxAsyncCommand(async () => await OnSave());
+            CancelCommand = new MvxAsyncCommand(async () => await OnCancel());
 
             //MultiBillOptions = new ObservableCollection<MultipleBillOptions>()
             //{
@@ -459,11 +460,10 @@ namespace BudgetAppCross.Core.ViewModels
         #region Methods
         private async Task OnSave()
         {
-            
-
-            var accts = await DataManager.GetBankAccounts();
-            var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).Single();
+            //var accts = await DataManager.GetBankAccounts();
+            //var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).Single();
             //var acct = SelectedAccount;
+            var acctId = await DataManager.GetBankAccountID(SelectedAccount);
             var payee = IsNewPayee ? NewPayee : SelectedPayee;
 
             if (string.IsNullOrWhiteSpace(payee))
@@ -479,7 +479,8 @@ namespace BudgetAppCross.Core.ViewModels
                 foreach (var item in NewBills)
                 {
                     var bill = new Bill(payee, Amount, item.Date);
-                    bill.BankAccount = acct;
+                    bill.AccountID = acctId;
+                    //bill.BankAccount = acct;
                     tempBills.Add(bill);
                 }
 
@@ -489,7 +490,8 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 var newBill = new Bill(payee, Amount, StartDate)
                 {
-                    BankAccount = acct,
+                    AccountID = acctId,
+                    //BankAccount = acct,
                     IsPaid = IsPaid
                 };
                 await DataManager.SaveBill(newBill);

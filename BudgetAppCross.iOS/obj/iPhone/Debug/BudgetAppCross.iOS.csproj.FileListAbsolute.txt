@@ -240,3 +240,15 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\D
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\BudgetAppCross.iOS.pdb.DebugSymbolsProjectOutputGroupOutput.stamp
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\Entitlements.plist.NoneOutput.stamp
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\Info.plist.NoneOutput.stamp
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.DataAccess.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.StateManagers.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.DataAccess.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.StateManagers.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\BudgetAppCross.DataAccess.dll.ReferenceCopyLocalPaths.stamp
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\BudgetAppCross.StateManagers.dll.ReferenceCopyLocalPaths.stamp
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\BudgetAppCross.DataAccess.pdb.ReferenceCopyLocalPaths.stamp
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\BudgetAppCross.StateManagers.pdb.ReferenceCopyLocalPaths.stamp
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.SQLiteDataAccess.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhone\Debug\BudgetAppCross.SQLiteDataAccess.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\BudgetAppCross.SQLiteDataAccess.dll.ReferenceCopyLocalPaths.stamp
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\CopyFilesToMac\BudgetAppCross.SQLiteDataAccess.pdb.ReferenceCopyLocalPaths.stamp

@@ -187,6 +187,7 @@ namespace BudgetAppCross.Core.ViewModels
         private Task LoadAccountOptions()
         {
             AccountOptions = new ObservableCollection<string>(BudgetDatabase.BankAccountNicknames);
+            
             SelectedAccount = AccountOptions.Where(x => x.Equals(Bill.BankAccount.Nickname)).Single();
             return Task.CompletedTask;
         }

@@ -51,6 +51,7 @@ namespace BudgetAppCross.Core.Services
         #region Properties
         public List<string> BankAccountNicknames { get; set; } = new List<string>();
         public List<string> PayeeNames { get; set; } = new List<string>();
+        //public Dictionary<int, string> BankAccountDict { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         #endregion
 
         #region Init
@@ -87,6 +88,12 @@ namespace BudgetAppCross.Core.Services
             ////    initialized = true;
             ////}
             //}
+        }
+
+        public async Task CreateDefaultAccount()
+        {
+            var defaultAccount = new BankAccount(0, "Undecided");
+            await SaveBankAccount(defaultAccount);
         }
 
         //public async Task Reinitialize()
@@ -307,12 +314,14 @@ namespace BudgetAppCross.Core.Services
             //}
         }
 
-        public async Task DeleteBalance(Balance balance)
+        public async Task<int> DeleteBalance(Balance balance)
         {
+            var deleted = 0;
             await Task.Run(() =>
             {
                 Database.Delete(balance);
             });
+            return deleted;
         }
         #endregion
 
@@ -518,6 +527,23 @@ namespace BudgetAppCross.Core.Services
 
             return count;
         }
+
+
+        public async Task<List<Bill>> GetUnpaidAndFutureBills(DateTime start, DateTime end)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<Balance>> GetBalancesForAccount(int acctId)
+        {
+
+            //var tempBalances = temp.Where(x => x.AccountID == BankAccount.AccountID)
+            //    .OrderBy(x => x.Timestamp).ToList();
+
+            throw new NotImplementedException();
+        }
+
+
         #endregion
 
     }

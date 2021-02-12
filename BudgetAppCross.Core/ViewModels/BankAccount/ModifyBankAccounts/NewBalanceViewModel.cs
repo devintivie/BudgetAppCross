@@ -2,6 +2,7 @@
 using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
 using MvvmCross;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
@@ -11,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
+//using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
@@ -51,8 +52,8 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-        public ICommand SaveCommand { get; }
-        public ICommand CancelCommand { get; }
+        public IMvxCommand SaveCommand { get; }
+        public IMvxCommand CancelCommand { get; }
         #endregion
 
         #region Constructors
@@ -60,8 +61,8 @@ namespace BudgetAppCross.Core.ViewModels
         {
             navigationService = nav;
 
-            SaveCommand = new Command(async () => await OnSave());
-            CancelCommand = new Command(async () => await OnCancel());
+            SaveCommand = new MvxAsyncCommand(async () => await OnSave());
+            CancelCommand = new MvxAsyncCommand(async () => await OnCancel());
         }
 
         public override void Prepare(Balance parameter)

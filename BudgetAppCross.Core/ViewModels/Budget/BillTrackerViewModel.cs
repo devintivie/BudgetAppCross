@@ -90,7 +90,7 @@ namespace BudgetAppCross.Core.ViewModels
         public override void ViewAppeared()
         {
             base.ViewAppeared();
-            UpdateBills();
+            var _ = UpdateBills();
         }
 
         

@@ -105,9 +105,8 @@ namespace BudgetAppCross.Core.ViewModels
 
             StateManager.DatabaseFilename = BudgetFilename;
             await BudgetDatabase.Initialize();
+            await BudgetDatabase.CreateDefaultAccount();
 
-            var defaultAccount = new BankAccount(0, "Undecided");
-            await BudgetDatabase.SaveBankAccount(defaultAccount);
             if (IsAddingBankAccount)
             {
                 if (string.IsNullOrWhiteSpace(FirstBankAccountName))
@@ -126,6 +125,7 @@ namespace BudgetAppCross.Core.ViewModels
                 await BudgetDatabase.SaveBankAccount(ba);
                 await StateManager.SaveState();
             }
+
             if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
             {
                 masterDetailPage.IsGestureEnabled = true;
