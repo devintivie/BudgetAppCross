@@ -124,6 +124,7 @@ namespace BudgetAppCross.Core.ViewModels
             File.WriteAllText(filename, "Write this text into a file");
 
             StateManager.DatabaseFilename = BudgetFilename;
+<<<<<<< HEAD
 
 
             await BudgetDatabase.Initialize();
@@ -154,6 +155,35 @@ namespace BudgetAppCross.Core.ViewModels
 
             await navigationService.Navigate<SelectBudgetViewModel>();
             //await navigationService.Navigate<DateRangeViewModel>();
+=======
+            await BudgetDatabase.Initialize();
+            await BudgetDatabase.CreateDefaultAccount();
+
+            if (IsAddingBankAccount)
+            {
+                if (string.IsNullOrWhiteSpace(FirstBankAccountName))
+                {
+                    var config = new AlertConfig().SetMessage("Invalid Account Name");//.SetOkText(ConfirmConfig.DefaultOkText);
+                    Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
+                    return;
+                }
+                var bal = new Balance(InitialBalance, InitialBalanceDate);
+                var ba = new BankAccount()
+                {
+                    Nickname = FirstBankAccountName,
+                    History = new List<Balance> { bal }
+                };
+
+                await BudgetDatabase.SaveBankAccount(ba);
+                await StateManager.SaveState();
+            }
+
+            if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
+            {
+                masterDetailPage.IsGestureEnabled = true;
+            }
+            await navigationService.Navigate<DateRangeViewModel>();
+>>>>>>> feature/ModifySQLite
         }
 
         private async Task OnCancel()

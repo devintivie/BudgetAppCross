@@ -34,6 +34,7 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCore.Sqlite\obj\Debug\netsta
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.csproj.CopyComplete
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.pdb
+<<<<<<< HEAD
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\bin\Debug\netstandard2.0\BudgetAppCross.Models.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.AssemblyInfoInputs.cache
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.AssemblyInfo.cs
@@ -42,6 +43,16 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\bin\Debug\
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\bin\Debug\netstandard2.0\BudgetAppCore.Sqlite.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\bin\Debug\netstandard2.0\BudgetAppCross.Models.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.csprojAssemblyReference.cache
+=======
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\bin\Debug\netstandard2.0\BudgetAppCore.Sqlite.deps.json
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\bin\Debug\netstandard2.0\BudgetAppCore.Sqlite.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\bin\Debug\netstandard2.0\BudgetAppCore.Sqlite.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\bin\Debug\netstandard2.0\BudgetAppCross.Models.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\bin\Debug\netstandard2.0\BudgetAppCross.Models.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.csprojAssemblyReference.cache
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.AssemblyInfoInputs.cache
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.AssemblyInfo.cs
+>>>>>>> feature/ModifySQLite
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.csproj.CoreCompileInputs.cache
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.csproj.CopyComplete
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCore.Sqlite\obj\Debug\netstandard2.0\BudgetAppCore.Sqlite.dll

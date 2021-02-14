@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "d8AwUKNCPTGaeuhPL+05JYm2JfmllZH6HNscmxEMm9fGguBORI5B3vSvK7vZ/1wxCPfoz4DczBEoT/jKQkhFeg==",
+=======
+  "dgSpecHash": "+BsUqHf981VXe8WYBsJPt0oon4eXzOmE3ZK9hvpDkUxOHxnadhBA8J5BGhJSvNHYHtmxV4OPc40qk9AcgA6bWw==",
+>>>>>>> feature/ModifySQLite
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BaseClasses\\BaseClasses.csproj",
   "expectedPackageFiles": [

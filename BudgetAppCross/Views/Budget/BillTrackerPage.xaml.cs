@@ -19,6 +19,12 @@ namespace BudgetAppCross.Views
             InitializeComponent();
         }
 
+        private void BTItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            //var payee = (string)e.Item.GetType().GetProperty("Payee").GetValue(e.Item);
+            ViewModel.ShowBill();
+        }
+
         //private void BTItemTapped(object sender, ItemTappedEventArgs e)
         //{
         //    var id = e.Item.GetType().GetProperty("ID").GetValue(e.Item);

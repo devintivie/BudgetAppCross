@@ -90,7 +90,7 @@ namespace BudgetAppCross.Core.ViewModels
         public override void ViewAppeared()
         {
             base.ViewAppeared();
-            UpdateBills();
+            var _ = UpdateBills();
         }
 
         
@@ -105,8 +105,6 @@ namespace BudgetAppCross.Core.ViewModels
 
         public override void ViewDestroy(bool viewFinishing = true)
         {
-            //SaveBills();
-
             Messenger.Unregister(this);
             base.ViewDestroy(viewFinishing);
         }
@@ -140,13 +138,14 @@ namespace BudgetAppCross.Core.ViewModels
 
         }
 
-        private async Task SaveBills()
-        {
-            foreach (var bill in Bills)
-            {
-                await BudgetDatabase.SaveBill(bill.Bill);
-            }
-        }
+        //private async Task SaveBills()
+        //{
+        //    //foreach (var bill in Bills)
+        //    //{
+        //    //    await BudgetDatabase.SaveBill(bill.Bill);
+        //    //}
+        //    await BudgetDatabase.InsertBills(Bills);
+        //}
 
         private void RefreshCanExecutes()
         {
@@ -182,6 +181,11 @@ namespace BudgetAppCross.Core.ViewModels
                 await navigationService.Close(this);
             }
             
+        }
+
+        public Task ShowBill()
+        {
+            return navigationService.Navigate<BillDetailsViewModel, Bill>(SelectedBill.Bill);
         }
 
         //public Task ShowBill(int id)

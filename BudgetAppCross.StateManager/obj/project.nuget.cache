@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "w8/Kxn5za+0OUob9CDAX1lhpk1oFIIi1n6GwpvZvqvIZg0n20+uFzj5mN0GKQNySj091YuROwqae4L5NiAml+A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.StateManager\\BudgetAppCross.StateManagers.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\devin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

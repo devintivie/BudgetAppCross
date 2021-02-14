@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "/7C1cmwZ2sp+tgzKO4/YoW6jmtlB7hxFaJq+IyidcFlDjcq2/qLbw3i6VJykgZj9MwYKiOUG8G6UpW3HQmEjTw==",
+=======
+  "dgSpecHash": "To9gn90s4Am0bzBl8VogGJv87mR0VX6wUo2IrIlD7niGGX6vngRJ8VkMvnpokQXy7hEIppgVxiKkg0bmaFl/Zw==",
+>>>>>>> feature/ModifySQLite
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Core\\InAppPurchasing.Core.csproj",
   "expectedPackageFiles": [

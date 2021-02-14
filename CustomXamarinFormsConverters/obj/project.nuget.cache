@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "68GAFBk5eYnRjtfLF4jG2IjV1fIsM37d1fi1tq39A1pe/O+8B0dPdEB9dgxoKtU3uz951FM68ubomtdztlVjag==",
+=======
+  "dgSpecHash": "4E3yLW2CEkHTZmFCjW3UCYMpr/PHKuDWHKPrU2be3IkkZxjqpck4cfAo+DuQocD+Aq1x/gKoERIUHOsZ7Oes2Q==",
+>>>>>>> feature/ModifySQLite
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\CustomXamarinFormsConverters\\CustomXamarinFormsConverters.csproj",
   "expectedPackageFiles": [

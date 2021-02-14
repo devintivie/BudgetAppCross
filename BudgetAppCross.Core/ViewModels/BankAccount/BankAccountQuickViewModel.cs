@@ -55,14 +55,16 @@ namespace BudgetAppCross.Core.ViewModels
         {
             navigationService = navService;
             BankAccount = account;
-            GetLatestBalance();
+            var _ = GetLatestBalance();
+            Messenger.Register<ChangeBalanceMessage>(this, async x => await OnChangeBalanceMessage());
             EditThisCommand = new Command(async () => await navigationService.Navigate<EditBankAccountViewModel, BankAccount>(BankAccount));
             DeleteThisCommand = new Command(async () => await OnDeleteThis());
+
         }
         #endregion
 
         #region Methods
-        private async void GetLatestBalance()
+        private async Task GetLatestBalance()
         {
             var temp = await BudgetDatabase.GetLatestBalance(BankAccount.AccountId, DateTime.Today);
             //var temp = 0.0;
@@ -80,6 +82,11 @@ namespace BudgetAppCross.Core.ViewModels
         {
             await BudgetDatabase.DeleteBankAccount(BankAccount);
             Messenger.Send(new ChangeBalanceMessage());
+        }
+
+        private async Task OnChangeBalanceMessage()
+        {
+            await GetLatestBalance();
         }
         #endregion
 

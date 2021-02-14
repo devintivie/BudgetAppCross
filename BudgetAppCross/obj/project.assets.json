@@ -510,12 +510,21 @@
           "BudgetAppCore.Sqlite": "1.0.0",
           "BudgetAppCross.DataAccess": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+<<<<<<< HEAD
           "BudgetAppCross.SqliteDataAccess": "1.0.0",
           "BudgetAppCross.StateManagers": "1.0.0",
           "InAppPurchasing.Core": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
           "Newtonsoft.Json": "12.0.3",
           "System.Data.SQLite.Core": "1.0.113.7"
+=======
+          "BudgetAppCross.SQLiteDataAccess": "1.0.0",
+          "BudgetAppCross.StateManagers": "1.0.0",
+          "InAppPurchasing.Core": "1.0.0",
+          "MvvmCross.Forms": "6.4.2",
+          "sqlite": "3.13.0",
+          "sqlite-net-pcl": "1.7.335"
+>>>>>>> feature/ModifySQLite
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.Core.dll": {}
@@ -528,8 +537,12 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+<<<<<<< HEAD
           "BudgetAppCross.Models": "1.0.0",
           "System.Data.SQLite.Core": "1.0.113.7"
+=======
+          "BudgetAppCross.Models": "1.0.0"
+>>>>>>> feature/ModifySQLite
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.DataAccess.dll": {}
@@ -552,11 +565,16 @@
           "bin/placeholder/BudgetAppCross.Models.dll": {}
         }
       },
+<<<<<<< HEAD
       "BudgetAppCross.SqliteDataAccess/1.0.0": {
+=======
+      "BudgetAppCross.SQLiteDataAccess/1.0.0": {
+>>>>>>> feature/ModifySQLite
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "BudgetAppCross.DataAccess": "1.0.0",
+<<<<<<< HEAD
           "BudgetAppCross.StateManagers": "1.0.0",
           "Dapper": "2.0.78",
           "SQLiteHelpers": "1.0.0",
@@ -567,6 +585,17 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.SqliteDataAccess.dll": {}
+=======
+          "BudgetAppCross.Models": "1.0.0",
+          "BudgetAppCross.StateManagers": "1.0.0",
+          "sqlite-net-pcl": "1.7.335"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.SQLiteDataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.SQLiteDataAccess.dll": {}
+>>>>>>> feature/ModifySQLite
         }
       },
       "BudgetAppCross.StateManagers/1.0.0": {
@@ -2952,6 +2981,7 @@
       "path": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj",
       "msbuildProject": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj"
     },
+<<<<<<< HEAD
     "BudgetAppCross.SqliteDataAccess/1.0.0": {
       "type": "project",
       "path": "../BudgetAppCross.SqliteDataAccess/BudgetAppCross.SqliteDataAccess.csproj",
@@ -2961,6 +2991,17 @@
       "type": "project",
       "path": "../BudgetAppCross.StateManagers/BudgetAppCross.StateManagers.csproj",
       "msbuildProject": "../BudgetAppCross.StateManagers/BudgetAppCross.StateManagers.csproj"
+=======
+    "BudgetAppCross.SQLiteDataAccess/1.0.0": {
+      "type": "project",
+      "path": "../BudgetAppCross.SQLiteDataAccess/BudgetAppCross.SQLiteDataAccess.csproj",
+      "msbuildProject": "../BudgetAppCross.SQLiteDataAccess/BudgetAppCross.SQLiteDataAccess.csproj"
+    },
+    "BudgetAppCross.StateManagers/1.0.0": {
+      "type": "project",
+      "path": "../BudgetAppCross.StateManager/BudgetAppCross.StateManagers.csproj",
+      "msbuildProject": "../BudgetAppCross.StateManager/BudgetAppCross.StateManagers.csproj"
+>>>>>>> feature/ModifySQLite
     },
     "CustomXamarinControls/1.0.0": {
       "type": "project",
@@ -3119,7 +3160,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

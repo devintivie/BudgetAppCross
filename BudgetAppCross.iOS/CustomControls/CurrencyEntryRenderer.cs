@@ -2,6 +2,7 @@
 using BudgetAppCross.Views;
 using Foundation;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using UIKit;
@@ -54,7 +55,7 @@ namespace BudgetAppCross.iOS.CustomControls
                     Control.Placeholder = $"$0.00";
                 }
                 Control.KeyboardType = UIKeyboardType.DecimalPad;
-                
+                //Debug.WriteLine(Control.KeyboardType);
                 AddDoneButton();
                 
                 Control.ClearButtonMode = UITextFieldViewMode.WhileEditing;

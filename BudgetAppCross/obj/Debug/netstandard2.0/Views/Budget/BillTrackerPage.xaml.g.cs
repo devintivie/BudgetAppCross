@@ -14,7 +14,7 @@ namespace BudgetAppCross.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\Budget\\BillTrackerPage.xaml")]
-    public partial class BillTrackerPage : global::MvvmCross.Forms.Views.MvxContentPage {
+    public partial class BillTrackerPage : global::MvvmCross.Forms.Views.MvxContentPage<global::BudgetAppCross.Core.ViewModels.BillTrackerViewModel> {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {

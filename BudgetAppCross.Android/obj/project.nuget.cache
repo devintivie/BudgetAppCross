@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "qNojX0Bu+76eQ4SDLdH2nJ+2ZnIq1+CVo16zThMSOe0Tz2FZsxa/7wPo5XGQCC5AG5aGS4KYjcpWy1vGUAHIRA==",
+=======
+  "dgSpecHash": "uWdRG2QLSkz1VBOwi8go3+4PANkNPDJTBz6K9NwImNJx09ZQaexzT/dNf5yf16iT3BsaKp7Bt/Vg6gaaKTgIig==",
+>>>>>>> feature/ModifySQLite
   "success": false,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Android\\BudgetAppCross.Android.csproj",
   "expectedPackageFiles": [
@@ -101,6 +105,7 @@
   ],
   "logs": [
     {
+<<<<<<< HEAD
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
@@ -111,6 +116,8 @@
       ]
     },
     {
+=======
+>>>>>>> feature/ModifySQLite
       "code": "NU1201",
       "level": "Error",
       "message": "Project CustomXamarinControls.Droid is not compatible with monoandroid90 (MonoAndroid,Version=v9.0). Project CustomXamarinControls.Droid supports: monoandroid10.0 (MonoAndroid,Version=v10.0)",

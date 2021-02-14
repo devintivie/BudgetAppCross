@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using BudgetAppCross.Models;
 using System;
 using System.Collections.Generic;
@@ -28,5 +29,15 @@ namespace BudgetAppCross.DataAccess
         Task<int> UpdateBalanceAsync(Balance balance);
         #endregion
 
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace BudgetAppCross.DataAccess
+{
+    public interface IBalanceRepo
+    {
+>>>>>>> feature/ModifySQLite
     }
 }

@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "tBnMz+ZJ+bzvE7rmio8MKjxCW8G9E2Z5bv4ie2Io62eK8m63pcqimFcclbrr/JJaetmKPxYOxnzQ6MqDIVYPKw==",
+=======
+  "dgSpecHash": "EooutpvRjanozow5MtBlPoFXgDN8QmvEZgDnjbuld2orKxC2n0TvQHzYQ10FIByWorXJfxZiw6OpRQK5o425bg==",
+>>>>>>> feature/ModifySQLite
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\CustomXamarinFormsBehaviors\\CustomXamarinFormsBehaviors.csproj",
   "expectedPackageFiles": [

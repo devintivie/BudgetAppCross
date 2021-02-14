@@ -24,7 +24,11 @@ androidgeneratejnimarshalmethods=false
 os=windows_nt
 androidincludedebugsymbols=true
 androidpackagenamingpolicy=lowercasecrc64
+<<<<<<< HEAD
 _nugetassetstimestamp=637470082253543039
+=======
+_nugetassetstimestamp=637471323848935378
+>>>>>>> feature/ModifySQLite
 typemapkind=strings-asm
 androidsupportedabis=armeabi-v7a
 arm64-v8a

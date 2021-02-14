@@ -8,7 +8,11 @@
              mc:Ignorable="d"
              Title="{Binding CompanyName}"
                       BackgroundColor="{StaticResource PrimaryBackground}"
-             x:Class="BudgetAppCross.Views.BillTrackerPage">
+             x:Class="BudgetAppCross.Views.BillTrackerPage"
+             
+             xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
+             x:TypeArguments="vms:BillTrackerViewModel"         
+                      >
 
     <!--xmlns:controls="clr-namespace:BudgetAppCross.Views"-->
              <!--xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"-->
@@ -47,6 +51,7 @@
             </Grid>
                 <ListView ItemsSource="{Binding Bills}"
                           HasUnevenRows="True"
+                          ItemTapped="BTItemTapped"
                           SelectedItem="{Binding SelectedBill}">
                 <!-- 
                           ItemTapped="ItemTapped" -->

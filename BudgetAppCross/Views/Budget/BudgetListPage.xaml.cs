@@ -20,11 +20,6 @@ namespace BudgetAppCross.Views
             InitializeComponent();
             
         }
-        //private void BTItemSelected(object sender, SelectedItemChangedEventArgs e)
-        //{
-        //    //ViewModel.ShowBillTracker(e.SelectedItem as BillTracker);
-        //    //BudgetCompanyList.SelectedItem = null;
-        //}
 
         private void BTItemTapped(object sender, ItemTappedEventArgs e)
         {

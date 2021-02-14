@@ -53,10 +53,13 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+<<<<<<< HEAD
             },
             "System.Data.SQLite.Core": {
               "target": "Package",
               "version": "[1.0.113.7, )"
+=======
+>>>>>>> feature/ModifySQLite
             }
           },
           "imports": [
@@ -69,7 +72,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+>>>>>>> feature/ModifySQLite
         }
       }
     },
@@ -126,6 +133,17 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
+<<<<<<< HEAD
+=======
+            },
+            "SQLiteNetExtensions": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.7.335, )"
+>>>>>>> feature/ModifySQLite
             }
           },
           "imports": [
@@ -138,7 +156,11 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+>>>>>>> feature/ModifySQLite
         }
       }
     }

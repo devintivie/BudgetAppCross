@@ -142,7 +142,7 @@ namespace BudgetAppCross.Core.ViewModels
             StateManager.SaveState();
             await BudgetDatabase.Initialize();
             await BudgetDatabase.GetBankAccounts();
-            await navigationService.Navigate<BudgetListViewModel>();
+            await navigationService.Navigate<AgendaViewModel>();
             Messenger.Send(new UpdateMenuMessage());
 
         }

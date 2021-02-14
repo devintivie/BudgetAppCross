@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿using BudgetAppCross.Models;
 using System;
 using System.Collections.Generic;
@@ -26,5 +27,15 @@ namespace BudgetAppCross.DataAccess
         Task<int> DeleteAccountAsync(int accountId);
         Task<int> UpdateAccountAsync(BankAccount acct);
         #endregion
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace BudgetAppCross.DataAccess
+{
+    public interface IAccountRepo
+    {
+>>>>>>> feature/ModifySQLite
     }
 }

@@ -34,7 +34,8 @@ namespace BudgetAppCross.Core.ViewModels
                     Bill.Date = value;
                     RaisePropertyChanged();
                     RaisePropertyChanged(nameof(BillStatus));
-                    //var _ = UpdateAndSave();
+
+                    var _ = UpdateAndSave();
                 }
             }
         }
@@ -48,6 +49,7 @@ namespace BudgetAppCross.Core.ViewModels
                 {
                     Bill.Amount = value;
                     RaisePropertyChanged();
+
                     var _ = UpdateAndSave();
                 }
             }
@@ -78,6 +80,7 @@ namespace BudgetAppCross.Core.ViewModels
                     Bill.IsPaid = value;
                     RaisePropertyChanged();
                     RaisePropertyChanged(nameof(BillStatus));
+
                     var _ = UpdateAndSave();
                 }
             }
@@ -92,9 +95,9 @@ namespace BudgetAppCross.Core.ViewModels
                 {
                     Bill.IsAuto = value;
                     RaisePropertyChanged();
+                    RaisePropertyChanged(nameof(BillStatus));
 
                     var _ = UpdateAndSave();
-                    RaisePropertyChanged(nameof(BillStatus));
                 }
             }
         }

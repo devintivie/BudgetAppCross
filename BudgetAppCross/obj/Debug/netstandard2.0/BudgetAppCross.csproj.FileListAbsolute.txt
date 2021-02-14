@@ -178,6 +178,7 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\BillDetailsPage.xaml.g.cs
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\BillQuickView.xaml.g.cs
+<<<<<<< HEAD
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.deps.json
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\ref\BudgetAppCross.dll
@@ -206,6 +207,8 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netsta
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\InAppPurchasing.Core.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\SQLiteHelpers.pdb
+=======
+>>>>>>> feature/ModifySQLite
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.csprojAssemblyReference.cache
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
@@ -249,8 +252,40 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\obj\Debug\netsta
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.AssemblyInfoInputs.cache
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.AssemblyInfo.cs
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.csproj.CoreCompileInputs.cache
+<<<<<<< HEAD
+=======
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.deps.json
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\ref\BudgetAppCross.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BaseClasses.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCore.Sqlite.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.Core.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.Models.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\CustomXamarinControls.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\CustomXamarinFormsBehaviors.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\CustomXamarinFormsConverters.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\InAppPurchasing.Core.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\CustomXamarinControls.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BaseClasses.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.Core.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.Models.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\CustomXamarinFormsBehaviors.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\CustomXamarinFormsConverters.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCore.Sqlite.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\InAppPurchasing.Core.pdb
+>>>>>>> feature/ModifySQLite
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.csproj.CopyComplete
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\obj\Debug\netstandard2.0\ref\BudgetAppCross.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\obj\Debug\netstandard2.0\BudgetAppCross.pdb
+<<<<<<< HEAD
+=======
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.DataAccess.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.SQLiteDataAccess.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.DataAccess.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.SQLiteDataAccess.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.pdb
+>>>>>>> feature/ModifySQLite
