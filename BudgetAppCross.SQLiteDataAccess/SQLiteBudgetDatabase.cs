@@ -25,7 +25,6 @@ namespace BudgetAppCross.SQLiteDataAccess
         public IAccountRepo AccountAccess { get; private set; }
         public IBillRepo BillRepo { get; private set; }
         public IBalanceRepo BalanceAccess { get; private set; }
-        //public Dictionary<int, string> BankAccountDict { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         #endregion
 
         #region Constructors
@@ -93,145 +92,53 @@ namespace BudgetAppCross.SQLiteDataAccess
             }
 
         }
-        #endregion
 
-        #region Balance
-        public async Task<List<Balance>> GetBalancesForAccount(int acctId)
+        public async Task<int> DeleteBankAccount(BankAccount acct)
         {
-            var balances = new List<Balance>();
+            var deleted = 0;
             await Task.Run(() =>
             {
                 try
                 {
                     using (var conn = new ShortConnection(connectionString))
                     {
-                        var query = $@"SELECT * FROM Balance 
-                                    WHERE AccountId = @AccountId";
+                        deleted = conn.Delete(acct);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            });
+
+            return deleted;
+        }
+
+        public async Task<BankAccount> GetBankAccount(int id)
+        {
+
+            BankAccount ba = await Task.Run(() =>
+            {
+                try
+                {
+                    using (var conn = new ShortConnection(connectionString))
+                    {
+                        var query = $@"SELECT * FROM BankAccount 
+                                    WHERE AccountID = @AccountId";
                         var cmd = conn.CreateCommand(query);
-                        cmd.Bind("@AccountId", acctId);
-                        balances = cmd.ExecuteQuery<Balance>();
+                        cmd.Bind("@AccountId", id);
+                        return cmd.ExecuteQuery<BankAccount>().Single();
                     }
                 }
                 catch (Exception ex)
                 {
                     Debug.WriteLine(ex.Message);
+                    return null;
                 }
             });
 
-            foreach (var item in balances)
-            {
-                item.AccountID = acctId;
-            }
-            //balances = await AttachAccounts(balances);
-            return balances;
-        }
-        #endregion
+            return ba;
 
-        #region Bill
-        public async Task UpdatePayeeNames()
-        {
-            //var distinctPayees = new List<string>();
-            //var distinctBills = new List<Bill>();
-            try
-            {
-                PayeeNames = await GetBillPayees();
-                //var tmp = distinctBills.Select(x => x.Payee);
-                //PayeeNames = tmp.ToList();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
-
-        }
-        #endregion
-
-        public Task<int> ChangePayeeName(string oldName, string newName)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<int> DeleteBalance(Balance balance)
-        {
-            var deleted = 0;
-            await Task.Run(() =>
-            {
-                try
-                {
-                    using (var conn = new ShortConnection(connectionString))
-                    {
-                        deleted = conn.Delete(balance);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
-            });
-
-            return deleted;
-        }
-
-        public Task DeleteBankAccount(BankAccount acct)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<int> DeleteBill(Bill bill)
-        {
-            var deleted = 0;
-            await Task.Run(() =>
-            {
-                try
-                {
-                    using (var conn = new ShortConnection(connectionString))
-                    {
-                        deleted = conn.Delete(bill);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
-            });
-
-            return deleted;
-        }
-
-        public Task<int> DeleteBillsForPayee(string payee)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Balance> GetBalance(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<List<Balance>> GetBalances()
-        {
-            var balances = new List<Balance>();
-            await Task.Run(() =>
-            {
-                try
-                {
-                    using (var conn = new ShortConnection(connectionString))
-                    {
-                        balances = conn.Query<Balance>(@"SELECT * FROM Balance");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
-            });
-
-            return balances;
-        }
-
-        public Task<BankAccount> GetBankAccount(int id)
-        {
-            throw new NotImplementedException();
         }
 
         public async Task<int> GetBankAccountID(string name)
@@ -259,164 +166,6 @@ namespace BudgetAppCross.SQLiteDataAccess
 
             return accts.FirstOrDefault().AccountID;
             //return acctId;
-        }
-
-        
-
-        public Task<Bill> GetBill(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<List<string>> GetBillPayees()
-        {
-            var distinctPayees = new List<string>();
-            var distinctBills = new List<Bill>();
-            await Task.Run(() =>
-            {
-                try
-                {
-                    using (var conn = new ShortConnection(connectionString))
-                    {
-                        distinctBills = conn.Query<Bill>(@"SELECT DISTINCT Payee FROM Bill ORDER BY Payee");
-                    }
-
-                    var tmp = distinctBills.Select(x => x.Payee);
-                    distinctPayees = tmp.ToList();
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
-            });
-
-            return distinctPayees;
-        }
-
-        public Task<List<Bill>> GetBills()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<List<Bill>> GetBillsDateRangeForAccount(DateTime start, DateTime end, string selectedAccount)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<List<Bill>> GetBillsForPayee(string payee)
-        {
-            var bills = new List<Bill>();
-            await Task.Run(() =>
-            {
-                try
-                {
-                    using (var conn = new ShortConnection(connectionString))
-                    {
-                        var query = $@"SELECT * FROM Bill 
-                                    WHERE Payee = @Payee" ;
-                        var cmd = conn.CreateCommand(query);
-                        cmd.Bind("@Payee", payee);
-                        bills = cmd.ExecuteQuery<Bill>();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
-            });
-
-            bills = await AttachAccounts(bills);
-            return bills;
-        }
-
-        public Task<Balance> GetLatestBalance(int id, DateTime date)
-        {
-            //var acctId = 0;
-            var bals = new List<Balance>();
-            //await Task.Run(() =>
-            //{
-                try
-                {
-                    using (var conn = new ShortConnection(connectionString))
-                    {
-                        var query = $@"SELECT * FROM Balance 
-                                      WHERE AccountID = @AccountID
-                                        ORDER BY Timestamp DESC LIMIT 1";// Nickname = @Nickname";
-                        var cmd = conn.CreateCommand(query);
-                    cmd.Bind("@AccountID", id);
-                    bals = cmd.ExecuteQuery<Balance>();
-                        //bals = conn.Query<Balance>(query); // = cmd.ExecuteQuery<BankAccount>();
-                        //distinctBills = conn.Query<Bill>(@"SELECT DISTINCT Payee FROM Bill ORDER BY Payee");
-                    }
-                    //(substr(Timestamp, 7, 4) || substr(Timestamp, 4, 2) || substr(Timestamp, 1, 2))
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
-            //});
-
-            return Task.FromResult(bals.Single());
-            //return acctId;
-        }
-
-        public Task<Balance> GetLatestBalance(string name, DateTime date)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        public async Task SaveBalance(Balance balance)
-        {
-            if (balance.ID != 0)
-            {
-                await UpdateBalance(balance);
-            }
-            else
-            {
-                await InsertBalance(balance);
-            }
-        }
-
-        public async Task<int> InsertBalance(Balance balance)
-        {
-            var added = 0;
-            await Task.Run(() =>
-            {
-                try
-                {
-                    using (var conn = new ShortConnection(connectionString))
-                    {
-                        added = conn.Insert(balance);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
-            });
-            return added;
-        }
-
-        public async Task<int> UpdateBalance(Balance balance)
-        {
-            var updated = 0;
-            await Task.Run(() =>
-            {
-                try
-                {
-                    using (var conn = new ShortConnection(connectionString))
-                    {
-                        updated = conn.Update(balance);
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine(ex.Message);
-                }
-            });
-
-            return updated;
         }
 
         public async Task SaveBankAccount(BankAccount acct)
@@ -480,6 +229,363 @@ namespace BudgetAppCross.SQLiteDataAccess
 
             return updated;
         }
+        #endregion
+
+        #region Balance
+        public async Task<List<Balance>> GetBalancesForAccount(int acctId)
+        {
+            var balances = new List<Balance>();
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (var conn = new ShortConnection(connectionString))
+                    {
+                        var query = $@"SELECT * FROM Balance 
+                                    WHERE AccountId = @AccountId";
+                        var cmd = conn.CreateCommand(query);
+                        cmd.Bind("@AccountId", acctId);
+                        balances = cmd.ExecuteQuery<Balance>();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            });
+
+            foreach (var item in balances)
+            {
+                item.AccountID = acctId;
+            }
+            //balances = await AttachAccounts(balances);
+            return balances;
+        }
+
+        public async Task<List<Balance>> GetBalances()
+        {
+            var balances = new List<Balance>();
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (var conn = new ShortConnection(connectionString))
+                    {
+                        balances = conn.Query<Balance>(@"SELECT * FROM Balance");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            });
+
+            return balances;
+        }
+
+        public async Task<int> DeleteBalance(Balance balance)
+        {
+            var deleted = 0;
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (var conn = new ShortConnection(connectionString))
+                    {
+                        deleted = conn.Delete(balance);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            });
+
+            return deleted;
+        }
+
+        public Task<Balance> GetLatestBalance(int id, DateTime date)
+        {
+            //var acctId = 0;
+            var bals = new List<Balance>();
+            //await Task.Run(() =>
+            //{
+            try
+            {
+                using (var conn = new ShortConnection(connectionString))
+                {
+                    var query = $@"SELECT * FROM Balance 
+                                      WHERE AccountID = @AccountID
+                                        ORDER BY Timestamp DESC LIMIT 1";// Nickname = @Nickname";
+                    var cmd = conn.CreateCommand(query);
+                    cmd.Bind("@AccountID", id);
+                    bals = cmd.ExecuteQuery<Balance>();
+                    //bals = conn.Query<Balance>(query); // = cmd.ExecuteQuery<BankAccount>();
+                    //distinctBills = conn.Query<Bill>(@"SELECT DISTINCT Payee FROM Bill ORDER BY Payee");
+                }
+                //(substr(Timestamp, 7, 4) || substr(Timestamp, 4, 2) || substr(Timestamp, 1, 2))
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            //});
+
+            return Task.FromResult(bals.Single());
+            //return acctId;
+        }
+
+        public async Task<Balance> GetLatestBalance(string name, DateTime date)
+        {
+            var acctId = await GetBankAccountID(name);
+            return await GetLatestBalance(acctId, date);
+            //GetLatestBalance
+            //throw new NotImplementedException();
+        }
+
+        public async Task SaveBalance(Balance balance)
+        {
+            if (balance.ID != 0)
+            {
+                await UpdateBalance(balance);
+            }
+            else
+            {
+                await InsertBalance(balance);
+            }
+        }
+
+        public async Task<int> InsertBalance(Balance balance)
+        {
+            var added = 0;
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (var conn = new ShortConnection(connectionString))
+                    {
+                        added = conn.Insert(balance);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            });
+            return added;
+        }
+
+        public async Task<int> UpdateBalance(Balance balance)
+        {
+            var updated = 0;
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (var conn = new ShortConnection(connectionString))
+                    {
+                        updated = conn.Update(balance);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            });
+
+            return updated;
+        }
+        #endregion
+
+        #region Bill
+        public async Task UpdatePayeeNames()
+        {
+            try
+            {
+                PayeeNames = await GetBillPayees();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+        }
+
+        public async Task ChangePayeeName(string oldName, string newName)
+        {
+            var bills = await GetBillsForPayee(oldName);
+
+            foreach (var item in bills)
+            {
+                item.Payee = newName;
+            }
+
+            await UpdateBills(bills);
+        }
+
+        public async Task<int> DeleteBill(Bill bill)
+        {
+            var deleted = 0;
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (var conn = new ShortConnection(connectionString))
+                    {
+                        deleted = conn.Delete(bill);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            });
+
+            return deleted;
+        }
+
+        public async Task<int> DeleteBillsForPayee(string payee)
+        {
+            var bills = await GetBillsForPayee(payee);
+            await Task.Run(() =>
+            {
+                using (var conn = new ShortConnection(connectionString))
+                {
+                    foreach (var item in bills)
+                    {
+                        conn.Delete(item);
+                    }
+
+                }
+            });
+            return 0;
+        }
+
+        public async Task<Bill> GetBill(int id)
+        {
+            Bill b = await Task.Run(() =>
+            {
+                try
+                {
+                    using (var conn = new ShortConnection(connectionString))
+                    {
+                        var query = $@"SELECT * FROM Bill 
+                                    WHERE ID = @ID";
+                        var cmd = conn.CreateCommand(query);
+                        cmd.Bind("@ID", id);
+                        return cmd.ExecuteQuery<Bill>().Single();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                    return null;
+                }
+            });
+
+            return b;
+        }
+
+        public async Task<List<string>> GetBillPayees()
+        {
+            var distinctPayees = new List<string>();
+            var distinctBills = new List<Bill>();
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (var conn = new ShortConnection(connectionString))
+                    {
+                        distinctBills = conn.Query<Bill>(@"SELECT DISTINCT Payee FROM Bill ORDER BY Payee");
+                    }
+
+                    var tmp = distinctBills.Select(x => x.Payee);
+                    distinctPayees = tmp.ToList();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            });
+
+            return distinctPayees;
+        }
+
+        public async Task<List<Bill>> GetBills()
+        {
+            var bills = new List<Bill>();
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (var conn = new ShortConnection(connectionString))
+                    {
+                        bills = conn.Query<Bill>(@"SELECT * FROM Bill");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            });
+
+            return bills;
+        }
+
+        public async Task<List<Bill>> GetBillsDateRangeForAccount(DateTime start, DateTime end, string selectedAccount)
+        {
+            var agendaBills = new List<Bill>();
+            var acctId = await GetBankAccountID(selectedAccount);
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (var conn = new ShortConnection(connectionString))
+                    {
+                        var query = $@"SELECT * FROM Bill 
+                                WHERE AccountID = @AccountId 
+                                AND Date BETWEEN @Start AND @End";
+                        var cmd = conn.CreateCommand(query);
+                        cmd.Bind("@AccountId", acctId);
+                        cmd.Bind("@Start", start);
+                        cmd.Bind("@End", end);
+                        agendaBills = cmd.ExecuteQuery<Bill>();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            });
+
+            agendaBills = await AttachAccounts(agendaBills);
+            return agendaBills;
+        }
+
+        public async Task<List<Bill>> GetBillsForPayee(string payee)
+        {
+            var bills = new List<Bill>();
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (var conn = new ShortConnection(connectionString))
+                    {
+                        var query = $@"SELECT * FROM Bill 
+                                    WHERE Payee = @Payee";
+                        var cmd = conn.CreateCommand(query);
+                        cmd.Bind("@Payee", payee);
+                        bills = cmd.ExecuteQuery<Bill>();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            });
+
+            bills = await AttachAccounts(bills);
+            return bills;
+        }
 
         public async Task SaveBill(Bill bill)
         {
@@ -534,11 +640,44 @@ namespace BudgetAppCross.SQLiteDataAccess
             return updated;
         }
 
-
-
-        public Task SaveBills(IEnumerable<Bill> bills)
+        public async Task<int> InsertBills(IEnumerable<Bill> bills)
         {
-            throw new NotImplementedException();
+            var added = 0;
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (var conn = new ShortConnection(connectionString))
+                    {
+                        added = conn.InsertAll(bills);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            });
+            return added;
+        }
+
+        public async Task<int> UpdateBills(IEnumerable<Bill> bills)
+        {
+            var updated = 0;
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (var conn = new ShortConnection(connectionString))
+                    {
+                        updated = conn.UpdateAll(bills);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            });
+            return updated;
         }
         #region Agenda
 
@@ -553,6 +692,7 @@ namespace BudgetAppCross.SQLiteDataAccess
                     {
                         var query = $@"SELECT * FROM Bill 
                                     WHERE IsPaid = @IsPaid 
+                                    AND Date < @Start
                                     OR Date BETWEEN @Start AND @End";
                         var cmd = conn.CreateCommand(query);
                         cmd.Bind("@IsPaid", false);
@@ -569,6 +709,28 @@ namespace BudgetAppCross.SQLiteDataAccess
             agendaBills = await AttachAccounts(agendaBills);
             return agendaBills;
         }
+        #endregion
+
+
+
+        //public Task<Balance> GetBalance(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         #endregion
 
         #region Private Extensions

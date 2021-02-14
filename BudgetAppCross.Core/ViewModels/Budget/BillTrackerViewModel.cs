@@ -138,13 +138,14 @@ namespace BudgetAppCross.Core.ViewModels
 
         }
 
-        private async Task SaveBills()
-        {
-            foreach (var bill in Bills)
-            {
-                await BudgetDatabase.SaveBill(bill.Bill);
-            }
-        }
+        //private async Task SaveBills()
+        //{
+        //    //foreach (var bill in Bills)
+        //    //{
+        //    //    await BudgetDatabase.SaveBill(bill.Bill);
+        //    //}
+        //    await BudgetDatabase.InsertBills(Bills);
+        //}
 
         private void RefreshCanExecutes()
         {

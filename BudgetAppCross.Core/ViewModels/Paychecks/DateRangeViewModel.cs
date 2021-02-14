@@ -1,6 +1,7 @@
 ﻿using Acr.UserDialogs;
 using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.Plugin.Messenger;
 using System;
@@ -10,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
+//using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
@@ -137,9 +138,9 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-        public ICommand AddBillCommand { get; }
+        public IMvxCommand AddBillCommand { get; }
         //public ICommand DeleteBillCommand { get; }
-        public ICommand OnDateSelectedCommand { get; }
+        public IMvxCommand OnDateSelectedCommand { get; }
         #endregion
 
         #region Constructors
@@ -150,8 +151,8 @@ namespace BudgetAppCross.Core.ViewModels
 
             var _accts = LoadAccountOptions();
             
-            AddBillCommand = new Command(async () => await navigationService.Navigate<NewBillsViewModel, string>(string.Empty));
-            OnDateSelectedCommand = new Command(async () => await GetBills());
+            AddBillCommand = new MvxAsyncCommand(async () => await navigationService.Navigate<NewBillsViewModel, string>(string.Empty));
+            OnDateSelectedCommand = new MvxAsyncCommand(async () => await GetBills());
 
             Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage(x.AccountId));
             Messenger.Register<UpdateBillMessage>(this, async x => await OnUpdateBillMessage(x.AccountId));

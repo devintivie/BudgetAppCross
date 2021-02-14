@@ -98,32 +98,32 @@ namespace BudgetAppCross.StateManagers
 
             //await Task.Run(() =>
             //{
-            File.Delete(path);
+            //File.Delete(path);
             var state = new State();
-                try
+            try
+            {
+                var filenames = Directory.GetFiles(basePath);
+                foreach (var item in filenames)
                 {
-                    var filenames = Directory.GetFiles(basePath);
-                    foreach (var item in filenames)
-                    {
-                        Console.WriteLine(item);
-                    }
-                    var str = File.ReadAllText(path);
-                    state = JsonConvert.DeserializeObject<State>(str);
-                    DatabaseFilename = state.DatabaseFilename;
+                    Console.WriteLine(item);
                 }
-                catch (FileNotFoundException e)
+                var str = File.ReadAllText(path);
+                state = JsonConvert.DeserializeObject<State>(str);
+                DatabaseFilename = state.DatabaseFilename;
+            }
+            catch (FileNotFoundException e)
+            {
+                await SaveState();
+                var filenames2 = Directory.GetFiles(basePath);
+                foreach (var item in filenames2)
                 {
-                    await SaveState();
-                    var filenames2 = Directory.GetFiles(basePath);
-                    foreach (var item in filenames2)
-                    {
-                        Console.WriteLine(item);
-                    }
-                    var str = File.ReadAllText(path);
-                    state = JsonConvert.DeserializeObject<State>(str);
+                    Console.WriteLine(item);
+                }
+                var str = File.ReadAllText(path);
+                state = JsonConvert.DeserializeObject<State>(str);
 
-                    DatabaseFilename = state.DatabaseFilename;
-                }
+                DatabaseFilename = state.DatabaseFilename;
+            }
             //});
             return DatabaseFilename;
         }

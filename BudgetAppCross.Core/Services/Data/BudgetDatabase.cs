@@ -211,8 +211,9 @@ namespace BudgetAppCross.Core.Services
             return id;
         }
 
-        public async Task DeleteBankAccount(BankAccount acct)
+        public async Task<int> DeleteBankAccount(BankAccount acct)
         {
+            var deleted = 0;
             var associatedBills = await GetBillsForAccount(acct.AccountID);
             var defaultAcct = await GetBankAccount(1);
             await Task.Run(async () =>
@@ -228,6 +229,8 @@ namespace BudgetAppCross.Core.Services
 
                 Database.Delete(acct);
             });
+
+            return deleted;
         }
 
         //public Task<int> DeleteBillAsync(Bill bill)
@@ -351,12 +354,15 @@ namespace BudgetAppCross.Core.Services
             });
         }
 
-        public async Task SaveBills(IEnumerable<Bill> bills)
+        public async Task<int> InsertBills(IEnumerable<Bill> bills)
         {
+            var added = 0;
             foreach (var item in bills)
             {
                 await SaveBill(item);
             }
+
+            return added;
         }
 
         public async Task<List<Bill>> GetBills()
@@ -482,7 +488,7 @@ namespace BudgetAppCross.Core.Services
             return count;
         }
 
-        public async Task<int> ChangePayeeName(string oldName, string newName)
+        public async Task ChangePayeeName(string oldName, string newName)
         {
             var count = 0;
             var bills = await GetBillsForPayee(oldName);
@@ -494,7 +500,7 @@ namespace BudgetAppCross.Core.Services
                 count++;
             }
 
-            return count;
+            //return count;
         }
 
         public async Task<List<string>> GetBillPayees()

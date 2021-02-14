@@ -484,7 +484,7 @@ namespace BudgetAppCross.Core.ViewModels
                     tempBills.Add(bill);
                 }
 
-                await DataManager.SaveBills(tempBills);
+                await DataManager.InsertBills(tempBills);
             }
             else
             {
