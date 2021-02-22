@@ -98,7 +98,13 @@
                                                  HorizontalOptions="Fill"
                                                  />
                         </Grid>
-                        
+
+                        <!--On Autopay-->
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="On Autopay?"
+                                   Style="{StaticResource BigLightLabel}"/>
+                            <Switch IsToggled="{Binding OnAutopay}"/>
+                        </StackLayout>
                         <!--Add Multiple-->
                         <StackLayout Orientation="Horizontal">
                             <Label Text="Add Multiple"

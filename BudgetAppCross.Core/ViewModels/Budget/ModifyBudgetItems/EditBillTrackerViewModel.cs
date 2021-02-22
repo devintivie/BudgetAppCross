@@ -7,10 +7,11 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
+//using Xamarin.Forms;
 using Acr.UserDialogs;
 using System.Linq;
 using MvvmCross;
+using MvvmCross.Commands;
 
 namespace BudgetAppCross.Core.ViewModels
 {
@@ -36,25 +37,19 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-
-
-
-
-
-
         #endregion
 
         #region Commands
-        public ICommand SaveCommand { get; }
-        public ICommand CancelCommand { get; }
+        public IMvxCommand SaveCommand { get; }
+        public IMvxCommand CancelCommand { get; }
         #endregion
 
         #region Constructors
         public EditBillTrackerViewModel(IMvxNavigationService nav)
         {
             navigationService = nav;
-            SaveCommand = new Command(async () => await OnSave());
-            CancelCommand = new Command(async () => await OnCancel());
+            SaveCommand = new MvxAsyncCommand(async () => await OnSave());
+            CancelCommand = new MvxAsyncCommand(async () => await OnCancel());
             
         }
 
