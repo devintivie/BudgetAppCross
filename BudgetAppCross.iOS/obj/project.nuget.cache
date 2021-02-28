@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EZLg2VLuyzwe3P3+ED5PD3ka4//cslLypp/kMUaYDZrugHzph3bDhmshnZ7bBqn1XJysSc9gO/6gNVFig2bFsA==",
+  "dgSpecHash": "MepAf1SOLajNsgr2HgZ5HShwFav4TOB6smeSu0TDBbpCzTlI/ms7P2Prc0eoZyelE/WUF83h76I4YnnHobcWuA==",
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.iOS\\BudgetAppCross.iOS.csproj",
   "expectedPackageFiles": [
@@ -58,5 +58,19 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.7.0.1142\\xamarin.forms.4.7.0.1142.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.1905 to 4.7.0.1142. Reference the package directly from the project to select a different version. \r\n BudgetAppCross.iOS -> CustomXamarinControls.iOS -> Xamarin.Forms (>= 5.0.0.1905) \r\n BudgetAppCross.iOS -> Xamarin.Forms (>= 4.7.0.1142)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    }
+  ]
 }

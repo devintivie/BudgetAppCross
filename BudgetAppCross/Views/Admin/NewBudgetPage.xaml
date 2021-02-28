@@ -31,7 +31,7 @@
                     <Label Text="Balance" Style="{StaticResource BigLightLabel}"/>
                     <!--<Entry Text="{Binding InitialBalance, Converter={cvt:CurrencyConverter}}"
                            Keyboard="Numeric"/>-->
-                    <controls:CurrencyEntry Text="{Binding InitialBalance}"
+                    <custom:CurrencyEntry Text="{Binding InitialBalance}"
                                             FontSize="{StaticResource FontSizeLarge}"/>
                     <Label Text="Date" Style="{StaticResource BigLightLabel}"/>
                     <custom:CustomDatePicker Date="{Binding InitialBalanceDate}"

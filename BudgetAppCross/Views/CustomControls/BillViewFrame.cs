@@ -5,8 +5,8 @@ using Xamarin.Forms;
 
 namespace BudgetAppCross.Views
 {
-
-    public class PurchaseButton : Button
+    public class BillViewFrame : Frame
     {
+
     }
 }

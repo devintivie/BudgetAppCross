@@ -347,6 +347,12 @@
               },
               "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj": {
                 "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj"
+              },
+              "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.iOS\\CustomXamarinControls.iOS.csproj": {
+                "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.iOS\\CustomXamarinControls.iOS.csproj"
+              },
+              "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj": {
+                "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj"
               }
             }
           }
@@ -954,6 +960,56 @@
             "Xamarin.Forms": {
               "target": "Package",
               "version": "[4.7.0.1080, )"
+            }
+          }
+        }
+      }
+    },
+    "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.iOS\\CustomXamarinControls.iOS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.iOS\\CustomXamarinControls.iOS.csproj",
+        "projectName": "CustomXamarinControls.iOS",
+        "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.iOS\\CustomXamarinControls.iOS.csproj",
+        "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.iOS\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "xamarinios10"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "xamarinios10": {
+            "projectReferences": {
+              "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj": {
+                "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "xamarinios10": {
+          "dependencies": {
+            "Acr.UserDialogs": {
+              "target": "Package",
+              "version": "[7.1.0.475, )"
+            },
+            "Xamarin.Forms": {
+              "target": "Package",
+              "version": "[5.0.0.1905, )"
             }
           }
         }

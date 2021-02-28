@@ -896,6 +896,21 @@
           "bin/placeholder/CustomXamarinControls.dll": {}
         }
       },
+      "CustomXamarinControls.iOS/1.0.0": {
+        "type": "project",
+        "framework": "Xamarin.iOS,Version=v1.0",
+        "dependencies": {
+          "Acr.UserDialogs": "7.1.0.475",
+          "CustomXamarinControls": "1.0.0",
+          "Xamarin.Forms": "5.0.0.1905"
+        },
+        "compile": {
+          "bin/placeholder/CustomXamarinControls.iOS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinControls.iOS.dll": {}
+        }
+      },
       "CustomXamarinFormsBehaviors/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -1826,6 +1841,21 @@
         },
         "runtime": {
           "bin/placeholder/CustomXamarinControls.dll": {}
+        }
+      },
+      "CustomXamarinControls.iOS/1.0.0": {
+        "type": "project",
+        "framework": "Xamarin.iOS,Version=v1.0",
+        "dependencies": {
+          "Acr.UserDialogs": "7.1.0.475",
+          "CustomXamarinControls": "1.0.0",
+          "Xamarin.Forms": "5.0.0.1905"
+        },
+        "compile": {
+          "bin/placeholder/CustomXamarinControls.iOS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinControls.iOS.dll": {}
         }
       },
       "CustomXamarinFormsBehaviors/1.0.0": {
@@ -2760,6 +2790,21 @@
           "bin/placeholder/CustomXamarinControls.dll": {}
         }
       },
+      "CustomXamarinControls.iOS/1.0.0": {
+        "type": "project",
+        "framework": "Xamarin.iOS,Version=v1.0",
+        "dependencies": {
+          "Acr.UserDialogs": "7.1.0.475",
+          "CustomXamarinControls": "1.0.0",
+          "Xamarin.Forms": "5.0.0.1905"
+        },
+        "compile": {
+          "bin/placeholder/CustomXamarinControls.iOS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinControls.iOS.dll": {}
+        }
+      },
       "CustomXamarinFormsBehaviors/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -3690,6 +3735,21 @@
         },
         "runtime": {
           "bin/placeholder/CustomXamarinControls.dll": {}
+        }
+      },
+      "CustomXamarinControls.iOS/1.0.0": {
+        "type": "project",
+        "framework": "Xamarin.iOS,Version=v1.0",
+        "dependencies": {
+          "Acr.UserDialogs": "7.1.0.475",
+          "CustomXamarinControls": "1.0.0",
+          "Xamarin.Forms": "5.0.0.1905"
+        },
+        "compile": {
+          "bin/placeholder/CustomXamarinControls.iOS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinControls.iOS.dll": {}
         }
       },
       "CustomXamarinFormsBehaviors/1.0.0": {
@@ -5376,6 +5436,11 @@
       "path": "../../CustomXamarinControls/CustomXamarinControls/CustomXamarinControls.csproj",
       "msbuildProject": "../../CustomXamarinControls/CustomXamarinControls/CustomXamarinControls.csproj"
     },
+    "CustomXamarinControls.iOS/1.0.0": {
+      "type": "project",
+      "path": "../../CustomXamarinControls/CustomXamarinControls.iOS/CustomXamarinControls.iOS.csproj",
+      "msbuildProject": "../../CustomXamarinControls/CustomXamarinControls.iOS/CustomXamarinControls.iOS.csproj"
+    },
     "CustomXamarinFormsBehaviors/1.0.0": {
       "type": "project",
       "path": "../CustomXamarinFormsBehaviors/CustomXamarinFormsBehaviors.csproj",
@@ -5401,6 +5466,8 @@
     "Xamarin.iOS,Version=v1.0": [
       "BudgetAppCross >= 1.0.0",
       "BudgetAppCross.Core >= 1.0.0",
+      "CustomXamarinControls >= 1.0.0",
+      "CustomXamarinControls.iOS >= 1.0.0",
       "InAppPurchasing.Core >= 1.0.0",
       "InAppPurchasing.iOS >= 1.0.0",
       "Xam.Plugins.Forms.KeyboardOverlap >= 1.0.0.4",
@@ -5451,6 +5518,12 @@
             },
             "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj": {
               "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj"
+            },
+            "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.iOS\\CustomXamarinControls.iOS.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.iOS\\CustomXamarinControls.iOS.csproj"
+            },
+            "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj"
             }
           }
         }
@@ -5485,5 +5558,20 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.1905 to 4.7.0.1142. Reference the package directly from the project to select a different version. \r\n BudgetAppCross.iOS -> CustomXamarinControls.iOS -> Xamarin.Forms (>= 5.0.0.1905) \r\n BudgetAppCross.iOS -> Xamarin.Forms (>= 4.7.0.1142)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    }
+  ]
 }

@@ -70,9 +70,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="CustomControls\BillViewFrameRenderer.cs" />
-    <Compile Include="CustomControls\CurrencyEntryRenderer.cs" />
-    <Compile Include="CustomControls\MvxPurchaseRenderer.cs" />
-    <Compile Include="CustomControls\PurchaseButtonRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
@@ -151,6 +148,16 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\..\CustomXamarinControls\CustomXamarinControls.iOS\CustomXamarinControls.iOS.csproj">
+      <Project>{d4b72c82-4736-4cbf-b552-2dfbdb23769e}</Project>
+      <Name>CustomXamarinControls.iOS</Name>
+      <IsAppExtension>false</IsAppExtension>
+      <IsWatchApp>false</IsWatchApp>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CustomXamarinControls\CustomXamarinControls\CustomXamarinControls.csproj">
+      <Project>{34b9231c-cd9b-44d3-b8a1-4f510a0679f8}</Project>
+      <Name>CustomXamarinControls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BudgetAppCross.Core\BudgetAppCross.Core.csproj">
       <Project>{367885f9-3ea9-4379-852e-95c2c320ccd5}</Project>
       <Name>BudgetAppCross.Core</Name>

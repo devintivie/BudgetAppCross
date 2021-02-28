@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BudgetAppCross.Core
@@ -16,14 +17,27 @@ namespace BudgetAppCross.Core
         Purchasing
     }
     //[TypeConverter(typeof(EnumDescriptionTypeConverter))]
-    //public enum Navigation
+    //public enum NavigablePage
     //{
-    //    Calendar,
+    //    //Calendar,
+    //    //[Description("Bills List")]
+    //    //BillList,
+    //    //[Description("Banking Overview")]
+    //    //BankOverview,
+    //    //[Description("Debt Overview")]
+    //    //DebtOverview,
+
+
+    //    Account,
+    //    LoadBudget,
+    //    [Description("Date Range")]
+    //    DateRange,
     //    [Description("Bills List")]
     //    BillList,
-    //    [Description("Banking Overview")]
+    //    Agenda,
+    //    [Description("Bank Overview")]
     //    BankOverview,
-    //    [Description("Debt Overview")]
-    //    DebtOverview
+    //    About,
+    //    Purchasing
     //}
 }

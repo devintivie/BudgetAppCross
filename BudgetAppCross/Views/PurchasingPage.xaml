@@ -6,6 +6,7 @@
              xmlns:views="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
              xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
+             xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
              mc:Ignorable="d"
              x:TypeArguments="vms:PurchasingViewModel"
              x:Class="BudgetAppCross.Views.PurchasingPage">
@@ -17,7 +18,7 @@
                        Focused="Entry_Focused"
                        Unfocused="Entry_Unfocused"
                        />-->
-                <controls:CurrencyEntry Text="{Binding Amount}" Keyboard="Numeric"/>
+                <custom:CurrencyEntry Text="{Binding Amount}" Keyboard="Numeric"/>
                 <Label Text="Date"/>
                 <DatePicker Date="{Binding Timestamp}"
                     />

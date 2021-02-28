@@ -74,7 +74,7 @@
                             <Label Text="Amount Due"
                                    Style="{StaticResource BigLightLabel}"
                                    />
-                            <controls:CurrencyEntry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
+                            <custom:CurrencyEntry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
                                                     Grid.Column="1"
                                                     FontSize="{StaticResource FontSizeLarge}"
                                                     HorizontalTextAlignment="End"
@@ -145,6 +145,14 @@
                                  HorizontalOptions="EndAndExpand"
                             
                             />
+                            <!--Failed converter-->
+                            <!--<custom:CustomPicker ItemsSource="{Binding Source={cvt:EnumBindingSource {x:Type models:DueDateFrequencies}}}"
+                                                 SelectedItem="{Binding DueDateFrequency}"
+                                                 FontSize="{StaticResource FontSizeLarge}"
+                                Grid.Row="1" Grid.Column="1"
+                                 HorizontalOptions="EndAndExpand"
+                            
+                            />-->
                         </StackLayout>
 
                         <!--Repeat Until-->

@@ -43,7 +43,7 @@
                    >
             </Entry>-->
 
-            <controls:CurrencyEntry Text="{Binding Balance}" Keyboard="Numeric"
+            <custom:CurrencyEntry Text="{Binding Balance}" Keyboard="Numeric"
                                     FontSize="{StaticResource FontSizeLarge}"/>
 
             <!--Balance Date-->

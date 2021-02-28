@@ -16,7 +16,7 @@
             <StackLayout>
                 <Label Text="Balance"
                        Style="{StaticResource BigLightLabel}"/>
-                <controls:CurrencyEntry Text="{Binding Amount}" Keyboard="Numeric"
+                <custom:CurrencyEntry Text="{Binding Amount}" Keyboard="Numeric"
                                         FontSize="{StaticResource FontSizeLarge}"/>
                 <Label Text="Date"
                        Style="{StaticResource BigLightLabel}"/>
