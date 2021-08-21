@@ -258,3 +258,10 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\bin\iPhone\D
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\device-builds\iphone11.8-14.4\CopyFilesToMac\CustomXamarinControls.iOS.dll.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\device-builds\iphone11.8-14.4\CopyFilesToMac\CustomXamarinControls.iOS.pdb.ReferenceCopyLocalPaths.stamp
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\device-builds\iphone11.8-14.4\CopyFilesToMac\CustomXamarinControls.iOS.dll.mdb.ReferenceCopyLocalPaths.stamp
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\device-builds\iphone11.8-14.6\actool\_PartialAppManifest.items
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\device-builds\iphone11.8-14.6\actool\_BundleResourceWithLogicalName.items
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\device-builds\iphone11.8-14.6\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\device-builds\iphone11.8-14.6\coremlc\_PartialAppManifest.items
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\device-builds\iphone11.8-14.6\coremlc\_BundleResourceWithLogicalName.items
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\device-builds\iphone11.8-14.6\optimized\
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.iOS\obj\iPhone\Debug\BudgetAppCross.iOS.csproj.AssemblyReference.cache

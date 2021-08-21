@@ -8,6 +8,7 @@ using InAppPurchasing.Core;
 using InAppPurchasing.iOS;
 using MvvmCross;
 using MvvmCross.Platforms.Ios.Core;
+//using MvvmCross.Platforms.Ios.Core;
 using UIKit;
 
 namespace BudgetAppCross.iOS

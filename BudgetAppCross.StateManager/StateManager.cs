@@ -24,8 +24,6 @@ namespace BudgetAppCross.StateManagers
         private const string stateFilename = "budgetState.json";
         private string basePath = "";
 
-
-        
         #endregion
 
         #region Properties

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "EooutpvRjanozow5MtBlPoFXgDN8QmvEZgDnjbuld2orKxC2n0TvQHzYQ10FIByWorXJfxZiw6OpRQK5o425bg==",
+  "dgSpecHash": "CBoELci/6dCDo/JvqsPmK9gGDhdfJsKcDqpKx0vxgArY5Q98h7K34+hE4piPOZbQ7fDeBmV1nM4N87VpUroU0w==",
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\CustomXamarinFormsBehaviors\\CustomXamarinFormsBehaviors.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.7.0.1080\\xamarin.forms.4.7.0.1080.nupkg.sha512"
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
   ],
   "logs": []
 }

@@ -14,4 +14,4 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BaseClasses\obj\Debug\netstanda
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BaseClasses\obj\Debug\netstandard2.0\BaseClasses.csproj.CoreCompileInputs.cache
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BaseClasses\obj\Debug\netstandard2.0\BaseClasses.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BaseClasses\obj\Debug\netstandard2.0\BaseClasses.pdb
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\BaseClasses\obj\Debug\netstandard2.0\BaseClasses.csprojAssemblyReference.cache
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BaseClasses\obj\Debug\netstandard2.0\BaseClasses.csproj.AssemblyReference.cache

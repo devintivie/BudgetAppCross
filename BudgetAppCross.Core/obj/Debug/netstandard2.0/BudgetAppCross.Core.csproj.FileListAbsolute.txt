@@ -67,10 +67,10 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\n
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.SQLiteDataAccess.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\InAppPurchasing.Core.pdb
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csprojAssemblyReference.cache
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.AssemblyInfoInputs.cache
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.AssemblyInfo.cs
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csproj.CoreCompileInputs.cache
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csproj.CopyComplete
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csproj.AssemblyReference.cache

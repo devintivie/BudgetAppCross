@@ -25,8 +25,6 @@ namespace BudgetAppCross.Core.ViewModels
             var _ = NavigateInitial();
             //var mainAccount = new BankAccount(450, "-", "Chase", "Main Account");
             //await BudgetDatabase.SaveBankAccount(mainAccount);
-
-            
         }
 
         private async Task NavigateInitial()

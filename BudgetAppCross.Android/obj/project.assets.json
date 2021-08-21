@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v9.0": {
-      "Acr.UserDialogs/7.1.0.475": {
+      "Acr.UserDialogs/7.1.0.446": {
         "type": "package",
         "dependencies": {
           "AndHUD": "1.4.2",
@@ -1556,10 +1556,12 @@
           "Acr.UserDialogs": "7.1.0.446",
           "BaseClasses": "1.0.0",
           "BudgetAppCore.Sqlite": "1.0.0",
+          "BudgetAppCross.DataAccess": "1.0.0",
           "BudgetAppCross.Models": "1.0.0",
+          "BudgetAppCross.SQLiteDataAccess": "1.0.0",
+          "BudgetAppCross.StateManagers": "1.0.0",
           "InAppPurchasing.Core": "1.0.0",
           "MvvmCross.Forms": "6.4.2",
-          "Newtonsoft.Json": "12.0.3",
           "sqlite": "3.13.0",
           "sqlite-net-pcl": "1.7.335"
         },
@@ -1568,6 +1570,19 @@
         },
         "runtime": {
           "bin/placeholder/BudgetAppCross.Core.dll": {}
+        }
+      },
+      "BudgetAppCross.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "BudgetAppCross.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.DataAccess.dll": {}
         }
       },
       "BudgetAppCross.Models/1.0.0": {
@@ -1586,35 +1601,53 @@
           "bin/placeholder/BudgetAppCross.Models.dll": {}
         }
       },
+      "BudgetAppCross.SQLiteDataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "BudgetAppCross.DataAccess": "1.0.0",
+          "BudgetAppCross.Models": "1.0.0",
+          "BudgetAppCross.StateManagers": "1.0.0",
+          "sqlite-net-pcl": "1.7.335"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.SQLiteDataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.SQLiteDataAccess.dll": {}
+        }
+      },
+      "BudgetAppCross.StateManagers/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "bin/placeholder/BudgetAppCross.StateManagers.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BudgetAppCross.StateManagers.dll": {}
+        }
+      },
       "CustomXamarinControls/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Acr.UserDialogs": "7.1.0.475",
-          "Xamarin.Forms": "4.7.0.1142"
+          "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
           "bin/placeholder/CustomXamarinControls.dll": {}
         },
         "runtime": {
           "bin/placeholder/CustomXamarinControls.dll": {}
-        }
-      },
-      "CustomXamarinControls.Droid/1.0.0": {
-        "type": "project",
-        "framework": "Unsupported,Version=v0.0",
-        "compile": {
-          "bin/placeholder/CustomXamarinControls.Droid.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CustomXamarinControls.Droid.dll": {}
         }
       },
       "CustomXamarinFormsBehaviors/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
           "bin/placeholder/CustomXamarinFormsBehaviors.dll": {}
@@ -1627,7 +1660,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "4.7.0.1142"
         },
         "compile": {
           "bin/placeholder/CustomXamarinFormsConverters.dll": {}
@@ -1649,19 +1682,20 @@
     }
   },
   "libraries": {
-    "Acr.UserDialogs/7.1.0.475": {
-      "sha512": "iGW0uda9bmbGcPABm0UzDjSd5DtGwcTCkOg265aUxKhG9IW0HtoNA3gASMXK64hMye2A+9mfkcmWJDOudbhJWw==",
+    "Acr.UserDialogs/7.1.0.446": {
+      "sha512": "7YF7hk4qy4x9pKrVzKnjTEvua+kTSlHqdPPvP4gIqsxymPH6I3nAW2lpSo8kX97nTBbwkfddtrikwAXIYxRNIw==",
       "type": "package",
-      "path": "acr.userdialogs/7.1.0.475",
+      "path": "acr.userdialogs/7.1.0.446",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "acr.userdialogs.7.1.0.475.nupkg.sha512",
+        "acr.userdialogs.7.1.0.446.nupkg.sha512",
         "acr.userdialogs.nuspec",
         "lib/monoandroid10.0/Acr.UserDialogs.dll",
         "lib/monoandroid10.0/Acr.UserDialogs.pdb",
         "lib/monoandroid10.0/Acr.UserDialogs.xml",
         "lib/monoandroid90/Acr.UserDialogs.dll",
+        "lib/monoandroid90/Acr.UserDialogs.dll.mdb",
         "lib/monoandroid90/Acr.UserDialogs.pdb",
         "lib/monoandroid90/Acr.UserDialogs.xml",
         "lib/netstandard2.0/Acr.UserDialogs.dll",
@@ -1672,6 +1706,11 @@
         "lib/uap10.0.16299/Acr.UserDialogs.pri",
         "lib/uap10.0.16299/Acr.UserDialogs.xml",
         "lib/uap10.0.16299/Acr.UserDialogs/Acr.UserDialogs.xr.xml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/ActionSheetContentDialog.xaml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/DatePickerControl.xaml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/LoginContentDialog.xaml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/ProgressContentDialog.xaml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/TimePickerControl.xaml",
         "lib/xamarinios10/Acr.UserDialogs.dll",
         "lib/xamarinios10/Acr.UserDialogs.pdb",
         "lib/xamarinios10/Acr.UserDialogs.xml",
@@ -4071,20 +4110,30 @@
       "path": "../BudgetAppCross.Core/BudgetAppCross.Core.csproj",
       "msbuildProject": "../BudgetAppCross.Core/BudgetAppCross.Core.csproj"
     },
+    "BudgetAppCross.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../BudgetAppCross.DataAccess/BudgetAppCross.DataAccess.csproj",
+      "msbuildProject": "../BudgetAppCross.DataAccess/BudgetAppCross.DataAccess.csproj"
+    },
     "BudgetAppCross.Models/1.0.0": {
       "type": "project",
       "path": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj",
       "msbuildProject": "../BudgetAppCross.Models/BudgetAppCross.Models.csproj"
     },
+    "BudgetAppCross.SQLiteDataAccess/1.0.0": {
+      "type": "project",
+      "path": "../BudgetAppCross.SQLiteDataAccess/BudgetAppCross.SQLiteDataAccess.csproj",
+      "msbuildProject": "../BudgetAppCross.SQLiteDataAccess/BudgetAppCross.SQLiteDataAccess.csproj"
+    },
+    "BudgetAppCross.StateManagers/1.0.0": {
+      "type": "project",
+      "path": "../BudgetAppCross.StateManager/BudgetAppCross.StateManagers.csproj",
+      "msbuildProject": "../BudgetAppCross.StateManager/BudgetAppCross.StateManagers.csproj"
+    },
     "CustomXamarinControls/1.0.0": {
       "type": "project",
       "path": "../../CustomXamarinControls/CustomXamarinControls/CustomXamarinControls.csproj",
       "msbuildProject": "../../CustomXamarinControls/CustomXamarinControls/CustomXamarinControls.csproj"
-    },
-    "CustomXamarinControls.Droid/1.0.0": {
-      "type": "project",
-      "path": "../../CustomXamarinControls/CustomXamarinControls.Android/CustomXamarinControls.Droid.csproj",
-      "msbuildProject": "../../CustomXamarinControls/CustomXamarinControls.Android/CustomXamarinControls.Droid.csproj"
     },
     "CustomXamarinFormsBehaviors/1.0.0": {
       "type": "project",
@@ -4106,7 +4155,6 @@
     "MonoAndroid,Version=v9.0": [
       "BudgetAppCross >= 1.0.0",
       "BudgetAppCross.Core >= 1.0.0",
-      "CustomXamarinControls.Droid >= 1.0.0",
       "MvvmCross.Forms >= 6.4.2",
       "Xamarin.Essentials >= 1.5.3.2",
       "Xamarin.Forms >= 4.7.0.1142"
@@ -4114,7 +4162,9 @@
   },
   "packageFolders": {
     "C:\\Users\\devin\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -4127,10 +4177,14 @@
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -4138,6 +4192,7 @@
         "monoandroid90"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -4149,9 +4204,6 @@
             },
             "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross\\BudgetAppCross.csproj": {
               "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross\\BudgetAppCross.csproj"
-            },
-            "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Droid.csproj": {
-              "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.Android\\CustomXamarinControls.Droid.csproj"
             }
           }
         }
@@ -4178,10 +4230,21 @@
   },
   "logs": [
     {
-      "code": "NU1201",
-      "level": "Error",
-      "message": "Project CustomXamarinControls.Droid is not compatible with monoandroid90 (MonoAndroid,Version=v9.0). Project CustomXamarinControls.Droid supports: monoandroid10.0 (MonoAndroid,Version=v10.0)",
-      "libraryId": "CustomXamarinControls.Droid",
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.2012 to 4.7.0.1142. Reference the package directly from the project to select a different version. \r\n BudgetAppCross.Android -> BudgetAppCross -> CustomXamarinControls -> Xamarin.Forms (>= 5.0.0.2012) \r\n BudgetAppCross.Android -> Xamarin.Forms (>= 4.7.0.1142)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "MonoAndroid,Version=v9.0"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.2012 to 4.7.0.1142. Reference the package directly from the project to select a different version. \r\n BudgetAppCross.Android -> BudgetAppCross -> CustomXamarinFormsBehaviors -> Xamarin.Forms (>= 5.0.0.2012) \r\n BudgetAppCross.Android -> Xamarin.Forms (>= 4.7.0.1142)",
+      "libraryId": "Xamarin.Forms",
       "targetGraphs": [
         "MonoAndroid,Version=v9.0"
       ]

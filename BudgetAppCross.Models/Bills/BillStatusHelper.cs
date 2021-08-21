@@ -10,7 +10,7 @@ namespace BudgetAppCross.Models
         {
             if (isAuto)
             {
-                if ((compDate - refDate).TotalDays < 0)
+                if ((compDate - refDate).TotalDays <= 0)
                 {
                     return BillStatus.AutoPayPast;
                 }

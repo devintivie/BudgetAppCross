@@ -29,10 +29,8 @@ C:\Users\devin\source\repos\BudgetAppCross\CustomXamarinFormsBehaviors\obj\Debug
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsBehaviors\bin\Debug\netstandard2.0\CustomXamarinFormsBehaviors.deps.json
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsBehaviors\bin\Debug\netstandard2.0\CustomXamarinFormsBehaviors.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsBehaviors\bin\Debug\netstandard2.0\CustomXamarinFormsBehaviors.pdb
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.csprojAssemblyReference.cache
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.AssemblyInfoInputs.cache
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.AssemblyInfo.cs
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.csproj.CoreCompileInputs.cache
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.pdb

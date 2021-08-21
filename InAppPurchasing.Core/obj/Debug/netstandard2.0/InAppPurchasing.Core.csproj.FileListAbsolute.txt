@@ -14,4 +14,3 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Core\obj\Debug\
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Core\obj\Debug\netstandard2.0\InAppPurchasing.Core.csproj.CoreCompileInputs.cache
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Core\obj\Debug\netstandard2.0\InAppPurchasing.Core.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Core\obj\Debug\netstandard2.0\InAppPurchasing.Core.pdb
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\InAppPurchasing.Core\obj\Debug\netstandard2.0\InAppPurchasing.Core.csprojAssemblyReference.cache
