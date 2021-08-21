@@ -1,9 +1,13 @@
 {
   "version": 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "YEv+Ak7EuCg+onocJzSYkG4iuJJLJilX2Rv/K+28DPQE4xu16y9gTaZIW0Y9CzMIw16gQT980I8IrrCrUWQB8g==",
 =======
   "dgSpecHash": "m7nB8jqK2maBrGsr/RDX5tUNf1q4cvadUEa7NGtiOkIqdCYR6FOOgADaykDRlowO1K7sSaZ6dllMeQFDCMLAwQ==",
+>>>>>>> feature/ModifySQLite
+=======
+  "dgSpecHash": "FjeHHi1PUWmb/Ksy8WwEzqT5aElTjvCk5oMKwAy/I2whJwnOVumFGc/QnYiTqzqBDUGCkvHCz9KmGjNr2ehiog==",
 >>>>>>> feature/ModifySQLite
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj",
@@ -11,7 +15,7 @@
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross\\6.4.2\\mvvmcross.6.4.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.forms\\6.4.2\\mvvmcross.forms.6.4.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\mvvmcross.platform\\5.7.0\\mvvmcross.platform.5.7.0.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.7.0.1080\\xamarin.forms.4.7.0.1080.nupkg.sha512"
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.7.0.1142\\xamarin.forms.4.7.0.1142.nupkg.sha512"
   ],
   "logs": []
 }

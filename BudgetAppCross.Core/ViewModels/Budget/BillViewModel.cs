@@ -15,7 +15,7 @@ namespace BudgetAppCross.Core.ViewModels
     public class BillViewModel : BaseViewModel//<int>
     {
         #region Fields
-
+        private bool initialAccountSet = false;
         #endregion
 
         #region Properties
@@ -138,7 +138,8 @@ namespace BudgetAppCross.Core.ViewModels
                 if (selectedAccount != value)
                 {
                     selectedAccount = value;
-                    var _ = UpdateAccount();
+                    _ = UpdateAccount();
+                    
                     RaisePropertyChanged();
                 }
             }
@@ -192,28 +193,36 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task UpdateAccount()
         {
-            if(SelectedAccount != null)
+            if(SelectedAccount != null && initialAccountSet)
             {
-                var accts = await BudgetDatabase.GetBankAccounts();
-                var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
-                if(Bill.BankAccount == null)
-                {
-                    Bill.BankAccount = acct;
+                var acctId = await BudgetDatabase.GetBankAccountID(SelectedAccount);
 
-                    //Switch to change and save because daterangeentry needs to requery
-                    ChangeAndSave();
-                }
-                else
-                {
-                    if (Bill.BankAccount.Nickname != acct.Nickname)
-                    {
-                        Bill.BankAccount = acct;
+                Bill.AccountID = acctId;
+                await ChangeAndSave();
+                //var accts = await BudgetDatabase.GetBankAccounts();
+                //var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
+                //if(Bill.BankAccount == null)
+                //{
+                //    Bill.BankAccount = acct;
 
-                        //Switch to change and save because daterangeentry needs to requery
-                        ChangeAndSave();
-                    }
-                }
-                
+                //    //Switch to change and save because daterangeentry needs to requery
+                //    ChangeAndSave();
+                //}
+                //else
+                //{
+                //    if (Bill.BankAccount.Nickname != acct.Nickname)
+                //    {
+                //        Bill.BankAccount = acct;
+
+                //        //Switch to change and save because daterangeentry needs to requery
+                //        ChangeAndSave();
+                //    }
+                //}
+
+            }
+            else
+            {
+                initialAccountSet = true;
             }
         }
 

@@ -1,16 +1,20 @@
 {
   "version": 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "68GAFBk5eYnRjtfLF4jG2IjV1fIsM37d1fi1tq39A1pe/O+8B0dPdEB9dgxoKtU3uz951FM68ubomtdztlVjag==",
 =======
   "dgSpecHash": "4E3yLW2CEkHTZmFCjW3UCYMpr/PHKuDWHKPrU2be3IkkZxjqpck4cfAo+DuQocD+Aq1x/gKoERIUHOsZ7Oes2Q==",
+>>>>>>> feature/ModifySQLite
+=======
+  "dgSpecHash": "xnHGWWN6T6EajK0vaAqdZFVYru6YTVrpNPPENCIRDLjavoao29MjzMDJKZK5vNKm3tN0kEai4UMcniP631/aiQ==",
 >>>>>>> feature/ModifySQLite
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\CustomXamarinFormsConverters\\CustomXamarinFormsConverters.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.7.0.1080\\xamarin.forms.4.7.0.1080.nupkg.sha512"
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.7.0.1142\\xamarin.forms.4.7.0.1142.nupkg.sha512"
   ],
   "logs": []
 }

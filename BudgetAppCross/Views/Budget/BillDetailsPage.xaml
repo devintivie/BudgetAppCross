@@ -47,7 +47,7 @@
                     <Label Text="Amount Due"
                                    Style="{StaticResource BigLightLabel}"
                                    />
-                    <controls:CurrencyEntry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
+                    <custom:CurrencyEntry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
                                                     Grid.Column="1"
                                                     FontSize="{StaticResource FontSizeLarge}"
                                                     HorizontalTextAlignment="End"

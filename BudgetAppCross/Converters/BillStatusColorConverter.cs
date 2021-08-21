@@ -61,6 +61,8 @@ namespace BudgetAppCross.Converters
                 case BillStatus.Paid:
                 case BillStatus.AutoPayPast:
                     return Color.LightGreen;
+                case BillStatus.AutoPayUpcoming:
+                    return Color.CornflowerBlue;
                 default:
                     return (Color)Application.Current.Resources["ButtonBackground"]; ;
             }

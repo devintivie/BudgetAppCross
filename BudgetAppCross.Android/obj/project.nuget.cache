@@ -1,14 +1,19 @@
 {
   "version": 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "qNojX0Bu+76eQ4SDLdH2nJ+2ZnIq1+CVo16zThMSOe0Tz2FZsxa/7wPo5XGQCC5AG5aGS4KYjcpWy1vGUAHIRA==",
 =======
   "dgSpecHash": "uWdRG2QLSkz1VBOwi8go3+4PANkNPDJTBz6K9NwImNJx09ZQaexzT/dNf5yf16iT3BsaKp7Bt/Vg6gaaKTgIig==",
 >>>>>>> feature/ModifySQLite
   "success": false,
+=======
+  "dgSpecHash": "90NoAlhlKlE4MmHVHvO2BeKb+jWFgA3R1dj3F8BOpiLWAXvjwCxy8vz7enRF1AXq6QDKKSORpnql4Q1FbhHZow==",
+  "success": true,
+>>>>>>> feature/ModifySQLite
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Android\\BudgetAppCross.Android.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.475\\acr.userdialogs.7.1.0.475.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\acr.userdialogs\\7.1.0.446\\acr.userdialogs.7.1.0.446.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\andhud\\1.4.2\\andhud.1.4.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\behaviors.xamarinforms\\4.0.4\\behaviors.xamarinforms.4.0.4.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
@@ -60,68 +65,83 @@
     "C:\\Users\\devin\\.nuget\\packages\\system.text.encodings.web\\4.7.1\\system.text.encodings.web.4.7.1.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\system.text.json\\4.7.2\\system.text.json.4.7.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.core.runtime\\1.1.1.3\\xamarin.android.arch.core.runtime.1.1.1.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.lifecycle.common\\1.1.1.3\\xamarin.android.arch.lifecycle.common.1.1.1.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.lifecycle.livedata\\1.1.1.3\\xamarin.android.arch.lifecycle.livedata.1.1.1.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.lifecycle.livedata.core\\1.1.1.3\\xamarin.android.arch.lifecycle.livedata.core.1.1.1.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.lifecycle.runtime\\1.1.1.3\\xamarin.android.arch.lifecycle.runtime.1.1.1.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.arch.lifecycle.viewmodel\\1.1.1.3\\xamarin.android.arch.lifecycle.viewmodel.1.1.1.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.animated.vector.drawable\\28.0.0.3\\xamarin.android.support.animated.vector.drawable.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.annotations\\28.0.0.3\\xamarin.android.support.annotations.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.asynclayoutinflater\\28.0.0.3\\xamarin.android.support.asynclayoutinflater.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.collections\\28.0.0.3\\xamarin.android.support.collections.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.compat\\28.0.0.3\\xamarin.android.support.compat.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.coordinaterlayout\\28.0.0.3\\xamarin.android.support.coordinaterlayout.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.core.ui\\28.0.0.3\\xamarin.android.support.core.ui.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.core.utils\\28.0.0.3\\xamarin.android.support.core.utils.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.cursoradapter\\28.0.0.3\\xamarin.android.support.cursoradapter.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.customtabs\\28.0.0.3\\xamarin.android.support.customtabs.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.customview\\28.0.0.3\\xamarin.android.support.customview.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.design\\28.0.0.3\\xamarin.android.support.design.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.documentfile\\28.0.0.3\\xamarin.android.support.documentfile.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.drawerlayout\\28.0.0.3\\xamarin.android.support.drawerlayout.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.fragment\\28.0.0.3\\xamarin.android.support.fragment.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.interpolator\\28.0.0.3\\xamarin.android.support.interpolator.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.loader\\28.0.0.3\\xamarin.android.support.loader.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.localbroadcastmanager\\28.0.0.3\\xamarin.android.support.localbroadcastmanager.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.media.compat\\28.0.0.3\\xamarin.android.support.media.compat.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.print\\28.0.0.3\\xamarin.android.support.print.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.slidingpanelayout\\28.0.0.3\\xamarin.android.support.slidingpanelayout.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.swiperefreshlayout\\28.0.0.3\\xamarin.android.support.swiperefreshlayout.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.transition\\28.0.0.3\\xamarin.android.support.transition.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.v4\\28.0.0.3\\xamarin.android.support.v4.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.v7.appcompat\\28.0.0.3\\xamarin.android.support.v7.appcompat.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.v7.cardview\\28.0.0.3\\xamarin.android.support.v7.cardview.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.arch.core.common\\1.1.1.3\\xamarin.android.arch.core.common.1.1.1.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.arch.core.runtime\\1.1.1.3\\xamarin.android.arch.core.runtime.1.1.1.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.arch.lifecycle.common\\1.1.1.3\\xamarin.android.arch.lifecycle.common.1.1.1.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.arch.lifecycle.livedata\\1.1.1.3\\xamarin.android.arch.lifecycle.livedata.1.1.1.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.arch.lifecycle.livedata.core\\1.1.1.3\\xamarin.android.arch.lifecycle.livedata.core.1.1.1.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.arch.lifecycle.runtime\\1.1.1.3\\xamarin.android.arch.lifecycle.runtime.1.1.1.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.arch.lifecycle.viewmodel\\1.1.1.3\\xamarin.android.arch.lifecycle.viewmodel.1.1.1.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.animated.vector.drawable\\28.0.0.3\\xamarin.android.support.animated.vector.drawable.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.annotations\\28.0.0.3\\xamarin.android.support.annotations.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.asynclayoutinflater\\28.0.0.3\\xamarin.android.support.asynclayoutinflater.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.collections\\28.0.0.3\\xamarin.android.support.collections.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.compat\\28.0.0.3\\xamarin.android.support.compat.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.coordinaterlayout\\28.0.0.3\\xamarin.android.support.coordinaterlayout.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.core.ui\\28.0.0.3\\xamarin.android.support.core.ui.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.core.utils\\28.0.0.3\\xamarin.android.support.core.utils.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.cursoradapter\\28.0.0.3\\xamarin.android.support.cursoradapter.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.customtabs\\28.0.0.3\\xamarin.android.support.customtabs.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.customview\\28.0.0.3\\xamarin.android.support.customview.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.design\\28.0.0.3\\xamarin.android.support.design.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.documentfile\\28.0.0.3\\xamarin.android.support.documentfile.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.drawerlayout\\28.0.0.3\\xamarin.android.support.drawerlayout.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.fragment\\28.0.0.3\\xamarin.android.support.fragment.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.interpolator\\28.0.0.3\\xamarin.android.support.interpolator.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.loader\\28.0.0.3\\xamarin.android.support.loader.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.localbroadcastmanager\\28.0.0.3\\xamarin.android.support.localbroadcastmanager.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.media.compat\\28.0.0.3\\xamarin.android.support.media.compat.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.print\\28.0.0.3\\xamarin.android.support.print.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.slidingpanelayout\\28.0.0.3\\xamarin.android.support.slidingpanelayout.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.swiperefreshlayout\\28.0.0.3\\xamarin.android.support.swiperefreshlayout.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.transition\\28.0.0.3\\xamarin.android.support.transition.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.v4\\28.0.0.3\\xamarin.android.support.v4.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.v7.appcompat\\28.0.0.3\\xamarin.android.support.v7.appcompat.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.v7.cardview\\28.0.0.3\\xamarin.android.support.v7.cardview.28.0.0.3.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.v7.mediarouter\\28.0.0.3\\xamarin.android.support.v7.mediarouter.28.0.0.3.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.v7.palette\\28.0.0.3\\xamarin.android.support.v7.palette.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.v7.recyclerview\\28.0.0.3\\xamarin.android.support.v7.recyclerview.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.vector.drawable\\28.0.0.3\\xamarin.android.support.vector.drawable.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.versionedparcelable\\28.0.0.3\\xamarin.android.support.versionedparcelable.28.0.0.3.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.android.support.viewpager\\28.0.0.3\\xamarin.android.support.viewpager.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.v7.recyclerview\\28.0.0.3\\xamarin.android.support.v7.recyclerview.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.vector.drawable\\28.0.0.3\\xamarin.android.support.vector.drawable.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.versionedparcelable\\28.0.0.3\\xamarin.android.support.versionedparcelable.28.0.0.3.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.android.support.viewpager\\28.0.0.3\\xamarin.android.support.viewpager.28.0.0.3.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\xamarin.build.download\\0.4.11\\xamarin.build.download.0.4.11.nupkg.sha512",
-    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.7.0.1142\\xamarin.forms.4.7.0.1142.nupkg.sha512"
   ],
   "logs": [
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
       "code": "NU1605",
       "level": "Warning",
       "warningLevel": 1,
       "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.1905 to 4.7.0.1142. Reference the package directly from the project to select a different version. \r\n BudgetAppCross.Android -> BudgetAppCross -> CustomXamarinControls -> Xamarin.Forms (>= 5.0.0.1905) \r\n BudgetAppCross.Android -> Xamarin.Forms (>= 4.7.0.1142)",
+=======
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.2012 to 4.7.0.1142. Reference the package directly from the project to select a different version. \r\n BudgetAppCross.Android -> BudgetAppCross -> CustomXamarinControls -> Xamarin.Forms (>= 5.0.0.2012) \r\n BudgetAppCross.Android -> Xamarin.Forms (>= 4.7.0.1142)",
+>>>>>>> feature/ModifySQLite
       "libraryId": "Xamarin.Forms",
       "targetGraphs": [
         "MonoAndroid,Version=v9.0"
       ]
     },
     {
+<<<<<<< HEAD
 =======
 >>>>>>> feature/ModifySQLite
       "code": "NU1201",
       "level": "Error",
       "message": "Project CustomXamarinControls.Droid is not compatible with monoandroid90 (MonoAndroid,Version=v9.0). Project CustomXamarinControls.Droid supports: monoandroid10.0 (MonoAndroid,Version=v10.0)",
       "libraryId": "CustomXamarinControls.Droid",
+=======
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.2012 to 4.7.0.1142. Reference the package directly from the project to select a different version. \r\n BudgetAppCross.Android -> BudgetAppCross -> CustomXamarinFormsBehaviors -> Xamarin.Forms (>= 5.0.0.2012) \r\n BudgetAppCross.Android -> Xamarin.Forms (>= 4.7.0.1142)",
+      "libraryId": "Xamarin.Forms",
+>>>>>>> feature/ModifySQLite
       "targetGraphs": [
         "MonoAndroid,Version=v9.0"
       ]

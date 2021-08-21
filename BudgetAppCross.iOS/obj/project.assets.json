@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "Xamarin.iOS,Version=v1.0": {
-      "Acr.UserDialogs/7.1.0.475": {
+      "Acr.UserDialogs/7.1.0.446": {
         "type": "package",
         "dependencies": {
           "BTProgressHUD": "1.3.1"
@@ -993,8 +993,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Acr.UserDialogs": "7.1.0.475",
-          "Xamarin.Forms": "4.7.0.1142"
+          "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
           "bin/placeholder/CustomXamarinControls.dll": {}
@@ -1003,11 +1002,25 @@
           "bin/placeholder/CustomXamarinControls.dll": {}
         }
       },
+      "CustomXamarinControls.iOS/1.0.0": {
+        "type": "project",
+        "framework": "Xamarin.iOS,Version=v1.0",
+        "dependencies": {
+          "CustomXamarinControls": "1.0.0",
+          "Xamarin.Forms": "4.7.0.1142"
+        },
+        "compile": {
+          "bin/placeholder/CustomXamarinControls.iOS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinControls.iOS.dll": {}
+        }
+      },
       "CustomXamarinFormsBehaviors/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
           "bin/placeholder/CustomXamarinFormsBehaviors.dll": {}
@@ -1020,7 +1033,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "4.7.0.1142"
         },
         "compile": {
           "bin/placeholder/CustomXamarinFormsConverters.dll": {}
@@ -1048,7 +1061,7 @@
           "MvvmCross": "6.4.2",
           "MvvmCross.Forms": "6.4.2",
           "MvvmCross.Platform": "5.7.0",
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "4.7.0.1142"
         },
         "compile": {
           "bin/placeholder/InAppPurchasing.iOS.dll": {}
@@ -1076,8 +1089,12 @@
     "Xamarin.iOS,Version=v1.0/win-x64": {
 =======
     "Xamarin.iOS,Version=v1.0/win": {
+<<<<<<< HEAD
 >>>>>>> feature/ModifySQLite
       "Acr.UserDialogs/7.1.0.475": {
+=======
+      "Acr.UserDialogs/7.1.0.446": {
+>>>>>>> feature/ModifySQLite
         "type": "package",
         "dependencies": {
           "BTProgressHUD": "1.3.1"
@@ -2040,8 +2057,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Acr.UserDialogs": "7.1.0.475",
-          "Xamarin.Forms": "4.7.0.1142"
+          "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
           "bin/placeholder/CustomXamarinControls.dll": {}
@@ -2050,13 +2066,31 @@
           "bin/placeholder/CustomXamarinControls.dll": {}
         }
       },
+      "CustomXamarinControls.iOS/1.0.0": {
+        "type": "project",
+        "framework": "Xamarin.iOS,Version=v1.0",
+        "dependencies": {
+          "CustomXamarinControls": "1.0.0",
+          "Xamarin.Forms": "4.7.0.1142"
+        },
+        "compile": {
+          "bin/placeholder/CustomXamarinControls.iOS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinControls.iOS.dll": {}
+        }
+      },
       "CustomXamarinFormsBehaviors/1.0.0": {
 >>>>>>> feature/ModifySQLite
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+<<<<<<< HEAD
           "MvvmCross.Plugin.Messenger": "6.4.2",
           "Newtonsoft.Json": "12.0.3"
+=======
+          "Xamarin.Forms": "5.0.0.2012"
+>>>>>>> feature/ModifySQLite
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.Models.dll": {}
@@ -2069,11 +2103,15 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+<<<<<<< HEAD
           "BudgetAppCross.DataAccess": "1.0.0",
           "BudgetAppCross.StateManagers": "1.0.0",
           "Dapper": "2.0.78",
           "SQLiteHelpers": "1.0.0",
           "System.Data.SQLite.Core": "1.0.113.7"
+=======
+          "Xamarin.Forms": "4.7.0.1142"
+>>>>>>> feature/ModifySQLite
         },
         "compile": {
           "bin/placeholder/BudgetAppCross.SqliteDataAccess.dll": {}
@@ -2103,7 +2141,7 @@
           "MvvmCross": "6.4.2",
           "MvvmCross.Forms": "6.4.2",
           "MvvmCross.Platform": "5.7.0",
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "4.7.0.1142"
         },
         "compile": {
           "bin/placeholder/InAppPurchasing.iOS.dll": {}
@@ -2114,7 +2152,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x64": {
-      "Acr.UserDialogs/7.1.0.475": {
+      "Acr.UserDialogs/7.1.0.446": {
         "type": "package",
         "dependencies": {
           "BTProgressHUD": "1.3.1"
@@ -2936,8 +2974,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Acr.UserDialogs": "7.1.0.475",
-          "Xamarin.Forms": "4.7.0.1142"
+          "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
           "bin/placeholder/CustomXamarinControls.dll": {}
@@ -2946,11 +2983,25 @@
           "bin/placeholder/CustomXamarinControls.dll": {}
         }
       },
+      "CustomXamarinControls.iOS/1.0.0": {
+        "type": "project",
+        "framework": "Xamarin.iOS,Version=v1.0",
+        "dependencies": {
+          "CustomXamarinControls": "1.0.0",
+          "Xamarin.Forms": "4.7.0.1142"
+        },
+        "compile": {
+          "bin/placeholder/CustomXamarinControls.iOS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinControls.iOS.dll": {}
+        }
+      },
       "CustomXamarinFormsBehaviors/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
           "bin/placeholder/CustomXamarinFormsBehaviors.dll": {}
@@ -2963,7 +3014,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "4.7.0.1142"
         },
         "compile": {
           "bin/placeholder/CustomXamarinFormsConverters.dll": {}
@@ -2991,7 +3042,7 @@
           "MvvmCross": "6.4.2",
           "MvvmCross.Forms": "6.4.2",
           "MvvmCross.Platform": "5.7.0",
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "4.7.0.1142"
         },
         "compile": {
           "bin/placeholder/InAppPurchasing.iOS.dll": {}
@@ -3002,7 +3053,7 @@
       }
     },
     "Xamarin.iOS,Version=v1.0/win-x86": {
-      "Acr.UserDialogs/7.1.0.475": {
+      "Acr.UserDialogs/7.1.0.446": {
         "type": "package",
         "dependencies": {
           "BTProgressHUD": "1.3.1"
@@ -3868,8 +3919,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Acr.UserDialogs": "7.1.0.475",
-          "Xamarin.Forms": "4.7.0.1142"
+          "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
           "bin/placeholder/CustomXamarinControls.dll": {}
@@ -3878,11 +3928,25 @@
           "bin/placeholder/CustomXamarinControls.dll": {}
         }
       },
+      "CustomXamarinControls.iOS/1.0.0": {
+        "type": "project",
+        "framework": "Xamarin.iOS,Version=v1.0",
+        "dependencies": {
+          "CustomXamarinControls": "1.0.0",
+          "Xamarin.Forms": "4.7.0.1142"
+        },
+        "compile": {
+          "bin/placeholder/CustomXamarinControls.iOS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CustomXamarinControls.iOS.dll": {}
+        }
+      },
       "CustomXamarinFormsBehaviors/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "5.0.0.2012"
         },
         "compile": {
           "bin/placeholder/CustomXamarinFormsBehaviors.dll": {}
@@ -3895,7 +3959,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "4.7.0.1142"
         },
         "compile": {
           "bin/placeholder/CustomXamarinFormsConverters.dll": {}
@@ -3923,7 +3987,7 @@
           "MvvmCross": "6.4.2",
           "MvvmCross.Forms": "6.4.2",
           "MvvmCross.Platform": "5.7.0",
-          "Xamarin.Forms": "4.7.0.1080"
+          "Xamarin.Forms": "4.7.0.1142"
         },
         "compile": {
           "bin/placeholder/InAppPurchasing.iOS.dll": {}
@@ -3936,19 +4000,20 @@
     }
   },
   "libraries": {
-    "Acr.UserDialogs/7.1.0.475": {
-      "sha512": "iGW0uda9bmbGcPABm0UzDjSd5DtGwcTCkOg265aUxKhG9IW0HtoNA3gASMXK64hMye2A+9mfkcmWJDOudbhJWw==",
+    "Acr.UserDialogs/7.1.0.446": {
+      "sha512": "7YF7hk4qy4x9pKrVzKnjTEvua+kTSlHqdPPvP4gIqsxymPH6I3nAW2lpSo8kX97nTBbwkfddtrikwAXIYxRNIw==",
       "type": "package",
-      "path": "acr.userdialogs/7.1.0.475",
+      "path": "acr.userdialogs/7.1.0.446",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "acr.userdialogs.7.1.0.475.nupkg.sha512",
+        "acr.userdialogs.7.1.0.446.nupkg.sha512",
         "acr.userdialogs.nuspec",
         "lib/monoandroid10.0/Acr.UserDialogs.dll",
         "lib/monoandroid10.0/Acr.UserDialogs.pdb",
         "lib/monoandroid10.0/Acr.UserDialogs.xml",
         "lib/monoandroid90/Acr.UserDialogs.dll",
+        "lib/monoandroid90/Acr.UserDialogs.dll.mdb",
         "lib/monoandroid90/Acr.UserDialogs.pdb",
         "lib/monoandroid90/Acr.UserDialogs.xml",
         "lib/netstandard2.0/Acr.UserDialogs.dll",
@@ -3959,6 +4024,11 @@
         "lib/uap10.0.16299/Acr.UserDialogs.pri",
         "lib/uap10.0.16299/Acr.UserDialogs.xml",
         "lib/uap10.0.16299/Acr.UserDialogs/Acr.UserDialogs.xr.xml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/ActionSheetContentDialog.xaml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/DatePickerControl.xaml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/LoginContentDialog.xaml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/ProgressContentDialog.xaml",
+        "lib/uap10.0.16299/Acr.UserDialogs/Platforms/Uwp/TimePickerControl.xaml",
         "lib/xamarinios10/Acr.UserDialogs.dll",
         "lib/xamarinios10/Acr.UserDialogs.pdb",
         "lib/xamarinios10/Acr.UserDialogs.xml",
@@ -5268,6 +5338,11 @@
       "path": "../../CustomXamarinControls/CustomXamarinControls/CustomXamarinControls.csproj",
       "msbuildProject": "../../CustomXamarinControls/CustomXamarinControls/CustomXamarinControls.csproj"
     },
+    "CustomXamarinControls.iOS/1.0.0": {
+      "type": "project",
+      "path": "../../CustomXamarinControls/CustomXamarinControls.iOS/CustomXamarinControls.iOS.csproj",
+      "msbuildProject": "../../CustomXamarinControls/CustomXamarinControls.iOS/CustomXamarinControls.iOS.csproj"
+    },
     "CustomXamarinFormsBehaviors/1.0.0": {
       "type": "project",
       "path": "../CustomXamarinFormsBehaviors/CustomXamarinFormsBehaviors.csproj",
@@ -5298,6 +5373,8 @@
     "Xamarin.iOS,Version=v1.0": [
       "BudgetAppCross >= 1.0.0",
       "BudgetAppCross.Core >= 1.0.0",
+      "CustomXamarinControls >= 1.0.0",
+      "CustomXamarinControls.iOS >= 1.0.0",
       "InAppPurchasing.Core >= 1.0.0",
       "InAppPurchasing.iOS >= 1.0.0",
       "Xam.Plugins.Forms.KeyboardOverlap >= 1.0.0.4",
@@ -5307,7 +5384,9 @@
   },
   "packageFolders": {
     "C:\\Users\\devin\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -5320,10 +5399,14 @@
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\devin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.2.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -5331,6 +5414,7 @@
         "xamarinios10"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -5348,6 +5432,12 @@
             },
             "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj": {
               "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\InAppPurchasing.Ios\\InAppPurchasing.iOS.csproj"
+            },
+            "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.iOS\\CustomXamarinControls.iOS.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls.iOS\\CustomXamarinControls.iOS.csproj"
+            },
+            "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj": {
+              "projectPath": "C:\\Users\\devin\\source\\repos\\CustomXamarinControls\\CustomXamarinControls\\CustomXamarinControls.csproj"
             }
           }
         }
@@ -5382,5 +5472,33 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.2012 to 4.7.0.1142. Reference the package directly from the project to select a different version. \r\n BudgetAppCross.iOS -> CustomXamarinControls -> Xamarin.Forms (>= 5.0.0.2012) \r\n BudgetAppCross.iOS -> Xamarin.Forms (>= 4.7.0.1142)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.2012 to 4.7.0.1142. Reference the package directly from the project to select a different version. \r\n BudgetAppCross.iOS -> BudgetAppCross -> CustomXamarinFormsBehaviors -> Xamarin.Forms (>= 5.0.0.2012) \r\n BudgetAppCross.iOS -> Xamarin.Forms (>= 4.7.0.1142)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    }
+  ]
 }

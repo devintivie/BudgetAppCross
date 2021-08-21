@@ -8,6 +8,7 @@
              xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              mc:Ignorable="d"
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
+             xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
              x:Class="BudgetAppCross.Views.NewBillView">
 
     <ContentView.Content>
@@ -42,7 +43,7 @@
                        Focused="Entry_Focused"
                        Unfocused="Entry_Unfocused"
                        WidthRequest="130"/>-->
-                <controls:CurrencyEntry Text="{Binding Amount}" Keyboard="Numeric"
+                <custom:CurrencyEntry Text="{Binding Amount}" Keyboard="Numeric"
                                             Grid.Row="1" Grid.Column="1"
                                             WidthRequest="130"/>
                 <!--IsPaid-->

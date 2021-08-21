@@ -50,6 +50,10 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Services\obj\Deb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.csprojAssemblyReference.cache
+>>>>>>> feature/ModifySQLite
+=======
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Services\obj\Debug\netstandard2.0\BudgetAppCross.Services.csproj.AssemblyReference.cache
 >>>>>>> feature/ModifySQLite

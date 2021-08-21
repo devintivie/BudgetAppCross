@@ -44,12 +44,34 @@ namespace BudgetAppCross.SQLiteDataAccess
 
             await UpdateBankAccountNames();
             await UpdatePayeeNames();
+            await UpdateAutopayBills();
         }
 
         public async Task CreateDefaultAccount()
         {
             var defaultAccount = new BankAccount(0, "Undecided");
             await SaveBankAccount(defaultAccount);
+        }
+
+        public async Task UpdateAutopayBills()
+        {
+            var unpaidBills = await GetUnpaidBills();
+
+            var autoPayUpdates = new List<Bill>();
+            foreach (var item in unpaidBills)
+            {
+                if (item.IsAuto)
+                {
+                    if (item.BillStatus == BillStatus.AutoPayPast)
+                    {
+                        item.IsPaid = true;
+                        item.IsAuto = false;
+                        autoPayUpdates.Add(item);
+                    }
+                }
+            }
+
+            await UpdateBills(autoPayUpdates);
         }
         #endregion
 
@@ -542,7 +564,7 @@ namespace BudgetAppCross.SQLiteDataAccess
                     using (var conn = new ShortConnection(connectionString))
                     {
                         var query = $@"SELECT * FROM Bill 
-                                WHERE AccountID = @AccountId 
+                                WHERE AccountID = @AccountId
                                 AND Date BETWEEN @Start AND @End";
                         var cmd = conn.CreateCommand(query);
                         cmd.Bind("@AccountId", acctId);
@@ -708,6 +730,31 @@ namespace BudgetAppCross.SQLiteDataAccess
             });
             agendaBills = await AttachAccounts(agendaBills);
             return agendaBills;
+        }
+
+        public async Task<List<Bill>> GetUnpaidBills()
+        {
+            var unpaidBills = new List<Bill>();
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (var conn = new ShortConnection(connectionString))
+                    {
+                        var query = $@"SELECT * FROM Bill 
+                                    WHERE IsPaid = @IsPaid";
+                        var cmd = conn.CreateCommand(query);
+                        cmd.Bind("@IsPaid", false);
+                        unpaidBills = cmd.ExecuteQuery<Bill>();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            });
+            unpaidBills = await AttachAccounts(unpaidBills);
+            return unpaidBills;
         }
         #endregion
 

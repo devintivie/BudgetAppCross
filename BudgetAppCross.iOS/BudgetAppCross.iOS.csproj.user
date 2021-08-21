@@ -2,11 +2,16 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <SelectedDevice>iPhone 12 iOS 14.3</SelectedDevice>
     <DefaultDevice>iPhone 12 iOS 14.3</DefaultDevice>
 =======
     <SelectedDevice>Devin’s iPhone</SelectedDevice>
     <DefaultDevice>iPhone 12 Pro iOS 14.4</DefaultDevice>
+>>>>>>> feature/ModifySQLite
+=======
+    <SelectedDevice>Local Device</SelectedDevice>
+    <DefaultDevice>iPhone 12 iOS 14.5</DefaultDevice>
 >>>>>>> feature/ModifySQLite
     <TargetiOSDevice>&lt;%3fxml version="1.0" encoding="UTF-8"%3f&gt;
 &lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
@@ -19,7 +24,7 @@
 		&lt;key&gt;model&lt;/key&gt;
 		&lt;string&gt;iPhone11,8&lt;/string&gt;
 		&lt;key&gt;os-version&lt;/key&gt;
-		&lt;string&gt;14.4&lt;/string&gt;
+		&lt;string&gt;14.6&lt;/string&gt;
 		&lt;key&gt;os&lt;/key&gt;
 		&lt;string&gt;iOS&lt;/string&gt;
 	&lt;/dict&gt;
@@ -28,6 +33,10 @@
 </TargetiOSDevice>
     <DeveloperId>devintivie%40outlook.com</DeveloperId>
     <DevelopmentTeamId>HFA2C8S6BN</DevelopmentTeamId>
+<<<<<<< HEAD
     <ProjectView>ProjectFiles</ProjectView>
+=======
+    <ActiveDebugProfile>Local Device</ActiveDebugProfile>
+>>>>>>> feature/ModifySQLite
   </PropertyGroup>
 </Project>

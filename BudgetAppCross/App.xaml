@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
+             xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              mc:Ignorable="d"
              x:Class="BudgetAppCross.App">
 
@@ -91,7 +92,8 @@
                 <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackground}"/>
                 
             </Style>
-            
+            <cvt:EnumToDescriptionConverter x:Key="EnumDescription"/>
+
         </ResourceDictionary>
         
     </Application.Resources>

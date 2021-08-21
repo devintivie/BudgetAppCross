@@ -10,7 +10,9 @@
              xmlns:controls="clr-namespace:BudgetAppCross.Views"
                       xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
              mc:Ignorable="d"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              x:Class="BudgetAppCross.Views.AgendaBillView">
+    <!--xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"-->
     <ContentView.Content>
         <Grid Padding="3" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
               Margin="2">
@@ -45,7 +47,7 @@
                             VerticalOptions="Center"
                             VerticalTextAlignment="Center"
                             WidthRequest="120"/>
-                    <controls:CurrencyEntry Text="{Binding Amount}"
+                    <custom:CurrencyEntry Text="{Binding Amount}"
                             WidthRequest="100"
                             Grid.Column="2"
                             HorizontalOptions="FillAndExpand"
@@ -60,6 +62,7 @@
                     <custom:CustomPicker ItemsSource="{Binding AccountOptions}"
                             Grid.Row="1" Grid.Column="1"
                             SelectedItem="{Binding SelectedAccount}"
+                            ios:Picker.UpdateMode="WhenFinished"
                         VerticalOptions="Center"
                             WidthRequest="200"/>
                     <custom:CustomEntry Text="{Binding Confirmation}"

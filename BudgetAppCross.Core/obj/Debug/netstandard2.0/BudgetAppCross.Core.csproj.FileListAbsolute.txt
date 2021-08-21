@@ -79,13 +79,18 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\n
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.Core.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BaseClasses.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCore.Sqlite.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.DataAccess.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.Models.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.SQLiteDataAccess.dll
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\InAppPurchasing.Core.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BaseClasses.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCore.Sqlite.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.DataAccess.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.Models.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.SQLiteDataAccess.pdb
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\InAppPurchasing.Core.pdb
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csprojAssemblyReference.cache
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.AssemblyInfoInputs.cache
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.AssemblyInfo.cs
 >>>>>>> feature/ModifySQLite
@@ -94,6 +99,7 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\n
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.pdb
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.DataAccess.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.SQLiteDataAccess.dll
@@ -101,4 +107,7 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\n
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.SQLiteDataAccess.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.pdb
+>>>>>>> feature/ModifySQLite
+=======
+C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csproj.AssemblyReference.cache
 >>>>>>> feature/ModifySQLite

@@ -257,6 +257,21 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
+        private bool onAutopay;
+        public bool OnAutopay
+        {
+            get { return onAutopay; }
+            set
+            {
+                if (onAutopay != value)
+                {
+                    onAutopay = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+
         private bool payeeSet;
         public bool PayeeSet
         {
@@ -480,6 +495,7 @@ namespace BudgetAppCross.Core.ViewModels
                 {
                     var bill = new Bill(payee, Amount, item.Date);
                     bill.AccountID = acctId;
+                    bill.IsAuto = onAutopay;
                     //bill.BankAccount = acct;
                     tempBills.Add(bill);
                 }

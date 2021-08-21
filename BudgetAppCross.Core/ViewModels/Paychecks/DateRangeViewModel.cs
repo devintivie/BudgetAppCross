@@ -183,6 +183,7 @@ namespace BudgetAppCross.Core.ViewModels
 
                 var billData = await BudgetDatabase.GetBillsDateRangeForAccount(StartDate, EndDate, SelectedAccount);
 
+                billData = billData.OrderBy(x => x.Date).ToList();
                 //var billData = billCall;
                 Bills.Clear();
                 foreach (var bill in billData)

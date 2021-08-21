@@ -48,7 +48,7 @@
                           />
                 <!--<Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
                        Grid.Column="1"/>-->
-                <controls:CurrencyEntry Text="{Binding Amount}"
+                <custom:CurrencyEntry Text="{Binding Amount}"
                                             Margin="0"
                             Grid.Column="1" Grid.ColumnSpan="3"/>
                 <custom:CustomPicker ItemsSource="{Binding AccountOptions}"

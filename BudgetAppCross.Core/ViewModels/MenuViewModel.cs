@@ -22,6 +22,17 @@ namespace BudgetAppCross.Core.ViewModels
 
         #region Fields
         readonly IMvxNavigationService navigationService;
+        //private readonly Dictionary<NavigablePage, string> PageStrings = new Dictionary<NavigablePage, string>()
+        //{
+        //    { NavigablePage.Account, "Account" },
+        //    { NavigablePage.LoadBudget, "Load Budget" },
+        //    { NavigablePage.DateRange, "Date Range" },
+        //    { NavigablePage.BillList, "Bills List" },
+        //    { NavigablePage.Agenda, "Agenda" },
+        //    { NavigablePage.BankOverview, "Bank Overview" },
+        //    { NavigablePage.About, "About" },
+        //    { NavigablePage.Purchasing, "Purchasing" }
+        //};
         #endregion
 
         #region Properties
@@ -33,16 +44,29 @@ namespace BudgetAppCross.Core.ViewModels
         //    set { SetProperty(ref menuItemList, value); }
         //}
 
+        //private ObservableCollection<NavigablePage> pageList;
+        //public ObservableCollection<NavigablePage> PageList
+        //{
+        //    get { return pageList; }
+        //    set
+        //    {
+        //        SetProperty(ref pageList, value);
+        //    }
+        //}
+
         private ObservableCollection<NavigablePage> pageList;
         public ObservableCollection<NavigablePage> PageList
         {
             get { return pageList; }
             set
             {
-                SetProperty(ref pageList, value);
+                if (pageList != value)
+                {
+                    pageList = value;
+                    RaisePropertyChanged();
+                }
             }
         }
-
 
         private string selectedMenuItem;
         public string SelectedMenuItem
@@ -50,7 +74,11 @@ namespace BudgetAppCross.Core.ViewModels
             get { return selectedMenuItem; }
             set
             {
-                SetProperty(ref selectedMenuItem, value);
+                if (selectedMenuItem != value)
+                {
+                    selectedMenuItem = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
@@ -60,9 +88,38 @@ namespace BudgetAppCross.Core.ViewModels
             get { return selectedPage; }
             set
             {
-                SetProperty(ref selectedPage, value);
+                if (selectedPage != value)
+                {
+                    selectedPage = value;
+                    RaisePropertyChanged();
+                }
             }
         }
+
+
+
+
+
+
+        //private string selectedMenuItem;
+        //public string SelectedMenuItem
+        //{
+        //    get { return selectedMenuItem; }
+        //    set
+        //    {
+        //        SetProperty(ref selectedMenuItem, value);
+        //    }
+        //}
+
+        //private NavigablePage selectedPage;
+        //public NavigablePage SelectedPage
+        //{
+        //    get { return selectedPage; }
+        //    set
+        //    {
+        //        SetProperty(ref selectedPage, value);
+        //    }
+        //}
 
         public string BudgetName => StateManager.Instance.DatabaseFilename;
 

@@ -1,13 +1,15 @@
 ﻿using BudgetAppCross.Models;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
+//using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
@@ -68,9 +70,9 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-        public ICommand AddBillCommand { get; }
-        public ICommand ShowOptionsCommand { get; }
-        public ICommand DeleteBillCommand { get; }
+        public IMvxCommand AddBillCommand { get; }
+        public IMvxCommand ShowOptionsCommand { get; }
+        public IMvxCommand DeleteBillCommand { get; }
         #endregion
 
         #region Constructors
@@ -78,9 +80,9 @@ namespace BudgetAppCross.Core.ViewModels
         {
             navigationService = navigation;
             //AddBillCommand = new Command(async result => await navigationService.Navigate<NewBillViewModel, string, BillTracker>(BillTracker.CompanyName));
-            AddBillCommand = new Command(async () => await OnAddBill());
-            ShowOptionsCommand = new Command(() => Console.WriteLine("Swipe Left"));
-            DeleteBillCommand = new Command(() =>  OnDeleteBill(), () => CanDeleteBill());
+            AddBillCommand = new MvxAsyncCommand(async () => await OnAddBill());
+            //ShowOptionsCommand = new Command(() => Console.WriteLine("Swipe Left"));
+            DeleteBillCommand = new MvxAsyncCommand(async () => await OnDeleteBill(), () => CanDeleteBill());
 
             Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage());
         }
@@ -114,6 +116,7 @@ namespace BudgetAppCross.Core.ViewModels
             //var options = await LoadAccountOptions();
             await BudgetDatabase.UpdateBankAccountNames();
             var temp = await BudgetDatabase.GetBillsForPayee(CompanyName);
+            temp = temp.OrderBy(x => x.Date).ToList();
             var bvms = new List<BillViewModel>();
             foreach (var item in temp)
             {
@@ -149,7 +152,8 @@ namespace BudgetAppCross.Core.ViewModels
 
         private void RefreshCanExecutes()
         {
-            (DeleteBillCommand as Command).ChangeCanExecute();
+            //(DeleteBillCommand as Command).ChangeCanExecute();
+            (DeleteBillCommand as MvxAsyncCommand).RaiseCanExecuteChanged();
         }
 
         private async Task OnAddBill()
@@ -161,11 +165,11 @@ namespace BudgetAppCross.Core.ViewModels
 
 
 
-        private async void OnDeleteBill()
+        private async Task OnDeleteBill()
         {
             await BudgetDatabase.DeleteBill(SelectedBill.Bill);
             //BillManager.DeleteBill(BillTracker.CompanyName, SelectedBill);
-            UpdateBills();
+            _ = UpdateBills();
         }
 
         private bool CanDeleteBill()

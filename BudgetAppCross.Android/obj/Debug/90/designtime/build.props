@@ -1,21 +1,22 @@
 bundleassemblies=false
 aotassemblies=false
+androidaddkeepalives=
 androidaotmode=none
 androidembedprofilers=
 androidenableprofiledaot=false
 androiddextool=d8
 androidlinktool=
+androidlinkresources=
 androidpackageformat=apk
-usesharedruntime=false
 embedassembliesintoapk=true
 androidlinkmode=none
 androidlinkskip=
-androidsdkbuildtoolsversion=29.0.2
+androidsdkbuildtoolsversion=30.0.2
 androidsdkpath=c:\program files (x86)\android\android-sdk\
 androidndkpath=
 javasdkpath=c:\program files\android\jdk\microsoft_dist_openjdk_1.8.0.25\
 androidsequencepointsmode=none
-xamarinandroidversion=11.1.0-17
+xamarinandroidversion=11.3.0-4
 monosymbolarchive=false
 androiduselatestplatformsdk=false
 targetframeworkversion=v9.0
@@ -25,9 +26,13 @@ os=windows_nt
 androidincludedebugsymbols=true
 androidpackagenamingpolicy=lowercasecrc64
 <<<<<<< HEAD
+<<<<<<< HEAD
 _nugetassetstimestamp=637470082253543039
 =======
 _nugetassetstimestamp=637471323848935378
+>>>>>>> feature/ModifySQLite
+=======
+_nugetassetstimestamp=637651436117658937
 >>>>>>> feature/ModifySQLite
 typemapkind=strings-asm
 androidsupportedabis=armeabi-v7a

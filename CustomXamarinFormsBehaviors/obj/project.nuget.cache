@@ -1,16 +1,19 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "tBnMz+ZJ+bzvE7rmio8MKjxCW8G9E2Z5bv4ie2Io62eK8m63pcqimFcclbrr/JJaetmKPxYOxnzQ6MqDIVYPKw==",
-=======
-  "dgSpecHash": "EooutpvRjanozow5MtBlPoFXgDN8QmvEZgDnjbuld2orKxC2n0TvQHzYQ10FIByWorXJfxZiw6OpRQK5o425bg==",
->>>>>>> feature/ModifySQLite
+  "dgSpecHash": "CBoELci/6dCDo/JvqsPmK9gGDhdfJsKcDqpKx0vxgArY5Q98h7K34+hE4piPOZbQ7fDeBmV1nM4N87VpUroU0w==",
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\CustomXamarinFormsBehaviors\\CustomXamarinFormsBehaviors.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\devin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\devin\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\4.7.0.1080\\xamarin.forms.4.7.0.1080.nupkg.sha512"
+    "C:\\Users\\devin\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\CustomXamarinFormsBehaviors\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -21,7 +21,7 @@
             </Grid.ColumnDefinitions>
             <!--<Entry Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
                    Grid.Column="0"/>-->
-            <controls:CurrencyEntry Text="{Binding Amount}" Grid.Column="0"
+            <custom:CurrencyEntry Text="{Binding Amount}" Grid.Column="0"
                                     Margin="5"/>
             <custom:CustomDatePicker Date="{Binding Timestamp}"
                                      Margin="5"

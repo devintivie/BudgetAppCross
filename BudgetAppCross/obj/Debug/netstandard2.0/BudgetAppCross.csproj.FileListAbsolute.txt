@@ -179,6 +179,7 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\BillDetailsPage.xaml.g.cs
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross\obj\Debug\netstandard2.0\Views\Budget\BillQuickView.xaml.g.cs
 <<<<<<< HEAD
+<<<<<<< HEAD
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.deps.json
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\ref\BudgetAppCross.dll
@@ -288,4 +289,6 @@ C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netsta
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.SQLiteDataAccess.pdb
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.dll
 C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.pdb
+>>>>>>> feature/ModifySQLite
+=======
 >>>>>>> feature/ModifySQLite

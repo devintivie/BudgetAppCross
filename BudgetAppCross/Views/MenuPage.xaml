@@ -7,6 +7,7 @@
              xmlns:vms="clr-namespace:BudgetAppCross.Core.ViewModels;assembly=BudgetAppCross.Core"
              xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
              xmlns:core="clr-namespace:BudgetAppCross.Core;assembly=BudgetAppCross.Core"
+             xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              x:TypeArguments="vms:MenuViewModel"
              mc:Ignorable="d"
              x:Class="BudgetAppCross.Views.MenuPage"

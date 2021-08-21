@@ -1,9 +1,13 @@
 {
   "version": 2,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "iY/BRMBPdELhwoHYWt00p+pFzFRQB+29aI2+RmlSnbrZTQ3SGYhk0Fghrp5movQm9qgvWnB3SmqmBvRlc7TozA==",
 =======
   "dgSpecHash": "Bc4+S1RwmVgeWHkjI9upEN/rDbOzh+S0LoQ0gGx1STKezQbg4MbhrAsrjfKyrrz2ZIKkq6ZUy+vf0k1hAMqgWQ==",
+>>>>>>> feature/ModifySQLite
+=======
+  "dgSpecHash": "wNPkZM+MFAxOM+aJjp4qUOZsvGxhUXRuvR6WcIw5IeHeKAfIEoPegx0xxrgS5Q20wMTPBH7QIjeYvpE6boPW2g==",
 >>>>>>> feature/ModifySQLite
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Core\\BudgetAppCross.Core.csproj",
