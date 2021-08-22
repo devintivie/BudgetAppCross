@@ -9,19 +9,18 @@ using MvvmCross;
 using MvvmCross.Forms.Platforms.Ios.Views;
 using MvvmCross.Forms.Platforms.Ios.Core;
 using MvvmCross.UI;
-using InAppPurchasing.iOS;
-using InAppPurchasing.Core;
+//using InAppPurchasing.iOS;
+//using InAppPurchasing.Core;
 using KeyboardOverlap.Forms.Plugin.iOSUnified;
 
 namespace BudgetAppCross.iOS
 {
     [Register("AppDelegate")]
-    public partial class AppDelegate : MvxFormsApplicationDelegate<MvxFormsIosSetup<Core.App, App>, Core.App, App>
+    public partial class AppDelegate : MvxFormsApplicationDelegate<Setup, Core.App, App>
     {
-        public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
+        public AppDelegate()
         {
-            KeyboardOverlapRenderer.Init();
-            return base.FinishedLaunching(uiApplication, launchOptions);
+
         }
     }
 }

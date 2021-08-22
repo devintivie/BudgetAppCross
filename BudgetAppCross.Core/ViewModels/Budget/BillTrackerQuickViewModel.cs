@@ -1,4 +1,5 @@
-﻿using BudgetAppCross.Core.Services;
+﻿using BaseViewModels;
+using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -9,11 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BillTrackerQuickViewModel : BaseViewModel
+    public class BillTrackerQuickViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
         private IMvxNavigationService navigationService;
@@ -52,7 +52,7 @@ namespace BudgetAppCross.Core.ViewModels
         #region Methods
         private async Task OnDeleteThis()
         {
-            await BudgetDatabase.DeleteBillsForPayee(Payee);
+            await BudgetDatabase_old.DeleteBillsForPayee(Payee);
             Messenger.Send(new ChangeBillMessage());
         }
 

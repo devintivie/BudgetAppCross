@@ -10,15 +10,15 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 using System.Linq;
+using BaseViewModels;
+using BaseClasses;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class AccountViewModel : BaseViewModel// MvxViewModel
+    public class AccountViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
-        private IMvxNavigationService navigationService;
         #endregion
 
         #region Properties
@@ -26,15 +26,13 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-        public ICommand SelectBudgetCommand { get; }
+        public IMvxCommand SelectBudgetCommand { get; }
         #endregion
 
         #region Constructors
-        public AccountViewModel(IMvxNavigationService navigation)
+        public AccountViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler) : base(navService, backgroundHandler)
         {
-            navigationService = navigation;
-
-            SelectBudgetCommand = new Command(async () => await navigationService.Navigate<SelectBudgetViewModel>());
+            SelectBudgetCommand = new MvxAsyncCommand(async () => await _navService.Navigate<SelectBudgetViewModel>());
         }
 
         #endregion

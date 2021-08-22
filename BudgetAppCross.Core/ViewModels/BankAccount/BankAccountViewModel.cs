@@ -1,4 +1,6 @@
-﻿using BudgetAppCross.Models;
+﻿using BaseClasses;
+using BaseViewModels;
+using BudgetAppCross.Models;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using System;
@@ -8,11 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BankAccountViewModel : BaseViewModel<BankAccount>
+    public class BankAccountViewModel : XamarinBaseViewModel<BankAccount>
     {
         #region Fields
         private IMvxNavigationService navigationService;
@@ -97,21 +98,20 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        public BankAccountViewModel(IMvxNavigationService navigation)
+        public BankAccountViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler) : base(navService, backgroundHandler)
+
         {
-            navigationService = navigation;
             AddBalanceCommand = new Command(async () => await OnAddBalance());
             EditCommand = new MvxAsyncCommand(async () => await OnEdit());
             SaveEditCommand = new MvxAsyncCommand(async () => await OnSaveEdit());
             //Messenger.Register<ChangeBalanceMessage>(this, async x => await OnUpdateBalanceMessage());
-            Messenger.Register<ChangeBalanceMessage>(this, async x => await OnChangeBalanceMessage());
+            //Messenger.Register<ChangeBalanceMessage>(this, async x => await OnChangeBalanceMessage());
         }
 
         public override void ViewDestroy(bool viewFinishing = true)
         {
             base.ViewDestroy(viewFinishing);
-
-            Messenger.Unregister(this);
+            _backgroundHandler.UnregisterMessage(this);
         }
 
 
@@ -157,7 +157,8 @@ namespace BudgetAppCross.Core.ViewModels
                 AccountID = BankAccount.AccountID,
                 BankAccount = BankAccount
             };
-            await navigationService.Navigate<NewBalanceViewModel, Balance, bool>(newBalance);
+            //INavigationResult success;
+            var result = await navigationService.Navigate<NewBalanceViewModel, Balance, INavigationResult>(newBalance);
             var _ = UpdateBalances();
         }
 

@@ -7,15 +7,15 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-//using Xamarin.Forms;
 using Acr.UserDialogs;
 using System.Linq;
 using MvvmCross;
 using MvvmCross.Commands;
+using BaseViewModels;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class EditBillTrackerViewModel : BaseViewModel<string>// MvxViewModel
+    public class EditBillTrackerViewModel : XamarinBaseViewModel<string>// MvxViewModel
     {
         #region Fields
         private IMvxNavigationService navigationService;
@@ -69,7 +69,7 @@ namespace BudgetAppCross.Core.ViewModels
                 Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
                 return;
             }
-            await BudgetDatabase.ChangePayeeName(oldPayee, Payee);
+            await BudgetDatabase_old.ChangePayeeName(oldPayee, Payee);
 
             Messenger.Send(new ChangeBillMessage());
             await navigationService.Close(this);

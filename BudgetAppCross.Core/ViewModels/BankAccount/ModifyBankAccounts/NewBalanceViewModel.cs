@@ -12,11 +12,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-//using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class NewBalanceViewModel : MvxViewModel<Balance, bool>//<string, Bill>
+    public class NewBalanceViewModel : MvxViewModel<Balance, INavigationResult>//<string, Bill>
     {
         #region Fields
         private IMvxNavigationService navigationService;
@@ -75,7 +74,10 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task OnSave()
         {
             await DataManager.SaveBalance(Balance);
-            await navigationService.Close(this, true);
+            //await navigationService.Close(this, true);
+            //var success = true;
+            var success = new NavigationResult(true);
+            await navigationService.Close(this, success);
         }
 
         private async Task OnCancel()

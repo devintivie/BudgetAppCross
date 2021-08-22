@@ -7,18 +7,17 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 using Acr.UserDialogs;
 using System.Linq;
 using MvvmCross;
+using BaseViewModels;
+using BaseClasses;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class EditBankAccountViewModel : BaseViewModel<BankAccount>// MvxViewModel
+    public class EditBankAccountViewModel : XamarinBaseViewModel<BankAccount>// MvxViewModel
     {
         #region Fields
-        private IMvxNavigationService navigationService;
-        //private IDataManager DataManager = Mvx.IoCProvider.Resolve<IDataManager>();
         #endregion
 
         #region Properties
@@ -100,9 +99,8 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        public EditBankAccountViewModel(IMvxNavigationService nav)
+        public EditBankAccountViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler) : base(navService, backgroundHandler)
         {
-            navigationService = nav;
             SaveCommand = new Command(async () => await OnSave());
             CancelCommand = new Command(async () => await OnCancel());
             
@@ -125,7 +123,7 @@ namespace BudgetAppCross.Core.ViewModels
                 Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
                 return;
             }
-            await BudgetDatabase.SaveBankAccount(BankAccount);
+            await BudgetDatabase_old.SaveBankAccount(BankAccount);
 
             Messenger.Send(new ChangeBalanceMessage());
             await navigationService.Close(this);

@@ -15,15 +15,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
     public class NewBillsViewModel : MvxViewModel<string>//, bool>//<string, Bill>
     {
         #region Fields
-        private IMvxNavigationService navigationService;
-        private IDataManager DataManager = Mvx.IoCProvider.Resolve<IDataManager>();
+        //private IDataManager DataManager = Mvx.IoCProvider.Resolve<IDataManager>();
         #endregion
 
         #region Properties

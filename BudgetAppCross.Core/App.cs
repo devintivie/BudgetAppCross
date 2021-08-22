@@ -1,12 +1,13 @@
 ﻿using Acr.UserDialogs;
-using BudgetAppCross.Core.Services;
-using BudgetAppCross.Core.ViewModels;
+using BaseClasses;
+using BaseClasses.Configurations.Local;
+using BudgetAppCross.Configurations;
+using BudgetAppCross.Core.ViewModels.Root;
 using BudgetAppCross.DataAccess;
 using BudgetAppCross.SQLiteDataAccess;
 using MvvmCross;
 using MvvmCross.IoC;
 using MvvmCross.ViewModels;
-using System;
 
 namespace BudgetAppCross.Core
 {
@@ -15,12 +16,20 @@ namespace BudgetAppCross.Core
         public override void Initialize()
         {
             base.Initialize();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IMessenger, Messenger>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ILogManager, LogManager>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<INotificationHandler, SimpleNotificationService>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IBackgroundHandler, SimpleBackgroundHandler>();
 
-            CreatableTypes().EndingWith("Service").AsInterfaces().RegisterAsLazySingleton();
-            Mvx.IoCProvider.RegisterSingleton(() => UserDialogs.Instance);
-            Mvx.IoCProvider.RegisterSingleton<IDataManager>(() => new SQLiteBudgetDatabase());
+            var configFileExt = ".db3";
+            Mvx.IoCProvider.RegisterSingleton<ISettingsManager>(() => 
+                new SettingsManager(ApplicationPlatform.Xamarin, Mvx.IoCProvider.GetSingleton<IBackgroundHandler>(), configFileExt));
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IConfigManager<SQLiteConfiguration>, SQLiteConfigurationManager>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IDataManager, SQLiteBudgetDatabase>();
             
-            RegisterAppStart<MainViewModel>();
+            Mvx.IoCProvider.RegisterSingleton<IUserDialogs>(() => UserDialogs.Instance);
+            
+            RegisterAppStart<RootViewModel>();
         }
 
         

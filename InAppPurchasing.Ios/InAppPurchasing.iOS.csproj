@@ -52,23 +52,19 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MvvmCross">
-      <Version>6.4.2</Version>
+      <Version>8.0.1</Version>
     </PackageReference>
     <PackageReference Include="MvvmCross.Forms">
-      <Version>6.4.2</Version>
+      <Version>8.0.1</Version>
     </PackageReference>
-    <PackageReference Include="MvvmCross.Platform">
-      <Version>5.7.0</Version>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>4.7.0.1142</Version>
+      <Version>5.0.0.2083</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BaseClasses\BaseClasses.csproj">
-      <Project>{7CA92946-7434-4545-B961-44D0A77D7822}</Project>
-      <Name>BaseClasses</Name>
-    </ProjectReference>
     <ProjectReference Include="..\InAppPurchasing.Core\InAppPurchasing.Core.csproj">
       <Project>{D59B3490-CF7F-4BBF-ABA3-763AE3F41899}</Project>
       <Name>InAppPurchasing.Core</Name>

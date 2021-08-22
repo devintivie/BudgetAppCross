@@ -1,4 +1,5 @@
-﻿using BudgetAppCross.Models;
+﻿using BaseViewModels;
+using BudgetAppCross.Models;
 using MvvmCross.Navigation;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BillDetailsViewModel : BaseViewModel<Bill>
+    public class BillDetailsViewModel : XamarinBaseViewModel<Bill>
     {
         #region Fields
         private IMvxNavigationService navigationService;

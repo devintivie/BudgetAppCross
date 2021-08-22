@@ -1,4 +1,5 @@
-﻿using BudgetAppCross.Core.Services;
+﻿using BaseViewModels;
+using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
 using MvvmCross.ViewModels;
 using System;
@@ -8,11 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BillViewModel : BaseViewModel//<int>
+    public class BillViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
         private bool initialAccountSet = false;
@@ -186,7 +186,7 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task LoadAccountOptions()
         {
             
-            AccountOptions = new ObservableCollection<string>(BudgetDatabase.BankAccountNicknames);
+            AccountOptions = new ObservableCollection<string>(BudgetDatabase_old.BankAccountNicknames);
             SelectedAccount = AccountOptions.Where(x => x.Equals(Bill.BankAccount.Nickname)).FirstOrDefault();
 
         }
@@ -195,7 +195,7 @@ namespace BudgetAppCross.Core.ViewModels
         {
             if(SelectedAccount != null && initialAccountSet)
             {
-                var acctId = await BudgetDatabase.GetBankAccountID(SelectedAccount);
+                var acctId = await BudgetDatabase_old.GetBankAccountID(SelectedAccount);
 
                 Bill.AccountID = acctId;
                 await ChangeAndSave();
@@ -228,19 +228,19 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task UpdateAndSave()
         {
-            await BudgetDatabase.SaveBill(Bill);
+            await BudgetDatabase_old.SaveBill(Bill);
             Messenger.Send(new UpdateBillMessage(Bill.AccountID));
         }
 
         private async Task ChangeAndSave()
         {
-            await BudgetDatabase.SaveBill(Bill);
+            await BudgetDatabase_old.SaveBill(Bill);
             Messenger.Send(new ChangeBillMessage(Bill.AccountID));
         }
 
         private async Task OnDeleteThis()
         {
-            await BudgetDatabase.DeleteBill(Bill);
+            await BudgetDatabase_old.DeleteBill(Bill);
             Messenger.Send(new ChangeBillMessage(Bill.AccountID));
         }
 

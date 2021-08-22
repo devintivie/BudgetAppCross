@@ -1,15 +1,15 @@
-﻿using BudgetAppCross.Models;
+﻿using BaseViewModels;
+using BudgetAppCross.Models;
 using MvvmCross.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BankAccountQuickViewModel : BaseViewModel
+    public class BankAccountQuickViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
         private IMvxNavigationService navigationService;

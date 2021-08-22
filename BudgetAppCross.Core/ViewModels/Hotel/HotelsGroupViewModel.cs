@@ -1,4 +1,5 @@
-﻿using BudgetAppCross.Models;
+﻿using BaseViewModels;
+using BudgetAppCross.Models;
 using MvvmCross.Navigation;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class HotelsGroupViewModel : BaseViewModel
+    public class HotelsGroupViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
         private IMvxNavigationService navigationService;

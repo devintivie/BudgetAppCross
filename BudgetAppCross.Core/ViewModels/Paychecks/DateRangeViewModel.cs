@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using BaseViewModels;
 using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
 using MvvmCross.Commands;
@@ -11,11 +12,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-//using Xamarin.Forms;
+//;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class DateRangeViewModel : BaseViewModel
+    public class DateRangeViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
         private IMvxNavigationService navigationService;
@@ -181,7 +182,7 @@ namespace BudgetAppCross.Core.ViewModels
                 //    .Where(x => x.BankAccount.Nickname.Equals(SelectedAccount))
                 //    .OrderBy(x => x.Date).ToList();
 
-                var billData = await BudgetDatabase.GetBillsDateRangeForAccount(StartDate, EndDate, SelectedAccount);
+                var billData = await BudgetDatabase_old.GetBillsDateRangeForAccount(StartDate, EndDate, SelectedAccount);
 
                 billData = billData.OrderBy(x => x.Date).ToList();
                 //var billData = billCall;
@@ -199,9 +200,9 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task LoadAccountOptions()
         {
-            AccountOptions = new ObservableCollection<string>(BudgetDatabase.BankAccountNicknames);
+            AccountOptions = new ObservableCollection<string>(BudgetDatabase_old.BankAccountNicknames);
 
-            var allAccts = await BudgetDatabase.GetBankAccounts();
+            var allAccts = await BudgetDatabase_old.GetBankAccounts();
             var accts = allAccts.Where(x => x.AccountID != 1).Select(x => x.Nickname).ToList();
             AccountOptions = new ObservableCollection<string>(accts);
             SelectedAccount = AccountOptions.FirstOrDefault();
@@ -214,7 +215,7 @@ namespace BudgetAppCross.Core.ViewModels
         {
             //var billcall = await BudgetDatabase.GetBills();
 
-            var billCall = await BudgetDatabase.GetBillsDateRangeForAccount(StartDate, EndDate, SelectedAccount);
+            var billCall = await BudgetDatabase_old.GetBillsDateRangeForAccount(StartDate, EndDate, SelectedAccount);
 
             var billData = billCall;
             //var billData = billcall
@@ -224,7 +225,7 @@ namespace BudgetAppCross.Core.ViewModels
             //    .OrderBy(x => x.Date).ToList();
 
             //Doesnt work if there are no bills
-            var bal = await BudgetDatabase.GetLatestBalance(SelectedAccount, StartDate);
+            var bal = await BudgetDatabase_old.GetLatestBalance(SelectedAccount, StartDate);
             if (bal == null)
             {
                 StartingBalance = 0.0m;

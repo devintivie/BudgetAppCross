@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.StateManager\\BudgetAppCross.StateManagers.csproj": {}
+    "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.StateManager\\BudgetAppCross.StateManagers.csproj": {}
   },
   "projects": {
-    "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.StateManager\\BudgetAppCross.StateManagers.csproj": {
+    "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.StateManager\\BudgetAppCross.StateManagers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.StateManager\\BudgetAppCross.StateManagers.csproj",
+        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.StateManager\\BudgetAppCross.StateManagers.csproj",
         "projectName": "BudgetAppCross.StateManagers",
-        "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.StateManager\\BudgetAppCross.StateManagers.csproj",
+        "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.StateManager\\BudgetAppCross.StateManagers.csproj",
         "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.StateManager\\obj\\",
+        "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.StateManager\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",

@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "Microsoft.Extensions.Logging.Abstractions/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
@@ -11,8 +20,11 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "MvvmCross/6.4.2": {
+      "MvvmCross/8.0.1": {
         "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0"
+        },
         "compile": {
           "lib/netstandard2.0/MvvmCross.dll": {}
         },
@@ -20,10 +32,10 @@
           "lib/netstandard2.0/MvvmCross.dll": {}
         }
       },
-      "MvvmCross.Plugin.Messenger/6.4.2": {
+      "MvvmCross.Plugin.Messenger/8.0.1": {
         "type": "package",
         "dependencies": {
-          "MvvmCross": "6.4.2"
+          "MvvmCross": "8.0.1"
         },
         "compile": {
           "lib/netstandard2.0/MvvmCross.Plugin.Messenger.dll": {}
@@ -222,6 +234,26 @@
     }
   },
   "libraries": {
+    "Microsoft.Extensions.Logging.Abstractions/5.0.0": {
+      "sha512": "NxP6ahFcBnnSfwNBi2KH2Oz8Xl5Sm2krjId/jRR3I7teFphwiUoUeZPwTNA21EX+5PtjqmyAvKaOeBXcJjcH/w==",
+      "type": "package",
+      "path": "microsoft.extensions.logging.abstractions/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net461/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+        "microsoft.extensions.logging.abstractions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
@@ -237,29 +269,21 @@
         "runtime.json"
       ]
     },
-    "MvvmCross/6.4.2": {
-      "sha512": "ttJOEXQE8MFEMlcuJL6Eonzj1QtfhO95qTrQLcdirV+41PgT7se4XqdDWqL263nrl/2i4CATC2qgokh7IV8msA==",
+    "MvvmCross/8.0.1": {
+      "sha512": "nMgbke/MoNSXNGP4z3ub7onXsDkBnEm2H786LAqxtPRQDknh8SifXmGluyACPanrHf6wukn+FKxBdZ4HeziKWA==",
       "type": "package",
-      "path": "mvvmcross/6.4.2",
+      "path": "mvvmcross/8.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
+        "icon.png",
         "lib/monoandroid10.0/MvvmCross.dll",
         "lib/monoandroid10.0/MvvmCross.pdb",
         "lib/monoandroid10.0/MvvmCross.xml",
-        "lib/monoandroid90/MvvmCross.dll",
-        "lib/monoandroid90/MvvmCross.pdb",
-        "lib/monoandroid90/MvvmCross.xml",
         "lib/net461/MvvmCross.dll",
         "lib/net461/MvvmCross.pdb",
         "lib/net461/MvvmCross.xml",
-        "lib/netcoreapp2.1/MvvmCross.dll",
-        "lib/netcoreapp2.1/MvvmCross.pdb",
-        "lib/netcoreapp2.1/MvvmCross.xml",
-        "lib/netcoreapp3.0/MvvmCross.dll",
-        "lib/netcoreapp3.0/MvvmCross.pdb",
-        "lib/netcoreapp3.0/MvvmCross.xml",
         "lib/netcoreapp3.1/MvvmCross.dll",
         "lib/netcoreapp3.1/MvvmCross.pdb",
         "lib/netcoreapp3.1/MvvmCross.xml",
@@ -285,23 +309,24 @@
         "lib/xamarinwatchos10/MvvmCross.dll",
         "lib/xamarinwatchos10/MvvmCross.pdb",
         "lib/xamarinwatchos10/MvvmCross.xml",
-        "mvvmcross.6.4.2.nupkg.sha512",
+        "mvvmcross.8.0.1.nupkg.sha512",
         "mvvmcross.nuspec",
         "readme.txt"
       ]
     },
-    "MvvmCross.Plugin.Messenger/6.4.2": {
-      "sha512": "oOVxyj8H1GqZFoxbMMgpW2jy9R4PJUpgdrmP61kjA3EPV3S+Shzy481NLnCN0gHzmlxKTM/w+b+W5RWD65CmRg==",
+    "MvvmCross.Plugin.Messenger/8.0.1": {
+      "sha512": "X9q3n//vfbF3JLc0VqSLaqXlVPzpTId27BRjncer8EUAfkfFFuIP9ORY1hWSfQacoV80wYqeB4KSvWk2M2O26w==",
       "type": "package",
-      "path": "mvvmcross.plugin.messenger/6.4.2",
+      "path": "mvvmcross.plugin.messenger/8.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE",
+        "icon.png",
         "lib/netstandard2.0/MvvmCross.Plugin.Messenger.dll",
         "lib/netstandard2.0/MvvmCross.Plugin.Messenger.pdb",
         "lib/netstandard2.0/MvvmCross.Plugin.Messenger.xml",
-        "mvvmcross.plugin.messenger.6.4.2.nupkg.sha512",
+        "mvvmcross.plugin.messenger.8.0.1.nupkg.sha512",
         "mvvmcross.plugin.messenger.nuspec"
       ]
     },
@@ -311,6 +336,7 @@
       "path": "netstandard.library/2.0.3",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "build/netstandard2.0/NETStandard.Library.targets",
@@ -697,7 +723,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "MvvmCross.Plugin.Messenger >= 6.4.2",
+      "MvvmCross.Plugin.Messenger >= 8.0.1",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.3",
       "SQLiteNetExtensions >= 2.1.0",
@@ -713,11 +739,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
+      "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
       "projectName": "BudgetAppCross.Models",
-      "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
+      "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
       "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Models\\obj\\",
+      "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
@@ -758,7 +784,7 @@
         "dependencies": {
           "MvvmCross.Plugin.Messenger": {
             "target": "Package",
-            "version": "[6.4.2, )"
+            "version": "[8.0.1, )"
           },
           "NETStandard.Library": {
             "suppressParent": "All",

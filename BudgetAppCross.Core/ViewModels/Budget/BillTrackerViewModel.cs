@@ -1,4 +1,5 @@
-﻿using BudgetAppCross.Models;
+﻿using BaseViewModels;
+using BudgetAppCross.Models;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -9,11 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-//using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BillTrackerViewModel : BaseViewModel<string>//MvxViewModel<BillTracker>
+    public class BillTrackerViewModel : XamarinBaseViewModel<string>//MvxViewModel<BillTracker>
     {
         #region Fields
         private IMvxNavigationService navigationService;

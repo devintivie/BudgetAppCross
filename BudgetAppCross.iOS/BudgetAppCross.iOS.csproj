@@ -140,6 +140,12 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Serilog">
+      <Version>2.10.0</Version>
+    </PackageReference>
+    <PackageReference Include="Serilog.Extensions.Logging">
+      <Version>3.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Xam.Plugins.Forms.KeyboardOverlap">
       <Version>1.0.0.4</Version>
     </PackageReference>
@@ -148,16 +154,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\..\CustomXamarinControls\CustomXamarinControls.iOS\CustomXamarinControls.iOS.csproj">
-      <Project>{d4b72c82-4736-4cbf-b552-2dfbdb23769e}</Project>
-      <Name>CustomXamarinControls.iOS</Name>
-      <IsAppExtension>false</IsAppExtension>
-      <IsWatchApp>false</IsWatchApp>
-    </ProjectReference>
-    <ProjectReference Include="..\..\CustomXamarinControls\CustomXamarinControls\CustomXamarinControls.csproj">
-      <Project>{34b9231c-cd9b-44d3-b8a1-4f510a0679f8}</Project>
-      <Name>CustomXamarinControls</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BudgetAppCross.Core\BudgetAppCross.Core.csproj">
       <Project>{367885f9-3ea9-4379-852e-95c2c320ccd5}</Project>
       <Name>BudgetAppCross.Core</Name>
@@ -165,16 +161,6 @@
     <ProjectReference Include="..\BudgetAppCross\BudgetAppCross.csproj">
       <Project>{A9152B4C-6FA6-457D-BC58-65103EEA384D}</Project>
       <Name>BudgetAppCross</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\InAppPurchasing.Core\InAppPurchasing.Core.csproj">
-      <Project>{D59B3490-CF7F-4BBF-ABA3-763AE3F41899}</Project>
-      <Name>InAppPurchasing.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\InAppPurchasing.Ios\InAppPurchasing.iOS.csproj">
-      <Project>{DB2C73C3-D1F0-4F40-BF74-266440963912}</Project>
-      <Name>InAppPurchasing.iOS</Name>
-      <IsAppExtension>false</IsAppExtension>
-      <IsWatchApp>false</IsWatchApp>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

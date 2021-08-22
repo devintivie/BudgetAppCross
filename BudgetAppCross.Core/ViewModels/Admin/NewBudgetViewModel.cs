@@ -1,24 +1,28 @@
 ﻿using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
 using MvvmCross.Navigation;
-using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 using Acr.UserDialogs;
 using System.Linq;
 using MvvmCross;
+using BaseViewModels;
+using MvvmCross.Commands;
+using BaseClasses;
+using BudgetAppCross.Configurations;
+using BudgetAppCross.DataAccess;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class NewBudgetViewModel : BaseViewModel// MvxViewModel
+    public class NewBudgetViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
-        private IMvxNavigationService navigationService;
-        //private IDataManager DataManager = Mvx.IoCProvider.Resolve<IDataManager>();
+        private IConfigManager<SQLiteConfiguration> _configManager;
+        private IDataManager _database;
+        private ISettingsManager _settings;
         #endregion
 
         #region Properties
@@ -63,6 +67,9 @@ namespace BudgetAppCross.Core.ViewModels
         }
 
         private DateTime initialBalanceDate = DateTime.Today;
+
+        
+
         public DateTime InitialBalanceDate
         {
             get { return initialBalanceDate; }
@@ -78,18 +85,17 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-        public ICommand SaveCommand { get; }
-        public ICommand CancelCommand { get; }
+        public IMvxCommand SaveCommand { get; }
+        public IMvxCommand CancelCommand { get; }
         #endregion
 
         #region Constructors
-        public NewBudgetViewModel(IMvxNavigationService nav)
+        public NewBudgetViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, ISettingsManager settings, IDataManager database) : base(navService, backgroundHandler)
         {
-            navigationService = nav;
-            SaveCommand = new Command(async () => await OnSave());
-            CancelCommand = new Command(async () => await OnCancel());
-
-            
+            _settings = settings;
+            _database = database;
+            SaveCommand = new MvxAsyncCommand(OnSave);
+            CancelCommand = new MvxAsyncCommand(OnCancel);
         }
         #endregion
 
@@ -103,9 +109,10 @@ namespace BudgetAppCross.Core.ViewModels
                 return;
             }
 
-            StateManager.DatabaseFilename = BudgetFilename;
-            await BudgetDatabase.Initialize();
-            await BudgetDatabase.CreateDefaultAccount();
+            _configManager.Configuration.DatabaseFilename = BudgetFilename;
+
+            await _database.Initialize();
+            await _database.CreateDefaultAccount();
 
             if (IsAddingBankAccount)
             {
@@ -122,20 +129,18 @@ namespace BudgetAppCross.Core.ViewModels
                     History = new List<Balance> { bal }
                 };
 
-                await BudgetDatabase.SaveBankAccount(ba);
-                await StateManager.SaveState();
+                await _database.SaveBankAccount(ba);
+                _settings.ConfigFile = BudgetFilename;
+                await _settings.SaveSettings();
+                //await StateManager.SaveState();
             }
 
-            if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
-            {
-                masterDetailPage.IsGestureEnabled = true;
-            }
-            await navigationService.Navigate<DateRangeViewModel>();
+            await _navService.Navigate<DateRangeViewModel>();
         }
 
         private async Task OnCancel()
         {
-            await navigationService.Navigate<SelectBudgetViewModel>();
+            await _navService.Navigate<SelectBudgetViewModel>();
         }
 
 

@@ -1,4 +1,5 @@
-﻿using BudgetAppCross.Core.Services;
+﻿using BaseViewModels;
+using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
 using MvvmCross.ViewModels;
 using System;
@@ -8,11 +9,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BalanceViewModel : BaseViewModel
+    public class BalanceViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
 
@@ -91,13 +91,13 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task ChangeAndSave()
         {
-            await BudgetDatabase.SaveBalance(Balance);
+            await BudgetDatabase_old.SaveBalance(Balance);
             Messenger.Send(new ChangeBalanceMessage(Balance.AccountID));
         }
 
         private async Task UpdateAndSave()
         {
-            await BudgetDatabase.SaveBalance(Balance);
+            await BudgetDatabase_old.SaveBalance(Balance);
         }
 
         //private async Task UpdateAccount()
@@ -132,7 +132,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnDeleteThis()
         {
-            await BudgetDatabase.DeleteBalance(Balance);
+            await BudgetDatabase_old.DeleteBalance(Balance);
             Messenger.Send(new ChangeBalanceMessage(Balance.AccountID));
         }
 

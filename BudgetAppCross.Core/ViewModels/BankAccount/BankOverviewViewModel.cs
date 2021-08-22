@@ -1,4 +1,5 @@
-﻿using BudgetAppCross.Core.Services;
+﻿using BaseViewModels;
+using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -9,11 +10,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BankOverviewViewModel : BaseViewModel
+    public class BankOverviewViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
         private IMvxNavigationService navigationService;
@@ -80,7 +80,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task LoadAccounts()
         {
-            var allAccts = await BudgetDatabase.GetBankAccounts();
+            var allAccts = await BudgetDatabase_old.GetBankAccounts();
             var accts = allAccts.Where(x => x.AccountID != 1).OrderBy(x => x.Nickname);
 
             Accounts.Clear();
@@ -104,7 +104,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async void OnDeleteAccount()
         {
-            await BudgetDatabase.DeleteBankAccount(SelectedAccount.BankAccount);
+            await BudgetDatabase_old.DeleteBankAccount(SelectedAccount.BankAccount);
             //Console.WriteLine(count); 
             //BankAccountManager.DeleteAccount(SelectedAccount);
             Accounts.Remove(selectedAccount);

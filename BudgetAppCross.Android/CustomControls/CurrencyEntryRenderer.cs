@@ -17,6 +17,7 @@ using Android.Views.InputMethods;
 using Android.Widget;
 using BudgetAppCross.Droid.CustomControls;
 using BudgetAppCross.Views;
+using CustomXamarinControls;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 

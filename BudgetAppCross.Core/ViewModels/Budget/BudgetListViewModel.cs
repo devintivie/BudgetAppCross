@@ -10,12 +10,12 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 using System.Linq;
+using BaseViewModels;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BudgetListViewModel : BaseViewModel// MvxViewModel
+    public class BudgetListViewModel : MvxNavigationBaseViewModel// MvxViewModel
     {
         #region Fields
         private IMvxNavigationService navigationService;

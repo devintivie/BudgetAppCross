@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj": {}
+    "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
+    "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
+        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
         "projectName": "BudgetAppCross.Models",
-        "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
+        "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj",
         "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Models\\obj\\",
+        "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
@@ -52,7 +52,7 @@
           "dependencies": {
             "MvvmCross.Plugin.Messenger": {
               "target": "Package",
-              "version": "[6.4.2, )"
+              "version": "[8.0.1, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -87,14 +87,14 @@
         }
       }
     },
-    "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj": {
+    "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj",
+        "projectUniqueName": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj",
         "projectName": "BudgetAppCross.Services",
-        "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj",
+        "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\BudgetAppCross.Services.csproj",
         "packagesPath": "C:\\Users\\devin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Services\\obj\\",
+        "outputPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 20.2\\Components\\Offline Packages",
@@ -121,8 +121,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
-                "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCrossUpdate\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj"
+              "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj": {
+                "projectPath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.Models\\BudgetAppCross.Models.csproj"
               }
             }
           }

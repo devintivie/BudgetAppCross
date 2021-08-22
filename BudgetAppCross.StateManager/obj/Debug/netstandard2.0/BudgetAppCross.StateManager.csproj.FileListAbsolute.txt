@@ -1,8 +1,0 @@
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.StateManager\bin\Debug\netstandard2.0\BudgetAppCross.StateManager.deps.json
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.StateManager\bin\Debug\netstandard2.0\BudgetAppCross.StateManager.dll
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.StateManager\bin\Debug\netstandard2.0\BudgetAppCross.StateManager.pdb
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.StateManager\obj\Debug\netstandard2.0\BudgetAppCross.StateManager.AssemblyInfoInputs.cache
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.StateManager\obj\Debug\netstandard2.0\BudgetAppCross.StateManager.AssemblyInfo.cs
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.StateManager\obj\Debug\netstandard2.0\BudgetAppCross.StateManager.csproj.CoreCompileInputs.cache
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.StateManager\obj\Debug\netstandard2.0\BudgetAppCross.StateManager.dll
-C:\Users\devin\source\repos\BudgetAppCrossUpdate\BudgetAppCross.StateManager\obj\Debug\netstandard2.0\BudgetAppCross.StateManager.pdb

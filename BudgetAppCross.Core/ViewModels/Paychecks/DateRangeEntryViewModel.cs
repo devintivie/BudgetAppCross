@@ -1,4 +1,5 @@
-﻿using BudgetAppCross.Core.Services;
+﻿using BaseViewModels;
+using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -8,11 +9,11 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
+
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class DateRangeEntryViewModel : BaseViewModel// MvxViewModel
+    public class DateRangeEntryViewModel : MvxNavigationBaseViewModel// MvxViewModel
     {
         #region Fields
         #endregion
@@ -119,7 +120,7 @@ namespace BudgetAppCross.Core.ViewModels
         //}
         private async Task UpdateCalculations()
         {
-            var bal = await BudgetDatabase.GetLatestBalance(BankAccount.AccountID, StartDate);
+            var bal = await BudgetDatabase_old.GetLatestBalance(BankAccount.AccountID, StartDate);
             StartingBalance = bal.Amount;
             var billTotal = 0.0m;
             foreach (var bill in billList)
@@ -133,7 +134,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task LoadData()
         {
-            var bills = await BudgetDatabase.GetBills();
+            var bills = await BudgetDatabase_old.GetBills();
             var data = (bills)
                         .Where(x => x.Date >= StartDate)
                         .Where(x => x.Date <= EndDate)

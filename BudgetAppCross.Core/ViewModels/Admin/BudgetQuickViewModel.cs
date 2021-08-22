@@ -1,19 +1,20 @@
-﻿using BudgetAppCross.Models;
+﻿using BaseClasses;
+using BaseViewModels;
+using BudgetAppCross.Models;
 using BudgetAppCross.Models.Bills;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BudgetQuickViewModel : BaseViewModel
+    public class BudgetQuickViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
-        private IMvxNavigationService navigationService;
         #endregion
 
         #region Properties
@@ -22,17 +23,16 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
        
         #region Commands
-        public ICommand EditThisCommand { get; private set; }
-        public ICommand DeleteThisCommand { get; private set; }
+        public IMvxCommand EditThisCommand { get; private set; }
+        public IMvxCommand DeleteThisCommand { get; private set; }
         #endregion
         
         #region Constructors
-        public BudgetQuickViewModel(IMvxNavigationService navService, string name)
+        public BudgetQuickViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, string name) : base(navService, backgroundHandler)
         {
-            navigationService = navService;
             BudgetName = name;
             //EditThisCommand = new Command(async () => await navigationService.Navigate<EditBankAccountViewModel, BankAccount>(BankAccount));
-            DeleteThisCommand = new Command(async () => await OnDeleteThis());
+            DeleteThisCommand = new MvxAsyncCommand(OnDeleteThis);
         }
         #endregion
 
@@ -55,7 +55,8 @@ namespace BudgetAppCross.Core.ViewModels
         {
             await StateManager.DeleteBudgetFile(BudgetName);
 
-            Messenger.Send(new ChangeBudgetsMessage());
+            _backgroundHandler.SendMessage(new ChangeBudgetsMessage());
+            //Messenger.Send(new ChangeBudgetsMessage());
             
         }
         #endregion

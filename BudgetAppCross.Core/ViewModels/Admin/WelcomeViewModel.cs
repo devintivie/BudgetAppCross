@@ -1,13 +1,13 @@
-﻿using MvvmCross.Commands;
+﻿using BaseViewModels;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class WelcomeViewModel : BaseViewModel
+    public class WelcomeViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
         public IMvxNavigationService navigationService;

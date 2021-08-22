@@ -7,14 +7,14 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 using Acr.UserDialogs;
 using System.Linq;
 using MvvmCross;
+using BaseViewModels;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class NewBankAccountViewModel : BaseViewModel// MvxViewModel
+    public class NewBankAccountViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
         private IMvxNavigationService navigationService;
@@ -126,7 +126,7 @@ namespace BudgetAppCross.Core.ViewModels
             //};
             var bal = new Balance(Balance, Date);
             BankAccount.History.Add(bal);
-            await BudgetDatabase.SaveBankAccount(BankAccount);
+            await BudgetDatabase_old.SaveBankAccount(BankAccount);
             //await BudgetDatabase.Instance.SaveBankAccount(BankAccount);
 
 

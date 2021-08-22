@@ -1,4 +1,5 @@
-﻿using BudgetAppCross.Core.Services;
+﻿using BaseViewModels;
+using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
 using MvvmCross;
 using MvvmCross.Navigation;
@@ -10,11 +11,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Xamarin.Forms;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class NewMultiBillViewModel : BaseViewModel, INewBillViewModel
+    public class NewMultiBillViewModel : MvxNavigationBaseViewModel, INewBillViewModel
     {
         #region Fields
         private int billNumber;
@@ -117,7 +117,7 @@ namespace BudgetAppCross.Core.ViewModels
         #region Methods
         private void LoadAccountOptions()
         {
-            AccountOptions = new ObservableCollection<string>(BudgetDatabase.BankAccountNicknames);
+            AccountOptions = new ObservableCollection<string>(BudgetDatabase_old.BankAccountNicknames);
             if (AccountOptions.Count > 1)
             {
                 SelectedAccount = AccountOptions.ElementAt(1);
