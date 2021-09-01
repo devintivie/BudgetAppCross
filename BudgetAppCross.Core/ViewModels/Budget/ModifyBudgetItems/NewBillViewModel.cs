@@ -1,5 +1,7 @@
-﻿using BaseViewModels;
+﻿using BaseClasses;
+using BaseViewModels;
 using BudgetAppCross.Core.Services;
+using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
 using MvvmCross;
 using MvvmCross.Navigation;
@@ -14,10 +16,10 @@ using System.Windows.Input;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class NewBillViewModel : MvxNavigationBaseViewModel, INewBillViewModel
+    public class NewBillViewModel : BaseViewModel, INewBillViewModel
     {
         #region Fields
-
+        IDataManager _dataManager;
         #endregion
 
         #region Properties
@@ -96,9 +98,11 @@ namespace BudgetAppCross.Core.ViewModels
 
 
         #endregion
+
         #region Constructors
-        public NewBillViewModel(DateTime? dueDate = null)
+        public NewBillViewModel(IBackgroundHandler backgroundHandler, IDataManager dataManager, DateTime? dueDate = null) : base(backgroundHandler)
         {
+            _dataManager = dataManager;
             LoadAccountOptions();
             if(dueDate == null)
             {
@@ -124,7 +128,7 @@ namespace BudgetAppCross.Core.ViewModels
         #region Methods
         private void LoadAccountOptions()
         {
-            AccountOptions = new ObservableCollection<string>(BudgetDatabase_old.BankAccountNicknames);
+            AccountOptions = new ObservableCollection<string>(_dataManager.BankAccountNicknames);
             if (AccountOptions.Count > 1)
             {
                 SelectedAccount = AccountOptions.ElementAt(1);

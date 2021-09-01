@@ -1,4 +1,4 @@
-﻿using Acr.UserDialogs;
+﻿//using Acr.UserDialogs;
 using BudgetAppCross.Models;
 using MvvmCross;
 using MvvmCross.Commands;
@@ -32,7 +32,7 @@ namespace BudgetAppCross.Core.ViewModels
         #region Constructors
         public AccountViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler) : base(navService, backgroundHandler)
         {
-            SelectBudgetCommand = new MvxAsyncCommand(async () => await _navService.Navigate<SelectBudgetViewModel>());
+            SelectBudgetCommand = new MvxAsyncCommand(async () => await _navService.Navigate<BudgetSelectViewModel>());
         }
 
         #endregion

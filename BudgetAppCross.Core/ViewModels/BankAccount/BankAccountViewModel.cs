@@ -1,5 +1,6 @@
 ﻿using BaseClasses;
 using BaseViewModels;
+using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
@@ -16,7 +17,7 @@ namespace BudgetAppCross.Core.ViewModels
     public class BankAccountViewModel : XamarinBaseViewModel<BankAccount>
     {
         #region Fields
-        private IMvxNavigationService navigationService;
+        private IDataManager _dataManager;
 
         #endregion
 
@@ -92,29 +93,21 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-        public ICommand AddBalanceCommand { get; }
+        public IMvxCommand AddBalanceCommand { get; }
         public IMvxCommand EditCommand { get; }
         public IMvxCommand SaveEditCommand { get; }
         #endregion
 
         #region Constructors
-        public BankAccountViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler) : base(navService, backgroundHandler)
-
+        public BankAccountViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IDataManager dataManager) : base(navService, backgroundHandler)
         {
-            AddBalanceCommand = new Command(async () => await OnAddBalance());
-            EditCommand = new MvxAsyncCommand(async () => await OnEdit());
-            SaveEditCommand = new MvxAsyncCommand(async () => await OnSaveEdit());
+            _dataManager = dataManager;
+            AddBalanceCommand = new MvxAsyncCommand(OnAddBalance);
+            EditCommand = new MvxAsyncCommand(OnEdit);
+            SaveEditCommand = new MvxAsyncCommand(OnSaveEdit);
             //Messenger.Register<ChangeBalanceMessage>(this, async x => await OnUpdateBalanceMessage());
             //Messenger.Register<ChangeBalanceMessage>(this, async x => await OnChangeBalanceMessage());
         }
-
-        public override void ViewDestroy(bool viewFinishing = true)
-        {
-            base.ViewDestroy(viewFinishing);
-            _backgroundHandler.UnregisterMessage(this);
-        }
-
-
         #endregion
 
         #region Methods
@@ -132,11 +125,11 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task UpdateBalances()
         {
-            var balances = await BudgetDatabase.GetBalancesForAccount(BankAccount.AccountID);
+            var balances = await _dataManager.GetBalancesForAccount(BankAccount.AccountID);
             var vms = new List<BalanceViewModel>();
             foreach (var item in balances)
             {
-                vms.Add(new BalanceViewModel(item));
+                vms.Add(new BalanceViewModel(_backgroundHandler, _dataManager, item));
             }
 
             Balances = new ObservableCollection<BalanceViewModel>(vms);
@@ -146,7 +139,7 @@ namespace BudgetAppCross.Core.ViewModels
         {
             Nickname = NewAccountNickname;
             BankAccount.Nickname = NewAccountNickname.Trim();
-            await BudgetDatabase.SaveBankAccount(BankAccount);
+            await _dataManager.SaveBankAccount(BankAccount);
 
         }
 
@@ -158,7 +151,7 @@ namespace BudgetAppCross.Core.ViewModels
                 BankAccount = BankAccount
             };
             //INavigationResult success;
-            var result = await navigationService.Navigate<NewBalanceViewModel, Balance, INavigationResult>(newBalance);
+            var result = await _navService.Navigate<NewBalanceViewModel, Balance, INavigationResult>(newBalance);
             var _ = UpdateBalances();
         }
 

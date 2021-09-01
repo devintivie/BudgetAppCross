@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mvx:MvxContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetAppCrossNew.Mobile.Views.NewMultiBillView"
+                          xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+
+                          xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+
+             
+             >
+    <Frame HasShadow="True" Padding="2"
+               BackgroundColor="Transparent">
+        <StackLayout>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="{Binding BillNumberString}"
+                           VerticalTextAlignment="Center"
+                           />
+                <!--Date-->
+                <Label Text="Due Date"
+                       Grid.Row="0" Grid.Column="1"
+                       />
+                <Label Text="{Binding Date, Converter={cvt:DateOnlyConverter}}"
+                           Grid.Row="0" Grid.Column="2"
+                           HorizontalTextAlignment="End"
+                           WidthRequest="130"/>
+            </Grid>
+        </StackLayout>
+    </Frame>
+</mvx:MvxContentView>

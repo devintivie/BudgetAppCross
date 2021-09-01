@@ -7,19 +7,21 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Acr.UserDialogs;
+//using Acr.UserDialogs;
 using System.Linq;
 using MvvmCross;
 using MvvmCross.Commands;
 using BaseViewModels;
+using BaseClasses;
+using BudgetAppCross.DataAccess;
 
 namespace BudgetAppCross.Core.ViewModels
 {
     public class EditBillTrackerViewModel : XamarinBaseViewModel<string>// MvxViewModel
     {
         #region Fields
-        private IMvxNavigationService navigationService;
         private string oldPayee;
+        private IDataManager _dataManager;
         #endregion
 
         #region Properties
@@ -45,9 +47,9 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        public EditBillTrackerViewModel(IMvxNavigationService nav)
+        public EditBillTrackerViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IDataManager dataManager) : base(navService, backgroundHandler)
         {
-            navigationService = nav;
+            _dataManager = dataManager;
             SaveCommand = new MvxAsyncCommand(async () => await OnSave());
             CancelCommand = new MvxAsyncCommand(async () => await OnCancel());
             
@@ -65,19 +67,18 @@ namespace BudgetAppCross.Core.ViewModels
         {
             if (string.IsNullOrWhiteSpace(Payee))
             {
-                var config = new AlertConfig().SetMessage("Invalid Payee Name");//.SetOkText(ConfirmConfig.DefaultOkText);
-                Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
+                _backgroundHandler.Notify("Invalid Payee Name");//.SetOkText(ConfirmConfig.DefaultOkText);
                 return;
             }
-            await BudgetDatabase_old.ChangePayeeName(oldPayee, Payee);
+            await _dataManager.ChangePayeeName(oldPayee, Payee);
 
-            Messenger.Send(new ChangeBillMessage());
-            await navigationService.Close(this);
+            _backgroundHandler.SendMessage(new ChangeBillMessage());
+            await _navService.Close(this);
         }
 
         private async Task OnCancel()
         {
-            await navigationService.Close(this);
+            await _navService.Close(this);
         }
 
         #endregion

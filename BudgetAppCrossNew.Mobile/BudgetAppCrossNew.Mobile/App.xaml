@@ -1,8 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:styles="clr-namespace:XamarinStyles;assembly=XamarinStyles"
              x:Class="BudgetAppCrossNew.Mobile.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!--<ResourceDictionary Source="/XamarinStyles;component/OtherColors.xaml"/>-->
+                <!--<styles:Colors/>-->
+                <!--<styles:Fonts/>-->
+                <styles:DefaultTheme/>
+                <!--<ResourceDictionary Source="Styles/Test.xaml"/>-->
+                <!--<styles:Colors.xaml/>-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

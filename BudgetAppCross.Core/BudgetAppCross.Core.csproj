@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,13 +21,11 @@
   <ItemGroup>
     <ProjectReference Include="..\..\SharedProjects\Standard\BaseClasses\BaseClasses.csproj" />
     <ProjectReference Include="..\..\SharedProjects\Standard\BaseViewModels\BaseViewModels.csproj" />
-    <ProjectReference Include="..\BudgetAppCore.Sqlite\BudgetAppCore.Sqlite.csproj" />
     <ProjectReference Include="..\BudgetAppCross.Configurations\BudgetAppCross.Configurations.csproj" />
     <ProjectReference Include="..\BudgetAppCross.DataAccess\BudgetAppCross.DataAccess.csproj" />
     <ProjectReference Include="..\BudgetAppCross.Models\BudgetAppCross.Models.csproj" />
     <ProjectReference Include="..\BudgetAppCross.SQLiteDataAccess\BudgetAppCross.SQLiteDataAccess.csproj" />
     <ProjectReference Include="..\BudgetAppCross.StateManager\BudgetAppCross.StateManagers.csproj" />
-    <ProjectReference Include="..\InAppPurchasing.Core\InAppPurchasing.Core.csproj" />
   </ItemGroup>
 
 </Project>

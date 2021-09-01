@@ -1,4 +1,5 @@
-﻿using BaseViewModels;
+﻿using BaseClasses;
+using BaseViewModels;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using System;
@@ -10,7 +11,6 @@ namespace BudgetAppCross.Core.ViewModels
     public class WelcomeViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
-        public IMvxNavigationService navigationService;
         #endregion
 
         #region Properties
@@ -18,15 +18,9 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        public WelcomeViewModel(IMvxNavigationService navigation)
+        public WelcomeViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler) : base(navService, backgroundHandler)
         {
-            //Disables access to swipe right main menu while this page is open
-            if (Application.Current.MainPage is MasterDetailPage masterDetailPage)
-            {
-                masterDetailPage.IsGestureEnabled = false;
-            }
-            navigationService = navigation;
-            AddBudgetCommand = new MvxAsyncCommand(async () => await navigationService.Navigate<NewBudgetViewModel>());
+            AddBudgetCommand = new MvxAsyncCommand(async () => await _navService.Navigate<NewBudgetViewModel>());
         }
         #endregion
 

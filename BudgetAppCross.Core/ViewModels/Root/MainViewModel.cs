@@ -47,7 +47,7 @@
 //                else
 //                {
 //                    await navigationService.Navigate<MenuViewModel>();
-//                    await navigationService.Navigate<SelectBudgetViewModel>();
+//                    await navigationService.Navigate<BudgetSelectViewModel>();
 //                }
 
 

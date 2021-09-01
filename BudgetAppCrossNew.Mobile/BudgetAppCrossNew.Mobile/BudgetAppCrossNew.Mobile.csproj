@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
   </PropertyGroup>
 
@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Behaviors.XamarinForms" Version="4.0.4" />
     <PackageReference Include="MvvmCross" Version="8.0.1" />
     <PackageReference Include="MvvmCross.Forms" Version="8.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
@@ -18,18 +19,54 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Pages\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\..\..\CustomXamarinControls\CustomXamarinControls\CustomXamarinControls.csproj" />
+    <ProjectReference Include="..\..\..\SharedProjects\UX\XamarinStyles\XamarinStyles.csproj" />
     <ProjectReference Include="..\..\BudgetAppCross.Core\BudgetAppCross.Core.csproj" />
+    <ProjectReference Include="..\..\CustomXamarinFormsBehaviors\CustomXamarinFormsBehaviors.csproj" />
+    <ProjectReference Include="..\..\CustomXamarinFormsConverters\CustomXamarinFormsConverters.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\Pages\Admin\WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Agenda\AgendaBillView.xaml.cs">
+      <DependentUpon>AgendaBillView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Admin\NewMultiBillView.xaml.cs">
+      <DependentUpon>NewMultiBillView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Admin\BudgetQuickStatusView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\Admin\BudgetSelectPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\Agenda\AgendaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\Admin\SettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\Admin\NewBudgetPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Pages\Bills\NewBillsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Root\MenuPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Root\RootPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Agenda\AgendaBillView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Admin\NewMultiBillView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

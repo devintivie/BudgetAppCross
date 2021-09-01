@@ -1,4 +1,6 @@
-﻿using BaseViewModels;
+﻿using BaseClasses;
+using BaseViewModels;
+using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
@@ -16,7 +18,7 @@ namespace BudgetAppCross.Core.ViewModels
     public class BillTrackerViewModel : XamarinBaseViewModel<string>//MvxViewModel<BillTracker>
     {
         #region Fields
-        private IMvxNavigationService navigationService;
+        private IDataManager _dataManager;
         #endregion
 
         #region Properties
@@ -76,18 +78,16 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        public BillTrackerViewModel(IMvxNavigationService navigation)
+        public BillTrackerViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IDataManager dataManager) : base(navService, backgroundHandler)
         {
-            navigationService = navigation;
+            _dataManager = dataManager;
             //AddBillCommand = new Command(async result => await navigationService.Navigate<NewBillViewModel, string, BillTracker>(BillTracker.CompanyName));
             AddBillCommand = new MvxAsyncCommand(async () => await OnAddBill());
             //ShowOptionsCommand = new Command(() => Console.WriteLine("Swipe Left"));
             DeleteBillCommand = new MvxAsyncCommand(async () => await OnDeleteBill(), () => CanDeleteBill());
 
-            Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage());
+            _backgroundHandler.RegisterMessage<ChangeBillMessage>(this, async x => await OnChangeBillMessage());
         }
-
-        
 
         public override void ViewAppeared()
         {
@@ -105,22 +105,16 @@ namespace BudgetAppCross.Core.ViewModels
             CompanyName = parameter;
         }
 
-        public override void ViewDestroy(bool viewFinishing = true)
-        {
-            Messenger.Unregister(this);
-            base.ViewDestroy(viewFinishing);
-        }
-
         private async Task UpdateBills()
         {
             //var options = await LoadAccountOptions();
-            await BudgetDatabase.UpdateBankAccountNames();
-            var temp = await BudgetDatabase.GetBillsForPayee(CompanyName);
+            await _dataManager.UpdateBankAccountNames();
+            var temp = await _dataManager.GetBillsForPayee(CompanyName);
             temp = temp.OrderBy(x => x.Date).ToList();
             var bvms = new List<BillViewModel>();
             foreach (var item in temp)
             {
-                bvms.Add(new BillViewModel(item));
+                bvms.Add(new BillViewModel(_backgroundHandler, _dataManager, item));
 
             }
 
@@ -129,7 +123,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task<List<string>> LoadAccountOptions()
         {
-            var options = await BudgetDatabase.GetBankAccounts();
+            var options = await _dataManager.GetBankAccounts();
 
             var names = new List<string>();
             foreach (var item in options)
@@ -158,7 +152,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnAddBill()
         {
-            await navigationService.Navigate<NewBillsViewModel, string>(CompanyName);
+            await _navService.Navigate<NewBillsViewModel, string>(CompanyName);
             //await navigationService.Navigate<NewBillsViewModel, string, bool>(new Bill(CompanyName));
             //UpdateBills();
         }
@@ -167,7 +161,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnDeleteBill()
         {
-            await BudgetDatabase.DeleteBill(SelectedBill.Bill);
+            await _dataManager.DeleteBill(SelectedBill.Bill);
             //BillManager.DeleteBill(BillTracker.CompanyName, SelectedBill);
             _ = UpdateBills();
         }
@@ -182,14 +176,14 @@ namespace BudgetAppCross.Core.ViewModels
             await UpdateBills();
             if(Bills.Count == 0)
             {
-                await navigationService.Close(this);
+                await _navService.Close(this);
             }
             
         }
 
         public Task ShowBill()
         {
-            return navigationService.Navigate<BillDetailsViewModel, Bill>(SelectedBill.Bill);
+            return _navService.Navigate<BillDetailsViewModel, Bill>(SelectedBill.Bill);
         }
 
         //public Task ShowBill(int id)

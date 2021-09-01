@@ -1,5 +1,7 @@
-﻿using BaseViewModels;
+﻿using BaseClasses;
+using BaseViewModels;
 using BudgetAppCross.Core.Services;
+using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -11,9 +13,10 @@ using System.Text;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class AgendaEntryViewModel : MvxNavigationBaseViewModel
+    public class AgendaEntryViewModel : BaseViewModel
     {
         #region Fields
+        private IDataManager _dataManager;
         #endregion
 
         #region Properties
@@ -55,51 +58,20 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        //public AgendaEntryViewModel(Grouping<DateTime, Bill> datagroup )
-        //{
-        //    Date = datagroup.Key;
-        //    foreach (var item in datagroup)
-        //    {
-        //        Bills.Add(new BillViewModel(item));
-        //    }
 
-        //    MessagingCenter.Subscribe<AgendaBillViewModel>(this, "UpdateTotal", async (obj) => OnUpdateTotal());
-
-        //    //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
-        //    //{
-        //    //    var newItem = item as Item;
-        //    //    Items.Add(newItem);
-        //    //    await DataStore.AddItemAsync(newItem);
-        //    //});
-        //}
-
-        public AgendaEntryViewModel(Grouping<DateTime, Bill> datagroup)
+        public AgendaEntryViewModel(IBackgroundHandler backgroundHandler, IDataManager dataManager, Grouping<DateTime, Bill> datagroup) : base(backgroundHandler)
         {
+            _dataManager = dataManager;
             Date = datagroup.Key;
             foreach (var item in datagroup)
             {
-                Bills.Add(new BillViewModel(item));
+                Bills.Add(new BillViewModel(_backgroundHandler, _dataManager, item));
             }
-
-            //MessagingCenter.Subscribe<AgendaBillViewModel>(this, "UpdateTotal", async (obj) => OnUpdateTotal());
-
-            //MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
-            //{
-            //    var newItem = item as Item;
-            //    Items.Add(newItem);
-            //    await DataStore.AddItemAsync(newItem);
-            //});
         }
 
         #endregion
 
         #region Methods
-
-        public override void ViewAppeared()
-        {
-            base.ViewAppeared();
-        }
-
 
         private void OnUpdateTotal()
         {

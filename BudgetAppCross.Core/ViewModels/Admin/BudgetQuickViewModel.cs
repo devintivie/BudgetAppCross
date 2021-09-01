@@ -15,6 +15,7 @@ namespace BudgetAppCross.Core.ViewModels
     public class BudgetQuickViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
+        ISettingsManager _settings;
         #endregion
 
         #region Properties
@@ -28,9 +29,11 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
         
         #region Constructors
-        public BudgetQuickViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, string name) : base(navService, backgroundHandler)
+        public BudgetQuickViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, 
+            ISettingsManager settings, string name) : base(navService, backgroundHandler)
         {
             BudgetName = name;
+            _settings = settings;
             //EditThisCommand = new Command(async () => await navigationService.Navigate<EditBankAccountViewModel, BankAccount>(BankAccount));
             DeleteThisCommand = new MvxAsyncCommand(OnDeleteThis);
         }
@@ -53,7 +56,8 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnDeleteThis()
         {
-            await StateManager.DeleteBudgetFile(BudgetName);
+            await _settings.DeleteConfigFile(BudgetName);
+            //await StateManager.DeleteBudgetFile(BudgetName);
 
             _backgroundHandler.SendMessage(new ChangeBudgetsMessage());
             //Messenger.Send(new ChangeBudgetsMessage());

@@ -1,5 +1,7 @@
-﻿using BaseViewModels;
+﻿using BaseClasses;
+using BaseViewModels;
 using BudgetAppCross.Core.Services;
+using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
@@ -13,9 +15,10 @@ using System.Threading.Tasks;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class DateRangeEntryViewModel : MvxNavigationBaseViewModel// MvxViewModel
+    public class DateRangeEntryViewModel : BaseViewModel// MvxViewModel
     {
         #region Fields
+        private IDataManager _dataManager;
         #endregion
 
         #region Properties
@@ -73,7 +76,7 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        public DateRangeEntryViewModel(DateTime start, DateTime end, BankAccount acct)
+        public DateRangeEntryViewModel(IBackgroundHandler backgroundHandler, IDataManager dataManager, DateTime start, DateTime end, BankAccount acct) : base(backgroundHandler)
         {
             StartDate = start;
             EndDate = end;
@@ -81,8 +84,8 @@ namespace BudgetAppCross.Core.ViewModels
             Bills.Clear();
 
             var load = LoadData();
-            Messenger.Register<UpdateBillMessage>(this, async x => await OnUpdateBillMessage(x.AccountId));
-            Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage(x.AccountId));
+            _backgroundHandler.RegisterMessage<UpdateBillMessage>(this, async x => await OnUpdateBillMessage(x.AccountId));
+            _backgroundHandler.RegisterMessage<ChangeBillMessage>(this, async x => await OnChangeBillMessage(x.AccountId));
 
         }
 
@@ -120,7 +123,7 @@ namespace BudgetAppCross.Core.ViewModels
         //}
         private async Task UpdateCalculations()
         {
-            var bal = await BudgetDatabase_old.GetLatestBalance(BankAccount.AccountID, StartDate);
+            var bal = await _dataManager.GetLatestBalance(BankAccount.AccountID, StartDate);
             StartingBalance = bal.Amount;
             var billTotal = 0.0m;
             foreach (var bill in billList)
@@ -134,7 +137,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task LoadData()
         {
-            var bills = await BudgetDatabase_old.GetBills();
+            var bills = await _dataManager.GetBills();
             var data = (bills)
                         .Where(x => x.Date >= StartDate)
                         .Where(x => x.Date <= EndDate)
@@ -146,7 +149,7 @@ namespace BudgetAppCross.Core.ViewModels
             Bills.Clear();
             foreach (var item in billList)
             {
-                Bills.Add(new BillViewModel(item));
+                Bills.Add(new BillViewModel(_backgroundHandler, _dataManager, item));
             }
 
             await UpdateCalculations();

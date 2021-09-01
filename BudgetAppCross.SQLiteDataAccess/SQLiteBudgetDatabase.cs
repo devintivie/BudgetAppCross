@@ -56,10 +56,16 @@ namespace BudgetAppCross.SQLiteDataAccess
             await UpdatePayeeNames();
         }
 
+        public async Task Initialize()
+        {
+
+        }
+
         public async Task CreateDefaultAccount()
         {
             var defaultAccount = new BankAccount(0, "Undecided");
             await SaveBankAccount(defaultAccount);
+            await UpdateBankAccountNames();
         }
         #endregion
 

@@ -1,5 +1,8 @@
-﻿using BaseViewModels;
+﻿using BaseClasses;
+using BaseViewModels;
+using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using System;
 using System.Collections.Generic;
@@ -12,7 +15,7 @@ namespace BudgetAppCross.Core.ViewModels
     public class BankAccountQuickViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
-        private IMvxNavigationService navigationService;
+        private IDataManager _dataManager;
         #endregion
 
         #region Properties
@@ -46,19 +49,19 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
        
         #region Commands
-        public ICommand EditThisCommand { get; private set; }
-        public ICommand DeleteThisCommand { get; private set; }
+        public IMvxCommand EditThisCommand { get; private set; }
+        public IMvxCommand DeleteThisCommand { get; private set; }
         #endregion
         
         #region Constructors
-        public BankAccountQuickViewModel(IMvxNavigationService navService, BankAccount account)
+        public BankAccountQuickViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IDataManager dataManager, BankAccount account) : base(navService, backgroundHandler)
         {
-            navigationService = navService;
+            _dataManager = dataManager;
             BankAccount = account;
             var _ = GetLatestBalance();
-            Messenger.Register<ChangeBalanceMessage>(this, async x => await OnChangeBalanceMessage());
-            EditThisCommand = new Command(async () => await navigationService.Navigate<EditBankAccountViewModel, BankAccount>(BankAccount));
-            DeleteThisCommand = new Command(async () => await OnDeleteThis());
+            _backgroundHandler.RegisterMessage<ChangeBalanceMessage>(this, async x => await OnChangeBalanceMessage());
+            EditThisCommand = new MvxAsyncCommand(EditBankAccount);
+            DeleteThisCommand = new MvxAsyncCommand(OnDeleteThis);
 
         }
         #endregion
@@ -66,7 +69,7 @@ namespace BudgetAppCross.Core.ViewModels
         #region Methods
         private async Task GetLatestBalance()
         {
-            var temp = await BudgetDatabase.GetLatestBalance(BankAccount.AccountID, DateTime.Today);
+            var temp = await _dataManager.GetLatestBalance(BankAccount.AccountID, DateTime.Today);
             //var temp = 0.0;
             if (temp == null)
             {
@@ -80,8 +83,13 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnDeleteThis()
         {
-            await BudgetDatabase.DeleteBankAccount(BankAccount);
-            Messenger.Send(new ChangeBalanceMessage());
+            await _dataManager.DeleteBankAccount(BankAccount);
+            _backgroundHandler.SendMessage(new ChangeBalanceMessage());
+        }
+
+        private async Task EditBankAccount()
+        {
+            await _navService.Navigate<EditBankAccountViewModel, BankAccount>(BankAccount);
         }
 
         private async Task OnChangeBalanceMessage()

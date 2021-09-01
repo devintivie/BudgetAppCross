@@ -1,28 +1,70 @@
-﻿using System;
-
+﻿using Acr.UserDialogs;
+using Android;
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.OS;
+using Android.Support.V4.App;
+using Android.Support.V4.Content;
+using MvvmCross;
+//using Android.OS;
+//using Android.Runtime;
+//using AndroidX.Core.Content;
+using MvvmCross.Forms.Platforms.Android.Core;
+using MvvmCross.Forms.Platforms.Android.Views;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace BudgetAppCrossNew.Mobile.Droid
 {
-    [Activity(Label = "BudgetAppCrossNew.Mobile", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    [Activity(Label = "WineFridgeApp.Droid", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
+
+    public class SplashScreen : MvxFormsAppCompatActivity<Setup, BudgetAppCross.Core.App, App>
     {
-        protected override void OnCreate(Bundle savedInstanceState)
+        readonly string[] Permissions =
         {
-            base.OnCreate(savedInstanceState);
+          //Manifest.Permission.AccessFineLocation
+        };
 
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+        const int RequestLocationId = 0;
+        public SplashScreen()
+        {
         }
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        protected override void OnCreate(Android.OS.Bundle bundle)
         {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+            UserDialogs.Init(this);
+            base.OnCreate(bundle);
 
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            //RequestPermissionsManually();
+            //Mvx.IoCProvider.RegisterType<IWifiHelper, GetSSIDAndroid>();
+
+        }
+
+        private void RequestPermissionsManually()
+        {
+            List<string> requests = new List<string>();
+            foreach (var item in Permissions)
+            {
+                try
+                {
+                    //if (CheckSelfPermission(Manifest.Permission.AccessFineLocation) != Permission.Granted)
+                    //{
+                    //    requests.Add(item);
+                    //}
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+
+            }
+
+            if (requests.Count > 0)
+            {
+                string[] array = requests.ToArray();
+                RequestPermissions(array, array.Length);
+            }
+
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Acr.UserDialogs;
+//using Acr.UserDialogs;
 using System.Linq;
 using MvvmCross;
 using BaseViewModels;
@@ -14,6 +14,8 @@ using MvvmCross.Commands;
 using BaseClasses;
 using BudgetAppCross.Configurations;
 using BudgetAppCross.DataAccess;
+using BudgetAppCross.Core.ViewModels.Pages;
+using BudgetAppCross.Core.ViewModels.Root;
 
 namespace BudgetAppCross.Core.ViewModels
 {
@@ -90,10 +92,11 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        public NewBudgetViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, ISettingsManager settings, IDataManager database) : base(navService, backgroundHandler)
+        public NewBudgetViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, ISettingsManager settings, IConfigManager<SQLiteConfiguration> configManager, IDataManager database) : base(navService, backgroundHandler)
         {
             _settings = settings;
             _database = database;
+            _configManager = configManager;
             SaveCommand = new MvxAsyncCommand(OnSave);
             CancelCommand = new MvxAsyncCommand(OnCancel);
         }
@@ -104,8 +107,7 @@ namespace BudgetAppCross.Core.ViewModels
         {
             if (string.IsNullOrWhiteSpace(BudgetFilename))
             {
-                var config = new AlertConfig().SetMessage("Invalid Budget Name");//.SetOkText(ConfirmConfig.DefaultOkText);
-                Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
+                _backgroundHandler.Notify("Invalid Budget Name");
                 return;
             }
 
@@ -118,8 +120,7 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 if (string.IsNullOrWhiteSpace(FirstBankAccountName))
                 {
-                    var config = new AlertConfig().SetMessage("Invalid Account Name");//.SetOkText(ConfirmConfig.DefaultOkText);
-                    Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
+                    _backgroundHandler.Notify("Invalid Account Name");//.SetOkText(ConfirmConfig.DefaultOkText);
                     return;
                 }
                 var bal = new Balance(InitialBalance, InitialBalanceDate);
@@ -135,12 +136,13 @@ namespace BudgetAppCross.Core.ViewModels
                 //await StateManager.SaveState();
             }
 
-            await _navService.Navigate<DateRangeViewModel>();
+            await _navService.Navigate<MenuViewModel>();
+            await _navService.Navigate<AgendaViewModel>();
         }
 
         private async Task OnCancel()
         {
-            await _navService.Navigate<SelectBudgetViewModel>();
+            await _navService.Navigate<BudgetSelectViewModel>();
         }
 
 

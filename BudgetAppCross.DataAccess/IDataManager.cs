@@ -16,7 +16,7 @@ namespace BudgetAppCross.DataAccess
         List<string> PayeeNames { get; set; }
         #endregion
 
-        Task Initialize();
+        Task Initialize(string newBudgetName = null);
         Task CreateDefaultAccount();
         #region BankAccounts
         Task<List<BankAccount>> GetBankAccounts();

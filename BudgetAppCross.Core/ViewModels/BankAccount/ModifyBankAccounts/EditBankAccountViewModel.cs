@@ -7,17 +7,20 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Acr.UserDialogs;
+//using Acr.UserDialogs;
 using System.Linq;
 using MvvmCross;
 using BaseViewModels;
 using BaseClasses;
+using MvvmCross.Commands;
+using BudgetAppCross.DataAccess;
 
 namespace BudgetAppCross.Core.ViewModels
 {
     public class EditBankAccountViewModel : XamarinBaseViewModel<BankAccount>// MvxViewModel
     {
         #region Fields
+        private IDataManager _dataManager;
         #endregion
 
         #region Properties
@@ -94,15 +97,16 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-        public ICommand SaveCommand { get; }
-        public ICommand CancelCommand { get; }
+        public IMvxCommand SaveCommand { get; }
+        public IMvxCommand CancelCommand { get; }
         #endregion
 
         #region Constructors
-        public EditBankAccountViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler) : base(navService, backgroundHandler)
+        public EditBankAccountViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IDataManager dataManager) : base(navService, backgroundHandler)
         {
-            SaveCommand = new Command(async () => await OnSave());
-            CancelCommand = new Command(async () => await OnCancel());
+            _dataManager = dataManager;
+            SaveCommand = new MvxAsyncCommand(OnSave);
+            CancelCommand = new MvxAsyncCommand(OnCancel);
             
         }
 
@@ -119,19 +123,18 @@ namespace BudgetAppCross.Core.ViewModels
             BankAccount.Nickname = Nickname;
             if (string.IsNullOrWhiteSpace(BankAccount.Nickname))
             {
-                var config = new AlertConfig().SetMessage("Invalid Company Name");//.SetOkText(ConfirmConfig.DefaultOkText);
-                Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
+                _backgroundHandler.Notify("Invalid Company Name");
                 return;
             }
-            await BudgetDatabase_old.SaveBankAccount(BankAccount);
+            await _dataManager.SaveBankAccount(BankAccount);
 
-            Messenger.Send(new ChangeBalanceMessage());
-            await navigationService.Close(this);
+            _backgroundHandler.SendMessage(new ChangeBalanceMessage());
+            await _navService.Close(this);
         }
 
         private async Task OnCancel()
         {
-            await navigationService.Close(this);
+            await _navService.Close(this);
         }
 
         #endregion

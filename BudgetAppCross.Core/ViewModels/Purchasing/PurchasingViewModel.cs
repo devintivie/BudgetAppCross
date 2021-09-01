@@ -1,44 +1,44 @@
-﻿using InAppPurchasing.Core;
-using MvvmCross;
-using MvvmCross.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
+﻿//using InAppPurchasing.Core;
+//using MvvmCross;
+//using MvvmCross.ViewModels;
+//using System;
+//using System.Collections.Generic;
+//using System.Text;
+//using System.Threading.Tasks;
 
-namespace BudgetAppCross.Core.ViewModels
-{
-    public class PurchasingViewModel : MvxViewModel
-    {
-        #region Fields
-        private IStoreManager StoreManager;
-        #endregion
+//namespace BudgetAppCross.Core.ViewModels
+//{
+//    public class PurchasingViewModel : MvxViewModel
+//    {
+//        #region Fields
+//        private IStoreManager StoreManager;
+//        #endregion
 
-        #region Properties
+//        #region Properties
 
-        #endregion
+//        #endregion
 
-        #region Constructors
-        public PurchasingViewModel()
-        {
+//        #region Constructors
+//        public PurchasingViewModel()
+//        {
 
 
-        }
-        #endregion
+//        }
+//        #endregion
 
-        #region Methods
+//        #region Methods
 
-        public override async Task Initialize()
-        {
-            StoreManager = Mvx.IoCProvider.Resolve<IStoreManager>();
-            Console.WriteLine(StoreManager);
-            await base.Initialize();
-        }
-        private async Task GetProducts()
-        {
-            //StoreManager.GetPrice("test");
-        }
-        #endregion
+//        public override async Task Initialize()
+//        {
+//            StoreManager = Mvx.IoCProvider.Resolve<IStoreManager>();
+//            Console.WriteLine(StoreManager);
+//            await base.Initialize();
+//        }
+//        private async Task GetProducts()
+//        {
+//            //StoreManager.GetPrice("test");
+//        }
+//        #endregion
 
-    }
-}
+//    }
+//}

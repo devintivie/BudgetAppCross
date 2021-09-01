@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetAppCrossNew.Mobile.Views.Pages.WelcomePage"
+            xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                    Style="{StaticResource DefaultPage}">
+    <RelativeLayout>
+        <Button Text="Start a budget" HorizontalOptions="CenterAndExpand" 
+                    Command="{Binding AddBudgetCommand}"
+                    FontSize="{StaticResource FontSizeLarge}"
+                    
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.1}"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.45}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.8}"/>
+
+    </RelativeLayout>
+</mvx:MvxContentPage>

@@ -1,5 +1,6 @@
-﻿using Acr.UserDialogs;
+﻿//using Acr.UserDialogs;
 using BaseClasses;
+using BaseViewModels;
 using BudgetAppCross.Core.Services;
 using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
@@ -18,30 +19,31 @@ using System.Windows.Input;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class NewBillsViewModel : MvxViewModel<string>//, bool>//<string, Bill>
+    public class NewBillsViewModel : XamarinBaseViewModel<string>//, bool>//<string, Bill>
     {
         #region Fields
         //private IDataManager DataManager = Mvx.IoCProvider.Resolve<IDataManager>();
+        private IDataManager _dataManager;
         #endregion
 
         #region Properties
+        public ObservableCollection<string> PayeeOptions { get; private set; } = new ObservableCollection<string>();
+        public ObservableCollection<INewBillViewModel> NewBills { get; private set; } = new ObservableCollection<INewBillViewModel>();
+        public int BillCount => NewBills.Count;
+        public int CursorPosition => Amount.ToString("C", CultureInfo.CurrentCulture).Length;
+        public string BillDueString => AddMultiple ? "First Bill Due" : "Due Date";
+
         private string newPayee;
         public string NewPayee
         {
             get { return newPayee; }
             set
             {
-                SetProperty(ref newPayee, value);
-            }
-        }
-
-        private ObservableCollection<string> payeeOptions;
-        public ObservableCollection<string> PayeeOptions
-        {
-            get { return payeeOptions; }
-            set
-            {
-                SetProperty(ref payeeOptions, value);
+                if (newPayee != value)
+                {
+                    newPayee = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
@@ -51,21 +53,11 @@ namespace BudgetAppCross.Core.ViewModels
             get { return amount; }
             set
             {
-
                 if (amount != value)
                 {
                     amount = value;
                     RaisePropertyChanged();
                 }
-                //amount = value;
-                //RaisePropertyChanged();
-                //if (amount != value || amount == 0.0m)
-                //{
-                //    var temp = Math.Truncate(100 * value) / 100;
-                //    amount = temp;
-                //    //amount = value;
-                //    RaisePropertyChanged();
-                //}
             }
         }
 
@@ -83,45 +75,20 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-
-        public int BillCount => NewBills.Count;
-        public int CursorPosition => Amount.ToString("C", CultureInfo.CurrentCulture).Length;
-
-        public string BillDueString
-        {
-            get
-            {
-                if (AddMultiple)
-                {
-                    return "First Bill Due";
-                }
-                return "Due Date";
-            }
-        }
-
-        private ObservableCollection<INewBillViewModel> newBills = new ObservableCollection<INewBillViewModel>();
-        public ObservableCollection<INewBillViewModel> NewBills
-        {
-            get { return newBills; }
-            set
-            {
-                if (newBills != value)
-                {
-                    newBills = value;
-                    RaisePropertyChanged();
-                }
-            }
-        }
-
         private bool isNewPayee;
         public bool IsNewPayee
         {
             get { return isNewPayee; }
             set
             {
-                SetProperty(ref isNewPayee, value);
+                if (isNewPayee != value)
+                {
+                    isNewPayee = value;
+                    RaisePropertyChanged();
+                }
             }
         }
+
 
         private bool addMultiple;
         public bool AddMultiple
@@ -147,14 +114,17 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-
         private string selectedPayee;
         public string SelectedPayee
         {
             get { return selectedPayee; }
             set
             {
-                SetProperty(ref selectedPayee, value);
+                if (selectedPayee != value)
+                {
+                    selectedPayee = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
@@ -189,8 +159,7 @@ namespace BudgetAppCross.Core.ViewModels
                 }
                 else
                 {
-                    var config = new AlertConfig().SetMessage("Ending date must be after start date");
-                    Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
+                    _backgroundHandler.Notify("Ending date must be after start date");
                 }
 
             }
@@ -236,7 +205,7 @@ namespace BudgetAppCross.Core.ViewModels
                 {
                     dueDateFrequency = value;
                     RaisePropertyChanged();
-                    CreateBillsForDateRange();
+                    _ = CreateBillsForDateRange();
                 }
             }
         }
@@ -283,10 +252,6 @@ namespace BudgetAppCross.Core.ViewModels
                 }
             }
         }
-
-
-
-
         #endregion
 
         #region Commands
@@ -295,46 +260,20 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        public NewBillsViewModel(IMvxNavigationService nav)
+        public NewBillsViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IDataManager dataManager) : base(navService, backgroundHandler)
         {
-            navigationService = nav;
-            //Bill = new Bill();
+            _dataManager = dataManager;
             LoadAccountOptions();
             
-
-            SaveCommand = new MvxAsyncCommand(async () => await OnSave());
-            CancelCommand = new MvxAsyncCommand(async () => await OnCancel());
-
-            //MultiBillOptions = new ObservableCollection<MultipleBillOptions>()
-            //{
-            //    MultipleBillOptions.ByDateRange,
-            //    MultipleBillOptions.ByNumber
-            //};
-            //SelectedBillOption = MultipleBillOptions.ByDateRange;
-
-            //DueFrequencies = new ObservableCollection<DueDateFrequencies>()
-            //{
-            //    DueDateFrequencies.OneWeek,
-            //    DueDateFrequencies.TwoWeek,
-            //    DueDateFrequencies.FourWeek,
-            //    DueDateFrequencies.Monthly,
-            //    DueDateFrequencies.Quarterly,
-            //    DueDateFrequencies.Quarterly,
-            //    DueDateFrequencies.Quarterly
-            //};
-
+            SaveCommand = new MvxAsyncCommand(OnSave);
+            CancelCommand = new MvxAsyncCommand(OnCancel);
             DueDateFrequency = DueDateFrequencies.Monthly;
             ResetNewBillsToSingle();
-
         }
 
         public override void Prepare(string parameter)
         {
-            //if (parameter != "")
-            //{
-            //    SelectedPayee = parameter;
-            //}
-            var _ = PrepareAsync(parameter);
+            _ = PrepareAsync(parameter);
         }
 
         private async Task PrepareAsync(string parameter)
@@ -350,25 +289,25 @@ namespace BudgetAppCross.Core.ViewModels
         private void ResetNewBillsToSingle()
         {
             NewBills.Clear();
-            NewBills.Add(new NewBillViewModel(StartDate));
+            NewBills.Add(new NewBillViewModel(_backgroundHandler, _dataManager, StartDate));
 
         }
 
-        private void GetBillsForDateRange()
-        {
-            var temp = NewBills.Where(b => b.Date >= StartDate && b.Date <= EndDate);
+        //private void GetBillsForDateRange()
+        //{
+        //    var temp = NewBills.Where(b => b.Date >= StartDate && b.Date <= EndDate);
 
-            if (temp.Count() == 0)
-            {
-                ResetNewBillsToSingle();
-            }
-            else
-            {
-                NewBills = new ObservableCollection<INewBillViewModel>(temp);
-            }
-        }
+        //    if (temp.Count() == 0)
+        //    {
+        //        ResetNewBillsToSingle();
+        //    }
+        //    else
+        //    {
+        //        NewBills = new ObservableCollection<INewBillViewModel>(temp);
+        //    }
+        //}
 
-        private void CreateBillsForDateRange()
+        private async Task CreateBillsForDateRange()
         {
             var days = (EndDate - StartDate).TotalDays;
             double dayCount = 0.0;
@@ -386,7 +325,9 @@ namespace BudgetAppCross.Core.ViewModels
                     }
                     for (int i = 0; i < spacings; i++)
                     {
-                        NewBills.Add(new NewMultiBillViewModel(i + 1, StartDate.AddDays(7 * i)));
+                        var number = i + 1;
+                        var dueDate = StartDate.AddDays(7 * i);
+                        NewBills.Add(new NewMultiBillViewModel(_backgroundHandler, _dataManager, number, dueDate));
                     }
                     break;
                 case DueDateFrequencies.TwoWeek:
@@ -397,7 +338,9 @@ namespace BudgetAppCross.Core.ViewModels
                     }
                     for (int i = 0; i < spacings; i++)
                     {
-                        NewBills.Add(new NewMultiBillViewModel(i + 1, StartDate.AddDays(14 * i)));
+                        var number = i + 1;
+                        var dueDate = StartDate.AddDays(14 * i);
+                        NewBills.Add(new NewMultiBillViewModel(_backgroundHandler, _dataManager, number, dueDate));
                     }
                     break;
                 case DueDateFrequencies.FourWeek:
@@ -408,7 +351,9 @@ namespace BudgetAppCross.Core.ViewModels
                     }
                     for (int i = 0; i < spacings; i++)
                     {
-                        NewBills.Add(new NewMultiBillViewModel(i + 1, StartDate.AddDays(28 * i)));
+                        var number = i + 1;
+                        var dueDate = StartDate.AddDays(28 * i);
+                        NewBills.Add(new NewMultiBillViewModel(_backgroundHandler, _dataManager, number, dueDate));
                     }
                     break;
 
@@ -420,7 +365,9 @@ namespace BudgetAppCross.Core.ViewModels
                     }
                     for (int i = 0; i < spacings; i++)
                     {
-                        NewBills.Add(new NewMultiBillViewModel(i + 1, StartDate.AddMonths(i)));
+                        var number = i + 1;
+                        var dueDate = StartDate.AddMonths(i);
+                        NewBills.Add(new NewMultiBillViewModel(_backgroundHandler, _dataManager, number, dueDate));
                     }
                     break;
                 case DueDateFrequencies.Quarterly:
@@ -431,7 +378,9 @@ namespace BudgetAppCross.Core.ViewModels
                     }
                     for (int i = 0; i < spacings; i++)
                     {
-                        NewBills.Add(new NewMultiBillViewModel(i + 1, StartDate.AddMonths(3 * i)));
+                        var number = i + 1;
+                        var dueDate = StartDate.AddMonths(3 * i);
+                        NewBills.Add(new NewMultiBillViewModel(_backgroundHandler, _dataManager, number, dueDate));
                     }
                     break;
                 case DueDateFrequencies.SemiAnnually:
@@ -442,7 +391,9 @@ namespace BudgetAppCross.Core.ViewModels
                     }
                     for (int i = 0; i < spacings; i++)
                     {
-                        NewBills.Add(new NewMultiBillViewModel(i + 1, StartDate.AddMonths(6 * i)));
+                        var number = i + 1;
+                        var dueDate = StartDate.AddMonths(6 * i);
+                        NewBills.Add(new NewMultiBillViewModel(_backgroundHandler, _dataManager, number, dueDate));
                     }
                     break;
                 case DueDateFrequencies.Yearly:
@@ -453,7 +404,9 @@ namespace BudgetAppCross.Core.ViewModels
                     }
                     for (int i = 0; i < spacings; i++)
                     {
-                        NewBills.Add(new NewMultiBillViewModel(i + 1, StartDate.AddYears(i)));
+                        var number = i + 1;
+                        var dueDate = StartDate.AddYears(i);
+                        NewBills.Add(new NewMultiBillViewModel(_backgroundHandler, _dataManager, number, dueDate));
                     }
                     break;
                 default:
@@ -461,28 +414,19 @@ namespace BudgetAppCross.Core.ViewModels
 
 
             }
-            RaisePropertyChanged(nameof(BillCount));
+            await RaisePropertyChanged(nameof(BillCount));
         }
-
-        //public override void Prepare(string parameter)
-        //{
-        //    companyName = parameter;
-        //}
         #endregion
 
         #region Methods
         private async Task OnSave()
         {
-            //var accts = await DataManager.GetBankAccounts();
-            //var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).Single();
-            //var acct = SelectedAccount;
-            var acctId = await DataManager.GetBankAccountID(SelectedAccount);
+            var acctId = await _dataManager.GetBankAccountID(SelectedAccount);
             var payee = IsNewPayee ? NewPayee : SelectedPayee;
 
             if (string.IsNullOrWhiteSpace(payee))
             {
-                var config = new AlertConfig().SetMessage("Payee needs a name");
-                Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
+                _backgroundHandler.Notify("Payee needs a name");
                 return;
             }
             if (AddMultiple)
@@ -498,7 +442,7 @@ namespace BudgetAppCross.Core.ViewModels
                     tempBills.Add(bill);
                 }
 
-                await DataManager.InsertBills(tempBills);
+                await _dataManager.InsertBills(tempBills);
             }
             else
             {
@@ -508,63 +452,21 @@ namespace BudgetAppCross.Core.ViewModels
                     //BankAccount = acct,
                     IsPaid = IsPaid
                 };
-                await DataManager.SaveBill(newBill);
+                await _dataManager.SaveBill(newBill);
             }
-            Messenger.Instance.Send(new ChangeBillMessage());
-            await navigationService.Close(this);
 
-
-            //if (IsNewPayee)
-            //{
-            //    Bill.Payee = NewPayee;
-            //}
-            //else
-            //{
-            //    Bill.Payee = SelectedPayee;
-            //}
-
-            ////await navigationService.Close(this, Bill);
-            ////var accts = await BudgetDatabase.Instance.GetBankAccounts();
-            //var accts = await DataManager.GetBankAccounts();
-            //var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
-            //Bill.BankAccount = acct;
-            ////Bill.AccountID = acct.AccountID;
-            ////await BudgetDatabase.Instance.SaveBill(Bill);
-            //await DataManager.SaveBill(Bill);
-            //Messenger.Instance.Send(new ChangeBillMessage(Bill.AccountID));
-            //await DataManager.UpdatePayeeNames();
-            //await navigationService.Close(this, true);
+            _backgroundHandler.SendMessage(new ChangeBillMessage());
+            await _navService.Close(this);
         }
 
         private async Task OnCancel()
         {
-            await navigationService.Close(this);
+            await _navService.Close(this);
         }
-
-        //private void LoadAccountOptions()
-        //{
-        //    //var options = await BudgetDatabase.Instance.GetBankAccounts();
-        //    AccountOptions = new ObservableCollection<string>(DataManager.BankAccountNicknames);// await DataManager.GetBankAccounts();
-        //    //AccountOptions.Clear();
-        //    //foreach (var item in options)
-        //    //{
-        //    //    AccountOptions.Add(item.Nickname);
-        //    //}
-        //    if(AccountOptions.Count > 1)
-        //    {
-        //        SelectedAccount = AccountOptions.ElementAt(1);
-        //    }
-        //    else
-        //    {
-        //        SelectedAccount = AccountOptions.FirstOrDefault();
-        //    }
-
-
-        //}
 
         private void LoadAccountOptions()
         {
-            AccountOptions = new ObservableCollection<string>(DataManager.BankAccountNicknames);
+            AccountOptions = new ObservableCollection<string>(_dataManager.BankAccountNicknames);
             if (AccountOptions.Count > 1)
             {
                 SelectedAccount = AccountOptions.ElementAt(1);
@@ -574,10 +476,11 @@ namespace BudgetAppCross.Core.ViewModels
                 SelectedAccount = AccountOptions.FirstOrDefault();
             }
         }
+
         private async Task LoadPayeeOptions()
         {
-            await DataManager.UpdatePayeeNames();
-            PayeeOptions = new ObservableCollection<string>(DataManager.PayeeNames);
+            await _dataManager.UpdatePayeeNames();
+            PayeeOptions = new ObservableCollection<string>(_dataManager.PayeeNames);
 
             if (PayeeOptions.Count == 0)
             {

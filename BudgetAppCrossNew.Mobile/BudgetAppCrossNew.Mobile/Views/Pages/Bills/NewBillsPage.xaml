@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetAppCrossNew.Mobile.Views.Pages.NewBillsPage"
+                          xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:controls="clr-namespace:BudgetAppCrossNew.Mobile.Views"
+             xmlns:models="clr-namespace:BudgetAppCross.Models;assembly=BudgetAppCross.Models"
+
+                          xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+             xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
+
+             >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout>
+        
+                    <!--Payee-->
+                    <StackLayout Orientation="Horizontal" IsVisible="{Binding PayeeSet, Converter={cvt:InverseBoolConverter}}">
+                        <Label Text="New Payee"
+                           Grid.Row="0" Grid.Column="0"/>
+                        <Switch IsToggled="{Binding IsNewPayee}"/>
+                    </StackLayout>
+                    <Grid IsVisible="{Binding PayeeSet, Converter={cvt:InverseBoolConverter}}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Select Payee"
+                                Grid.Row="0" Grid.Column="0"
+                               IsVisible="{Binding IsNewPayee, Converter={cvt:InverseBoolConverter}}"
+                                />
+                        <Label Text="Input Payee"
+                                Grid.Row="0" Grid.Column="0"
+                               IsVisible="{Binding IsNewPayee}"/>
+                        <custom:CustomPicker ItemsSource="{Binding PayeeOptions}"
+                                                 Grid.Column="1"
+                                                 FontSize="{StaticResource FontSizeLarge}"
+                                             HorizontalOptions="Fill"
+                                                 
+                                             SelectedItem="{Binding SelectedPayee}"
+                                             IsVisible="{Binding IsNewPayee, Converter={cvt:InverseBoolConverter}}"/>
+                        <custom:CustomEntry Text="{Binding NewPayee}" 
+                                                FontSize="{StaticResource FontSizeLarge}"
+                                                HorizontalOptions="Fill"
+                                                IsVisible="{Binding IsNewPayee}"
+                                                Grid.Row="0" Grid.Column="1"/>
+                    </Grid>
+                    <StackLayout Orientation="Horizontal" IsVisible="{Binding PayeeSet}">
+                        <Label Text="Add bill(s) for" />
+                        <Label Text="{Binding SelectedPayee}" />
+                    </StackLayout>
+
+
+                    <!--Amount Due-->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Amount Due"
+                                   />
+                        <custom:CurrencyEntry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
+                                                    Grid.Column="1"
+                                                    FontSize="{StaticResource FontSizeLarge}"
+                                                    HorizontalTextAlignment="End"
+                                                    HorizontalOptions="Fill"
+                                                    />
+                    </Grid>
+
+                    <!--Account-->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="1.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Account"
+                                   />
+                        <custom:CustomPicker ItemsSource="{Binding AccountOptions}"
+                                                 Grid.Column="1"
+                                                 FontSize="{StaticResource FontSizeLarge}"
+                                                 SelectedItem="{Binding SelectedAccount}"
+                                                 HorizontalOptions="Fill"
+                                                 />
+                    </Grid>
+
+                    <!--On Autopay-->
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="On Autopay?"/>
+                        <Switch IsToggled="{Binding OnAutopay}"/>
+                    </StackLayout>
+                    <!--Add Multiple-->
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Add Multiple"/>
+                        <Switch IsToggled="{Binding AddMultiple}"/>
+                    </StackLayout>
+
+                    <!--First Bill Due-->
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding BillDueString}"
+                               />
+                        <custom:CustomDatePicker x:Name="pickerStartDate"
+                                                 FontSize="{StaticResource FontSizeLarge}"
+                                    Date="{Binding StartDate}"
+                                    HorizontalOptions="EndAndExpand"
+                                    Grid.Column="1"
+                                    />
+                    </StackLayout>
+
+                    <!--Add Multiple-->
+                    <StackLayout Orientation="Horizontal" IsVisible="{Binding AddMultiple, Converter={cvt:InverseBoolConverter}}">
+                        <Label Text="Already Paid?"/>
+                        <Switch IsToggled="{Binding IsPaid}"/>
+                    </StackLayout>
+
+                    <!--Repeat Frequency-->
+                    <StackLayout Orientation="Horizontal" IsVisible="{Binding AddMultiple}">
+                        <Label Text="Repeat..."
+                                   Grid.Row="1" Grid.Column="0"
+                               />
+                        <custom:CustomPicker ItemsSource="{Binding Source={cvt:EnumBindingSource {x:Type models:DueDateFrequencies}}}"
+                                                 SelectedItem="{Binding DueDateFrequency}"
+                                                 FontSize="{StaticResource FontSizeLarge}"
+                                Grid.Row="1" Grid.Column="1"
+                                 HorizontalOptions="EndAndExpand"
+                            
+                            />
+                        <!--Failed converter-->
+                        <!--<custom:CustomPicker ItemsSource="{Binding Source={cvt:EnumBindingSource {x:Type models:DueDateFrequencies}}}"
+                                                 SelectedItem="{Binding DueDateFrequency}"
+                                                 FontSize="{StaticResource FontSizeLarge}"
+                                Grid.Row="1" Grid.Column="1"
+                                 HorizontalOptions="EndAndExpand"
+                            
+                            />-->
+                    </StackLayout>
+
+                    <!--Repeat Until-->
+                    <StackLayout Orientation="Horizontal" IsVisible="{Binding AddMultiple}">
+                        <Label Text="Repeat Until"
+                                   Grid.Row="2" Grid.Column="0"/>
+                        <custom:CustomDatePicker x:Name="pickerEndDate"
+                                                FontSize="{StaticResource FontSizeLarge}"
+                                Date="{Binding EndDate}"
+                                Grid.Row="2" HorizontalOptions="EndAndExpand"
+                                />
+                    </StackLayout>
+
+                    <!--Bill Count-->
+                    <!--<Frame IsVisible="{Binding AddMultiple}" HasShadow="False">-->
+
+                    <StackLayout IsVisible="{Binding AddMultiple}">
+                        <Label Text="Bills to be added:" TextDecorations="Underline"
+                                       IsVisible="{Binding AddMultiple}"/>
+
+                        <StackLayout BindableLayout.ItemsSource="{Binding NewBills}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                        <controls:NewMultiBillView/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                            <Label Text="Count = "
+                                       IsVisible="{Binding AddMultiple}"/>
+                            <Label Text="{Binding BillCount}"
+                                   HorizontalOptions="End"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Text="Cancel" Command="{Binding CancelCommand}"
+                            />
+            <Button Text="Save" Command="{Binding SaveCommand}"
+                            Grid.Column="1"/>
+        </Grid>
+    </Grid>
+
+</mvx:MvxContentPage>

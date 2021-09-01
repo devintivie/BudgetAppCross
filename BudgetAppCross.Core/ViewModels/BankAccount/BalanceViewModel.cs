@@ -1,6 +1,9 @@
-﻿using BaseViewModels;
+﻿using BaseClasses;
+using BaseViewModels;
 using BudgetAppCross.Core.Services;
+using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
+using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -12,10 +15,10 @@ using System.Windows.Input;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BalanceViewModel : MvxNavigationBaseViewModel
+    public class BalanceViewModel : BaseViewModel
     {
         #region Fields
-
+        private IDataManager _dataManager;
         #endregion
 
         #region Properties
@@ -72,17 +75,18 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-        public ICommand DeleteThisCommand { get; private set; }
-        public ICommand OnDateSelectedCommand { get; private set; }
+        public IMvxCommand DeleteThisCommand { get; private set; }
+        public IMvxCommand OnDateSelectedCommand { get; private set; }
         #endregion
 
         #region Constructors
-        public BalanceViewModel(Balance balance)
+        public BalanceViewModel(IBackgroundHandler backgroundHandler, IDataManager dataManager, Balance balance) : base(backgroundHandler)
         {
+            _dataManager = dataManager;
             Balance = balance;
 
-            DeleteThisCommand = new Command(async () => await OnDeleteThis());
-            OnDateSelectedCommand = new Command(async () => await ChangeAndSave());
+            DeleteThisCommand = new MvxAsyncCommand(OnDeleteThis);
+            OnDateSelectedCommand = new MvxAsyncCommand(ChangeAndSave);
         }
 
         #endregion
@@ -91,13 +95,13 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task ChangeAndSave()
         {
-            await BudgetDatabase_old.SaveBalance(Balance);
-            Messenger.Send(new ChangeBalanceMessage(Balance.AccountID));
+            await _dataManager.SaveBalance(Balance);
+            _backgroundHandler.SendMessage(new ChangeBalanceMessage(Balance.AccountID));
         }
 
         private async Task UpdateAndSave()
         {
-            await BudgetDatabase_old.SaveBalance(Balance);
+            await _dataManager.SaveBalance(Balance);
         }
 
         //private async Task UpdateAccount()
@@ -132,8 +136,8 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnDeleteThis()
         {
-            await BudgetDatabase_old.DeleteBalance(Balance);
-            Messenger.Send(new ChangeBalanceMessage(Balance.AccountID));
+            await _dataManager.DeleteBalance(Balance);
+            _backgroundHandler.SendMessage(new ChangeBalanceMessage(Balance.AccountID));
         }
 
 

@@ -1,6 +1,9 @@
-﻿using BaseViewModels;
+﻿using BaseClasses;
+using BaseViewModels;
 using BudgetAppCross.Core.Services;
+using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
+using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -12,10 +15,11 @@ using System.Windows.Input;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BillViewModel : MvxNavigationBaseViewModel
+    public class BillViewModel : BaseViewModel
     {
         #region Fields
         private bool initialAccountSet = false;
+        private IDataManager _dataManager;
         #endregion
 
         #region Properties
@@ -35,7 +39,7 @@ namespace BudgetAppCross.Core.ViewModels
                     RaisePropertyChanged();
                     RaisePropertyChanged(nameof(BillStatus));
 
-                    var _ = UpdateAndSave();
+                    _ = UpdateAndSave();
                 }
             }
         }
@@ -50,7 +54,7 @@ namespace BudgetAppCross.Core.ViewModels
                     Bill.Amount = value;
                     RaisePropertyChanged();
 
-                    var _ = UpdateAndSave();
+                    _ = UpdateAndSave();
                 }
             }
         }
@@ -65,7 +69,7 @@ namespace BudgetAppCross.Core.ViewModels
                     Bill.Confirmation = value;
                     RaisePropertyChanged();
 
-                    var _ = UpdateAndSave();
+                    _ = UpdateAndSave();
                 }
             }
         }
@@ -81,7 +85,7 @@ namespace BudgetAppCross.Core.ViewModels
                     RaisePropertyChanged();
                     RaisePropertyChanged(nameof(BillStatus));
 
-                    var _ = UpdateAndSave();
+                    _ = UpdateAndSave();
                 }
             }
         }
@@ -97,7 +101,7 @@ namespace BudgetAppCross.Core.ViewModels
                     RaisePropertyChanged();
                     RaisePropertyChanged(nameof(BillStatus));
 
-                    var _ = UpdateAndSave();
+                    _ = UpdateAndSave();
                 }
             }
         }
@@ -149,19 +153,20 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-        public ICommand DeleteThisCommand { get; private set; }
-        public ICommand OnDateSelectedCommand { get; private set; }
+        public IMvxCommand DeleteThisCommand { get; private set; }
+        public IMvxCommand OnDateSelectedCommand { get; private set; }
         #endregion
 
         #region Constructors
-        public BillViewModel(Bill bill)
+        public BillViewModel(IBackgroundHandler backgroundHandler, IDataManager dataManager, Bill bill) : base(backgroundHandler)
         {
+            _dataManager = dataManager;
             Bill = bill;
 
-            DeleteThisCommand = new Command(async () => await OnDeleteThis());
-            OnDateSelectedCommand = new Command(async () => await ChangeAndSave());
+            DeleteThisCommand = new MvxAsyncCommand(OnDeleteThis);
+            OnDateSelectedCommand = new MvxAsyncCommand(ChangeAndSave);
 
-            LoadAccountOptions();
+            _ = LoadAccountOptions();
         }
 
         //public override void Prepare(int id)
@@ -185,8 +190,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task LoadAccountOptions()
         {
-            
-            AccountOptions = new ObservableCollection<string>(BudgetDatabase_old.BankAccountNicknames);
+            AccountOptions = new ObservableCollection<string>(_dataManager.BankAccountNicknames);
             SelectedAccount = AccountOptions.Where(x => x.Equals(Bill.BankAccount.Nickname)).FirstOrDefault();
 
         }
@@ -195,7 +199,7 @@ namespace BudgetAppCross.Core.ViewModels
         {
             if(SelectedAccount != null && initialAccountSet)
             {
-                var acctId = await BudgetDatabase_old.GetBankAccountID(SelectedAccount);
+                var acctId = await _dataManager.GetBankAccountID(SelectedAccount);
 
                 Bill.AccountID = acctId;
                 await ChangeAndSave();
@@ -228,20 +232,20 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task UpdateAndSave()
         {
-            await BudgetDatabase_old.SaveBill(Bill);
-            Messenger.Send(new UpdateBillMessage(Bill.AccountID));
+            await _dataManager.SaveBill(Bill);
+            _backgroundHandler.SendMessage(new UpdateBillMessage(Bill.AccountID));
         }
 
         private async Task ChangeAndSave()
         {
-            await BudgetDatabase_old.SaveBill(Bill);
-            Messenger.Send(new ChangeBillMessage(Bill.AccountID));
+            await _dataManager.SaveBill(Bill);
+            _backgroundHandler.SendMessage(new ChangeBillMessage(Bill.AccountID));
         }
 
         private async Task OnDeleteThis()
         {
-            await BudgetDatabase_old.DeleteBill(Bill);
-            Messenger.Send(new ChangeBillMessage(Bill.AccountID));
+            await _dataManager.DeleteBill(Bill);
+            _backgroundHandler.SendMessage(new ChangeBillMessage(Bill.AccountID));
         }
 
 

@@ -1,6 +1,9 @@
-﻿using BaseViewModels;
+﻿using BaseClasses;
+using BaseViewModels;
 using BudgetAppCross.Core.Services;
+using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
@@ -16,7 +19,7 @@ namespace BudgetAppCross.Core.ViewModels
     public class BankOverviewViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
-        private IMvxNavigationService navigationService;
+        private IDataManager _dataManager;
         #endregion
 
         #region Properties
@@ -44,18 +47,15 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-        public ICommand AddAccountCommand { get; }
+        public IMvxCommand AddAccountCommand { get; }
         //public ICommand DeleteAccountCommand { get; }
         #endregion
 
         #region Constructors
-        public BankOverviewViewModel(IMvxNavigationService navigation)
+        public BankOverviewViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IDataManager dataManager) : base(navService, backgroundHandler)
         {
-            navigationService = navigation;
-            Title = "Bank Accounts";
-
-            AddAccountCommand = new Command(async () => await navigationService.Navigate<NewBankAccountViewModel>());
-            //DeleteAccountCommand = new Command(() => OnDeleteAccount());
+            _dataManager = dataManager;
+            AddAccountCommand = new MvxAsyncCommand(async () => await _navService.Navigate<NewBankAccountViewModel>());
 
             var _ = LoadAccounts();
         }
@@ -63,8 +63,7 @@ namespace BudgetAppCross.Core.ViewModels
         public override void ViewDestroy(bool viewFinishing = true)
         {
             base.ViewDestroy(viewFinishing);
-
-            Messenger.Unregister(this);
+            _backgroundHandler.UnregisterMessages(this);
         }
 
         #endregion
@@ -75,24 +74,24 @@ namespace BudgetAppCross.Core.ViewModels
         {
             base.ViewAppeared();
             SelectedAccount = null;
-            var _ = LoadAccounts();
+            _ = LoadAccounts();
         }
 
         private async Task LoadAccounts()
         {
-            var allAccts = await BudgetDatabase_old.GetBankAccounts();
+            var allAccts = await _dataManager.GetBankAccounts();
             var accts = allAccts.Where(x => x.AccountID != 1).OrderBy(x => x.Nickname);
 
             Accounts.Clear();
             foreach (var item in accts)
             {
-                Accounts.Add(new BankAccountQuickViewModel(navigationService, item));
+                Accounts.Add(new BankAccountQuickViewModel(_navService, _backgroundHandler, _dataManager, item));
             }
         } 
 
         public Task ShowBankAccount(BankAccount account)
         {
-            return navigationService.Navigate<BankAccountViewModel, BankAccount>(account);
+            return _navService.Navigate<BankAccountViewModel, BankAccount>(account);
 
         }
 
@@ -104,7 +103,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async void OnDeleteAccount()
         {
-            await BudgetDatabase_old.DeleteBankAccount(SelectedAccount.BankAccount);
+            await _dataManager.DeleteBankAccount(SelectedAccount.BankAccount);
             //Console.WriteLine(count); 
             //BankAccountManager.DeleteAccount(SelectedAccount);
             Accounts.Remove(selectedAccount);

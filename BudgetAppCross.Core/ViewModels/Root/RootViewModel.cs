@@ -1,6 +1,7 @@
 ﻿using BaseClasses;
 using BudgetAppCross.Configurations;
 using BudgetAppCross.Core.ViewModels.Pages;
+using BudgetAppCross.DataAccess;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
@@ -16,6 +17,7 @@ namespace BudgetAppCross.Core.ViewModels.Root
         IMvxNavigationService _navigationService;
         ISettingsManager _settings;
         IConfigManager<SQLiteConfiguration> _configManager;
+        IDataManager _dataManager;
         #endregion
 
         #region Properties
@@ -23,11 +25,13 @@ namespace BudgetAppCross.Core.ViewModels.Root
         #endregion
 
         #region Constructors
-        public RootViewModel(IMvxNavigationService navService, ISettingsManager settings, IConfigManager<SQLiteConfiguration> configManager)
+        public RootViewModel(IMvxNavigationService navService, ISettingsManager settings, IConfigManager<SQLiteConfiguration> configManager,
+            IDataManager dataManager)
         {
             _settings = settings;
             _navigationService = navService;
             _configManager = configManager;
+            _dataManager = dataManager;
         }
         public override void ViewAppearing()
         {
@@ -49,14 +53,26 @@ namespace BudgetAppCross.Core.ViewModels.Root
             }
             else
             {
-                //Remove later after debug over
-                //await _navigationService.Navigate<MenuViewModel>();
-                await NavigateToSettingsScreen();
+
+                var files = await _settings.FindLoadableConfigFiles();
+                if (files.Count == 0)
+                {
+                    await NavigateToWelcomeScreen();
+                }
+                else
+                {
+                    //Remove later after debug over
+                    //await NavigateToSettingsScreen();
+                    await NavigateToSelectBudget();
+                    //await NavigateInitial();
+                }
             }
         }
 
         private async Task NavigateInitial()
         {
+            await _dataManager.Initialize();
+            await _dataManager.GetBankAccounts();
             await _navigationService.Navigate<MenuViewModel>();
             await _navigationService.Navigate<AgendaViewModel>();
         }
@@ -84,7 +100,17 @@ namespace BudgetAppCross.Core.ViewModels.Root
 
         public async Task NavigateToSettingsScreen()
         {
-            //await _navigationService.Navigate<SettingsViewModel>();
+            await _navigationService.Navigate<SettingsViewModel>();
+        }
+
+        public async Task NavigateToWelcomeScreen()
+        {
+            await _navigationService.Navigate<WelcomeViewModel>();
+        }
+        
+        public async Task NavigateToSelectBudget()
+        {
+            await _navigationService.Navigate<BudgetSelectViewModel>();
         }
         #endregion
 

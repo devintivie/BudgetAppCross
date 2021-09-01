@@ -1,4 +1,6 @@
-﻿using BaseViewModels;
+﻿using BaseClasses;
+using BaseViewModels;
+using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
 using MvvmCross.Navigation;
 using System;
@@ -13,7 +15,7 @@ namespace BudgetAppCross.Core.ViewModels
     public class BillDetailsViewModel : XamarinBaseViewModel<Bill>
     {
         #region Fields
-        private IMvxNavigationService navigationService;
+        private IDataManager _dataManager;
         #endregion
 
         #region Properties
@@ -131,10 +133,9 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Constructors
-        public BillDetailsViewModel(IMvxNavigationService navigation)
+        public BillDetailsViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IDataManager dataManager) : base(navService, backgroundHandler)
         {
-            navigationService = navigation;
-
+            _dataManager = dataManager;
         }
 
         public override void Prepare(Bill parameter)
@@ -148,21 +149,21 @@ namespace BudgetAppCross.Core.ViewModels
         #region Methods
         private async Task UpdateAndSave()
         {
-            await BudgetDatabase.SaveBill(Bill);
-            Messenger.Send(new UpdateBillMessage(Bill.AccountID));
+            await _dataManager.SaveBill(Bill);
+            _backgroundHandler.SendMessage(new UpdateBillMessage(Bill.AccountID));
         }
 
         private async Task ChangeAndSave()
         {
-            await BudgetDatabase.SaveBill(Bill);
-            Messenger.Send(new ChangeBillMessage(Bill.AccountID));
+            await _dataManager.SaveBill(Bill);
+            _backgroundHandler.SendMessage(new ChangeBillMessage(Bill.AccountID));
         }
 
         private async Task UpdateAccount()
         {
             if (SelectedAccount != null)
             {
-                var accts = await BudgetDatabase.GetBankAccounts();
+                var accts = await _dataManager.GetBankAccounts();
                 var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
                 if (Bill.BankAccount == null)
                 {
@@ -187,7 +188,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private Task LoadAccountOptions()
         {
-            AccountOptions = new ObservableCollection<string>(BudgetDatabase.BankAccountNicknames);
+            AccountOptions = new ObservableCollection<string>(_dataManager.BankAccountNicknames);
             
             SelectedAccount = AccountOptions.Where(x => x.Equals(Bill.BankAccount.Nickname)).Single();
             return Task.CompletedTask;

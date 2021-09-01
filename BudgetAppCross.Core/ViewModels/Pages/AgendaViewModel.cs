@@ -1,11 +1,13 @@
 ﻿using BaseClasses;
 using BaseViewModels;
+using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +18,8 @@ namespace BudgetAppCross.Core.ViewModels.Pages
     public class AgendaViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
-        private IMvxNavigationService navigationService;
         private bool scrolled = false;
+        IDataManager _dataManager;
         #endregion
 
         #region Properties
@@ -43,12 +45,13 @@ namespace BudgetAppCross.Core.ViewModels.Pages
         #endregion
 
         #region Constructors
-        public AgendaViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, string name) : base(navService, backgroundHandler)
+        public AgendaViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IDataManager dataManager) : base(navService, backgroundHandler)
         {
+            _dataManager = dataManager;
             var getgroup = GetGroups();
             _backgroundHandler.RegisterMessage<ChangeBillMessage>(this, async x => await OnChangeBillMessage(x.AccountId));
 
-            AddBillCommand = new MvxAsyncCommand(async () => await navigationService.Navigate<NewBillsViewModel, string>(string.Empty));
+            AddBillCommand = new MvxAsyncCommand(async () => await _navService.Navigate<NewBillsViewModel, string>(string.Empty));
         }
         #endregion
 
@@ -66,7 +69,7 @@ namespace BudgetAppCross.Core.ViewModels.Pages
             //var allUnpaid = tempBills.Where(x => x.IsPaid == false || (x.Date >= DateTime.Today && x.Date <= DateTime.Today.AddMonths(1)));
             //var billData = allUnpaid.ToList();
 
-            var billData = await BudgetDatabase.GetUnpaidAndFutureBills(DateTime.Today, DateTime.Today.AddMonths(6));
+            var billData = await _dataManager.GetUnpaidAndFutureBills(DateTime.Today, DateTime.Today.AddMonths(6));
 
             var data = billData.GroupBy(x => x.Date)
                         .OrderBy(x => x.Key)
@@ -82,13 +85,26 @@ namespace BudgetAppCross.Core.ViewModels.Pages
                 var bvms = new List<BillViewModel>();
                 foreach (var item in group.Grouped)
                 {
-                    bvms.Add(new BillViewModel(item));
+                    bvms.Add(new BillViewModel(_backgroundHandler, _dataManager, item));
                 }
 
                 groupVM.Add(new Grouping<DateTime, BillViewModel>(key, bvms));
             }
 
-            Bills = new ObservableCollection<Grouping<DateTime, BillViewModel>>(groupVM);
+            try
+            {
+                Bills.Clear();
+                foreach (var group in groupVM)
+                {
+                    bills.Add(group);
+                }
+                //Bills = new ObservableCollection<Grouping<DateTime, BillViewModel>>(groupVM);
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            
 
         }
 

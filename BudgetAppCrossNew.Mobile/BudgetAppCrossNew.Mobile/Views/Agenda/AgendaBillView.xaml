@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mvx:MvxContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetAppCrossNew.Mobile.Views.AgendaBillView"
+            xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:views="clr-namespace:BudgetAppCrossNew.Mobile.Views"
+            xmlns:cvtlocal="clr-namespace:BudgetAppCrossNew.Mobile.Converters"
+            xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
+            xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+            xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+             >
+    <Grid Padding="3" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+              Margin="2">
+        <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="1.0*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <CheckBox IsChecked="{Binding IsPaid}"
+                              Margin="0"
+                          Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+                          Grid.Row="0" Grid.RowSpan="2"/>
+            <Label Text="{Binding Payee}"
+                       Grid.Column="1"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            WidthRequest="120"/>
+            <custom:CurrencyEntry Text="{Binding Amount}"
+                            WidthRequest="100"
+                            Grid.Column="2"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Center"/>
+            <custom:CustomDatePicker Date="{Binding Date}"
+                            Grid.Column="3">
+                <DatePicker.Behaviors>
+                    <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                </DatePicker.Behaviors>
+            </custom:CustomDatePicker>
+
+            <custom:CustomPicker ItemsSource="{Binding AccountOptions}"
+                            Grid.Row="1" Grid.Column="1"
+                            SelectedItem="{Binding SelectedAccount}"
+                            ios:Picker.UpdateMode="WhenFinished"
+                        VerticalOptions="Center"
+                            WidthRequest="200"/>
+            <custom:CustomEntry Text="{Binding Confirmation}"
+                       Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"
+                           WidthRequest="200"/>
+
+
+        </Grid>
+    </Grid>
+</mvx:MvxContentView>

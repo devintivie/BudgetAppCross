@@ -1,6 +1,8 @@
-﻿using Acr.UserDialogs;
+﻿//using Acr.UserDialogs;
+using BaseClasses;
 using BaseViewModels;
 using BudgetAppCross.Core.Services;
+using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
@@ -19,24 +21,10 @@ namespace BudgetAppCross.Core.ViewModels
     public class DateRangeViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
-        private IMvxNavigationService navigationService;
+        private IDataManager _dataManager;
         #endregion
 
         #region Properties
-        //private DateTime startDate = DateTime.Today;
-        //public DateTime StartDate
-        //{
-        //    get { return startDate; }
-        //    set
-        //    {
-        //        var currStart = new DateTime(startDate.Ticks);
-        //        SetProperty(ref startDate, value);
-
-        //        EndDate = StartDate.AddDays(14);
-        //        //if (initialized) { var _ = GetGroups(); }
-        //        //var _ = GetBills();
-        //    }
-        //}
 
         private DateTime startDate = DateTime.Today;
         public DateTime StartDate
@@ -62,40 +50,23 @@ namespace BudgetAppCross.Core.ViewModels
             get { return endDate; }
             set
             {
-                if (value >= startDate)
+                if (endDate != value)
                 {
-                    SetProperty(ref endDate, value);
+                    if (value >= startDate)
+                    {
+                        endDate = value;
+                        RaisePropertyChanged();
+                    }
+                    else
+                    {
+                        _backgroundHandler.Notify("Ending date must be after start date");
+                    }
                 }
-                else
-                {
-                    var config = new AlertConfig().SetMessage("Ending date must be after start date");
-                    UserDialogs.Instance.Alert(config);
-                }
-
-                //if (initialized) { var _ = GetGroups(); }
-                //var _ = GetBills();
             }
         }
 
-        private ObservableCollection<BillViewModel> bills = new ObservableCollection<BillViewModel>();
-        public ObservableCollection<BillViewModel> Bills
-        {
-            get { return bills; }
-            set
-            {
-                SetProperty(ref bills, value);
-            }
-        }
-
-        private ObservableCollection<string> accountOptions = new ObservableCollection<string>();
-        public ObservableCollection<string> AccountOptions
-        {
-            get { return accountOptions; }
-            set
-            {
-                SetProperty(ref accountOptions, value);
-            }
-        }
+        public ObservableCollection<BillViewModel> Bills { get; private set; } = new ObservableCollection<BillViewModel>();
+        public ObservableCollection<string> AccountOptions { get; private set; } = new ObservableCollection<string>();
 
         private string selectedAccount;
         public string SelectedAccount
@@ -105,8 +76,10 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 if (selectedAccount != value)
                 {
+                    selectedAccount = value;
+                    RaisePropertyChanged();
                     SetProperty(ref selectedAccount, value);
-                    var _bills = GetBills(); 
+                    _ = GetBills(); 
                 }
 
             }
@@ -118,8 +91,15 @@ namespace BudgetAppCross.Core.ViewModels
             get { return startingBalance; }
             set
             {
-                SetProperty(ref startingBalance, value);
-                RaisePropertyChanged(nameof(Remainder));
+
+                if (startingBalance != value)
+                {
+                    startingBalance = value;
+                    RaisePropertyChanged();
+                    RaisePropertyChanged(nameof(Remainder));
+
+                }
+                
             }
         }
 
@@ -129,43 +109,36 @@ namespace BudgetAppCross.Core.ViewModels
             get { return billTotal; }
             set
             {
-                SetProperty(ref billTotal, value);
-                RaisePropertyChanged(nameof(Remainder));
+                if (billTotal != value)
+                {
+                    billTotal = value;
+                    RaisePropertyChanged();
+                }
             }
         }
-
         public decimal Remainder => StartingBalance - BillTotal;
 
         #endregion
 
         #region Commands
         public IMvxCommand AddBillCommand { get; }
-        //public ICommand DeleteBillCommand { get; }
         public IMvxCommand OnDateSelectedCommand { get; }
         #endregion
 
         #region Constructors
-        public DateRangeViewModel(IMvxNavigationService navigation)
+        public DateRangeViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IDataManager dataManager) : base(navService, backgroundHandler)
         {
-            navigationService = navigation;
-            Title = "Custom Dates";
-
+            //Title = "Custom Dates";
+            _dataManager = dataManager;
             var _accts = LoadAccountOptions();
             
-            AddBillCommand = new MvxAsyncCommand(async () => await navigationService.Navigate<NewBillsViewModel, string>(string.Empty));
+            AddBillCommand = new MvxAsyncCommand(async () => await _navService.Navigate<NewBillsViewModel, string>(string.Empty));
             OnDateSelectedCommand = new MvxAsyncCommand(async () => await GetBills());
 
-            Messenger.Register<ChangeBillMessage>(this, async x => await OnChangeBillMessage(x.AccountId));
-            Messenger.Register<UpdateBillMessage>(this, async x => await OnUpdateBillMessage(x.AccountId));
+            _backgroundHandler.RegisterMessage<ChangeBillMessage>(this, async x => await OnChangeBillMessage(x.AccountId));
+            _backgroundHandler.RegisterMessage<UpdateBillMessage>(this, async x => await OnUpdateBillMessage(x.AccountId));
 
 
-        }
-
-        public override void ViewDestroy(bool viewFinishing = true)
-        {
-
-            Messenger.Unregister(this);
-            base.ViewDestroy(viewFinishing);
         }
         #endregion
 
@@ -174,58 +147,39 @@ namespace BudgetAppCross.Core.ViewModels
         {
             if(SelectedAccount != null)
             {
-                //var billcall = await BudgetDatabase.GetBills();
-
-                //var billData = billcall
-                //    .Where(x => x.Date >= StartDate)
-                //    .Where(x => x.Date <= EndDate)
-                //    .Where(x => x.BankAccount.Nickname.Equals(SelectedAccount))
-                //    .OrderBy(x => x.Date).ToList();
-
-                var billData = await BudgetDatabase_old.GetBillsDateRangeForAccount(StartDate, EndDate, SelectedAccount);
+                var billData = await _dataManager.GetBillsDateRangeForAccount(StartDate, EndDate, SelectedAccount);
 
                 billData = billData.OrderBy(x => x.Date).ToList();
-                //var billData = billCall;
                 Bills.Clear();
                 foreach (var bill in billData)
                 {
-                    Bills.Add(new BillViewModel(bill));
+                    Bills.Add(new BillViewModel(_backgroundHandler, _dataManager, bill));
                 }
 
                 await UpdateCalculations();
             }
-            
-
         }
 
         private async Task LoadAccountOptions()
         {
-            AccountOptions = new ObservableCollection<string>(BudgetDatabase_old.BankAccountNicknames);
+            AccountOptions = new ObservableCollection<string>(_dataManager.BankAccountNicknames);
 
-            var allAccts = await BudgetDatabase_old.GetBankAccounts();
+            var allAccts = await _dataManager.GetBankAccounts();
             var accts = allAccts.Where(x => x.AccountID != 1).Select(x => x.Nickname).ToList();
             AccountOptions = new ObservableCollection<string>(accts);
             SelectedAccount = AccountOptions.FirstOrDefault();
-
-            //await GetBills();
         }
 
 
         private async Task UpdateCalculations()
         {
-            //var billcall = await BudgetDatabase.GetBills();
 
-            var billCall = await BudgetDatabase_old.GetBillsDateRangeForAccount(StartDate, EndDate, SelectedAccount);
+            var billCall = await _dataManager.GetBillsDateRangeForAccount(StartDate, EndDate, SelectedAccount);
 
             var billData = billCall;
-            //var billData = billcall
-            //    .Where(x => x.Date >= StartDate)
-            //    .Where(x => x.Date <= EndDate)
-            //    .Where(x => x.BankAccount.Nickname.Equals(SelectedAccount))
-            //    .OrderBy(x => x.Date).ToList();
 
             //Doesnt work if there are no bills
-            var bal = await BudgetDatabase_old.GetLatestBalance(SelectedAccount, StartDate);
+            var bal = await _dataManager.GetLatestBalance(SelectedAccount, StartDate);
             if (bal == null)
             {
                 StartingBalance = 0.0m;
@@ -239,7 +193,6 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnChangeBillMessage(int id)
         {
-            //await GetGroups();
             await GetBills();
         }
 
@@ -248,39 +201,6 @@ namespace BudgetAppCross.Core.ViewModels
             await UpdateCalculations();
         }
 
-        //private async Task UpdateCalculations()
-        //{
-        //    var bills = await BudgetDatabase.GetBills();
-        //    var data = (bills.Where(x => x.Date >= StartDate && x.Date <= EndDate)
-        //                .OrderBy(x => x.Date)
-        //                .Select(bill => bill)).ToList();
-        //    var accts = await BudgetDatabase.GetBankAccounts();
-        //    var accountIDUsed = accts.First().AccountID;
-        //    StartingBalance = (await BudgetDatabase.GetLatestBalance(accountIDUsed, startDate)).Amount;
-        //    DateRangeTotal = 0;
-
-        //    var billsForThisAccount = data.Where(x => x.AccountID == accountIDUsed);
-        //    foreach (var item in billsForThisAccount)
-        //    {
-        //        DateRangeTotal += item.Amount;
-        //    }
-
-        //    EndingBalance = StartingBalance - DateRangeTotal;
-
-
-
-        //    var accountIDUsed2 = accts.Last().AccountID;
-        //    StartingBalance2 = (await BudgetDatabase.GetLatestBalance(accountIDUsed2, startDate)).Amount;
-        //    DateRangeTotal2 = 0;
-
-        //    var billsForThisAccount2 = data.Where(x => x.AccountID == accountIDUsed2);
-        //    foreach (var item in billsForThisAccount2)
-        //    {
-        //        DateRangeTotal2 += item.Amount;
-        //    }
-
-        //    EndingBalance2 = StartingBalance2 - DateRangeTotal2;
-        //}
         #endregion
 
     }

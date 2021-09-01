@@ -7,18 +7,21 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using Acr.UserDialogs;
+//using Acr.UserDialogs;
 using System.Linq;
 using MvvmCross;
 using BaseViewModels;
+using MvvmCross.Commands;
+using BaseClasses;
+using BudgetAppCross.DataAccess;
 
 namespace BudgetAppCross.Core.ViewModels
 {
     public class NewBankAccountViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
-        private IMvxNavigationService navigationService;
         //private IDataManager DataManager = Mvx.IoCProvider.Resolve<IDataManager>();
+        private IDataManager _dataManager;
         #endregion
 
         #region Properties
@@ -82,25 +85,25 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-        public ICommand SaveCommand { get; }
-        public ICommand CancelCommand { get; }
-        public ICommand BalanceFocusedCommand { get; }
-        public ICommand BalanceUnfocusedCommand { get; }
+        public IMvxCommand SaveCommand { get; }
+        public IMvxCommand CancelCommand { get; }
+        public IMvxCommand BalanceFocusedCommand { get; }
+        public IMvxCommand BalanceUnfocusedCommand { get; }
         #endregion
 
         #region Constructors
-        public NewBankAccountViewModel(IMvxNavigationService nav)
+        public NewBankAccountViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IDataManager dataManager) : base(navService, backgroundHandler)
         {
-            navigationService = nav;
+            _dataManager = dataManager;
             BankAccount = new BankAccount
             {
                 Nickname = ""
             };
 
-            SaveCommand = new Command(async () => await OnSave());
-            CancelCommand = new Command(async () => await OnCancel());
-            BalanceFocusedCommand = new Command(() => BalanceFocused());
-            BalanceUnfocusedCommand = new Command(() => BalanceUnfocused());
+            SaveCommand = new MvxAsyncCommand(OnSave);
+            CancelCommand = new MvxAsyncCommand(OnCancel);
+            BalanceFocusedCommand = new MvxCommand(BalanceFocused);
+            BalanceUnfocusedCommand = new MvxCommand(BalanceUnfocused);
 
             
         }
@@ -111,9 +114,7 @@ namespace BudgetAppCross.Core.ViewModels
         {
             if (string.IsNullOrWhiteSpace(BankAccount.Nickname))
             {
-                var config = new AlertConfig().SetMessage("Invalid Company Name");//.SetOkText(ConfirmConfig.DefaultOkText);
-                Mvx.IoCProvider.Resolve<IUserDialogs>().Alert(config);
-                //UserDialogs.Instance.Alert(config);
+                _backgroundHandler.Notify("Invalid Company Name");//.SetOkText(ConfirmConfig.DefaultOkText);
                 return;
             }
 
@@ -126,7 +127,7 @@ namespace BudgetAppCross.Core.ViewModels
             //};
             var bal = new Balance(Balance, Date);
             BankAccount.History.Add(bal);
-            await BudgetDatabase_old.SaveBankAccount(BankAccount);
+            await _dataManager.SaveBankAccount(BankAccount);
             //await BudgetDatabase.Instance.SaveBankAccount(BankAccount);
 
 
@@ -134,13 +135,13 @@ namespace BudgetAppCross.Core.ViewModels
             //await BudgetDatabase.Instance.SaveBalance(bal);
             //await BudgetDatabase.Instance.SaveBalanceAsync(BankAccount.History.First());
             //BankAccountManager.Instance.AddAccount(BankAccount);
-            Messenger.Send(new ChangeBalanceMessage());
-            await navigationService.Close(this);
+            _backgroundHandler.SendMessage(new ChangeBalanceMessage());
+            await _navService.Close(this);
         }
 
         private async Task OnCancel()
         {
-            await navigationService.Close(this);
+            await _navService.Close(this);
         }
 
         private void BalanceFocused()

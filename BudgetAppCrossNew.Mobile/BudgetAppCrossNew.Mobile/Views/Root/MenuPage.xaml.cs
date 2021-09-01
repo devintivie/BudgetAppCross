@@ -11,12 +11,14 @@ using Xamarin.Forms.Xaml;
 
 namespace BudgetAppCrossNew.Mobile.Views.Root
 {
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     [MvxMasterDetailPagePresentation(Position = MasterDetailPosition.Master, WrapInNavigationPage = false, Title = "Main")]
     public partial class MenuPage : MvxContentPage
     {
         public MenuPage()
         {
+
+            var tmp = Application.Current.Resources;
             InitializeComponent();
         }
 
@@ -34,5 +36,10 @@ namespace BudgetAppCrossNew.Mobile.Views.Root
             }
 
         }
+
+        //private void ListView_ItemSelected(object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
+        //{
+        //    MenuList.SelectedItem = null;
+        //}
     }
 }

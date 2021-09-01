@@ -1,9 +1,10 @@
 ﻿using Acr.UserDialogs;
 using BaseClasses;
 using BaseViewModels;
+using BudgetAppCross.Configurations;
 using BudgetAppCross.Core.Services;
+using BudgetAppCross.Core.ViewModels.Pages;
 using BudgetAppCross.Models;
-using BudgetAppCross.StateManagers;
 using MvvmCross;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
@@ -30,12 +31,14 @@ namespace BudgetAppCross.Core.ViewModels.Root
             {"Bank Accounts", NavigablePage.BankOverview },
             {"About", NavigablePage.About },
         };
+
+        private IConfigManager<SQLiteConfiguration> _configManager;
         #endregion
 
         #region Properties
 
         public ObservableCollection<string> PageList { get; set; } = new ObservableCollection<string>();
-        public string BudgetName => StateManager.Instance.DatabaseFilename;
+        public string BudgetName => _configManager.Configuration.DatabaseFilename;//   StateManager.Instance.DatabaseFilename;
 
         private string selectedPage;
         public string SelectedPage
@@ -79,18 +82,37 @@ namespace BudgetAppCross.Core.ViewModels.Root
             }
         }
 
+        public IMvxAsyncCommand ShowAccountPageCommand { get; }
+        //{
+        //    get
+        //    {
+        //        showAccountPageCommand = showAccountPageCommand ?? new MvxAsyncCommand(ShowAccountPageAsync);
+        //        return showAccountPageCommand;
+        //    }
+        //}
+
         #endregion
 
         #region Constructors
-        public MenuViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler) : base(navService, backgroundHandler)
+        public MenuViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IConfigManager<SQLiteConfiguration> configManager) : base(navService, backgroundHandler)
         {
+            _configManager = configManager;
+            ShowAccountPageCommand = new MvxAsyncCommand(ShowAccountPageAsync);
             //Messenger.Instance.Register<UpdateMenuMessage>(this, async x => await OnUpdate());
+        }
+
+        private async Task ShowAccountPageAsync()
+        {
+            //await navigationService.Navigate<AccountViewModel>();
         }
 
         public override void ViewAppearing()
         {
             PageList.Clear();
-            PageList = new ObservableCollection<string>(PageDictionary.Keys);
+            foreach (var key in PageDictionary.Keys)
+            {
+                PageList.Add(key);
+            }
         }
 
         //public override void ViewDestroy(bool viewFinishing = true)
@@ -114,7 +136,7 @@ namespace BudgetAppCross.Core.ViewModels.Root
                     case NavigablePage.Account:
                         break;
                     case NavigablePage.LoadBudget:
-                        await _navService.Navigate<SelectBudgetViewModel>();
+                        await _navService.Navigate<BudgetSelectViewModel>();
                         break;
                     case NavigablePage.DateRange:
                         await _navService.Navigate<DateRangeViewModel>();
@@ -131,9 +153,9 @@ namespace BudgetAppCross.Core.ViewModels.Root
                     case NavigablePage.About:
                         await _navService.Navigate<AboutViewModel>();
                         break;
-                    case NavigablePage.Purchasing:
-                        await _navService.Navigate<PurchasingViewModel>();
-                        break;
+                    //case NavigablePage.Purchasing:
+                    //    await _navService.Navigate<PurchasingViewModel>();
+                    //    break;
                     default:
                         break;
                 }

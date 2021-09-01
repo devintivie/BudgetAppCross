@@ -1,5 +1,6 @@
 ﻿using BudgetAppCross.Core.Services;
 using BudgetAppCross.Models;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
@@ -30,7 +31,7 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-        public ICommand SaveCommand { get; }
+        public IMvxCommand SaveCommand { get; }
         #endregion
 
         #region Constructors
@@ -39,7 +40,7 @@ namespace BudgetAppCross.Core.ViewModels
             navigationService = nav;
             BillTracker = new BillTracker("");
 
-            SaveCommand = new Command(async () => await OnSave());
+            SaveCommand = new MvxAsyncCommand(OnSave);
         }
 
 

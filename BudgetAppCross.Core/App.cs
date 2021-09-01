@@ -18,8 +18,9 @@ namespace BudgetAppCross.Core
             base.Initialize();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IMessenger, Messenger>();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<ILogManager, LogManager>();
-            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<INotificationHandler, SimpleNotificationService>();
-            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IBackgroundHandler, SimpleBackgroundHandler>();
+            Mvx.IoCProvider.RegisterSingleton(() => UserDialogs.Instance);
+            //Mvx.IoCProvider.LazyConstructAndRegisterSingleton<INotificationHandler, XamarinNotificationHandler>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IBackgroundHandler, XamarinBackgroundHandler>();
 
             var configFileExt = ".db3";
             Mvx.IoCProvider.RegisterSingleton<ISettingsManager>(() => 
@@ -27,7 +28,7 @@ namespace BudgetAppCross.Core
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IConfigManager<SQLiteConfiguration>, SQLiteConfigurationManager>();
             Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IDataManager, SQLiteBudgetDatabase>();
             
-            Mvx.IoCProvider.RegisterSingleton<IUserDialogs>(() => UserDialogs.Instance);
+           
             
             RegisterAppStart<RootViewModel>();
         }

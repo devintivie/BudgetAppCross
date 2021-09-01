@@ -16,6 +16,7 @@ namespace BudgetAppCrossNew.Mobile.Views.Root
     {
         public RootPage()
         {
+            var tmp = Application.Current.Resources;
             InitializeComponent();
         }
     }

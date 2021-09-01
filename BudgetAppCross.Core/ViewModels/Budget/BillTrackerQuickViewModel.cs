@@ -1,6 +1,9 @@
-﻿using BaseViewModels;
+﻿using BaseClasses;
+using BaseViewModels;
 using BudgetAppCross.Core.Services;
+using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
+using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
@@ -16,7 +19,7 @@ namespace BudgetAppCross.Core.ViewModels
     public class BillTrackerQuickViewModel : MvxNavigationBaseViewModel
     {
         #region Fields
-        private IMvxNavigationService navigationService;
+        private IDataManager _dataManager;
         #endregion
 
         #region Properties
@@ -35,25 +38,25 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-        public ICommand EditThisCommand { get; private set; }
-        public ICommand DeleteThisCommand { get; private set; }
+        public IMvxCommand EditThisCommand { get; private set; }
+        public IMvxCommand DeleteThisCommand { get; private set; }
         #endregion
 
         #region Constructors
-        public BillTrackerQuickViewModel(IMvxNavigationService navService, string name)
+        public BillTrackerQuickViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler,
+            IDataManager dataManager, string name) : base(navService, backgroundHandler)
         {
-            navigationService = navService;
             Payee = name;
-            EditThisCommand = new Command(async () => await navigationService.Navigate<EditBillTrackerViewModel, string>(Payee));
-            DeleteThisCommand = new Command(async () => await OnDeleteThis());
+            EditThisCommand = new MvxAsyncCommand(async () => await _navService.Navigate<EditBillTrackerViewModel, string>(Payee));
+            DeleteThisCommand = new MvxAsyncCommand(OnDeleteThis);
         }
         #endregion
 
         #region Methods
         private async Task OnDeleteThis()
         {
-            await BudgetDatabase_old.DeleteBillsForPayee(Payee);
-            Messenger.Send(new ChangeBillMessage());
+            await _dataManager.DeleteBillsForPayee(Payee);
+            _backgroundHandler.SendMessage(new ChangeBillMessage());
         }
 
         //private async Task OnDeleteThis()
