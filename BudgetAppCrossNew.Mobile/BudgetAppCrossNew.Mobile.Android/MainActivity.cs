@@ -16,7 +16,7 @@ using System.Diagnostics;
 
 namespace BudgetAppCrossNew.Mobile.Droid
 {
-    [Activity(Label = "WineFridgeApp.Droid", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
+    [Activity(Label = "Budget App", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
 
     public class SplashScreen : MvxFormsAppCompatActivity<Setup, BudgetAppCross.Core.App, App>
     {

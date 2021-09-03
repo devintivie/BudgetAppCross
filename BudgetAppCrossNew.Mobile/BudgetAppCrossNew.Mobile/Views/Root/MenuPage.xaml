@@ -7,15 +7,16 @@
             ios:Page.UseSafeArea="True"          
             xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
             xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
+                    Style="{StaticResource MenuPage}"
              >
-    <Grid BackgroundColor="{DynamicResource Page.Static.Background}">
+    <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Label Text="{Binding BudgetName}" FontSize="Title" HorizontalTextAlignment="Center"
-               TextColor="{DynamicResource Text.Static.Foreground}"
+               TextColor="{DynamicResource Button.Static.Foreground}"
                Margin="5, 0, 25, 0"
                VerticalTextAlignment="End"/>
         <!--<ListView ItemsSource="{Binding MenuItemList}"

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -63,7 +64,9 @@ namespace BudgetAppCrossNew.Mobile.Converters
                 case BillStatus.AutoPayUpcoming:
                     return Color.CornflowerBlue;
                 default:
-                    return Color.Transparent;//Application.Current.Resources["ButtonBackground"]; ;
+                    //var tmp = Application.Current.Resources.MergedDictionaries;
+                    //var success = tmp.ElementAt(0);// ContainsKey("Page.Static.Background");
+                    return Color.Transparent;
             }
         }
 

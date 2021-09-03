@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BudgetAppCrossNew.Mobile.Views.Pages.Admin
+namespace BudgetAppCrossNew.Mobile.Views.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     [MvxMasterDetailPagePresentation(Position = MasterDetailPosition.Detail, NoHistory = true, WrapInNavigationPage = false)]

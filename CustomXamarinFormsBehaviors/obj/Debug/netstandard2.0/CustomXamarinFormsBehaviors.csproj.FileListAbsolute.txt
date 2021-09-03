@@ -6,3 +6,4 @@ C:\Users\devin\source\repos\BudgetAppCross\CustomXamarinFormsBehaviors\obj\Debug
 C:\Users\devin\source\repos\BudgetAppCross\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.csproj.CoreCompileInputs.cache
 C:\Users\devin\source\repos\BudgetAppCross\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.dll
 C:\Users\devin\source\repos\BudgetAppCross\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.pdb
+C:\Users\devin\source\repos\BudgetAppCross\CustomXamarinFormsBehaviors\obj\Debug\netstandard2.0\CustomXamarinFormsBehaviors.csproj.AssemblyReference.cache

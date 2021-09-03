@@ -8,7 +8,8 @@
 
                           xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
              xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
-
+            Style="{StaticResource MenuPage}"
+                    Title="{Binding Title}"
              >
     <Grid>
         <Grid.RowDefinitions>

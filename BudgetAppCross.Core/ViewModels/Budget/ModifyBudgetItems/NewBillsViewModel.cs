@@ -27,7 +27,23 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Properties
-        public ObservableCollection<string> PayeeOptions { get; private set; } = new ObservableCollection<string>();
+        private ObservableCollection<string> payeeOptions = new ObservableCollection<string>();
+        public ObservableCollection<string> PayeeOptions
+        {
+            get { return payeeOptions; }
+            set
+            {
+                if (payeeOptions != value)
+                {
+                    payeeOptions = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        public string Title => AddMultiple ? "Add Bills" : "Add Bill";
+
+        //public ObservableCollection<string> PayeeOptions { get; private set; } = new ObservableCollection<string>();
         public ObservableCollection<INewBillViewModel> NewBills { get; private set; } = new ObservableCollection<INewBillViewModel>();
         public int BillCount => NewBills.Count;
         public int CursorPosition => Amount.ToString("C", CultureInfo.CurrentCulture).Length;
@@ -105,12 +121,13 @@ namespace BudgetAppCross.Core.ViewModels
                     }
                     else
                     {
-                        CreateBillsForDateRange();
+                        _ = CreateBillsForDateRange();
                     }
                 }
 
                 RaisePropertyChanged();
                 RaisePropertyChanged(nameof(BillDueString));
+                RaisePropertyChanged(nameof(Title));
             }
         }
 
@@ -138,7 +155,7 @@ namespace BudgetAppCross.Core.ViewModels
                 {
                     startDate = value;
                     RaisePropertyChanged();
-                    CreateBillsForDateRange();
+                    _ = CreateBillsForDateRange();
                 }
             }
         }
@@ -154,7 +171,7 @@ namespace BudgetAppCross.Core.ViewModels
                     {
                         endDate = value;
                         RaisePropertyChanged();
-                        CreateBillsForDateRange();
+                        _ = CreateBillsForDateRange();
                     }
                 }
                 else
@@ -171,7 +188,11 @@ namespace BudgetAppCross.Core.ViewModels
             get { return dueFrequencies; }
             set
             {
-                SetProperty(ref dueFrequencies, value);
+                if (dueFrequencies != value)
+                {
+                    dueFrequencies = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
@@ -181,7 +202,11 @@ namespace BudgetAppCross.Core.ViewModels
             get { return accountOptions; }
             set
             {
-                SetProperty(ref accountOptions, value);
+                if (accountOptions != value)
+                {
+                    accountOptions = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
@@ -191,9 +216,14 @@ namespace BudgetAppCross.Core.ViewModels
             get { return selectedAccount; }
             set
             {
-                SetProperty(ref selectedAccount, value);
+                if (selectedAccount != value)
+                {
+                    selectedAccount = value;
+                    RaisePropertyChanged();
+                }
             }
         }
+
 
         private DueDateFrequencies dueDateFrequency;
         public DueDateFrequencies DueDateFrequency
@@ -456,11 +486,17 @@ namespace BudgetAppCross.Core.ViewModels
             }
 
             _backgroundHandler.SendMessage(new ChangeBillMessage());
-            await _navService.Close(this);
+            await CloseAsync();
         }
 
         private async Task OnCancel()
         {
+            await CloseAsync();
+        }
+
+        private async Task CloseAsync()
+        {
+            _backgroundHandler.UnregisterMessages(this);
             await _navService.Close(this);
         }
 
@@ -489,7 +525,6 @@ namespace BudgetAppCross.Core.ViewModels
             else if (SelectedPayee == null)
             {
                 SelectedPayee = PayeeOptions.First();
-                               
             }
         }
 

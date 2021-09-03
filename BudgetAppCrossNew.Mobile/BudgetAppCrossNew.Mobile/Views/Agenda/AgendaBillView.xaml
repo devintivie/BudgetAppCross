@@ -12,49 +12,53 @@
              >
     <Grid Padding="3" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
               Margin="2">
-        <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="1.0*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <CheckBox IsChecked="{Binding IsPaid}"
+        <Grid BackgroundColor="{DynamicResource Page.Secondary.Background}">
+            <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1.0*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox IsChecked="{Binding IsPaid}"
                               Margin="0"
                           Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
                           Grid.Row="0" Grid.RowSpan="2"/>
-            <Label Text="{Binding Payee}"
+                <Label Text="{Binding Payee}"
+                       TextColor="{DynamicResource Text.Static.Foreground}"
                        Grid.Column="1"
                             VerticalOptions="Center"
                             VerticalTextAlignment="Center"
                             WidthRequest="120"/>
-            <custom:CurrencyEntry Text="{Binding Amount}"
+                <custom:CurrencyEntry Text="{Binding Amount}"
                             WidthRequest="100"
                             Grid.Column="2"
                             HorizontalOptions="FillAndExpand"
                             VerticalOptions="Center"/>
-            <custom:CustomDatePicker Date="{Binding Date}"
+                <custom:CustomDatePicker Date="{Binding Date}"
                             Grid.Column="3">
-                <DatePicker.Behaviors>
-                    <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
-                </DatePicker.Behaviors>
-            </custom:CustomDatePicker>
+                    <DatePicker.Behaviors>
+                        <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                    </DatePicker.Behaviors>
+                </custom:CustomDatePicker>
 
-            <custom:CustomPicker ItemsSource="{Binding AccountOptions}"
+                <custom:CustomPicker ItemsSource="{Binding AccountOptions}"
                             Grid.Row="1" Grid.Column="1"
                             SelectedItem="{Binding SelectedAccount}"
                             ios:Picker.UpdateMode="WhenFinished"
                         VerticalOptions="Center"
                             WidthRequest="200"/>
-            <custom:CustomEntry Text="{Binding Confirmation}"
+                <custom:CustomEntry Text="{Binding Confirmation}"
                        Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"
                            WidthRequest="200"/>
 
 
+            </Grid>
         </Grid>
+        
     </Grid>
 </mvx:MvxContentView>

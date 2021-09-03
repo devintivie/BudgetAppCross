@@ -142,7 +142,18 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnCancel()
         {
-            await _navService.Navigate<BudgetSelectViewModel>();
+            var files = await _settings.FindLoadableConfigFiles();
+            if (files.Count == 0)
+            {
+                await _navService.Navigate<WelcomeViewModel>();
+            }
+            else
+            {
+                //Remove later after debug over
+                //await NavigateToSettingsScreen();
+                await _navService.Navigate<BudgetSelectViewModel>();
+                //await NavigateInitial();
+            }
         }
 
 

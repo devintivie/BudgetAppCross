@@ -9,7 +9,7 @@
                 <!--<ResourceDictionary Source="/XamarinStyles;component/OtherColors.xaml"/>-->
                 <!--<styles:Colors/>-->
                 <!--<styles:Fonts/>-->
-                <styles:DefaultTheme/>
+                <styles:WineTheme/>
                 <!--<ResourceDictionary Source="Styles/Test.xaml"/>-->
                 <!--<styles:Colors.xaml/>-->
             </ResourceDictionary.MergedDictionaries>

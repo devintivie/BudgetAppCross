@@ -116,7 +116,7 @@ namespace BudgetAppCross.Core.ViewModels
             await _settings.SaveSettings();
 
             await _dataManager.Initialize();
-            await _dataManager.Initialize();
+            //await _dataManager.Initialize();
             await _dataManager.GetBankAccounts();
             await _navService.Navigate<AgendaViewModel>();
             _backgroundHandler.SendMessage(new UpdateMenuMessage());

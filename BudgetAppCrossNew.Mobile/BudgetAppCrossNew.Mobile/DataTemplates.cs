@@ -18,7 +18,7 @@ namespace BudgetAppCrossNew.Mobile
             {typeof(RootViewModel), typeof(RootPage) },
             {typeof(MenuViewModel), typeof(MenuPage) },
 
-            //NAv Pages
+            //Nav Pages
             {typeof(AgendaViewModel), typeof(AgendaPage) },
             {typeof(SettingsViewModel), typeof(SettingsPage) },
             {typeof(WelcomeViewModel), typeof(WelcomePage) },
@@ -26,6 +26,8 @@ namespace BudgetAppCrossNew.Mobile
             //Pages
             {typeof(NewBudgetViewModel), typeof(NewBudgetPage) },
             {typeof(NewBillsViewModel), typeof(NewBillsPage) },
+            {typeof(BudgetSelectViewModel), typeof(BudgetSelectPage) },
+
 
             //Views
             {typeof(AgendaBillView), typeof(AgendaBillView) },

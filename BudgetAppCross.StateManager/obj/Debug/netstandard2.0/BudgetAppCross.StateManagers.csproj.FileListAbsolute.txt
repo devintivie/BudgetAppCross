@@ -6,3 +6,4 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\obj\Debug
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\obj\Debug\netstandard2.0\BudgetAppCross.StateManagers.csproj.CoreCompileInputs.cache
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\obj\Debug\netstandard2.0\BudgetAppCross.StateManagers.dll
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\obj\Debug\netstandard2.0\BudgetAppCross.StateManagers.pdb
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.StateManager\obj\Debug\netstandard2.0\BudgetAppCross.StateManagers.csproj.AssemblyReference.cache

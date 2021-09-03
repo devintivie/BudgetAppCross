@@ -4,9 +4,8 @@
              x:Class="BudgetAppCrossNew.Mobile.Views.BudgetQuickStatusView"
              xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
 >
-  <ContentView.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentView.Content>
+    <Grid x:Name="mainGrid" VerticalOptions="Center" HorizontalOptions="Fill"
+          >
+        <Label Text="{Binding BudgetName}" HorizontalTextAlignment="Center"/>
+    </Grid>
 </mvx:MvxContentView>

@@ -48,10 +48,27 @@ namespace BudgetAppCross.Core.ViewModels.Pages
         public AgendaViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IDataManager dataManager) : base(navService, backgroundHandler)
         {
             _dataManager = dataManager;
-            var getgroup = GetGroups();
+            _ = GetGroups();
             _backgroundHandler.RegisterMessage<ChangeBillMessage>(this, async x => await OnChangeBillMessage(x.AccountId));
 
-            AddBillCommand = new MvxAsyncCommand(async () => await _navService.Navigate<NewBillsViewModel, string>(string.Empty));
+            AddBillCommand = new MvxAsyncCommand(OnAddBill);//, CanAddBill);
+            //AddBillCommand = new MvxAsyncCommand(async () => await _navService.Navigate<NewBillsViewModel, string>(string.Empty));
+        }
+
+
+        public override void ViewAppearing()
+        {
+            base.ViewAppearing();
+        }
+
+        private async Task OnAddBill()
+        {
+            await _navService.Navigate<NewBillsViewModel, string>(string.Empty);
+        }
+
+        private bool CanAddBill()
+        {
+            return true;
         }
         #endregion
 
@@ -96,7 +113,7 @@ namespace BudgetAppCross.Core.ViewModels.Pages
                 Bills.Clear();
                 foreach (var group in groupVM)
                 {
-                    bills.Add(group);
+                    Bills.Add(group);
                 }
                 //Bills = new ObservableCollection<Grouping<DateTime, BillViewModel>>(groupVM);
             }
