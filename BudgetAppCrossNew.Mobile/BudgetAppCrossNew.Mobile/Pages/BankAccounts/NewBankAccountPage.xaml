@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="BudgetAppCrossNew.Mobile.Pages.NewBankAccountPage"
+                    xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                    xmlns:controls="clr-namespace:BudgetAppCrossNew.Mobile.Views"
+                    xmlns:models="clr-namespace:BudgetAppCross.Models;assembly=BudgetAppCross.Models"
+                    xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+                    xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
+                    Style="{StaticResource SubPageStyle}"
+                    Title="{Binding Title}"
+             >
+    <StackLayout>
+        <Label Text="Account Nickname"/>
+        <Entry Text="{Binding Nickname}"
+               FontSize="{StaticResource FontSizeLarge}"/>
+        <Label Text="Initial Balance"/>
+        <Entry Text="{Binding Balance}"
+               Keyboard="Numeric"
+               FontSize="{StaticResource FontSizeLarge}"/>
+        <Label Text="Date of Balance"/>
+        <DatePicker Date="{Binding Date}"
+                    FontSize="{StaticResource FontSizeLarge}"
+                    />
+        <Grid>
+            <Button Text="Cancel" Command="{Binding CancelCommand}"/>
+            <Button Text="Save" Command="{Binding SaveCommand}"
+                    Grid.Column="1"/>
+        </Grid>
+    </StackLayout>
+</mvx:MvxContentPage>

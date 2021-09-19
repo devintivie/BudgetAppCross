@@ -73,10 +73,17 @@ namespace BudgetAppCross.Core
 
         public void Notify(string message)
         {
-            var config = new AlertConfig().SetMessage("Invalid Budget Name");//.SetOkText(ConfirmConfig.DefaultOkText);
+            var config = new AlertConfig().SetMessage(message);//.SetOkText(ConfirmConfig.DefaultOkText);
             _dialogs.Alert(config);
-            return;
         }
+
+        public async Task<bool> ConfirmAsync(string message)//, Action<bool> action)
+        {
+            //var config = new ConfirmConfig().SetMessage(message).SetAction(action);
+            //var result = await _dialogs.ConfirmAsync(config);
+            var result = await _dialogs.ConfirmAsync(message);
+            return result;
+        }        
 
         public void RegisterMessage<T>(object recipient, Action<T> action)
         {

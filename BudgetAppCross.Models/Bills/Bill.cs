@@ -33,6 +33,10 @@ namespace BudgetAppCross.Models
         }
 
         public decimal Amount { get; set; }
+        public decimal ShareRatio { get; set; } = 1.0m;
+
+        [Ignore]
+        public decimal PaymentAmount => Amount * ShareRatio;
         public string Payee { get; set; }
 
         private bool isPaid;
@@ -101,7 +105,24 @@ namespace BudgetAppCross.Models
         #region Methods
         private void GetBillStatus()
         {
+            CheckValues();
             BillStatus = BillStatusHelper.GetBillStatus(DateTime.Today, Date, IsPaid, IsAuto);
+        }
+
+        private void CheckValues()
+        {
+            if (Date <= DateTime.Today && IsAuto)
+            {
+                IsPaid = true;
+                IsAuto = false;
+            }
+
+            if (IsAuto && IsPaid)
+            {
+                IsAuto = false;
+            }
+
+            
         }
 
         public int CompareTo(object obj)

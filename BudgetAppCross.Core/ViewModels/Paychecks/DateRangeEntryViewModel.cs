@@ -147,10 +147,10 @@ namespace BudgetAppCross.Core.ViewModels
 
             billList = new List<Bill>(data);
             Bills.Clear();
-            foreach (var item in billList)
-            {
-                Bills.Add(new BillViewModel(_backgroundHandler, _dataManager, item));
-            }
+            //foreach (var item in billList)
+            //{
+            //    Bills.Add(new BillViewModel(_backgroundHandler, _dataManager, item));
+            //}
 
             await UpdateCalculations();
 

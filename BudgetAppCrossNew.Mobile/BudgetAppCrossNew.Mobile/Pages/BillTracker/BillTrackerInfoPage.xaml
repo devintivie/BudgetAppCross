@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="BudgetAppCrossNew.Mobile.Pages.BillTrackerInfoPage"
+                    xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                    xmlns:views="clr-namespace:BudgetAppCrossNew.Mobile.Views"
+                    xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
+                    Style="{StaticResource DefaultPage}"
+                    Title="{Binding CompanyName}">
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Edit" Command="{Binding EditCommand}" Order="Secondary"/>
+        <ToolbarItem Text="Add" Command="{Binding AddBillCommand}" Order="Secondary"/>
+        <!--<ToolbarItem Text="Delete" Command="{Binding DeleteBillCommand}"/>-->
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <Grid  >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Paid?" VerticalOptions="Center"/>
+            <Label Text="Amount Due" Grid.Column="1"/>
+            <Label Text="Due Date" Grid.Column="2"/>
+        </Grid>
+        <ListView ItemsSource="{Binding Bills}"
+                  SelectedItem="{Binding SelectedBill}"
+                  HasUnevenRows="True"
+                  >
+            <ListView.Behaviors>
+                <behav:OnItemTappedBehavior Command="{Binding ShowBillCommand}"/>
+            </ListView.Behaviors>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <!--<ViewCell.ContextActions>
+                            <MenuItem Text="Delete"
+                                    Command="{Binding DeleteThisCommand}"
+                                    IsDestructive="True"
+                                    CommandParameter="{Binding .}"/>
+                            
+                        </ViewCell.ContextActions>-->
+                        <views:BillQuickView/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Label Text="{Binding DateTotal}"/>
+    </StackLayout>
+</mvx:MvxContentPage>

@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="BudgetAppCrossNew.Mobile.Pages.BankAccountPage"
+                    xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                    xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+                    xmlns:views="clr-namespace:BudgetAppCrossNew.Mobile.Views"
+
+                    Style="{StaticResource DefaultPage}"
+                    Title="{Binding Nickname}"
+                    >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddBalanceCommand}"/>
+    </ContentPage.ToolbarItems>
+    
+    <StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Orientation="Horizontal"
+                        IsVisible="{Binding IsEditing, Converter={cvt:InverseBoolConverter}}"
+                        VerticalOptions="Center">
+                <Label Text="{Binding Nickname}" 
+                       FontSize="{StaticResource FontSizeLarge}"
+                       VerticalTextAlignment="Center"/>
+            </StackLayout>
+
+            <Entry Text="{Binding NewAccountNickname}" 
+                   HorizontalOptions="Fill"
+                   FontSize="{StaticResource FontSizeLarge}"
+                   IsVisible="{Binding IsEditing}"/>
+            <Grid Grid.Column="1" HorizontalOptions="Fill">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Text="Save" 
+                        Command="{Binding SaveEditCommand}" 
+                        IsVisible="{Binding IsEditing}"
+                        HorizontalOptions="Start"/>
+                <Button Text="{Binding EditButtonText}" 
+                        Command="{Binding EditCommand}" 
+                        HorizontalOptions="End"
+                        Grid.Column="1"/>
+            </Grid>
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Balance"
+                   HorizontalOptions="Center"/>
+            <Label Text="Timestamp"
+                   Grid.Column="1"
+                   HorizontalOptions="Center"/>
+        </Grid>
+        <ListView ItemsSource="{Binding Balances}"
+                  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Delete"
+                                    Command="{Binding DeleteThisCommand}"
+                                    IsDestructive="True"
+                                    CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                        <views:BalanceView/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</mvx:MvxContentPage>

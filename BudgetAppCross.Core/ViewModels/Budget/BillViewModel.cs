@@ -1,13 +1,16 @@
 ﻿using BaseClasses;
 using BaseViewModels;
 using BudgetAppCross.Core.Services;
+using BudgetAppCross.Core.ViewModels.Pages;
 using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
 using MvvmCross.Commands;
+using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,10 +18,9 @@ using System.Windows.Input;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BillViewModel : BaseViewModel
+    public class BillViewModel : MvxNavigationBaseViewModel, IBillInfoViewModel
     {
         #region Fields
-        private bool initialAccountSet = false;
         private IDataManager _dataManager;
         #endregion
 
@@ -58,6 +60,25 @@ namespace BudgetAppCross.Core.ViewModels
                 }
             }
         }
+
+        public decimal PaymentAmount => Bill.PaymentAmount;// * Amount;
+        public decimal ShareRatio => Bill.ShareRatio;
+        //public decimal ShareRatio
+        //{
+        //    get { return Bill.ShareRatio; }
+        //    set
+        //    {
+        //        if (Bill.ShareRatio != value)
+        //        {
+        //            Bill.ShareRatio = value;
+        //            RaisePropertyChanged();
+        //            RaisePropertyChanged(nameof(PaymentAmount));
+
+        //            _ = UpdateAndSave();
+        //        }
+        //    }
+        //}
+
 
         public string Confirmation
         {
@@ -105,8 +126,6 @@ namespace BudgetAppCross.Core.ViewModels
                 }
             }
         }
- 
-
 
         private ObservableCollection<string> accountOptions = new ObservableCollection<string>();
         public ObservableCollection<string> AccountOptions
@@ -114,25 +133,16 @@ namespace BudgetAppCross.Core.ViewModels
             get { return accountOptions; }
             set
             {
-                SetProperty(ref accountOptions, value);
+                if (accountOptions != value)
+                {
+                    accountOptions = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
-        //private string selectedAccount;
-        //public string SelectedAccount
-        //{
-        //    get { return selectedAccount; }
-        //    set
-        //    {
-        //        if(selectedAccount != value)
-        //        {
-        //            SetProperty(ref selectedAccount, value);
-        //            var _ = UpdateAccount();
-        //        }
-                
-        //    }
-        //}
 
+        //selectedAccount is null at load and therefore cannot be checked for equality....not sure what to do to keep it from updating account on view model load
         private string selectedAccount;
         public string SelectedAccount
         {
@@ -143,9 +153,10 @@ namespace BudgetAppCross.Core.ViewModels
                 {
                     selectedAccount = value;
                     _ = UpdateAccount();
-                    
+
                     RaisePropertyChanged();
                 }
+                
             }
         }
 
@@ -153,80 +164,64 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-        public IMvxCommand DeleteThisCommand { get; private set; }
+        //public IMvxCommand DeleteThisCommand { get; private set; }
         public IMvxCommand OnDateSelectedCommand { get; private set; }
+        public IMvxCommand DetailsCommand { get; private set; }
         #endregion
 
         #region Constructors
-        public BillViewModel(IBackgroundHandler backgroundHandler, IDataManager dataManager, Bill bill) : base(backgroundHandler)
+        public BillViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IDataManager dataManager, Bill bill) : base(navService, backgroundHandler)
         {
             _dataManager = dataManager;
             Bill = bill;
 
-            DeleteThisCommand = new MvxAsyncCommand(OnDeleteThis);
+            //DeleteThisCommand = new MvxAsyncCommand(OnDeleteThis);
             OnDateSelectedCommand = new MvxAsyncCommand(ChangeAndSave);
+            DetailsCommand = new MvxAsyncCommand(OnDetails, CanDetails);
 
-            _ = LoadAccountOptions();
+            LoadAccountOptions();
         }
 
-        //public override void Prepare(int id)
-        //{
-        //    //CompanyName = parameter;
-        //}
+        private bool CanDetails()
+        {
+            return true;
+        }
 
-        //public BillViewModel(Bill bill, List<string> options)
-        //{
-        //    Bill = bill;
-        //    AccountOptions = new ObservableCollection<string>(options);
-        //    SelectedAccount = Bill.BankAccount.Nickname;
-        //}
+        private async Task OnDetails()
+        {
+            await _navService.Navigate<BillDetailsViewModel, Bill>(Bill);
+        }
         #endregion
 
         #region Methods
-        //private async void SaveBill()
-        //{
-        //    await BudgetDatabase.SaveBill(Bill);
-        //}
 
-        private async Task LoadAccountOptions()
+        private void LoadAccountOptions()
         {
-            AccountOptions = new ObservableCollection<string>(_dataManager.BankAccountNicknames);
-            SelectedAccount = AccountOptions.Where(x => x.Equals(Bill.BankAccount.Nickname)).FirstOrDefault();
+            try
+            {
+                AccountOptions = new ObservableCollection<string>(_dataManager.BankAccountNicknames);
+                SelectedAccount = Bill.BankAccount.Nickname;
+                //SelectedAccount = AccountOptions.Where(x => x.Equals(Bill.BankAccount.Nickname)).FirstOrDefault();
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
+            
 
         }
 
         private async Task UpdateAccount()
         {
-            if(SelectedAccount != null && initialAccountSet)
+            if (SelectedAccount != null)
             {
-                var acctId = await _dataManager.GetBankAccountID(SelectedAccount);
+                if (!Bill.BankAccount.Nickname.Equals(SelectedAccount))
+                {
+                    var acctId = await _dataManager.GetBankAccountID(SelectedAccount);
 
-                Bill.AccountID = acctId;
-                await ChangeAndSave();
-                //var accts = await BudgetDatabase.GetBankAccounts();
-                //var acct = accts.Where(x => x.Nickname.Equals(SelectedAccount)).First();
-                //if(Bill.BankAccount == null)
-                //{
-                //    Bill.BankAccount = acct;
-
-                //    //Switch to change and save because daterangeentry needs to requery
-                //    ChangeAndSave();
-                //}
-                //else
-                //{
-                //    if (Bill.BankAccount.Nickname != acct.Nickname)
-                //    {
-                //        Bill.BankAccount = acct;
-
-                //        //Switch to change and save because daterangeentry needs to requery
-                //        ChangeAndSave();
-                //    }
-                //}
-
-            }
-            else
-            {
-                initialAccountSet = true;
+                    Bill.AccountID = acctId;
+                    await ChangeAndSave();
+                }
             }
         }
 
@@ -247,18 +242,6 @@ namespace BudgetAppCross.Core.ViewModels
             await _dataManager.DeleteBill(Bill);
             _backgroundHandler.SendMessage(new ChangeBillMessage(Bill.AccountID));
         }
-
-
-        //private async void LoadAccountOptions()
-        //{
-        //    var options = await BudgetDatabase.GetBankAccounts();
-        //    AccountOptions.Clear();
-        //    foreach (var item in options)
-        //    {
-        //        AccountOptions.Add(item.AccountID);
-        //    }
-
-        //}
 
         #endregion
 

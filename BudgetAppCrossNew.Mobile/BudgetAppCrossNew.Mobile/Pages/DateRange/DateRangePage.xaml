@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="BudgetAppCrossNew.Mobile.Pages.DateRangePage"
+                    xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+                    xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                    xmlns:views="clr-namespace:BudgetAppCrossNew.Mobile.Views"
+                    xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
+                    xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
+                    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+                    ios:Page.UseSafeArea="True"
+                    Style="{StaticResource DefaultPage}"
+                    Title="{Binding Title}"
+                    >
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Add" Command="{Binding AddBillCommand}"
+                     Order="Primary"/>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.6*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Start Date-->
+                <Label Text="Start Date"
+                       Grid.Row="0" Grid.Column="0"
+                       FontSize="{StaticResource FontSizeLarge}"
+                       />
+                <DatePicker Date="{Binding StartDate}"
+                                         FontSize="{StaticResource FontSizeLarge}"
+                                         Grid.Row="0" Grid.Column="1"
+                            Margin="0,0,10,0"
+                                         HorizontalOptions="End"
+                            WidthRequest="250">
+                    <DatePicker.Behaviors>
+                        <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                    </DatePicker.Behaviors>
+                </DatePicker>
+
+                <!--End Date-->
+                <Label Text="End Date" 
+                       Grid.Row="1" Grid.Column="0"
+                       FontSize="{StaticResource FontSizeLarge}"
+                       />
+                <custom:CustomDatePicker Date="{Binding EndDate}"
+                                         FontSize="{StaticResource FontSizeLarge}"
+                                         Grid.Row="1" Grid.Column="1"
+                                         >
+                    <DatePicker.Behaviors>
+                        <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                    </DatePicker.Behaviors>
+                </custom:CustomDatePicker>
+            </Grid>
+
+            <!-- Select Account-->
+            <Label Text="Account To View" 
+                   Grid.Row="0" Grid.Column="1"
+                   FontSize="{StaticResource FontSizeLarge}"
+                   />
+            <custom:CustomPicker ItemsSource="{Binding AccountOptions}"
+                                 FontSize="{StaticResource FontSizeLarge}"
+                                 SelectedItem="{Binding SelectedAccount}"
+                                 Grid.Column="3"
+                                 />
+            <Label Text="Bills" FontSize="{StaticResource FontSizeLarge}"/>
+        </StackLayout>
+
+        <ListView ItemsSource="{Binding Bills}"
+                  HasUnevenRows="True"
+                  Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Delete" 
+                                      Command="{Binding DeleteThisCommand}"
+                                      IsDestructive="True"
+                                      CommandParameter="{Binding .}"/>
+                            <MenuItem Text="Copy"
+                                      Command="{Binding CopyThisCommand}"
+                                      CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                        <views:AgendaBillView/>
+                    </ViewCell>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Grid Grid.Row="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Starting Balance" 
+                   FontSize="{StaticResource FontSizeMedium}"
+                   HorizontalOptions="Center"
+                   Grid.Row="0"/>
+            <Label Text="{Binding StartingBalance, Converter={cvt:CurrencyConverter}}"
+                   FontSize="{StaticResource FontSizeMedium}"
+                   HorizontalOptions="Center"
+                   Grid.Row="0" Grid.Column="1"/>
+            <Label Text="Bill Total"
+                   FontSize="{StaticResource FontSizeMedium}"
+                   HorizontalTextAlignment="Center"
+                   Grid.Row="1" Grid.Column="0"
+                   />
+            <Label Text="Remaining" Grid.Row="2" Grid.Column="0"
+                   FontSize="{StaticResource FontSizeMedium}"
+                   HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding BillTotal, Converter={cvt:CurrencyConverter}}" 
+                   Grid.Row="1" Grid.Column="1"
+                   FontSize="{StaticResource FontSizeMedium}"
+                   HorizontalOptions="Center"/>
+            <Label Text="{Binding Remainder, Converter={cvt:CurrencyConverter}}" 
+                   Grid.Row="2" Grid.Column="1"
+                   FontSize="{StaticResource FontSizeMedium}"
+                   HorizontalTextAlignment="Center"/>
+        </Grid>
+
+    </Grid>
+</mvx:MvxContentPage>

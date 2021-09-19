@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetAppCrossNew.Mobile.Pages.NewBalancePage"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             Style="{StaticResource MenuPage}"
+             Title="Add Balance Entry"
+             >
+    <StackLayout>
+        <StackLayout>
+            <Label Text="Balance"/>
+            <Entry Text="{Binding Amount}"
+                   Keyboard="Numeric"
+                   FontSize="{StaticResource FontSizeLarge}"/>
+            <Label Text="Date"
+                   />
+            <DatePicker Date="{Binding Timestamp}"
+                        FontSize="{StaticResource FontSizeLarge}"
+                    />
+        </StackLayout>
+        <Grid>
+            <Button Text="Cancel" 
+                    Command="{Binding CancelCommand}"
+                    Grid.Column="0"/>
+            <Button Text="Save" 
+                    Command="{Binding SaveCommand}"
+                    Grid.Column="1"/>
+        </Grid>
+    </StackLayout>
+</mvx:MvxContentPage>

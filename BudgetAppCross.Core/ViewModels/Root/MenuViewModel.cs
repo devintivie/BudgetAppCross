@@ -72,24 +72,8 @@ namespace BudgetAppCross.Core.ViewModels.Root
         #endregion
 
         #region Commands
-        private IMvxAsyncCommand showDetailPageAsyncCommand;
-        public IMvxAsyncCommand ShowDetailPageAsyncCommand
-        {
-            get
-            {
-                showDetailPageAsyncCommand = showDetailPageAsyncCommand ?? new MvxAsyncCommand(ShowDetailPageAsync);
-                return showDetailPageAsyncCommand;
-            }
-        }
-
+        public IMvxAsyncCommand ShowDetailPageAsyncCommand { get; }
         public IMvxAsyncCommand ShowAccountPageCommand { get; }
-        //{
-        //    get
-        //    {
-        //        showAccountPageCommand = showAccountPageCommand ?? new MvxAsyncCommand(ShowAccountPageAsync);
-        //        return showAccountPageCommand;
-        //    }
-        //}
 
         #endregion
 
@@ -97,14 +81,15 @@ namespace BudgetAppCross.Core.ViewModels.Root
         public MenuViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IConfigManager<SQLiteConfiguration> configManager) : base(navService, backgroundHandler)
         {
             _configManager = configManager;
-            ShowAccountPageCommand = new MvxAsyncCommand(ShowAccountPageAsync);
+            ShowDetailPageAsyncCommand = new MvxAsyncCommand(ShowDetailPageAsync);
+            //ShowAccountPageCommand = new MvxAsyncCommand(ShowAccountPageAsync);
             //Messenger.Instance.Register<UpdateMenuMessage>(this, async x => await OnUpdate());
         }
 
-        private async Task ShowAccountPageAsync()
-        {
-            //await navigationService.Navigate<AccountViewModel>();
-        }
+        //private async Task ShowAccountPageAsync()
+        //{
+        //    //await navigationService.Navigate<AccountViewModel>();
+        //}
 
         public override void ViewAppearing()
         {
@@ -150,9 +135,9 @@ namespace BudgetAppCross.Core.ViewModels.Root
                     case NavigablePage.BankOverview:
                         await _navService.Navigate<BankOverviewViewModel>();
                         break;
-                    case NavigablePage.About:
-                        await _navService.Navigate<AboutViewModel>();
-                        break;
+                    //case NavigablePage.About:
+                    //    await _navService.Navigate<AboutViewModel>();
+                    //    break;
                     //case NavigablePage.Purchasing:
                     //    await _navService.Navigate<PurchasingViewModel>();
                     //    break;

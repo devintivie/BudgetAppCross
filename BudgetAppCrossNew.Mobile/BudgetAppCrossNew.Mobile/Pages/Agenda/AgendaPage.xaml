@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetAppCrossNew.Mobile.Pages.AgendaPage"
+                xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+                xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                xmlns:views="clr-namespace:BudgetAppCrossNew.Mobile.Views"
+                xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+                ios:Page.UseSafeArea="True"
+                Style="{StaticResource DefaultPage}"
+                >
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Add" Command="{Binding AddBillCommand}"
+                     Order="Primary"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ListView x:Name="agendaList" ItemsSource="{Binding Bills}"
+                  BackgroundColor="Transparent"
+                  HasUnevenRows="True"
+                  SeparatorVisibility="None"
+                  IsGroupingEnabled="True"
+                  ios:ListView.RowAnimationsEnabled="True">
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid VerticalOptions="FillAndExpand">
+                            <!--<BoxView>
+                                <BoxView.GestureRecognizers>
+                                    <SwipeGestureRecognizer Direction="Left" Command="{Binding SwipeTestCommand}"/>
+                                </BoxView.GestureRecognizers>
+                            </BoxView>-->
+                            <Label Text="{Binding Key, Converter={cvt:DateOnlyConverter}}"
+                                   FontSize="{StaticResource FontSizeLarge}"
+                                   TextColor="{DynamicResource Text.Static.Foreground}"
+                                   VerticalOptions="Center"
+                               />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <!--<ViewCell.ContextActions>
+                            <MenuItem Text="Delete"
+                                      Command="{Binding DeleteThisCommand}"
+                                      IsDestructive="True"
+                                      CommandParameter="{Binding .}"
+                                      />
+                        </ViewCell.ContextActions>-->
+                        <views:AgendaQuickBillView/>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</mvx:MvxContentPage>

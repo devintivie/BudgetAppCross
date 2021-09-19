@@ -38,13 +38,13 @@ namespace BudgetAppCross.SQLiteDataAccess
         #endregion
 
         #region Init
-        public async Task Initialize(string newBudgetName = null)
+        public async Task Initialize(string newBudgetName)
         {
             if (newBudgetName != null)
             {
                 _configManager.Configuration.DatabaseFilename = newBudgetName;
             }
-            //File.Delete(Constants.DatabasePath);
+
             using (var connection = new ShortConnection(connectionString))
             {
                 connection.CreateTable<BankAccount>(CreateFlags.None);
@@ -56,10 +56,10 @@ namespace BudgetAppCross.SQLiteDataAccess
             await UpdatePayeeNames();
         }
 
-        public async Task Initialize()
-        {
-
-        }
+        //public async Task Initialize()
+        //{
+        //    await Initialize(null);
+        //}
 
         public async Task CreateDefaultAccount()
         {
@@ -112,14 +112,32 @@ namespace BudgetAppCross.SQLiteDataAccess
         public async Task<int> DeleteBankAccount(BankAccount acct)
         {
             var deleted = 0;
+            var billsUpdated = 0;
+            var conflictedBills = await GetAllBillsForAccount(acct.Nickname);
+
+            foreach (var bill in conflictedBills)
+            {
+                bill.AccountID = 1;
+                billsUpdated += await SaveBill(bill);
+            }
+
+            if (billsUpdated != conflictedBills.Count)
+            {
+                return -1;
+            }
+
             await Task.Run(() =>
             {
                 try
                 {
-                    using (var conn = new ShortConnection(connectionString))
+                    if (acct.AccountID != 1)
                     {
-                        deleted = conn.Delete(acct);
+                        using (var conn = new ShortConnection(connectionString))
+                        {
+                            deleted = conn.Delete(acct);
+                        }
                     }
+                    
                 }
                 catch (Exception ex)
                 {
@@ -201,8 +219,8 @@ namespace BudgetAppCross.SQLiteDataAccess
                     bal.AccountID = acctId;
                     await SaveBalance(bal);
                 }
-
             }
+            await UpdateBankAccountNames();
         }
 
         public async Task<int> InsertBankAccount(BankAccount acct)
@@ -577,6 +595,33 @@ namespace BudgetAppCross.SQLiteDataAccess
             return agendaBills;
         }
 
+        public async Task<List<Bill>> GetAllBillsForAccount(string selectedAccount)
+        {
+            var bills = new List<Bill>();
+            var acctId = await GetBankAccountID(selectedAccount);
+            await Task.Run(() =>
+            {
+                try
+                {
+                    using (var conn = new ShortConnection(connectionString))
+                    {
+                        var query = $@"SELECT * FROM Bill 
+                                WHERE AccountID = @AccountId";
+                        var cmd = conn.CreateCommand(query);
+                        cmd.Bind("@AccountId", acctId);
+                        bills = cmd.ExecuteQuery<Bill>();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.Message);
+                }
+            });
+
+            bills = await AttachAccounts(bills);
+            return bills;
+        }
+
         public async Task<List<Bill>> GetBillsForPayee(string payee)
         {
             var bills = new List<Bill>();
@@ -603,15 +648,15 @@ namespace BudgetAppCross.SQLiteDataAccess
             return bills;
         }
 
-        public async Task SaveBill(Bill bill)
+        public async Task<int> SaveBill(Bill bill)
         {
             if (bill.ID != 0)
             {
-                await UpdateBill(bill);
+                return await UpdateBill(bill);
             }
             else
             {
-                await InsertBill(bill);
+                return await InsertBill(bill);
             }
         }
 
@@ -652,6 +697,15 @@ namespace BudgetAppCross.SQLiteDataAccess
                     Debug.WriteLine(ex.Message);
                 }
             });
+
+            return updated;
+        }
+
+        public async Task<int> UpdateBillAccount(Bill bill, int acctId)
+        {
+            var updated = 0;
+            bill.AccountID = acctId;
+            updated += await UpdateBill(bill);
 
             return updated;
         }

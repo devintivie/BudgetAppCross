@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="BudgetAppCrossNew.Mobile.Pages.Root.MenuPage"  
+            xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+            ios:Page.UseSafeArea="True"          
+            xmlns:behaviors="clr-namespace:Behaviors;assembly=Behaviors"
+            xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
+            Style="{StaticResource MenuPage}"
+            >
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Text="{Binding BudgetName}" FontSize="Title" HorizontalTextAlignment="Center"
+               TextColor="{DynamicResource Button.Static.Foreground}"
+               Margin="5, 0, 25, 0"
+               VerticalTextAlignment="End"/>
+        <!--<ListView ItemsSource="{Binding MenuItemList}"
+                SelectedItem="{Binding SelectedMenuItem }">-->
+        <ListView x:Name="MenuList"
+                  ItemsSource="{Binding PageList}"
+                  ItemTapped="MenuList_ItemTapped"
+                  BackgroundColor="Transparent"
+                  SeparatorVisibility="None"
+                  SelectedItem="{Binding SelectedPage }"   
+                  Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding}" TextColor="{DynamicResource Button.Static.Foreground}" IsEnabled="{Binding BudgetLoaded}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Behaviors>
+                <behaviors:EventHandlerBehavior EventName="ItemTapped">
+                    <behaviors:InvokeCommandAction Command="{Binding ShowDetailPageAsyncCommand}"/>
+                </behaviors:EventHandlerBehavior>
+            </ListView.Behaviors>
+        </ListView>
+        <Button Grid.Row="2" Text="Settings" Command="{Binding ShowAccountPageCommand}"
+                TextColor="{DynamicResource Button.Static.Foreground}"
+                VerticalOptions="Start"/>
+    </Grid>
+</mvx:MvxContentPage>

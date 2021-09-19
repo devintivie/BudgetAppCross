@@ -50,8 +50,8 @@ namespace BudgetAppCross.Core.ViewModels
         public EditBillTrackerViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IDataManager dataManager) : base(navService, backgroundHandler)
         {
             _dataManager = dataManager;
-            SaveCommand = new MvxAsyncCommand(async () => await OnSave());
-            CancelCommand = new MvxAsyncCommand(async () => await OnCancel());
+            SaveCommand = new MvxAsyncCommand(OnSave);
+            CancelCommand = new MvxAsyncCommand(OnCancel);
             
         }
 

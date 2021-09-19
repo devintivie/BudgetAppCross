@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="BudgetAppCrossNew.Mobile.Pages.BillDetailsPage"
+                    xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                                xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
+            xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+
+            xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
+                    Style="{StaticResource SubPageStyle}"
+                    Title="Bill Details"
+             >
+    <ScrollView>
+        <StackLayout>
+            <!--Due Date-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Due Date"/>
+                <DatePicker Date="{Binding Date}"
+                            FontSize="{StaticResource FontSizeLarge}"
+                            Grid.Row="0" Grid.Column="1"
+                            HorizontalOptions="Fill">
+                    <DatePicker.Behaviors>
+                        <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
+                    </DatePicker.Behaviors>
+                </DatePicker>
+            </Grid>
+
+            
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <!--Amount Due-->
+                <Label Text="Amount Due"/>
+                <custom:CurrencyEntry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
+                        FontSize="{StaticResource FontSizeLarge}"
+                        Grid.Column="1"
+                        HorizontalTextAlignment="End"
+                        HorizontalOptions="Fill"
+                        />
+                
+                <!--Percent Share-->
+                <Label Text="Percent Share"
+                       Grid.Row="1"/>
+                <Entry Text="{Binding ShareRatio, UpdateSourceEventName=Unfocused, Converter={cvt:PercentConverter}}"
+                       Grid.Row="1" Grid.Column="1"/>
+
+                <Label Text="Percent Share"
+                       Grid.Row="2"/>
+                <Label Text="{Binding PaymentAmount}"
+                       Grid.Row="2" Grid.Column="1"/>
+            </Grid>
+            
+
+            <!--Is Paid-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Paid"/>
+                <Switch IsToggled="{Binding IsPaid}"/>
+            </StackLayout>
+
+            <!--On Auto Pay-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Auto Pay"/>
+                <Switch IsToggled="{Binding IsAuto}" IsEnabled="{Binding IsDateInFuture}"/>
+            </StackLayout>
+
+            <!--Account-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Account"
+                       />
+                <Picker ItemsSource="{Binding AccountOptions}"
+                        FontSize="{StaticResource FontSizeLarge}"
+                        SelectedItem="{Binding SelectedAccount}"
+                        Grid.Column="1"
+                        HorizontalOptions="Fill"
+                        />
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</mvx:MvxContentPage>

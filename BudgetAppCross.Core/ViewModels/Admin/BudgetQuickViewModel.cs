@@ -24,7 +24,7 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
        
         #region Commands
-        public IMvxCommand EditThisCommand { get; private set; }
+        //public IMvxCommand EditThisCommand { get; private set; }
         public IMvxCommand DeleteThisCommand { get; private set; }
         #endregion
         
@@ -57,10 +57,8 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task OnDeleteThis()
         {
             await _settings.DeleteConfigFile(BudgetName);
-            //await StateManager.DeleteBudgetFile(BudgetName);
 
             _backgroundHandler.SendMessage(new ChangeBudgetsMessage());
-            //Messenger.Send(new ChangeBudgetsMessage());
             
         }
         #endregion

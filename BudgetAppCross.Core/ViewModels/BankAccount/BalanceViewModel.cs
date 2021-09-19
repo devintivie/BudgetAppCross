@@ -19,36 +19,22 @@ namespace BudgetAppCross.Core.ViewModels
     {
         #region Fields
         private IDataManager _dataManager;
+        private Balance _balance;
         #endregion
 
         #region Properties
-        public Balance Balance { get; private set; }
-
-        //public decimal Amount
-        //{
-        //    get { return Balance.Amount; }
-        //    set
-        //    {
-        //        if(Balance.Amount != value)
-        //        {
-        //            var amount = Balance.Amount;
-        //            Balance.Amount = value;
-        //            SetProperty(ref amount, value);
-        //            var _ = ChangeAndSave();
-        //        }
-        //    }
-        //}
+        //public Balance Balance { get; private set; }
 
         public decimal Amount
         {
-            get { return Balance.Amount; }
+            get { return _balance.Amount; }
             set
             {
-                if (Balance.Amount != value)
+                if (_balance.Amount != value)
                 {
-                    Balance.Amount = value;
+                    _balance.Amount = value;
                     RaisePropertyChanged();
-                    var _ = UpdateAndSave();
+                    _ = UpdateAndSave();
                 }
             }
         }
@@ -56,22 +42,19 @@ namespace BudgetAppCross.Core.ViewModels
 
         public DateTime Timestamp
         {
-            get { return Balance.Timestamp; }
+            get { return _balance.Timestamp; }
             set
             {
-                if (!Balance.Timestamp.Equals(value))
+                if (!_balance.Timestamp.Equals(value))
                 {
-                    var timestamp = Balance.Timestamp;
-                    Balance.Timestamp = value;
-                    SetProperty(ref timestamp, value);
-                    var _ = ChangeAndSave();
+                    //var timestamp = _balance.Timestamp;
+                    _balance.Timestamp = value;
+                    RaisePropertyChanged();
+                    //SetProperty(ref timestamp, value);
+                    _ = ChangeAndSave();
                 }
-                
             }
         }
-
-
-
         #endregion
 
         #region Commands
@@ -83,7 +66,7 @@ namespace BudgetAppCross.Core.ViewModels
         public BalanceViewModel(IBackgroundHandler backgroundHandler, IDataManager dataManager, Balance balance) : base(backgroundHandler)
         {
             _dataManager = dataManager;
-            Balance = balance;
+            _balance = balance;
 
             DeleteThisCommand = new MvxAsyncCommand(OnDeleteThis);
             OnDateSelectedCommand = new MvxAsyncCommand(ChangeAndSave);
@@ -95,13 +78,13 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task ChangeAndSave()
         {
-            await _dataManager.SaveBalance(Balance);
-            _backgroundHandler.SendMessage(new ChangeBalanceMessage(Balance.AccountID));
+            await _dataManager.SaveBalance(_balance);
+            _backgroundHandler.SendMessage(new ChangeBalanceMessage(_balance.AccountID));
         }
 
         private async Task UpdateAndSave()
         {
-            await _dataManager.SaveBalance(Balance);
+            await _dataManager.SaveBalance(_balance);
         }
 
         //private async Task UpdateAccount()
@@ -136,8 +119,8 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnDeleteThis()
         {
-            await _dataManager.DeleteBalance(Balance);
-            _backgroundHandler.SendMessage(new ChangeBalanceMessage(Balance.AccountID));
+            await _dataManager.DeleteBalance(_balance);
+            _backgroundHandler.SendMessage(new ChangeBalanceMessage(_balance.AccountID));
         }
 
 

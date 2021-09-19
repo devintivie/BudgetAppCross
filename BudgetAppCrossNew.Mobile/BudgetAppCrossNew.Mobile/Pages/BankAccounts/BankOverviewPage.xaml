@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="BudgetAppCrossNew.Mobile.Pages.BankOverviewPage"                    
+                    xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                    xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
+                    xmlns:views="clr-namespace:BudgetAppCrossNew.Mobile.Views"
+
+                    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+                    ios:Page.UseSafeArea="True"
+                    Style="{StaticResource DefaultPage}"
+                    Title="Bank Accounts"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddAccountCommand}"/>
+    </ContentPage.ToolbarItems>
+    <Grid>
+        <ListView ItemsSource="{Binding Accounts}" BackgroundColor="Transparent"
+            SelectedItem="{Binding SelectedAccount}">
+            <ListView.Behaviors>
+                <behav:OnItemTappedBehavior Command="{Binding ShowBankAccountCommand}"/>
+            </ListView.Behaviors>
+            <!--<ListView.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Left" Swiped="SwipeGestureRecognizer_Swiped"/>
+        </ListView.GestureRecognizers>-->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <!--<SwipeItem Text="Edit"
+                                      Command="{Binding EditThisCommand}"
+                                      IsDestructive="False"
+                                      CommandParameter="{Binding .}"/>-->
+                            <MenuItem Text="Delete"
+                                      Command="{Binding DeleteThisCommand}"
+                                      IsDestructive="True"
+                                      CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+
+
+                        <views:BankAccountQuickView/>
+                        <!--<controls:BankAccountQuickView/>-->
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</mvx:MvxContentPage>

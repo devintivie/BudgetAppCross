@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mvx:MvxContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="BudgetAppCrossNew.Mobile.Views.BankAccountQuickView"
+                    xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                    xmlns:cvtlocal="clr-namespace:BudgetAppCrossNew.Mobile.Converters"
+                    xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+             >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Label Text="{Binding Nickname}"
+               FontSize="{StaticResource FontSizeLarge}"/>
+        <Label Text="{Binding Balance, Converter={cvt:CurrencyConverter}}"
+               Grid.Column="1"
+               FontSize="{StaticResource FontSizeLarge}"/>
+    </Grid>
+</mvx:MvxContentView>

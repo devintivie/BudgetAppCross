@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mvx:MvxContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetAppCrossNew.Mobile.Views.AgendaQuickBillView"
+                xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                xmlns:cvtlocal="clr-namespace:BudgetAppCrossNew.Mobile.Converters"
+            xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+
+
+>
+    <!--Border Frame-->
+    <Frame Padding="3" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+              Margin="2" CornerRadius="15" IsClippedToBounds="True">
+        <!--Inner Frame-->
+        <Frame BackgroundColor="{DynamicResource Page.Secondary.Background}" 
+               CornerRadius="12"
+               Margin="0" Padding="0"
+               IsClippedToBounds="True">
+            <!--Layout-->
+            <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1.0*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <!--IsPaid Checkbox-->
+                <CheckBox IsChecked="{Binding IsPaid}"
+                              Margin="0"
+                          Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+                          Grid.Row="0" Grid.RowSpan="2"/>
+                
+                <!--Payee-->
+                <Label Text="{Binding Payee}"
+                       TextColor="{DynamicResource Text.Static.Foreground}"
+                       Grid.Column="1"
+                            VerticalOptions="Center"
+                            VerticalTextAlignment="Center"
+                            WidthRequest="120"/>
+                
+                <!--Bank Account-->
+                <Label Text="{Binding SelectedAccount}"
+                        VerticalOptions="Center"
+                       Grid.Column="1" Grid.Row="1"
+                            WidthRequest="200"/>
+                
+                <!--Display amount-->
+                <Label Text="{Binding PaymentCalculation}"
+                            WidthRequest="100"
+                            Grid.Column="2"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Center"/>
+                
+                <!--Due Date-->
+                <!--<Label Text="{Binding Date, Converter={cvt:DateOnlyConverter}}"
+                            Grid.Column="3">
+                </Label>-->
+                
+                <!--<Label Text="{Binding ShareRatio}"
+                       Grid.Row="1" Grid.Column="2"
+                           WidthRequest="200"/>-->
+                <Button Command="{Binding DetailsCommand}"
+                        Text="{StaticResource InfoIcon}"
+                        FontFamily="FA-S"
+                        Grid.Column="4"
+                        Margin="0" Padding="0"
+                        BackgroundColor="Transparent"/>
+
+            </Grid>
+        </Frame>
+
+    </Frame>
+</mvx:MvxContentView>

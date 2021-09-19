@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
   </PropertyGroup>
 
@@ -9,6 +9,14 @@
     <DebugType>portable</DebugType>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="fa-solid-900.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="fa-solid-900.ttf" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Behaviors.XamarinForms" Version="4.0.4" />
@@ -27,8 +35,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Pages\Admin\WelcomePage.xaml.cs">
+    <Compile Update="Pages\Admin\WelcomePage.xaml.cs">
       <DependentUpon>WelcomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\BankAccounts\BankOverviewPage.xaml.cs">
+      <DependentUpon>BankOverviewPage.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\Agenda\AgendaBillView.xaml.cs">
       <DependentUpon>AgendaBillView.xaml</DependentUpon>
@@ -36,31 +47,76 @@
     <Compile Update="Views\Admin\NewMultiBillView.xaml.cs">
       <DependentUpon>NewMultiBillView.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Pages\DateRange\DateRangePage.xaml.cs">
+      <DependentUpon>DateRangePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Pages\BankAccounts\BankAccountPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\BankAccounts\BankOverviewPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\BankAccounts\NewBalancePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\BankAccounts\NewBankAccountPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\BillTracker\BillTrackerEditPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\NavTestPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Admin\BudgetQuickStatusView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pages\Admin\BudgetSelectPage.xaml">
+    <EmbeddedResource Update="Views\AgendaQuickBillView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pages\Agenda\AgendaPage.xaml">
+    <EmbeddedResource Update="Views\BankAccounts\BankAccountQuickView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pages\Admin\SettingsPage.xaml">
+    <EmbeddedResource Update="Views\BankAccounts\BalanceView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pages\Admin\NewBudgetPage.xaml">
+    <EmbeddedResource Update="Views\Bills\BillQuickView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Pages\Bills\NewBillsPage.xaml">
+    <EmbeddedResource Update="Views\BillTrackers\BillTrackerQuickView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Root\MenuPage.xaml">
+    <EmbeddedResource Update="Pages\Admin\BudgetSelectPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\Root\RootPage.xaml">
+    <EmbeddedResource Update="Pages\Agenda\AgendaPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Admin\SettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Admin\NewBudgetPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Bills\BillDetailsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Bills\NewBillsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\BillTracker\BillTrackerInfoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Payees\PayeeListPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Root\MenuPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Root\RootPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Agenda\AgendaBillView.xaml">
@@ -69,5 +125,9 @@
     <EmbeddedResource Update="Views\Admin\NewMultiBillView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Test\" />
   </ItemGroup>
 </Project>

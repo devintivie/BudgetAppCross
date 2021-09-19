@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mvx:MvxContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="BudgetAppCrossNew.Mobile.Views.BillQuickView"
+                    xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                    xmlns:cvtlocal="clr-namespace:BudgetAppCrossNew.Mobile.Converters"
+                    xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+                    >
+    <Grid Padding="3" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+              Margin="2">
+        <Grid BackgroundColor="{DynamicResource Page.Secondary.Background}">
+            <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <CheckBox IsChecked="{Binding IsPaid}"
+                              VerticalOptions="Center"
+                              HorizontalOptions="Center"
+                              Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+                              />
+                <Label Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
+                                Grid.Column="1" />
+                <Label Text="{Binding Date, Converter={cvt:DateOnlyConverter}}" Grid.Column="2" />
+            </Grid>
+        </Grid>
+    </Grid>
+</mvx:MvxContentView>

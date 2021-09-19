@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                x:Class="BudgetAppCrossNew.Mobile.Pages.BillTrackerDetailsPage"
+                xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                Style="{StaticResource SubPageStyle}"
+                Title="Edit Payee"
+             >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackLayout>
+            <!--Account Nickname-->
+            <Label Text="Payee" HorizontalOptions="Center"/>
+            <Entry Text="{Binding Payee}" HorizontalOptions="Center"/>
+        </StackLayout>
+        <Button Text="Delete Payee" Command="{Binding DeleteThisCommand}"
+                Grid.Row="1"/>
+    </Grid>
+    
+        
+        
+
+        <!--<StackLayout Orientation="Horizontal">
+            <Button Text="Cancel" Command="{Binding CancelCommand}"/>
+            <Button Text="Save" Command="{Binding SaveCommand}"/>
+        </StackLayout>-->
+    
+</mvx:MvxContentPage>

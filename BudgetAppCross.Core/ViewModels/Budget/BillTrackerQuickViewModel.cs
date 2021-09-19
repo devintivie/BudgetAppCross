@@ -23,23 +23,12 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Properties
-        //public BillTracker BillTracker { get; private set; }
-
-        private string payee;
-        public string Payee
-        {
-            get { return payee; }
-            set
-            {
-                SetProperty(ref payee, value);
-            }
-        }
-
+        public string Payee { get; private set; }
         #endregion
 
         #region Commands
-        public IMvxCommand EditThisCommand { get; private set; }
-        public IMvxCommand DeleteThisCommand { get; private set; }
+        //public IMvxCommand EditThisCommand { get; private set; }
+        //public IMvxCommand DeleteThisCommand { get; private set; }
         #endregion
 
         #region Constructors
@@ -47,17 +36,23 @@ namespace BudgetAppCross.Core.ViewModels
             IDataManager dataManager, string name) : base(navService, backgroundHandler)
         {
             Payee = name;
-            EditThisCommand = new MvxAsyncCommand(async () => await _navService.Navigate<EditBillTrackerViewModel, string>(Payee));
-            DeleteThisCommand = new MvxAsyncCommand(OnDeleteThis);
+            _dataManager = dataManager;
+            //EditThisCommand = new MvxAsyncCommand(OnEditThis);
+            //DeleteThisCommand = new MvxAsyncCommand(OnDeleteThis);
         }
+
         #endregion
 
         #region Methods
-        private async Task OnDeleteThis()
-        {
-            await _dataManager.DeleteBillsForPayee(Payee);
-            _backgroundHandler.SendMessage(new ChangeBillMessage());
-        }
+        //private async Task OnDeleteThis()
+        //{
+        //    await _dataManager.DeleteBillsForPayee(Payee);
+        //    _backgroundHandler.SendMessage(new ChangeBillMessage());
+        //}
+        //private async Task OnEditThis()
+        //{
+        //    await _navService.Navigate<EditBillTrackerViewModel, string>(Payee);
+        //}
 
         //private async Task OnDeleteThis()
         //{

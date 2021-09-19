@@ -53,7 +53,6 @@ namespace BudgetAppCross.Core.ViewModels.Root
             }
             else
             {
-
                 var files = await _settings.FindLoadableConfigFiles();
                 if (files.Count == 0)
                 {
@@ -74,7 +73,7 @@ namespace BudgetAppCross.Core.ViewModels.Root
             await _dataManager.Initialize();
             await _dataManager.GetBankAccounts();
             await _navigationService.Navigate<MenuViewModel>();
-            await _navigationService.Navigate<AgendaViewModel>();
+            await _navigationService.Navigate<DateRangeViewModel>();
         }
 
         public async Task<bool> LoadConfiguration(string filename)

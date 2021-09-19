@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetAppCrossNew.Mobile.Pages.NewBudgetPage"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
+                    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+                ios:Page.UseSafeArea="True"
+            Style="{StaticResource DefaultPage}"
+                >
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Budget Name" />
+            <custom:CustomEntry Text="{Binding BudgetFilename}"
+                                    FontSize="{StaticResource FontSizeLarge}"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Add Bank Account?"/>
+                <Switch IsToggled="{Binding IsAddingBankAccount}"/>
+            </StackLayout>
+            <StackLayout IsVisible="{Binding IsAddingBankAccount}">
+                <Label Text="Bank Account Name" />
+                <custom:CustomEntry Text="{Binding FirstBankAccountName}"
+                                        FontSize="{StaticResource FontSizeLarge}"/>
+                <Label Text="Balance"/>
+                <!--<Entry Text="{Binding InitialBalance, Converter={cvt:CurrencyConverter}}"
+                           Keyboard="Numeric"/>-->
+                <custom:CurrencyEntry Text="{Binding InitialBalance}"
+                                            FontSize="{StaticResource FontSizeLarge}"/>
+                <Label Text="Date"/>
+                <custom:CustomDatePicker Date="{Binding InitialBalanceDate}"
+                                             FontSize="{StaticResource FontSizeLarge}"/>
+            </StackLayout>
+            <Grid >
+                <Button Text="Go Back" Command="{Binding CancelCommand}"/>
+                <Button Text="Get Started" Command="{Binding SaveCommand}"
+                            Grid.Column="1"/>
+            </Grid>
+        </StackLayout>
+
+    </ScrollView>
+</mvx:MvxContentPage>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetAppCrossNew.Mobile.Pages.BudgetSelectPage"
+             xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+             xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
+             xmlns:controls="clr-namespace:BudgetAppCrossNew.Mobile.Views"
+            xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
+
+             Style="{StaticResource MenuPage}"
+                    >
+    <RelativeLayout>
+        <Label Text="Select Budget"
+                   HorizontalOptions="Center"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}"
+                   RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.15}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.7}"/>
+
+        <ListView ItemsSource="{Binding Budgets}"
+                  SelectedItem="{Binding SelectedBudget}"
+                  BackgroundColor="Transparent"
+                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.15}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.60}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.15}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.7}"
+                    HorizontalOptions="Center"
+                  >
+            <ListView.Behaviors>
+                <behav:OnItemTappedBehavior Command="{Binding ShowBankAccountCommand}"/>
+            </ListView.Behaviors>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Delete"
+                                        Command="{Binding DeleteThisCommand}"
+                                        IsDestructive="True"
+                                        CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                        <controls:BudgetQuickStatusView/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+        
+        <!--<custom:TransparentSelectListView x:Name="mainListView" ItemsSource="{Binding Budgets}"
+                      BackgroundColor="Transparent"
+                      SelectedItem="{Binding SelectedBudget}" 
+                      SelectionMode="Single"  
+                      RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.15}"
+                      RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.60}"
+                      HorizontalOptions="Center"
+                      RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.15}"
+                      RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.7}">
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Delete"
+                                        Command="{Binding DeleteThisCommand}"
+                                        IsDestructive="True"
+                                        CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>-->
+                        <!--<controls:BudgetQuickViewStatus WidthRequest="{Binding Source={x:Reference mainListView}, Path=Width}"/>-->
+
+                    <!--</ViewCell>-->
+                <!--</DataTemplate>-->
+            <!--</ListView.ItemTemplate>-->
+        <!--</custom:TransparentSelectListView>-->
+
+        <Button Text="Add Budget" HorizontalOptions="CenterAndExpand" 
+                    Command="{Binding AddBudgetCommand}"
+                    RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.25}"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.75}"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5}"/>
+    </RelativeLayout>
+</mvx:MvxContentPage>

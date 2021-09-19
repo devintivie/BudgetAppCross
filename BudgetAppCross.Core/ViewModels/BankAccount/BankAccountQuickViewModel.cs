@@ -1,5 +1,6 @@
 ﻿using BaseClasses;
 using BaseViewModels;
+using BudgetAppCross.Core.ViewModels.Pages;
 using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
 using MvvmCross.Commands;
@@ -16,10 +17,11 @@ namespace BudgetAppCross.Core.ViewModels
     {
         #region Fields
         private IDataManager _dataManager;
+        public BankAccount BankAccount { get; private set; }
+        //private BankAccount _bankAccount;
         #endregion
 
         #region Properties
-        public BankAccount BankAccount { get; private set; }
 
         private decimal balance;
         public decimal Balance
@@ -27,29 +29,21 @@ namespace BudgetAppCross.Core.ViewModels
             get { return balance; }
             set
             {
-                SetProperty(ref balance, value);
+                if (balance != value)
+                {
+                    balance = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
-
-        public string Nickname
-        {
-            get { return BankAccount.Nickname; }
-            set
-            {
-                var nickname = BankAccount.Nickname;
-                BankAccount.Nickname = value;
-                SetProperty(ref nickname, value);
-            }
-        }
-
-
+        public string Nickname => BankAccount.Nickname; 
 
 
         #endregion
        
         #region Commands
-        public IMvxCommand EditThisCommand { get; private set; }
+        //public IMvxCommand EditThisCommand { get; private set; }
         public IMvxCommand DeleteThisCommand { get; private set; }
         #endregion
         
@@ -58,10 +52,12 @@ namespace BudgetAppCross.Core.ViewModels
         {
             _dataManager = dataManager;
             BankAccount = account;
-            var _ = GetLatestBalance();
-            _backgroundHandler.RegisterMessage<ChangeBalanceMessage>(this, async x => await OnChangeBalanceMessage());
-            EditThisCommand = new MvxAsyncCommand(EditBankAccount);
+
+            //EditThisCommand = new MvxAsyncCommand(EditBankAccount);
             DeleteThisCommand = new MvxAsyncCommand(OnDeleteThis);
+
+            _backgroundHandler.RegisterMessage<ChangeBalanceMessage>(this, async x => await OnChangeBalanceMessage());
+            _ = GetLatestBalance();
 
         }
         #endregion
@@ -70,7 +66,6 @@ namespace BudgetAppCross.Core.ViewModels
         private async Task GetLatestBalance()
         {
             var temp = await _dataManager.GetLatestBalance(BankAccount.AccountID, DateTime.Today);
-            //var temp = 0.0;
             if (temp == null)
             {
                 Balance = 0.0m;
@@ -83,14 +78,32 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnDeleteThis()
         {
-            await _dataManager.DeleteBankAccount(BankAccount);
+            var continueDelete = await _backgroundHandler.ConfirmAsync($"Are you you want to delete {BankAccount.Nickname}?");
+
+            if (continueDelete)
+            {
+                var deleted = await _dataManager.DeleteBankAccount(BankAccount);
+                if (deleted <= 0)
+                {
+                    _backgroundHandler.Notify("delete error");
+                }
+            }
+            //await _dataManager.DeleteBankAccount(BankAccount);
             _backgroundHandler.SendMessage(new ChangeBalanceMessage());
         }
 
-        private async Task EditBankAccount()
+        private async Task TestConfirm(bool confirmed)
         {
-            await _navService.Navigate<EditBankAccountViewModel, BankAccount>(BankAccount);
+            if (confirmed)
+            {
+                await _dataManager.DeleteBankAccount(BankAccount);
+            }
         }
+
+        //private async Task EditBankAccount()
+        //{
+        //    await _navService.Navigate<EditBankAccountViewModel, BankAccount>(BankAccount);
+        //}
 
         private async Task OnChangeBalanceMessage()
         {

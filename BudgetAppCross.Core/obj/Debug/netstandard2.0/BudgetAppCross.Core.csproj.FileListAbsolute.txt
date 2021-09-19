@@ -16,6 +16,7 @@ C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\bin\Debug\netstan
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.SQLiteDataAccess.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\bin\Debug\netstandard2.0\BudgetAppCross.StateManagers.pdb
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csproj.AssemblyReference.cache
+C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.AssemblyInfoInputs.cache
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.AssemblyInfo.cs
 C:\Users\devin\source\repos\BudgetAppCross\BudgetAppCross.Core\obj\Debug\netstandard2.0\BudgetAppCross.Core.csproj.CoreCompileInputs.cache

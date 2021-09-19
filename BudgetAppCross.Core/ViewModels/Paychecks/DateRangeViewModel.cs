@@ -2,6 +2,7 @@
 using BaseClasses;
 using BaseViewModels;
 using BudgetAppCross.Core.Services;
+using BudgetAppCross.Core.ViewModels.Pages;
 using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
 using MvvmCross.Commands;
@@ -25,6 +26,7 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Properties
+        public string Title => "Custom Dates";
 
         private DateTime startDate = DateTime.Today;
         public DateTime StartDate
@@ -131,15 +133,18 @@ namespace BudgetAppCross.Core.ViewModels
             //Title = "Custom Dates";
             _dataManager = dataManager;
             var _accts = LoadAccountOptions();
-            
-            AddBillCommand = new MvxAsyncCommand(async () => await _navService.Navigate<NewBillsViewModel, string>(string.Empty));
-            OnDateSelectedCommand = new MvxAsyncCommand(async () => await GetBills());
+
+            //AddBillCommand = new MvxAsyncCommand(async () => await _navService.Navigate<NewBillsViewModel, string>(string.Empty));
+            AddBillCommand = new MvxAsyncCommand(OnAddBill);
+            OnDateSelectedCommand = new MvxAsyncCommand(GetBills);
 
             _backgroundHandler.RegisterMessage<ChangeBillMessage>(this, async x => await OnChangeBillMessage(x.AccountId));
             _backgroundHandler.RegisterMessage<UpdateBillMessage>(this, async x => await OnUpdateBillMessage(x.AccountId));
 
 
         }
+
+        
         #endregion
 
         #region Methods
@@ -153,11 +158,17 @@ namespace BudgetAppCross.Core.ViewModels
                 Bills.Clear();
                 foreach (var bill in billData)
                 {
-                    Bills.Add(new BillViewModel(_backgroundHandler, _dataManager, bill));
+                    Bills.Add(new BillViewModel(_navService, _backgroundHandler, _dataManager, bill));
                 }
 
                 await UpdateCalculations();
             }
+        }
+
+        private async Task OnAddBill()
+        {
+            await _navService.Navigate<NavTestViewModel>();
+            //await _navService.Navigate<NewBillsViewModel, string>(string.Empty)
         }
 
         private async Task LoadAccountOptions()

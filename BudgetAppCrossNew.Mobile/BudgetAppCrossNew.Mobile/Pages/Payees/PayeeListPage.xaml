@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvx:MvxContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="BudgetAppCrossNew.Mobile.Pages.PayeeListPage"
+                    xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
+                    xmlns:views="clr-namespace:BudgetAppCrossNew.Mobile.Views"
+                    xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
+                    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+                    ios:Page.UseSafeArea="True"
+                    Style="{StaticResource DefaultPage}"
+                    Title="Payee List"
+                    >
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Text="Add" Command="{Binding AddBillCommand}"
+                     Order="Primary"/>
+    </ContentPage.ToolbarItems>
+
+    <ListView x:Name="BudgetCompanyList"
+              BackgroundColor="Transparent"
+              ItemsSource="{Binding Trackers}"
+              SelectedItem="{Binding SelectedTracker}"
+              >
+        <ListView.Behaviors>
+            <behav:OnItemTappedBehavior Command="{Binding ShowBillTrackerCommand}"/>
+        </ListView.Behaviors>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <views:BillTrackerQuickView/>
+                    <!--<ViewCell.ContextActions>
+                        <MenuItem Text="Edit" 
+                                  IsDestructive="False" 
+                                  Command="{Binding EditThisCommand}" CommandParameter="{Binding .}"/>
+                        <MenuItem Text="Delete" 
+                                  IsDestructive="True" 
+                                  Command="{Binding DeleteThisCommand}" CommandParameter="{Binding .}"/>
+                    </ViewCell.ContextActions>-->
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+    </ListView>
+</mvx:MvxContentPage>
