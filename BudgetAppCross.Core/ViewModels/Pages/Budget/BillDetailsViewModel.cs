@@ -34,7 +34,7 @@ namespace BudgetAppCross.Core.ViewModels.Pages
                     Bill.Date = value;
                     _ = RaiseAllPropertiesChanged();
 
-                    _ = UpdateAndSave();
+                    _ = ChangeAndSave();
                 }
             }
         }
@@ -53,6 +53,22 @@ namespace BudgetAppCross.Core.ViewModels.Pages
                 }
             }
         }
+
+        public decimal ShareRatio
+        {
+            get{ return Bill.ShareRatio; }
+            set
+            {
+                if (Bill.ShareRatio != value)
+                {
+                    Bill.ShareRatio = value;
+                    RaisePropertyChanged();
+                    _ = UpdateAndSave();
+                }
+            }
+        }
+
+        public decimal PaymentAmount => Bill.PaymentAmount;// Math.Round(ShareRatio * Amount / 100m, 2);
 
         public string Confirmation
         {
@@ -84,22 +100,37 @@ namespace BudgetAppCross.Core.ViewModels.Pages
             }
         }
 
-        public decimal PaymentAmount => ShareRatio * Amount;
-        public decimal ShareRatio
-        {
-            get { return Bill.ShareRatio; }
-            set
-            {
-                if (Bill.ShareRatio != value)
-                {
-                    Bill.ShareRatio = value;
-                    RaisePropertyChanged();
-                    RaisePropertyChanged(nameof(PaymentAmount));
+        //public decimal PaymentAmount => ShareRatio * Amount;
+        //public decimal ShareRatio
+        //{
+        //    get { return Bill.ShareRatio; }
+        //    set
+        //    {
+        //        if (Bill.ShareRatio != value)
+        //        {
+        //            Bill.ShareRatio = value;
+        //            RaisePropertyChanged();
+        //            RaisePropertyChanged(nameof(PaymentAmount));
 
-                    _ = UpdateAndSave();
-                }
-            }
-        }
+        //            _ = UpdateAndSave();
+        //        }
+        //    }
+        //}
+
+
+        
+
+
+        //public string ShareRatio
+        //{
+        //    get { return Bill.DisplayShareRatio(); }
+        //    set
+        //    {
+        //        Bill.SetShareRatio(value);
+        //        RaisePropertyChanged();
+        //    }
+        //}
+
 
         public bool IsAuto
         {
@@ -167,6 +198,7 @@ namespace BudgetAppCross.Core.ViewModels.Pages
         private async Task UpdateAndSave()
         {
             await _dataManager.SaveBill(Bill);
+            await RaiseAllPropertiesChanged();
             _backgroundHandler.SendMessage(new UpdateBillMessage(Bill.AccountID));
         }
 

@@ -99,7 +99,7 @@ namespace BudgetAppCross.Core.ViewModels.Pages
 
         private async Task OnAddBT()
         {
-            await _navService.Navigate<NavTestViewModel>();
+            await _navService.Navigate<NewBillsViewModel>();
             //await _navService.Navigate<NewBillsViewModel, string>(string.Empty);
         }
 

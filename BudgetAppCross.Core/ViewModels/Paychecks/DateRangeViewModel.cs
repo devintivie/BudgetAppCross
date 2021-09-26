@@ -67,7 +67,7 @@ namespace BudgetAppCross.Core.ViewModels
             }
         }
 
-        public ObservableCollection<BillViewModel> Bills { get; private set; } = new ObservableCollection<BillViewModel>();
+        public ObservableCollection<IBillInfoViewModel> Bills { get; private set; } = new ObservableCollection<IBillInfoViewModel>();
         public ObservableCollection<string> AccountOptions { get; private set; } = new ObservableCollection<string>();
 
         private string selectedAccount;
@@ -80,7 +80,6 @@ namespace BudgetAppCross.Core.ViewModels
                 {
                     selectedAccount = value;
                     RaisePropertyChanged();
-                    SetProperty(ref selectedAccount, value);
                     _ = GetBills(); 
                 }
 
@@ -158,7 +157,7 @@ namespace BudgetAppCross.Core.ViewModels
                 Bills.Clear();
                 foreach (var bill in billData)
                 {
-                    Bills.Add(new BillViewModel(_navService, _backgroundHandler, _dataManager, bill));
+                    Bills.Add(new BillQuickViewModel(_navService, _backgroundHandler, _dataManager, bill));
                 }
 
                 await UpdateCalculations();
@@ -167,7 +166,7 @@ namespace BudgetAppCross.Core.ViewModels
 
         private async Task OnAddBill()
         {
-            await _navService.Navigate<NavTestViewModel>();
+            await _navService.Navigate<NewBillsViewModel>();
             //await _navService.Navigate<NewBillsViewModel, string>(string.Empty)
         }
 
@@ -199,7 +198,7 @@ namespace BudgetAppCross.Core.ViewModels
             {
                 StartingBalance = bal.Amount;
             }
-            BillTotal = billData.Sum(x => x.Amount);
+            BillTotal = billData.Sum(x => x.PaymentAmount);
         }
 
         private async Task OnChangeBillMessage(int id)

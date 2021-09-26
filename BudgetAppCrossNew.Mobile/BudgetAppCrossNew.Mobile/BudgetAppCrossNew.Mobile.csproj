@@ -22,8 +22,8 @@
     <PackageReference Include="Behaviors.XamarinForms" Version="4.0.4" />
     <PackageReference Include="MvvmCross" Version="8.0.1" />
     <PackageReference Include="MvvmCross.Forms" Version="8.0.1" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,6 +49,9 @@
     </Compile>
     <Compile Update="Pages\DateRange\DateRangePage.xaml.cs">
       <DependentUpon>DateRangePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Bills\BillFullView.xaml.cs">
+      <DependentUpon>BillFullView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 

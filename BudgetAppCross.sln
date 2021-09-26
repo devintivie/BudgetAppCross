@@ -39,7 +39,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamarinStyles", "..\SharedP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BudgetAppCross.Configurations", "BudgetAppCross.Configurations\BudgetAppCross.Configurations.csproj", "{C7FB9029-6F4A-4FB3-908F-E4681E924126}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BudgetAppCross.SQLiteDataAccess", "BudgetAppCross.SQLiteDataAccess\BudgetAppCross.SQLiteDataAccess.csproj", "{540552D5-4100-4ECD-9C21-550FB43FDB78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BudgetAppCross.SQLiteDataAccess", "BudgetAppCross.SQLiteDataAccess\BudgetAppCross.SQLiteDataAccess.csproj", "{540552D5-4100-4ECD-9C21-550FB43FDB78}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQLiteHelpers", "..\SharedProjects\Standard\SQLiteHelpers\SQLiteHelpers.csproj", "{4B6F1532-5E61-4026-9A98-919077A34910}"
 EndProject
@@ -206,6 +206,7 @@ Global
 		{71F48AC8-9987-44E7-A999-2D143B18EBB9}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
 		{71F48AC8-9987-44E7-A999-2D143B18EBB9}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{71F48AC8-9987-44E7-A999-2D143B18EBB9}.Debug|iPhone.Build.0 = Debug|iPhone
+		{71F48AC8-9987-44E7-A999-2D143B18EBB9}.Debug|iPhone.Deploy.0 = Debug|iPhone
 		{71F48AC8-9987-44E7-A999-2D143B18EBB9}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
 		{71F48AC8-9987-44E7-A999-2D143B18EBB9}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{71F48AC8-9987-44E7-A999-2D143B18EBB9}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator

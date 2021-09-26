@@ -19,6 +19,7 @@
               BackgroundColor="Transparent"
               ItemsSource="{Binding Trackers}"
               SelectedItem="{Binding SelectedTracker}"
+              Margin="10,0"
               >
         <ListView.Behaviors>
             <behav:OnItemTappedBehavior Command="{Binding ShowBillTrackerCommand}"/>

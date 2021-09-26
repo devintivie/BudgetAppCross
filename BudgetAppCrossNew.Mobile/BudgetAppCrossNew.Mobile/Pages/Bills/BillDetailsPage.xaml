@@ -3,14 +3,18 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     x:Class="BudgetAppCrossNew.Mobile.Pages.BillDetailsPage"
                     xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
-                                xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
-            xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+                    xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
+                    xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
 
-            xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
+                    xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
                     Style="{StaticResource SubPageStyle}"
                     Title="Bill Details"
              >
-    <ScrollView>
+    <ContentPage.Resources>
+        <Style TargetType="Label" BasedOn="{StaticResource SubpageLabel}"/>
+        <!--<Style TargetType="custom:CurrencyEntry" BasedOn="{StaticResource SubpageEntry}"/>-->
+    </ContentPage.Resources>
+    <ScrollView  Margin="10, 0">
         <StackLayout>
             <!--Due Date-->
             <Grid>
@@ -19,14 +23,14 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label Text="Due Date"/>
-                <DatePicker Date="{Binding Date}"
+                <custom:CustomDatePicker Date="{Binding Date}"
                             FontSize="{StaticResource FontSizeLarge}"
                             Grid.Row="0" Grid.Column="1"
                             HorizontalOptions="Fill">
-                    <DatePicker.Behaviors>
+                    <!--<DatePicker.Behaviors>
                         <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
-                    </DatePicker.Behaviors>
-                </DatePicker>
+                    </DatePicker.Behaviors>-->
+                </custom:CustomDatePicker>
             </Grid>
 
             
@@ -36,29 +40,34 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
+                
                 <!--Amount Due-->
-                <Label Text="Amount Due"/>
+                <Label Text="Total Due"/>
                 <custom:CurrencyEntry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
                         FontSize="{StaticResource FontSizeLarge}"
                         Grid.Column="1"
-                        HorizontalTextAlignment="End"
-                        HorizontalOptions="Fill"
                         />
                 
                 <!--Percent Share-->
                 <Label Text="Percent Share"
                        Grid.Row="1"/>
-                <Entry Text="{Binding ShareRatio, UpdateSourceEventName=Unfocused, Converter={cvt:PercentConverter}}"
-                       Grid.Row="1" Grid.Column="1"/>
+                <custom:PercentEntry Text="{Binding ShareRatio, UpdateSourceEventName=Unfocused}"
+                                     FontSize="{StaticResource FontSizeLarge}"
+                        Grid.Row="1" Grid.Column="1"
+                        HorizontalTextAlignment="End"
+                        HorizontalOptions="Fill"
+                       />
 
-                <Label Text="Percent Share"
+                <Label Text="Amount to Pay"
                        Grid.Row="2"/>
-                <Label Text="{Binding PaymentAmount}"
-                       Grid.Row="2" Grid.Column="1"/>
+                <Label Text="{Binding PaymentAmount, Converter={cvt:CurrencyConverter}}"
+                       Grid.Row="2" Grid.Column="1"
+                       FontSize="{StaticResource FontSizeLarge}"
+                       HorizontalTextAlignment="End"/>
             </Grid>
             
 
@@ -82,7 +91,7 @@
                 </Grid.ColumnDefinitions>
                 <Label Text="Account"
                        />
-                <Picker ItemsSource="{Binding AccountOptions}"
+                <custom:CustomPicker ItemsSource="{Binding AccountOptions}"
                         FontSize="{StaticResource FontSizeLarge}"
                         SelectedItem="{Binding SelectedAccount}"
                         Grid.Column="1"

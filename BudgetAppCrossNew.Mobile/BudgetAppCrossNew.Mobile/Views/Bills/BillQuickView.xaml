@@ -6,24 +6,58 @@
                     xmlns:cvtlocal="clr-namespace:BudgetAppCrossNew.Mobile.Converters"
                     xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
                     >
-    <Grid Padding="3" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
-              Margin="2">
-        <Grid BackgroundColor="{DynamicResource Page.Secondary.Background}">
+    <!--Border Frame-->
+    <Frame Padding="3" BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+              Margin="2" CornerRadius="15" IsClippedToBounds="True">
+        <!--Inner Frame-->
+        <Frame BackgroundColor="{DynamicResource Page.Secondary.Background}" 
+               CornerRadius="12"
+               Margin="0" Padding="0"
+               IsClippedToBounds="True">
+            <!--Layout-->
             <Grid BackgroundColor="{Binding BillStatus, Converter={cvtlocal:BillStatusBackgroundColorConverter}}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="40"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
+                <!--<Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>-->
+                
+                <!--Is Paid-->               
                 <CheckBox IsChecked="{Binding IsPaid}"
-                              VerticalOptions="Center"
-                              HorizontalOptions="Center"
-                              Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
-                              />
-                <Label Text="{Binding Amount, Converter={cvt:CurrencyConverter}}"
-                                Grid.Column="1" />
-                <Label Text="{Binding Date, Converter={cvt:DateOnlyConverter}}" Grid.Column="2" />
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                           Grid.RowSpan="1"
+                            Color="{Binding BillStatus, Converter={cvtlocal:BillStatusColorConverter}}"
+                            />
+
+                <!--Payee-->
+                <!--<Label Text="{Binding Payee}"
+                       Grid.Column="1" Grid.RowSpan="2"
+                       HorizontalTextAlignment="Center"/>-->
+                
+                <!--Amount-->
+                <Label Text="{Binding PaymentAmount, Converter={cvt:CurrencyConverter}}"
+                        Grid.Column="1" Grid.RowSpan="1"
+                       HorizontalTextAlignment="Center"/>
+                <!--Date-->
+                <Label Text="{Binding Date, Converter={cvt:DateOnlyConverter}}" 
+                       Grid.Row="0" Grid.Column="2"
+                       HorizontalTextAlignment="Center"
+                       />
+                
+                <!--Details Nav-->
+                <Button Command="{Binding DetailsCommand}"
+                        Text="{StaticResource InfoIcon}"
+                        Style="{StaticResource LargeCircle}"
+                        FontFamily="FA-S"
+                        Grid.Column="3" Grid.RowSpan="1"
+                        Padding="0"/>
             </Grid>
-        </Grid>
-    </Grid>
+        </Frame>
+    </Frame>
 </mvx:MvxContentView>

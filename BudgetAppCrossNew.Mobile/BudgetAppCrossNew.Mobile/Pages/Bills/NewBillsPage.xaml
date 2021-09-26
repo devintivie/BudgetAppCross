@@ -12,7 +12,11 @@
                     >
 
     <!---->
-    <Grid>
+    <ContentPage.Resources>
+        <Style TargetType="Label" BasedOn="{StaticResource SubpageLabel}"/>
+        <!--<Style TargetType="custom:CurrencyEntry" BasedOn="{StaticResource SubpageEntry}"/>-->
+    </ContentPage.Resources>
+    <Grid Margin="10, 0">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
@@ -38,7 +42,7 @@
                         <Label Text="Input Payee"
                                 Grid.Row="0" Grid.Column="0"
                                IsVisible="{Binding IsNewPayee}"/>
-                        <Picker ItemsSource="{Binding PayeeOptions}"
+                        <custom:CustomPicker ItemsSource="{Binding PayeeOptions}"
                                                  Grid.Column="1"
                                                  FontSize="{StaticResource FontSizeLarge}"
                                              HorizontalOptions="Fill"
@@ -65,7 +69,7 @@
                         </Grid.ColumnDefinitions>
                         <Label Text="Amount Due"
                                    />
-                        <Entry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
+                        <custom:CurrencyEntry Text="{Binding Amount, UpdateSourceEventName=Unfocused}" 
                                                     Grid.Column="1"
                                                     FontSize="{StaticResource FontSizeLarge}"
                                                     HorizontalTextAlignment="End"
@@ -81,7 +85,7 @@
                         </Grid.ColumnDefinitions>
                         <Label Text="Account"
                                    />
-                        <Picker ItemsSource="{Binding AccountOptions}"
+                    <custom:CustomPicker ItemsSource="{Binding AccountOptions}"
                                                  Grid.Column="1"
                                                  FontSize="{StaticResource FontSizeLarge}"
                                                  SelectedItem="{Binding SelectedAccount}"
@@ -104,9 +108,10 @@
                     <StackLayout Orientation="Horizontal">
                         <Label Text="{Binding BillDueString}"
                                />
-                        <DatePicker x:Name="pickerStartDate"
+                        <custom:CustomDatePicker x:Name="pickerStartDate"
                                                  FontSize="{StaticResource FontSizeLarge}"
                                     Date="{Binding StartDate}"
+                                                 
                                     HorizontalOptions="EndAndExpand"
                                     Grid.Column="1"
                                     />
@@ -121,12 +126,10 @@
                     <!--Repeat Frequency-->
                     <StackLayout Orientation="Horizontal" IsVisible="{Binding AddMultiple}">
                         <Label Text="Repeat..."
-                                   Grid.Row="1" Grid.Column="0"
                                />
-                        <Picker ItemsSource="{Binding Source={cvt:EnumBindingSource {x:Type models:DueDateFrequencies}}}"
+                        <custom:CustomPicker ItemsSource="{Binding Source={cvt:EnumBindingSource {x:Type models:DueDateFrequencies}}}"
                                                  SelectedItem="{Binding DueDateFrequency}"
                                                  FontSize="{StaticResource FontSizeLarge}"
-                                Grid.Row="1" Grid.Column="1"
                                  HorizontalOptions="EndAndExpand"
                             
                             />
@@ -136,7 +139,7 @@
                     <StackLayout Orientation="Horizontal" IsVisible="{Binding AddMultiple}">
                         <Label Text="Repeat Until"
                                    Grid.Row="2" Grid.Column="0"/>
-                        <DatePicker x:Name="pickerEndDate"
+                        <custom:CustomDatePicker x:Name="pickerEndDate"
                                                 FontSize="{StaticResource FontSizeLarge}"
                                 Date="{Binding EndDate}"
                                 Grid.Row="2" HorizontalOptions="EndAndExpand"

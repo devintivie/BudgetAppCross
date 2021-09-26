@@ -23,8 +23,8 @@ namespace BudgetAppCross.Core.ViewModels.Pages
 
         #region Properties
 
-        private ObservableCollection<Grouping<DateTime, BillViewModel>> bills = new ObservableCollection<Grouping<DateTime, BillViewModel>>();
-        public ObservableCollection<Grouping<DateTime, BillViewModel>> Bills
+        private ObservableCollection<Grouping<DateTime, IBillInfoViewModel>> bills = new ObservableCollection<Grouping<DateTime, IBillInfoViewModel>>();
+        public ObservableCollection<Grouping<DateTime, IBillInfoViewModel>> Bills
         {
             get { return bills; }
             set
@@ -41,7 +41,6 @@ namespace BudgetAppCross.Core.ViewModels.Pages
 
         #region Commands
         public IMvxCommand AddBillCommand { get; }
-        //public IMvxCommand SwipeTestCommand { get; }
         #endregion
 
         #region Constructors
@@ -50,7 +49,6 @@ namespace BudgetAppCross.Core.ViewModels.Pages
             _dataManager = dataManager;
             _ = GetGroups();
             AddBillCommand = new MvxAsyncCommand(OnAddBill);//, CanAddBill);
-            //SwipeTestCommand = new MvxCommand(OnTest);
 
             _backgroundHandler.RegisterMessage<ChangeBillMessage>(this, async x => await OnChangeBillMessage());
         }
@@ -87,22 +85,22 @@ namespace BudgetAppCross.Core.ViewModels.Pages
                         .OrderBy(x => x.Key)
                         .Select(grouped => new Grouping<DateTime, Bill>(grouped.Key, grouped)).ToList();
 
-            var groupVM = new List<Grouping<DateTime, BillViewModel>>();
+            var groupVM = new List<Grouping<DateTime, IBillInfoViewModel>>();
             foreach (var group in data)
             {
                 var key = group.Key;
-                var bvms = new List<BillViewModel>();
+                var bvms = new List<IBillInfoViewModel>();
                 foreach (var item in group.Grouped)
                 {
-                    bvms.Add(new BillViewModel(_navService, _backgroundHandler, _dataManager, item));
+                    bvms.Add(new BillQuickViewModel(_navService, _backgroundHandler, _dataManager, item));
                 }
 
-                groupVM.Add(new Grouping<DateTime, BillViewModel>(key, bvms));
+                groupVM.Add(new Grouping<DateTime, IBillInfoViewModel>(key, bvms));
             }
 
             try
             {
-                Bills = new ObservableCollection<Grouping<DateTime, BillViewModel>>(groupVM);
+                Bills = new ObservableCollection<Grouping<DateTime, IBillInfoViewModel>>(groupVM);
             }
             catch(Exception ex)
             {

@@ -5,7 +5,7 @@
                     xmlns:mvx="clr-namespace:MvvmCross.Forms.Views;assembly=MvvmCross.Forms"
                     xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
                     xmlns:views="clr-namespace:BudgetAppCrossNew.Mobile.Views"
-
+                    xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
                     Style="{StaticResource DefaultPage}"
                     Title="{Binding Nickname}"
                     >
@@ -27,7 +27,7 @@
                        VerticalTextAlignment="Center"/>
             </StackLayout>
 
-            <Entry Text="{Binding NewAccountNickname}" 
+            <custom:CurrencyEntry Text="{Binding NewAccountNickname}" 
                    HorizontalOptions="Fill"
                    FontSize="{StaticResource FontSizeLarge}"
                    IsVisible="{Binding IsEditing}"/>
@@ -57,21 +57,24 @@
                    Grid.Column="1"
                    HorizontalOptions="Center"/>
         </Grid>
-        <ListView ItemsSource="{Binding Balances}"
+        <ScrollView Margin="10, 0" VerticalScrollBarVisibility="Always">
+            <ListView ItemsSource="{Binding Balances}"
                   >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <ViewCell.ContextActions>
-                            <MenuItem Text="Delete"
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Delete"
                                     Command="{Binding DeleteThisCommand}"
                                     IsDestructive="True"
                                     CommandParameter="{Binding .}"/>
-                        </ViewCell.ContextActions>
-                        <views:BalanceView/>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                            </ViewCell.ContextActions>
+                            <views:BalanceView/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+        
     </StackLayout>
 </mvx:MvxContentPage>

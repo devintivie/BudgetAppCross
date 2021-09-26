@@ -53,9 +53,6 @@ namespace BudgetAppCross.Core.ViewModels.Pages
             }
         }
 
-
-
-
         #endregion
 
         #region Commands
@@ -98,7 +95,7 @@ namespace BudgetAppCross.Core.ViewModels.Pages
             var bvms = new List<IBillInfoViewModel>();
             foreach (var item in tmpBills)
             {
-                bvms.Add(new BillQuickViewModel(_backgroundHandler, _dataManager, item));
+                bvms.Add(new BillQuickViewModel(_navService, _backgroundHandler, _dataManager, item));
             }
 
             Bills = new ObservableCollection<IBillInfoViewModel>(bvms);
@@ -137,7 +134,7 @@ namespace BudgetAppCross.Core.ViewModels.Pages
         private async Task OnAddBill()
         {
 
-            await _navService.Navigate<NavTestViewModel>();
+            await _navService.Navigate<NewBillsViewModel>();
             //await _navService.Navigate<NewBillsViewModel, string>(CompanyName);
         }
 

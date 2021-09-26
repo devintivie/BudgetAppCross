@@ -8,18 +8,22 @@
                     xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
                     xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
                     Style="{StaticResource SubPageStyle}"
-                    Title="{Binding Title}"
+                    Title="Add Bank Account"
              >
-    <StackLayout>
+    <ContentPage.Resources>
+        <Style TargetType="Label" BasedOn="{StaticResource SubpageLabel}"/>
+        <!--<Style TargetType="custom:CurrencyEntry" BasedOn="{StaticResource SubpageEntry}"/>-->
+    </ContentPage.Resources>
+    <StackLayout Margin="10, 0">
         <Label Text="Account Nickname"/>
-        <Entry Text="{Binding Nickname}"
+        <custom:CustomEntry Text="{Binding Nickname}"
                FontSize="{StaticResource FontSizeLarge}"/>
         <Label Text="Initial Balance"/>
-        <Entry Text="{Binding Balance}"
+        <custom:CurrencyEntry Text="{Binding Balance}"
                Keyboard="Numeric"
                FontSize="{StaticResource FontSizeLarge}"/>
         <Label Text="Date of Balance"/>
-        <DatePicker Date="{Binding Date}"
+        <custom:CustomDatePicker Date="{Binding Date}"
                     FontSize="{StaticResource FontSizeLarge}"
                     />
         <Grid>

@@ -19,6 +19,7 @@
                   HasUnevenRows="True"
                   SeparatorVisibility="None"
                   IsGroupingEnabled="True"
+                  SelectionMode="None"
                   ios:ListView.RowAnimationsEnabled="True">
             <ListView.GroupHeaderTemplate>
                 <DataTemplate>

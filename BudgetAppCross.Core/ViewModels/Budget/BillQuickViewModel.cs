@@ -1,9 +1,11 @@
 ﻿using BaseClasses;
 using BaseViewModels;
 using BudgetAppCross.Core.Services;
+using BudgetAppCross.Core.ViewModels.Pages;
 using BudgetAppCross.DataAccess;
 using BudgetAppCross.Models;
 using MvvmCross.Commands;
+using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -16,7 +18,7 @@ using System.Windows.Input;
 
 namespace BudgetAppCross.Core.ViewModels
 {
-    public class BillQuickViewModel : BaseViewModel, IBillInfoViewModel
+    public class BillQuickViewModel : MvxNavigationBaseViewModel, IBillInfoViewModel
     {
         #region Fields
         private IDataManager _dataManager;
@@ -29,6 +31,8 @@ namespace BudgetAppCross.Core.ViewModels
         public BillStatus BillStatus => Bill.BillStatus;
         public DateTime Date => Bill.Date;
         public decimal Amount => Bill.Amount;
+        public decimal PaymentAmount => Bill.PaymentAmount;
+
 
         public bool IsPaid
         {
@@ -66,20 +70,37 @@ namespace BudgetAppCross.Core.ViewModels
         #endregion
 
         #region Commands
-        public IMvxCommand DeleteThisCommand { get; private set; }
+        public IMvxCommand DetailsCommand { get; private set; }
         #endregion
 
         #region Constructors
-        public BillQuickViewModel(IBackgroundHandler backgroundHandler, IDataManager dataManager, Bill bill) : base(backgroundHandler)
+        public BillQuickViewModel(IMvxNavigationService navService, IBackgroundHandler backgroundHandler, IDataManager dataManager, Bill bill) : base(navService, backgroundHandler)
         {
             _dataManager = dataManager;
             Bill = bill;
+            DetailsCommand = new MvxAsyncCommand(OnDetails, CanDetails);
+            _backgroundHandler.RegisterMessage<UpdateBillMessage>(this, async x => await OnUpdateBill());
 
-            DeleteThisCommand = new MvxAsyncCommand(OnDeleteThis);
         }
+
+        private async Task OnUpdateBill()
+        {
+            await RaiseAllPropertiesChanged();
+        }
+
         #endregion
 
         #region Methods
+
+        private bool CanDetails()
+        {
+            return true;
+        }
+
+        private async Task OnDetails()
+        {
+            await _navService.Navigate<BillDetailsViewModel, Bill>(Bill);
+        }
         private async Task UpdateAndSave()
         {
             await _dataManager.SaveBill(Bill);
@@ -92,11 +113,7 @@ namespace BudgetAppCross.Core.ViewModels
             _backgroundHandler.SendMessage(new ChangeBillMessage(Bill.AccountID));
         }
 
-        private async Task OnDeleteThis()
-        {
-            await _dataManager.DeleteBill(Bill);
-            _backgroundHandler.SendMessage(new ChangeBillMessage(Bill.AccountID));
-        }
+        
 
         #endregion
 

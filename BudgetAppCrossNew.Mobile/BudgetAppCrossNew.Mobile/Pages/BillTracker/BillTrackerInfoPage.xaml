@@ -8,29 +8,23 @@
                     Style="{StaticResource DefaultPage}"
                     Title="{Binding CompanyName}">
     <ContentPage.ToolbarItems >
-        <ToolbarItem Text="Edit" Command="{Binding EditCommand}" Order="Secondary"/>
-        <ToolbarItem Text="Add" Command="{Binding AddBillCommand}" Order="Secondary"/>
+        <!--<ToolbarItem Text="Details" Command="{Binding EditCommand}" Order="Secondary"/>-->
+        <ToolbarItem Text="Add" Command="{Binding AddBillCommand}"/>
         <!--<ToolbarItem Text="Delete" Command="{Binding DeleteBillCommand}"/>-->
     </ContentPage.ToolbarItems>
 
-    <StackLayout>
-        <Grid  >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Label Text="Paid?" VerticalOptions="Center"/>
-            <Label Text="Amount Due" Grid.Column="1"/>
-            <Label Text="Due Date" Grid.Column="2"/>
-        </Grid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
         <ListView ItemsSource="{Binding Bills}"
-                  SelectedItem="{Binding SelectedBill}"
                   HasUnevenRows="True"
+                  SelectionMode="None"
                   >
-            <ListView.Behaviors>
+            <!--<ListView.Behaviors>
                 <behav:OnItemTappedBehavior Command="{Binding ShowBillCommand}"/>
-            </ListView.Behaviors>
+            </ListView.Behaviors>-->
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -46,7 +40,9 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-
-        <Label Text="{Binding DateTotal}"/>
-    </StackLayout>
+        <Button Text="View Details" Command="{Binding EditCommand}"
+                Grid.Row="1"/>
+    </Grid>
+    
+    
 </mvx:MvxContentPage>

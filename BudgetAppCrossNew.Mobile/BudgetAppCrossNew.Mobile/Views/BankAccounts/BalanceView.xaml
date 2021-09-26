@@ -2,7 +2,11 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BudgetAppCrossNew.Mobile.Views.BalanceView"
-                          xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
+            xmlns:behav="clr-namespace:CustomXamarinFormsBehaviors;assembly=CustomXamarinFormsBehaviors"
+            xmlns:cvtlocal="clr-namespace:BudgetAppCrossNew.Mobile.Converters"
+            xmlns:cvt="clr-namespace:CustomXamarinFormsConverters;assembly=CustomXamarinFormsConverters"
+            xmlns:custom="clr-namespace:CustomXamarinControls;assembly=CustomXamarinControls"
+
 >
     <Grid>
         <Grid.ColumnDefinitions>
@@ -10,13 +14,13 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <!--Margin = 5 on both previously-->
-        <Entry Text="{Binding Amount}" 
+        <custom:CurrencyEntry Text="{Binding Amount}" 
                Grid.Column="0"/>
-        <DatePicker Date="{Binding Timestamp}"
+        <custom:CustomDatePicker Date="{Binding Timestamp}"
                     Grid.Column="1">
             <DatePicker.Behaviors>
                 <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
             </DatePicker.Behaviors>
-        </DatePicker>
+        </custom:CustomDatePicker>
     </Grid>
 </ContentView>

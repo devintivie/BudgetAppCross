@@ -16,7 +16,7 @@
         <ToolbarItem Text="Add" Command="{Binding AddBillCommand}"
                      Order="Primary"/>
     </ContentPage.ToolbarItems>
-    <Grid>
+    <Grid Margin="10, 0">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -28,12 +28,18 @@
                     <ColumnDefinition Width="1.6*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
                 <!--Start Date-->
                 <Label Text="Start Date"
                        Grid.Row="0" Grid.Column="0"
                        FontSize="{StaticResource FontSizeLarge}"
                        />
-                <DatePicker Date="{Binding StartDate}"
+                <custom:CustomDatePicker Date="{Binding StartDate}"
                                          FontSize="{StaticResource FontSizeLarge}"
                                          Grid.Row="0" Grid.Column="1"
                             Margin="0,0,10,0"
@@ -42,7 +48,7 @@
                     <DatePicker.Behaviors>
                         <behav:OnUnfocusedBehavior Command="{Binding OnDateSelectedCommand}"/>
                     </DatePicker.Behaviors>
-                </DatePicker>
+                </custom:CustomDatePicker>
 
                 <!--End Date-->
                 <Label Text="End Date" 
@@ -74,11 +80,12 @@
 
         <ListView ItemsSource="{Binding Bills}"
                   HasUnevenRows="True"
+                  SelectionMode="None"
                   Grid.Row="1">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <ViewCell.ContextActions>
+                        <!--<ViewCell.ContextActions>
                             <MenuItem Text="Delete" 
                                       Command="{Binding DeleteThisCommand}"
                                       IsDestructive="True"
@@ -86,8 +93,8 @@
                             <MenuItem Text="Copy"
                                       Command="{Binding CopyThisCommand}"
                                       CommandParameter="{Binding .}"/>
-                        </ViewCell.ContextActions>
-                        <views:AgendaBillView/>
+                        </ViewCell.ContextActions>-->
+                        <views:BillFullView/>
                     </ViewCell>
 
                 </DataTemplate>

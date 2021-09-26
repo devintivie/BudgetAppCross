@@ -31,7 +31,7 @@ namespace CustomXamarinFormsConverters
             }
             if (valueLong <= 0)
             {
-                return 0m;
+              return 0m;
             }
 
             if (valueLong > 1)

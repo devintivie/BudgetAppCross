@@ -33,10 +33,9 @@ namespace BudgetAppCross.Models
         }
 
         public decimal Amount { get; set; }
-        public decimal ShareRatio { get; set; } = 1.0m;
+        public decimal ShareRatio { get; set; } = 100.0m;
+        public decimal PaymentAmount => Math.Round(ShareRatio* Amount / 100m, 2);
 
-        [Ignore]
-        public decimal PaymentAmount => Amount * ShareRatio;
         public string Payee { get; set; }
 
         private bool isPaid;
@@ -179,6 +178,30 @@ namespace BudgetAppCross.Models
             }
             return tempString;
         }
+
+        //public string DisplayShareRatio()
+        //{
+        //    return $"{ShareRatio * 100}";
+        //}
+
+        //public void SetShareRatio(string value)
+        //{
+        //    if (value != null)
+        //    {
+        //        try
+        //        {
+        //            var newString = value.Replace("%", "");
+        //            if (decimal.TryParse(newString, out var percent))
+        //            {
+        //                ShareRatio = percent / 100.0m;
+        //            }
+        //        }
+        //        catch(Exception ex)
+        //        {
+
+        //        }
+        //    }
+        //}
         #endregion
     }
 }

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "h+7hPUXy0mW5lH1zkl4o1/3e4EIKy8HEP1yaiUHZkTvjetsJOz8nsH+OWJaQc/yah/CBUUoDwdNcKO7RUpzlPQ==",
+  "dgSpecHash": "cFyltoHZCbSU56zK4PBgpaqQPEcCesIxtvLHV9QHfOE6haM+ih7pEBxuRq8v+k+bmxGeP6IiYNgbPxO4Y3hDbQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\devin\\source\\repos\\BudgetAppCross\\BudgetAppCross.SQLiteDataAccess\\BudgetAppCross.SQLiteDataAccess.csproj",
   "expectedPackageFiles": [
